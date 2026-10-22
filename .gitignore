@@ -1,0 +1,17 @@
+.venv/
+.superpowers/
+__pycache__/
+.pytest_cache/
+*.pyc
+catalogo/
+dados/
+restrito/
+relatorios/
+*.sqlite
+*.sqlite3
+*.db
+*.xlsx
+*.png
+*.pdf
+.env*
+secrets*
