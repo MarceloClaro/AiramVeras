@@ -1,0 +1,5 @@
+# Preserve the exact bytes hashed by local evidence/checkpoint receipts.
+evidencias/T05/** -text whitespace=cr-at-eol
+estatistica/t05/** -text whitespace=cr-at-eol
+# Captured pytest output includes intentional trailing spaces; never rewrite logs.
+evidencias/T05/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

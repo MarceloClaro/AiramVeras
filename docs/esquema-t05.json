@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-estatistica-t05-v1",
+  "title": "Handoff agregado T05, sem registros individuais",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["versao_schema", "fontes", "politica", "agregados", "metas_A", "resumo_portal", "divergencias_portal", "contraprova", "cobertura_curricular", "limites"],
+  "properties": {
+    "versao_schema": {"const": "airam-estatistica-t05-v1"},
+    "fontes": {"type": "object", "required": ["t03_sha256", "t04_sha256", "manifesto_sha256", "coletor_bruto_sha256"], "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+    "politica": {"type": "object"},
+    "agregados": {"type": "array", "items": {"$ref": "#/$defs/agregado"}},
+    "metas_A": {"type": "array", "items": {"type": "object", "required": ["ano_escolar", "componente", "nivel", "turma", "categorias_contagens", "meta_A", "corte_empirico"]}},
+    "resumo_portal": {"type": "object"},
+    "divergencias_portal": {"type": "array", "items": {"type": "object"}},
+    "contraprova": {"type": "object", "required": ["coincide", "grupos_conferidos", "observacoes_conferidas"]},
+    "cobertura_curricular": {"type": "object"},
+    "limites": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "agregado": {
+      "type": "object", "additionalProperties": false,
+      "required": ["avaliacao_id", "ano_avaliacao", "ciclo", "ano_escolar", "componente", "fonte_id", "sha256", "exportacao", "nivel", "turma", "posicao", "cadastros", "avaliados", "validas", "ausentes", "acertos", "oportunidades", "taxa_observada", "taxa", "fracao_observada", "proveniencia_sha256"],
+      "properties": {
+        "avaliacao_id": {"type": "string"}, "ano_avaliacao": {"type": "integer"}, "ciclo": {"type": "string"},
+        "ano_escolar": {"type": "integer"}, "componente": {"enum": ["LEITURA", "MATEMATICA"]},
+        "fonte_id": {"type": "string"}, "sha256": {"type": "string"}, "exportacao": {"type": "string"},
+        "nivel": {"enum": ["turma", "escola"]}, "turma": {"type": ["string", "null"]}, "posicao": {"type": ["string", "null"]},
+        "cadastros": {"type": "integer", "minimum": 0}, "avaliados": {"type": "integer", "minimum": 0},
+        "validas": {"type": "integer", "minimum": 0}, "ausentes": {"type": "integer", "minimum": 0},
+        "acertos": {"type": "integer", "minimum": 0}, "oportunidades": {"type": "integer", "minimum": 0},
+        "taxa_observada": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "taxa": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "fracao_observada": {"type": ["object", "null"]}, "proveniencia_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    }
+  }
+}

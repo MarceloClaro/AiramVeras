@@ -1,0 +1,9 @@
+{
+  "fase": "VERIFICACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T16:01:24.795953+00:00",
+  "snapshot": "15-verificacao-entrega-antes.json",
+  "snapshot_sha256": "54901d12e17396511db5cacfbe3d5bdf61aa16a40e96de047be8f070ebb0fad5",
+  "log": "15-verificacao-entrega.log",
+  "log_sha256": "c996ce05e218b02442237edee5a41f4d6e24e783b55ca242e95f8c109acb067e"
+}

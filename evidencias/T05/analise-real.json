@@ -1,0 +1,72 @@
+{
+  "aplicacoes_h_conferidas": 344,
+  "brutos_conferidos": {
+    "avaliacoes": 640,
+    "escrita": 864,
+    "fluencia": 592,
+    "habilidades": 4618
+  },
+  "contraprova": {
+    "coincide": true,
+    "grupos_conferidos": 679,
+    "observacoes_conferidas": 4618
+  },
+  "estado": "CONCLUIDO_COM_DISCREPANCIA_DE_EXIBICAO_PRESERVADA",
+  "fontes_inalteradas": true,
+  "grupos_h_brutos_conferidos": 311,
+  "handoff": {
+    "agregado_sha256": "5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231",
+    "restrito_sha256": "6e6090bee2bd483822a75aa1c18f9599953d353dfaac8e28cf7b0983a6bdb95b"
+  },
+  "percentuais_publicados_conferidos": 407,
+  "resumo_portal": {
+    "checks_coerencia_contagens": 442,
+    "checks_percentuais": 407,
+    "compativeis_intervalo_fechado_quantizacao": 407,
+    "detalhe_familias": {
+      "H": {
+        "checks": 311,
+        "divergencias_half_up": 1,
+        "meios_casos": 15,
+        "reproduzidos_half_up": 310
+      },
+      "categoria": {
+        "checks": 72,
+        "divergencias_half_up": 0,
+        "meios_casos": 2,
+        "reproduzidos_half_up": 72
+      },
+      "participacao": {
+        "checks": 24,
+        "divergencias_half_up": 0,
+        "meios_casos": 0,
+        "reproduzidos_half_up": 24
+      }
+    },
+    "divergencias_coerencia": 0,
+    "divergencias_half_up": 1,
+    "exigem_arredondamento": 313,
+    "fronteiras_intervalo_quantizacao": 17,
+    "meios_casos": 17,
+    "por_familia": {
+      "H": 311,
+      "categoria": 72,
+      "participacao": 24
+    },
+    "por_nivel": {
+      "escola": {
+        "checks": 164,
+        "divergencias": 0
+      },
+      "turma": {
+        "checks": 243,
+        "divergencias": 1
+      }
+    },
+    "precisoes_originais": {
+      "0": 407
+    },
+    "reproduzidos_half_even": 395,
+    "reproduzidos_half_up": 406
+  }
+}

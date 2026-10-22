@@ -1,0 +1,933 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                  [100%]
+================================== FAILURES ===================================
+_________________ test_T10_razao_de_somas_nunca_media_simples _________________
+
+    def test_T10_razao_de_somas_nunca_media_simples():
+>       assert api('metricas', 'taxa_por_itens')([1, 0], [1, 3]) == .25
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_contagens_invalidas_nao_produzem_taxa[n0-d0] ______________
+
+n = [1], d = []
+
+    @pytest.mark.parametrize('n,d', [([1], []), ([-1], [1]), ([2], [1]), ([0], [0]), ([True], [1])])
+    def test_contagens_invalidas_nao_produzem_taxa(n, d):
+        with pytest.raises(ValueError):
+>           api('metricas', 'taxa_por_itens')(n, d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_contagens_invalidas_nao_produzem_taxa[n1-d1] ______________
+
+n = [-1], d = [1]
+
+    @pytest.mark.parametrize('n,d', [([1], []), ([-1], [1]), ([2], [1]), ([0], [0]), ([True], [1])])
+    def test_contagens_invalidas_nao_produzem_taxa(n, d):
+        with pytest.raises(ValueError):
+>           api('metricas', 'taxa_por_itens')(n, d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_contagens_invalidas_nao_produzem_taxa[n2-d2] ______________
+
+n = [2], d = [1]
+
+    @pytest.mark.parametrize('n,d', [([1], []), ([-1], [1]), ([2], [1]), ([0], [0]), ([True], [1])])
+    def test_contagens_invalidas_nao_produzem_taxa(n, d):
+        with pytest.raises(ValueError):
+>           api('metricas', 'taxa_por_itens')(n, d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_contagens_invalidas_nao_produzem_taxa[n3-d3] ______________
+
+n = [0], d = [0]
+
+    @pytest.mark.parametrize('n,d', [([1], []), ([-1], [1]), ([2], [1]), ([0], [0]), ([True], [1])])
+    def test_contagens_invalidas_nao_produzem_taxa(n, d):
+        with pytest.raises(ValueError):
+>           api('metricas', 'taxa_por_itens')(n, d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_contagens_invalidas_nao_produzem_taxa[n4-d4] ______________
+
+n = [True], d = [1]
+
+    @pytest.mark.parametrize('n,d', [([1], []), ([-1], [1]), ([2], [1]), ([0], [0]), ([True], [1])])
+    def test_contagens_invalidas_nao_produzem_taxa(n, d):
+        with pytest.raises(ValueError):
+>           api('metricas', 'taxa_por_itens')(n, d)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+____________________ test_vazio_e_ausencia_nao_viram_zero _____________________
+
+    def test_vazio_e_ausencia_nao_viram_zero():
+>       assert api('metricas', 'taxa_por_itens')([], []) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'taxa_por_itens'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_T11_reordenar_alunos_h_preserva_totais_e_proveniencia __________
+
+    def test_T11_reordenar_alunos_h_preserva_totais_e_proveniencia():
+        rows = [h(), h(position='H 02', n=0, d=3), h('sintetico-2', n=0)]
+        before = deepcopy(rows)
+>       aggregate = api('metricas', 'agregar_habilidades')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_ausencia_separada_de_zero_e_nao_participante ______________
+
+    def test_ausencia_separada_de_zero_e_nao_participante():
+        rows = [h(n=0), h('sintetico-2', n=None, d=None, participacao=False,
+            disponibilidade=False, bruto='-')]
+>       output = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_nao_converte_ou_aceita_contagem_inconsistente[change0] _________
+
+change = {'unidade': 'palavras'}
+
+    @pytest.mark.parametrize('change', [dict(unidade='palavras'), dict(componente='FLUENCIA'),
+        dict(numerador=2), dict(disponibilidade=False), dict(participacao=False)])
+    def test_nao_converte_ou_aceita_contagem_inconsistente(change):
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(**change)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_nao_converte_ou_aceita_contagem_inconsistente[change1] _________
+
+change = {'componente': 'FLUENCIA'}
+
+    @pytest.mark.parametrize('change', [dict(unidade='palavras'), dict(componente='FLUENCIA'),
+        dict(numerador=2), dict(disponibilidade=False), dict(participacao=False)])
+    def test_nao_converte_ou_aceita_contagem_inconsistente(change):
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(**change)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_nao_converte_ou_aceita_contagem_inconsistente[change2] _________
+
+change = {'numerador': 2}
+
+    @pytest.mark.parametrize('change', [dict(unidade='palavras'), dict(componente='FLUENCIA'),
+        dict(numerador=2), dict(disponibilidade=False), dict(participacao=False)])
+    def test_nao_converte_ou_aceita_contagem_inconsistente(change):
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(**change)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_nao_converte_ou_aceita_contagem_inconsistente[change3] _________
+
+change = {'disponibilidade': False}
+
+    @pytest.mark.parametrize('change', [dict(unidade='palavras'), dict(componente='FLUENCIA'),
+        dict(numerador=2), dict(disponibilidade=False), dict(participacao=False)])
+    def test_nao_converte_ou_aceita_contagem_inconsistente(change):
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(**change)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_nao_converte_ou_aceita_contagem_inconsistente[change4] _________
+
+change = {'participacao': False}
+
+    @pytest.mark.parametrize('change', [dict(unidade='palavras'), dict(componente='FLUENCIA'),
+        dict(numerador=2), dict(disponibilidade=False), dict(participacao=False)])
+    def test_nao_converte_ou_aceita_contagem_inconsistente(change):
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(**change)])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________________ test_duplicata_h_bloqueia_fanout _______________________
+
+    def test_duplicata_h_bloqueia_fanout():
+        with pytest.raises(ValueError):
+>           api('metricas', 'agregar_habilidades')([h(), h()])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__________________ test_contextos_e_fontes_nao_sao_fundidos ___________________
+
+    def test_contextos_e_fontes_nao_sao_fundidos():
+        rows = [h(), h(ano_escolar=2), h(sha256='b'*64)]
+>       output = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______________ test_cobertura_parcial_nao_vira_prova_completa ________________
+
+    def test_cobertura_parcial_nao_vira_prova_completa():
+        rows = [h(), h(position='H 02', n=None, d=None, disponibilidade=False, bruto='-')]
+>       row = [x for x in api('metricas', 'agregar_habilidades')(rows) if x['nivel'] == 'aluno'][0]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metricas.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________________ test_T15_independente_quando_principal_falha _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E3D89E69C0>
+
+    def test_T15_independente_quando_principal_falha(monkeypatch):
+>       main = api('metricas', 'agregar_habilidades')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______________ test_contraprova_confere_zero_ausencia_e_turma ________________
+
+    def test_contraprova_confere_zero_ausencia_e_turma():
+        rows = [h(n=0), h('sintetico-2', n=None, d=None, participacao=False,
+            disponibilidade=False, bruto='-', turma='B')]
+>       assert api('contraprova', 'contraprovar')(rows) == api('metricas', 'agregar_habilidades')(rows)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'contraprova', name = 'contraprovar'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.contraprova')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[numerador-0] ___
+
+field = 'numerador', value = 0
+
+    @pytest.mark.parametrize('field,value', [('numerador', 0), ('sha256', 'b'*64), ('linha_fonte', 9), ('bruto', '01/1')])
+    def test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia(field, value):
+        rows = [h()]
+>       result = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb] _
+
+field = 'sha256'
+value = 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+
+    @pytest.mark.parametrize('field,value', [('numerador', 0), ('sha256', 'b'*64), ('linha_fonte', 9), ('bruto', '01/1')])
+    def test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia(field, value):
+        rows = [h()]
+>       result = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[linha_fonte-9] __
+
+field = 'linha_fonte', value = 9
+
+    @pytest.mark.parametrize('field,value', [('numerador', 0), ('sha256', 'b'*64), ('linha_fonte', 9), ('bruto', '01/1')])
+    def test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia(field, value):
+        rows = [h()]
+>       result = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___ test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[bruto-01/1] ___
+
+field = 'bruto', value = '01/1'
+
+    @pytest.mark.parametrize('field,value', [('numerador', 0), ('sha256', 'b'*64), ('linha_fonte', 9), ('bruto', '01/1')])
+    def test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia(field, value):
+        rows = [h()]
+>       result = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___________ test_auditoria_compara_resultado_completo_nao_so_total ____________
+
+    def test_auditoria_compara_resultado_completo_nao_so_total():
+        rows = [h()]
+>       result = api('metricas', 'agregar_habilidades')(rows)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metricas', name = 'agregar_habilidades'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metricas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_____________________ test_contraprova_recusa_duplicacao ______________________
+
+    def test_contraprova_recusa_duplicacao():
+        with pytest.raises(ValueError):
+>           api('contraprova', 'contraprovar')([h(), h()])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_contraprova.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'contraprova', name = 'contraprovar'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.contraprova')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_____________ test_T20_meta_A_usa_avaliados_e_categoria_original ______________
+
+    def test_T20_meta_A_usa_avaliados_e_categoria_original():
+>       result = api('metas', 'meta_adequados')(24, 10, .8)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_adequados'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_T21_corte_observado_permanece_hipotese _________________
+
+    def test_T21_corte_observado_permanece_hipotese():
+>       result = api('metas', 'corte_empirico')([dict(categoria='Adequado', acertos=14),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            dict(categoria='Intermediário', acertos=18), dict(categoria='Adequado', acertos=16)])
+
+tests\test_metas.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'corte_empirico'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________________ test_T22_meta_B_individual_22_itens_exige_18 _________________
+
+    def test_T22_meta_B_individual_22_itens_exige_18():
+>       result = api('metas', 'meta_acertos')(17, 22, .8)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___________________ test_T23_limite_exato_sem_erro_binario ____________________
+
+    def test_T23_limite_exato_sem_erro_binario():
+>       assert api('metas', 'meta_acertos')(4, 5, .8)['atingida'] is True
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_____________ test_T23_zero_itens_recusado_ausencia_indisponivel ______________
+
+    def test_T23_zero_itens_recusado_ausencia_indisponivel():
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_acertos')(0, 0, .8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_A_recusa_limites_invalidos[args0] _________________
+
+args = (24, 25, 0.8)
+
+    @pytest.mark.parametrize('args', [(24,25,.8), (-1,0,.8), (24,1,1.1), (True,0,.8)])
+    def test_meta_A_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_adequados')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_adequados'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_A_recusa_limites_invalidos[args1] _________________
+
+args = (-1, 0, 0.8)
+
+    @pytest.mark.parametrize('args', [(24,25,.8), (-1,0,.8), (24,1,1.1), (True,0,.8)])
+    def test_meta_A_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_adequados')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_adequados'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_A_recusa_limites_invalidos[args2] _________________
+
+args = (24, 1, 1.1)
+
+    @pytest.mark.parametrize('args', [(24,25,.8), (-1,0,.8), (24,1,1.1), (True,0,.8)])
+    def test_meta_A_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_adequados')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_adequados'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_A_recusa_limites_invalidos[args3] _________________
+
+args = (True, 0, 0.8)
+
+    @pytest.mark.parametrize('args', [(24,25,.8), (-1,0,.8), (24,1,1.1), (True,0,.8)])
+    def test_meta_A_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_adequados')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_adequados'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_B_recusa_limites_invalidos[args0] _________________
+
+args = (23, 22, 0.8)
+
+    @pytest.mark.parametrize('args', [(23,22,.8), (-1,22,.8), (1,22,-.1), (None,22,.8)])
+    def test_meta_B_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_acertos')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_B_recusa_limites_invalidos[args1] _________________
+
+args = (-1, 22, 0.8)
+
+    @pytest.mark.parametrize('args', [(23,22,.8), (-1,22,.8), (1,22,-.1), (None,22,.8)])
+    def test_meta_B_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_acertos')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_B_recusa_limites_invalidos[args2] _________________
+
+args = (1, 22, -0.1)
+
+    @pytest.mark.parametrize('args', [(23,22,.8), (-1,22,.8), (1,22,-.1), (None,22,.8)])
+    def test_meta_B_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_acertos')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________________ test_meta_B_recusa_limites_invalidos[args3] _________________
+
+args = (None, 22, 0.8)
+
+    @pytest.mark.parametrize('args', [(23,22,.8), (-1,22,.8), (1,22,-.1), (None,22,.8)])
+    def test_meta_B_recusa_limites_invalidos(args):
+        with pytest.raises(ValueError):
+>           api('metas', 'meta_acertos')(*args)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______ test_T24_T25_lacunas_independem_ordem_empates_nao_excluem_apoio _______
+
+    def test_T24_T25_lacunas_independem_ordem_empates_nao_excluem_apoio():
+        values = [(17,22), (0,22), (17,22), (22,22)]
+>       function = api('metas', 'meta_acertos')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_metas.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'metas', name = 'meta_acertos'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x000001E3D5EABA60>('airam.metas')
+E        +    where <function find_spec at 0x000001E3D5EABA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_metricas.py::test_T10_razao_de_somas_nunca_media_simples - ...
+FAILED tests/test_metricas.py::test_contagens_invalidas_nao_produzem_taxa[n0-d0]
+FAILED tests/test_metricas.py::test_contagens_invalidas_nao_produzem_taxa[n1-d1]
+FAILED tests/test_metricas.py::test_contagens_invalidas_nao_produzem_taxa[n2-d2]
+FAILED tests/test_metricas.py::test_contagens_invalidas_nao_produzem_taxa[n3-d3]
+FAILED tests/test_metricas.py::test_contagens_invalidas_nao_produzem_taxa[n4-d4]
+FAILED tests/test_metricas.py::test_vazio_e_ausencia_nao_viram_zero - Asserti...
+FAILED tests/test_metricas.py::test_T11_reordenar_alunos_h_preserva_totais_e_proveniencia
+FAILED tests/test_metricas.py::test_ausencia_separada_de_zero_e_nao_participante
+FAILED tests/test_metricas.py::test_nao_converte_ou_aceita_contagem_inconsistente[change0]
+FAILED tests/test_metricas.py::test_nao_converte_ou_aceita_contagem_inconsistente[change1]
+FAILED tests/test_metricas.py::test_nao_converte_ou_aceita_contagem_inconsistente[change2]
+FAILED tests/test_metricas.py::test_nao_converte_ou_aceita_contagem_inconsistente[change3]
+FAILED tests/test_metricas.py::test_nao_converte_ou_aceita_contagem_inconsistente[change4]
+FAILED tests/test_metricas.py::test_duplicata_h_bloqueia_fanout - AssertionEr...
+FAILED tests/test_metricas.py::test_contextos_e_fontes_nao_sao_fundidos - Ass...
+FAILED tests/test_metricas.py::test_cobertura_parcial_nao_vira_prova_completa
+FAILED tests/test_contraprova.py::test_T15_independente_quando_principal_falha
+FAILED tests/test_contraprova.py::test_contraprova_confere_zero_ausencia_e_turma
+FAILED tests/test_contraprova.py::test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[numerador-0]
+FAILED tests/test_contraprova.py::test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[sha256-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+FAILED tests/test_contraprova.py::test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[linha_fonte-9]
+FAILED tests/test_contraprova.py::test_auditoria_detecta_adulteracao_de_valor_ou_proveniencia[bruto-01/1]
+FAILED tests/test_contraprova.py::test_auditoria_compara_resultado_completo_nao_so_total
+FAILED tests/test_contraprova.py::test_contraprova_recusa_duplicacao - Assert...
+FAILED tests/test_metas.py::test_T20_meta_A_usa_avaliados_e_categoria_original
+FAILED tests/test_metas.py::test_T21_corte_observado_permanece_hipotese - Ass...
+FAILED tests/test_metas.py::test_T22_meta_B_individual_22_itens_exige_18 - As...
+FAILED tests/test_metas.py::test_T23_limite_exato_sem_erro_binario - Assertio...
+FAILED tests/test_metas.py::test_T23_zero_itens_recusado_ausencia_indisponivel
+FAILED tests/test_metas.py::test_meta_A_recusa_limites_invalidos[args0] - Ass...
+FAILED tests/test_metas.py::test_meta_A_recusa_limites_invalidos[args1] - Ass...
+FAILED tests/test_metas.py::test_meta_A_recusa_limites_invalidos[args2] - Ass...
+FAILED tests/test_metas.py::test_meta_A_recusa_limites_invalidos[args3] - Ass...
+FAILED tests/test_metas.py::test_meta_B_recusa_limites_invalidos[args0] - Ass...
+FAILED tests/test_metas.py::test_meta_B_recusa_limites_invalidos[args1] - Ass...
+FAILED tests/test_metas.py::test_meta_B_recusa_limites_invalidos[args2] - Ass...
+FAILED tests/test_metas.py::test_meta_B_recusa_limites_invalidos[args3] - Ass...
+FAILED tests/test_metas.py::test_T24_T25_lacunas_independem_ordem_empates_nao_excluem_apoio
+39 failed in 0.43s

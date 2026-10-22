@@ -1,0 +1,15 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_contraprova_interface_dict_rastreia_observacoes _____________
+
+    def test_contraprova_interface_dict_rastreia_observacoes():
+        result = api('contraprova', 'contraprovar')([h()])
+>       assert isinstance(result, dict), 'Contraprova deve entregar dict rastreavel'
+E       AssertionError: Contraprova deve entregar dict rastreavel
+E       assert False
+E        +  where False = isinstance([{'avaliacao_id': 'AV', 'ano_avaliacao': 2026, 'ciclo': 'I', 'ano_escolar': 1, ...}, {'avaliacao_id': 'AV', 'ano_avali...iclo': 'I', 'ano_escolar': 1, ...}, {'avaliacao_id': 'AV', 'ano_avaliacao': 2026, 'ciclo': 'I', 'ano_escolar': 1, ...}], dict)
+
+tests\test_contraprova.py:51: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_contraprova.py::test_contraprova_interface_dict_rastreia_observacoes
+1 failed in 0.16s

@@ -1,0 +1,39 @@
+# T05 → T06/T07/T09: estatística observada, contraprova e metas
+
+Versões: `airam-estatistica-t05-v1` (agregado) e `airam-estatistica-restrita-t05-v1` (individual). Schemas 2020-12: `docs/esquema-t05.json` e `docs/esquema-restrito-t05.json`; a tabela `observado` herda integralmente `docs/esquemas-t03.json`. Não há ranking, Excel ou previsão temporal nesta entrega.
+
+## Checkpoints e segurança de consumo
+
+- `restrito/t05/checkpoint.json`, SHA256 `6e6090bee2bd483822a75aa1c18f9599953d353dfaac8e28cf7b0983a6bdb95b`: dados pessoais pseudonimizados, exclusivamente locais, ignorados pelo Git. O nome da pasta não certifica ACL. `observado` conserva integralmente as sete tabelas T03; `metricas_alunos` contém 344 aplicações de H; `metas_individuais` contém 640 aplicações, incluindo estados de ausência/não aplicação. Nenhum identificador individual vai ao agregado.
+- `estatistica/t05/checkpoint.json`, SHA256 `5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231`: somente turma/escola, 335 agregados (24 instrumentos/escopos totais e 311 H) e 24 Meta A. Não contém nomes, pseudônimos, IDs de aplicação individual ou linhas individuais escondidas. É saída agregada para revisão local; o domínio externo de compartilhamento exige a política institucional aplicável.
+- Entradas autenticadas: T03 `b26bef93117c7c38906cd9e6e025cfc5f2a9969cc4834e4b785618d29dd56dbb`; T04 `a4a73d2523d459d0dda102f6e4b6f14176be444717f428bb6d1772822ffd5796`. Todos os 124 contextos de H possuem posição em T04; as 157 arestas curriculares não multiplicam observações.
+
+## APIs
+
+`taxa_por_itens(acertos: list[int], oportunidades: list[int]) -> float | None`: soma dos numeradores dividida pela soma dos denominadores. Listas vazias devolvem `None`; comprimentos diferentes, booleanos, negativos, denominador não positivo e numerador maior que denominador são erros. Zero obtido permanece válido.
+
+`agregar_habilidades(rows: list[dict]) -> list[dict]`: recebe H T03 **enriquecidas com turma da aplicação**, por `avaliacao_local_id`. O executor confere contexto/identidade/participação antes do join. É erro H duplicada, máscara inconsistente, mudança de turma/aplicação no mesmo estudante/contexto, unidade ou componente incompatível. Não aceita escrita/fluência. A chave contextual conserva `(avaliacao_id, ano_avaliacao, ciclo, ano_escolar, componente, fonte_id, sha256, exportacao)`; H não se fundem entre anos/componentes/fontes/versões. Acrescentam-se `nivel`, `turma`, `aluno_local_id` e `posicao`; `aluno_local_id` só sai em área restrita. Nível aluno tem `posicao=None`; turma/escola possuem total e uma linha por H. A saída é ordenada deterministicamente; não modifica entradas.
+
+`contraprovar(rows: list[dict]) -> dict`: retorna `resultados`, `observacoes_conferidas` e `metodo=SQL+Fraction_independente`. Revalida as observações e refaz agrupamentos por SQL em memória e razões com Fraction. Não importa `metricas`, não usa seus totais nem chama seus auxiliares. `auditar_resultados(rows, resultados) -> dict` compara todos os valores, máscaras, chaves e proveniência e falha com mensagem sem conteúdo individual. Em uso real há ainda rota separada lendo diretamente os ZIP/CSV autenticados, sem importar `airam`.
+
+`meta_adequados(avaliados, adequados, meta) -> dict`: `alvo=ceil(meta*avaliados)`, `conversoes=max(0,alvo-adequados)`, categoria **original** `Adequado`. Zero avaliados devolve `status=sem_avaliados` e alvo/conversões/atingida nulos. `acertos_ate_adequacao` permanece nulo porque não há corte oficial. `corte_empirico(rows) -> dict` conserva somente o mínimo observado entre adequados e o status `hipotese_empirica_nao_oficial`; não fornece conversão oficial. Não aplicar Meta A a categorias de escrita/fluência sem contrato oficial.
+
+`meta_acertos(acertos, oportunidades, meta) -> dict`: Meta B individual, `ceil(meta*oportunidades)` e lacuna não negativa. Usa razão decimal exata de `meta`, evitando erros binários no teto. Em 22 itens, alvo 18; 17 não atinge. `(None,None)` é `prova_ausente`; zero oportunidades e ausência parcial são erros. Escrita/fluência recebem `unidade_nao_aplicavel` no handoff, sem converter suas notas ou tarefas. Empates de lacuna continuam empates; lacuna grande permanece elegível a apoio. A ordenação e desempate estável serão implementados na T10; não há critério de linha física ou workbook antecipado.
+
+## Campos e interpretação
+
+`acertos`/`oportunidades` são somas inteiras **observadas**. Sem nenhuma medida, ambas são zero aritmético e `fracao_observada`, `taxa_observada` e `taxa` são nulos; isto não constitui prova com zero. `validas` conta células H disponíveis de participantes, inclusive zero; `ausentes` conta células sem medida, incluindo não participação. `cadastros` e `avaliados` contam pessoas distintas no escopo; não são contagens de células. `taxa_observada` usa somente medidas válidas; `taxa` fica nula quando um participante tem célula ausente. O contrato de entrada deve conter todas as H previstas: o consumidor não deve omitir colunas/linhas ausentes antes da agregação. Cobertura de posições é conferida contra T04 e a completude individual atual contra T03/brutos.
+
+`fracao_observada={numerador,denominador}` conserva contagens sem redução, e portanto oportunidades de evidência; `taxa*` estão na escala 0–1, sem arredondamento. `proveniencia_sha256` é SHA256 das linhas completas ordenadas por JSON canônico UTF-8 (`sort_keys`, compacto, Unicode preservado), unidas por LF, sem LF final. Detecta adulteração de bruto/linha/contexto mesmo com totais iguais. Nenhuma taxa total de todas as H é percentual global publicado pelo portal.
+
+## Confronto real e limites
+
+O executor `evidencias/T05/analisar.py` autentica as duas entradas antes de ler registros; confirma brutos/participação/categorias de 4.618 H, 864 medidas de escrita, 592 de fluência e 640 avaliações com os CSV autenticados. Refaz os 344 totais individuais; a contraprova SQL/Fraction confronta 679 resultados completos. A rota bruta separada refaz todos os H, totais por instrumento, participação e categorias de 24 escopos turma/escola. As 442 conferências turma→escola coincidem.
+
+407 percentuais são compatíveis com precisão inteira admitindo empate na fronteira; **406** reproduzem a regra adotada de metade para cima. A discrepância explícita é leitura, 4º ano, turma B, H13: `23/40=57,5%`, publicado `57`, half-up `58`. Não há política oficial de empate conhecida; não se corrige o original. Os três escopos com categorias publicadas somando 101% permanecem como publicados.
+
+5º ano de leitura: 54 cadastros, **53 avaliados**, 1 não participante; 45 adequados em 53; total observado `891/1166`. As 16 H ausentes não viram zero. Meta A: alvo 43, conversões 0. Meta B continua individual. As categorias e unidades de escrita/fluência são conservadas sem metas artificiais.
+
+T06 deve formar pares analíticos por variável/participação/unidade, sem tomar os pares cadastrais como N estatístico. T07 deve usar `observado.habilidades` com numeradores/denominadores/máscaras e associar cada posição uma vez antes de expandir currículo. T09 deve consumir as duas metas separadas e preservar ausência de corte oficial; perdas e ganhos são cenários condicionais. Identidade local é provisória, sem validação longitudinal. Não houve inferência Core, validação pedagógica externa, causalidade ou previsão temporal validada.
+
+Reprodução: `.venv/Scripts/python.exe evidencias/T05/executar.py <rotulo-novo> ANALISE evidencias/T05/analisar.py <subdiretorio-novo>`. Cada tentativa exige nome novo para preservar o recibo bruto. Os checkpoints são determinísticos e podem ser regenerados; preservar versões anteriores se mudar qualquer entrada/política. A auditoria preparatória original, seu recibo e seu snapshot estão preservados em `evidencias/T05/preparacao-preservada/`; nunca foram apresentados como RED/GREEN do produto.
