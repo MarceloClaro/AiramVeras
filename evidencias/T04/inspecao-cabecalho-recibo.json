@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:24:29.111508+00:00",
+  "snapshot": "inspecao-cabecalho-antes.json",
+  "snapshot_sha256": "46caadd0f3c61a95fc579f9aeca846ebc54d86b08f288fd2638c374b70dd0611",
+  "log_sha256": "d1d99faaf1568c77ee5ed1ac4d4f725f25966d9c7b74fbf6a01d251fcf7b3ec9"
+}

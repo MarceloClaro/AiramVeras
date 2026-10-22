@@ -1,0 +1,9 @@
+{
+  "estado": "RED",
+  "fase_solicitada": "RED",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T15:22:58.162516+00:00",
+  "snapshot": "red-inicial-antes.json",
+  "snapshot_sha256": "402b48385f30b46bb5bc47dfbc88783c94057ba4e638e92adc19ef555cbc89c6",
+  "log_sha256": "b649ec02301d818f9a60fd405b3dde8d136a7535109bc2b23a2181d60b28792a"
+}

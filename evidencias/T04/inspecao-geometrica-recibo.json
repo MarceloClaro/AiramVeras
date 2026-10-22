@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:23:41.478418+00:00",
+  "snapshot": "inspecao-geometrica-antes.json",
+  "snapshot_sha256": "8cd65b5b1e99f59db9641ef6ecc2876b7848b33c55f044c6b2d4f8e45efa55df",
+  "log_sha256": "c425525d9c31ceffeac888bd847b63933667baed8565044c80e761e7ee4a930d"
+}

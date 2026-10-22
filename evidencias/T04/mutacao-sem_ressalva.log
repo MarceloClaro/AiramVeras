@@ -1,0 +1,12 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_T30_ressalva_semantica_preserva_os_dois_textos _____________
+tests\test_vinculos.py:72: in test_T30_ressalva_semantica_preserva_os_dois_textos
+    assert result[0]['status_semantico'] == 'associacao_publicada_com_ressalva_semantica'
+E   AssertionError: assert 'associacao_p...ncia_integral' == 'associacao_p...lva_semantica'
+E     
+E     - associacao_publicada_com_ressalva_semantica
+E     + associacao_publicada_sem_equivalencia_integral
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos
+1 failed in 0.12s

@@ -1,0 +1,1021 @@
+{
+  "type": "object",
+  "properties": {
+    "bncc": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "anos": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "codigo": {
+            "type": "string"
+          },
+          "componente": {
+            "type": "string"
+          },
+          "documento": {
+            "type": "string"
+          },
+          "fonte": {
+            "type": "object",
+            "properties": {
+              "arquivo": {
+                "type": "string"
+              },
+              "documento": {
+                "type": "string"
+              },
+              "localizador": {
+                "type": "string"
+              },
+              "localizador_pdf": {
+                "type": "string"
+              },
+              "proveniencia": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "arquivo",
+              "documento",
+              "localizador",
+              "localizador_pdf",
+              "proveniencia"
+            ],
+            "additionalProperties": false
+          },
+          "objetos_conhecimento": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "organizacao": {
+            "type": "object",
+            "properties": {
+              "campos_atuacao": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "pratica_linguagem": {
+                "type": "string"
+              },
+              "tipo": {
+                "type": "string"
+              },
+              "unidade_tematica": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "tipo"
+            ],
+            "additionalProperties": false
+          },
+          "proveniencia_dataset": {
+            "type": "object",
+            "properties": {
+              "arquivo": {
+                "type": "string"
+              },
+              "commit": {
+                "type": "string"
+              },
+              "documento": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "sha256_git": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "arquivo",
+              "commit",
+              "documento",
+              "sha256",
+              "sha256_git"
+            ],
+            "additionalProperties": false
+          },
+          "texto": {
+            "type": "string"
+          },
+          "vigencia": {
+            "type": "object",
+            "properties": {
+              "ate": {
+                "type": "null"
+              },
+              "desde": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ate",
+              "desde",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "anos",
+          "codigo",
+          "componente",
+          "documento",
+          "fonte",
+          "objetos_conhecimento",
+          "organizacao",
+          "proveniencia_dataset",
+          "texto",
+          "vigencia"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "contagens": {
+      "type": "object",
+      "properties": {
+        "bncc_politica_contextual": {
+          "type": "integer"
+        },
+        "bncc_todas_ocorrencias": {
+          "type": "integer"
+        },
+        "bncc_uniao_contextos_auditados": {
+          "type": "integer"
+        },
+        "codigos_caed_matriz": {
+          "type": "integer"
+        },
+        "codigos_caed_posicoes": {
+          "type": "integer"
+        },
+        "mapa_posicoes_sem_medida_t03": {
+          "type": "integer"
+        },
+        "ocorrencias": {
+          "type": "integer"
+        },
+        "ocorrencias_por_pagina": {
+          "type": "object",
+          "properties": {
+            "10": {
+              "type": "integer"
+            },
+            "11": {
+              "type": "integer"
+            },
+            "20": {
+              "type": "integer"
+            },
+            "21": {
+              "type": "integer"
+            },
+            "22": {
+              "type": "integer"
+            },
+            "23": {
+              "type": "integer"
+            },
+            "24": {
+              "type": "integer"
+            },
+            "25": {
+              "type": "integer"
+            },
+            "26": {
+              "type": "integer"
+            },
+            "27": {
+              "type": "integer"
+            },
+            "28": {
+              "type": "integer"
+            },
+            "4": {
+              "type": "integer"
+            },
+            "5": {
+              "type": "integer"
+            },
+            "6": {
+              "type": "integer"
+            },
+            "7": {
+              "type": "integer"
+            },
+            "8": {
+              "type": "integer"
+            },
+            "9": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "10",
+            "11",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "additionalProperties": false
+        },
+        "posicoes": {
+          "type": "integer"
+        },
+        "posicoes_com_ressalva_semantica": {
+          "type": "integer"
+        },
+        "posicoes_por_status": {
+          "type": "object",
+          "properties": {
+            "fonte_anterior_integracao_a_confirmar": {
+              "type": "integer"
+            },
+            "proprio_ano_ciclo_confirmado": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "fonte_anterior_integracao_a_confirmar",
+            "proprio_ano_ciclo_confirmado"
+          ],
+          "additionalProperties": false
+        },
+        "t03_medidas_h": {
+          "type": "integer"
+        },
+        "t03_posicoes_distintas": {
+          "type": "integer"
+        },
+        "t03_posicoes_sem_cobertura": {
+          "type": "integer"
+        },
+        "vinculos": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "bncc_politica_contextual",
+        "bncc_todas_ocorrencias",
+        "bncc_uniao_contextos_auditados",
+        "codigos_caed_matriz",
+        "codigos_caed_posicoes",
+        "mapa_posicoes_sem_medida_t03",
+        "ocorrencias",
+        "ocorrencias_por_pagina",
+        "posicoes",
+        "posicoes_com_ressalva_semantica",
+        "posicoes_por_status",
+        "t03_medidas_h",
+        "t03_posicoes_distintas",
+        "t03_posicoes_sem_cobertura",
+        "vinculos"
+      ],
+      "additionalProperties": false
+    },
+    "fontes": {
+      "type": "object",
+      "properties": {
+        "bncc": {
+          "type": "object",
+          "properties": {
+            "arquivo": {
+              "type": "string"
+            },
+            "commit": {
+              "type": "string"
+            },
+            "documento": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            },
+            "sha256_git": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "arquivo",
+            "commit",
+            "documento",
+            "sha256",
+            "sha256_git"
+          ],
+          "additionalProperties": false
+        },
+        "mapa": {
+          "type": "object",
+          "properties": {
+            "arquivo": {
+              "type": "string"
+            },
+            "contexto_declarado": {
+              "type": "object",
+              "properties": {
+                "ano_avaliacao": {
+                  "type": "integer"
+                },
+                "ciclo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ano_avaliacao",
+                "ciclo"
+              ],
+              "additionalProperties": false
+            },
+            "sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "arquivo",
+            "contexto_declarado",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "matriz": {
+          "type": "object",
+          "properties": {
+            "arquivo": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "arquivo",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "t03": {
+          "type": "object",
+          "properties": {
+            "arquivo": {
+              "type": "string"
+            },
+            "dados_individuais_incluidos": {
+              "type": "boolean"
+            },
+            "sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "arquivo",
+            "dados_individuais_incluidos",
+            "sha256"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "bncc",
+        "mapa",
+        "matriz",
+        "t03"
+      ],
+      "additionalProperties": false
+    },
+    "ocorrencias_matriz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ano_tabela": {
+            "type": "integer"
+          },
+          "bncc_celula": {
+            "type": "string"
+          },
+          "celulas": {
+            "type": "object",
+            "properties": {
+              "I": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "II": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "III": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "bncc": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "codigo": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "descritor": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "ut": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "I",
+              "II",
+              "III",
+              "bncc",
+              "codigo",
+              "descritor"
+            ],
+            "additionalProperties": false
+          },
+          "ciclos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "codigo_caed": {
+            "type": "string"
+          },
+          "codigos_bncc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "componente": {
+            "type": "string"
+          },
+          "fonte_matriz": {
+            "type": "string"
+          },
+          "marcas_ciclo": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "bbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "ciclo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "bbox",
+                "ciclo"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nota_integracao": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "pagina_matriz": {
+                      "type": "integer"
+                    },
+                    "texto": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagina_matriz",
+                    "texto"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ocorrencia_id": {
+            "type": "string"
+          },
+          "pagina_matriz": {
+            "type": "integer"
+          },
+          "sha256_pdf": {
+            "type": "string"
+          },
+          "texto_caed": {
+            "type": "string"
+          },
+          "texto_caed_celula": {
+            "type": "string"
+          },
+          "unidade_tematica": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "ano_tabela",
+          "bncc_celula",
+          "celulas",
+          "ciclos",
+          "codigo_caed",
+          "codigos_bncc",
+          "componente",
+          "fonte_matriz",
+          "marcas_ciclo",
+          "nota_integracao",
+          "ocorrencia_id",
+          "pagina_matriz",
+          "sha256_pdf",
+          "texto_caed",
+          "texto_caed_celula",
+          "unidade_tematica"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "politica": {
+      "type": "object",
+      "properties": {
+        "anti_multiplicacao": {
+          "type": "string"
+        },
+        "ciclos": {
+          "type": "string"
+        },
+        "contexto": {
+          "type": "string"
+        },
+        "peso": {
+          "type": "string"
+        },
+        "ressalvas": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "anti_multiplicacao",
+        "ciclos",
+        "contexto",
+        "peso",
+        "ressalvas"
+      ],
+      "additionalProperties": false
+    },
+    "posicoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ano_avaliacao": {
+            "type": "integer"
+          },
+          "ano_escolar": {
+            "type": "integer"
+          },
+          "avaliacao_id": {
+            "type": "string"
+          },
+          "ciclo": {
+            "type": "string"
+          },
+          "codigo_caed_observado": {
+            "type": "string"
+          },
+          "componente": {
+            "type": "string"
+          },
+          "fonte_posicao": {
+            "type": "string"
+          },
+          "posicao": {
+            "type": "string"
+          },
+          "versao_posicao": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ano_avaliacao",
+          "ano_escolar",
+          "avaliacao_id",
+          "ciclo",
+          "codigo_caed_observado",
+          "componente",
+          "fonte_posicao",
+          "posicao",
+          "versao_posicao"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "versao_schema": {
+      "const": "airam-curriculo-t04-v1"
+    },
+    "vinculos_posicoes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ano_avaliacao": {
+            "type": "integer"
+          },
+          "ano_avaliado": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ano_tabela": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "avaliacao_id": {
+            "type": "string"
+          },
+          "bncc": {
+            "type": "object",
+            "properties": {
+              "anos": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "codigo": {
+                "type": "string"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "documento": {
+                "type": "string"
+              },
+              "fonte": {
+                "type": "object",
+                "properties": {
+                  "arquivo": {
+                    "type": "string"
+                  },
+                  "documento": {
+                    "type": "string"
+                  },
+                  "localizador": {
+                    "type": "string"
+                  },
+                  "localizador_pdf": {
+                    "type": "string"
+                  },
+                  "proveniencia": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "arquivo",
+                  "documento",
+                  "localizador",
+                  "localizador_pdf",
+                  "proveniencia"
+                ],
+                "additionalProperties": false
+              },
+              "objetos_conhecimento": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "organizacao": {
+                "type": "object",
+                "properties": {
+                  "campos_atuacao": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "pratica_linguagem": {
+                    "type": "string"
+                  },
+                  "tipo": {
+                    "type": "string"
+                  },
+                  "unidade_tematica": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "tipo"
+                ],
+                "additionalProperties": false
+              },
+              "proveniencia_dataset": {
+                "type": "object",
+                "properties": {
+                  "arquivo": {
+                    "type": "string"
+                  },
+                  "commit": {
+                    "type": "string"
+                  },
+                  "documento": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string"
+                  },
+                  "sha256_git": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "arquivo",
+                  "commit",
+                  "documento",
+                  "sha256",
+                  "sha256_git"
+                ],
+                "additionalProperties": false
+              },
+              "texto": {
+                "type": "string"
+              },
+              "vigencia": {
+                "type": "object",
+                "properties": {
+                  "ate": {
+                    "type": "null"
+                  },
+                  "desde": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "ate",
+                  "desde",
+                  "status"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "anos",
+              "codigo",
+              "componente",
+              "documento",
+              "fonte",
+              "objetos_conhecimento",
+              "organizacao",
+              "proveniencia_dataset",
+              "texto",
+              "vigencia"
+            ],
+            "additionalProperties": false
+          },
+          "ciclo_avaliado": {
+            "type": "string"
+          },
+          "ciclos_matriz": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "codigo_bncc": {
+            "type": "string"
+          },
+          "codigo_caed": {
+            "type": "string"
+          },
+          "componente": {
+            "type": "string"
+          },
+          "fonte_matriz": {
+            "type": "string"
+          },
+          "fonte_posicao": {
+            "type": "string"
+          },
+          "localizador_bncc": {
+            "type": "object",
+            "properties": {
+              "arquivo": {
+                "type": "string"
+              },
+              "documento": {
+                "type": "string"
+              },
+              "localizador": {
+                "type": "string"
+              },
+              "localizador_pdf": {
+                "type": "string"
+              },
+              "proveniencia": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "arquivo",
+              "documento",
+              "localizador",
+              "localizador_pdf",
+              "proveniencia"
+            ],
+            "additionalProperties": false
+          },
+          "nota_integracao": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "pagina_matriz": {
+                      "type": "integer"
+                    },
+                    "texto": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "pagina_matriz",
+                    "texto"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ocorrencia_id": {
+            "type": "string"
+          },
+          "pagina_matriz": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "peso_analitico": {
+            "type": "number"
+          },
+          "posicao": {
+            "type": "string"
+          },
+          "posicao_id": {
+            "type": "string"
+          },
+          "ressalva": {
+            "type": "string"
+          },
+          "sha256_pdf": {
+            "type": "string"
+          },
+          "status_bncc": {
+            "type": "string"
+          },
+          "status_contextual": {
+            "type": "string"
+          },
+          "status_semantico": {
+            "type": "string"
+          },
+          "texto_bncc": {
+            "type": "string"
+          },
+          "texto_caed": {
+            "type": "string"
+          },
+          "versao_posicao": {
+            "type": "string"
+          },
+          "vinculo_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ano_avaliacao",
+          "ano_avaliado",
+          "ano_tabela",
+          "avaliacao_id",
+          "bncc",
+          "ciclo_avaliado",
+          "ciclos_matriz",
+          "codigo_bncc",
+          "codigo_caed",
+          "componente",
+          "fonte_matriz",
+          "fonte_posicao",
+          "localizador_bncc",
+          "nota_integracao",
+          "ocorrencia_id",
+          "pagina_matriz",
+          "peso_analitico",
+          "posicao",
+          "posicao_id",
+          "ressalva",
+          "sha256_pdf",
+          "status_bncc",
+          "status_contextual",
+          "status_semantico",
+          "texto_bncc",
+          "texto_caed",
+          "versao_posicao",
+          "vinculo_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "bncc",
+    "contagens",
+    "fontes",
+    "ocorrencias_matriz",
+    "politica",
+    "posicoes",
+    "versao_schema",
+    "vinculos_posicoes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Checkpoint curricular Airam T04 v1 (interface observada)"
+}

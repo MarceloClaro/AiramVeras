@@ -1,0 +1,316 @@
+EEEEEEEEEEEEFFFFFFFFFFFF                                                 [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_inventario_real_tem_ocorrencias_independentes_com_proveniencia _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-3-want0] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-4-want1] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-3-want2] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-4-want3] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-5-want4] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-3-want5] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-4-want6] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-5-want7] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-4-want8] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ ERROR at setup of test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-5-want9] _
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__ ERROR at setup of test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i ___
+tests\test_matriz_cnca.py:23: in ocorrencias
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+================================== FAILURES ===================================
+__________ test_bncc_canonica_preserva_texto_e_localizador_separado ___________
+tests\test_matriz_cnca.py:62: in test_bncc_canonica_preserva_texto_e_localizador_separado
+    data = api('bncc', 'carregar_bncc')(ROOT.parent / 'bncc-dados', COMMIT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: bncc.carregar_bncc
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'bncc'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____________________ test_bncc_recusa_commit_divergente ______________________
+tests\test_matriz_cnca.py:72: in test_bncc_recusa_commit_divergente
+    api('bncc', 'carregar_bncc')(ROOT.parent / 'bncc-dados', '0' * 40)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: bncc.carregar_bncc
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'bncc'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_T26_h01_nao_confunde_ano_componente_ou_avaliacao ____________
+tests\test_vinculos.py:38: in test_T26_h01_nao_confunde_ano_componente_ou_avaliacao
+    result = link(positions, occurrences)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__________ test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes ___________
+tests\test_vinculos.py:47: in test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+    result = link([pos(4)], occurrences,
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______________ test_T28_fonte_anterior_nao_vira_ocorrencia_5_ano ______________
+tests\test_vinculos.py:54: in test_T28_fonte_anterior_nao_vira_ocorrencia_5_ano
+    result = link([pos(5, '3EF11_M')], [occurrence(3, '3EF11_M'), occurrence(4, '3EF11_M', pagina=26)])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_______ test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc0] _______
+tests\test_vinculos.py:62: in test_T29_inexistente_ou_inativo_permanece_nao_confirmado
+    row = link([pos()], [occurrence()], bncc)[0]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_______ test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1] _______
+tests\test_vinculos.py:62: in test_T29_inexistente_ou_inativo_permanece_nao_confirmado
+    row = link([pos()], [occurrence()], bncc)[0]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____________ test_T30_ressalva_semantica_preserva_os_dois_textos _____________
+tests\test_vinculos.py:69: in test_T30_ressalva_semantica_preserva_os_dois_textos
+    result = link([pos(1, '1EF10_P', 'LEITURA')],
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_multimapeamento_tem_peso_unitario_sem_resultados_replicados _______
+tests\test_vinculos.py:83: in test_multimapeamento_tem_peso_unitario_sem_resultados_replicados
+    rows = link([p], [occurrence(codes=['EF03MA05', 'EF02MA06'])],
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ test_ciclo_sem_marca_nao_confirma_e_posicao_sem_fonte_tem_cobertura_explicita _
+tests\test_vinculos.py:91: in test_ciclo_sem_marca_nao_confirma_e_posicao_sem_fonte_tem_cobertura_explicita
+    rows = link([pos(), pos(5, '5EF99_M')], [occurrence(ciclos=['II'])])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_rejeita_posicao_duplicada_em_vez_de_multiplicar _____________
+tests\test_vinculos.py:99: in test_rejeita_posicao_duplicada_em_vez_de_multiplicar
+    link([pos(), pos()], [occurrence()])
+tests\test_vinculos.py:30: in link
+    return api('vinculos', 'vincular_posicoes')(positions, occurrences,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: vinculos.vincular_posicoes
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'vinculos'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_______ test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes ________
+tests\test_vinculos.py:103: in test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes
+    occurrences = api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_matriz_cnca.py:15: in api
+    assert importlib.util.find_spec('airam.' + module) is not None, f'Funcionalidade ausente: {module}.{name}'
+E   AssertionError: Funcionalidade ausente: matriz_cnca.extrair_ocorrencias
+E   assert None is not None
+E    +  where None = <function find_spec at 0x000001DA27C6BA60>(('airam.' + 'matriz_cnca'))
+E    +    where <function find_spec at 0x000001DA27C6BA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+=========================== short test summary info ===========================
+FAILED tests/test_matriz_cnca.py::test_bncc_canonica_preserva_texto_e_localizador_separado
+FAILED tests/test_matriz_cnca.py::test_bncc_recusa_commit_divergente - Assert...
+FAILED tests/test_vinculos.py::test_T26_h01_nao_confunde_ano_componente_ou_avaliacao
+FAILED tests/test_vinculos.py::test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+FAILED tests/test_vinculos.py::test_T28_fonte_anterior_nao_vira_ocorrencia_5_ano
+FAILED tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc0]
+FAILED tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1]
+FAILED tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos
+FAILED tests/test_vinculos.py::test_multimapeamento_tem_peso_unitario_sem_resultados_replicados
+FAILED tests/test_vinculos.py::test_ciclo_sem_marca_nao_confirma_e_posicao_sem_fonte_tem_cobertura_explicita
+FAILED tests/test_vinculos.py::test_rejeita_posicao_duplicada_em_vez_de_multiplicar
+FAILED tests/test_vinculos.py::test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes
+ERROR tests/test_matriz_cnca.py::test_inventario_real_tem_ocorrencias_independentes_com_proveniencia
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-3-want0]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-4-want1]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-3-want2]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-4-want3]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-5-want4]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-3-want5]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-4-want6]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-5-want7]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-4-want8]
+ERROR tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-5-want9]
+ERROR tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+12 failed, 12 errors in 0.45s

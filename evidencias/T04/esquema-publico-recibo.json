@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:34:35.506058+00:00",
+  "snapshot": "esquema-publico-antes.json",
+  "snapshot_sha256": "bff71c595a00022b5ebbb732b720961713ee0c090198c7bde98c2b747c764a4f",
+  "log_sha256": "4a9bdf0b8a2793d21c3ff6a51271924fe68ee8d8896df1d8f46e6771632d4f6a"
+}

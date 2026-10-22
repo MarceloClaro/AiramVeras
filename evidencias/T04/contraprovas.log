@@ -1,0 +1,62 @@
+{"estado": "RED", "fase_solicitada": "RED", "codigo_saida": 1, "fim": "2026-10-22T15:30:31.227518+00:00", "snapshot": "mutacao-centro_ciclo-antes.json", "snapshot_sha256": "2933b74885ad528222eb3f88194824e71be2e16b0606070d2b290eb327804276", "log_sha256": "97ac83bcadbabbbf4a0ec27c2c9ba0a03e704464c9d7910702a2cc88a6198d26"}
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i ____________
+tests\test_matriz_cnca.py:57: in test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:73: in extrair_ocorrencias
+    raise ValueError(f'Celula incompleta na pagina publica {number}')
+E   ValueError: Celula incompleta na pagina publica 7
+=========================== short test summary info ===========================
+FAILED tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+1 failed in 0.93s
+
+{"estado": "RED", "fase_solicitada": "RED", "codigo_saida": 1, "fim": "2026-10-22T15:30:32.504878+00:00", "snapshot": "mutacao-uniao_global-antes.json", "snapshot_sha256": "22dcffa455cacadecba0fb36dd8db5d58862c544b6f4b1c769474d5142c3385a", "log_sha256": "51499edc1edf60fdf624bb930431e78e1d912261006d784155cd7c16769f0383"}
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes ___________
+tests\test_vinculos.py:49: in test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+    assert [(v['codigo_bncc'], v['texto_caed'], v['pagina_matriz']) for v in result] == [
+E   AssertionError: assert [('EF02MA06',...oficial', 25)] == [('EF03MA05',...oficial', 25)]
+E     
+E     At index 0 diff: ('EF02MA06', 'Descritor contextual A', 23) != ('EF03MA05', 'Outro texto oficial', 25)
+E     Left contains 2 more items, first extra item: ('EF03MA05', 'Descritor contextual A', 23)
+E     Use -v to get more diff
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+1 failed in 0.14s
+
+{"estado": "RED", "fase_solicitada": "RED", "codigo_saida": 1, "fim": "2026-10-22T15:30:33.679020+00:00", "snapshot": "mutacao-bncc_inativa-antes.json", "snapshot_sha256": "a7dc4c6480a571269c264ea00b9a8dfa2299ba50a2bd616516a56a434f12d393", "log_sha256": "0d7e7050885a5d7d940bcfb5a53d7f484233afb9e9453a6268ea14beeaaf8676"}
+.F                                                                       [100%]
+================================== FAILURES ===================================
+_______ test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1] _______
+tests\test_vinculos.py:64: in test_T29_inexistente_ou_inativo_permanece_nao_confirmado
+    assert row['status_bncc'] == 'nao_confirmado'
+E   AssertionError: assert 'confirmado' == 'nao_confirmado'
+E     
+E     - nao_confirmado
+E     ? ----
+E     + confirmado
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1]
+1 failed, 1 passed in 0.12s
+
+{"estado": "RED", "fase_solicitada": "RED", "codigo_saida": 1, "fim": "2026-10-22T15:30:34.823526+00:00", "snapshot": "mutacao-sem_ressalva-antes.json", "snapshot_sha256": "f22cb6f3b6e801e99b3f8d5d5286f9f56e13a277d179a834bfad85fec23a496f", "log_sha256": "c41110e0345090d6fa1d6a39df2fb2f9ecfee27e91344d1329b36a324a5e71dd"}
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_T30_ressalva_semantica_preserva_os_dois_textos _____________
+tests\test_vinculos.py:72: in test_T30_ressalva_semantica_preserva_os_dois_textos
+    assert result[0]['status_semantico'] == 'associacao_publicada_com_ressalva_semantica'
+E   AssertionError: assert 'associacao_p...ncia_integral' == 'associacao_p...lva_semantica'
+E     
+E     - associacao_publicada_com_ressalva_semantica
+E     + associacao_publicada_sem_equivalencia_integral
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos
+1 failed in 0.12s
+
+[{"mutacao": "centro_ciclo", "teste": "tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i", "codigo_saida": 1, "original_sha256": "1aa5ad8bbe915abc90a6bc4e21221fc7a4f4c44457e65bd2a2fe8b9b75ddc795", "detectada": true}, {"mutacao": "uniao_global", "teste": "tests/test_vinculos.py::test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes", "codigo_saida": 1, "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420", "detectada": true}, {"mutacao": "bncc_inativa", "teste": "tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado", "codigo_saida": 1, "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420", "detectada": true}, {"mutacao": "sem_ressalva", "teste": "tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos", "codigo_saida": 1, "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420", "detectada": true}]

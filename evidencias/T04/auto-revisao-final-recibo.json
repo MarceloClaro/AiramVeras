@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:36:52.259169+00:00",
+  "snapshot": "auto-revisao-final-antes.json",
+  "snapshot_sha256": "0ed5452b3119cf16621163e25227459fc3165140f45696c5a48f79a3e81f28b8",
+  "log_sha256": "45e693a98c569a0a6157108513614186825cfa4fa03507148bd14d7ce12ae9b3"
+}

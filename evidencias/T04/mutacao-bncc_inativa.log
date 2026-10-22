@@ -1,0 +1,13 @@
+.F                                                                       [100%]
+================================== FAILURES ===================================
+_______ test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1] _______
+tests\test_vinculos.py:64: in test_T29_inexistente_ou_inativo_permanece_nao_confirmado
+    assert row['status_bncc'] == 'nao_confirmado'
+E   AssertionError: assert 'confirmado' == 'nao_confirmado'
+E     
+E     - nao_confirmado
+E     ? ----
+E     + confirmado
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado[bncc1]
+1 failed, 1 passed in 0.12s

@@ -1,0 +1,9 @@
+{
+  "estado": "FALHA",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T15:29:14.641500+00:00",
+  "snapshot": "analise-real-01-antes.json",
+  "snapshot_sha256": "d6668482b5aba69b3963aa4497a89a720c831fe389aec10f15f00c7f9934fbef",
+  "log_sha256": "8fd6e9517e8a16c60d62977c0269d2a23c13c8b04d559e75e7cd8c5ba02eee63"
+}

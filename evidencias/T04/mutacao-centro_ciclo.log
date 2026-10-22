@@ -1,0 +1,15 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i ____________
+tests\test_matriz_cnca.py:57: in test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:73: in extrair_ocorrencias
+    raise ValueError(f'Celula incompleta na pagina publica {number}')
+E   ValueError: Celula incompleta na pagina publica 7
+=========================== short test summary info ===========================
+FAILED tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+1 failed in 0.93s

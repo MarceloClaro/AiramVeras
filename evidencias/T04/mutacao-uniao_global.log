@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes ___________
+tests\test_vinculos.py:49: in test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+    assert [(v['codigo_bncc'], v['texto_caed'], v['pagina_matriz']) for v in result] == [
+E   AssertionError: assert [('EF02MA06',...oficial', 25)] == [('EF03MA05',...oficial', 25)]
+E     
+E     At index 0 diff: ('EF02MA06', 'Descritor contextual A', 23) != ('EF03MA05', 'Outro texto oficial', 25)
+E     Left contains 2 more items, first extra item: ('EF03MA05', 'Descritor contextual A', 23)
+E     Use -v to get more diff
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes
+1 failed in 0.14s

@@ -1,0 +1,9 @@
+{
+  "estado": "GREEN",
+  "fase_solicitada": "GREEN",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:34:44.569435+00:00",
+  "snapshot": "green-focal-final-antes.json",
+  "snapshot_sha256": "e225ebf5a8dc97461f5e35f6e9427233bc46da59e566ebbe338429bccad39822",
+  "log_sha256": "83c30dbe51aebe2ecda25ceeeab79b8b0f30fcce9cb446deeca235263fa5e2f6"
+}
