@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-pares-restritos-t06-v1",
+  "title": "Plano e pares individuais T06 exclusivamente restritos",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["tipo", "ano_escolar", "ano_avaliacao", "ciclo", "familia", "instrumento", "x", "y", "unidade_x", "unidade_y", "pares", "selecao_texto"],
+    "properties": {
+      "pares": {"type": "array", "items": {"type": "object",
+        "required": ["aluno_local_id", "turma", "ano_escolar", "ano_avaliacao", "ciclo", "instrumento", "x", "y"],
+        "properties": {
+          "aluno_local_id": {"type": "string"}, "turma": {"type": "string"},
+          "ano_escolar": {"type": "integer"}, "ano_avaliacao": {"type": "integer"}, "ciclo": {"type": "string"}, "instrumento": {"type": "string"},
+          "x": {"type": ["number", "null"]}, "y": {"type": ["number", "null"]},
+          "acertos_restantes": {"type": ["integer", "null"]}, "oportunidades_restantes": {"type": ["integer", "null"]},
+          "blocos_restantes": {"type": "integer"}, "cobertura_completa": {"type": "boolean"}
+        }, "additionalProperties": false}}
+    }
+  }
+}

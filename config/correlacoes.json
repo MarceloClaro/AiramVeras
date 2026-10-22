@@ -1,0 +1,28 @@
+{
+  "versao": "t06-v1",
+  "seed": 260622,
+  "permutacoes": 19999,
+  "teto_exato": 50000,
+  "bootstrap": 2000,
+  "lote": 256,
+  "min_n_inferencia": 10,
+  "min_fracao_bootstrap_valida": 0.9,
+  "quantis": [0.025, 0.975],
+  "desenho": "Y_dentro_estrato_X_fixo",
+  "bilateral": "duas_caudas_duplicadas",
+  "strata": ["turma", "ano_escolar", "ano_avaliacao", "ciclo", "instrumento"],
+  "coeficientes": ["pearson", "spearman"],
+  "familias": "intercomponentes_por_ano_e_contexto;H_total_corrigido_por_ano_componente_instrumento",
+  "bh_m": "planejado;nao_testados_como_1_apenas_no_ajuste_e_q_publicado_null",
+  "sensibilidade_multiplicidade": "BY_por_familia_e_BH_global_sem_agrupar_dados",
+  "variaveis": [
+    {"nome": "leitura_taxa", "componente": "LEITURA", "tabela": "avaliacoes", "campo": "taxa", "unidade": "fracao_acertos_itens"},
+    {"nome": "matematica_taxa", "componente": "MATEMATICA", "tabela": "avaliacoes", "campo": "taxa", "unidade": "fracao_acertos_itens"},
+    {"nome": "escrita_nota", "componente": "ESCRITA", "tabela": "escrita", "campo_original": "Nota", "campo": "valor", "unidade": "nota_escrita"},
+    {"nome": "fluencia_palavras", "componente": "FLUENCIA", "tabela": "fluencia", "campo_original": "Palavras (leitura global)", "campo": "valor", "unidade": "palavras_total"},
+    {"nome": "fluencia_desconhecidas", "componente": "FLUENCIA", "tabela": "fluencia", "campo_original": "Palavras possivelmente desconhecidas", "campo": "valor", "unidade": "palavras_total"},
+    {"nome": "fluencia_texto_quantidade", "componente": "FLUENCIA", "tabela": "fluencia", "campo_original": "Texto (Palavras corretas)", "campo": "valor", "unidade": "palavras"},
+    {"nome": "fluencia_texto_percentual", "componente": "FLUENCIA", "tabela": "fluencia", "campo_original": "Texto (Palavras corretas)", "campo": "percentual", "unidade": "pontos_percentuais"},
+    {"nome": "fluencia_compreensao_acertos", "componente": "FLUENCIA", "tabela": "fluencia", "campo_original": "Texto (Compreensão)", "campo": "valor", "unidade": "acertos_itens"}
+  ]
+}
