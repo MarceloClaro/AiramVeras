@@ -62,3 +62,23 @@ def test_hash_invalido_nao_e_recibo_rastreavel(tmp_path, payload):
     payload["hashes_dados"] = {"fonte": "invalido"}
     with pytest.raises(ValueError, match="hash"):
         writer()(tmp_path / "recibo.json", payload)
+
+
+@pytest.mark.parametrize("versions", [
+    {"alunos": [{"nome": "PESSOA_SINTETICA"}]},
+    {"python": {"nome": "PESSOA_SINTETICA"}},
+    {"python": ["3.12"]},
+    {"python": 312},
+    {"python": None},
+    {"python": "   "},
+    {"": "3.12"},
+    {1: "3.12"},
+    {"nome invalido": "3.12"},
+])
+def test_versoes_rejeita_estruturas_e_identificadores_invalidos(tmp_path, payload, versions):
+    payload["versoes"] = versions
+    target = tmp_path / "recibo.json"
+    target.write_bytes(b"ARTEFATO_SINTETICO_PREEXISTENTE")
+    with pytest.raises(ValueError, match="versoes"):
+        writer()(target, payload)
+    assert target.read_bytes() == b"ARTEFATO_SINTETICO_PREEXISTENTE"

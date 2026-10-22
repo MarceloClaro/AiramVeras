@@ -1,0 +1,59 @@
+{
+  "incremento": "T01",
+  "requisitos": [
+    "R01",
+    "R21",
+    "R22",
+    "R24"
+  ],
+  "testes": [
+    "T01",
+    "T02",
+    "T03",
+    "T53",
+    "ZIP_RAIZ"
+  ],
+  "estado": "RED",
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_recibos.py",
+    "tests/test_registrar_execucao.py",
+    "-q"
+  ],
+  "timestamp": "2026-10-22T10:20:01.042676+00:00",
+  "codigo_saida": 1,
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+    "airam/recibos.py": "4fc0534ff76bc331d32bcff6b3df626ec994edd3f5151da271ebfddf57bfbe76",
+    "config/analise.json": "cc8f93abcb73b27ca3d44d2714f5d9e4010b643c0331a23e860e176ab47b943f",
+    "tests/test_catalogo.py": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e",
+    "tests/test_recibos.py": "da833654df5782a3c49b1652774f7837b9c661568b9c185dbc85e43933fba942",
+    "tests/test_registrar_execucao.py": "57e0b3eb1fabd7be025352439ad51572591495149d2171b1cff6fb2c2fb685e1"
+  },
+  "hashes_dados": {
+    "fixtures_sinteticas": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e"
+  },
+  "versoes": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "plataforma": "win32",
+    "pytest": "9.1.1"
+  },
+  "mutacao": null,
+  "artefatos": [
+    {
+      "caminho": "evidencias/T01/red_fix1-stdout.txt",
+      "sha256": "8435fd0ff6b42da3a4057cdc312093b8a47c92bffa6e847c9249139e46e07057"
+    },
+    {
+      "caminho": "evidencias/T01/red_fix1-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limites": [
+    "Fixtures sinteticas; verificacao de fontes reais registrada separadamente."
+  ],
+  "executor": "Codex executor local; perfil Core nao representa execucao"
+}

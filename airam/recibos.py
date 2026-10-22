@@ -36,7 +36,11 @@ def gravar_recibo(path: Path, payload: dict) -> str:
     for key in ("hashes_codigo", "hashes_dados"):
         if not isinstance(payload[key], dict) or not all(isinstance(k, str) and _hash(v) for k, v in payload[key].items()):
             raise ValueError("Recibo com hash invalido")
-    if not isinstance(payload["versoes"], dict):
+    if not isinstance(payload["versoes"], dict) or not all(
+        isinstance(key, str) and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", key)
+        and isinstance(value, str) and value.strip()
+        for key, value in payload["versoes"].items()
+    ):
         raise ValueError("Recibo sem rastreabilidade de versoes")
     if not isinstance(payload["artefatos"], list):
         raise ValueError("Recibo sem rastreabilidade de artefatos")

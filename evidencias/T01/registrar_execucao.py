@@ -17,7 +17,7 @@ stdout = folder / f"{stage.lower()}-stdout.txt"
 stderr = folder / f"{stage.lower()}-stderr.txt"
 stdout.write_text(result.stdout, encoding="utf-8")
 stderr.write_text(result.stderr, encoding="utf-8")
-code_paths = [*root.glob("airam/*.py"), *root.glob("tests/*.py"), *root.glob("config/*.json")]
+code_paths = [*root.glob("airam/*.py"), *root.glob("tests/*.py"), *root.glob("config/*.json"), Path(__file__).resolve()]
 hashes = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(code_paths)}
 versions = {"python": sys.version, "plataforma": sys.platform}
 from importlib.metadata import version
@@ -33,9 +33,11 @@ receipt = {
     "limites": ["Fixtures sinteticas; verificacao de fontes reais registrada separadamente."],
     "executor": "Codex executor local; perfil Core nao representa execucao",
 }
+if "FIX1" in stage:
+    receipt["testes"] += ["FIX1_I1_VERSOES_ESCALARES", "FIX1_M1_ESTADO_EFETIVO"]
 if state in {"GREEN", "REFACTOR"} and result.returncode != 0:
     receipt["estado"] = "VERIFICACAO_FALHOU"
     receipt["fase_solicitada"] = stage
 (folder / f"{stage.lower()}-recibo.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(json.dumps({"estado": stage, "codigo_saida": result.returncode, "stdout": stdout.relative_to(root).as_posix(), "resumo": result.stdout.splitlines()[-1:]}, ensure_ascii=False))
+print(json.dumps({"estado": receipt["estado"], "codigo_saida": result.returncode, "stdout": stdout.relative_to(root).as_posix(), "resumo": result.stdout.splitlines()[-1:]}, ensure_ascii=False))
 sys.exit(result.returncode)
