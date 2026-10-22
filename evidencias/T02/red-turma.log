@@ -1,0 +1,14 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_turma_agregada_usa_mesma_normalizacao_da_matricula ___________
+tests\test_ingestao.py:187: in test_turma_agregada_usa_mesma_normalizacao_da_matricula
+    result = api('ingestao', 'ler_exportacoes')(catalogo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\ingestao.py:268: in ler_exportacoes
+    _audit_aggregate(aggregate, result['avaliacoes'])
+airam\ingestao.py:116: in _audit_aggregate
+    raise ValueError('Agregado sem registros individuais correspondentes')
+E   ValueError: Agregado sem registros individuais correspondentes
+=========================== short test summary info ===========================
+FAILED tests/test_ingestao.py::test_turma_agregada_usa_mesma_normalizacao_da_matricula
+1 failed in 0.60s

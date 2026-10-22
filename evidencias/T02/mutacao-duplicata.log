@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________________ test_duplicata_intracomponente_rejeitada ___________________
+tests\test_ingestao.py:118: in test_duplicata_intracomponente_rejeitada
+    with pytest.raises(ValueError, match='uplic'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_ingestao.py::test_duplicata_intracomponente_rejeitada - Fai...
+1 failed in 0.28s

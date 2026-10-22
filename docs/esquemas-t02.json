@@ -1,0 +1,500 @@
+{
+  "agregados": {
+    "ano_avaliacao": [
+      "int"
+    ],
+    "ano_escolar": [
+      "int"
+    ],
+    "avaliacao_id": [
+      "str"
+    ],
+    "avaliados_observados": [
+      "int"
+    ],
+    "cadastros_observados": [
+      "int"
+    ],
+    "caminho": [
+      "str"
+    ],
+    "campos_identificadores_originais": [
+      "dict"
+    ],
+    "ciclo": [
+      "str"
+    ],
+    "componente": [
+      "str"
+    ],
+    "exportacao": [
+      "str"
+    ],
+    "fonte_id": [
+      "str"
+    ],
+    "linha_fonte": [
+      "int"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "medidas": [
+      "list"
+    ],
+    "nivel": [
+      "str"
+    ],
+    "origem_metadados": [
+      "dict"
+    ],
+    "participacao_calculada": [
+      "float"
+    ],
+    "sha256": [
+      "str"
+    ],
+    "sha256_exportacao": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "turma": [
+      "NoneType",
+      "str"
+    ]
+  },
+  "avaliacoes": {
+    "acertos": [
+      "NoneType",
+      "int"
+    ],
+    "acertos_observados": [
+      "NoneType",
+      "int"
+    ],
+    "ano_avaliacao": [
+      "int"
+    ],
+    "ano_escolar": [
+      "int"
+    ],
+    "avaliacao_id": [
+      "str"
+    ],
+    "avaliacao_local_id": [
+      "str"
+    ],
+    "blocos_disponiveis": [
+      "int"
+    ],
+    "blocos_previstos": [
+      "int"
+    ],
+    "caminho": [
+      "str"
+    ],
+    "campo_categoria_original": [
+      "str"
+    ],
+    "categoria": [
+      "NoneType",
+      "str"
+    ],
+    "categoria_bruto": [
+      "str"
+    ],
+    "ciclo": [
+      "str"
+    ],
+    "cobertura_completa": [
+      "bool"
+    ],
+    "componente": [
+      "str"
+    ],
+    "data_aplicacao": [
+      "NoneType"
+    ],
+    "data_exportacao": [
+      "str"
+    ],
+    "exportacao": [
+      "str"
+    ],
+    "fonte_id": [
+      "str"
+    ],
+    "linha_fonte": [
+      "int"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "matricula_local_id": [
+      "str"
+    ],
+    "oportunidades": [
+      "NoneType",
+      "int"
+    ],
+    "oportunidades_observadas": [
+      "NoneType",
+      "int"
+    ],
+    "origem_metadados": [
+      "dict"
+    ],
+    "participacao": [
+      "bool"
+    ],
+    "participacao_bruto": [
+      "str"
+    ],
+    "programa": [
+      "str"
+    ],
+    "sha256": [
+      "str"
+    ],
+    "sha256_exportacao": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "taxa": [
+      "NoneType",
+      "float"
+    ],
+    "turma": [
+      "str"
+    ]
+  },
+  "disponibilidade_arquivos": {
+    "ano_escolar": [
+      "int"
+    ],
+    "componente": [
+      "str"
+    ],
+    "disponibilidade": [
+      "bool"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "status_original": [
+      "str"
+    ]
+  },
+  "escrita": {
+    "ano_avaliacao": [
+      "int"
+    ],
+    "ano_escolar": [
+      "int"
+    ],
+    "aplicavel": [
+      "NoneType"
+    ],
+    "avaliacao_id": [
+      "str"
+    ],
+    "avaliacao_local_id": [
+      "str"
+    ],
+    "bruto": [
+      "str"
+    ],
+    "caminho": [
+      "str"
+    ],
+    "campo_original": [
+      "str"
+    ],
+    "ciclo": [
+      "str"
+    ],
+    "componente": [
+      "str"
+    ],
+    "denominador": [
+      "NoneType"
+    ],
+    "disponibilidade": [
+      "bool"
+    ],
+    "duracao_segundos": [
+      "NoneType"
+    ],
+    "exportacao": [
+      "str"
+    ],
+    "fonte_id": [
+      "str"
+    ],
+    "linha_fonte": [
+      "int"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "matricula_local_id": [
+      "str"
+    ],
+    "motivo_ausencia": [
+      "NoneType",
+      "str"
+    ],
+    "numerador": [
+      "NoneType"
+    ],
+    "participacao": [
+      "bool"
+    ],
+    "percentual": [
+      "NoneType"
+    ],
+    "percentual_unidade": [
+      "NoneType"
+    ],
+    "posicao": [
+      "NoneType"
+    ],
+    "sha256": [
+      "str"
+    ],
+    "sha256_exportacao": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "unidade": [
+      "str"
+    ],
+    "valor": [
+      "NoneType",
+      "float"
+    ]
+  },
+  "fluencia": {
+    "ano_avaliacao": [
+      "int"
+    ],
+    "ano_escolar": [
+      "int"
+    ],
+    "aplicavel": [
+      "NoneType"
+    ],
+    "avaliacao_id": [
+      "str"
+    ],
+    "avaliacao_local_id": [
+      "str"
+    ],
+    "bruto": [
+      "str"
+    ],
+    "caminho": [
+      "str"
+    ],
+    "campo_original": [
+      "str"
+    ],
+    "ciclo": [
+      "str"
+    ],
+    "componente": [
+      "str"
+    ],
+    "denominador": [
+      "NoneType",
+      "int"
+    ],
+    "disponibilidade": [
+      "bool"
+    ],
+    "duracao_segundos": [
+      "NoneType"
+    ],
+    "exportacao": [
+      "str"
+    ],
+    "fonte_id": [
+      "str"
+    ],
+    "linha_fonte": [
+      "int"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "matricula_local_id": [
+      "str"
+    ],
+    "motivo_ausencia": [
+      "NoneType",
+      "str"
+    ],
+    "numerador": [
+      "NoneType",
+      "int"
+    ],
+    "participacao": [
+      "bool"
+    ],
+    "percentual": [
+      "NoneType",
+      "float"
+    ],
+    "percentual_unidade": [
+      "NoneType",
+      "str"
+    ],
+    "posicao": [
+      "NoneType"
+    ],
+    "sha256": [
+      "str"
+    ],
+    "sha256_exportacao": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "unidade": [
+      "str"
+    ],
+    "valor": [
+      "NoneType",
+      "int"
+    ]
+  },
+  "habilidades": {
+    "ano_avaliacao": [
+      "int"
+    ],
+    "ano_escolar": [
+      "int"
+    ],
+    "aplicavel": [
+      "NoneType"
+    ],
+    "avaliacao_id": [
+      "str"
+    ],
+    "avaliacao_local_id": [
+      "str"
+    ],
+    "bruto": [
+      "str"
+    ],
+    "caminho": [
+      "str"
+    ],
+    "campo_original": [
+      "str"
+    ],
+    "ciclo": [
+      "str"
+    ],
+    "componente": [
+      "str"
+    ],
+    "denominador": [
+      "NoneType",
+      "int"
+    ],
+    "disponibilidade": [
+      "bool"
+    ],
+    "duracao_segundos": [
+      "NoneType"
+    ],
+    "exportacao": [
+      "str"
+    ],
+    "fonte_id": [
+      "str"
+    ],
+    "linha_fonte": [
+      "int"
+    ],
+    "manifesto": [
+      "str"
+    ],
+    "matricula_local_id": [
+      "str"
+    ],
+    "motivo_ausencia": [
+      "NoneType",
+      "str"
+    ],
+    "numerador": [
+      "NoneType",
+      "int"
+    ],
+    "participacao": [
+      "bool"
+    ],
+    "percentual": [
+      "NoneType"
+    ],
+    "percentual_unidade": [
+      "NoneType"
+    ],
+    "posicao": [
+      "str"
+    ],
+    "sha256": [
+      "str"
+    ],
+    "sha256_exportacao": [
+      "str"
+    ],
+    "sha256_manifesto": [
+      "str"
+    ],
+    "unidade": [
+      "str"
+    ],
+    "valor": [
+      "NoneType",
+      "int"
+    ]
+  },
+  "matriculas": {
+    "ano_escolar": [
+      "int"
+    ],
+    "escola_codigo": [
+      "str"
+    ],
+    "matricula_local_id": [
+      "str"
+    ],
+    "nome_bruto": [
+      "str"
+    ],
+    "nome_normalizado": [
+      "str"
+    ],
+    "origens": [
+      "list"
+    ],
+    "qualidade_vinculo": [
+      "str"
+    ],
+    "turma": [
+      "str"
+    ]
+  }
+}

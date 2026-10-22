@@ -1,0 +1,17 @@
+[
+  {
+    "mutacao": "mutacao-limite-contagens",
+    "codigo_saida": 1,
+    "sha256_restaurado": "26670879395dc8ef81e7c09ce92e5013f92f6c37f968a6fdef87595a0e6c1008"
+  },
+  {
+    "mutacao": "mutacao-duplicata",
+    "codigo_saida": 1,
+    "sha256_restaurado": "30943dd887b7852a56f25210a4833e6ba7b7cd3efbf8156809473a6069a7c824"
+  },
+  {
+    "mutacao": "mutacao-ausencia-zero",
+    "codigo_saida": 1,
+    "sha256_restaurado": "26670879395dc8ef81e7c09ce92e5013f92f6c37f968a6fdef87595a0e6c1008"
+  }
+]

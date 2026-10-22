@@ -1,0 +1,9 @@
+{
+  "timestamp_observacao": "2026-10-22T11:25:01.598630-03:00",
+  "limite": "Hashes observados na retomada; nao capturados antes do RED. red.json preservado. RED teve 28 falhas funcionais e 1 erro de fixture, nao 29 RED funcionais. Verificacao de retomada: 28 passed e 1 fixture failed; saida resumida registrada, sem promover para GREEN.",
+  "hashes_testes_observados": {
+    "tests/test_ingestao.py": "8290135697963aad1554bad4e9b82e191e2dad8973335f9b9545846638414732",
+    "tests/test_participacao.py": "06fbbdcd0a21de06d64e14332c2fa4de7b6444e83c9b83a90e9299348b2dd31a"
+  },
+  "sha256_red": "ae0fe7c70354945d28471be7da90e3019b098a0c7f2f84412014223cdc89cf55"
+}

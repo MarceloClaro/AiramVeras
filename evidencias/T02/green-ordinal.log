@@ -1,0 +1,15 @@
+...............F..............                                           [100%]
+================================== FAILURES ===================================
+___________ test_ano_do_csv_com_ordinal_nao_confunde_duracao_etapa ____________
+tests\test_ingestao.py:178: in test_ano_do_csv_com_ordinal_nao_confunde_duracao_etapa
+    result = api('ingestao', 'ler_exportacoes')(catalogo)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\ingestao.py:196: in ler_exportacoes
+    origins = _metadata(row, assessment)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\ingestao.py:92: in _metadata
+    raise ValueError('ano escolar incompativel com manifesto')
+E   ValueError: ano escolar incompativel com manifesto
+=========================== short test summary info ===========================
+FAILED tests/test_ingestao.py::test_ano_do_csv_com_ordinal_nao_confunde_duracao_etapa
+1 failed, 29 passed in 1.49s

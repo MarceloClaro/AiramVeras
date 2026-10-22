@@ -1,0 +1,24 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+______________ test_t19_hifen_nao_vira_zero_nem_imputa_motivo[] _______________
+tests\test_participacao.py:30: in test_t19_hifen_nao_vira_zero_nem_imputa_motivo
+    assert result['valor'] is None and result['numerador'] is None
+E   assert (0 is None)
+______________ test_t19_hifen_nao_vira_zero_nem_imputa_motivo[-] ______________
+tests\test_participacao.py:30: in test_t19_hifen_nao_vira_zero_nem_imputa_motivo
+    assert result['valor'] is None and result['numerador'] is None
+E   assert (0 is None)
+____________ test_t19_hifen_nao_vira_zero_nem_imputa_motivo[  - ] _____________
+tests\test_participacao.py:30: in test_t19_hifen_nao_vira_zero_nem_imputa_motivo
+    assert result['valor'] is None and result['numerador'] is None
+E   assert (0 is None)
+________ test_t19_hifen_nao_vira_zero_nem_imputa_motivo[sem resultado] ________
+tests\test_participacao.py:30: in test_t19_hifen_nao_vira_zero_nem_imputa_motivo
+    assert result['valor'] is None and result['numerador'] is None
+E   assert (0 is None)
+=========================== short test summary info ===========================
+FAILED tests/test_participacao.py::test_t19_hifen_nao_vira_zero_nem_imputa_motivo[]
+FAILED tests/test_participacao.py::test_t19_hifen_nao_vira_zero_nem_imputa_motivo[-]
+FAILED tests/test_participacao.py::test_t19_hifen_nao_vira_zero_nem_imputa_motivo[  - ]
+FAILED tests/test_participacao.py::test_t19_hifen_nao_vira_zero_nem_imputa_motivo[sem resultado]
+4 failed in 0.18s
