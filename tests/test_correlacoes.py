@@ -159,6 +159,29 @@ def test_T37_oportunidades_heterogeneas_nao_viram_total_comparavel():
     with pytest.raises(ValueError):api('total_sem_bloco')(rows,'H 01')
 
 
+def test_T37_linha_omitida_na_api_direta_nao_vira_cobertura_completa():
+    rows=[h('a','H 01',1,1),h('a','H 02',1,2),h('a','H 03',0,2),
+          h('b','H 01',0,1),h('b','H 02',1,2)]
+    with pytest.raises(ValueError,match='Composicao'):
+        api('total_sem_bloco')(rows,'H 01')
+
+
+def test_T37_linha_mascarada_preserva_composicao_mas_total_ausente():
+    rows=[h('a','H 01',1,1),h('a','H 02',1,2),h('a','H 03',0,2),
+          h('b','H 01',0,1),h('b','H 02',1,2),h('b','H 03',None,None)]
+    out=api('total_sem_bloco')(rows,'H 01')
+    assert [(r['blocos_restantes'],r['cobertura_completa'],r['y']) for r in out]==[(2,True,.25),(2,False,None)]
+
+
+@pytest.mark.parametrize('context_change',[{'ano_escolar':2},{'sha256':'b'*64}])
+def test_T37_composicoes_diferentes_permitidas_em_contextos_distintos(context_change):
+    first=[h('a','H 01',1,1),h('a','H 02',1,2),h('a','H 03',0,2)]
+    second=[h('a','H 01',0,1)|context_change,h('a','H 02',1,2)|context_change]
+    out=api('total_sem_bloco')(first+second,'H 01')
+    assert len({r['instrumento'] for r in out})==2
+    assert sorted((r['blocos_restantes'],r['cobertura_completa'],r['y']) for r in out)==[(1,True,.5),(2,True,.25)]
+
+
 def test_T38_auditoria_confere_valores_nao_apenas_ids():
     rows=pairs([0,1,2],[2,1,0]); bad=deepcopy(rows); bad[1]['y']=99
     assert api('auditar_pares')(rows,list(reversed(rows)))['pares_conferidos']==3
@@ -192,3 +215,11 @@ def test_R08_R15_planeja_todos_componentes_sem_converter_nota():
 def test_R15_recusa_alteracao_turma_entre_componentes():
     tables=fixture_tables(); tables['avaliacoes'][1]['turma']='B'
     with pytest.raises(ValueError):api('preparar_analises')(tables)
+
+
+def test_T37_preparador_preserva_recusa_de_linha_omitida():
+    tables=fixture_tables()
+    tables['habilidades']=[r for r in tables['habilidades']
+        if not (r['aluno_local_id']=='fixture-0' and r['posicao']=='H 02')]
+    with pytest.raises(ValueError,match='Composicao'):
+        api('preparar_analises')(tables)

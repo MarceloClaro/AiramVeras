@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T06\verificar_fix1.py", line 44, in <module>
+    need(new_hash==PINNED['restrito/t06/entrega/plano-pares.json'])
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T06\verificar_fix1.py", line 24, in need
+    if not ok:raise ValueError('Compatibilidade FIX1 divergiu; dados individuais suprimidos')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Compatibilidade FIX1 divergiu; dados individuais suprimidos

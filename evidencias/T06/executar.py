@@ -30,6 +30,9 @@ def main():
     paths += [ROOT / p for p in ['.gitattributes','.gitignore'] if (ROOT/p).exists()]
     sources = ROOT.parent / 'resultados-caed-ciclo-i-2026'
     inputs = [ROOT / p for p in ['restrito/t05/checkpoint.json', 'estatistica/t05/checkpoint.json', 'restrito/t03/tabelas.json', 'curriculo/t04/checkpoint.json']]
+    inputs += [ROOT / p for p in ['restrito/t06/entrega/plano-pares.json',
+        'estatistica/t06/entrega/checkpoint.json', 'estatistica/t06/entrega/associacoes.csv',
+        'estatistica/t06/entrega/plano.json', 'estatistica/t06/entrega/instrumentos.json']]
     inputs += [sources / 'manifesto_coleta.json', *sources.rglob('*.zip'), *sources.rglob('csv_originais/**/*.csv')]
     snapshot = dict(timestamp=datetime.now(timezone.utc).isoformat(), comando=[sys.executable, *args],
         python=platform.python_version(), versoes={d.metadata['Name']:d.version for d in importlib.metadata.distributions()},

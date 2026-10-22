@@ -1,0 +1,15 @@
+F....                                                                    [100%]
+================================== FAILURES ===================================
+______ test_T37_linha_omitida_na_api_direta_nao_vira_cobertura_completa _______
+
+    def test_T37_linha_omitida_na_api_direta_nao_vira_cobertura_completa():
+        rows=[h('a','H 01',1,1),h('a','H 02',1,2),h('a','H 03',0,2),
+              h('b','H 01',0,1),h('b','H 02',1,2)]
+>       with pytest.raises(ValueError,match='Composicao'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_correlacoes.py:165: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_correlacoes.py::test_T37_linha_omitida_na_api_direta_nao_vira_cobertura_completa
+1 failed, 4 passed, 22 deselected in 2.62s

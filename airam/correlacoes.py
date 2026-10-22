@@ -219,6 +219,11 @@ def total_sem_bloco(rows: list[dict], posicao: str) -> list[dict]:
         if r['disponibilidade']:denominators[context+(r['posicao'],)].add(r['denominador'])
     if any(len(ds)>1 for ds in denominators.values()):
         raise ValueError('Oportunidades de H incompativeis no instrumento')
+    compositions=defaultdict(set)
+    for key,group in groups.items():
+        compositions[key[:-1]].add(frozenset(r['posicao'] for r in group))
+    if any(len(sets)>1 for sets in compositions.values()):
+        raise ValueError('Composicao de H difere entre estudantes')
     out=[]
     for key,group in sorted(groups.items()):
         target=[r for r in group if r['posicao']==posicao]
@@ -319,10 +324,6 @@ def preparar_analises(tables: dict, *, config: dict | None=None) -> list[dict]:
         hgroups[tuple(row[k] for k in CONTEXTO)].append(row|dict(turma=_turma(av['turma'])))
     for context,rows in sorted(hgroups.items()):
         ctx=dict(zip(CONTEXTO,context)); iid=_instrumento(ctx)
-        by_student=defaultdict(set)
-        for r in rows:by_student[r['aluno_local_id']].add(r['posicao'])
-        if len({tuple(sorted(v)) for v in by_student.values()})!=1:
-            raise ValueError('Composicao de H difere entre estudantes')
         for position in sorted({r['posicao'] for r in rows}):
             plan.append(dict(tipo='H_total_corrigido',ano_escolar=ctx['ano_escolar'],ano_avaliacao=ctx['ano_avaliacao'],
                 ciclo=ctx['ciclo'],familia='H:'+iid,instrumento=iid,componente=ctx['componente'],
