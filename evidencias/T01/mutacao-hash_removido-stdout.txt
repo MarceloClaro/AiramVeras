@@ -1,0 +1,19 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______________________ test_t01_rejeita_byte_alterado ________________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-10/test_t01_rejeita_byte_alterado0')
+
+    def test_t01_rejeita_byte_alterado(tmp_path):
+        source = csv_source(tmp_path / "fonte.csv")
+        original_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+        api("validar_fonte")(source, original_hash, tmp_path)
+        source.write_bytes(source.read_bytes() + b"x")
+>       with pytest.raises(ValueError, match="hash"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_catalogo.py:40: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_catalogo.py::test_t01_rejeita_byte_alterado - Failed: DID N...
+1 failed in 0.34s

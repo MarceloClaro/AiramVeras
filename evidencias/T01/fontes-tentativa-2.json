@@ -1,0 +1,9 @@
+{
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "evidencias/T01/validar_fontes_reais.py"
+  ],
+  "codigo_saida": 1,
+  "estado": "VERIFICACAO_FALHOU",
+  "motivo": "Assercao de status das fontes atuais falhou: parser tomou duracao de 9 anos como etapa. Regressao real e correcao documentadas em red_ano e green_ano; nenhuma fonte alterada."
+}

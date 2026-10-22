@@ -1,0 +1,9 @@
+{
+  "artefatos_hash_reconciliados": 17,
+  "git_diff_check_fontes_exit": 0,
+  "excecao_diff_logs": "Stdout bruto de pytest preserva whitespace do terminal; nao editado para nao alterar evidencia.",
+  "originais_staged": false,
+  "dados_nominais_staged": false,
+  "fontes_locais_apenas": true,
+  "revisao": "Revisao de schema de catalogo/recibo, caminhos, status, fontes, manifestos, hashes e lista de arquivos staged; sem remoto configurado."
+}

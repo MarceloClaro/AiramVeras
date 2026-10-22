@@ -1,0 +1,13 @@
+{
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "evidencias/T01/registrar_execucao.py",
+    "RED",
+    "tests/test_catalogo.py",
+    "tests/test_recibos.py",
+    "-q"
+  ],
+  "codigo_saida": 1,
+  "estado": "CAPTURA_FALHOU",
+  "motivo": "Decodificacao UTF8 do stdout Windows falhou antes do recibo. Essa tentativa nao foi usada como RED funcional. Corrigido PYTHONUTF8 para subprocesso e executado RED novamente."
+}

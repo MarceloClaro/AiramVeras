@@ -15,3 +15,8 @@ relatorios/
 *.pdf
 .env*
 secrets*
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/

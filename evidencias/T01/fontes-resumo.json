@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-22T10:10:43.368989+00:00",
+  "fontes": 452,
+  "fontes_preservadas": true,
+  "contraprova_hashes": "hashlib.file_digest independente",
+  "zip_atuais": 18,
+  "csv_atuais": 54,
+  "status": {
+    "avaliacao_nao_identificada": 302,
+    "historica_nao_comparavel": 12,
+    "incompativel": 1,
+    "verificada": 73,
+    "documental_nao_comparavel": 64
+  },
+  "dados_nominais_no_schema": false,
+  "limites": [
+    "Nomes de arquivos e metadados de origem são conservados; nenhuma linha de aluno é publicada.",
+    "Validação documental local; não valida temporalidade nem resultados pedagógicos."
+  ]
+}

@@ -1,0 +1,18 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________________ test_zip_escape_rejeitado_sem_extrair ____________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-11/test_zip_escape_rejeitado_sem_0')
+
+    def test_zip_escape_rejeitado_sem_extrair(tmp_path):
+        archive = tmp_path / "escape.zip"
+        with zipfile.ZipFile(archive, "w") as z:
+            z.writestr("../fora.csv", "sintetico")
+>       with pytest.raises(ValueError, match="raiz"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_catalogo.py:107: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_catalogo.py::test_zip_escape_rejeitado_sem_extrair - Failed...
+1 failed in 0.42s
