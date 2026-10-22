@@ -1,0 +1,16 @@
+............FF..............                                             [100%]
+================================== FAILURES ===================================
+__________ test_nominais_aninhados_no_lado_pseudonimizado_bloqueiam ___________
+tests\test_identidade.py:111: in test_nominais_aninhados_no_lado_pseudonimizado_bloqueiam
+    with pytest.raises(ValueError, match='nominal'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+________________ test_nominal_inesperado_em_avaliacao_bloqueia ________________
+tests\test_identidade.py:119: in test_nominal_inesperado_em_avaliacao_bloqueia
+    with pytest.raises(ValueError, match='nominal'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_identidade.py::test_nominais_aninhados_no_lado_pseudonimizado_bloqueiam
+FAILED tests/test_identidade.py::test_nominal_inesperado_em_avaliacao_bloqueia
+2 failed, 26 passed in 0.69s

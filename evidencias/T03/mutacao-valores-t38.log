@@ -1,0 +1,28 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[acertos-99] __
+tests\test_pareamento.py:48: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[taxa-0.9] ___
+tests\test_pareamento.py:48: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[fonte_id-adulterada] _
+tests\test_pareamento.py:48: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[linha_fonte-900] _
+tests\test_pareamento.py:48: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[acertos-99]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[taxa-0.9]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[fonte_id-adulterada]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[linha_fonte-900]
+4 failed in 0.16s

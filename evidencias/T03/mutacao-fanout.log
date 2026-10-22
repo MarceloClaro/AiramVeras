@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano _________
+tests\test_pareamento.py:54: in test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano
+    with pytest.raises(ValueError, match='Duplicata'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_pareamento.py::test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano
+1 failed in 0.12s

@@ -1,0 +1,256 @@
+FFFFFFFFFFFFFFFFFFFFF                                                    [100%]
+================================== FAILURES ===================================
+________ test_t05_homonimos_turmas_distintas_e_t06_qualidade_e_origens ________
+tests\test_identidade.py:27: in test_t05_homonimos_turmas_distintas_e_t06_qualidade_e_origens
+    public, private = api('vincular_localmente')(rows, b'x' * 32)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____ test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows0] ____
+tests\test_identidade.py:46: in test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia
+    api('vincular_localmente')(rows, b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____ test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows1] ____
+tests\test_identidade.py:46: in test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia
+    api('vincular_localmente')(rows, b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________ test_hmac_estavel_normalizacao_e_dependencia_do_segredo ___________
+tests\test_identidade.py:50: in test_hmac_estavel_normalizacao_e_dependencia_do_segredo
+    f = api('vincular_localmente')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________________ test_chave_incompleta_bloqueia[change0] ___________________
+tests\test_identidade.py:64: in test_chave_incompleta_bloqueia
+    api('vincular_localmente')([row], b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________________ test_chave_incompleta_bloqueia[change1] ___________________
+tests\test_identidade.py:64: in test_chave_incompleta_bloqueia
+    api('vincular_localmente')([row], b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________________ test_chave_incompleta_bloqueia[change2] ___________________
+tests\test_identidade.py:64: in test_chave_incompleta_bloqueia
+    api('vincular_localmente')([row], b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________________ test_chave_incompleta_bloqueia[change3] ___________________
+tests\test_identidade.py:64: in test_chave_incompleta_bloqueia
+    api('vincular_localmente')([row], b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___________________ test_chave_incompleta_bloqueia[change4] ___________________
+tests\test_identidade.py:64: in test_chave_incompleta_bloqueia
+    api('vincular_localmente')([row], b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_segredo_persistente_nao_e_regenerado_se_invalido ____________
+tests\test_identidade.py:68: in test_segredo_persistente_nao_e_regenerado_se_invalido
+    f = api('carregar_ou_criar_segredo')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_t06_substitui_relacoes_sem_perder_medidas_e_bloqueia_orfaos _______
+tests\test_identidade.py:79: in test_t06_substitui_relacoes_sem_perder_medidas_e_bloqueia_orfaos
+    f = api('pseudonimizar_tabelas')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______________ test_relacao_medida_aplicacao_divergente_bloqueia ______________
+tests\test_identidade.py:105: in test_relacao_medida_aplicacao_divergente_bloqueia
+    api('pseudonimizar_tabelas')(tables, b'x' * 32)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_identidade.py:11: in api
+    assert importlib.util.find_spec('airam.identidade') is not None, 'Funcionalidade identidade ausente'
+E   AssertionError: Funcionalidade identidade ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.identidade')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_t38_pares_preservam_valores_proveniencia_e_ausencia_temporal ______
+tests\test_pareamento.py:29: in test_t38_pares_preservam_valores_proveniencia_e_ausencia_temporal
+    pairs, unmatched = api()(rows, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[acertos-99] __
+tests\test_pareamento.py:45: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    pairs, unmatched = api()(source, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[taxa-0.9] ___
+tests\test_pareamento.py:45: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    pairs, unmatched = api()(source, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[fonte_id-adulterada] _
+tests\test_pareamento.py:45: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    pairs, unmatched = api()(source, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[linha_fonte-900] _
+tests\test_pareamento.py:45: in test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids
+    pairs, unmatched = api()(source, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_________ test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano _________
+tests\test_pareamento.py:55: in test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano
+    api()(rows, 'leitura', 'matematica')
+    ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__ test_contextos_distintos_nao_pareiam_e_terceiro_componente_fora_universo ___
+tests\test_pareamento.py:60: in test_contextos_distintos_nao_pareiam_e_terceiro_componente_fora_universo
+    pairs, unmatched = api()(rows, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_________ test_nao_participante_preserva_mascara_sem_criar_resultado __________
+tests\test_pareamento.py:69: in test_nao_participante_preserva_mascara_sem_criar_resultado
+    pairs, unmatched = api()(rows, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____________ test_auditoria_rejeita_omissao_e_repeticao_de_pares _____________
+tests\test_pareamento.py:77: in test_auditoria_rejeita_omissao_e_repeticao_de_pares
+    pairs, unmatched = api()(rows, 'leitura', 'matematica')
+                       ^^^^^
+tests\test_pareamento.py:10: in api
+    assert importlib.util.find_spec('airam.pareamento') is not None, 'Funcionalidade pareamento ausente'
+E   AssertionError: Funcionalidade pareamento ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000020A052DBA60>('airam.pareamento')
+E    +    where <function find_spec at 0x0000020A052DBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+=========================== short test summary info ===========================
+FAILED tests/test_identidade.py::test_t05_homonimos_turmas_distintas_e_t06_qualidade_e_origens
+FAILED tests/test_identidade.py::test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows0]
+FAILED tests/test_identidade.py::test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows1]
+FAILED tests/test_identidade.py::test_hmac_estavel_normalizacao_e_dependencia_do_segredo
+FAILED tests/test_identidade.py::test_chave_incompleta_bloqueia[change0] - As...
+FAILED tests/test_identidade.py::test_chave_incompleta_bloqueia[change1] - As...
+FAILED tests/test_identidade.py::test_chave_incompleta_bloqueia[change2] - As...
+FAILED tests/test_identidade.py::test_chave_incompleta_bloqueia[change3] - As...
+FAILED tests/test_identidade.py::test_chave_incompleta_bloqueia[change4] - As...
+FAILED tests/test_identidade.py::test_segredo_persistente_nao_e_regenerado_se_invalido
+FAILED tests/test_identidade.py::test_t06_substitui_relacoes_sem_perder_medidas_e_bloqueia_orfaos
+FAILED tests/test_identidade.py::test_relacao_medida_aplicacao_divergente_bloqueia
+FAILED tests/test_pareamento.py::test_t38_pares_preservam_valores_proveniencia_e_ausencia_temporal
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[acertos-99]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[taxa-0.9]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[fonte_id-adulterada]
+FAILED tests/test_pareamento.py::test_t38_auditoria_rejeita_par_adulterado_mesmo_com_mesmos_ids[linha_fonte-900]
+FAILED tests/test_pareamento.py::test_duplicata_bloqueia_fanout_e_nao_faz_produto_cartesiano
+FAILED tests/test_pareamento.py::test_contextos_distintos_nao_pareiam_e_terceiro_componente_fora_universo
+FAILED tests/test_pareamento.py::test_nao_participante_preserva_mascara_sem_criar_resultado
+FAILED tests/test_pareamento.py::test_auditoria_rejeita_omissao_e_repeticao_de_pares
+21 failed in 0.75s

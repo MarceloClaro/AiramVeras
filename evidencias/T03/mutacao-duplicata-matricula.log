@@ -1,0 +1,18 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+____ test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows0] ____
+tests\test_identidade.py:45: in test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia
+    with pytest.raises(ValueError, match='Duplicata'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'Duplicata'
+E     Actual message: 'Colisao de pseudonimo local'
+____ test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows1] ____
+tests\test_identidade.py:45: in test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia
+    with pytest.raises(ValueError, match='Duplicata'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_identidade.py::test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows0]
+FAILED tests/test_identidade.py::test_t04_duplicata_normalizada_ou_referencia_repetida_bloqueia[rows1]
+2 failed in 0.16s
