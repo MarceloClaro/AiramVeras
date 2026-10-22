@@ -14,7 +14,7 @@ import re
 import unicodedata
 
 from airam.catalogo import _configuration, _inside, validar_fonte
-from airam.esquemas import medida, numero
+from airam.esquemas import medida, numero, validar_esquema
 
 
 def _normal(text: str) -> str:
@@ -191,6 +191,7 @@ def ler_exportacoes(catalogo: list[dict]) -> dict[str, list[dict]]:
         if family != expected_family:
             raise ValueError('Familia de componente incompativel')
         level = 'estudante' if 'Estudante' in header else 'turma' if 'Turma' in header else 'escola'
+        validar_esquema(header, family, level, assessment)
         roles[key].append(level)
         for line, row in enumerate(rows, start=2):
             origins = _metadata(row, assessment)

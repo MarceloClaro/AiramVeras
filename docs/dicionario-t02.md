@@ -54,3 +54,16 @@ Agregados conservam os campos de medidas e seus rótulos originais em `medidas`,
 Fluência confere total pré-leitor contra subníveis e total das três categorias principais contra avaliados, sem somar total e subníveis em um denominador. Não se espera soma exata de 100% de categorias arredondadas. Médias publicadas são conservadas, sem inferir regras internas de nota.
 
 Somente os CSVs canônicos de `csv_originais/` vinculados ao manifesto prioritário entram na ingestão. Manifesto, ZIPs e CSVs têm hashes revalidados. Cópias catalogadas fora desse conjunto permanecem no catálogo para auditoria. Cada exportação exige exatamente um CSV de escola, turma e estudante. Banco SQLite, CSVs pseudonimizados e CLI completa pertencem à T11.
+
+## Validação estrutural — correção FIX1
+
+`airam.esquemas.validar_esquema` exige o conjunto completo de colunas para família, nível e contexto AV12026/ciclo I/2026. Não existem colunas opcionais nesse contrato observado: categorias, Nota, aspectos, H, medidas agregadas e identificadores dos cabeçalhos documentados são obrigatórios. Escrita e fluência não recebem colunas de ano/componente que seus formatos não possuem; esses atributos continuam vindo do manifesto. A única alternativa de coluna é `Turmma` ou `Turma` nos individuais dessas duas famílias, exatamente uma delas. Coluna não prevista ou contexto novo exige revisão explícita do contrato.
+
+| Componente | Quantidade de posições H por ano 1–5, ou aspectos por ano 2–5 |
+|---|---|
+| Leitura | 9, 11, 11, 13, 16 H |
+| Matemática | 7, 11, 12, 15, 19 H |
+| Escrita | 5, 8, 4, 4 aspectos, além da Nota e categoria |
+| Fluência | quatro medidas individuais e perfil, nos anos 2–5 |
+
+A ausência de uma coluna é erro estrutural anterior à normalização das linhas, inclusive nos arquivos agregados. Uma coluna existente com célula `-` continua sendo resultado ausente, com suas máscaras originais. A comparação completa das taxas H/turma/escola com os arredondamentos do portal é pendência da T05; a T02 comprova parsing/contagens, participação explícita e consistência interna de perfis, sem declarar essa comparação estatística concluída.

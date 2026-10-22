@@ -5,6 +5,69 @@ from decimal import Decimal, InvalidOperation
 import re
 
 
+def validar_esquema(header: list[str], familia: str, nivel: str, avaliacao: dict) -> None:
+    """Contrato dos 36 cabeçalhos observados de AV12026/I/2026.
+
+    Campos de resultado e identificação são estruturais, mesmo quando todas as
+    células têm hífen. Não há colunas opcionais neste contrato. A única
+    alternativa é Turmma/Turma nos individuais de escrita/fluência. Colunas ou
+    contextos novos exigem revisão explícita de esquema, não parsing por acaso.
+    """
+    if (avaliacao.get('avaliacao_id'), avaliacao.get('ano_avaliacao'), avaliacao.get('ciclo')) != ('AV12026', 2026, 'I'):
+        raise ValueError('Esquema sem contrato para o contexto da avaliacao')
+    year, component = avaliacao.get('ano_escolar'), avaliacao.get('componente')
+    required = set()
+    if familia == 'habilidades':
+        counts = {'LEITURA': {1: 9, 2: 11, 3: 11, 4: 13, 5: 16},
+                  'MATEMATICA': {1: 7, 2: 11, 3: 12, 4: 15, 5: 19}}
+        count = counts.get(component, {}).get(year)
+        if count is None:
+            raise ValueError('Esquema sem contrato para ano e componente')
+        required.update(['Rede', 'Ano Escolar', 'Componente Curricular', 'Estado', 'Município'])
+        if nivel == 'estudante':
+            required.update(['Código da Turma', 'Turma', 'Estudante', 'Avaliado', 'Nível de aprendizagem'])
+            required.update(f'H {i:02}' for i in range(1, count + 1))
+        else:
+            required.update(['Avaliados (%)', 'Defasagem', 'Aprendizado intermediário', 'Aprendizado adequado'])
+            required.update(f'H {i:02} (%)' for i in range(1, count + 1))
+            required.update(['Regional', 'Escola'] if nivel == 'escola'
+                            else ['Código da Escola', 'Código da Turma', 'Turma'])
+    elif familia in {'escrita', 'fluencia'} and year in {2, 3, 4, 5}:
+        if familia == 'escrita':
+            aspects = {2: [(1, 1), (1, 2), (2, 1), (2, 2), (3, 1)],
+                       3: [(1, 1), (2, 1), (3, 1), (3, 2), (4, 1), (4, 2), (4, 3), (4, 4)],
+                       4: [(1, 1), (1, 2), (1, 3), (1, 4)],
+                       5: [(1, 1), (1, 2), (1, 3), (1, 4)]}[year]
+            required.update(f'Questão {q} - Aspecto {a}' for q, a in aspects)
+            if nivel == 'estudante':
+                required.update(['Nota', 'Categoria de escrita'])
+            else:
+                required.add('Nota média')
+                required.update(['Inadequado', 'Muito baixo', 'Baixo', 'Médio', 'Alto'] if year < 4
+                    else ['Inadequado', 'Insuficiente', 'Insatisfatório', 'Intermediário', 'Satisfatório', 'Avançado'])
+        elif nivel == 'estudante':
+            required.update(['Perfil de leitor', 'Palavras (leitura global)', 'Palavras possivelmente desconhecidas',
+                             'Texto (Palavras corretas)', 'Texto (Compreensão)'])
+        else:
+            required.update(['Pré-leitor (Total)', 'Pré-leitor (Nível 1)', 'Pré-leitor (Nível 2)',
+                             'Pré-leitor (Nível 3)', 'Pré-leitor (Nível 4)', 'Leitor Iniciante', 'Leitor Fluente'])
+        if nivel == 'estudante':
+            aliases = set(header) & {'Turmma', 'Turma'}
+            if len(aliases) != 1:
+                raise ValueError('Coluna de turma ausente ou ambigua no esquema')
+            required.update(aliases | {'Estudante', 'Participação'})
+        else:
+            required.update(['Previstos', 'Avaliados', '% Participação'])
+            required.update(['Escola'] if nivel == 'escola' else
+                ['Turma', 'Código do estado' if familia == 'escrita' else 'Código da escola'])
+    else:
+        raise ValueError('Esquema sem contrato para familia e ano')
+    if not required.issubset(header):
+        raise ValueError('Coluna obrigatoria ausente no esquema')
+    if set(header) - required:
+        raise ValueError('Coluna sem contrato no esquema')
+
+
 def numero(raw: str, *, percentual: bool = False, inteiro: bool = False) -> float | int:
     text = raw.strip()
     if percentual:

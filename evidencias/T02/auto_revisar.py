@@ -3,6 +3,7 @@ from datetime import datetime
 import hashlib
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 
@@ -14,6 +15,9 @@ def digest(path):
 
 
 def main():
+    suffix = '-' + sys.argv[1] if len(sys.argv) > 1 else ''
+    if suffix and not re.fullmatch(r'-[a-z0-9-]+', suffix):
+        raise ValueError('Rotulo de evidencia invalido')
     checkpoint = ROOT / 'restrito/t02/tabelas.json'
     data = json.loads(checkpoint.read_text(encoding='utf-8'))
     paths = [*(ROOT / 'airam').glob('*.py'), *(ROOT / 'tests').glob('*.py'),
@@ -31,10 +35,10 @@ def main():
         for artifact in record['artefatos']:
             assert digest(ROOT / artifact['caminho']) == artifact['sha256']
             artifacts_verified += 1
-    receipt = json.loads((ROOT / 'evidencias/T02/final.json').read_text(encoding='utf-8'))
+    receipt = json.loads((ROOT / ('evidencias/T02/final' + suffix + '.json')).read_text(encoding='utf-8'))
     for relative, expected in receipt['hashes_codigo'].items():
         assert digest(ROOT / relative) == expected
-    current = json.loads((ROOT / 'evidencias/T02/checkpoint-recibo.json').read_text(encoding='utf-8'))
+    current = json.loads((ROOT / ('evidencias/T02/checkpoint-recibo' + suffix + '.json')).read_text(encoding='utf-8'))
     for relative, expected in current['hashes_codigo'].items():
         assert digest(ROOT / relative) == expected
     ignored = subprocess.run(['git', 'check-ignore', 'restrito/t02/tabelas.json'],
@@ -52,7 +56,7 @@ def main():
                  'Zeros, nao participantes e campos ausentes separados; aplicabilidade nao inferida.',
                  'CSV canonico, manifesto, ZIP e metadados conferidos; fontes nao alteradas.',
                  'T03 recebe referencia local e nomes somente no checkpoint restrito.'])
-    (ROOT / 'evidencias/T02/auto-revisao.json').write_text(json.dumps(output, indent=2), encoding='utf-8')
+    (ROOT / ('evidencias/T02/auto-revisao' + suffix + '.json')).write_text(json.dumps(output, indent=2), encoding='utf-8')
     print('Auto revisao: hashes conferidos, nomes reais ausentes das saidas publicas, checkpoint ignorado')
 
 

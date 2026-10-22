@@ -26,6 +26,9 @@ def write(path, content):
 
 
 def main():
+    suffix = '-' + sys.argv[1] if len(sys.argv) > 1 else ''
+    if suffix and not re.fullmatch(r'-[a-z0-9-]+', suffix):
+        raise ValueError('Rotulo de evidencia invalido')
     timestamp = datetime.now().astimezone().isoformat()
     config = json.loads((ROOT / 'config/analise.json').read_text(encoding='utf-8-sig'))
     sources = (ROOT / config['raiz_fontes']).resolve()
@@ -136,12 +139,12 @@ def main():
         checkpoint=[dict(caminho=p.relative_to(ROOT).as_posix(), sha256=digest(p)) for p in files],
         hashes_fontes=before, hash_catalogo=digest(catalog_path), hash_manifesto=digest(manifest),
         fontes_inalteradas=True)
-    summary_path = ROOT / 'evidencias/T02/contraprova.json'
+    summary_path = ROOT / ('evidencias/T02/contraprova' + suffix + '.json')
     write(summary_path, summary)
-    gravar_recibo(ROOT / 'evidencias/T02/checkpoint-recibo.json', dict(incremento='T02',
+    gravar_recibo(ROOT / ('evidencias/T02/checkpoint-recibo' + suffix + '.json'), dict(incremento='T02',
         requisitos=['R01', 'R02', 'R03', 'R05', 'R08', 'R22'],
-        testes=['T07-T09', 'T12-T14', 'T18-T19', 'contraprova_54_csv'], estado='GREEN',
-        comando=['.venv/Scripts/python.exe evidencias/T02/auditar_checkpoint.py'],
+        testes=['T07-T09', 'T12-T14', 'T18-T19', 'contraprova_54_csv'] + (['FIX1_P2_esquemas_obrigatorios'] if suffix else []), estado='GREEN',
+        comando=['.venv/Scripts/python.exe evidencias/T02/auditar_checkpoint.py' + (' ' + sys.argv[1] if suffix else '')],
         timestamp=timestamp, codigo_saida=0,
         hashes_codigo={p.relative_to(ROOT).as_posix(): digest(p) for p in
                        [ROOT / 'airam/ingestao.py', ROOT / 'airam/esquemas.py', Path(__file__)]},

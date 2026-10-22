@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-10-22T11:51:13.011352-03:00",
+  "arquivos_publicos_inspecionados": 57,
+  "arquivos_com_nomes_reais": 0,
+  "artefatos_hashes_conferidos": 36,
+  "hashes_codigo_final_conferidos": 12,
+  "checkpoint_sha256": "82a24045cb75d85eeefd4394a73cb0dcec37dbbd8a542350fb04d7da0653d9f5",
+  "checkpoint_nominal_ignorado": true,
+  "limites": [
+    "Busca literal de nomes completos nao substitui revisao humana de sigilo.",
+    "Hashes historicos de RED/mutacoes nao sao substituidos pelos hashes atuais.",
+    "Relatorio local em .superpowers permanece ignorado; bootstrap alheio nao sera commitado."
+  ],
+  "revisao": [
+    "Interfaces e cinco tabelas centrais conferidas contra brief e regras do controlador.",
+    "Duplicatas intracompontente bloqueadas; origens entre componentes preservadas.",
+    "Zeros, nao participantes e campos ausentes separados; aplicabilidade nao inferida.",
+    "CSV canonico, manifesto, ZIP e metadados conferidos; fontes nao alteradas.",
+    "T03 recebe referencia local e nomes somente no checkpoint restrito."
+  ]
+}
