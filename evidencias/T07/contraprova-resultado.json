@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "metodo": "Fraction e lacos independentes sem airam/numpy",
+  "comparacoes": 129997,
+  "fontes": {
+    "curriculo/t04/checkpoint.json": "a4a73d2523d459d0dda102f6e4b6f14176be444717f428bb6d1772822ffd5796",
+    "restrito/t05/checkpoint.json": "6e6090bee2bd483822a75aa1c18f9599953d353dfaac8e28cf7b0983a6bdb95b",
+    "restrito/t07/checkpoint.json": "17916019d8a8787c95ec3db580aae7987b11c5c93a72c34ad13846a7bf1bb8fe",
+    "estatistica/t07/checkpoint.json": "71a0302d7ec9ae0f837069eea3b5c867052ff3885d5a9fb7491eee616abd9d58"
+  },
+  "contraprova_manual": {
+    "A": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0.5,
+        0,
+        0.5
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "P": [
+      1,
+      null,
+      0
+    ],
+    "dois_passos": [
+      0.5,
+      null,
+      0.5
+    ],
+    "massa_retorno": [
+      0.5,
+      0,
+      0.5
+    ],
+    "sem_retorno": [
+      0,
+      null,
+      1
+    ],
+    "par_dois_nos": "A^2=I; sem retorno inteiramente ausente",
+    "fanout": "H1 2/4 em duas ocorrencias: massa 1/2 em cada; BNCC duplicada nao acrescenta itens"
+  },
+  "blocos": 20,
+  "limites": "Validacao computacional local; nao e validacao pedagogica externa"
+}

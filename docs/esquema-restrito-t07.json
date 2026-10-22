@@ -1,0 +1,566 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "versao_schema",
+    "fontes",
+    "visoes_aluno",
+    "blocos"
+  ],
+  "properties": {
+    "versao_schema": {
+      "const": "airam-grafo-restrito-t07-v1"
+    },
+    "fontes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "visoes_aluno": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "avaliacao_id",
+          "ano_avaliacao",
+          "ciclo",
+          "ano_escolar",
+          "componente",
+          "fonte_id",
+          "sha256",
+          "exportacao",
+          "nivel",
+          "acertos",
+          "oportunidades",
+          "cadastros",
+          "avaliados",
+          "validas",
+          "ausentes",
+          "taxa_observada",
+          "taxa",
+          "aluno_local_id"
+        ],
+        "properties": {
+          "avaliacao_id": {
+            "type": "string"
+          },
+          "ano_avaliacao": {
+            "type": "integer"
+          },
+          "ciclo": {
+            "type": "string"
+          },
+          "ano_escolar": {
+            "type": "integer"
+          },
+          "componente": {
+            "type": "string"
+          },
+          "fonte_id": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "exportacao": {
+            "type": "string"
+          },
+          "nivel": {
+            "const": "aluno"
+          },
+          "acertos": {
+            "type": "integer"
+          },
+          "oportunidades": {
+            "type": "integer"
+          },
+          "cadastros": {
+            "type": "integer"
+          },
+          "avaliados": {
+            "type": "integer"
+          },
+          "validas": {
+            "type": "integer"
+          },
+          "ausentes": {
+            "type": "integer"
+          },
+          "taxa_observada": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "taxa": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "aluno_local_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "blocos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contexto",
+          "policy",
+          "grupos",
+          "matrizes",
+          "propagacoes"
+        ],
+        "properties": {
+          "contexto": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "avaliacao_id",
+              "ano_avaliacao",
+              "ciclo",
+              "ano_escolar",
+              "componente",
+              "fonte_id",
+              "sha256",
+              "exportacao"
+            ],
+            "properties": {
+              "avaliacao_id": {
+                "type": "string"
+              },
+              "ano_avaliacao": {
+                "type": "integer"
+              },
+              "ciclo": {
+                "type": "string"
+              },
+              "ano_escolar": {
+                "type": "integer"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "fonte_id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "exportacao": {
+                "type": "string"
+              }
+            }
+          },
+          "policy": {
+            "enum": [
+              "estrita",
+              "ressalvada"
+            ]
+          },
+          "grupos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "grupo_id",
+                "membros"
+              ],
+              "properties": {
+                "grupo_id": {
+                  "type": "string"
+                },
+                "membros": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "matrizes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "alunos",
+              "posicoes",
+              "C",
+              "D",
+              "P",
+              "observado_mask",
+              "Q",
+              "C_alocada",
+              "D_alocada",
+              "P_ocorrencias",
+              "mask_ocorrencias",
+              "cobertura_observada"
+            ],
+            "properties": {
+              "alunos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posicoes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "C": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "D": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "P": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "observado_mask": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "Q": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "C_alocada": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "D_alocada": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "P_ocorrencias": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "mask_ocorrencias": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "cobertura_observada": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "propagacoes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "1",
+              "2"
+            ],
+            "properties": {
+              "1": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "observado",
+                  "observado_mask",
+                  "propagado",
+                  "cobertura",
+                  "fontes_distintas",
+                  "passos",
+                  "kernel",
+                  "massa_retorno",
+                  "sem_retorno",
+                  "cobertura_sem_retorno"
+                ],
+                "properties": {
+                  "observado": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "observado_mask": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "propagado": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "cobertura": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "fontes_distintas": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "passos": {
+                    "enum": [
+                      1,
+                      2
+                    ]
+                  },
+                  "kernel": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "massa_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "sem_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "cobertura_sem_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              },
+              "2": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "observado",
+                  "observado_mask",
+                  "propagado",
+                  "cobertura",
+                  "fontes_distintas",
+                  "passos",
+                  "kernel",
+                  "massa_retorno",
+                  "sem_retorno",
+                  "cobertura_sem_retorno"
+                ],
+                "properties": {
+                  "observado": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "observado_mask": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "propagado": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "cobertura": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "fontes_distintas": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "passos": {
+                    "enum": [
+                      1,
+                      2
+                    ]
+                  },
+                  "kernel": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "massa_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "sem_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "cobertura_sem_retorno": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-grafo-restrito-t07-v1"
+}

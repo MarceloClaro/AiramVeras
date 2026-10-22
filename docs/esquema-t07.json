@@ -1,0 +1,677 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "versao_schema",
+    "fontes",
+    "checkpoint_restrito_sha256",
+    "politica",
+    "visoes",
+    "blocos"
+  ],
+  "properties": {
+    "versao_schema": {
+      "const": "airam-grafo-t07-v1"
+    },
+    "fontes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "checkpoint_restrito_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "politica": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "universo",
+        "B",
+        "A",
+        "propagacao",
+        "autorretorno",
+        "contagens",
+        "limites",
+        "grupos"
+      ],
+      "properties": {
+        "universo": {
+          "type": "string"
+        },
+        "B": {
+          "type": "string"
+        },
+        "A": {
+          "type": "string"
+        },
+        "propagacao": {
+          "type": "string"
+        },
+        "autorretorno": {
+          "type": "string"
+        },
+        "contagens": {
+          "type": "string"
+        },
+        "limites": {
+          "type": "string"
+        },
+        "grupos": {
+          "type": "string"
+        }
+      }
+    },
+    "visoes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "avaliacao_id",
+              "ano_avaliacao",
+              "ciclo",
+              "ano_escolar",
+              "componente",
+              "fonte_id",
+              "sha256",
+              "exportacao",
+              "nivel",
+              "acertos",
+              "oportunidades",
+              "cadastros",
+              "avaliados",
+              "validas",
+              "ausentes",
+              "taxa_observada",
+              "taxa",
+              "grupo_id"
+            ],
+            "properties": {
+              "avaliacao_id": {
+                "type": "string"
+              },
+              "ano_avaliacao": {
+                "type": "integer"
+              },
+              "ciclo": {
+                "type": "string"
+              },
+              "ano_escolar": {
+                "type": "integer"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "fonte_id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "exportacao": {
+                "type": "string"
+              },
+              "nivel": {
+                "const": "grupo"
+              },
+              "acertos": {
+                "type": "integer"
+              },
+              "oportunidades": {
+                "type": "integer"
+              },
+              "cadastros": {
+                "type": "integer"
+              },
+              "avaliados": {
+                "type": "integer"
+              },
+              "validas": {
+                "type": "integer"
+              },
+              "ausentes": {
+                "type": "integer"
+              },
+              "taxa_observada": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "taxa": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "grupo_id": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "avaliacao_id",
+              "ano_avaliacao",
+              "ciclo",
+              "ano_escolar",
+              "componente",
+              "fonte_id",
+              "sha256",
+              "exportacao",
+              "nivel",
+              "acertos",
+              "oportunidades",
+              "cadastros",
+              "avaliados",
+              "validas",
+              "ausentes",
+              "taxa_observada",
+              "taxa",
+              "turma"
+            ],
+            "properties": {
+              "avaliacao_id": {
+                "type": "string"
+              },
+              "ano_avaliacao": {
+                "type": "integer"
+              },
+              "ciclo": {
+                "type": "string"
+              },
+              "ano_escolar": {
+                "type": "integer"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "fonte_id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "exportacao": {
+                "type": "string"
+              },
+              "nivel": {
+                "const": "turma"
+              },
+              "acertos": {
+                "type": "integer"
+              },
+              "oportunidades": {
+                "type": "integer"
+              },
+              "cadastros": {
+                "type": "integer"
+              },
+              "avaliados": {
+                "type": "integer"
+              },
+              "validas": {
+                "type": "integer"
+              },
+              "ausentes": {
+                "type": "integer"
+              },
+              "taxa_observada": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "taxa": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "turma": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "avaliacao_id",
+              "ano_avaliacao",
+              "ciclo",
+              "ano_escolar",
+              "componente",
+              "fonte_id",
+              "sha256",
+              "exportacao",
+              "nivel",
+              "acertos",
+              "oportunidades",
+              "cadastros",
+              "avaliados",
+              "validas",
+              "ausentes",
+              "taxa_observada",
+              "taxa"
+            ],
+            "properties": {
+              "avaliacao_id": {
+                "type": "string"
+              },
+              "ano_avaliacao": {
+                "type": "integer"
+              },
+              "ciclo": {
+                "type": "string"
+              },
+              "ano_escolar": {
+                "type": "integer"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "fonte_id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "exportacao": {
+                "type": "string"
+              },
+              "nivel": {
+                "const": "escola"
+              },
+              "acertos": {
+                "type": "integer"
+              },
+              "oportunidades": {
+                "type": "integer"
+              },
+              "cadastros": {
+                "type": "integer"
+              },
+              "avaliados": {
+                "type": "integer"
+              },
+              "validas": {
+                "type": "integer"
+              },
+              "ausentes": {
+                "type": "integer"
+              },
+              "taxa_observada": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "taxa": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "blocos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contexto",
+          "policy",
+          "grafo",
+          "posicoes",
+          "alunos_cadastrados",
+          "celulas_observadas",
+          "celulas_ausentes",
+          "posicoes_associadas",
+          "propagacoes"
+        ],
+        "properties": {
+          "contexto": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "avaliacao_id",
+              "ano_avaliacao",
+              "ciclo",
+              "ano_escolar",
+              "componente",
+              "fonte_id",
+              "sha256",
+              "exportacao"
+            ],
+            "properties": {
+              "avaliacao_id": {
+                "type": "string"
+              },
+              "ano_avaliacao": {
+                "type": "integer"
+              },
+              "ciclo": {
+                "type": "string"
+              },
+              "ano_escolar": {
+                "type": "integer"
+              },
+              "componente": {
+                "type": "string"
+              },
+              "fonte_id": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "exportacao": {
+                "type": "string"
+              }
+            }
+          },
+          "policy": {
+            "enum": [
+              "estrita",
+              "ressalvada"
+            ]
+          },
+          "grafo": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "policy",
+              "contexto",
+              "nos",
+              "bncc",
+              "B",
+              "W",
+              "A",
+              "graus",
+              "massa_grau",
+              "posicoes_ocorrencias",
+              "vinculos_distintos",
+              "arestas_elegiveis"
+            ],
+            "properties": {
+              "policy": {
+                "enum": [
+                  "estrita",
+                  "ressalvada"
+                ]
+              },
+              "contexto": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "avaliacao_id",
+                  "ano_avaliacao",
+                  "ano_avaliado",
+                  "ciclo_avaliado",
+                  "componente",
+                  "fonte_posicao",
+                  "versao_posicao"
+                ],
+                "properties": {
+                  "avaliacao_id": {
+                    "type": "string"
+                  },
+                  "ano_avaliacao": {
+                    "type": "integer"
+                  },
+                  "ano_avaliado": {
+                    "type": "integer"
+                  },
+                  "ciclo_avaliado": {
+                    "type": "string"
+                  },
+                  "componente": {
+                    "type": "string"
+                  },
+                  "fonte_posicao": {
+                    "type": "string"
+                  },
+                  "versao_posicao": {
+                    "type": "string"
+                  }
+                }
+              },
+              "nos": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "fonte_matriz",
+                    "sha256_pdf",
+                    "ocorrencia_id"
+                  ],
+                  "properties": {
+                    "fonte_matriz": {
+                      "type": "string"
+                    },
+                    "sha256_pdf": {
+                      "type": "string"
+                    },
+                    "ocorrencia_id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "bncc": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "documento",
+                    "commit",
+                    "codigo_bncc"
+                  ],
+                  "properties": {
+                    "documento": {
+                      "type": "string"
+                    },
+                    "commit": {
+                      "type": "string"
+                    },
+                    "codigo_bncc": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "B": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "W": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "A": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "graus": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "massa_grau": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "posicoes_ocorrencias": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "vinculos_distintos": {
+                "type": "integer"
+              },
+              "arestas_elegiveis": {
+                "type": "integer"
+              }
+            }
+          },
+          "posicoes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "alunos_cadastrados": {
+            "type": "integer"
+          },
+          "celulas_observadas": {
+            "type": "integer"
+          },
+          "celulas_ausentes": {
+            "type": "integer"
+          },
+          "posicoes_associadas": {
+            "type": "integer"
+          },
+          "propagacoes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "1",
+              "2"
+            ],
+            "properties": {
+              "1": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "celulas_suportadas",
+                  "celulas_suportadas_sem_retorno",
+                  "celulas_com_retorno",
+                  "soma_massa_retorno",
+                  "fontes_por_no",
+                  "alunos_com_suporte_por_no",
+                  "alunos_com_suporte_sem_retorno_por_no"
+                ],
+                "properties": {
+                  "celulas_suportadas": {
+                    "type": "integer"
+                  },
+                  "celulas_suportadas_sem_retorno": {
+                    "type": "integer"
+                  },
+                  "celulas_com_retorno": {
+                    "type": "integer"
+                  },
+                  "soma_massa_retorno": {
+                    "type": "number"
+                  },
+                  "fontes_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "alunos_com_suporte_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "alunos_com_suporte_sem_retorno_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "2": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "celulas_suportadas",
+                  "celulas_suportadas_sem_retorno",
+                  "celulas_com_retorno",
+                  "soma_massa_retorno",
+                  "fontes_por_no",
+                  "alunos_com_suporte_por_no",
+                  "alunos_com_suporte_sem_retorno_por_no"
+                ],
+                "properties": {
+                  "celulas_suportadas": {
+                    "type": "integer"
+                  },
+                  "celulas_suportadas_sem_retorno": {
+                    "type": "integer"
+                  },
+                  "celulas_com_retorno": {
+                    "type": "integer"
+                  },
+                  "soma_massa_retorno": {
+                    "type": "number"
+                  },
+                  "fontes_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "alunos_com_suporte_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "alunos_com_suporte_sem_retorno_por_no": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-grafo-t07-v1"
+}

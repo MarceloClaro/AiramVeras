@@ -1,0 +1,9 @@
+{
+  "fase": "AUDITORIA",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T23:13:31.955768+00:00",
+  "snapshot": "staging02-antes.json",
+  "snapshot_sha256": "aebc0b1ec5ea71544c66839d6b658d53c6c3b3f008e4ce40dd9799a5c64b69e3",
+  "log": "staging02.log",
+  "log_sha256": "447cb2bd80bc023c79e45dfe3361fdfbccb1d304b57b06d1d65aac52539b0bba"
+}

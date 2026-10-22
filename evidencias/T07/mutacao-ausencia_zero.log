@@ -1,0 +1,21 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____ test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent ______
+
+    def test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent():
+        a = np.array([[0,.25,.75,0],[1,0,0,0],[1,0,0,0],[0,0,0,0]])
+        p = np.array([[.2,0,np.nan,.9],[np.nan]*4])
+        mask = np.isfinite(p)
+        result = api('propagar')(p,mask,a,1)
+>       np.testing.assert_allclose(result['propagado'][0], [0,.2,.2,np.nan], equal_nan=True)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0
+E       
+E       nan location mismatch:
+E        ACTUAL: array([0. , 0.2, 0.2, 0. ])
+E        DESIRED: array([0. , 0.2, 0.2, nan])
+
+tests\test_grafo.py:61: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_grafo.py::test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent
+1 failed in 0.80s

@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACOES",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T23:07:16.143795+00:00",
+  "snapshot": "mutacoes01-antes.json",
+  "snapshot_sha256": "c63c3c95af78be698bb19ec076df89c8de93648e0673fb46f63f445eaed7f24c",
+  "log": "mutacoes01.log",
+  "log_sha256": "8e332878b947e002ac9945c99fe5cbedd82d5286e286540bd8b0d36eec6806ab"
+}

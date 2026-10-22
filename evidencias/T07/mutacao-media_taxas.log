@@ -1,0 +1,19 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___ test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums ____
+
+    def test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums():
+        rows = [row('s1',1,1), row('s2',0,3), row('s3',1,2)]
+        groups = [{'grupo_id':'g1','membros':['s1','s2']},{'grupo_id':'g2','membros':['s2','s3']}]
+        fn = api()
+        views = fn(rows,'grupo',groups)
+        assert [(r['acertos'],r['oportunidades'],r['avaliados']) for r in views] == [(1,4,2),(1,5,2)]
+        school = fn(rows+[rows[1]],'escola',groups)[0]
+        assert (school['acertos'],school['oportunidades'],school['avaliados']) == (2,6,3)
+>       assert school['taxa_observada'] == 1/3
+E       assert 0.5 == (1 / 3)
+
+tests\test_agregacoes.py:30: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_agregacoes.py::test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums
+1 failed in 0.29s
