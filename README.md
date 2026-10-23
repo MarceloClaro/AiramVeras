@@ -1,4 +1,12 @@
-# Airam — SPEC-AIRAM-001
+# AiramVeras
+
+Repositório do projeto: [MarceloClaro/AiramVeras](https://github.com/MarceloClaro/AiramVeras).
+
+Especificação: [SPEC-AIRAM-001](specs/SPEC-AIRAM-001.md). As etapas 1 a 9 estão concluídas e revisadas; relatório, planilha nominal, CLI e liberação final estão em implementação.
+
+Os dados individuais e as planilhas nominais permanecem em armazenamento local ignorado pelo Git. O conjunto BNCC continua registrado como fonte curricular com versão fixada.
+
+## Registro inicial da Tarefa 1
 
 Tarefa 1: catálogo local de fontes e contrato de recibos. A Tarefa 1 não calcula resultados escolares, não realiza inferência e não estabelece identidade longitudinal.
 
