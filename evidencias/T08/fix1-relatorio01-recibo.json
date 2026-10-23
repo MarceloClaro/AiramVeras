@@ -1,0 +1,9 @@
+{
+  "fase": "DOCUMENTACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T16:05:03.106663+00:00",
+  "snapshot": "fix1-relatorio01-antes.json",
+  "snapshot_sha256": "35235abbd06d6ab864ffc28e68a1a70f941f62b3471d25ccc9c63f31dc045177",
+  "log": "fix1-relatorio01.log",
+  "log_sha256": "95aa08bd3a4e8ba630e9f04f297e393f3b090352bc111dc34147330beddfa66e"
+}

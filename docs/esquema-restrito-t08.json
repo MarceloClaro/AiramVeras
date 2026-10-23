@@ -1,5 +1,5 @@
 {
-  "$id": "airam-grupos-restrito-t08-v1",
+  "$id": "airam-grupos-restrito-t08-v1.1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
@@ -14693,6 +14693,169 @@
       },
       "type": "array"
     },
+    "proveniencia_fix1": {
+      "additionalProperties": false,
+      "properties": {
+        "base_commit": {
+          "type": "string"
+        },
+        "calculos_novos": {
+          "type": "string"
+        },
+        "calculos_reutilizados": {
+          "type": "string"
+        },
+        "checkpoints_anteriores_sha256": {
+          "additionalProperties": false,
+          "properties": {
+            "estatistica/t08/checkpoint.json": {
+              "type": "string"
+            },
+            "restrito/t08/checkpoint.json": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "estatistica/t08/checkpoint.json",
+            "restrito/t08/checkpoint.json"
+          ],
+          "type": "object"
+        },
+        "fix": {
+          "type": "string"
+        },
+        "modulo_perfis_atual_sha256": {
+          "type": "string"
+        },
+        "modulos_config_reutilizados_sha256": {
+          "additionalProperties": false,
+          "properties": {
+            "airam/__init__.py": {
+              "type": "string"
+            },
+            "airam/agregacoes.py": {
+              "type": "string"
+            },
+            "airam/bncc.py": {
+              "type": "string"
+            },
+            "airam/catalogo.py": {
+              "type": "string"
+            },
+            "airam/clusters.py": {
+              "type": "string"
+            },
+            "airam/contraprova.py": {
+              "type": "string"
+            },
+            "airam/correlacoes.py": {
+              "type": "string"
+            },
+            "airam/esquemas.py": {
+              "type": "string"
+            },
+            "airam/grafo.py": {
+              "type": "string"
+            },
+            "airam/identidade.py": {
+              "type": "string"
+            },
+            "airam/ingestao.py": {
+              "type": "string"
+            },
+            "airam/matriz_cnca.py": {
+              "type": "string"
+            },
+            "airam/metas.py": {
+              "type": "string"
+            },
+            "airam/metricas.py": {
+              "type": "string"
+            },
+            "airam/pareamento.py": {
+              "type": "string"
+            },
+            "airam/recibos.py": {
+              "type": "string"
+            },
+            "airam/vinculos.py": {
+              "type": "string"
+            },
+            "config/agrupamentos.json": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "airam/__init__.py",
+            "airam/agregacoes.py",
+            "airam/bncc.py",
+            "airam/catalogo.py",
+            "airam/clusters.py",
+            "airam/contraprova.py",
+            "airam/correlacoes.py",
+            "airam/esquemas.py",
+            "airam/grafo.py",
+            "airam/identidade.py",
+            "airam/ingestao.py",
+            "airam/matriz_cnca.py",
+            "airam/metas.py",
+            "airam/metricas.py",
+            "airam/pareamento.py",
+            "airam/recibos.py",
+            "airam/vinculos.py",
+            "config/agrupamentos.json"
+          ],
+          "type": "object"
+        },
+        "novos_ajustes_clusters": {
+          "type": "number"
+        },
+        "snapshot_ajustes_originais": {
+          "type": "string"
+        },
+        "snapshot_ajustes_sha256": {
+          "type": "string"
+        },
+        "versoes_verificadas": {
+          "additionalProperties": false,
+          "properties": {
+            "numpy": {
+              "type": "string"
+            },
+            "scikit-learn": {
+              "type": "string"
+            },
+            "scipy": {
+              "type": "string"
+            },
+            "threadpoolctl": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "numpy",
+            "scikit-learn",
+            "scipy",
+            "threadpoolctl"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "base_commit",
+        "calculos_novos",
+        "calculos_reutilizados",
+        "checkpoints_anteriores_sha256",
+        "fix",
+        "modulo_perfis_atual_sha256",
+        "modulos_config_reutilizados_sha256",
+        "novos_ajustes_clusters",
+        "snapshot_ajustes_originais",
+        "snapshot_ajustes_sha256",
+        "versoes_verificadas"
+      ],
+      "type": "object"
+    },
     "unidades_proprias": {
       "items": {
         "additionalProperties": false,
@@ -14832,17 +14995,41 @@
                         "cadastrados": {
                           "type": "number"
                         },
-                        "corte": {
+                        "cobertura_resultados": {
                           "type": "number"
                         },
+                        "com_categoria_original": {
+                          "type": "number"
+                        },
+                        "com_resultado": {
+                          "type": "number"
+                        },
+                        "corte": {
+                          "type": "null"
+                        },
+                        "criterio": {
+                          "type": "string"
+                        },
                         "elegiveis": {
+                          "type": "number"
+                        },
+                        "participantes": {
+                          "type": "number"
+                        },
+                        "sem_resultado": {
                           "type": "number"
                         }
                       },
                       "required": [
                         "cadastrados",
+                        "cobertura_resultados",
+                        "com_categoria_original",
+                        "com_resultado",
                         "corte",
-                        "elegiveis"
+                        "criterio",
+                        "elegiveis",
+                        "participantes",
+                        "sem_resultado"
                       ],
                       "type": "object"
                     }
@@ -15413,17 +15600,41 @@
                   "cadastrados": {
                     "type": "number"
                   },
-                  "corte": {
+                  "cobertura_resultados": {
                     "type": "number"
                   },
+                  "com_categoria_original": {
+                    "type": "number"
+                  },
+                  "com_resultado": {
+                    "type": "number"
+                  },
+                  "corte": {
+                    "type": "null"
+                  },
+                  "criterio": {
+                    "type": "string"
+                  },
                   "elegiveis": {
+                    "type": "number"
+                  },
+                  "participantes": {
+                    "type": "number"
+                  },
+                  "sem_resultado": {
                     "type": "number"
                   }
                 },
                 "required": [
                   "cadastrados",
+                  "cobertura_resultados",
+                  "com_categoria_original",
+                  "com_resultado",
                   "corte",
-                  "elegiveis"
+                  "criterio",
+                  "elegiveis",
+                  "participantes",
+                  "sem_resultado"
                 ],
                 "type": "object"
               },
@@ -15549,7 +15760,7 @@
       "type": "array"
     },
     "versao_schema": {
-      "const": "airam-grupos-restrito-t08-v1"
+      "const": "airam-grupos-restrito-t08-v1.1"
     }
   },
   "required": [
@@ -15558,6 +15769,7 @@
     "execucao",
     "fontes",
     "instrumentos",
+    "proveniencia_fix1",
     "unidades_proprias",
     "versao_schema"
   ],

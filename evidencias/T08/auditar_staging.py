@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -40,7 +41,8 @@ def main():
     if diff.returncode: raise ValueError('Whitespace staged divergente')
     report=dict(status='PASS',arquivos=len(paths),restrito_ignorado=ignored,hashes_staged=hashes,
         limite='Varredura por identificadores efetivos e igualdade de bytes; nao certifica ACL')
-    (ROOT/'evidencias/T08/staging-resultado.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    label=sys.argv[1] if len(sys.argv)>1 else 'staging-resultado.json'
+    (ROOT/'evidencias/T08'/label).write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(dict(status='PASS',arquivos=len(paths),restrito_ignorado=ignored)))
 
 

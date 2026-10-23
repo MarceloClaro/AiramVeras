@@ -32,6 +32,9 @@ def main():
     inputs = [ROOT / p for p in ['restrito/t05/checkpoint.json', 'estatistica/t05/checkpoint.json', 'curriculo/t04/checkpoint.json']]
     inputs += [sources / 'manifesto_coleta.json', *sources.rglob('*.zip'), *sources.rglob('csv_originais/**/*.csv')]
     inputs += [ROOT/p for p in ['restrito/t07/checkpoint.json','estatistica/t07/checkpoint.json','restrito/t08/checkpoint.json','estatistica/t08/checkpoint.json'] if (ROOT/p).exists()]
+    inputs += [p for root in ('restrito/t08/versoes/pre-fix1','estatistica/t08/versoes/pre-fix1')
+               for p in (ROOT/root).rglob('*') if p.is_file()]
+    inputs += [ROOT/'evidencias/T08/analise02-antes.json']
     snapshot = dict(timestamp=datetime.now(timezone.utc).isoformat(), comando=[sys.executable, *args],
         python=platform.python_version(), versoes={d.metadata['Name']:d.version for d in importlib.metadata.distributions()},
         head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),

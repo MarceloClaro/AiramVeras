@@ -1,8 +1,8 @@
 # T08 — perfis pedagógicos para revisão docente
 
-Versão v1. Perfis exploratórios locais; não são rótulos de capacidade, diagnósticos ou indicação de retenção. As duas metas são controles distintos. Escrita e fluência conservam as unidades originais. Integrantes e pequenos grupos permanecem somente no arquivo restrito, ignorado pelo Git.
+Versão airam-grupos-t08-v1.1. Perfis exploratórios locais; não são rótulos de capacidade, diagnósticos ou indicação de retenção. As duas metas são controles distintos. Escrita e fluência conservam as unidades originais. Integrantes e pequenos grupos permanecem somente no arquivo restrito, ignorado pelo Git.
 
-Checkpoint agregado SHA256: d298a8754ad6e896c7e1077dcccc35c963a90777d82f4fb40c90e2224e4cacc1.
+Checkpoint agregado SHA256: 8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e.
 
 ## Resultados principais
 
@@ -8449,7 +8449,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Alto": 16}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 96, "celulas_previstas": 96, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 16, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "corte": 0.8, "elegiveis": 28}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 96, "celulas_previstas": 96, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 16, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "cobertura_resultados": 1.0, "com_categoria_original": 28, "com_resultado": 28, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 28, "participantes": 28, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8514,7 +8514,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Inadequado": 6}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 18, "celulas_disponiveis": 18, "celulas_previstas": 36, "por_aluno": {"maximo": 0.5, "media": 0.5, "mediana": 0.5, "minimo": 0.5, "n": 6, "p10": 0.5}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "corte": 0.8, "elegiveis": 28}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 18, "celulas_disponiveis": 18, "celulas_previstas": 36, "por_aluno": {"maximo": 0.5, "media": 0.5, "mediana": 0.5, "minimo": 0.5, "n": 6, "p10": 0.5}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "cobertura_resultados": 1.0, "com_categoria_original": 28, "com_resultado": 28, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 28, "participantes": 28, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8575,7 +8575,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Médio": 5}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 30, "celulas_previstas": 30, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "corte": 0.8, "elegiveis": 28}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 30, "celulas_previstas": 30, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "cobertura_resultados": 1.0, "com_categoria_original": 28, "com_resultado": 28, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 28, "participantes": 28, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8638,7 +8638,7 @@ Observado: C=21; D=27; C/D=0.778.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.7777777777777778, "mediana": 1.0, "minimo": 0.0, "n": 9, "p10": 0.0}.
 Categorias originais: {"Iniciante": 9}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 9, "celulas_disponiveis": 27, "celulas_previstas": 36, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 9, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "corte": 0.8, "elegiveis": 28}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 9, "celulas_disponiveis": 27, "celulas_previstas": 36, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 9, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "cobertura_resultados": 1.0, "com_categoria_original": 28, "com_resultado": 28, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 28, "participantes": 28, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8689,7 +8689,7 @@ Observado: C=3; D=57; C/D=0.053.
 Distribuição das taxas individuais: {"maximo": 0.6666666666666666, "media": 0.05263157894736842, "mediana": 0.0, "minimo": 0.0, "n": 19, "p10": 0.0}.
 Categorias originais: {"Pré-leitor": 19}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 19, "celulas_disponiveis": 57, "celulas_previstas": 76, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 19, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "corte": 0.8, "elegiveis": 28}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 19, "celulas_disponiveis": 57, "celulas_previstas": 76, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 19, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 28, "cobertura_resultados": 1.0, "com_categoria_original": 28, "com_resultado": 28, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 28, "participantes": 28, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8742,7 +8742,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Alto": 12}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 108, "celulas_previstas": 108, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 12, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "corte": 0.8, "elegiveis": 24}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 108, "celulas_previstas": 108, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 12, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "cobertura_resultados": 1.0, "com_categoria_original": 24, "com_resultado": 24, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 24, "participantes": 24, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8822,7 +8822,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Inadequado": 9}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 81, "celulas_previstas": 81, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 9, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "corte": 0.8, "elegiveis": 24}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 81, "celulas_previstas": 81, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 9, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "cobertura_resultados": 1.0, "com_categoria_original": 24, "com_resultado": 24, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 24, "participantes": 24, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8908,7 +8908,7 @@ Observado: C=14; D=15; C/D=0.933.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.9333333333333333, "mediana": 1.0, "minimo": 0.6666666666666666, "n": 5, "p10": 0.8}.
 Categorias originais: {"Fluente": 5}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 20, "celulas_previstas": 20, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "corte": 0.8, "elegiveis": 24}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 20, "celulas_previstas": 20, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "cobertura_resultados": 1.0, "com_categoria_original": 24, "com_resultado": 24, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 24, "participantes": 24, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -8959,7 +8959,7 @@ Observado: C=15; D=15; C/D=1.000.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}.
 Categorias originais: {"Iniciante": 5}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 2, "celulas_disponiveis": 18, "celulas_previstas": 20, "por_aluno": {"maximo": 1.0, "media": 0.9, "mediana": 1.0, "minimo": 0.75, "n": 5, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "corte": 0.8, "elegiveis": 24}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 2, "celulas_disponiveis": 18, "celulas_previstas": 20, "por_aluno": {"maximo": 1.0, "media": 0.9, "mediana": 1.0, "minimo": 0.75, "n": 5, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "cobertura_resultados": 1.0, "com_categoria_original": 24, "com_resultado": 24, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 24, "participantes": 24, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9015,7 +9015,7 @@ Observado: C=9; D=42; C/D=0.214.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.21428571428571427, "mediana": 0.0, "minimo": 0.0, "n": 14, "p10": 0.0}.
 Categorias originais: {"Pré-leitor": 14}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 14, "celulas_disponiveis": 42, "celulas_previstas": 56, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 14, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "corte": 0.8, "elegiveis": 24}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 14, "celulas_disponiveis": 42, "celulas_previstas": 56, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 14, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 24, "cobertura_resultados": 1.0, "com_categoria_original": 24, "com_resultado": 24, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 24, "participantes": 24, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9072,7 +9072,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Inadequado": 8}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 40, "celulas_previstas": 40, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 8, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 40, "celulas_previstas": 40, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 8, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 0.9761904761904762, "com_categoria_original": 41, "com_resultado": 41, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 41, "participantes": 41, "sem_resultado": 1}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9128,7 +9128,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Insatisfatório": 7}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 35, "celulas_previstas": 35, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 7, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 35, "celulas_previstas": 35, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 7, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 0.9761904761904762, "com_categoria_original": 41, "com_resultado": 41, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 41, "participantes": 41, "sem_resultado": 1}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9188,7 +9188,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Intermediário": 18}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 90, "celulas_previstas": 90, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 18, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 90, "celulas_previstas": 90, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 18, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 0.9761904761904762, "com_categoria_original": 41, "com_resultado": 41, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 41, "participantes": 41, "sem_resultado": 1}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9254,7 +9254,7 @@ Observado: C=50; D=54; C/D=0.926.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.9259259259259258, "mediana": 1.0, "minimo": 0.3333333333333333, "n": 18, "p10": 0.8}.
 Categorias originais: {"Fluente": 18}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 72, "celulas_previstas": 72, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 18, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 72, "celulas_previstas": 72, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 18, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 1.0, "com_categoria_original": 42, "com_resultado": 42, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 42, "participantes": 42, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9305,7 +9305,7 @@ Observado: C=39; D=42; C/D=0.929.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.9285714285714286, "mediana": 1.0, "minimo": 0.0, "n": 14, "p10": 1.0}.
 Categorias originais: {"Iniciante": 14}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 1, "celulas_disponiveis": 55, "celulas_previstas": 56, "por_aluno": {"maximo": 1.0, "media": 0.9821428571428571, "mediana": 1.0, "minimo": 0.75, "n": 14, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 1, "celulas_disponiveis": 55, "celulas_previstas": 56, "por_aluno": {"maximo": 1.0, "media": 0.9821428571428571, "mediana": 1.0, "minimo": 0.75, "n": 14, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 1.0, "com_categoria_original": 42, "com_resultado": 42, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 42, "participantes": 42, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9361,7 +9361,7 @@ Observado: C=0; D=30; C/D=0.000.
 Distribuição das taxas individuais: {"maximo": 0.0, "media": 0.0, "mediana": 0.0, "minimo": 0.0, "n": 10, "p10": 0.0}.
 Categorias originais: {"Pré-leitor": 10}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 10, "celulas_disponiveis": 30, "celulas_previstas": 40, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 10, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "corte": 0.8, "elegiveis": 42}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 10, "celulas_disponiveis": 30, "celulas_previstas": 40, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 10, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 42, "cobertura_resultados": 1.0, "com_categoria_original": 42, "com_resultado": 42, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 42, "participantes": 42, "sem_resultado": 0}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9418,7 +9418,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Inadequado": 5}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 25, "celulas_previstas": 25, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 25, "celulas_previstas": 25, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 5, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9478,7 +9478,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Insuficiente": 17}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 85, "celulas_previstas": 85, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 17, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 85, "celulas_previstas": 85, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 17, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9534,7 +9534,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Intermediário": 17}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 85, "celulas_previstas": 85, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 17, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 85, "celulas_previstas": 85, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 17, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9590,7 +9590,7 @@ Observado: C=ausente; D=ausente; C/D=ausente.
 Distribuição das taxas individuais: {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}.
 Categorias originais: {"Satisfatório": 9}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 45, "celulas_previstas": 45, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 9, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 45, "celulas_previstas": 45, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 9, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9652,7 +9652,7 @@ Observado: C=107; D=111; C/D=0.964.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.9639639639639639, "mediana": 1.0, "minimo": 0.0, "n": 37, "p10": 1.0}.
 Categorias originais: {"Fluente": 37}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 148, "celulas_previstas": 148, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 37, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 0, "celulas_disponiveis": 148, "celulas_previstas": 148, "por_aluno": {"maximo": 1.0, "media": 1.0, "mediana": 1.0, "minimo": 1.0, "n": 37, "p10": 1.0}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9703,7 +9703,7 @@ Observado: C=23; D=30; C/D=0.767.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.7666666666666667, "mediana": 1.0, "minimo": 0.0, "n": 10, "p10": 0.0}.
 Categorias originais: {"Iniciante": 10}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 6, "celulas_disponiveis": 34, "celulas_previstas": 40, "por_aluno": {"maximo": 1.0, "media": 0.85, "mediana": 0.75, "minimo": 0.75, "n": 10, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 6, "celulas_disponiveis": 34, "celulas_previstas": 40, "por_aluno": {"maximo": 1.0, "media": 0.85, "mediana": 0.75, "minimo": 0.75, "n": 10, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.
@@ -9759,7 +9759,7 @@ Observado: C=3; D=15; C/D=0.200.
 Distribuição das taxas individuais: {"maximo": 1.0, "media": 0.2, "mediana": 0.0, "minimo": 0.0, "n": 5, "p10": 0.0}.
 Categorias originais: {"Pré-leitor": 5}.
 Meta A: {"adequados": null, "status": "sem_contrato_de_adequacao"}. Meta B: {"atingem": null, "status": "unidade_nao_aplicavel"}.
-Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 5, "celulas_disponiveis": 15, "celulas_previstas": 20, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 5, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "corte": 0.8, "elegiveis": 54}}.
+Cobertura: {"alunos_sem_cobertura": 0, "celulas_ausentes": 5, "celulas_disponiveis": 15, "celulas_previstas": 20, "por_aluno": {"maximo": 0.75, "media": 0.75, "mediana": 0.75, "minimo": 0.75, "n": 5, "p10": 0.75}, "por_oportunidades": {"maximo": null, "media": null, "mediana": null, "minimo": null, "n": 0, "p10": null}, "universo": {"cadastrados": 54, "cobertura_resultados": 0.9629629629629629, "com_categoria_original": 52, "com_resultado": 52, "corte": null, "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original", "elegiveis": 52, "participantes": 52, "sem_resultado": 2}}.
 
 Lacunas com erro observado, por ordem de taxa: nenhuma nas posições disponíveis.
 Forças relativas com algum acerto observado: não identificadas neste resultado.

@@ -103,3 +103,63 @@ def test_T48_nao_inventa_lacuna_em_acerto_integral_ou_forca_em_zero():
     assert api('descrever_grupos')(r,obs,links)[0]['lacunas_priorizadas']==[]
     for row in obs: row['numerador']=0
     assert api('descrever_grupos')(r,obs,links)[0]['forcas_relativas']==[]
+
+
+def medidas_proprias(componente,estados):
+    """Cada estado conserva disponibilidade, participação e categoria independentes."""
+    _,original,_=fixture()
+    rows=[]
+    for i,(value,available,participant,category) in enumerate(estados):
+        row=deepcopy(original[0])
+        row.update(aluno_local_id=f'ef-sintetico-{i}',componente=componente,
+            unidade='pontuacao_original' if componente=='ESCRITA' else 'palavras_por_minuto',
+            campo_original='tarefa_original',posicao=None,numerador=None,denominador=None,
+            valor=value,disponibilidade=available,participacao=participant,categoria=category,
+            oportunidades_previstas=None)
+        rows.append(row)
+    return rows
+
+
+@pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+def test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel(componente):
+    # Catches counting all cadastral students as eligible when no E/F result exists.
+    rows=medidas_proprias(componente,[(None,False,False,None),(None,False,True,'Original')])
+    result=api('grupos_por_regras')(rows,0.8)
+    coverage=result['cobertura']
+    assert coverage['cadastrados']==2 and coverage['elegiveis']==0
+    assert coverage['com_resultado']==0 and coverage['sem_resultado']==2
+    assert coverage['participantes']==1 and coverage['com_categoria_original']==1
+    assert coverage['cobertura_resultados']==0 and coverage['corte'] is None
+    profile=api('descrever_grupos')(result,rows,[])[0]
+    assert profile['cobertura']['universo']==coverage
+    assert profile['cobertura']['alunos_sem_cobertura']==2
+    assert profile['medidas_proprias'][0]['distribuicao']['n']==0
+
+
+@pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+def test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor(componente):
+    # Catches truthiness excluding a valid zero or denominator/coverage lost in public profiles.
+    rows=medidas_proprias(componente,[(0,True,True,'Original')]*6+
+                         [(None,False,False,None),(None,False,True,None)])
+    result=api('grupos_por_regras')(rows,0.8)
+    coverage=result['cobertura']
+    assert coverage['cadastrados']==8 and coverage['elegiveis']==6
+    assert coverage['com_resultado']==6 and coverage['sem_resultado']==2
+    assert coverage['participantes']==7 and coverage['com_categoria_original']==6
+    assert coverage['cobertura_resultados']==0.75 and coverage['corte'] is None
+    assert api('grupos_por_regras')(rows,1.0)['cobertura']==coverage
+    profiles=api('perfis_publicos')(api('descrever_grupos')(result,rows,[]))
+    observed=next(p for p in profiles if p.get('n')==6)
+    assert observed['cobertura']['universo']==coverage
+    assert observed['medidas_proprias'][0]['distribuicao']['mediana']==0
+    assert observed['meta_B']['status']=='unidade_nao_aplicavel'
+
+
+def test_T48_FIX1_medida_disponivel_sem_categoria_nao_vira_ausencia():
+    # Catches conflating absence of category with absence of an observed measurement.
+    rows=medidas_proprias('ESCRITA',[(0,True,True,None)])
+    result=api('grupos_por_regras')(rows)
+    assert result['cobertura']['com_resultado']==1
+    assert result['cobertura']['sem_resultado']==0
+    assert result['cobertura']['com_categoria_original']==0
+    assert result['grupos'][0]['grupo_id']=='resultado_sem_categoria_original'

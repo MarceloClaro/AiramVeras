@@ -1,7 +1,8 @@
 # T08 → T10/T11: agrupamentos e perfis pedagógicos revisáveis
 
-Entrega local executada em 23/10/2026, sobre a base `fbbd17c003459cb9f63b3dbb0feefbc39d058159`.
-As duas análises reais concluíram com os mesmos hashes. A segunda incorporou a proteção
+Entrega local atualizada em 23/10/2026 pelo FIX1, sobre
+`b375768e6ece19a6d15aca7914868d1e016c12c4`. Os hashes abaixo são da versão corrigida v1.1.
+As duas análises reais originais v1 concluíram com os mesmos hashes. A segunda incorporou a proteção
 contra chamar acerto integral de lacuna ou zero de força; esse caso de fronteira não
 alterou os resultados desta base. Revisão docente e validação externa permanecem pendentes.
 
@@ -9,11 +10,11 @@ alterou os resultados desta base. Revisão docente e validação externa permane
 
 | Arquivo | SHA256 | Uso |
 |---|---|---|
-| `restrito/t08/checkpoint.json` | `17d71689ba27724f8b165358e810210ee7c6d4a9001dbaa403f125a47b8c1e3e` | Membros pseudonimizados, rótulos, E/Fs, exclusões e perfis integrais; somente local |
-| `estatistica/t08/checkpoint.json` | `d298a8754ad6e896c7e1077dcccc35c963a90777d82f4fb40c90e2224e4cacc1` | Agregado sem identificadores individuais; perfis pequenos suprimidos |
-| `estatistica/t08/perfis-pedagogicos.md` | `2238f99d6b95b8305dae6919cf2046b8a4faefea57b7f49d535a4ee068fcd0d1` | Texto completo de regras, solução observada, controles principais e E/F para revisão |
-| `docs/esquema-t08.json` | `b580d6bd2c1ea59d7fc962aae6341ee04ce2856dce5184a3899eb5bfef176f9c` | Estrutura agregada `airam-grupos-t08-v1` |
-| `docs/esquema-restrito-t08.json` | `296ab70598581008f2be5a3e7e7c369de6f93c5c2e832396568ea26e2fc80a0c` | Estrutura restrita `airam-grupos-restrito-t08-v1` |
+| `restrito/t08/checkpoint.json` | `44fe791ddfe15ea5449ac052fe1a7fc37838388732831c9d20f007255d2e4526` | Membros pseudonimizados, rótulos, E/Fs, exclusões e perfis integrais; somente local |
+| `estatistica/t08/checkpoint.json` | `8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e` | Agregado sem identificadores individuais; perfis pequenos suprimidos |
+| `estatistica/t08/perfis-pedagogicos.md` | `44d44e20bd95c15051e1fef2c9e2c246e931e59d2ffed97f90c2667b9105f047` | Texto completo de regras, solução observada, controles principais e E/F para revisão |
+| `docs/esquema-t08.json` | `9ddf81fb81b257c885805994e08bbd30e642a03730a63a86ff47691aea966ac3` | Estrutura agregada `airam-grupos-t08-v1.1` |
+| `docs/esquema-restrito-t08.json` | `a5bd8dd00bcee0d87ca8bc043fac2d720eb51a3e406233b082eaf039ddf3687c` | Estrutura restrita `airam-grupos-restrito-t08-v1.1` |
 
 O restrito é ignorado pelo Git; o nome da pasta não certifica ACL. O agregado é para
 revisão local, não autorização irrestrita de publicação. Grupos com N<5 não têm
@@ -183,3 +184,52 @@ Os recibos capturam código/testes/config/entradas/versões antes da execução.
 versão do wrapper não listou o agregado T05 no snapshot externo; `analisar.py` já
 verificava seu SHA esperado antes de ler as entradas. A partir de RED03 o wrapper
 também o captura. Não foi atribuída retroativamente uma captura ao recibo anterior.
+
+## FIX1 — cobertura efetiva de Escrita/Fluência (I1)
+
+A versão v1 contava `sem_resultado_original` como elegível em E/F. Na v1.1,
+`regras.cobertura` e cada `perfil.cobertura.universo` explicitam:
+
+| Campo | Definição em E/F |
+|---|---|
+| `cadastrados` | Estudantes distintos presentes no contexto |
+| `participantes` | Estudantes com participação declarada; não implica medida disponível |
+| `com_resultado` / `elegiveis` | Estudantes com ao menos uma medida com disponibilidade verdadeira |
+| `sem_resultado` | Cadastrados menos com resultado |
+| `com_categoria_original` | Categoria original não nula, contada separadamente da disponibilidade |
+| `cobertura_resultados` | Com resultado / cadastrados, sem contagem fictícia de oportunidades |
+| `corte` | null: o corte de oportunidades de Leitura/Matemática não se aplica |
+| `criterio` | `ao_menos_uma_medida_disponivel_no_instrumento_original` |
+
+Zero com disponibilidade verdadeira é resultado válido. Resultado sem categoria
+original vai a `resultado_sem_categoria_original`, sem criar categoria CAEd. Ausência
+de medida continua em `sem_resultado_original`, mesmo se houver participação ou
+categoria declarada. Categoria e participação originais são preservadas no perfil.
+Ter ao menos uma medida não significa completude de todas as tarefas: a cobertura
+de células/tarefas continua informada separadamente. Nenhuma unidade E/F recebe Meta B.
+
+Resultados efetivos: Escrita4 **41/42**, Escrita5 **52/54**, Fluência5 **52/54**;
+os outros cinco contextos E/F têm todas as pessoas cadastradas com alguma medida.
+Os identificadores e a descrição dos grupos pequenos continuam apenas no restrito.
+
+Reprodução da atualização: usar o wrapper com rótulo novo e
+`evidencias/T08/atualizar_fix1.py`; depois gerar schemas, relatório e validar. O
+atualizador autentica os cinco checkpoints de entrada, os artefatos antigos, a
+configuração, módulos de cálculo não alterados e versões de bibliotecas contra o
+snapshot da análise02. Recalcula somente E/F e exige igualdade integral dos dez
+objetos L/M anteriores, incluindo partições/perfis/sensibilidades. São **zero novos
+ajustes de clusters**. `proveniencia_fix1` registra o que foi reutilizado e o que foi
+recalculado; `execucao` conserva o registro dos 68 ajustes originais, não os atribui
+ao código corrigido. As versões anteriores estão em `*/t08/versoes/pre-fix1/`.
+
+Os schemas de raiz são v1.1; regras e perfis E/F usam v1.1, enquanto os objetos L/M
+autenticados mantêm suas versões originais. O atualizador pode reproduzir a entrega
+a partir dos arquivos arquivados; não altera originais T04/T05/T07. O comando completo
+`analisar.py` continua disponível para uma futura análise integral, que seria uma
+nova execução e teria outra proveniência.
+
+FIX1: cinco falhas funcionais RED; 12 testes focais passaram; suíte final única
+**289 passed**. Contraprova atual: 6.994 verificações, 133 perfis, 294 ARIs, 93 arquivos
+sem identificadores reais. Recibos novos usam prefixo `fix1-`; os anteriores foram
+preservados. I1 foi corrigido; M1 continua deferido para T10/revisão final, sem ampliação
+deste ajuste. Revisão docente, datas, eficácia, ACL e validação externa seguem pendentes.

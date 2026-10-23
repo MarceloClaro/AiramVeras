@@ -56,7 +56,7 @@ def render_profile(profile):
 def main():
     path=ROOT/'estatistica/t08/checkpoint.json'; data=json.loads(path.read_text(encoding='utf-8'))
     lines=['# T08 — perfis pedagógicos para revisão docente','',
-        'Versão v1. Perfis exploratórios locais; não são rótulos de capacidade, diagnósticos ou indicação de retenção. '
+        f"Versão {data['versao_schema']}. Perfis exploratórios locais; não são rótulos de capacidade, diagnósticos ou indicação de retenção. "
         'As duas metas são controles distintos. Escrita e fluência conservam as unidades originais. '
         'Integrantes e pequenos grupos permanecem somente no arquivo restrito, ignorado pelo Git.','',
         f"Checkpoint agregado SHA256: {hashlib.sha256(path.read_bytes()).hexdigest()}.",'',

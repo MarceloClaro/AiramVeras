@@ -32,7 +32,8 @@ def main():
         validador='Subconjunto completo utilizado: type,const,oneOf,required,properties,additionalProperties,items',
         natureza_schema='estrutura efetiva versionada; sem alegar validacao independente do conteudo',
         sensibilidade=summary,limites='Revisao docente, data de reavaliacao, eficacia e validacao externa pendentes')
-    (ROOT/'evidencias/T08/validacao-entrega.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    label='fix1-validacao-entrega.json' if 'proveniencia_fix1' in public else 'validacao-entrega.json'
+    (ROOT/'evidencias/T08'/label).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(dict(status='PASS',schemas=2,instrumentos=len(summary),
         mudancas_limiares=sum(x['mudancas_limiares_observado']+sum(s['mudancas_limiares'] for s in x['cenarios']) for x in summary),
         cobertura_muda_eixos=sum(s['cobertura_muda_eixos'] for x in summary for s in x['cenarios']))))

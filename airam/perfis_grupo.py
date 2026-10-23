@@ -62,13 +62,24 @@ def grupos_por_regras(observacoes,cobertura_minima=0.8):
             if len(categories)!=1: raise ValueError('Categorias originais divergentes')
             category=next(iter(categories))
             available=any(r['disponibilidade'] for r in rows)
-            label='categoria_original:'+str(category) if available and category is not None else 'sem_resultado_original'
+            label=('categoria_original:'+str(category) if category is not None else 'resultado_sem_categoria_original') if available else 'sem_resultado_original'
             criteria[label]='categoria original do instrumento; sem conversao para acertos ou classificacao de capacidade'
         groups[label].append(student)
-    return dict(versao='airam-regras-t08-v1',contexto=ctx,status='grupo_por_regra',
+    coverage=dict(cadastrados=len(by_student),elegiveis=len(by_student)-len(groups.get('cobertura_insuficiente',[])),
+                  corte=cobertura_minima)
+    version='airam-regras-t08-v1'
+    if not counts:
+        available=sum(any(r['disponibilidade'] for r in rows) for rows in by_student.values())
+        coverage=dict(cadastrados=len(by_student),elegiveis=available,com_resultado=available,
+            sem_resultado=len(by_student)-available,
+            participantes=sum(any(r['participacao'] for r in rows) for rows in by_student.values()),
+            com_categoria_original=sum(any(r.get('categoria') is not None for r in rows) for rows in by_student.values()),
+            cobertura_resultados=available/len(by_student),corte=None,
+            criterio='ao_menos_uma_medida_disponivel_no_instrumento_original')
+        version='airam-regras-t08-v1.1'
+    return dict(versao=version,contexto=ctx,status='grupo_por_regra',
         grupos=[dict(grupo_id=k,tipo='regra',criterio=criteria[k],membros=v,n=len(v)) for k,v in sorted(groups.items())],
-        cobertura=dict(cadastrados=len(by_student),elegiveis=len(by_student)-len(groups.get('cobertura_insuficiente',[])),
-                       corte=cobertura_minima),criterios=dict(versao='airam-regras-t08-v1',
+        cobertura=coverage,criterios=dict(versao=version,
             meta_B='total observado C/D >=4/5 apenas acertos_itens',meta_A='categoria original Adequado separada'))
 
 
@@ -159,7 +170,7 @@ def descrever_grupos(resultado:dict,observacoes:list[dict],vinculos:list[dict])-
         selected=next((c for c in candidates if c['k']==resultado.get('k')),None)
         provenance=hashlib.sha256(json.dumps(sorted(rows,key=lambda r:json.dumps(r,sort_keys=True)),sort_keys=True,
                                             ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
-        output.append(dict(versao='airam-perfil-t08-v1',contexto=deepcopy(context),grupo_id=group['grupo_id'],
+        output.append(dict(versao='airam-perfil-t08-v1' if count_unit else 'airam-perfil-t08-v1.1',contexto=deepcopy(context),grupo_id=group['grupo_id'],
             tipo=group.get('tipo','cluster'),nome=descriptive,n=len(members),membros=members,
             turmas=dict(sorted(Counter(rs[0]['turma'] for rs in by_student.values()).items())),
             criterio_pertencimento=group['criterio'],status_liberacao='exploratorio_revisao_docente_pendente',

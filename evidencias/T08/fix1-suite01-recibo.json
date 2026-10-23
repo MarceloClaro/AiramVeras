@@ -1,0 +1,9 @@
+{
+  "fase": "REFACTOR",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T16:05:48.389965+00:00",
+  "snapshot": "fix1-suite01-antes.json",
+  "snapshot_sha256": "3e9dbe7305d0edaefba81cca11b7fc920f2612a160a6879a1b823fb17b349de1",
+  "log": "fix1-suite01.log",
+  "log_sha256": "82e9d960fdbebdb913f494d2e474ed8b59737ad95de5e3a4cf2a351d96852da8"
+}

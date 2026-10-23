@@ -115,10 +115,25 @@ def main():
             interpretacao_geometria='Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo',
             controle={arm:dict(status=r['status'],k=r['k']) for arm,r in primary['resultados'].items()}))
     for inst in protected['unidades_proprias']:
+        original=rows[tuple(inst['contexto'][k] for k in CONTEXT)]
+        by_student=defaultdict(list)
+        for row in original: by_student[row['aluno_local_id']].append(row)
+        available=sum(any(r['disponibilidade'] for r in rs) for rs in by_student.values())
+        coverage=inst['regras']['cobertura']
+        check(coverage['cadastrados']==len(by_student),'Cadastro E/F divergente')
+        check(coverage['elegiveis']==coverage['com_resultado']==available,'Elegibilidade E/F divergente')
+        check(coverage['sem_resultado']==len(by_student)-available,'Ausencia E/F divergente')
+        check(coverage['cobertura_resultados']==float(Fraction(available,len(by_student))),'Taxa de cobertura E/F divergente')
+        check(coverage['corte'] is None,'Corte de oportunidades indevido em E/F')
+        check(coverage['participantes']==sum(any(r['participacao'] for r in rs) for rs in by_student.values()),'Participacao E/F divergente')
+        check(coverage['com_categoria_original']==sum(applications[rs[0]['avaliacao_local_id']]['categoria'] is not None
+                                                    for rs in by_student.values()),'Categoria E/F divergente')
+        checks+=7
         for p in inst['perfis']:
             profile_check(p)
+            check(p['cobertura']['universo']==coverage,'Cobertura do perfil E/F divergente')
             check(p['meta_B']['status']=='unidade_nao_aplicavel' and p['habilidades']==[],'Escala E/F alterada')
-            checks+=1
+            checks+=2
     tokens=set()
     def collect(value):
         if isinstance(value,dict):
@@ -146,7 +161,8 @@ def main():
         hashes={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in
                 ['restrito/t08/checkpoint.json','estatistica/t08/checkpoint.json']},
         limites='Contraprova de aritmetica/identidade/privacidade; nao e validacao externa ou docente; armazenamento ignorado nao certifica ACL')
-    (ROOT/'evidencias/T08/contraprova-resultado.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    label='fix1-contraprova-resultado.json' if 'proveniencia_fix1' in protected else 'contraprova-resultado.json'
+    (ROOT/'evidencias/T08'/label).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k not in ('diagnosticos','hashes')}))
 
 

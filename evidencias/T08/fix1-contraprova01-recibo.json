@@ -1,0 +1,9 @@
+{
+  "fase": "CONTRAPROVA",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T16:05:32.992390+00:00",
+  "snapshot": "fix1-contraprova01-antes.json",
+  "snapshot_sha256": "cb50da6e68888bf60aadaf9c9e1c97e7ed9e98677af59b7ec2520c60ce275562",
+  "log": "fix1-contraprova01.log",
+  "log_sha256": "314a366d35053dfba90b85cea4e626caaed9f10d02d56495c0b7964604a7cc5a"
+}

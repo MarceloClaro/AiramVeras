@@ -111,8 +111,8 @@ def produzir(t05,t07,t07public,t04,config):
             rows_by_context[context_key(row)].append(row)
     graphs={(context_key(b['contexto']),b['policy']):b['grafo'] for b in t07public['blocos']}
     blocks={(context_key(b['contexto']),b['policy']):b for b in t07['blocos']}
-    private=dict(versao_schema='airam-grupos-restrito-t08-v1',config=deepcopy(config),instrumentos=[],unidades_proprias=[])
-    public=dict(versao_schema='airam-grupos-t08-v1',config=deepcopy(config),instrumentos=[],unidades_proprias=[])
+    private=dict(versao_schema='airam-grupos-restrito-t08-v1.1',config=deepcopy(config),instrumentos=[],unidades_proprias=[])
+    public=dict(versao_schema='airam-grupos-t08-v1.1',config=deepcopy(config),instrumentos=[],unidades_proprias=[])
     cache={}; fit_count=0
 
     def fit(features):

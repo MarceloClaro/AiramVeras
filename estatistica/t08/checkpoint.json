@@ -1,5 +1,5 @@
 {
-  "checkpoint_restrito_sha256": "17d71689ba27724f8b165358e810210ee7c6d4a9001dbaa403f125a47b8c1e3e",
+  "checkpoint_restrito_sha256": "44fe791ddfe15ea5449ac052fe1a7fc37838388732831c9d20f007255d2e4526",
   "config": {
     "cenarios": [
       "ressalvada_passo1",
@@ -370885,6 +370885,46 @@
       ]
     }
   ],
+  "proveniencia_fix1": {
+    "base_commit": "b375768e6ece19a6d15aca7914868d1e016c12c4",
+    "calculos_novos": "somente grupos por regras/perfis/cobertura E/F a partir de T05 autenticado",
+    "calculos_reutilizados": "instrumentos L/M completos, todas as particoes e sensibilidades; sem reexecucao de clustering",
+    "checkpoints_anteriores_sha256": {
+      "estatistica/t08/checkpoint.json": "d298a8754ad6e896c7e1077dcccc35c963a90777d82f4fb40c90e2224e4cacc1",
+      "restrito/t08/checkpoint.json": "17d71689ba27724f8b165358e810210ee7c6d4a9001dbaa403f125a47b8c1e3e"
+    },
+    "fix": "T08-FIX1-I1",
+    "modulo_perfis_atual_sha256": "151156c257c95765e9193e87eac905bcf3287d872439e4c8695a66e02a785719",
+    "modulos_config_reutilizados_sha256": {
+      "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+      "airam/agregacoes.py": "82da18a478bc82270b7645f976f50d28d585b22db9aefca440fdc496bd2430cb",
+      "airam/bncc.py": "0e28030b23dbd3c6f6668488223ec85da479d6bf117ea0e04b3367a2ceca774f",
+      "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+      "airam/clusters.py": "821b13fe1a670320a51b8e34cc2a807238ebcfdde73f007d8d137017998be546",
+      "airam/contraprova.py": "c1c59f996a02d62d8f75f0ca313ca2543115bb295d6d4475e72d70eaf5578b00",
+      "airam/correlacoes.py": "b6196f57a17ce38ae05706fa6594a7a36414416803a6ca9fb34415c81dd6ab2e",
+      "airam/esquemas.py": "cfd4b1e81f8648c1c3eaa3b55c12da0f7eb734ca5999bddf527bd4b1d8f8e156",
+      "airam/grafo.py": "89144a08740a53b7fa772c714fa0e8c0b071be6921a0583ccff3acb2042c1459",
+      "airam/identidade.py": "5dfdc23c97d72b5237f8c3d3c2f29c19d521bcd07a8c786a0e778a796510c459",
+      "airam/ingestao.py": "a4fed987df21db5337db37ea67fbfa4efa23e91d0b48982f67bf1e8e899afb11",
+      "airam/matriz_cnca.py": "1aa5ad8bbe915abc90a6bc4e21221fc7a4f4c44457e65bd2a2fe8b9b75ddc795",
+      "airam/metas.py": "f7345e06181fca83ec043a1aeb320e83b2d9440619ad86afdeebded095fc2fa0",
+      "airam/metricas.py": "c450b9112fbea3c27dfa2b2f4536ee09eca7e0fb7f64ea2aa48e8dd698754f35",
+      "airam/pareamento.py": "907eaf6c1b7de15ce82ba2955d86ea14062988a33455cad483526e0aa90c0e3f",
+      "airam/recibos.py": "62c0fc07df7ba31548901c6f166e0e93c24f85623a0fab0a49eeeeaff9f5be4e",
+      "airam/vinculos.py": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420",
+      "config/agrupamentos.json": "b5c70c4e277130b5bb7c3815ec011650c83a1228c816181abfd16987e440cd63"
+    },
+    "novos_ajustes_clusters": 0,
+    "snapshot_ajustes_originais": "evidencias/T08/analise02-antes.json",
+    "snapshot_ajustes_sha256": "dd2197df83e9daff2f13e4a2ccfbcffb3672bccabbfa24d9bd4eaa95493b0bc6",
+    "versoes_verificadas": {
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "threadpoolctl": "3.7.0"
+    }
+  },
   "unidades_proprias": [
     {
       "contexto": {
@@ -370926,8 +370966,14 @@
             },
             "universo": {
               "cadastrados": 28,
-              "corte": 0.8,
-              "elegiveis": 28
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 28,
+              "com_resultado": 28,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 28,
+              "participantes": 28,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -371111,7 +371157,7 @@
           "turmas": {
             "2O ANO": 16
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -371129,7 +371175,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -371158,8 +371204,14 @@
             },
             "universo": {
               "cadastrados": 28,
-              "corte": 0.8,
-              "elegiveis": 28
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 28,
+              "com_resultado": 28,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 28,
+              "participantes": 28,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -371343,7 +371395,7 @@
           "turmas": {
             "2O ANO": 6
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -371372,8 +371424,14 @@
             },
             "universo": {
               "cadastrados": 28,
-              "corte": 0.8,
-              "elegiveis": 28
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 28,
+              "com_resultado": 28,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 28,
+              "participantes": 28,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -371557,7 +371615,7 @@
           "turmas": {
             "2O ANO": 5
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -371602,8 +371660,14 @@
             },
             "universo": {
               "cadastrados": 28,
-              "corte": 0.8,
-              "elegiveis": 28
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 28,
+              "com_resultado": 28,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 28,
+              "participantes": 28,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -371755,7 +371819,7 @@
           "turmas": {
             "2O ANO": 9
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -371784,8 +371848,14 @@
             },
             "universo": {
               "cadastrados": 28,
-              "corte": 0.8,
-              "elegiveis": 28
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 28,
+              "com_resultado": 28,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 28,
+              "participantes": 28,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -371937,7 +372007,7 @@
           "turmas": {
             "2O ANO": 19
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -371982,8 +372052,14 @@
             },
             "universo": {
               "cadastrados": 24,
-              "corte": 0.8,
-              "elegiveis": 24
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 24,
+              "com_resultado": 24,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 24,
+              "participantes": 24,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -372215,7 +372291,7 @@
           "turmas": {
             "3O ANO": 12
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -372233,7 +372309,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -372262,8 +372338,14 @@
             },
             "universo": {
               "cadastrados": 24,
-              "corte": 0.8,
-              "elegiveis": 24
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 24,
+              "com_resultado": 24,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 24,
+              "participantes": 24,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -372495,7 +372577,7 @@
           "turmas": {
             "3O ANO": 9
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -372513,7 +372595,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -372531,7 +372613,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -372576,8 +372658,14 @@
             },
             "universo": {
               "cadastrados": 24,
-              "corte": 0.8,
-              "elegiveis": 24
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 24,
+              "com_resultado": 24,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 24,
+              "participantes": 24,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -372729,7 +372817,7 @@
           "turmas": {
             "3O ANO": 5
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -372758,8 +372846,14 @@
             },
             "universo": {
               "cadastrados": 24,
-              "corte": 0.8,
-              "elegiveis": 24
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 24,
+              "com_resultado": 24,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 24,
+              "participantes": 24,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -372927,7 +373021,7 @@
           "turmas": {
             "3O ANO": 5
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -372956,8 +373050,14 @@
             },
             "universo": {
               "cadastrados": 24,
-              "corte": 0.8,
-              "elegiveis": 24
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 24,
+              "com_resultado": 24,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 24,
+              "participantes": 24,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -373109,7 +373209,7 @@
           "turmas": {
             "3O ANO": 14
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -373143,7 +373243,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -373172,8 +373272,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 0.9761904761904762,
+              "com_categoria_original": 41,
+              "com_resultado": 41,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 41,
+              "participantes": 41,
+              "sem_resultado": 1
             }
           },
           "contexto": {
@@ -373342,7 +373448,7 @@
             "4O ANO A": 1,
             "4O ANO B": 7
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -373371,8 +373477,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 0.9761904761904762,
+              "com_categoria_original": 41,
+              "com_resultado": 41,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 41,
+              "participantes": 41,
+              "sem_resultado": 1
             }
           },
           "contexto": {
@@ -373541,7 +373653,7 @@
             "4O ANO A": 3,
             "4O ANO B": 4
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -373559,7 +373671,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -373588,8 +373700,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 0.9761904761904762,
+              "com_categoria_original": 41,
+              "com_resultado": 41,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 41,
+              "participantes": 41,
+              "sem_resultado": 1
             }
           },
           "contexto": {
@@ -373758,7 +373876,7 @@
             "4O ANO A": 15,
             "4O ANO B": 3
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -373776,7 +373894,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -373794,7 +373912,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -373839,8 +373957,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 42,
+              "com_resultado": 42,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 42,
+              "participantes": 42,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -373993,7 +374117,7 @@
             "4O ANO A": 10,
             "4O ANO B": 8
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -374022,8 +374146,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 42,
+              "com_resultado": 42,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 42,
+              "participantes": 42,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -374192,7 +374322,7 @@
             "4O ANO A": 8,
             "4O ANO B": 6
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -374221,8 +374351,14 @@
             },
             "universo": {
               "cadastrados": 42,
-              "corte": 0.8,
-              "elegiveis": 42
+              "cobertura_resultados": 1.0,
+              "com_categoria_original": 42,
+              "com_resultado": 42,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 42,
+              "participantes": 42,
+              "sem_resultado": 0
             }
           },
           "contexto": {
@@ -374375,7 +374511,7 @@
             "4O ANO A": 4,
             "4O ANO B": 6
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -374409,7 +374545,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -374438,8 +374574,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -374608,7 +374750,7 @@
             "5O ANO A": 1,
             "5O ANO B": 4
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -374626,7 +374768,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -374655,8 +374797,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -374824,7 +374972,7 @@
           "turmas": {
             "5O ANO B": 17
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -374853,8 +375001,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -375023,7 +375177,7 @@
             "5O ANO A": 16,
             "5O ANO B": 1
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -375052,8 +375206,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -375222,7 +375382,7 @@
             "5O ANO A": 7,
             "5O ANO B": 2
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -375240,7 +375400,7 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
@@ -375285,8 +375445,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -375439,7 +375605,7 @@
             "5O ANO A": 22,
             "5O ANO B": 15
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -375468,8 +375634,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -375638,7 +375810,7 @@
             "5O ANO A": 4,
             "5O ANO B": 6
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "categorias_caed_originais": {
@@ -375667,8 +375839,14 @@
             },
             "universo": {
               "cadastrados": 54,
-              "corte": 0.8,
-              "elegiveis": 54
+              "cobertura_resultados": 0.9629629629629629,
+              "com_categoria_original": 52,
+              "com_resultado": 52,
+              "corte": null,
+              "criterio": "ao_menos_uma_medida_disponivel_no_instrumento_original",
+              "elegiveis": 52,
+              "participantes": 52,
+              "sem_resultado": 2
             }
           },
           "contexto": {
@@ -375821,7 +375999,7 @@
             "5O ANO A": 1,
             "5O ANO B": 4
           },
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         },
         {
           "contexto": {
@@ -375839,11 +376017,11 @@
           "revisao_docente": "pendente",
           "status_publicacao": "suprimido_n_menor_5",
           "tipo": "regra",
-          "versao": "airam-perfil-t08-v1"
+          "versao": "airam-perfil-t08-v1.1"
         }
       ],
       "status": "categorias_originais_sem_cluster_nem_mapeamento_BNCC"
     }
   ],
-  "versao_schema": "airam-grupos-t08-v1"
+  "versao_schema": "airam-grupos-t08-v1.1"
 }
