@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_rotulo_de_regra_oficial_sozinho_nao_autoriza_distancia_exata ______
+
+    def test_rotulo_de_regra_oficial_sozinho_nao_autoriza_distancia_exata():
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_cenarios.py:65: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_cenarios.py::test_rotulo_de_regra_oficial_sozinho_nao_autoriza_distancia_exata
+1 failed, 29 deselected in 0.31s

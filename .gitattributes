@@ -23,3 +23,7 @@ airam/perfis_grupo.py -text
 tests/test_clusters.py -text
 tests/test_perfis_grupo.py -text
 tests/test_entrega_t08.py -text
+evidencias/T09/** -text whitespace=cr-at-eol
+estatistica/t09/** -text whitespace=cr-at-eol
+evidencias/T09/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidencias/T09/executar.py whitespace=-blank-at-eof,cr-at-eol

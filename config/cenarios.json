@@ -1,0 +1,12 @@
+{
+  "versao": "airam-cenarios-config-v1",
+  "metas": {"A": 0.8, "B": 0.8},
+  "cenarios": [
+    {"nome": "sem_mudanca", "hipoteses": {"entradas_adequado": 0, "saidas_adequado": 0, "ganho_acertos": 0, "perda_acertos": 0}},
+    {"nome": "perda_um", "hipoteses": {"entradas_adequado": 0, "saidas_adequado": 1, "ganho_acertos": 0, "perda_acertos": 1}},
+    {"nome": "ganho_um", "hipoteses": {"entradas_adequado": 1, "saidas_adequado": 0, "ganho_acertos": 1, "perda_acertos": 0}},
+    {"nome": "ganho_um_perda_um", "hipoteses": {"entradas_adequado": 1, "saidas_adequado": 1, "ganho_acertos": 1, "perda_acertos": 1}}
+  ],
+  "saidas_sensibilidade_institucional": [0, 1, 2, 3],
+  "limites": ["Hipoteses condicionais, sem probabilidades calibradas ou efeito de atividade.", "Identidade longitudinal e datas de aplicacao nao comprovadas na base atual.", "Escrita e fluencia conservam unidades proprias, sem deslocamento para itens."]
+}

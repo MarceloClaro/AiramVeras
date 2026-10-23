@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T06:28:23.435775+00:00",
+  "snapshot": "mutacao-vazamento_alvo-antes.json",
+  "snapshot_sha256": "05b7a48454cd43522fa161bff00f7e6b961a8a8b6fcc4c330e3b7cf196a7e86e",
+  "log": "mutacao-vazamento_alvo.log",
+  "log_sha256": "ec7467056d26eaf719ee4046182139c053097ee730c02af1cf1f5b8f3e1bec11"
+}

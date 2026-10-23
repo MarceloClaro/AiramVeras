@@ -1,0 +1,1219 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                [100%]
+================================== FAILURES ===================================
+______________ test_T40_cenario_condicional_nao_promete_eficacia ______________
+
+    def test_T40_cenario_condicional_nao_promete_eficacia():
+>       result = project([observation()], ganho_acertos=1)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_____________ test_T41_adequados_podem_perder_categoria_e_acertos _____________
+
+    def test_T41_adequados_podem_perder_categoria_e_acertos():
+        rows = [observation(18, 'Adequado') for _ in range(4)] + [observation(17)]
+>       stable = project(rows)
+                 ^^^^^^^^^^^^^
+
+tests\test_cenarios.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[17-0-0-17-1-0] _
+
+x = 17, g = 0, p = 0, want = 17, gap = 1, delta = 0
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-0-0-18-0-0] _
+
+x = 18, g = 0, p = 0, want = 18, gap = 0, delta = 0
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-0-1-17-1--1] _
+
+x = 18, g = 0, p = 1, want = 17, gap = 1, delta = -1
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[0-0-0-0-18-0] _
+
+x = 0, g = 0, p = 0, want = 0, gap = 18, delta = 0
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[0-0-2-0-18-0] _
+
+x = 0, g = 0, p = 2, want = 0, gap = 18, delta = 0
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[21-4-0-22-0-1] _
+
+x = 21, g = 4, p = 0, want = 22, gap = 0, delta = 1
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[17-1-0-18-0-1] _
+
+x = 17, g = 1, p = 0, want = 18, gap = 0, delta = 1
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-1-2-17-1--1] _
+
+x = 18, g = 1, p = 2, want = 17, gap = 1, delta = -1
+
+    @pytest.mark.parametrize('x,g,p,want,gap,delta', [
+        (17,0,0,17,1,0), (18,0,0,18,0,0), (18,0,1,17,1,-1),
+        (0,0,0,0,18,0), (0,0,2,0,18,0), (21,4,0,22,0,1),
+        (17,1,0,18,0,1), (18,1,2,17,1,-1)])
+    def test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento(x,g,p,want,gap,delta):
+>       row = project([observation(x)], ganho_acertos=g, perda_acertos=p)['meta_B'][0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_meta_A_original_nao_deriva_nivel_de_acertos _______________
+
+    def test_meta_A_original_nao_deriva_nivel_de_acertos():
+>       result = project([observation(22), observation(0, 'Adequado')], ganho_acertos=22)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___ test_corte_de_adequacao_so_com_regra_documentada_ou_hipotese_explicita ____
+
+    def test_corte_de_adequacao_so_com_regra_documentada_ou_hipotese_explicita():
+        with pytest.raises(ValueError):
+>           project([observation()], corte_adequacao=18)
+
+tests\test_cenarios.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______________ test_sem_avaliados_e_prova_ausente_nao_sao_zero _______________
+
+    def test_sem_avaliados_e_prova_ausente_nao_sao_zero():
+>       result = project([dict(componente='LEITURA', participacao=False, categoria=None,
+                               acertos=None, oportunidades=None, unidade='itens')])
+
+tests\test_cenarios.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_____ test_escrita_fluencia_preservam_medida_e_nao_viram_22[ESCRITA-nota] _____
+
+component = 'ESCRITA', unit = 'nota'
+
+    @pytest.mark.parametrize('component,unit', [('ESCRITA','nota'),('FLUENCIA','tarefas')])
+    def test_escrita_fluencia_preservam_medida_e_nao_viram_22(component,unit):
+        row = dict(componente=component, unidade=unit, participacao=True, categoria='Categoria própria', nota=7)
+        original = deepcopy(row)
+>       result = project([row])
+                 ^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___ test_escrita_fluencia_preservam_medida_e_nao_viram_22[FLUENCIA-tarefas] ___
+
+component = 'FLUENCIA', unit = 'tarefas'
+
+    @pytest.mark.parametrize('component,unit', [('ESCRITA','nota'),('FLUENCIA','tarefas')])
+    def test_escrita_fluencia_preservam_medida_e_nao_viram_22(component,unit):
+        row = dict(componente=component, unidade=unit, participacao=True, categoria='Categoria própria', nota=7)
+        original = deepcopy(row)
+>       result = project([row])
+                 ^^^^^^^^^^^^^^
+
+tests\test_cenarios.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp0] ___
+
+hyp = {'entradas_adequado': 2}
+
+    @pytest.mark.parametrize('hyp', [{'entradas_adequado':2}, {'saidas_adequado':1},
+        {'ganho_acertos':-1}, {'perda_acertos':True}, {'probabilidade_ganho':.9}])
+    def test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados(hyp):
+        with pytest.raises(ValueError):
+>           project([observation()], **hyp)
+
+tests\test_cenarios.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp1] ___
+
+hyp = {'saidas_adequado': 1}
+
+    @pytest.mark.parametrize('hyp', [{'entradas_adequado':2}, {'saidas_adequado':1},
+        {'ganho_acertos':-1}, {'perda_acertos':True}, {'probabilidade_ganho':.9}])
+    def test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados(hyp):
+        with pytest.raises(ValueError):
+>           project([observation()], **hyp)
+
+tests\test_cenarios.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp2] ___
+
+hyp = {'ganho_acertos': -1}
+
+    @pytest.mark.parametrize('hyp', [{'entradas_adequado':2}, {'saidas_adequado':1},
+        {'ganho_acertos':-1}, {'perda_acertos':True}, {'probabilidade_ganho':.9}])
+    def test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados(hyp):
+        with pytest.raises(ValueError):
+>           project([observation()], **hyp)
+
+tests\test_cenarios.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp3] ___
+
+hyp = {'perda_acertos': True}
+
+    @pytest.mark.parametrize('hyp', [{'entradas_adequado':2}, {'saidas_adequado':1},
+        {'ganho_acertos':-1}, {'perda_acertos':True}, {'probabilidade_ganho':.9}])
+    def test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados(hyp):
+        with pytest.raises(ValueError):
+>           project([observation()], **hyp)
+
+tests\test_cenarios.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp4] ___
+
+hyp = {'probabilidade_ganho': 0.9}
+
+    @pytest.mark.parametrize('hyp', [{'entradas_adequado':2}, {'saidas_adequado':1},
+        {'ganho_acertos':-1}, {'perda_acertos':True}, {'probabilidade_ganho':.9}])
+    def test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados(hyp):
+        with pytest.raises(ValueError):
+>           project([observation()], **hyp)
+
+tests\test_cenarios.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______ test_observado_invalido_nao_e_corrigido_por_saturacao[None-22] ________
+
+x = None, n = 22
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________ test_observado_invalido_nao_e_corrigido_por_saturacao[1-None] ________
+
+x = 1, n = None
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_observado_invalido_nao_e_corrigido_por_saturacao[1-0] __________
+
+x = 1, n = 0
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________ test_observado_invalido_nao_e_corrigido_por_saturacao[23-22] _________
+
+x = 23, n = 22
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________ test_observado_invalido_nao_e_corrigido_por_saturacao[-1-22] _________
+
+x = -1, n = 22
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_______ test_observado_invalido_nao_e_corrigido_por_saturacao[True-22] ________
+
+x = True, n = 22
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________ test_observado_invalido_nao_e_corrigido_por_saturacao[1.5-22] ________
+
+x = 1.5, n = 22
+
+    @pytest.mark.parametrize('x,n', [(None,22), (1,None), (1,0), (23,22),(-1,22),(True,22),(1.5,22)])
+    def test_observado_invalido_nao_e_corrigido_por_saturacao(x,n):
+        row = observation(x)
+        row['oportunidades'] = n
+        with pytest.raises(ValueError):
+>           project([row])
+
+tests\test_cenarios.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_mistura_de_instrumentos_duplicatas_e_ausencia_inconsistente_rejeitadas _
+
+    def test_mistura_de_instrumentos_duplicatas_e_ausencia_inconsistente_rejeitadas():
+        with pytest.raises(ValueError):
+>           project([observation(), observation(component='MATEMATICA')])
+
+tests\test_cenarios.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_________ test_institucional_calcula_teto_no_escopo_e_nao_soma_tetos __________
+
+    def test_institucional_calcula_teto_no_escopo_e_nao_soma_tetos():
+        rows = [observation() for _ in range(6)]
+>       assert project(rows)['meta_A']['alvo'] == 5
+               ^^^^^^^^^^^^^
+
+tests\test_cenarios.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cenarios.py:8: in project
+    return api('cenarios', 'projetar_cenario')(rows, {'A': .8, 'B': .8}, hypotheses)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cenarios', name = 'projetar_cenario'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.cenarios')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___________ test_T42_ciclo_unico_bloqueia_previsao_preserva_cenario ___________
+
+    def test_T42_ciclo_unico_bloqueia_previsao_preserva_cenario():
+>       result = gate([{'ciclo':'I','ano_avaliacao':2026}], [])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__________ test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao ___________
+
+    def test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao():
+        rows, links = complete()
+        rows[0]['data_aplicacao']['tipo'] = 'exportacao'
+        rows[1]['ciclo_evidencia'] = {'rotulo':'contraprova','assumido':True}
+>       result = gate(rows,links)
+                 ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+__ test_contrato_completo_habilita_prontidao_de_inputs_mas_nao_valida_modelo __
+
+    def test_contrato_completo_habilita_prontidao_de_inputs_mas_nao_valida_modelo():
+>       result = gate(*complete())
+                 ^^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value0-vazamento_alvo] _
+
+field = 'variaveis_entrada', value = ['resultado_futuro']
+motive = 'vazamento_alvo'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value1-vazamento_alvo] _
+
+field = 'variaveis_entrada', value = ['item_futuro'], motive = 'vazamento_alvo'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[data_limite_features-2026-06-20-vazamento_temporal] _
+
+field = 'data_limite_features', value = '2026-06-20'
+motive = 'vazamento_temporal'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[processamento-value3-processamento_fora_treino] _
+
+field = 'processamento'
+value = {'ajustado_em': 'todos', 'evidencia': {'fonte_sha256': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'referencia': 'fixture sintetica documentada'}}
+motive = 'processamento_fora_treino'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[comparabilidade-value4-comparabilidade_nao_comprovada] _
+
+field = 'comparabilidade'
+value = {'grupo': 'mesmo_contrato', 'evidencia': True}
+motive = 'comparabilidade_nao_comprovada'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[desfecho_observado-True-desfecho_futuro_nao_comprovado] _
+
+field = 'desfecho_observado', value = True
+motive = 'desfecho_futuro_nao_comprovado'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+______________ test_T44_mesmo_estudante_em_treino_teste_recusado ______________
+
+    def test_T44_mesmo_estudante_em_treino_teste_recusado():
+        rows,links = complete(); links[1]['aluno_local_id']=links[0]['aluno_local_id']
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+___ test_particoes_invertidas_datas_invalidas_vinculo_provisorio_recusados ____
+
+    def test_particoes_invertidas_datas_invalidas_vinculo_provisorio_recusados():
+        rows,links = complete()
+        rows[0]['particao']='teste'; rows[1]['particao']='treino'
+        links[1]['identidade_longitudinal']=True
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+________ test_gate_nao_muta_entradas_e_nao_publica_chaves_individuais _________
+
+    def test_gate_nao_muta_entradas_e_nao_publica_chaves_individuais():
+        rows,links=complete(); before=deepcopy((rows,links))
+>       result=gate(rows,links)
+               ^^^^^^^^^^^^^^^^
+
+tests\test_predicao_gate.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_predicao_gate.py:8: in gate
+    return api('predicao_gate', 'avaliar_prontidao_temporal')(evaluations, links)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'predicao_gate', name = 'avaliar_prontidao_temporal'
+
+    def api(module, name):
+        qualified = 'airam.' + module
+>       assert util.find_spec(qualified) is not None, 'Funcionalidade estatistica ausente'
+E       AssertionError: Funcionalidade estatistica ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000019B12F8BA60>('airam.predicao_gate')
+E        +    where <function find_spec at 0x0000019B12F8BA60> = util.find_spec
+
+tests\test_metricas.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cenarios.py::test_T40_cenario_condicional_nao_promete_eficacia
+FAILED tests/test_cenarios.py::test_T41_adequados_podem_perder_categoria_e_acertos
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[17-0-0-17-1-0]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-0-0-18-0-0]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-0-1-17-1--1]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[0-0-0-0-18-0]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[0-0-2-0-18-0]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[21-4-0-22-0-1]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[17-1-0-18-0-1]
+FAILED tests/test_cenarios.py::test_B_aritmetica_individual_saturacao_nao_mascara_deslocamento[18-1-2-17-1--1]
+FAILED tests/test_cenarios.py::test_meta_A_original_nao_deriva_nivel_de_acertos
+FAILED tests/test_cenarios.py::test_corte_de_adequacao_so_com_regra_documentada_ou_hipotese_explicita
+FAILED tests/test_cenarios.py::test_sem_avaliados_e_prova_ausente_nao_sao_zero
+FAILED tests/test_cenarios.py::test_escrita_fluencia_preservam_medida_e_nao_viram_22[ESCRITA-nota]
+FAILED tests/test_cenarios.py::test_escrita_fluencia_preservam_medida_e_nao_viram_22[FLUENCIA-tarefas]
+FAILED tests/test_cenarios.py::test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp0]
+FAILED tests/test_cenarios.py::test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp1]
+FAILED tests/test_cenarios.py::test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp2]
+FAILED tests/test_cenarios.py::test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp3]
+FAILED tests/test_cenarios.py::test_cenarios_impossiveis_ou_probabilidades_arbitrarias_rejeitados[hyp4]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[None-22]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[1-None]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[1-0]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[23-22]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[-1-22]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[True-22]
+FAILED tests/test_cenarios.py::test_observado_invalido_nao_e_corrigido_por_saturacao[1.5-22]
+FAILED tests/test_cenarios.py::test_mistura_de_instrumentos_duplicatas_e_ausencia_inconsistente_rejeitadas
+FAILED tests/test_cenarios.py::test_institucional_calcula_teto_no_escopo_e_nao_soma_tetos
+FAILED tests/test_predicao_gate.py::test_T42_ciclo_unico_bloqueia_previsao_preserva_cenario
+FAILED tests/test_predicao_gate.py::test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao
+FAILED tests/test_predicao_gate.py::test_contrato_completo_habilita_prontidao_de_inputs_mas_nao_valida_modelo
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value0-vazamento_alvo]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value1-vazamento_alvo]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[data_limite_features-2026-06-20-vazamento_temporal]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[processamento-value3-processamento_fora_treino]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[comparabilidade-value4-comparabilidade_nao_comprovada]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[desfecho_observado-True-desfecho_futuro_nao_comprovado]
+FAILED tests/test_predicao_gate.py::test_T44_mesmo_estudante_em_treino_teste_recusado
+FAILED tests/test_predicao_gate.py::test_particoes_invertidas_datas_invalidas_vinculo_provisorio_recusados
+FAILED tests/test_predicao_gate.py::test_gate_nao_muta_entradas_e_nao_publica_chaves_individuais
+41 failed in 1.58s
