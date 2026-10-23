@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T06:28:17.979807+00:00",
+  "snapshot": "mutacao-ignorar_perda_acertos-antes.json",
+  "snapshot_sha256": "22070e2fe88a46fe8e7b938c2261b7828068e2aff39c880a9963f2960f75331c",
+  "log": "mutacao-ignorar_perda_acertos.log",
+  "log_sha256": "d9c4258c0f9c8b9cecedab581f6677698f10d02f3616a0bdb2716cad9aa7a26e"
+}

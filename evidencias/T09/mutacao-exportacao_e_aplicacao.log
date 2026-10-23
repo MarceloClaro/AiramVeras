@@ -1,0 +1,17 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao ___________
+
+    def test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao():
+        rows, links = complete()
+        rows[0]['data_aplicacao']['tipo'] = 'exportacao'
+        rows[1]['ciclo_evidencia'] = {'rotulo':'contraprova','assumido':True}
+        result = gate(rows,links)
+        assert result['prontidao_inputs_temporais'] is False
+>       assert 'datas_aplicacao_nao_comprovadas' in result['motivos']
+E       AssertionError: assert 'datas_aplicacao_nao_comprovadas' in ['ciclos_documentados_insuficientes']
+
+tests\test_predicao_gate.py:46: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_predicao_gate.py::test_exportacao_e_rotulos_assumidos_nao_provam_aplicacao
+1 failed, 11 deselected in 0.25s

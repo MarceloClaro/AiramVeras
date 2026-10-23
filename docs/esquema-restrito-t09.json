@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "airam-cenarios-restritos-t09-v1",
+  "title": "T09 individual exclusivamente local restrito, fora do Git",
+  "type": "object", "additionalProperties": false,
+  "required": ["versao_schema", "fontes", "contrato", "gate_temporal", "observado_referencia", "cenarios_individuais", "outros_instrumentos"],
+  "properties": {
+    "versao_schema": {"const": "airam-cenarios-restritos-t09-v1"},
+    "fontes": {"$ref": "esquema-t09.json#/$defs/fontes"}, "contrato": {"$ref": "esquema-t09.json#/$defs/contrato"},
+    "gate_temporal": {"$ref": "esquema-t09.json#/$defs/gate"}, "observado_referencia": {"const": "restrito/t05/checkpoint.json"},
+    "cenarios_individuais": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["cenario", "aluno_local_id", "avaliacao_local_id", "ano_escolar", "componente", "turma", "resultado_observado", "meta_B"],
+      "properties": {"cenario": {"type": "string"}, "aluno_local_id": {"type": "string"}, "avaliacao_local_id": {"type": "string"},
+        "ano_escolar": {"type": "integer"}, "componente": {"enum": ["LEITURA", "MATEMATICA"]}, "turma": {"type": "string"},
+        "resultado_observado": {"$ref": "#/$defs/observado"}, "meta_B": {"$ref": "esquema-t09.json#/$defs/meta_B"}}}},
+    "outros_instrumentos": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["resultado_observado", "medidas_observadas", "meta_A_status", "meta_B_status"],
+      "properties": {"resultado_observado": {"$ref": "#/$defs/observado"},
+        "medidas_observadas": {"type": "array", "items": {"type": "object", "required": ["avaliacao_local_id", "unidade", "disponibilidade", "valor", "numerador", "denominador"]}},
+        "meta_A_status": {"const": "unidade_nao_aplicavel"}, "meta_B_status": {"const": "unidade_nao_aplicavel"}}}}
+  },
+  "$defs": {"observado": {"type": "object", "required": ["aluno_local_id", "avaliacao_local_id", "avaliacao_id", "ano_escolar", "componente", "turma", "fonte_id", "sha256", "categoria", "participacao", "acertos", "oportunidades"],
+    "properties": {"aluno_local_id": {"type": "string"}, "avaliacao_local_id": {"type": "string"}, "participacao": {"type": "boolean"},
+      "categoria": {"type": ["string", "null"]}, "acertos": {"type": ["integer", "null"]}, "oportunidades": {"type": ["integer", "null"]}}}}
+}

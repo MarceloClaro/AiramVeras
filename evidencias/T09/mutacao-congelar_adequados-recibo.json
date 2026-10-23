@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T06:28:15.209195+00:00",
+  "snapshot": "mutacao-congelar_adequados-antes.json",
+  "snapshot_sha256": "913f32332e542da4d91e256eac98b9cd8a2ca92276dacc5da8b6ff336fa507cd",
+  "log": "mutacao-congelar_adequados.log",
+  "log_sha256": "0f8d3deef274999ea254870d0188d221c0cf9400e0cf58a255bd3b87780ae3dc"
+}

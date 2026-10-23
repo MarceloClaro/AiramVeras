@@ -11,3 +11,7 @@ evidencias/T07/** -text whitespace=cr-at-eol
 estatistica/t07/** -text whitespace=cr-at-eol
 evidencias/T07/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 evidencias/T07/executar.py whitespace=-blank-at-eof,cr-at-eol
+evidencias/T09/** -text whitespace=cr-at-eol
+estatistica/t09/** -text whitespace=cr-at-eol
+evidencias/T09/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidencias/T09/executar.py whitespace=-blank-at-eof,cr-at-eol

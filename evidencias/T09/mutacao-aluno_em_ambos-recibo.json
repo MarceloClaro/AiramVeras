@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T06:28:26.104161+00:00",
+  "snapshot": "mutacao-aluno_em_ambos-antes.json",
+  "snapshot_sha256": "0f77fabec7496faa03edcbd0c5c910c439a54eaedf9920278552c806895580d9",
+  "log": "mutacao-aluno_em_ambos.log",
+  "log_sha256": "a1dd934971204f6e5b6cccd2e129bb6f3d79402c591feec55efc5a7c87be664e"
+}

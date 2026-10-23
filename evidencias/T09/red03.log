@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____ test_ausencia_de_metadados_nao_afirma_vazamento_ou_ajuste_observado _____
+
+    def test_ausencia_de_metadados_nao_afirma_vazamento_ou_ajuste_observado():
+        result=gate([{'ciclo':'I'}],[])
+>       assert 'vazamento_temporal' not in result['motivos']
+E       AssertionError: assert 'vazamento_temporal' not in ['avaliacoes_sem_chave_unica', 'ciclos_documentados_insuficientes', 'comparabilidade_nao_comprovada', 'contrato_variaveis_incompleto', 'datas_aplicacao_nao_comprovadas', 'identidade_longitudinal_nao_comprovada', ...]
+
+tests\test_predicao_gate.py:42: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_predicao_gate.py::test_ausencia_de_metadados_nao_afirma_vazamento_ou_ajuste_observado
+1 failed, 12 deselected in 0.33s
