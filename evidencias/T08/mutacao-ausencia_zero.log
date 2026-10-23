@@ -1,0 +1,16 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_T47_ausencia_excluida_zero_obtido_e_constante_preservados ________
+
+    def test_T47_ausencia_excluida_zero_obtido_e_constante_preservados():
+        f=features()
+        f['valores'][0]=[None,None,None]
+        f['cobertura'][0]=0
+        r=api('agrupar')(f,config(),18)
+>       assert r['cobertura']['elegiveis']==19
+E       assert 20 == 19
+
+tests\test_clusters.py:67: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_clusters.py::test_T47_ausencia_excluida_zero_obtido_e_constante_preservados
+1 failed in 9.25s

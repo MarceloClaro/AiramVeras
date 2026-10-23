@@ -1,0 +1,8 @@
+..................                                                       [100%]
+============================= slowest 5 durations =============================
+3.51s call     tests/test_clusters.py::test_T45_sementes_subamostras_grupos_e_ordem
+0.15s call     tests/test_clusters.py::test_T46_filtro_grupo_reprova_mesmo_com_ari_alto
+0.15s call     tests/test_clusters.py::test_T45_comparar_particoes_recusa_identidades_diferentes
+0.13s call     tests/test_clusters.py::test_T46_replicacao_nao_impoe_minimo_cinco
+0.08s call     tests/test_clusters.py::test_T47_ausencia_excluida_zero_obtido_e_constante_preservados
+18 passed in 4.45s

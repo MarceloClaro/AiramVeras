@@ -1,0 +1,1016 @@
+{
+  "status": "PASS",
+  "schemas": 2,
+  "hashes": {
+    "estatistica/t08/checkpoint.json": "d298a8754ad6e896c7e1077dcccc35c963a90777d82f4fb40c90e2224e4cacc1",
+    "restrito/t08/checkpoint.json": "17d71689ba27724f8b165358e810210ee7c6d4a9001dbaa403f125a47b8c1e3e",
+    "docs/esquema-t08.json": "b580d6bd2c1ea59d7fc962aae6341ee04ce2856dce5184a3899eb5bfef176f9c",
+    "docs/esquema-restrito-t08.json": "296ab70598581008f2be5a3e7e7c369de6f93c5c2e832396568ea26e2fc80a0c",
+    "config/agrupamentos.json": "b5c70c4e277130b5bb7c3815ec011650c83a1228c816181abfd16987e440cd63"
+  },
+  "validador": "Subconjunto completo utilizado: type,const,oneOf,required,properties,additionalProperties,items",
+  "natureza_schema": "estrutura efetiva versionada; sem alegar validacao independente do conteudo",
+  "sensibilidade": [
+    {
+      "ano": 1,
+      "componente": "LEITURA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 4,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 4,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": 4,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 4,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 1,
+      "componente": "MATEMATICA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 1,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 2,
+      "componente": "LEITURA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 2,
+      "componente": "MATEMATICA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 3,
+      "componente": "LEITURA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 4,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 3,
+      "componente": "MATEMATICA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparavel",
+          "features_comuns": 3,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 4,
+      "componente": "LEITURA",
+      "observado_k": 2,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 3,
+          "resultados": {
+            "observado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 2,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparavel",
+          "features_comuns": 3,
+          "resultados": {
+            "observado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 5,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 4,
+      "componente": "MATEMATICA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 7,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 7,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 7,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparavel",
+          "features_comuns": 3,
+          "resultados": {
+            "observado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 3,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 7,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 5,
+      "componente": "LEITURA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparacao_indisponivel",
+          "features_comuns": 0,
+          "resultados": {},
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 2,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 3,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    },
+    {
+      "ano": 5,
+      "componente": "MATEMATICA",
+      "observado_k": null,
+      "mudancas_limiares_observado": 0,
+      "cenarios": [
+        {
+          "cenario": "ressalvada_passo1",
+          "status": "comparavel",
+          "features_comuns": 9,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "estrita_passo1",
+          "status": "comparavel",
+          "features_comuns": 9,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2",
+          "status": "comparavel",
+          "features_comuns": 9,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 0,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo2_sem_retorno",
+          "status": "comparavel",
+          "features_comuns": 3,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        },
+        {
+          "cenario": "ressalvada_passo1_peso_oportunidades",
+          "status": "comparavel",
+          "features_comuns": 9,
+          "resultados": {
+            "observado_controle": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "observado_total": {
+              "k": null,
+              "status": "sem_agrupamento_estavel"
+            },
+            "propagado_controle": {
+              "k": 2,
+              "status": "exploratorio_estavel"
+            }
+          },
+          "mudancas_limiares": 1,
+          "cobertura_muda_eixos": 0
+        }
+      ]
+    }
+  ],
+  "limites": "Revisao docente, data de reavaliacao, eficacia e validacao externa pendentes"
+}

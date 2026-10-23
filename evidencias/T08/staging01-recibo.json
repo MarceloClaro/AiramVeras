@@ -1,0 +1,9 @@
+{
+  "fase": "VALIDACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T06:28:02.420889+00:00",
+  "snapshot": "staging01-antes.json",
+  "snapshot_sha256": "0a4e75ca2a73d92559f31b42eaf186e5ba5ade8030f684d90b8bdc9d2a3a7b3c",
+  "log": "staging01.log",
+  "log_sha256": "7f799ff2ba2ad811b7c740a883016866fb5074e1315555ce8f012cdf8e67311a"
+}

@@ -19,4 +19,5 @@ secrets*
 htmlcov/
 build/
 dist/
+estatistica/t08/versoes/
 *.egg-info/

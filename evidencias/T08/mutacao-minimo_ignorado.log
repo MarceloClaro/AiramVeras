@@ -1,0 +1,21 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados _____________
+
+    def test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados():
+        f=features()
+        f['valores']=[[0,0,0]]*20
+        r=api('agrupar')(f,config(),18)
+        assert r['status']=='sem_agrupamento_estavel' and r['grupos']==[]
+        assert r['motivo']=='perfis_sem_variacao'
+        f=features(12)
+        f['valores']=[[0,0,0]]*3+[[1,1,0]]*9
+        r=api('agrupar')(f,config(),18)
+        assert r['status']=='sem_agrupamento_estavel'
+>       assert 'tamanho_original' in r['candidatos'][0]['reprovacoes']
+E       AssertionError: assert 'tamanho_original' in ['estabilidade_grupo']
+
+tests\test_clusters.py:59: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_clusters.py::test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados
+1 failed in 8.85s

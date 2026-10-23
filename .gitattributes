@@ -11,3 +11,15 @@ evidencias/T07/** -text whitespace=cr-at-eol
 estatistica/t07/** -text whitespace=cr-at-eol
 evidencias/T07/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 evidencias/T07/executar.py whitespace=-blank-at-eof,cr-at-eol
+evidencias/T08/** -text whitespace=cr-at-eol
+estatistica/t08/** -text whitespace=cr-at-eol
+estatistica/t08/perfis-pedagogicos.md whitespace=-blank-at-eof,cr-at-eol
+evidencias/T08/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidencias/T08/executar.py whitespace=-blank-at-eof,cr-at-eol
+docs/*t08* -text
+config/agrupamentos.json -text
+airam/clusters.py -text
+airam/perfis_grupo.py -text
+tests/test_clusters.py -text
+tests/test_perfis_grupo.py -text
+tests/test_entrega_t08.py -text

@@ -1,0 +1,18 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_T46_filtro_grupo_reprova_mesmo_com_ari_alto _______________
+
+    def test_T46_filtro_grupo_reprova_mesmo_com_ari_alto():
+        r=api('agrupar')(features(),config(),18)
+        cand=deepcopy(r['candidatos'][0])
+        cand['por_grupo'][0]['subamostras']['jaccard']['mediana']=0.1
+>       assert 'estabilidade_grupo' in api('avaliar_candidato')(cand,config())
+E       AssertionError: assert 'estabilidade_grupo' in []
+E        +  where [] = <function avaliar_candidato at 0x0000029E073858A0>({'k': 2, 'referencia': {'inercia': 0.004000000000000006, 'seed': 11, 'iteracoes': 2, 'centroides': [[0.07, 0.099999999...planejadas': 8, 'validas': 8, 'falhas': {}, 'ari': {'n': 8, 'minimo': 1.0, 'p10': 1.0, 'mediana': 1.0, ...}, ...}, ...}, {'versao': 'airam-agrupamentos-v1', 'seed': 81022, 'seeds': [11, 29, 47], 'subamostras': 8, ...})
+E        +    where <function avaliar_candidato at 0x0000029E073858A0> = api('avaliar_candidato')
+E        +    and   {'versao': 'airam-agrupamentos-v1', 'seed': 81022, 'seeds': [11, 29, 47], 'subamostras': 8, ...} = config()
+
+tests\test_clusters.py:130: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_clusters.py::test_T46_filtro_grupo_reprova_mesmo_com_ari_alto
+1 failed in 9.50s

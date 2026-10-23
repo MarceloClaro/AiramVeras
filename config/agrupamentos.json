@@ -1,0 +1,49 @@
+{
+  "versao": "airam-agrupamentos-v1",
+  "seed": 81022,
+  "seeds": [11, 29, 47, 71, 101, 131, 173, 211],
+  "subamostras": 40,
+  "fracao_subamostra": 0.8,
+  "n_init_subamostra": 5,
+  "max_iter": 300,
+  "tol": 0.0001,
+  "min_grupo": 5,
+  "max_k": 5,
+  "cobertura_minima": 0.8,
+  "limiares": {
+    "fracao_validas": 0.9,
+    "ari_mediana": 0.7,
+    "ari_p10": 0.4,
+    "jaccard_mediana": 0.6,
+    "jaccard_p10": 0.35,
+    "suporte_grupo": 0.8,
+    "silhueta_media": 0.0,
+    "silhueta_mediana_grupo": 0.0,
+    "fracao_negativa_grupo": 0.25
+  },
+  "sensibilidade_limiares": {
+    "mais_exigente": {"ari_mediana": 0.8, "ari_p10": 0.5, "jaccard_mediana": 0.7, "jaccard_p10": 0.45, "silhueta_media": 0.1},
+    "menos_exigente": {"ari_mediana": 0.6, "ari_p10": 0.3, "jaccard_mediana": 0.5, "jaccard_p10": 0.25}
+  },
+  "sensibilidade_cobertura": [0.7, 0.9, 1.0],
+  "sensibilidade_min_grupo": [6],
+  "representacoes": ["observado_total", "observado_controle", "propagado_controle"],
+  "cenarios": ["ressalvada_passo1", "estrita_passo1", "ressalvada_passo2", "ressalvada_passo2_sem_retorno", "ressalvada_passo1_peso_oportunidades"],
+  "decisoes": {
+    "unidade": "mesmo contexto completo T05; nao unir instrumentos/anos/componentes/fontes",
+    "estimando": "perfis de proporcoes por posicao, peso igual sem padronizacao; sensibilidade peso oportunidades previstas",
+    "ausencia": "sem imputacao; casos completos, cobertura por soma D/op previstas, matriz incompleta excluida da geometria",
+    "comparacao": "Fs estrutural por Q e kernel com suporte; E observado completo em F0 e propagado completo em Fs; mesmos E nos tres bracos",
+    "algoritmo": "KMeans lloyd; n_init=1 por seed original; euclidiana; threads=1; constantes preservadas",
+    "referencia": "medoide ARI das seeds validas; desempate inercia e seed; rotulos ordenados por centroide",
+    "reamostragem": "40 subamostras simples sem reposicao por estudante; mesmos sorteios nos bracos; nao estratificado por turma; limita heterogeneidade de turmas",
+    "minimo": "5 somente na referencia original; replicacoes sem minimo5, suporte grupo >=2",
+    "grupo": "Hungarian um-a-um maximizando Jaccard; suporte insuficiente separado; todas falhas contam no denominador planejado",
+    "escolha": "menor K que satisfaz todos os controles; alternativa por regras sempre; nenhum ajuste posterior para resgatar primario",
+    "quantis": "numpy quantile method=linear; sem arredondar decisoes",
+    "sensibilidade": "limiares e minimo reutilizam ajustes; cobertura preserva casos completos e pode nao alterar E; cenarios grafo/peso refazem estimando identificado",
+    "custo": "8 seeds e 40 reamostragens com 5 inicializacoes internas equilibram diagnostico local e custo; nao estimam probabilidade de validade",
+    "metas": "MetaB total C/D>=4/5 somente acertos_itens; MetaA categoria original separada; EF escalas proprias",
+    "limites": "exploratorio; nao causal, nao dominio BNCC, nao capacidade fixa; revisao docente pendente"
+  }
+}

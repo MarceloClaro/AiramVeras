@@ -1,0 +1,9 @@
+{
+  "fase": "DOCUMENTACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T06:21:33.785436+00:00",
+  "snapshot": "esquemas01-antes.json",
+  "snapshot_sha256": "edb07ed97516144d1ee9b70f2707603294c9f8063299b2aee6eafd50204f6ec4",
+  "log": "esquemas01.log",
+  "log_sha256": "758d7028d2b1e1128d2c5743faa1f6f4815c7e567c1c27ed7d4e2f23a14669ab"
+}

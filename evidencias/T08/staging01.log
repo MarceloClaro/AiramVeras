@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T08\auditar_staging.py", line 47, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T08\auditar_staging.py", line 40, in main
+    if diff.returncode: raise ValueError('Whitespace staged divergente')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Whitespace staged divergente

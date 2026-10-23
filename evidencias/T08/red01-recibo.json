@@ -1,0 +1,9 @@
+{
+  "fase": "RED",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T23:20:47.009468+00:00",
+  "snapshot": "red01-antes.json",
+  "snapshot_sha256": "90b90e193de54d05d95ff9c92cbf7988649f2bc413420ccf7268698424679d6f",
+  "log": "red01.log",
+  "log_sha256": "6585982e05d33b6b726d47609a12bf87d33e12032aaafffe0519342474bc0378"
+}
