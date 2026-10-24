@@ -290,6 +290,70 @@
                 </div>
             </div>
 
+            <!-- Painel Executivo do Early Warning System (EWS) e Auditoria Forense -->
+            <div class="glass-panel p-6 rounded-2xl border border-rose-500/20 bg-gradient-to-r from-rose-950/20 via-slate-900 to-slate-900">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-rose-400 font-bold">Inteligência Preditiva Censitária (EWS & Ledger Imutável)</span>
+                            <h3 class="text-base font-bold text-white">Early Warning System (EWS) — Alerta Precoce de Defasagem</h3>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-rose-950/60 text-rose-400 border border-rose-800/40 font-bold">172 Predições Ativas</span>
+                        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-indigo-950/60 text-indigo-400 border border-indigo-800/40">Ledger SHA-256 Encadeado</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs mb-4">
+                    <div class="p-3 rounded-xl bg-slate-950/60 border border-red-900/40">
+                        <div class="text-red-400 text-[11px] flex items-center gap-1.5 font-bold">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                            Risco Crítico (PIP 1:1):
+                        </div>
+                        <div class="text-xl font-black text-red-400 font-mono mt-1">1 aluno</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Prob. ≥ 65% • Defasagem aguda</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950/60 border border-amber-900/40">
+                        <div class="text-amber-400 text-[11px] flex items-center gap-1.5 font-bold">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            Risco Alto (Nivelamento):
+                        </div>
+                        <div class="text-xl font-black text-amber-400 font-mono mt-1">16 alunos</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Prob. 45-64% • Micro-passos</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950/60 border border-yellow-900/40">
+                        <div class="text-yellow-400 text-[11px] flex items-center gap-1.5 font-bold">
+                            <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                            Risco Moderado (Alerta):
+                        </div>
+                        <div class="text-xl font-black text-yellow-400 font-mono mt-1">46 alunos</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Prob. 25-44% • Monitoramento</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950/60 border border-emerald-900/40">
+                        <div class="text-emerald-400 text-[11px] flex items-center gap-1.5 font-bold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            Consolidado / Seguro:
+                        </div>
+                        <div class="text-xl font-black text-emerald-400 font-mono mt-1">109 alunos</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Ritmo pleno ou Superdotados (AH/SD)</div>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-xl bg-slate-950/40 border border-slate-800/80 text-[11px] text-slate-300 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="lock" class="w-4 h-4 text-rose-400"></i>
+                        <span><strong>Trilha Forense Imutável:</strong> Auditoria em cadeia criptográfica (<code class="text-rose-300 font-mono">fato_auditoria_transacional_ledger</code>) e motor SQLite em modo <code class="text-cyan-300 font-mono">WAL (Write-Ahead Logging)</code> com 6 índices B-Tree compostos para consultas em microssegundos.</span>
+                    </div>
+                    <div class="text-rose-400 font-mono text-[10px] whitespace-nowrap">
+                        Visão Canônica: vw_estudante_raiox_360
+                    </div>
+                </div>
+            </div>
+
             <!-- Student Diagnostic Table -->
             <div class="glass-panel p-6 rounded-2xl">
                 <div class="overflow-x-auto">

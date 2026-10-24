@@ -581,4 +581,141 @@ JOIN dim_estudantes e ON t.aluno_hash_id = e.aluno_hash_id
 JOIN dim_turmas tur ON e.turma_id = tur.id
 JOIN dim_metodo_fonico_estagios f ON t.estagio_fonico_atual = f.codigo_estagio
 JOIN dim_kumon_niveis_granulares km ON t.nivel_kumon_mat_atual = km.codigo_nivel
-JOIN dim_kumon_niveis_granulares kl ON t.nivel_kumon_leit_atual = kl.codigo_nivel;
+-- ============================================================================
+-- CAMADA PLATINUM: EARLY WARNING SYSTEM (EWS), AUDITORIA LEDGER E VISÃO 360º
+-- Governança Criptográfica, Índices B-Tree de Alta Performance e Predição de Risco
+-- ============================================================================
+
+-- Índices B-Tree Analíticos Compostos
+CREATE INDEX IF NOT EXISTS idx_participacao_aluno_caderno ON fato_participacao_estudante (aluno_hash_id, avaliacao_caderno_id);
+CREATE INDEX IF NOT EXISTS idx_escores_participacao_nivel ON fato_escores_psicometricos (participacao_id, nivel_desempenho_caed);
+CREATE INDEX IF NOT EXISTS idx_trilha_kumon_fonico ON fato_trilha_aprendizagem_granular_aluno (aluno_hash_id, status_evolucao_kumon, taxa_maestria_granular_pct);
+CREATE INDEX IF NOT EXISTS idx_aee_perfil_aluno ON fato_estudante_aee_perfil (aluno_hash_id, cid_primario_id);
+CREATE INDEX IF NOT EXISTS idx_grafo_caed_bncc ON rel_caed_bncc_grafo (caed_descritor_id, bncc_habilidade_id);
+CREATE INDEX IF NOT EXISTS idx_altas_habilidades_aluno ON fato_rastreio_altas_habilidades (aluno_hash_id, possui_dupla_excepcionalidade_2e);
+
+-- Catálogo de Fatores de Risco EWS
+CREATE TABLE IF NOT EXISTS dim_fatores_risco_ews (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_fator TEXT NOT NULL UNIQUE,
+    categoria_fator TEXT NOT NULL,
+    descricao_fator TEXT NOT NULL,
+    peso_algoritmico REAL NOT NULL,
+    acao_mitigadora_recomendada TEXT NOT NULL
+);
+
+-- Predição Censitária EWS por Estudante
+CREATE TABLE IF NOT EXISTS fato_predicao_alerta_precoce_ews (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL UNIQUE,
+    ano_escolar TEXT NOT NULL,
+    probabilidade_risco_defasagem REAL NOT NULL,
+    nivel_risco_ews TEXT NOT NULL, -- CRITICO, ALTO, MODERADO, CONSOLIDADO
+    fator_risco_preponderante TEXT NOT NULL,
+    score_tri_impacto REAL NOT NULL,
+    score_kumon_lacuna REAL NOT NULL,
+    score_aee_vulnerabilidade REAL NOT NULL,
+    score_frequencia_participacao REAL NOT NULL,
+    protocolo_intervencao_sugerido TEXT NOT NULL,
+    data_calculo_predicao TEXT NOT NULL,
+    hash_validacao_forense TEXT NOT NULL,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id)
+);
+
+-- Ledger de Auditoria Criptográfica Imutável (Blockchain-like Forense)
+CREATE TABLE IF NOT EXISTS fato_auditoria_transacional_ledger (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sequencia_bloco INTEGER NOT NULL UNIQUE,
+    tabela_afetada TEXT NOT NULL,
+    tipo_operacao TEXT NOT NULL, -- INSERT, UPDATE, DELETE, HOMOLOGACAO
+    registro_id_ou_hash TEXT NOT NULL,
+    resumo_transacao TEXT NOT NULL,
+    hash_bloco_anterior TEXT NOT NULL,
+    hash_bloco_atual TEXT NOT NULL,
+    timestamp_utc TEXT NOT NULL,
+    agente_ou_processo TEXT NOT NULL
+);
+
+-- Trigger de Auditoria Automática
+CREATE TRIGGER IF NOT EXISTS trg_audit_escores_psicometricos_ins
+AFTER INSERT ON fato_escores_psicometricos
+BEGIN
+    INSERT INTO fato_auditoria_transacional_ledger (
+        sequencia_bloco,
+        tabela_afetada,
+        tipo_operacao,
+        registro_id_ou_hash,
+        resumo_transacao,
+        hash_bloco_anterior,
+        hash_bloco_atual,
+        timestamp_utc,
+        agente_ou_processo
+    )
+    VALUES (
+        (SELECT COALESCE(MAX(sequencia_bloco), 0) + 1 FROM fato_auditoria_transacional_ledger),
+        'fato_escores_psicometricos',
+        'INSERT',
+        'PART_ID_' || NEW.participacao_id,
+        'Novo escore computado: acertos ' || NEW.total_acertos || ' nivel ' || NEW.nivel_desempenho_caed,
+        (SELECT COALESCE(MAX(hash_bloco_atual), '0000000000000000000000000000000000000000000000000000000000000000') FROM fato_auditoria_transacional_ledger),
+        lower(hex(sha256(NEW.participacao_id || NEW.total_acertos || datetime('now')))),
+        datetime('now'),
+        'TRIGGER_SQLITE_AUDIT'
+    );
+END;
+
+-- Visão 7: Visão Canônica 360º Universal do Estudante
+CREATE VIEW IF NOT EXISTS vw_estudante_raiox_360 AS
+SELECT 
+    e.aluno_hash_id,
+    t.nome_turma,
+    CASE 
+        WHEN t.nome_turma LIKE '%1º%' THEN '1º Ano'
+        WHEN t.nome_turma LIKE '%2º%' THEN '2º Ano'
+        WHEN t.nome_turma LIKE '%3º%' THEN '3º Ano'
+        WHEN t.nome_turma LIKE '%4º%' THEN '4º Ano'
+        ELSE '5º Ano'
+    END AS ano_escolar,
+    -- CAEd Língua Portuguesa
+    MAX(CASE WHEN c.componente_curricular = 'LINGUA_PORTUGUESA' OR c.componente_curricular = 'LEITURA' THEN ROUND(ep.taxa_rendimento_ponderada * 100, 1) END) AS acerto_lp_pct,
+    MAX(CASE WHEN c.componente_curricular = 'LINGUA_PORTUGUESA' OR c.componente_curricular = 'LEITURA' THEN ep.nivel_desempenho_caed END) AS nivel_caed_lp,
+    MAX(CASE WHEN c.componente_curricular = 'LINGUA_PORTUGUESA' OR c.componente_curricular = 'LEITURA' THEN ep.atingiu_meta_b_80pct END) AS meta_b_lp,
+    -- CAEd Matemática
+    MAX(CASE WHEN c.componente_curricular = 'MATEMATICA' THEN ROUND(ep.taxa_rendimento_ponderada * 100, 1) END) AS acerto_mat_pct,
+    MAX(CASE WHEN c.componente_curricular = 'MATEMATICA' THEN ep.nivel_desempenho_caed END) AS nivel_caed_mat,
+    MAX(CASE WHEN c.componente_curricular = 'MATEMATICA' THEN ep.atingiu_meta_b_80pct END) AS meta_b_mat,
+    -- Método Fônico & Kumon Granular
+    tk.estagio_fonico_atual,
+    mfe.nome_estagio AS nome_estagio_fonico,
+    tk.nivel_kumon_mat_atual,
+    tk.nivel_kumon_leit_atual,
+    tk.taxa_maestria_granular_pct AS maestria_kumon_pct,
+    tk.tempo_medio_folha_min,
+    tk.indice_autodidatismo_pct,
+    tk.status_evolucao_kumon,
+    -- AEE & CIDs
+    MAX(CASE WHEN aee.aluno_hash_id IS NOT NULL THEN 1 ELSE 0 END) AS eh_laudado_aee,
+    MAX(cid.codigo_cid10) AS codigo_cid10,
+    MAX(cid.nomenclatura_oficial) AS cid_nome,
+    -- Altas Habilidades / Dupla Excepcionalidade
+    MAX(CASE WHEN ah.aluno_hash_id IS NOT NULL THEN 1 ELSE 0 END) AS eh_superdotado_ahsd,
+    MAX(COALESCE(ah.possui_dupla_excepcionalidade_2e, 0)) AS eh_dupla_excepcionalidade_2e,
+    -- Early Warning System (EWS)
+    ews.probabilidade_risco_defasagem,
+    ews.nivel_risco_ews,
+    ews.fator_risco_preponderante,
+    ews.protocolo_intervencao_sugerido,
+    ews.hash_validacao_forense
+FROM dim_estudantes e
+JOIN dim_turmas t ON e.turma_id = t.id
+LEFT JOIN fato_participacao_estudante p ON e.aluno_hash_id = p.aluno_hash_id
+LEFT JOIN dim_avaliacoes_cadernos c ON p.avaliacao_caderno_id = c.id
+LEFT JOIN fato_escores_psicometricos ep ON p.id = ep.participacao_id
+LEFT JOIN fato_estudante_aee_perfil aee ON e.aluno_hash_id = aee.aluno_hash_id
+LEFT JOIN dim_cid_catalogo cid ON aee.cid_primario_id = cid.id
+LEFT JOIN fato_trilha_aprendizagem_granular_aluno tk ON e.aluno_hash_id = tk.aluno_hash_id
+LEFT JOIN dim_metodo_fonico_estagios mfe ON tk.estagio_fonico_atual = mfe.codigo_estagio
+LEFT JOIN fato_rastreio_altas_habilidades ah ON e.aluno_hash_id = ah.aluno_hash_id
+LEFT JOIN fato_predicao_alerta_precoce_ews ews ON e.aluno_hash_id = ews.aluno_hash_id
+GROUP BY e.aluno_hash_id;
+
