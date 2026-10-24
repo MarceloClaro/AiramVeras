@@ -10,8 +10,10 @@ dados/*
 !dados/airam_veras_ecossistema.sqlite
 !dados/relatorio_longitudinal_multiciclos.json
 restrito/
-relatorios/
-*.sqlite
+relatorios/*
+!relatorios/dashboard_interativo.html
+!relatorios/fichas_intervencao_pip.html
+!relatorios/prontuario_aee_tod_impresso.html
 !*.sqlite
 !datamining/dados/airam_veras_ecossistema.sqlite
 !00_ORGANIZACAO/02_Dados_e_banco/airam_veras_ecossistema.sqlite

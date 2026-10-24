@@ -1059,6 +1059,45 @@ stateDiagram-v2
 
 ---
 
+## 🚀 Modernização Integral do Ecossistema (Os 5 Eixos Concluídos)
+
+Para garantir que o projeto seja não apenas tecnicamente perfeito, mas o **estado da arte absoluto** em tecnologia educacional, auditoria e facilidade de uso, foram implementados os seguintes 5 eixos mestres:
+
+```mermaid
+graph TD
+    classDef mainBox fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#ffffff,font-weight:bold;
+    classDef itemBox fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef userBox fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ffffff;
+
+    AIRAM["🚀 Modernização Integral do Ecossistema Airam Veras"]:::mainBox
+
+    EIXO1["🖥️ Eixo 1: Dashboard Web Interativo (dashboard.html)"]:::itemBox
+    EIXO2["⚡ Eixo 2: CLI Interativo Unificado (airam.py)"]:::itemBox
+    EIXO3["📑 Eixo 3: Gerador de Fichas de Intervenção (PIP & AEE)"]:::itemBox
+    EIXO4["🔄 Eixo 4: Pipeline CI/CD GitHub Actions (.github/workflows)"]:::itemBox
+    EIXO5["🔌 Eixo 5: API RESTful / FastAPI (api_servidor.py)"]:::itemBox
+
+    AIRAM --> EIXO1 & EIXO2 & EIXO3 & EIXO4 & EIXO5
+
+    PEDAGOGO["👩‍🏫 Pedagogos: Visualização gráfica, PIPs e Metas A/B"]:::userBox
+    PSICOLOGO["🧠 Psicólogos/AEE: Monitoramento de CIDs, TOD/PBS e Acessibilidade"]:::userBox
+    DEV["💻 Desenvolvedores: API, Banco, CI/CD e CLI automatizada"]:::userBox
+
+    EIXO1 & EIXO3 --> PEDAGOGO
+    EIXO1 & EIXO3 --> PSICOLOGO
+    EIXO2 & EIXO4 & EIXO5 --> DEV
+```
+
+| Eixo de Modernização | Artefato Principal | Descrição e Como Usar |
+| :--- | :--- | :--- |
+| **1. Dashboard Web SPA** | [`dashboard.html`](file:///c:/Users/marce/Downloads/Airam%20veras/dashboard.html)<br>*(Espelho: `datamining/relatorios/dashboard_interativo.html`)* | Interface web moderna (Glassmorphism, Tailwind, Chart.js) com 5 abas: Executiva (Metas A e B), Pedagógica (filtros por ano e grupos G1-G4), Psicologia/AEE (CIDs e TOD/PBS), Longitudinal Multi-Ciclos e Matriz de Markov. Abre com duplo clique! |
+| **2. CLI Central Unificado** | [`airam.py`](file:///c:/Users/marce/Downloads/Airam%20veras/airam.py) | Ponto de entrada no terminal com menu interativo: `python airam.py` ou flags diretas (`--metas`, `--tod`, `--aluno <hash>`, `--longitudinal`, `--web`). |
+| **3. Fichas de Intervenção (PIP & AEE)** | [`datamining/relatorios/fichas_intervencao_pip.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/fichas_intervencao_pip.html)<br>[`datamining/relatorios/prontuario_aee_tod_impresso.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/prontuario_aee_tod_impresso.html) | Fichas individuais formatadas em folha A4 com checklist didático, códigos BNCC e regras comportamentais para TOD e AEE, prontas para impressão e sala de aula. |
+| **4. Pipeline CI/CD GitHub Actions** | [`.github/workflows/ci.yml`](file:///c:/Users/marce/Downloads/Airam%20veras/.github/workflows/ci.yml) | Automação contínua que executa a cada push a suíte de 360+ testes pytest, validação da integridade do banco SQLite 3FN, contraprova matemática e scanner de Zero-PII. |
+| **5. Servidor de API RESTful** | [`datamining/src/api_servidor.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/api_servidor.py) | API backend que expõe endpoints JSON (`/api/metas`, `/api/aee/tod`, `/api/longitudinal/markov`, `/api/estudantes?id=<hash>`) para consumo por qualquer aplicação web, mobile ou nuvem. |
+
+---
+
 ## 🛠️ Tecnologias e Dependências
 
 - **Runtime de Dados**: Python 3.12 (64-bit)
@@ -1067,3 +1106,5 @@ stateDiagram-v2
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (360+ cenários TDD automatizados)
 - **Banco de Dados Analítico**: SQLite 3 canônico, PostgreSQL 15+, Schemas OpenAPI 3.0 e JSON Schema
+- **Interface e Dashboard**: HTML5, Vanilla CSS / Tailwind, Chart.js, Glassmorphism
+- **Automação Contínua**: GitHub Actions (CI/CD)
