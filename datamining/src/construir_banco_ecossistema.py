@@ -47,7 +47,7 @@ def main():
     print("2. Cadastrando Escola Airam Veras...")
     cur.execute("""
         INSERT INTO dim_escola (inep_codigo, nome_escola, municipio, uf, dependencia_administrativa)
-        VALUES ('23084995', 'EEMTI AIRAM VERAS', 'Sobral', 'CE', 'Municipal');
+        VALUES ('23084995', 'EEMTI AIRAM VERAS', 'Crateús', 'CE', 'Municipal');
     """)
     escola_id = cur.lastrowid
 

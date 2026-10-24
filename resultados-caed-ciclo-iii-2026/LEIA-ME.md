@@ -1,6 +1,6 @@
 # Portal de Ingestão e Resultados CAEd / CNCA: Ciclo III de 2026 (AV32026)
 
-Escola: **AIRAM VERAS ESC CID** | Código INEP: **23084995** | Município: **Tianguá - CE** | Rede: **Municipal**
+Escola: **AIRAM VERAS ESC CID** | Código INEP: **23084995** | Município: **Crateús - CE** | Rede: **Municipal**
 
 ---
 
@@ -14,7 +14,7 @@ Esta pasta foi projetada para receber e custodiar os arquivos brutos do **Ciclo 
 3. No menu lateral, acesse **Exportação de Dados** / **Downloads**.
 4. Selecione os filtros mandatórios:
    - **Edição / Ciclo**: `2026 - Ciclo III` (código `AV32026`)
-   - **Município**: `Tianguá`
+   - **Município**: `Crateús`
    - **Escola**: `AIRAM VERAS ESC CID (23084995)`
 5. Baixe os arquivos ZIP por componente curricular para cada ano escolar (1º ao 5º ano):
    - **Língua Portuguesa (Leitura)**

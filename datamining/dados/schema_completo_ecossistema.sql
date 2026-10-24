@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS dim_escola (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     inep_codigo TEXT NOT NULL UNIQUE,
     nome_escola TEXT NOT NULL,
-    municipio TEXT NOT NULL DEFAULT 'Sobral',
+    municipio TEXT NOT NULL DEFAULT 'Crateús',
     uf TEXT NOT NULL DEFAULT 'CE',
     dependencia_administrativa TEXT NOT NULL DEFAULT 'Municipal',
     data_criacao_registro TEXT NOT NULL DEFAULT (datetime('now'))

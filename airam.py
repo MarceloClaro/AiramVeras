@@ -44,7 +44,7 @@ def print_banner():
     print(f"""{CYAN}{BOLD}
 ================================================================================
   🏫 ECOSSISTEMA EDUCACIONAL AIRAM VERAS 2026 — CLI CENTRAL
-  Escola Municipal Airam Veras | INEP: 23084995 | Tianguá - CE
+  Escola Municipal Airam Veras | INEP: 23084995 | Crateús - CE
   Base Canônica 3FN Auditável | Psicométrica TRI | Matriz de Markov
 ================================================================================{RESET}""")
 

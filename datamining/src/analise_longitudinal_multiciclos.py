@@ -1,6 +1,6 @@
 """
 Pipeline de Engenharia e Análise Longitudinal Multi-Ciclos (Ciclos I, II e III)
-Projeto Airam Veras 2026 - Escola Municipal Airam Veras (Tianguá - CE)
+Projeto Airam Veras 2026 - Escola Municipal Airam Veras (Crateús - CE)
 
 Módulos Implementados:
 1. Ingestão e Processamento de dados brutos dos Ciclos I, II e III (AV12026, AV22026, AV32026).
