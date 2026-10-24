@@ -1,0 +1,16 @@
+CEARÁ - AVALIE.CE 2025.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 2º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D004_M Executar adição ou subtração com números naturais.
+D005_M Utilizar números naturais, envolvendo diferentes significados da adição ou da subtração, na resolução de problemas.
+D080_M Reconhecer números ordinais.
+D097_M Comparar ou ordenar quantidades pela contagem.
+D011_M Identificar representações de figuras tridimensionais.
+D010_M Identificar representações de figuras bidimensionais.
+D001_M Identificar a localização ou a movimentação de pessoas, ou objetos em uma representação plana do espaço.
+D009_M Identificar informações apresentadas em tabelas ou gráficos.
+D081_M Comparar ou ordenar o objeto/pessoa/animal por meio dos atributos de comprimento, altura, espessura e tamanho.
+D082_M Executar a medição de grandezas por meio de medidas convencionais ou não.
+D015_M Corresponder cédulas e/ou moedas do Sistema Monetário Brasileiro.
+D083_M Localização de datas e informações contidas no calendário.

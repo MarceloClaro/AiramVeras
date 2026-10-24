@@ -1,0 +1,72 @@
+SPAECE MATRIZ LP 2EF C01.pdf 19
+SPAECE MATRIZ LP 3EM C01.pdf 41
+SPAECE MATRIZ LP 5EF C01.pdf 56
+SPAECE MATRIZ LP 9EF C01.pdf 75
+SPAECE MATRIZ MT 3EM C01.pdf 99
+SPAECE MATRIZ MT 5EF C01.pdf 121
+SPAECE MATRIZ MT 9EF C01.pdf 146
+CE SPAECE 2018 MATRIZ ALFA 2EF C01.pdf 165
+CE SPAECE 2018 MATRIZ LP 3EM C01.pdf 187
+CE SPAECE 2018 MATRIZ LP 5EF C01.pdf 202
+CE SPAECE 2018 MATRIZ LP 9EF C01.pdf 221
+CE SPAECE 2018 MATRIZ MT 3EM C01.pdf 245
+CE SPAECE 2018 MATRIZ MT 5EF C01.pdf 267
+CE SPAECE 2018 MATRIZ MT 9EF C01.pdf 292
+SPAECE 2019 MATRIZ LP 2EF C01.pdf 311
+SPAECE 2019 MATRIZ LP 3EM C01.pdf 333
+SPAECE 2019 MATRIZ LP 5EF C01.pdf 348
+SPAECE 2019 MATRIZ LP 9EF C01.pdf 367
+SPAECE 2019 MATRIZ MT 3EM C01.pdf 391
+SPAECE 2019 MATRIZ MT 5EF C01.pdf 413
+SPAECE 2019 MATRIZ MT 9EF C01.pdf 438
+SPAECE 2022 _LP ALFA.pdf 457
+SPAECE 2022 _MT EF.pdf 504
+SPAECE 2022_LP EF.pdf 538
+SPAECE 2022_LP EM.pdf 560
+SPAECE 2022_MT EM.pdf 584
+SPAECE2022LP3EM.pdf 605
+SPAECE2022LP5EF.pdf 617
+SPAECE2022LP9EF.pdf 634
+SPAECE2022MT3EM.pdf 654
+SPAECE2022MT5EF.pdf 672
+SPAECE2022MT9EF.pdf 690
+SPAECEALFA2022LP2EF.pdf 706
+SPAECE_2023_LP_ALFA.pdf 716
+SPAECE_2023_LP_EF_EM.pdf 779
+SPAECE_2023_MT_EF_EM.pdf 883
+CEARÁ 2024 - Matrizes de Referência - 1ª Av Formativa_2 ao 9EF_LP.pdf 945
+CEARÁ 2024 - Matrizes de Referência - 1ª Av Formativa_2 ao 9EF_MT.pdf 1032
+CEARÁ 2024 - Matrizes de Referência - 2ª Av Formativa_2 ao 9EF_LP.pdf 1099
+CEARÁ 2024 - Matrizes de Referência - 2ª Av Formativa_2 ao 9EF_MT.pdf 1189
+CE_LP_SOMATIVA.pdf 1282
+CE_MT_SOMATIVA.pdf 1455
+Ceará 2025_1 - Matriz de Referência_2025_LP.pdf 1537
+Ceará 2025_1 - Matriz de Referência_2025_MT.pdf 1643
+AVALIE_CE_ 2025.2_Matriz_de_Referência_LP.pdf 1698
+AVALIE_CE_ 2025.2_Matriz_de_Referência_MT.pdf 1784
+AvalieCE EM 2025 - Matriz de Referência_2025_LP.pdf 1799
+AvalieCE EM 2025 - Matriz de Referência_2025_MT.pdf 1822
+CE 2025 - Av Somativa - Matriz - LP.pdf 1915
+CE 2025 - Av Somativa - Matriz - MT.pdf 2090
+CE 2026 - Av Diagnóstica - Matriz - LP.pdf 2146
+CE 2026 - Av Diagnóstica - Matriz - MT.pdf 2227
+CEARÁ - Avalie.CE 2026.2 - Matriz - LP.pdf 2298
+CEARÁ - Avalie.CE 2026.2 - Matriz - MT.pdf 2388
+{
+  "documentos": 54,
+  "paginas": 143,
+  "matrizes": 129,
+  "registros": 2388,
+  "por_ano": {
+    "2017": 146,
+    "2018": 146,
+    "2019": 146,
+    "2022": 268,
+    "2023": 177,
+    "2024": 572,
+    "2025": 635,
+    "2026": 298
+  },
+  "integridade_sqlite": "ok",
+  "chave": "matriz_id + codigo"
+}

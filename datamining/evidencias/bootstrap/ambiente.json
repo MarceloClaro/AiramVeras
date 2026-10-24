@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "pypdf": "6.21.2",
+    "pdfplumber": "0.11.10",
+    "pytest": "9.1.1"
+  },
+  "setup_exit": 0,
+  "scope": "ambiente; nao e RED/GREEN funcional"
+}

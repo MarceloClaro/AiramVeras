@@ -1,0 +1,9 @@
+{
+  "fase": "CONFERIR_ARTIFICIAL_TODOS_TERMOS",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:37:40.594844+00:00",
+  "snapshot": "previa-conferencia02-antes.json",
+  "snapshot_sha256": "af2c9fdd55fc1fc5df12ec38b873401776f4850ddf12b8e5e0d93746cdc13534",
+  "log": "previa-conferencia02.log",
+  "log_sha256": "5996e46c4005c835a50d085d22984d458e6e01f97b7e0cb5757e665e6f66d6b8"
+}

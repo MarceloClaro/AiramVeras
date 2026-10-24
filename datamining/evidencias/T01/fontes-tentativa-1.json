@@ -1,0 +1,9 @@
+{
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "evidencias/T01/validar_fontes_reais.py"
+  ],
+  "codigo_saida": 1,
+  "estado": "INTERROMPIDA",
+  "motivo": "Varredura incluiu node_modules de ferramentas; escopo ajustado para excluir dependencias. Nenhuma fonte modificada; sem PASS desta tentativa."
+}

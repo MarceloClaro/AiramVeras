@@ -1,0 +1,16 @@
+FF.                                                                      [100%]
+================================== FAILURES ===================================
+_________ test_rejeita_ocorrencia_repetida_em_vez_de_duplicar_arestas _________
+tests\test_vinculos.py:103: in test_rejeita_ocorrencia_repetida_em_vez_de_duplicar_arestas
+    with pytest.raises(ValueError, match='ocorrencia duplicada'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+____ test_rejeita_bncc_repetida_na_mesma_celula_em_vez_de_duplicar_arestas ____
+tests\test_vinculos.py:108: in test_rejeita_bncc_repetida_na_mesma_celula_em_vez_de_duplicar_arestas
+    with pytest.raises(ValueError, match='BNCC duplicado'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_vinculos.py::test_rejeita_ocorrencia_repetida_em_vez_de_duplicar_arestas
+FAILED tests/test_vinculos.py::test_rejeita_bncc_repetida_na_mesma_celula_em_vez_de_duplicar_arestas
+2 failed, 1 passed, 10 deselected in 0.16s

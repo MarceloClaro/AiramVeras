@@ -1,0 +1,9 @@
+{
+  "fase": "ANALISE_DERIVADA",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T16:04:38.774301+00:00",
+  "snapshot": "fix1-atualizacao01-antes.json",
+  "snapshot_sha256": "d0edd50bb8f1e56767f6dfd85a067a15b0e52bae7e231648ae97797e8560d38a",
+  "log": "fix1-atualizacao01.log",
+  "log_sha256": "2decc0e27fef2a4ea89ceee80c49d730573dab39354f8d7926bc1c409b807f73"
+}

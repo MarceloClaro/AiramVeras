@@ -1,0 +1,828 @@
+{
+  "campos_contexto": [
+    "avaliacao_id",
+    "ano_avaliacao",
+    "ciclo",
+    "ano_escolar",
+    "componente",
+    "fonte_id",
+    "sha256",
+    "exportacao"
+  ],
+  "instrumentos": {
+    "071ca521e924ae35885d664919a402c7b7743b15f39db3e29c3e9ba8d1855bbb": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 3,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "MATEMATICA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/3ANO_MATEMATICA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:f304af22cb1ea89e0cd2cc878ca4ea6adaf5e86d155dc007f6f559fd5daf47b8",
+      "sha256": "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe"
+    },
+    "0e7c3aa2aa827b3e2088d077a89530b4ac47a522a3fd5d32f0438631b04b59b7": {
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "LEITURA",
+          "sha256:011c28a9b090076bf89da78ed55b62a9c29b10d53bf24e1809734c571ebcde12",
+          "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "MATEMATICA",
+          "sha256:4c713db46af85c2f4e09eb1ecd117768b771efe2d4c8b440fb33411c4036df9a",
+          "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "171999e3bd837b2005b8f0b8332dbeb19197548be8d31b2b2c62d1decc4365a4": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "FLUENCIA",
+          "sha256:b86b785d0dcded237ad0e76251eda750c111402ae1f43c46318bb0b182c25ddc",
+          "a4a3ebccd90215413be170310098a11100a76a3e5ab3cad0b9678782be8145bf",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "LEITURA",
+          "sha256:e4c4d431185fc485ac62798db8d693da1f46f1f43125bd29eb0a313b23c6205a",
+          "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "1fd8b5cb53d04123b41141458c18dd6463428b17d3d09f5e24b714f828c80c3c": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "FLUENCIA",
+          "sha256:32e32f123c30f73aa790f637122d9a2474e5e9949775b1269b2b26acf1b5587a",
+          "2143040a0c86c4933aa26745c6e0c5bd8ac863179a525e0ab2bbdd1fdc7f3308",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "MATEMATICA",
+          "sha256:f609e95f54b62b45c8b45cd38dea35c06d49576ad59cb8e7846eb1d5206165e3",
+          "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "21bfb86d6b810d629d10b726557d81df2a6009cbc6fa0b4fd8eb69c510d254e1": {
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "LEITURA",
+          "sha256:5dc66cd650bb861b6bce1bbbce43ae509ebe01805fcf11c45c85f8d1f41468fa",
+          "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "MATEMATICA",
+          "sha256:09be416fce651b81d6a41ced24bb3597a8dce3a0ea424d5e34748bcc8fdbb9f6",
+          "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "29dd1176100ec7d8bb7e829c3f05f3dedd48071529f91227c443b5fb3ab6b4fb": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 3,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "LEITURA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/3ANO_LEITURA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:e4c4d431185fc485ac62798db8d693da1f46f1f43125bd29eb0a313b23c6205a",
+      "sha256": "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583"
+    },
+    "2a8d5293691003e37bc41cb392de006ccd01682b2a4e0e2054bc94738da0a95e": {
+      "FLUENCIA": [],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "LEITURA",
+          "sha256:312a9bb216b5dd5cdfa3897d8a2fe7e0038062ab211eee5a066ed5e340c6a593",
+          "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "2ea62efd7daefe4c1f96d1604bfd20914ef76a6eb6a3bcffea36b49b1571d4f0": {
+      "FLUENCIA": [],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "MATEMATICA",
+          "sha256:3016f4ab3850dde3291d1bf0779c77c9fe492c99433d6788322184d858658994",
+          "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "36065cc3876b5823efa9aafad2e7c4baf9035e2e96137217e70ce6c35551e922": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 2,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "MATEMATICA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/2ANO_MATEMATICA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:f609e95f54b62b45c8b45cd38dea35c06d49576ad59cb8e7846eb1d5206165e3",
+      "sha256": "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9"
+    },
+    "3b3af41ada359f0487a30967b29acc17a02a60c5cc2c2781dc1ea4e50591f0ef": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "FLUENCIA",
+          "sha256:b86b785d0dcded237ad0e76251eda750c111402ae1f43c46318bb0b182c25ddc",
+          "a4a3ebccd90215413be170310098a11100a76a3e5ab3cad0b9678782be8145bf",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "MATEMATICA",
+          "sha256:f304af22cb1ea89e0cd2cc878ca4ea6adaf5e86d155dc007f6f559fd5daf47b8",
+          "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "3b8e2c593bb7376c30f57003f7a652ea56817d6eb6f379df21337749c213d7ef": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "ESCRITA",
+          "sha256:c612073c204a4f8c71b58b1871f12c7ef537f3b60d0a90c51d384f231a1ab97b",
+          "7bab53deb3a359dc7d26ceb0072ceb4b6c959d4ea2d1de11191b46b6a0caff69",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "FLUENCIA",
+          "sha256:b86b785d0dcded237ad0e76251eda750c111402ae1f43c46318bb0b182c25ddc",
+          "a4a3ebccd90215413be170310098a11100a76a3e5ab3cad0b9678782be8145bf",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "3be0b0d77ecffb0518eca155852d278d427cadabd1f0159515f6328facccb135": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "ESCRITA",
+          "sha256:5996ad071c79939960d79357c338507fa40f403478b2cd5fe2799446228f8a50",
+          "1f6e2799922130fd792baac6c03f83fc159dd5b7d652ab95aef393e8bc6f64a1",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "FLUENCIA",
+          "sha256:588c9a55df88ca0bfef569710196a06e681b047700461813ebc696a492ba0b60",
+          "5b4a22a97e6a9f04983467c3fd452958aa432597ba73d6ffe9975c31cabf394e",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "3c019b9d271c37690fc91c3c3d0f5643b19b4791439e7fc5768bcc9804df3eb8": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "ESCRITA",
+          "sha256:7127325cd3ac91c18f13c17db96b2b3601b4275f23c1f2cb1e96d1b3a090e801",
+          "5dab95321f1fe51fcf196067745c2effcf8f263a8eedf98d396a398c081e8071",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "FLUENCIA",
+          "sha256:32e32f123c30f73aa790f637122d9a2474e5e9949775b1269b2b26acf1b5587a",
+          "2143040a0c86c4933aa26745c6e0c5bd8ac863179a525e0ab2bbdd1fdc7f3308",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "41c6c435f9a37e246023dd9ea336a1a43868bc70edf3b2e4809e234a030b7d6d": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "ESCRITA",
+          "sha256:7127325cd3ac91c18f13c17db96b2b3601b4275f23c1f2cb1e96d1b3a090e801",
+          "5dab95321f1fe51fcf196067745c2effcf8f263a8eedf98d396a398c081e8071",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "LEITURA",
+          "sha256:46d2ca343989a4ac9d357f96c08be11cedf28a3abe89e858bdcfe84faba1a9a7",
+          "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "48d452fa20fe646301b089fbf8baa5921449f0581575faf8e1677dc4e29b317b": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "FLUENCIA",
+          "sha256:588c9a55df88ca0bfef569710196a06e681b047700461813ebc696a492ba0b60",
+          "5b4a22a97e6a9f04983467c3fd452958aa432597ba73d6ffe9975c31cabf394e",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "LEITURA",
+          "sha256:011c28a9b090076bf89da78ed55b62a9c29b10d53bf24e1809734c571ebcde12",
+          "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "630b7a07a28a449115599e3e4fba5f989bd2e24ce873d8837a39d9e9718a2673": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "ESCRITA",
+          "sha256:ab8373b838954be9693d1163b085eb7102e3ea2a2a6d00ea7f25f17ea29808cd",
+          "f68868e1abfd63758972c94c47324bb8df68cec97096934a9a01c99ac0e58396",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "FLUENCIA",
+          "sha256:76217a4383324f409cacae2c37bc91c2c805bb9130089d8ddc99820a3ad73cf3",
+          "659178dc9ae23eea97cc43f5cfc6641b4270a74136bbbda50a35416eefa1fa46",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "6805d14a366e06066ac46ba5e99511db7920caf0dba60f64002d932acd8880f2": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "FLUENCIA",
+          "sha256:32e32f123c30f73aa790f637122d9a2474e5e9949775b1269b2b26acf1b5587a",
+          "2143040a0c86c4933aa26745c6e0c5bd8ac863179a525e0ab2bbdd1fdc7f3308",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "LEITURA",
+          "sha256:46d2ca343989a4ac9d357f96c08be11cedf28a3abe89e858bdcfe84faba1a9a7",
+          "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "85d527e2afef1143a077d5b1dbadf64900e0187708badd9bbc4512d7036d27c1": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "ESCRITA",
+          "sha256:7127325cd3ac91c18f13c17db96b2b3601b4275f23c1f2cb1e96d1b3a090e801",
+          "5dab95321f1fe51fcf196067745c2effcf8f263a8eedf98d396a398c081e8071",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "MATEMATICA",
+          "sha256:f609e95f54b62b45c8b45cd38dea35c06d49576ad59cb8e7846eb1d5206165e3",
+          "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "864cbc27a604149a54e43e937ed2622b5d553930325ae4e4341dc6756c844c7b": {
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "LEITURA",
+          "sha256:312a9bb216b5dd5cdfa3897d8a2fe7e0038062ab211eee5a066ed5e340c6a593",
+          "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "MATEMATICA",
+          "sha256:3016f4ab3850dde3291d1bf0779c77c9fe492c99433d6788322184d858658994",
+          "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "86cf29a0a4c1dde52de1de80a2816c19e5b41ce5e6e2ff9c6a14e47b685c5f37": {
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "LEITURA",
+          "sha256:e4c4d431185fc485ac62798db8d693da1f46f1f43125bd29eb0a313b23c6205a",
+          "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "MATEMATICA",
+          "sha256:f304af22cb1ea89e0cd2cc878ca4ea6adaf5e86d155dc007f6f559fd5daf47b8",
+          "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "8f66f3e5d7ee0aec6c35ce2d60560b5cc73e01117600c45dd34a6e087e75479c": {
+      "ESCRITA": [],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "LEITURA",
+          "sha256:312a9bb216b5dd5cdfa3897d8a2fe7e0038062ab211eee5a066ed5e340c6a593",
+          "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "954ee220b312c0b9b226a4503147d1bf454edad9be4dceba1e324b7d3f24c3fd": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "ESCRITA",
+          "sha256:c612073c204a4f8c71b58b1871f12c7ef537f3b60d0a90c51d384f231a1ab97b",
+          "7bab53deb3a359dc7d26ceb0072ceb4b6c959d4ea2d1de11191b46b6a0caff69",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "LEITURA",
+          "sha256:e4c4d431185fc485ac62798db8d693da1f46f1f43125bd29eb0a313b23c6205a",
+          "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "960c2e0073247ee6ab2331669e21685d14a15bb55ec8cf1e9b080c7ffd862f7e": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "ESCRITA",
+          "sha256:ab8373b838954be9693d1163b085eb7102e3ea2a2a6d00ea7f25f17ea29808cd",
+          "f68868e1abfd63758972c94c47324bb8df68cec97096934a9a01c99ac0e58396",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "LEITURA",
+          "sha256:5dc66cd650bb861b6bce1bbbce43ae509ebe01805fcf11c45c85f8d1f41468fa",
+          "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "9bdab921ac18e093cdb79acf09d898412a1d821ae9057a4d7101c541445a513a": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "FLUENCIA",
+          "sha256:76217a4383324f409cacae2c37bc91c2c805bb9130089d8ddc99820a3ad73cf3",
+          "659178dc9ae23eea97cc43f5cfc6641b4270a74136bbbda50a35416eefa1fa46",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "MATEMATICA",
+          "sha256:09be416fce651b81d6a41ced24bb3597a8dce3a0ea424d5e34748bcc8fdbb9f6",
+          "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "a925227b202623b7bb8b6faba77b7df3023b04c2d5b087329e769ed30f1bc03f": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "ESCRITA",
+          "sha256:ab8373b838954be9693d1163b085eb7102e3ea2a2a6d00ea7f25f17ea29808cd",
+          "f68868e1abfd63758972c94c47324bb8df68cec97096934a9a01c99ac0e58396",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "MATEMATICA",
+          "sha256:09be416fce651b81d6a41ced24bb3597a8dce3a0ea424d5e34748bcc8fdbb9f6",
+          "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "abf9174d482c88fe31b68f52fe650e945696b969ab4fe2328276ae4e42cac30d": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 4,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "MATEMATICA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/4ANO_MATEMATICA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:09be416fce651b81d6a41ced24bb3597a8dce3a0ea424d5e34748bcc8fdbb9f6",
+      "sha256": "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136"
+    },
+    "aee9cef54fd7ca96374045429cd104c9906a22b84d255f5d4f4bd9a43e08651e": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 1,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "MATEMATICA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/1ANO_MATEMATICA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:3016f4ab3850dde3291d1bf0779c77c9fe492c99433d6788322184d858658994",
+      "sha256": "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee"
+    },
+    "b308fed476110a8a4bb6ef234a6b384bdc66edbb4fe1d2df2935502679392e3d": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "ESCRITA",
+          "sha256:c612073c204a4f8c71b58b1871f12c7ef537f3b60d0a90c51d384f231a1ab97b",
+          "7bab53deb3a359dc7d26ceb0072ceb4b6c959d4ea2d1de11191b46b6a0caff69",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          3,
+          "MATEMATICA",
+          "sha256:f304af22cb1ea89e0cd2cc878ca4ea6adaf5e86d155dc007f6f559fd5daf47b8",
+          "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe",
+          "resultados-caed-ciclo-i-2026/originais/3ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "b762c820a7277624a9c4d82228b21f68ef0cf57cb22dc7577e4f5674613f9805": {
+      "ESCRITA": [],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          1,
+          "MATEMATICA",
+          "sha256:3016f4ab3850dde3291d1bf0779c77c9fe492c99433d6788322184d858658994",
+          "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee",
+          "resultados-caed-ciclo-i-2026/originais/1ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "b79c03e4f2d6670605ae4073cc244bce860025b43b5486afa54e2886d5a04031": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "ESCRITA",
+          "sha256:5996ad071c79939960d79357c338507fa40f403478b2cd5fe2799446228f8a50",
+          "1f6e2799922130fd792baac6c03f83fc159dd5b7d652ab95aef393e8bc6f64a1",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "MATEMATICA",
+          "sha256:4c713db46af85c2f4e09eb1ecd117768b771efe2d4c8b440fb33411c4036df9a",
+          "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "bdab2be702b89ada46ea7d1252ffa02459dc45133186628ff1789fde7007b0ef": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "FLUENCIA",
+          "sha256:76217a4383324f409cacae2c37bc91c2c805bb9130089d8ddc99820a3ad73cf3",
+          "659178dc9ae23eea97cc43f5cfc6641b4270a74136bbbda50a35416eefa1fa46",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          4,
+          "LEITURA",
+          "sha256:5dc66cd650bb861b6bce1bbbce43ae509ebe01805fcf11c45c85f8d1f41468fa",
+          "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987",
+          "resultados-caed-ciclo-i-2026/originais/4ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "bdc8c89f57bd1f07182e8146b43f03a7d528ef8895e0f86ed66a9a5cb1257303": {
+      "ESCRITA": [],
+      "FLUENCIA": []
+    },
+    "ccfa6005760dd9d175a0b8008c1f1feba71093cd9abc28c43e66eb84c1b1e432": {
+      "FLUENCIA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "FLUENCIA",
+          "sha256:588c9a55df88ca0bfef569710196a06e681b047700461813ebc696a492ba0b60",
+          "5b4a22a97e6a9f04983467c3fd452958aa432597ba73d6ffe9975c31cabf394e",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_FLUENCIA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "MATEMATICA",
+          "sha256:4c713db46af85c2f4e09eb1ecd117768b771efe2d4c8b440fb33411c4036df9a",
+          "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "cd23b5c80f81c222c786a0fc8263cdd4a7fc4407026f86f23cc5869cbce57b6c": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 2,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "LEITURA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/2ANO_LEITURA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:46d2ca343989a4ac9d357f96c08be11cedf28a3abe89e858bdcfe84faba1a9a7",
+      "sha256": "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48"
+    },
+    "ce8c5edf9236ed0620f3dffb897f49df4b4cbfb5460241aa159d81cb8f416ec8": {
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "LEITURA",
+          "sha256:46d2ca343989a4ac9d357f96c08be11cedf28a3abe89e858bdcfe84faba1a9a7",
+          "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ],
+      "MATEMATICA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          2,
+          "MATEMATICA",
+          "sha256:f609e95f54b62b45c8b45cd38dea35c06d49576ad59cb8e7846eb1d5206165e3",
+          "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9",
+          "resultados-caed-ciclo-i-2026/originais/2ANO_MATEMATICA_CICLO_I_2026.zip"
+        ]
+      ]
+    },
+    "d43c1317c09d9b073fa92cdd77c2a8a8fff8625e3026295708879f1d82948eb3": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 1,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "LEITURA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/1ANO_LEITURA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:312a9bb216b5dd5cdfa3897d8a2fe7e0038062ab211eee5a066ed5e340c6a593",
+      "sha256": "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017"
+    },
+    "daef02c0bb54be3183627c8ff45363502c752601abc74e5f7178e4e5df8f67c8": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 4,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "LEITURA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/4ANO_LEITURA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:5dc66cd650bb861b6bce1bbbce43ae509ebe01805fcf11c45c85f8d1f41468fa",
+      "sha256": "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987"
+    },
+    "e09db9d5556bb1a4b240b61c5e2ab14c5bf38fdffbfb1466af688f2b3deaaee5": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 5,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "LEITURA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/5ANO_LEITURA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:011c28a9b090076bf89da78ed55b62a9c29b10d53bf24e1809734c571ebcde12",
+      "sha256": "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375"
+    },
+    "f217f0628276aad2c56243ff0bf6aa4759c9b9b72716ce9ed1f9a9b534c70064": {
+      "ano_avaliacao": 2026,
+      "ano_escolar": 5,
+      "avaliacao_id": "AV12026",
+      "ciclo": "I",
+      "componente": "MATEMATICA",
+      "exportacao": "resultados-caed-ciclo-i-2026/originais/5ANO_MATEMATICA_CICLO_I_2026.zip",
+      "fonte_id": "sha256:4c713db46af85c2f4e09eb1ecd117768b771efe2d4c8b440fb33411c4036df9a",
+      "sha256": "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170"
+    },
+    "fb6cf9cf67da714849df10fb828a408cbd63184ec56cc09310e4a8de79570a57": {
+      "ESCRITA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "ESCRITA",
+          "sha256:5996ad071c79939960d79357c338507fa40f403478b2cd5fe2799446228f8a50",
+          "1f6e2799922130fd792baac6c03f83fc159dd5b7d652ab95aef393e8bc6f64a1",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_ESCRITA_CICLO_I_2026.zip"
+        ]
+      ],
+      "LEITURA": [
+        [
+          "AV12026",
+          2026,
+          "I",
+          5,
+          "LEITURA",
+          "sha256:011c28a9b090076bf89da78ed55b62a9c29b10d53bf24e1809734c571ebcde12",
+          "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375",
+          "resultados-caed-ciclo-i-2026/originais/5ANO_LEITURA_CICLO_I_2026.zip"
+        ]
+      ]
+    }
+  }
+}

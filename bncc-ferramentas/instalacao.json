@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/bncc-dev/bncc-dados",
+  "commit": "9c268978efa2aa250834c6a9edb6074432752838",
+  "sqlite_sha256": "f5879793bba0c2f672d41158fd680dc79bda0df4d0ae2929830fe7335db90fd2",
+  "contagens": {
+    "objetivo_ei": 93,
+    "habilidade_ef": 1304,
+    "habilidade_em": 183,
+    "aprendizagem_computacao": 141
+  },
+  "integridade": "ok",
+  "foreign_key_errors": 0,
+  "agentes_configurados": [
+    "bncc_pesquisador",
+    "bncc_minerador",
+    "bncc_auditor"
+  ],
+  "agentes_inferencia_executada": false,
+  "schema": "7 arquivos aprovados; 10 de 10 corrupcoes rejeitadas",
+  "mcp": "7 ferramentas; estatisticas e consulta EF01LP01 executadas"
+}

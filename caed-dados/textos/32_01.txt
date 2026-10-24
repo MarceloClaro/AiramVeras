@@ -1,0 +1,21 @@
+SPAECE ALFA SISTEMA PERMANENTE DE AVALIAÇÃO DA EDUCAÇÃO BÁSICA DO CEARÁ
+ ■ MATRIZ DE REFERÊNCIA
+Língua Portuguesa | 2º ano do ensino FundamentaL
+descritor descrição da Habilidade descritor descrição da Habilidade
+Eixo 1: Apropriação do sistema de escrita - habilidades relacionadas  à identificação, ao reconhecimento de aspectos relacionados à tecnologia da escrita.
+1.1 - Quanto ao reConHeCimento de Letras. 
+D01 Identificar letras entre desenhos, números e outros símbolos gráficos. HLP001 Identificar letras entre desenhos, números e outros símbolos gráficos.
+D02 Reconhecer as letras do alfabeto. HLP002 Reconhecer as letras do alfabeto.
+1.2 - Quanto ao domínio das ConVenÇÕes grÁFiCas.
+D04 Identificar o espaçamento entre palavras na segmentação da escrita. HLP005 Identificar a unidade palavra em frases.
+1.3 - Quanto ao desenV oLVimento da ConsCiÊnCia FonoLÓgiCa. 
+D06 Identificar rimas. HLP006 Identificar rimas.
+D07 Identificar o número de sílabas de uma palavra. HLP007 Identificar o número de sílabas de uma palavra.
+D08 Identificar sílabas canônicas (consoante / vogal) em uma palavra. HLP008 Identificar sílabas de uma palavra.
+D09 Identificar sílabas não canônicas (vogal, consoante/vogal/consoante, 
+consoante/consoante /vogal etc.) em uma palavra. HLP008 Identificar sílabas de uma palavra.
+Eixo 2: Leitura - habilidades relacionadas à leitura de palavras, de frases e de textos.
+2.1 - Quanto À Leitura de P aLa Vras.
+D10 Ler palavras no padrão canônico (consoante / vogal). HLP009 Ler palavras formadas por sílabas canônicas.
+D11 Ler palavras nos padrões não canônicos (vogal, consoante / vogal / consoante, 
+consoante / consoante / vogal etc.). HLP010 Ler palavras formadas por sílabas não canônicas.

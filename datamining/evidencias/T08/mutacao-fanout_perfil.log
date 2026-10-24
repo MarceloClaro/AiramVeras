@@ -1,0 +1,16 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura _______
+
+    def test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura():
+        r,obs,links=fixture()
+        duplicate=deepcopy(links[0]); duplicate['codigo_bncc']='EF02LP02'
+        other=deepcopy(links[0]); other['ano_avaliado']=3; other['codigo_bncc']='ERRADO'
+        p=api('descrever_grupos')(r,obs,links+[duplicate,other])[0]
+>       assert p['observado']['oportunidades']==24
+E       assert 48 == 24
+
+tests\test_perfis_grupo.py:54: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_perfis_grupo.py::test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura
+1 failed in 9.00s

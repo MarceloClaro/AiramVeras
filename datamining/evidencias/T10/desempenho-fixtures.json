@@ -1,0 +1,12 @@
+[
+  {
+    "n": 40,
+    "caminho": ".superpowers/sdd/implementation-plan/t10-desempenho/fixture040.json",
+    "sha256": "2f115fb44ea62ceaa4f41acd8e442ff75e732361230c6445af10af9493b00e9b"
+  },
+  {
+    "n": 80,
+    "caminho": ".superpowers/sdd/implementation-plan/t10-desempenho/fixture080.json",
+    "sha256": "4f94bdb72b36fe5db733ec7e04a0d8b70c12e77627545acb383d50181ca20321"
+  }
+]

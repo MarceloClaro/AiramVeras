@@ -1,0 +1,35 @@
+SPAECE Sistema Permanente de Avaliação da Educação Básica do Ceará
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 3ª SÉRIE DO ENSINO MÉDIO
+Descritor Habilidade
+I. INTERAGINDO COM NÚMEROS E FUNÇÕES
+D16 Estabelecer relações entre representações fracionárias e decimais dos números racionais.
+D19 Resolver problema envolvendo juros simples.
+D20 Resolver problema envolvendo juros compostos.
+D24 Fatorar e simplificar expressões algébricas.
+D28 Reconhecer a representação algébrica ou gráfica da função polinomial de 1º grau.
+D40 Relacionar as raízes de um polinômio com sua decomposição em fatores do 1º grau.
+D42 Resolver situação problema envolvendo  o cálculo da probabilidade de um evento.
+II. CONVIVENDO COM A GEOMETRIA
+D49 Resolver problemas envolvendo semelhança de figuras planas.
+D50 Resolver situação problema aplicando o T eorema de Pitágoras ou as demais relações métricas no triângulo retângulo.
+D51 Resolver problemas usando as propriedades dos polígonos (soma dos ângulos internos, número de diagonais e cálculo do 
+ângulo interno de polígonos regulares).
+D52 Identificar planificações de alguns poliedros e/ou corpos redondos.
+D53 Resolver situação problema  envolvendo as razões trigonométricas no triângulo  retângulo (seno, cosseno, tangente).
+D54 Calcular a área de um triângulo pelas coordenadas de seus vértices.
+D55 Determinar uma  equação da reta a partir de dois pontos dados ou de um ponto e sua inclinação.
+D56 Reconhecer, dentre as equações do 2°grau com duas incógnitas, as que representam circunferências.
+D57 Identificar a  localização de pontos no  plano cartesiano.
+D58 Interpretar geometricamente os coeficientes da equação de uma reta.
+III. VIVENCIANDO AS MEDIDAS
+D64 Resolver problema utilizando as relações entre diferentes unidades de medidas de capacidade e de volume.
+D65 Calcular o perímetro de figuras planas numa situação problema.
+D67 Resolver problema  envolvendo o cálculo de área de figuras planas.
+D71 Calcular a área da superfície total de prismas, pirâmides, cones, cilindros e esfera.
+D72 Calcular o volume de  prismas, pirâmides, cilindros e cones em situação-problema.
+IV. TRATAMENTO DA INFORMAÇÃO
+D76 Associar informações apresentadas em listas e/ ou tabelas aos gráficos que as representam, e vice-versa.
+D78 Resolver problemas envolvendo medidas de tendência central: média, moda ou mediana.
+43
+SPAECE  |   2022

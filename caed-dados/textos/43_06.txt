@@ -1,0 +1,24 @@
+CEARÁ - AVALIE.CE 2025.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 3ª SÉRIE DO ENSINO MÉDIO
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D090_M Executar a adição ou a subtração entre números inteiros.
+D108_M Resolver problemas, envolvendo juros compostos.
+D066_M Analisar regiões de crescimento/decrescimento, domínios de validade ou zeros de funções reais representadas 
+graficamente.
+D078_M Utilizar propriedades de progressões aritméticas ou geométricas na resolução de problemas.
+D076_M Utilizar função exponencial na resolução de problemas.
+D109_M Relacionar as raízes de um polinômio com sua decomposição em fatores do 1º grau.
+D101_M Identificar a representação algébrica ou gráfica de uma função exponencial.
+D048_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D110_M Reconhecer a representação gráfica das funções trigonométricas (seno, cosseno e tangente).
+D037_M Classificar triângulos por meio de suas propriedades.
+D111_M Resolver problema, envolvendo semelhança de triângulo.
+D112_M Reconhecer o seno, cosseno e a tangente como razões entre os lados de um triângulo retângulo.
+D113_M Resolver problemas que envolvam razões trigonométricas no triângulo retângulo.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D075_M Utilizar a medida da área total e/ou lateral de um sólido na resolução de problema.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D034_M Utilizar probabilidade na resolução de problema.
+D114_M Resolver problemas, envolvendo noções de análise combinatória.
+D056_M Utilizar medidas de tendência central na resolução de problema.

@@ -1,0 +1,9 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual ______
+tests\test_intervencao.py:51: in test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual
+    assert by['app-a']['meta_B']['lacuna']==0
+E   assert 1 == 0
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual
+1 failed, 26 deselected in 0.31s

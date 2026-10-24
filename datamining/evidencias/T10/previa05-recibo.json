@@ -1,0 +1,9 @@
+{
+  "fase": "PREVIA_ARTIFICIAL_ALTURA_E_HELPER_FINAIS",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:57:37.391579+00:00",
+  "snapshot": "previa05-antes.json",
+  "snapshot_sha256": "d67fd1d15dd5e802da2911fc609ec3028d5115485e94dd4cb53e5f3158cba9db",
+  "log": "previa05.log",
+  "log_sha256": "ef86ad4d3804312ab717fe771b05393d445a56914241c93561134e15df178565"
+}

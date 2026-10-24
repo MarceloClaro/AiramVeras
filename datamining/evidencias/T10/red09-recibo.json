@@ -1,0 +1,9 @@
+{
+  "fase": "RED_APRESENTACAO_INSPECAO_NATIVA",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T08:11:11.903038+00:00",
+  "snapshot": "red09-antes.json",
+  "snapshot_sha256": "9b8cde4f7790ab96b7fc47a7b0883e65226e3cc4089182a3ce6b7a01e9dd22c6",
+  "log": "red09.log",
+  "log_sha256": "41002a00e29e12742e3b617072b8fd06b044989e06b674031d5256c401202ec7"
+}

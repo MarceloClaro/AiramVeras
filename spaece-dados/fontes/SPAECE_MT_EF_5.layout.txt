@@ -1,0 +1,39 @@
+SPAECE Sistema Permanente de Avaliação da Educação Básica do Ceará
+■ MATRIZ DE REFERÊNCIA
+MateMática | 5º ano do ensino FundaMental
+i. inteRaGindo coM nÚMeRos e FunÇÕes
+D01 Reconhecer e utilizar características do Sistema de Numeração Decimal.
+Utilizar procedimentos de cálculo para obtenção de resultados na resolução de adição e/ou subtração envolvendo números
+D02
+naturais.
+Utilizar procedimentos de cálculo para obtenção de resultados na resolução de multiplicação e/ou divisão envolvendo números
+D03
+naturais.
+D04 Resolver situação problema que envolva a operação de adição ou subtração com os números naturais.
+D05 Resolver situação problema que envolva a operação de multiplicação ou divisão com os números naturais.
+D06 Resolver situação problema que envolva mais de uma operação com os números naturais.
+D09 Resolver situação problema que envolva cálculos simples de porcentagem (25%, 50% e 100%).
+D13 Reconhecer diferentes representações de um mesmo número racional, em situação-problema.
+D14 Comparar números racionais na forma fracionária ou decimal.
+Resolver problema utilizando a adição ou subtração com números racionais representados na forma fracionária (mesmo
+D15
+denominador ou denominadores diferentes) ou na forma decimal.
+ii. conViVendo coM a GeoMetRia
+D45 Identificar a localização / movimentação de objetos em mapas, croquis e outras representações gráficas.
+D46 Identificar o número de faces, arestas e vértices de figuras geométricas tridimensionais representadas por desenhos.
+Identificar e classificar figuras planas: quadrado, retângulo e triângulo destacando algumas de suas características (número de
+D47
+lados e tipo de ângulos).
+D52 Identificar planificações de alguns poliedros e/ou corpos redondos.
+iii. ViVenciando as Medidas
+D59 Resolver problema utilizando unidades de medidas padronizadas como: km/m/cm/mm, kg/g/mg, L/mL.
+D60 Resolver problema que envolva o cálculo do perímetro de polígonos, usando malha quadriculada ou não.
+D61 Identificar as horas em relógios digitais ou de ponteiros, em situação-problema.
+Estabelecer relações entre: dia e semana, hora e dia, dia e mês, mês e ano, hora e minuto, minuto e segundo, em situação-
+D62
+problema.
+D63 Resolver problema utilizando a escrita decimal de cédulas e moedas do Sistema Monetário Brasileiro.
+D66 Resolver problema envolvendo o cálculo de área de figuras planas, desenhadas em malhas quadriculadas ou não.
+iV. tRataMento da inFoRMaÇÃo
+D73 Ler informações apresentadas em tabela.
+D74 Ler informações apresentadas em gráficos de barras ou colunas.

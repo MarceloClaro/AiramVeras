@@ -1,0 +1,17 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_________ test_perfil_pequeno_conserva_supressao_sem_exigir_revelacao _________
+tests\test_relatorio.py:63: in test_perfil_pequeno_conserva_supressao_sem_exigir_revelacao
+    api()(obj,tmp_path)
+airam\relatorio.py:218: in gerar_relatorio
+    raise ValueError('perfil incompleto: fonte/descricao curricular ausente')
+E   ValueError: perfil incompleto: fonte/descricao curricular ausente
+_________ test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao _________
+tests\test_intervencao.py:139: in test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+    assert report['notas_fila_inicial']=={'k-d':'','k-f':'','k-b':'NOTA ARTIFICIAL B','k-a':'','k-c':'','k-e':''}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'notas_fila_inicial'
+=========================== short test summary info ===========================
+FAILED tests/test_relatorio.py::test_perfil_pequeno_conserva_supressao_sem_exigir_revelacao
+FAILED tests/test_intervencao.py::test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+2 failed, 21 deselected in 6.78s

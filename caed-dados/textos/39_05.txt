@@ -1,0 +1,27 @@
+CEARÁ 2ª AVALIE.CE 2024
+■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA |  9º ANO DO ENSINO FUND AMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D015_M Corresponder números racionais a pontos da reta numérica. 
+D021_M Corresponder números irracionais a pontos da reta numérica. 
+D045_M Utilizar porcentagem na resolução de problemas.
+D018_M Fatorar e/ou simplificar expressões algébricas, com base nos produtos notáveis.
+D019_M Identificar uma relação entre conjuntos que representa uma função.
+D176_M Identificar a localização de pontos no plano cartesiano.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D083_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D020_M Utilizar equação polinomial de 2º grau na resolução de problema.
+D118_M Utilizar o cálculo do valor numérico de expressões algébricas na resolução de problemas.
+D075_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D087_M Utilizar sistema de equações polinomiais de 1º grau na resolução de problema.
+D168_M Utilizar a soma das medidas dos ângulos internos de um triângulo na resolução de problemas.
+D192_M Reconhecer ângulos como mudança de direção ou giros, identificando ângulos retos e não-retos.
+D157_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas, 
+para se obter a medida de um ângulo especificado.
+D120_M Calcular o valor numérico de uma expressão algébrica.
+D088_M Utilizar relações métricas de um triângulo retângulo na resolução de problema.
+D186_M Utilizar área de figuras bidimensionais na resolução de problema.
+D190_M Utilizar o cálculo de volumes/capacidade de prismas retos e de cilindros na resolução de problema.
+D203_M Utilizar noções de probabilidade na resolução de problema.
+D201_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D207_M Utilizar medidas de tendência central na resolução de problemas.

@@ -1,0 +1,12 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao _________
+tests\test_intervencao.py:111: in test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+    assert builder.is_file(), 'Builder funcional T24 ausente'
+E   AssertionError: Builder funcional T24 ausente
+E   assert False
+E    +  where False = is_file()
+E    +    where is_file = WindowsPath('C:/Users/marce/Downloads/Airam veras/datamining/reports/build_workbook.mjs').is_file
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+1 failed, 12 deselected in 0.66s

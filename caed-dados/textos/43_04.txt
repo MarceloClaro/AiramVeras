@@ -1,0 +1,27 @@
+CEARÁ - AVALIE.CE 2025.1
+■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA |  8º ANO DO ENSINO FUND AMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D028_M Identificar frações equivalentes.
+D089_M Identificar números inteiros segundo critérios de ordem.
+D090_M Executar a adição ou a subtração entre números inteiros.
+D049_M Utilizar números inteiros, envolvendo diferentes significados da adição ou da subtração, na resolução de problemas.
+D128_M Utilizar números racionais, envolvendo diferentes significados das operações, na resolução de problemas.
+D022_M Utilizar números naturais, envolvendo diferentes significados da multiplicação ou da divisão, na resolução de problemas.
+D091_M Identificar uma expressão algébrica que representa uma situação-problema descrita textualmente.
+D035_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D048_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D087_M Corresponder objetos em uma representação plana do espaço à sua localização descrita por meio de um par ordenado.
+D020_M Corresponder figuras tridimensionais às suas planificações.
+D037_M Classificar triângulos por meio de suas propriedades.
+D092_M Reconhecer, no plano cartesiano, o simétrico de figuras em relação a um dos eixos ou à origem.
+D088_M Reconhecer ângulos como mudança de direção, ângulo de visão ou giro, identificando ângulos retos e não retos.
+D047_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas, 
+para se obter a medida de um ângulo especificado.
+D093_M Utilizar o cálculo da medida do ângulo interno de um polígono regular na resolução de problemas.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D030_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D034_M Utilizar probabilidade na resolução de problema.
+D021_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D056_M Utilizar medidas de tendência central na resolução de problema.

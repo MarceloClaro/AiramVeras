@@ -1,0 +1,9 @@
+{
+  "fase": "REFACTOR_LOOKUP_COMPARTILHADO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:04:13.633774+00:00",
+  "snapshot": "green06-antes.json",
+  "snapshot_sha256": "aa0f771dc4ccc79d032dd7c35c09acfae3be60eb9d3cf21fd680b13dec1d91e8",
+  "log": "green06.log",
+  "log_sha256": "3500469aacd882480d330a23a90b562cc1143ddce7bf18b3636863f1e35af1fe"
+}

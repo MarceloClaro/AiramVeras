@@ -1,0 +1,9 @@
+{
+  "fase": "REFINAMENTO_FINAL_ALTURA_E_EXIBICAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:02:54.819795+00:00",
+  "snapshot": "layout02-antes.json",
+  "snapshot_sha256": "d44793003aba75d927d7c3e2243354f6057bf6cda8374331b26e5449594d578e",
+  "log": "layout02.log",
+  "log_sha256": "59cb6811271c44c840240c4460efbbd5d32607b15045183d95cd796b49b36164"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-estatistica-restrita-t05-v1",
+  "title": "Checkpoint individual T05 exclusivamente restrito, fora Git",
+  "type": "object", "additionalProperties": false,
+  "required": ["versao_schema", "fontes", "observado", "metricas_alunos", "metas_individuais", "agregado", "curriculo_referencia"],
+  "properties": {
+    "versao_schema": {"const": "airam-estatistica-restrita-t05-v1"},
+    "fontes": {"type": "object"},
+    "observado": {"type": "object", "required": ["matriculas", "avaliacoes", "habilidades", "escrita", "fluencia", "agregados", "disponibilidade_arquivos"], "additionalProperties": {"type": "array", "items": {"type": "object"}}},
+    "metricas_alunos": {"type": "array", "items": {"type": "object", "required": ["aluno_local_id", "fonte_id", "sha256", "acertos", "oportunidades", "taxa", "taxa_observada", "validas", "ausentes", "proveniencia_sha256"], "properties": {"nivel": {"const": "aluno"}}}},
+    "metas_individuais": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["aluno_local_id", "avaliacao_local_id", "componente", "meta_B"], "properties": {"aluno_local_id": {"type": "string"}, "avaliacao_local_id": {"type": "string"}, "componente": {"type": "string"}, "meta_B": {"type": "object", "required": ["meta", "alvo", "lacuna", "atingida", "status"]}}}},
+    "agregado": {"type": "object"}, "curriculo_referencia": {"const": "curriculo/t04/checkpoint.json"}
+  }
+}

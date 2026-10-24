@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "airam-associacoes-t06-v1",
+  "title": "Associações agregadas T06, sem linhas individuais",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["versao_schema", "fontes", "config_sha256", "plano_sha256", "instrumentos_sha256", "familias", "associacoes", "contraprova", "limites"],
+  "properties": {
+    "versao_schema": {"const": "airam-associacoes-t06-v1"},
+    "fontes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "config_sha256": {"$ref": "#/$defs/hash"},
+    "plano_sha256": {"$ref": "#/$defs/hash"},
+    "instrumentos_sha256": {"$ref": "#/$defs/hash"},
+    "familias": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+      "required": ["familia", "planejadas", "elegiveis", "m_bh"], "properties": {
+        "familia": {"type": "string"}, "planejadas": {"type": "integer"}, "elegiveis": {"type": "integer"}, "m_bh": {"type": "integer"}}}},
+    "associacoes": {"type": "array", "items": {"$ref": "#/$defs/associacao"}},
+    "contraprova": {"type": "object", "additionalProperties": false, "required": ["contagens", "coeficientes", "max_diferenca", "metodo", "fontes_csv"],
+      "properties": {"contagens": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "coeficientes": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "max_diferenca": {"type": "number"}, "metodo": {"type": "string"},
+        "fontes_csv": {"type": "object", "additionalProperties": {"$ref": "#/$defs/hash"}}}},
+    "limites": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "probabilidade": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "texto_nulo": {"type": ["string", "null"]},
+    "faixa": {"type": ["array", "null"], "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+    "associacao": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tipo", "ano_escolar", "ano_avaliacao", "ciclo", "familia", "instrumento", "x", "y", "unidade_x", "unidade_y", "selecao_texto", "n", "n_x", "n_y", "cadastros", "excluidos", "estratos", "distintos_x", "distintos_y", "amplitude_x", "amplitude_y", "estimando", "hipotese", "limite", "metodo", "coeficiente", "motivo_coeficiente", "p", "q", "motivo_inferencia", "permutacao", "sensibilidade", "influencia", "q_by", "q_bh_global", "m_planejado", "m_bh", "m_elegivel", "m_global"],
+      "properties": {
+        "tipo": {"enum": ["intercomponentes", "H_total_corrigido"]},
+        "ano_escolar": {"type": "integer"}, "ano_avaliacao": {"type": "integer"}, "ciclo": {"type": "string"},
+        "familia": {"type": "string"}, "instrumento": {"$ref": "#/$defs/hash"}, "componente": {"type": "string"},
+        "x": {"type": "string"}, "y": {"type": "string"}, "unidade_x": {"type": "string"}, "unidade_y": {"type": "string"},
+        "selecao_texto": {"type": "boolean"}, "n": {"type": "integer", "minimum": 0},
+        "n_x": {"type": "integer", "minimum": 0}, "n_y": {"type": "integer", "minimum": 0},
+        "cadastros": {"type": "integer", "minimum": 0}, "excluidos": {"type": "integer", "minimum": 0},
+        "estratos": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["turma", "n"],
+          "properties": {"turma": {"type": "string"}, "n": {"type": "integer", "minimum": 1}}}},
+        "distintos_x": {"type": "integer"}, "distintos_y": {"type": "integer"},
+        "amplitude_x": {"$ref": "#/$defs/faixa"}, "amplitude_y": {"$ref": "#/$defs/faixa"},
+        "estimando": {"type": "string"}, "hipotese": {"type": "string"}, "limite": {"type": "string"},
+        "metodo": {"enum": ["pearson", "spearman"]},
+        "coeficiente": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+        "motivo_coeficiente": {"$ref": "#/$defs/texto_nulo"}, "motivo_inferencia": {"$ref": "#/$defs/texto_nulo"},
+        "p": {"$ref": "#/$defs/probabilidade"}, "q": {"$ref": "#/$defs/probabilidade"},
+        "q_by": {"$ref": "#/$defs/probabilidade"}, "q_bh_global": {"$ref": "#/$defs/probabilidade"},
+        "m_planejado": {"type": "integer"}, "m_bh": {"type": "integer"}, "m_elegivel": {"type": "integer"}, "m_global": {"type": "integer"},
+        "permutacao": {"type": ["object", "null"], "additionalProperties": false,
+          "required": ["modo", "replicacoes", "espaco_permutacoes", "validas", "resolucao_bilateral", "minimo", "maximo", "seed", "convencao"],
+          "properties": {"modo": {"enum": ["exato", "monte_carlo"]}, "replicacoes": {"type": "integer"}, "espaco_permutacoes": {"type": "string"},
+            "validas": {"type": "integer"}, "resolucao_bilateral": {"type": "number"}, "minimo": {"type": "number"},
+            "maximo": {"type": "number"}, "seed": {"type": "integer"}, "convencao": {"type": "string"}}},
+        "sensibilidade": {"type": "object", "additionalProperties": false,
+          "required": ["replicacoes", "validas", "degeneradas", "faixa", "motivo", "rotulo"],
+          "properties": {"replicacoes": {"type": "integer"}, "validas": {"type": "integer"}, "degeneradas": {"type": "integer"},
+            "faixa": {"$ref": "#/$defs/faixa"}, "motivo": {"$ref": "#/$defs/texto_nulo"}, "rotulo": {"type": "string"}}},
+        "influencia": {"type": ["object", "null"], "additionalProperties": false,
+          "required": ["validas", "degeneradas", "minimo", "maximo", "max_delta", "motivo"],
+          "properties": {"validas": {"type": "integer"}, "degeneradas": {"type": "integer"}, "minimo": {"type": ["number", "null"]},
+            "maximo": {"type": ["number", "null"]}, "max_delta": {"type": ["number", "null"]}, "motivo": {"$ref": "#/$defs/texto_nulo"}}}
+      }
+    }
+  }
+}

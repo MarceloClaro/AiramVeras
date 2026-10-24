@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "aplicacoes_artificiais": 8,
+  "medidas_artificiais": 16,
+  "observacoes_geradas_por_regra": true,
+  "nomes_ids_reais_ausentes": true,
+  "grupos_individuais_vazios": true,
+  "comprimentos_usam_somente_X_e_quebras": true,
+  "agregados_publicos_preservados": true,
+  "xlsx_sha256": "1f157ffd7fd3b2b2367ca53aa5f2b5c4dcb1090dbfb745f0adb4e9d7a0b6c70c",
+  "json_sha256": "36f3763643c719c8d5c55080399b444da185d7723eddc2a56ae8919d5b13ebba",
+  "builder_sha256": "5d7a7dfb4f4d596f168ea703ec7efbcd29229d8941cb6698fd44e8aecc08bf33"
+}

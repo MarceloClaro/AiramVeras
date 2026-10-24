@@ -1,0 +1,9 @@
+{
+  "fase": "CONFERIR_ARTIFICIAL_ANTES_INSPECAO",
+  "codigo_saida": 4294967295,
+  "fim": "2026-10-24T07:37:34.320451+00:00",
+  "snapshot": "previa-conferencia01-antes.json",
+  "snapshot_sha256": "e1b6432dc2bbef902daccb6a5fc83ee2dc41913d823028887f10636ab7ac9c05",
+  "log": "previa-conferencia01.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

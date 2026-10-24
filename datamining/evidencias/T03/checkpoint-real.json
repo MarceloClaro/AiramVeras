@@ -1,0 +1,94 @@
+{
+  "checkpoint_sha256": "b26bef93117c7c38906cd9e6e025cfc5f2a9969cc4834e4b785618d29dd56dbb",
+  "cobertura": {
+    "ESCRITA--FLUENCIA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {},
+      "nao_pareados": 0,
+      "pares": 148,
+      "pares_ambos_participantes": 145,
+      "pares_taxas_disponiveis": 0,
+      "registros_consultados": 296
+    },
+    "ESCRITA--LEITURA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {
+        "componente_esquerdo_ausente": 24
+      },
+      "nao_pareados": 24,
+      "pares": 148,
+      "pares_ambos_participantes": 145,
+      "pares_taxas_disponiveis": 0,
+      "registros_consultados": 320
+    },
+    "ESCRITA--MATEMATICA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {
+        "componente_esquerdo_ausente": 24
+      },
+      "nao_pareados": 24,
+      "pares": 148,
+      "pares_ambos_participantes": 145,
+      "pares_taxas_disponiveis": 0,
+      "registros_consultados": 320
+    },
+    "FLUENCIA--LEITURA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {
+        "componente_esquerdo_ausente": 24
+      },
+      "nao_pareados": 24,
+      "pares": 148,
+      "pares_ambos_participantes": 146,
+      "pares_taxas_disponiveis": 0,
+      "registros_consultados": 320
+    },
+    "FLUENCIA--MATEMATICA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {
+        "componente_esquerdo_ausente": 24
+      },
+      "nao_pareados": 24,
+      "pares": 148,
+      "pares_ambos_participantes": 146,
+      "pares_taxas_disponiveis": 0,
+      "registros_consultados": 320
+    },
+    "LEITURA--MATEMATICA": {
+      "adulteracao_detectada": true,
+      "motivos_nao_pareados": {},
+      "nao_pareados": 0,
+      "pares": 172,
+      "pares_ambos_participantes": 171,
+      "pares_taxas_disponiveis": 171,
+      "registros_consultados": 344
+    }
+  },
+  "codigo_saida": 0,
+  "conflitos": 0,
+  "contagens": {
+    "agregados": 44,
+    "avaliacoes": 640,
+    "disponibilidade_arquivos": 20,
+    "escrita": 864,
+    "fluencia": 592,
+    "habilidades": 4618,
+    "matriculas": 172
+  },
+  "esquema_sha256": "086f8e069ea64402c227d5d7400b7753d43fc1143eb78409b25b503bbae376ce",
+  "estado": "SUCESSO",
+  "executor": "Codex",
+  "exposicoes_nominais_literais": 0,
+  "limites": [
+    "Ligacao local provisoria sem identidade institucional ou longitudinal validada.",
+    "Pares cadastrais preservam nao participantes; N analitico requer filtro explicito.",
+    "Datas de aplicacao ausentes; rotulos historicos nao comprovam temporalidade.",
+    "Validacao documental local Codex; nenhuma inferencia Core ou validacao pedagogica externa."
+  ],
+  "mapa_restrito_sha256": "5a4b62dab471de27b7a9b2fc510806f66fd205a65f28e5ab30c60e463d7ff3be",
+  "pareamentos_restritos_sha256": "7226b1e6157646ce2ffa526ec1a7d60cd9bddc32315425349ed32b15f7e38fe0",
+  "referencia_execucao_previa": "checkpoint-real-antes.json",
+  "segredo_persistente_fora_git": true,
+  "segredo_preexistente": false,
+  "timestamp_final": "2026-10-22T12:01:54.418429-03:00"
+}

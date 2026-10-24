@@ -1,0 +1,343 @@
+{
+  "versao": 1,
+  "gerado_utc": "2026-10-22T23:00:12.869080+00:00",
+  "politica": "Referências e atalhos; sem mover, renomear, substituir ou copiar fontes.",
+  "raiz": "C:\\Users\\marce\\Downloads\\Airam veras",
+  "pastas_organizadas": 7,
+  "referencias": [
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "bncc-dados",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "caed-dados",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "spaece-dados",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "resultados-caed-ciclo-i-2026",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "resultados-saap-ciclo-i-2026",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "01_Fontes_atuais",
+      "caminho_original": "MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf",
+      "tipo": "arquivo",
+      "status": "disponivel",
+      "sha256": "2728d640c98510ff323cb542282ffc51db8288c021560aa55cac7b908c5f5f0e"
+    },
+    {
+      "grupo": "02_Dados_e_banco",
+      "caminho_original": "datamining/catalogo",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "02_Dados_e_banco",
+      "caminho_original": "datamining/restrito",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "02_Dados_e_banco",
+      "caminho_original": "datamining/dados",
+      "tipo": "arquivo",
+      "status": "ainda_nao_gerado",
+      "sha256": null
+    },
+    {
+      "grupo": "03_Analises",
+      "caminho_original": "datamining/estatistica",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "03_Analises",
+      "caminho_original": "datamining/curriculo",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "04_Relatorios",
+      "caminho_original": "datamining/relatorios",
+      "tipo": "arquivo",
+      "status": "ainda_nao_gerado",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining/config",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining/tests",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining/evidencias",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining/agents",
+      "tipo": "arquivo",
+      "status": "ainda_nao_gerado",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "datamining/hooks",
+      "tipo": "arquivo",
+      "status": "ainda_nao_gerado",
+      "sha256": null
+    },
+    {
+      "grupo": "05_Projeto_e_execucao",
+      "caminho_original": "bncc-ferramentas",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "docs",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "docs/superpowers/specs",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "docs/superpowers/plans",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "docs/tdd",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "docs/auditoria",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "06_Documentacao",
+      "caminho_original": "datamining/docs",
+      "tipo": "pasta",
+      "status": "disponivel",
+      "sha256": null
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "BNCC_estrutura_completa_filtros.xlsx",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "f09c0472116d87a2053bcf8300fb1b9d076a0cd91469f9d12ba925d2093836f7"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_Airam_Veras_2026_Colab_SDD_TDD_PACOTE-1ANO",
+      "tipo": "pasta",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": null
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_Airam_Veras_2026_Colab_SDD_TDD_PACOTE-1ANO.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "fea8fb10954c7954f84b1e033faf209ceae201397d0e074fc854b3922e7a1287"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_Airam_Veras_2026_Resultados_SDD_TDD-1ANO.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "9b2e28275cda9052a357d766a42b69c75b68addcc348d220ff4e6ca584a5fd4d"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_Airam_Veras_Ciclo_I_2026_1ao5_ANO_RESTRITO.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "4c60b78c81a03fe8b304d9d2d98ed0f3a30b2365391919cf47e5d5c553f3d535"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_DadosExportados-1ANO-CICLOI-AIRAMVERAS-LEITURA.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "2a1f01a52a3513a9058bd7ad8a84944b7e66da75b6dd0df4bb26740bd200e01b"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_DadosExportados-1ANO-CICLOI-AIRAMVERAS-MATEMATICA.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "7c40817fc8c169c18897c3d3c3938b8bc8c760a971b9f76c1716522a0d9a3858"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_DadosExportados-2ANO-CICLOI-AIRAMVERAS-LEITURA.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "f84adbce6ba0abc5f36989a8589ca6e6aa2bce756262c0ee1f7faf4869a05e02"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_DadosExportados-2ANO-CICLOI-AIRAMVERAS-MATEMATICA.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "4f1ba528b2972477e8d70351e7d9335ad7aea21c82701669b85ffc7d88a49cc7"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_DadosExportados.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "86ad6f7d3646d779a5c65115400581c9ecdd6b84df1ddd1fd47232286fc07be1"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "CAEd_Matrizes_Ceara_Completo.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "7631eb6cc797a05b4013bc89fe32144aa14ba90912b7577194c071b428e38229"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "converted.md",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "776e725bb2c88abc0e9ec70927a275d5dbdf00aa47fedf6a3d19d76efb95fddd"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "DADOS_ACERTO_POR_HABILIDADE 21-10-2026 2-17-54.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "0a07b0eaeeaf6179700ec4c6c4ac7474b8b7004812ab92c88f4a98b470a13ca7"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "DADOS_ACERTO_POR_HABILIDADE 21-10-2026 8-20-13-1ANO-LEITURA.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "e1fa5c591cd8c028b3ef210ded8910f8dab38ab4f36fbd282f70211e21d0fd85"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "DADOS_ACERTO_POR_HABILIDADE 21-10-2026 8-20-13-1ANO-MATEMATICA.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "0a07b0eaeeaf6179700ec4c6c4ac7474b8b7004812ab92c88f4a98b470a13ca7"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "DADOS_ACERTO_POR_HABILIDADE 21-10-2026 8-20-13-2ANO-LEITURA.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "d567c422f8f18aab8959b6df5cb11e3431f883c4ea147397a202a4d4948f7418"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "DADOS_ACERTO_POR_HABILIDADE 21-10-2026 8-20-13-2ANO-MATEMATICA.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "d5db8e8d0da07e8ba3a2c268feb1dc8dcc2d682de19762e8781e767f1a1d0d43"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "Dataset_Auditavel_CAEd_Airam_Veras_2026_RESTRITO.xlsx",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "2890deacfaced4e0a721b4c59b927f64eb6422acff14cb7f079d0231c8c9f155"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "Dataset_CAEd_Airam_Veras_ANONIMIZADO_2026.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "f895a9d1f59f8933e958b4ea63d158ef77acede4d1a47fa4b59278620cb0455c"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "Dataset_CAEd_Airam_Veras_COMPLETO_RESTRITO_2026.zip",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "de7931a706beb423185a84c209596a2f499d036ee180e97fcc853a2ed7850aac"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "HABILIDADE_DESEMPENHO_ESCOLA 21-10-2026 2-25-18.csv",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "9e8a69e47a94fc9209551c0c6ae2a4eb01d42bf823b1d62bb3174ae19c69f2f6"
+    },
+    {
+      "grupo": "07_Historico",
+      "caminho_original": "Painel_CAEd_Airam_Veras_2026_Analise_Estatistica.xlsx",
+      "tipo": "arquivo",
+      "status": "historico_preservado_sem_revalidacao",
+      "sha256": "189d41e427301d19a7c62cbf2948d0669fb7aac9ac570ab0d67bb709ebd36031"
+    }
+  ],
+  "conferencia": {
+    "arquivos_autenticados_antes_e_depois": 22,
+    "fontes_alteradas": 0
+  },
+  "limite": "Arquivos e pastas de etapas futuras continuam pendentes. Hash das pastas não é calculado por este índice."
+}

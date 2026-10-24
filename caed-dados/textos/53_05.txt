@@ -1,0 +1,28 @@
+CEARÁ . Avalie.CE 2026.2
+ ■ MATRIZ DE REFERÊNCIA
+MateMática | 9º aNO DO eNSiNO FUND aMeNtaL
+DeScRit OR DeScRiÇÃO D a HaBiLiD aDe
+D05_5 Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais usando malhas quadriculadas.
+D07_9 Reconhecer que as imagens de uma figura construída por uma transformação homotética são semelhantes, identificando 
+propriedades e/ou medidas que se modificam ou não se alteram.
+D08_9 Resolver problema utilizando propriedades dos polígonos (soma de seus ângulos internos, número de diagonais, cálculo 
+da medida de cada ângulo interno nos polígonos regulares).
+D09_9 Interpretar informações apresentadas por meio de coordenadas cartesianas.
+D10_9 Utilizar relações métricas do triângulo retângulo para resolver problemas significativos.
+D11_9 Reconhecer círculo/circunferência, seus elementos e algumas de suas relações.
+D14_9 Resolver problema envolvendo noções de volume.
+D15_9 Resolver problema utilizando relações entre diferentes unidades de medida.
+D16_9 Identificar a localização de números inteiros na reta numérica.
+D17_9 Identificar a localização de números racionais na reta numérica.
+D20_9 Resolver problema com números inteiros envolvendo as operações (adição, subtração, multiplicação, divisão, potenciação).
+D23_9 Identificar frações equivalentes.
+D25_9 Efetuar cálculos que envolvam operações com números racionais (adição, subtração, multiplicação, divisão, potenciação).
+D26_9 Resolver problema com números racionais envolvendo as operações (adição, subtração, multiplicação, divisão, potenciação).
+D28_9 Resolver problema que envolva porcentagem.
+D29_9 Resolver problema que envolva variação proporcional, direta ou inversa, entre grandezas.
+D31_9 Resolver problema que envolva equação do 2º grau.
+D32_9 Identificar a expressão algébrica que expressa uma regularidade observada em sequências de números ou figuras (padrões).
+D36_9 Resolver problema envolvendo informações apresentadas em tabelas e/ou gráficos.
+D37_9 Associar informações apresentadas em listas e/ou tabelas simples aos gráficos que as representam e vice-versa.
+D77_9 Resolver problemas usando a média aritmética.

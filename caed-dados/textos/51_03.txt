@@ -1,0 +1,24 @@
+CEARÁ . AVALIE.CE 2026.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 5º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01_5 Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.
+D02_5 Identificar propriedades comuns e diferenças entre poliedros e corpos redondos, relacionando figuras tridimensionais com 
+suas planificações.
+D06_5 Estimar a medida de grandezas utilizando unidades de medida convencionais ou não.
+D08_5 Estabelecer relações entre unidades de medida de tempo.
+D09_5 Estabelecer relações entre o horário de início e término e/ou o intervalo da duração de um evento ou acontecimento.
+D10_5 Num problema, estabelecer trocas entre cédulas e moedas do sistema monetário brasileiro, em função de seus valores.
+D11_5 Resolver problema envolvendo o cálculo do perímetro de figuras planas, desenhadas em malhas quadriculadas.
+D12_5 Resolver problema envolvendo o cálculo ou estimativa de áreas de figuras planas, desenhadas em malhas 
+quadriculadas.
+D14_5 Identificar a localização de números naturais na reta numérica.
+D15_5 Reconhecer a decomposição de números naturais nas suas diversas ordens.
+D16_5 Reconhecer a composição e a decomposição de números naturais em sua forma polinomial.
+D18_5 Calcular o resultado de uma multiplicação ou divisão de números naturais.
+D19_5 Resolver problema com números naturais, envolvendo diferentes significados da adição ou subtração: juntar, alteração de 
+um estado inicial (positiva ou negativa), comparação e mais de uma transformação (positiva ou negativa).
+D20_5 Resolver problema com números naturais, envolvendo diferentes significados da multiplicação ou divisão: multiplicação 
+comparativa, ideia de proporcionalidade, configuração retangular e combinatória.
+D27_5 Ler informações e dados apresentados em tabelas.
+D28_5 Ler informações e dados apresentados em gráficos (particularmente em gráficos de colunas).

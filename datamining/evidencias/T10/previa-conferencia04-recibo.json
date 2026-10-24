@@ -1,0 +1,9 @@
+{
+  "fase": "CONFERIR_ARTIFICIAL_FINAL_LINHAGEM",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:22:03.339999+00:00",
+  "snapshot": "previa-conferencia04-antes.json",
+  "snapshot_sha256": "bd732ea42bd7f0a79c8bc4cc752e08db0ecbfd3b3797d00ed8b1e7ba822521aa",
+  "log": "previa-conferencia04.log",
+  "log_sha256": "dd7ea877593fe1eb46f27332d01ad0573d33ba6106e73ff3e9360058734fe03f"
+}

@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_workbook_recusa_hipotese_comum_em_denominadores_heterogeneos ______
+tests\test_intervencao.py:149: in test_workbook_recusa_hipotese_comum_em_denominadores_heterogeneos
+    assert status['etapa']=='validar', 'Hipotese de D comum precisa ser recusada antes da autoria'
+E   AssertionError: Hipotese de D comum precisa ser recusada antes da autoria
+E   assert 'verificar_ordem_base' == 'validar'
+E     
+E     - validar
+E     + verificar_ordem_base
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_workbook_recusa_hipotese_comum_em_denominadores_heterogeneos
+1 failed, 14 deselected in 3.85s

@@ -1,0 +1,42 @@
+[
+  {
+    "mutacao": "necessidade_invertida",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "0c6fc07004447c56f0597883fd3f0646beee432dc681c597aeece194b1e2325b",
+    "snapshot_sha256": "f44b4e080af6c7a2bb97548697b78a8a4b278810a1a83ad1e2c6fa546885f365",
+    "fim": "2026-10-24T07:38:00.457825+00:00"
+  },
+  {
+    "mutacao": "vazamento_agregado",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "3514e1ab9f8e3776e5154456eacbef9487b6e06790a1a2c348e87615770532cd",
+    "snapshot_sha256": "1cc565ccac879a91fb4b42e49e3cb7ccf6e056a68a6f15004841c69afa60c556",
+    "fim": "2026-10-24T07:38:06.613374+00:00"
+  },
+  {
+    "mutacao": "obrigacao_80_por_H",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "be406802049a31910da09d31eb88f317b50821e54c93f13d23930e347b936444",
+    "snapshot_sha256": "d4ce0d30cf314bc095d80b6bb193a0d1f10f4516c092a9bad70bcdc322f81271",
+    "fim": "2026-10-24T07:38:08.174069+00:00"
+  },
+  {
+    "mutacao": "desempate_removido",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "80f2f4a99c4a443eac79ab15bc4760642bb7f96be58d6f8ef0a449d7210f2679",
+    "snapshot_sha256": "f748ef3cc861465d8cf46d4a2345179bfebadc7ed1e5739f527aa55fc017b54f",
+    "fim": "2026-10-24T07:38:12.094087+00:00"
+  },
+  {
+    "mutacao": "observacoes_reais_na_previa",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "bb892e8907cbaed30e9c4cd079eeeaf226acc19afc7bf96cbd7e32c8533e52e3",
+    "snapshot_sha256": "eea3925f1761833dcffc5164db7ee864b6dd0ab3d67484c4d0d46f93f171001a",
+    "fim": "2026-10-24T07:38:21.863244+00:00"
+  }
+]

@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____ test_previa_substitui_toda_observacao_individual_por_regra_artificial ____
+tests\test_intervencao.py:157: in test_previa_substitui_toda_observacao_individual_por_regra_artificial
+    assert len(sample['intervencao'])==8
+E   AssertionError: assert 6 == 8
+E    +  where 6 = len([{'chave': 'k-c', 'aluno_local_id': 'id-c', 'nome': 'PESSOA ARTIFICIAL c', 'avaliacao_local_id': 'app-c', ...}, {'chav...', ...}, {'chave': 'k-f', 'aluno_local_id': 'id-f', 'nome': 'PESSOA ARTIFICIAL f', 'avaliacao_local_id': 'app-f', ...}])
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_previa_substitui_toda_observacao_individual_por_regra_artificial
+1 failed, 25 deselected in 11.95s

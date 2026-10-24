@@ -1,0 +1,9 @@
+{
+  "fase": "ESQUEMA",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T15:58:33.545470+00:00",
+  "snapshot": "esquema02-antes.json",
+  "snapshot_sha256": "1c4c946bff482bec9727b4e48659aa01d5a82728d84bbe5f7bf3e8acee6676ef",
+  "log": "esquema02.log",
+  "log_sha256": "ac316aaf7cc69326a47e0149319136b6566a9fae0c0f169fcc0353a299c86e76"
+}

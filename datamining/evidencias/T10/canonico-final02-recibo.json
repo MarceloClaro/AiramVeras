@@ -1,0 +1,9 @@
+{
+  "fase": "PROMOVER_REFINAMENTO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:04:19.576893+00:00",
+  "snapshot": "canonico-final02-antes.json",
+  "snapshot_sha256": "60e2265ddf142d1e10855535e5847d6f2459043afa690654a50879a1872654eb",
+  "log": "canonico-final02.log",
+  "log_sha256": "512a61938ee21f94a40206e08d192a70e5d202b4043dcc2aa89c2e0280b08da8"
+}

@@ -1,0 +1,26 @@
+CEARÁ - AVALIE.CE 2025.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 9º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D094_M Executar cálculos entre números representados em forma de potência, com expoentes inteiros, expressando o resultado 
+em notação científica.
+D033_M Utilizar o princípio multiplicativo de contagem na resolução de problema.
+D044_M Utilizar porcentagem na resolução de problemas.
+D022_M Utilizar números naturais, envolvendo diferentes significados da multiplicação ou da divisão, na resolução de problemas.
+D057_M Utilizar o cálculo do valor numérico de expressões algébricas na resolução de problemas.
+D091_M Identificar uma expressão algébrica que representa uma situação-problema descrita textualmente.
+D052_M Associar uma equação linear de 1º grau com duas incógnitas a uma reta no plano cartesiano.
+D035_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D068_M Corresponder um sistema de equações polinomiais de 1º grau a uma situação-problema descrita textualmente.
+D095_M Identificar, no plano cartesiano, a solução de um sistema de equações do 1º grau com duas equações e duas incógnitas.
+D072_M Utilizar sistema de equações polinomiais de 1º grau na resolução de problema.
+D087_M Corresponder objetos em uma representação plana do espaço à sua localização descrita por meio de um par ordenado.
+D020_M Corresponder figuras tridimensionais às suas planificações.
+D096_M Reconhecer a condição de existência de um triângulo.
+D093_M Utilizar o cálculo da medida do ângulo interno de um polígono regular na resolução de problemas.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D030_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D034_M Utilizar probabilidade na resolução de problema.
+D021_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D056_M Utilizar medidas de tendência central na resolução de problema.

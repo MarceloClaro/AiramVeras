@@ -1,0 +1,12 @@
+{
+  "status": "CONFERIDO",
+  "arquivos_sem_identificadores": 90,
+  "ocorrencias_identificadoras": 0,
+  "schemas_keywords_utilizados_conferidos": true,
+  "motor_json_schema_geral": false,
+  "associacoes": 428,
+  "familias": 15,
+  "recibos_conferidos": 9,
+  "checkpoint_sha256": "2a0472e9b391e0a1c66af53c6d4572f00109a81b49ff547fd5cf8bf8c3e42570",
+  "limite": "Conferencia local; nao certifica ACL nem anonimato externo"
+}

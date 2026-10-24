@@ -1,0 +1,29 @@
+CEARÁ 1º AVALIE.CE 2024
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 9º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D013_M Reconhecer fração como representação associada a diferentes significados.
+D015_M Corresponder números racionais a pontos da reta numérica. 
+D016_M Corresponder números inteiros a pontos da reta numérica. 
+D045_M Utilizar porcentagem, na resolução de problemas.
+D052_M Efetuar cálculos simples com valores aproximados de radicais.
+D053_M Resolver problema com números naturais, envolvendo diferentes significados das operações (adição, subtração, 
+multiplicação, divisão, potenciação).
+D120_M Calcular o valor numérico de uma expressão algébrica.
+D121_M Identificar um sistema de equações do 1º grau que expressa um problema.
+D075_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D083_M Utilizar equação polinomial de 1º grau, na resolução de problemas.
+D087_M Utilizar sistema de equações polinomiais de 1º grau, na resolução de problemas.
+D144_M Classificar quadriláteros por meio de suas propriedades.
+D157_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas, 
+para se obter a medida de um ângulo especificado.
+D168_M Utilizar a soma das medidas dos ângulos internos de um triângulo, na resolução de problemas.
+D176_M Identificar a localização de pontos no plano cartesiano.
+D192_M Reconhecer ângulos como mudança de direção ou giros, identificando ângulos retos e não-retos.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problemas.
+D186_M Utilizar área de figuras bidimensionais, na resolução de problemas.
+D189_M Utilizar volume/capacidade de paralelepípedos, na resolução de problemas.
+D201_M Utilizar informações apresentadas em tabelas ou gráficos, na resolução de problemas.
+D203_M Utilizar noções de probabilidade, na resolução de problemas.
+D207_M Utilizar medidas de tendência central , na resolução de problemas.
+D217_M Associar informações apresentadas em listas e/ou tabelas simples aos gráficos que as representam e vice-versa.

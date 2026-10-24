@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-24T08:09:10.299641+00:00",
+  "comando": [
+    "C:/Users/marce/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.superpowers\\sdd\\implementation-plan\\t10-atomico01\\reports\\build_workbook.mjs",
+    "--verify-fixture",
+    "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.superpowers\\sdd\\implementation-plan\\t10-desempenho\\fixture080.json",
+    "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.superpowers\\sdd\\implementation-plan\\t10-atomico01\\out"
+  ],
+  "original_sha256": "5d7a7dfb4f4d596f168ea703ec7efbcd29229d8941cb6698fd44e8aecc08bf33",
+  "variante_sha256": "b26991c95c97bc54fbe36e68d17df215791e55271f986450a10dcac28962d879",
+  "fixture_sha256": "4f94bdb72b36fe5db733ec7e04a0d8b70c12e77627545acb383d50181ca20321",
+  "runtime_bundle": "26.1020.11127",
+  "artifact_tool": "2.8.99",
+  "somente_artificial": true
+}

@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_layout_legivel_e_refinamento_preserva_valores_formulas _________
+tests\test_intervencao.py:249: in test_layout_legivel_e_refinamento_preserva_valores_formulas
+    assert float(group_row.attrib['ht'])>=minimum_lines*13+20, 'Resumo multilinha nao cabe na altura salva'
+E   AssertionError: Resumo multilinha nao cabe na altura salva
+E   assert 85.0 >= ((9 * 13) + 20)
+E    +  where 85.0 = float('85')
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_layout_legivel_e_refinamento_preserva_valores_formulas
+1 failed, 17 deselected in 6.69s

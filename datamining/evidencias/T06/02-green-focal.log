@@ -1,0 +1,54 @@
+.....F......................                                             [100%]
+================================== FAILURES ===================================
+____________ test_T39_permutacao_exata_confrontada_scipy_pairings _____________
+
+    def test_T39_permutacao_exata_confrontada_scipy_pairings():
+        x,y=np.array([1.,2,4,8]),np.array([1.,4,2,8])
+>       out=calc(pairs(x,y))[0]
+            ^^^^^^^^^^^^^^^^
+
+tests\test_correlacoes.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_correlacoes.py:31: in calc
+    return api('correlacionar')(rows, 'x','y', STRATA, 719, config=CFG | kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+pares = [{'aluno_local_id': 'fixture-0', 'turma': 'A', 'ano_escolar': 1, 'ano_avaliacao': 2026, ...}, {'aluno_local_id': 'fixt...no_avaliacao': 2026, ...}, {'aluno_local_id': 'fixture-3', 'turma': 'A', 'ano_escolar': 1, 'ano_avaliacao': 2026, ...}]
+x = 'x', y = 'y'
+strata = ['turma', 'ano_escolar', 'ano_avaliacao', 'ciclo', 'instrumento']
+seed = 719
+config = {'permutacoes': 199, 'teto_exato': 1000, 'bootstrap': 199, 'lote': 64, ...}
+
+    def correlacionar(pares: list[dict], x: str, y: str, strata: list[str], seed: int,
+                      *, config: dict | None=None) -> list[dict]:
+        """Um contexto ano/instrumento; permutação de Y restrita às turmas.
+    
+        x/y devem estar mascarados previamente por participação e disponibilidade.
+        None é ausência; zero é medida. Não oferece opção de permutar XY juntos.
+        """
+        cfg=configuracao() if config is None else config
+        if (set(strata)!=set(ESTRATOS) or len(strata)!=len(ESTRATOS)
+            or cfg['desenho']!='Y_dentro_estrato_X_fixo' or cfg['bilateral']!='duas_caudas_duplicadas'):
+            raise ValueError('Desenho de permutacao invalido')
+        if any(type(cfg[k]) is not int or cfg[k]<1 for k in ('permutacoes','teto_exato','bootstrap','lote')):
+            raise ValueError('Resolucao computacional invalida')
+        if cfg['min_n_inferencia']<3 or not 0<cfg['min_fracao_bootstrap_valida']<=1:
+            raise ValueError('Politica de elegibilidade invalida')
+        contexts=set(); seen=set()
+        for row in pares:
+            if any(row.get(k) in (None,'') for k in (*ESTRATOS,'aluno_local_id')):
+                raise ValueError('Contexto do par incompleto')
+            contexts.add(tuple(row[k] for k in ESTRATOS[1:]))
+            if row['aluno_local_id'] in seen:raise ValueError('Estudante duplicado')
+            seen.add(row['aluno_local_id'])
+            for field in (x,y):
+                value=row[field]
+                if value is not None and (type(value) not in (int,float) or not math.isfinite(value)):
+>                   raise ValueError('Medida nao quantitativa ou nao finita')
+E                   ValueError: Medida nao quantitativa ou nao finita
+
+airam\correlacoes.py:173: ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_correlacoes.py::test_T39_permutacao_exata_confrontada_scipy_pairings
+1 failed, 27 passed in 9.24s

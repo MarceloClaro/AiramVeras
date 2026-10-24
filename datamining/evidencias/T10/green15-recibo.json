@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_ALTURA_MULTILINHA",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:54:23.885480+00:00",
+  "snapshot": "green15-antes.json",
+  "snapshot_sha256": "1af586e45c8913704dbc6bcbac29914a10bafbe420297fe069120c5ff7bdbf78",
+  "log": "green15.log",
+  "log_sha256": "095154e7a3d26f7395bb5ecc18bd0c2026d6756b575b137ca3d14e476cf0ce7c"
+}

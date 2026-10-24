@@ -1,0 +1,59 @@
+{
+  "incremento": "T01",
+  "requisitos": [
+    "R01",
+    "R21",
+    "R22",
+    "R24"
+  ],
+  "testes": [
+    "T01",
+    "T02",
+    "T03",
+    "T53",
+    "ZIP_RAIZ"
+  ],
+  "estado": "VERIFICACAO_FALHOU",
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_catalogo.py",
+    "tests/test_recibos.py",
+    "-q"
+  ],
+  "timestamp": "2026-10-22T10:05:15.682846+00:00",
+  "codigo_saida": 1,
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/catalogo.py": "72eee4729b1eb0fcddf075ffdfe3eb5b93df129146d2b76510e33c60a6a84371",
+    "airam/recibos.py": "4fc0534ff76bc331d32bcff6b3df626ec994edd3f5151da271ebfddf57bfbe76",
+    "config/analise.json": "795c53882998ba3d4d7e53570c3b474d712a991960f068b9ffb0a15a40d3f3b1",
+    "tests/test_catalogo.py": "47f772978cfb5eb7187d5d23615850950c14cf60c87ab391a4926d88f63318df",
+    "tests/test_recibos.py": "61556ac0f1b9ce08c2d82e279705b6164ce29872920bdc894693ac5281fb28d2"
+  },
+  "hashes_dados": {
+    "fixtures_sinteticas": "47f772978cfb5eb7187d5d23615850950c14cf60c87ab391a4926d88f63318df"
+  },
+  "versoes": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "plataforma": "win32",
+    "pytest": "9.1.1"
+  },
+  "mutacao": null,
+  "artefatos": [
+    {
+      "caminho": "evidencias/T01/green-tentativa-1-stdout.txt",
+      "sha256": "9d4b9f59da32a5f40ac74dd1fe9926c61b143b713b2dd3b34ed22e8b2b97ed0e"
+    },
+    {
+      "caminho": "evidencias/T01/green-tentativa-1-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limites": [
+    "Fixtures sinteticas; verificacao de fontes reais registrada separadamente."
+  ],
+  "executor": "Codex executor local; perfil Core nao representa execucao",
+  "fase_solicitada": "GREEN"
+}

@@ -1,0 +1,9 @@
+# Runtime do pipeline aprovado e verificação local; T01 usa somente stdlib.
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pypdf
+pdfplumber
+pytest

@@ -1,0 +1,10 @@
+2.2 - Quanto À Leitura de Frases.
+D12 Ler frases. HLP015 Ler frases.
+2.3 - Quanto À Leitura de teXtos.
+D13 Localizar informação explícita em textos. HLP021 Localizar informação explícita.
+D16 Interpretar textos não verbais e textos que articulam elementos verbais e não 
+verbais. HLP057 Interpretar textos que articulam elementos verbais e não verbais.
+D17 Reconhecer o tema ou assunto de um texto ouvido. HLP028 Reconhecer o assunto de um texto lido.
+D18 Reconhecer o tema ou assunto de um texto lido. HLP028 Reconhecer o assunto de um texto lido.
+D21 Reconhecer o gênero discursivo. HLP017 Reconhecer o gênero de um texto.
+D22 Identificar o propósito comunicativo em diferentes gêneros. HLP016 Identificar a finalidade de textos de diferentes gêneros.

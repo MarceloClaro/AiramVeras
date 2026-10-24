@@ -1,0 +1,9 @@
+{
+  "fase": "CONTRAPROVAS_MUTACOES_FINAIS",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:32:17.391067+00:00",
+  "snapshot": "mutacoes02-antes.json",
+  "snapshot_sha256": "303f30b694b8c29dc16f92b6da4ce77f89c85d9f724cf72ec001e99404177101",
+  "log": "mutacoes02.log",
+  "log_sha256": "0f6015fc329a5f894659f6c96d90df61361ccb3e30cb215cdb396a2f2d972b1f"
+}

@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao _________
+tests\test_intervencao.py:125: in test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+    assert run.returncode==0, 'Verificacao funcional do workbook falhou; consultar recibo sintetico'
+E   AssertionError: Verificacao funcional do workbook falhou; consultar recibo sintetico
+E   assert 1 == 0
+E    +  where 1 = CompletedProcess(args=['C:/Users/marce/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe', 'C...ificar_formulas"}\n', stderr='{"status":"falha","etapa":"recalcular","tipo":"Error","detalhe":"log local restrito"}\n').returncode
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+1 failed, 23 deselected in 5.09s

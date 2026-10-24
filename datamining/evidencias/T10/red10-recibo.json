@@ -1,0 +1,9 @@
+{
+  "fase": "RED_ALTURA_MULTILINHA",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:49:58.842151+00:00",
+  "snapshot": "red10-antes.json",
+  "snapshot_sha256": "ab76ecab10644d245a6782aaa32b7d76b648de446ba6a42db14e844af127289c",
+  "log": "red10.log",
+  "log_sha256": "62bdb53e7aa03fa5b6648f5ea15cc8fa30c8671e6e6a69b17a0d5a53a078001f"
+}

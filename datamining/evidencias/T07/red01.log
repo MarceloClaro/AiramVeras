@@ -1,0 +1,375 @@
+FFFFFFFFFFFFFFFF                                                         [100%]
+================================== FAILURES ===================================
+___________ test_t32_many_edges_and_duplicates_do_not_multiply_mass ___________
+
+    def test_t32_many_edges_and_duplicates_do_not_multiply_mass():
+        rows = [edge('a', b) for b in ['x','y','z']] + [edge('b','x')]
+>       graph = api('construir_bipartida')(rows + [rows[0]], 'ressalvada')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'construir_bipartida'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+______ test_t32_uncertain_and_semantic_policies_preserve_isolated_nodes _______
+
+    def test_t32_uncertain_and_semantic_policies_preserve_isolated_nodes():
+        rows = [edge('a','x'), edge('b','x', status_semantico='associacao_publicada_com_ressalva_semantica'),
+            edge('c','x', peso_analitico=0, status_contextual='fonte_anterior_integracao_a_confirmar')]
+>       g = api('construir_bipartida')(rows,'estrita')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'construir_bipartida'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t32_mixed_contexts_or_conflicting_duplicate_rejected __________
+
+    def test_t32_mixed_contexts_or_conflicting_duplicate_rejected():
+>       fn = api('construir_bipartida')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'construir_bipartida'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+_____ test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent ______
+
+    def test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent():
+        a = np.array([[0,.25,.75,0],[1,0,0,0],[1,0,0,0],[0,0,0,0]])
+        p = np.array([[.2,0,np.nan,.9],[np.nan]*4])
+        mask = np.isfinite(p)
+>       result = api('propagar')(p,mask,a,1)
+                 ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+___________ test_t34_two_steps_use_original_mask_and_expose_return ____________
+
+    def test_t34_two_steps_use_original_mask_and_expose_return():
+        a = np.array([[0,1,0],[.5,0,.5],[0,1,0]])
+        p = np.array([[1,np.nan,0]])
+>       r = api('propagar')(p,np.isfinite(p),a,2)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+____________ test_t34_consistent_column_permutation_is_equivariant ____________
+
+    def test_t34_consistent_column_permutation_is_equivariant():
+        p = np.array([[0,.4,1]])
+        a = np.array([[0,.3,.7],[1,0,0],[1,0,0]])
+        order = [2,0,1]
+>       fn = api('propagar')
+             ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t33_invalid_graph_mask_or_steps_rejected[a0-mask0-1] __________
+
+a = [[1, 0], [0, 1]], mask = [[True, True]], steps = 1
+
+    @pytest.mark.parametrize('a,mask,steps', [([[1,0],[0,1]],[[True,True]],1),
+        ([[0,-1],[1,0]],[[True,True]],1), ([[0,.5],[1,0]],[[True,True]],1),
+        ([[0,1],[1,0]],[[1,1]],1), ([[0,1],[1,0]],[[True,True]],3)])
+    def test_t33_invalid_graph_mask_or_steps_rejected(a,mask,steps):
+        with pytest.raises(ValueError):
+>           api('propagar')(np.array([[0,1]]),np.array(mask),np.array(a),steps)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t33_invalid_graph_mask_or_steps_rejected[a1-mask1-1] __________
+
+a = [[0, -1], [1, 0]], mask = [[True, True]], steps = 1
+
+    @pytest.mark.parametrize('a,mask,steps', [([[1,0],[0,1]],[[True,True]],1),
+        ([[0,-1],[1,0]],[[True,True]],1), ([[0,.5],[1,0]],[[True,True]],1),
+        ([[0,1],[1,0]],[[1,1]],1), ([[0,1],[1,0]],[[True,True]],3)])
+    def test_t33_invalid_graph_mask_or_steps_rejected(a,mask,steps):
+        with pytest.raises(ValueError):
+>           api('propagar')(np.array([[0,1]]),np.array(mask),np.array(a),steps)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t33_invalid_graph_mask_or_steps_rejected[a2-mask2-1] __________
+
+a = [[0, 0.5], [1, 0]], mask = [[True, True]], steps = 1
+
+    @pytest.mark.parametrize('a,mask,steps', [([[1,0],[0,1]],[[True,True]],1),
+        ([[0,-1],[1,0]],[[True,True]],1), ([[0,.5],[1,0]],[[True,True]],1),
+        ([[0,1],[1,0]],[[1,1]],1), ([[0,1],[1,0]],[[True,True]],3)])
+    def test_t33_invalid_graph_mask_or_steps_rejected(a,mask,steps):
+        with pytest.raises(ValueError):
+>           api('propagar')(np.array([[0,1]]),np.array(mask),np.array(a),steps)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t33_invalid_graph_mask_or_steps_rejected[a3-mask3-1] __________
+
+a = [[0, 1], [1, 0]], mask = [[1, 1]], steps = 1
+
+    @pytest.mark.parametrize('a,mask,steps', [([[1,0],[0,1]],[[True,True]],1),
+        ([[0,-1],[1,0]],[[True,True]],1), ([[0,.5],[1,0]],[[True,True]],1),
+        ([[0,1],[1,0]],[[1,1]],1), ([[0,1],[1,0]],[[True,True]],3)])
+    def test_t33_invalid_graph_mask_or_steps_rejected(a,mask,steps):
+        with pytest.raises(ValueError):
+>           api('propagar')(np.array([[0,1]]),np.array(mask),np.array(a),steps)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+__________ test_t33_invalid_graph_mask_or_steps_rejected[a4-mask4-3] __________
+
+a = [[0, 1], [1, 0]], mask = [[True, True]], steps = 3
+
+    @pytest.mark.parametrize('a,mask,steps', [([[1,0],[0,1]],[[True,True]],1),
+        ([[0,-1],[1,0]],[[True,True]],1), ([[0,.5],[1,0]],[[True,True]],1),
+        ([[0,1],[1,0]],[[1,1]],1), ([[0,1],[1,0]],[[True,True]],3)])
+    def test_t33_invalid_graph_mask_or_steps_rejected(a,mask,steps):
+        with pytest.raises(ValueError):
+>           api('propagar')(np.array([[0,1]]),np.array(mask),np.array(a),steps)
+            ^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'propagar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+___ test_evidence_retains_original_counts_and_normalizes_occurrence_fanout ____
+
+    def test_evidence_retains_original_counts_and_normalizes_occurrence_fanout():
+>       graph = api('construir_bipartida')([edge('a','x','H1'),edge('a','y','H1'),edge('b','z','H1')], 'estrita')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_grafo.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'construir_bipartida'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.grafo'), 'Funcionalidade de grafo ainda ausente'
+E       AssertionError: Funcionalidade de grafo ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.grafo')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_grafo.py:9: AssertionError
+___ test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums ____
+
+    def test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums():
+        rows = [row('s1',1,1), row('s2',0,3), row('s3',1,2)]
+        groups = [{'grupo_id':'g1','membros':['s1','s2']},{'grupo_id':'g2','membros':['s2','s3']}]
+>       fn = api()
+             ^^^^^
+
+tests\test_agregacoes.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def api():
+>       assert importlib.util.find_spec('airam.agregacoes'), 'Agregacao multinivel ainda ausente'
+E       AssertionError: Agregacao multinivel ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.agregacoes')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_agregacoes.py:8: AssertionError
+___________ test_t35_absence_and_zero_not_confused_and_context_kept ___________
+
+    def test_t35_absence_and_zero_not_confused_and_context_kept():
+>       fn = api()
+             ^^^^^
+
+tests\test_agregacoes.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def api():
+>       assert importlib.util.find_spec('airam.agregacoes'), 'Agregacao multinivel ainda ausente'
+E       AssertionError: Agregacao multinivel ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.agregacoes')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_agregacoes.py:8: AssertionError
+____________ test_t36_aggregate_cannot_be_reassigned_to_individual ____________
+
+    def test_t36_aggregate_cannot_be_reassigned_to_individual():
+>       fn = api()
+             ^^^^^
+
+tests\test_agregacoes.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def api():
+>       assert importlib.util.find_spec('airam.agregacoes'), 'Agregacao multinivel ainda ausente'
+E       AssertionError: Agregacao multinivel ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.agregacoes')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_agregacoes.py:8: AssertionError
+______ test_t35_conflicting_duplicates_and_changed_application_rejected _______
+
+    def test_t35_conflicting_duplicates_and_changed_application_rejected():
+>       fn = api()
+             ^^^^^
+
+tests\test_agregacoes.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def api():
+>       assert importlib.util.find_spec('airam.agregacoes'), 'Agregacao multinivel ainda ausente'
+E       AssertionError: Agregacao multinivel ainda ausente
+E       assert None
+E        +  where None = <function find_spec at 0x00000238E1C2BA60>('airam.agregacoes')
+E        +    where <function find_spec at 0x00000238E1C2BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_agregacoes.py:8: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_grafo.py::test_t32_many_edges_and_duplicates_do_not_multiply_mass
+FAILED tests/test_grafo.py::test_t32_uncertain_and_semantic_policies_preserve_isolated_nodes
+FAILED tests/test_grafo.py::test_t32_mixed_contexts_or_conflicting_duplicate_rejected
+FAILED tests/test_grafo.py::test_t33_manual_weighted_mask_zero_is_observed_and_isolated_absent
+FAILED tests/test_grafo.py::test_t34_two_steps_use_original_mask_and_expose_return
+FAILED tests/test_grafo.py::test_t34_consistent_column_permutation_is_equivariant
+FAILED tests/test_grafo.py::test_t33_invalid_graph_mask_or_steps_rejected[a0-mask0-1]
+FAILED tests/test_grafo.py::test_t33_invalid_graph_mask_or_steps_rejected[a1-mask1-1]
+FAILED tests/test_grafo.py::test_t33_invalid_graph_mask_or_steps_rejected[a2-mask2-1]
+FAILED tests/test_grafo.py::test_t33_invalid_graph_mask_or_steps_rejected[a3-mask3-1]
+FAILED tests/test_grafo.py::test_t33_invalid_graph_mask_or_steps_rejected[a4-mask4-3]
+FAILED tests/test_grafo.py::test_evidence_retains_original_counts_and_normalizes_occurrence_fanout
+FAILED tests/test_agregacoes.py::test_t35_overlapping_groups_school_deduplicates_and_uses_ratio_of_sums
+FAILED tests/test_agregacoes.py::test_t35_absence_and_zero_not_confused_and_context_kept
+FAILED tests/test_agregacoes.py::test_t36_aggregate_cannot_be_reassigned_to_individual
+FAILED tests/test_agregacoes.py::test_t35_conflicting_duplicates_and_changed_application_rejected
+16 failed in 0.56s

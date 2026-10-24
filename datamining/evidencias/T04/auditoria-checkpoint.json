@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checkpoint_sha256": "a4a73d2523d459d0dda102f6e4b6f14176be444717f428bb6d1772822ffd5796",
+  "leitor_independente": "pypdf",
+  "paginas_conferidas": 17,
+  "ocorrencias": 202,
+  "vinculos": 157,
+  "posicoes": 124,
+  "conferencia_bncc": "Textos e fontes iguais ao JSON canônico, sem reescrita",
+  "pesos_por_posicao": {
+    "unitario": 118,
+    "zero_integracao_a_confirmar": 6
+  },
+  "figuras_sha256": {
+    "23": "9ecb4e55c214381c1470b563874f68c7a6a66ea70c700fbbe5185fa13d53e59f",
+    "25": "6849d30626a376764ac41b3c248246db49ee094477aba83366648c904b1f05c0",
+    "27": "0e017f8438de9247a2a2502b5c59ee4a48dcbdb6e809801f49d38bb25f45cc11"
+  },
+  "renderer_sha256": "23d2a578f39c7478d153f7904c7ac8981e12076e230129b17c46d1f55ab8a465"
+}

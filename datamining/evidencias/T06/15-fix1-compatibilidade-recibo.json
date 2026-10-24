@@ -1,0 +1,9 @@
+{
+  "fase": "VERIFICACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T22:55:39.853555+00:00",
+  "snapshot": "15-fix1-compatibilidade-antes.json",
+  "snapshot_sha256": "2206a52ae258d6b361b392ecfc82dd304e44ba4ecc45e7536d01a0ccbc3cf64c",
+  "log": "15-fix1-compatibilidade.log",
+  "log_sha256": "429a9af40211267316f8cdc22aa918eb88de7d8f6f928ea7e48acad1ce2cdcda"
+}

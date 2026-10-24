@@ -1,0 +1,16 @@
+CEARÁ 1º AVALIE.CE 2024
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 2º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D003_M Identificar números naturais segundo critérios de ordem.
+D213_M Executar a contagem de um grupo de objetos/pessoas/animais.
+D214_M Comparar ou ordenar quantidades pela contagem.
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.
+D141_M Identificar figuras tridimensionais por meio de suas características.
+D140_M Identificar figuras bidimensionais por meio de suas características.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D212_M Corresponder cédulas e/ou moedas do sistema monetário brasileiro.
+D216_M Identificar o dia da semana de uma data, consultando calendário.
+D200_M Identificar informações a partir de dados dispostos em tabelas ou gráficos.
+D210_M Comparar ou ordenar o objeto/pessoa/animal por meio dos atributos de comprimento, altura, espessura e capacidade.

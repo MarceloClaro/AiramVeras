@@ -1,0 +1,118 @@
+{
+  "artefatos": [
+    {
+      "caminho": "evidencias/T04/mutacao-sem_ressalva-antes.json",
+      "sha256": "f22cb6f3b6e801e99b3f8d5d5286f9f56e13a277d179a834bfad85fec23a496f"
+    },
+    {
+      "caminho": "evidencias/T04/mutacao-sem_ressalva-recibo.json",
+      "sha256": "6426efe3bd9f0361ec9bf3ea90c64bf4dc6ca880dfe92632a4681c7dbe7cc21f"
+    },
+    {
+      "caminho": "evidencias/T04/mutacao-sem_ressalva.log",
+      "sha256": "c41110e0345090d6fa1d6a39df2fb2f9ecfee27e91344d1329b36a324a5e71dd"
+    }
+  ],
+  "codigo_saida": 1,
+  "comando": [
+    "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos",
+    "-q",
+    "--tb=short"
+  ],
+  "estado": "RED",
+  "executor": "Codex executor local",
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/bncc.py": "0e28030b23dbd3c6f6668488223ec85da479d6bf117ea0e04b3367a2ceca774f",
+    "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+    "airam/esquemas.py": "cfd4b1e81f8648c1c3eaa3b55c12da0f7eb734ca5999bddf527bd4b1d8f8e156",
+    "airam/identidade.py": "5dfdc23c97d72b5237f8c3d3c2f29c19d521bcd07a8c786a0e778a796510c459",
+    "airam/ingestao.py": "a4fed987df21db5337db37ea67fbfa4efa23e91d0b48982f67bf1e8e899afb11",
+    "airam/matriz_cnca.py": "1aa5ad8bbe915abc90a6bc4e21221fc7a4f4c44457e65bd2a2fe8b9b75ddc795",
+    "airam/pareamento.py": "907eaf6c1b7de15ce82ba2955d86ea14062988a33455cad483526e0aa90c0e3f",
+    "airam/recibos.py": "62c0fc07df7ba31548901c6f166e0e93c24f85623a0fab0a49eeeeaff9f5be4e",
+    "airam/vinculos.py": "aa470358c7205509d729e86e9a4be18d62006470128a4fb94d7b299727dae6d3",
+    "config/analise.json": "cc8f93abcb73b27ca3d44d2714f5d9e4010b643c0331a23e860e176ab47b943f",
+    "config/ressalvas_curriculares.json": "2b08fd5eda6fc821bfe9a678f496f82f4aaa3e992eb69e4b3067ce9935e185f7",
+    "evidencias/T04/analisar_fontes_reais.py": "30971f39ed4f3f47a3c4995cda9d16d5ba9319f35da92681187969d9281dccd1",
+    "evidencias/T04/analise-real-01-antes.json": "d6668482b5aba69b3963aa4497a89a720c831fe389aec10f15f00c7f9934fbef",
+    "evidencias/T04/analise-real-01-recibo.json": "bc0ef533dd7174fcaa3373b2ec5345cc3ce8fc686b847bb2e1f3fa4c9de3cfd3",
+    "evidencias/T04/analise-real-02-antes.json": "96b6a8d211f12eb573c27cea5fc8f68c8b69a152b6acaf4193526a1ca8f41180",
+    "evidencias/T04/analise-real-02-recibo.json": "87ec3eb54c7a9ff02bc59f75740c4b4ba285456aad64e85d0a4efe73343a2f42",
+    "evidencias/T04/conferencia-real.json": "c2f19164a014e891486dba95ed6dcb0e026ac1014e88abc1c587ad8172e6cdb4",
+    "evidencias/T04/contraprovas-antes.json": "0b699c757cb34c58e4ba929f14b8ed4306684b39c200591290e0d382c52ac650",
+    "evidencias/T04/executar.py": "8a1779b2dbf5afd0396c0d4ab65d408beeb60e2f5ad0b6cc2111c791a90d0b01",
+    "evidencias/T04/green-focal-01-antes.json": "ebbf30bf1cb3cd9abeb532bd31bdfd0f24e96c6dc993fb767bf95f2aef5ef5a2",
+    "evidencias/T04/green-focal-01-recibo.json": "7c2bff52f6f35e982fda4fdcdcf814f196115c0b4d7a49894602abe0dd945022",
+    "evidencias/T04/inspecao-cabecalho-antes.json": "46caadd0f3c61a95fc579f9aeca846ebc54d86b08f288fd2638c374b70dd0611",
+    "evidencias/T04/inspecao-cabecalho-recibo.json": "dd24c0dd1b92eab9fa9d872ed1cd5185dab911fa0967474538430c229722e8c4",
+    "evidencias/T04/inspecao-geometrica-antes.json": "8cd65b5b1e99f59db9641ef6ecc2876b7848b33c55f044c6b2d4f8e45efa55df",
+    "evidencias/T04/inspecao-geometrica-recibo.json": "e5a66fa8c905a7230c451879b0043bdf0ebd6a35d6eb0ec96639950a027e51fc",
+    "evidencias/T04/inspecionar_geometria.py": "e1d8cc4f61381809f21ea4afab31dbb3983caf322dfb6f7c8cb91a9ecd9d58fb",
+    "evidencias/T04/mutacao-bncc_inativa-antes.json": "a7dc4c6480a571269c264ea00b9a8dfa2299ba50a2bd616516a56a434f12d393",
+    "evidencias/T04/mutacao-bncc_inativa-recibo.json": "c2eba561d645abf8b02849f5c22c7a9be2d135abbd91b2215c23a9c5512febe0",
+    "evidencias/T04/mutacao-centro_ciclo-antes.json": "2933b74885ad528222eb3f88194824e71be2e16b0606070d2b290eb327804276",
+    "evidencias/T04/mutacao-centro_ciclo-recibo.json": "beef0dbc0bcc1cada9c2e65ee98a1fb8247d3cb6991c7c1203467c94773a89af",
+    "evidencias/T04/mutacao-uniao_global-antes.json": "22dcffa455cacadecba0fb36dd8db5d58862c544b6f4b1c769474d5142c3385a",
+    "evidencias/T04/mutacao-uniao_global-recibo.json": "2dad557783406efa8fdfdb34305d6efc12d80e16da223941d1ab7fae07ead299",
+    "evidencias/T04/red-funcional-antes.json": "e1d0000945c1d45c95409c68adc80be91e01fca2024ec6185c8a7e179b6b9b5a",
+    "evidencias/T04/red-funcional-recibo.json": "446c16d747c7b958e091f36800d1b357a82793eacbe2948bcfa99174ed3e8c80",
+    "evidencias/T04/red-inicial-antes.json": "402b48385f30b46bb5bc47dfbc88783c94057ba4e638e92adc19ef555cbc89c6",
+    "evidencias/T04/red-inicial-recibo.json": "761830a90245eca7e1018a54f747d7e1a100e4cb79f74994de837bca9e034d6b",
+    "evidencias/T04/red-unicidade-antes.json": "ac03eca5ab9f32f23dfe90c6e13fef34f94ee4ddf3238a7bc94f34a24866e1c3",
+    "evidencias/T04/red-unicidade-recibo.json": "a9c76bffbabf90a4fdae2ad5f102be3236cf649456e9eca64275337e1477bfbb",
+    "evidencias/T04/verificar_mutacoes.py": "1d392667c2ef89af4584107c0a90fffffb369c3f7ba169d665c27a638534c4c3",
+    "pyproject.toml": "b9d20bcdd904b3d97780f2de40b6bf188da6cadba1c75e5f9123aa091e6d5b66",
+    "requirements.lock.txt": "17aca480a83baeb99f72cbfe77c9778c49cc5484910985305ac11e68354e6792",
+    "tests/test_catalogo.py": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e",
+    "tests/test_identidade.py": "28df278fd2b9e9df23c05f13125dcd5e644b399c099c3852de90970a89f98c43",
+    "tests/test_ingestao.py": "7e4b6a517bfcc0814b30cece487f12d3b1f0f9d0e7790dee97298c35e0bd1c77",
+    "tests/test_matriz_cnca.py": "d16ef485584801009175bdf956bfd1194e5209fa2800207d3c3954232dad67f6",
+    "tests/test_pareamento.py": "ba2dc2da46d5b23042aea53314a9a7b4a5bc47396431a225b4100333ba35aafd",
+    "tests/test_participacao.py": "06fbbdcd0a21de06d64e14332c2fa4de7b6444e83c9b83a90e9299348b2dd31a",
+    "tests/test_recibos.py": "da833654df5782a3c49b1652774f7837b9c661568b9c185dbc85e43933fba942",
+    "tests/test_registrar_execucao.py": "57e0b3eb1fabd7be025352439ad51572591495149d2171b1cff6fb2c2fb685e1",
+    "tests/test_vinculos.py": "f649ce682b7aab3f05e13b57e5d47025c61564e11742775f90869a64638d36ff"
+  },
+  "hashes_dados": {
+    "../MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf": "2728d640c98510ff323cb542282ffc51db8288c021560aa55cac7b908c5f5f0e",
+    "../bncc-dados/dados/bncc-2018/ensino-fundamental.json": "2bb775102aed7342842e7f87e2024db915d2fca6277f9016828e5053cbc77cd3",
+    "../resultados-caed-ciclo-i-2026/conferencia/mapa_posicao_codigo_caed.csv": "da6c780f03b37653996436140c29fde8284c96a72666713089ca0d3e7b192648",
+    "curriculo/t04/checkpoint.json": "a4a73d2523d459d0dda102f6e4b6f14176be444717f428bb6d1772822ffd5796",
+    "restrito/t03/tabelas.json": "b26bef93117c7c38906cd9e6e025cfc5f2a9969cc4834e4b785618d29dd56dbb"
+  },
+  "incremento": "T04",
+  "limites": [
+    "Consolidacao T53 posterior de registros reais preservados; hashes e timestamp sao os capturados ANTES da execucao original, sem retroatribuicao.",
+    "Lista T26-T31 identifica o incremento; o comando e o log delimitam os testes realmente executados em cada recibo.",
+    "Validacao documental/computacional local; sem inferencia Core ou validacao pedagogica externa."
+  ],
+  "mutacao": "mutacao-sem_ressalva",
+  "requisitos": [
+    "R01",
+    "R12",
+    "R21",
+    "R22",
+    "R23",
+    "R24"
+  ],
+  "testes": [
+    "T26",
+    "T27",
+    "T28",
+    "T29",
+    "T30",
+    "T31",
+    "unicidade_e_pesos"
+  ],
+  "timestamp": "2026-10-22T15:30:33.933851+00:00",
+  "versoes": {
+    "pdfplumber": "0.11.10",
+    "pypdf": "6.21.2",
+    "pytest": "9.1.1",
+    "python": "3.12.14"
+  }
+}

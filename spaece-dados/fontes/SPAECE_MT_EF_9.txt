@@ -1,0 +1,35 @@
+SPAECE Sistema Permanente de Avaliação da Educação Básica do Ceará
+ ■ MATRIZ DE REFERÊNCIA
+MateMática | 9º ano do ensino FundaMental
+i. inteRa Gindo coM nÚMeRos e FunÇÕes
+D07 Resolver situação problema utilizando mínimo múltiplo comum ou máximo divisor comum com números naturais.
+D08 Ordenar ou identificar a localização de números inteiros na reta numérica.
+D10 Resolver problema com números inteiros envolvendo suas operações.
+D11 Ordenar ou identificar a localização de números racionais na reta numérica.
+D12 Resolver problema   com  números  racionais envolvendo suas operações.
+D13 Reconhecer diferentes  representações de  um mesmo número racional, em situação-problema.
+D15 Resolver problema utilizando a adição ou subtração com números racionais representados na forma  fracionária  (mesmo  
+denominador ou denominadores diferentes) ou na forma decimal.
+D17 Resolver situação problema utilizando porcentagem.
+D18 Resolver situação problema  envolvendo a variação proporcional  entre grandezas direta ou inversamente proporcionais.
+D19 Resolver problema envolvendo juros simples.
+D21 Efetuar  cálculos  com   números   irracionais, utilizando suas propriedades.
+D24 Fatorar e simplificar expressões algébricas.
+D25 Resolver situação-problema que envolva equações de 1º grau.
+D26 Resolver situação-problema envolvendo equação do 2º grau.
+D27 Resolver situação-problema envolvendo sistema de equações do 1º grau.
+ii. conViVendo coM a GeoMetRia
+D48 Identificar e classificar figuras planas: quadrado, retângulo, triângulo e círculo, destacando algumas de  suas características 
+(número de lados e tipo de ângulos).
+D49 Resolver problemas envolvendo semelhança de figuras planas.
+D50 Resolver situação-problema  aplicando  o T eorema de Pitágoras ou as demais relações métricas no triângulo retângulo.
+D51 Resolver problemas usando as propriedades dos polígonos (soma dos ângulos internos, número de diagonais e cálculo do ângulo 
+interno de polígonos regulares).
+D52 Identificar planificações de alguns poliedros  e/ou corpos redondos.
+iii. ViVenciando as Medidas
+D65 Calcular o perímetro de figuras planas, em uma situação problema.
+D67 Resolver problema envolvendo o cálculo de área de figuras planas.
+D69 Resolver problemas envolvendo noções de volume.
+iV. tRataMento da inFoRMa ÇÃo
+D75 Resolver problema envolvendo informações apresentadas em tabelas ou gráficos.
+D77 Resolver problemas usando a média aritmética.

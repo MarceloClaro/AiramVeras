@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_PREVIA_INTEGRAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:24:50.015552+00:00",
+  "snapshot": "green10-antes.json",
+  "snapshot_sha256": "05a7ca41b17798736cfa03d82e9af72bfa6bc28b10090c86c1b19df8828d9605",
+  "log": "green10.log",
+  "log_sha256": "096c87a47ec890c11cd8ffb421b569c73b86c5b0a3ad3c2c685faf0df4a8619a"
+}

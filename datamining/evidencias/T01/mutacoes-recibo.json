@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-22T10:11:45.698268+00:00",
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "evidencias/T01/verificar_mutacoes.py"
+  ],
+  "codigo_saida": 0,
+  "mutacoes": [
+    {
+      "id": "hash_removido",
+      "teste": "test_t01_rejeita_byte_alterado",
+      "codigo_saida": 1,
+      "morta": true,
+      "artefato": "evidencias/T01/mutacao-hash_removido-stdout.txt",
+      "sha256": "e14085e432cc72c5771b2419faeb61e93a5ce5f4b038b886d6fc81fc41c6b349"
+    },
+    {
+      "id": "zip_raiz_removida",
+      "teste": "test_zip_escape_rejeitado_sem_extrair",
+      "codigo_saida": 1,
+      "morta": true,
+      "artefato": "evidencias/T01/mutacao-zip_raiz_removida-stdout.txt",
+      "sha256": "77b9137a3cced8d2876228e268c79f2f12a531d0d16aa9d3f19bb7392a862fa9"
+    }
+  ],
+  "produto_preservado": true,
+  "limite": "Duas mutacoes direcionadas; nao e cobertura exaustiva de mutacao."
+}

@@ -1,0 +1,37 @@
+{"etapa":"construir_abas","segundos":0,"rss_mb":295}
+{"etapa":"ajuste_calculos","segundos":129,"rss_mb":2197}
+{"etapa":"calculos_wrap","segundos":129,"rss_mb":2197}
+{"etapa":"ajuste_fila","segundos":131,"rss_mb":2199}
+{"etapa":"ajuste_habilidades","segundos":133,"rss_mb":2201}
+{"etapa":"ajuste_grupos","segundos":150,"rss_mb":2200}
+{"etapa":"ajuste_fontes","segundos":151,"rss_mb":2209}
+{"etapa":"verificar_formulas","segundos":151,"rss_mb":2209}
+{"etapa":"verificar_ordem_base","segundos":151,"rss_mb":2209}
+{"etapa":"verificar_notas_base","segundos":151,"rss_mb":2209}
+{"etapa":"verificar_meta50","segundos":151,"rss_mb":2209}
+{"etapa":"verificar_proximidade","segundos":210,"rss_mb":2421}
+{"etapa":"verificar_permutacao","segundos":341,"rss_mb":2826}
+{"etapa":"verificar_notas_permutadas","segundos":1793,"rss_mb":2802}
+{"etapa":"restaurar_base","segundos":1793,"rss_mb":2802}
+{"etapa":"verificar_metaA","segundos":3572,"rss_mb":2742}
+{"etapa":"verificar_controles_invalidos","segundos":3658,"rss_mb":2628}
+{"etapa":"verificar_fluxo_docente","segundos":4066,"rss_mb":3971}
+{"etapa":"verificar_detector_erros","segundos":4076,"rss_mb":4026}
+{"etapa":"verificar_erros_todas_abas","segundos":4076,"rss_mb":4023}
+{"etapa":"inspecionar_api_publica","segundos":4076,"rss_mb":3990}
+{"etapa":"recalcular_exportacao","segundos":4077,"rss_mb":3907}
+{"etapa":"exportar","segundos":4077,"rss_mb":3906}
+Inspect result written to file: restrito\outputs\01a16157-2a68-7253-9591-de126647cf53\versoes\autoria04\intervencao-restrita.xlsx.inspect.ndjson
+{"etapa":"reabrir","segundos":4111,"rss_mb":3095}
+{"etapa":"conferir_roundtrip","segundos":4216,"rss_mb":4967}
+{"etapa":"preparar_copia_artificial","segundos":4216,"rss_mb":4968}
+{"etapa":"renderizar_sintetico","segundos":4216,"rss_mb":5004}
+{"etapa":"construir_abas","segundos":4216,"rss_mb":5004}
+{"etapa":"ajuste_calculos","segundos":4219,"rss_mb":4976}
+{"etapa":"calculos_wrap","segundos":4219,"rss_mb":4976}
+{"etapa":"ajuste_fila","segundos":4219,"rss_mb":4976}
+{"etapa":"ajuste_habilidades","segundos":4219,"rss_mb":4976}
+{"etapa":"ajuste_grupos","segundos":4219,"rss_mb":4976}
+{"etapa":"ajuste_fontes","segundos":4220,"rss_mb":4978}
+Inspect result written to file: restrito\outputs\01a16157-2a68-7253-9591-de126647cf53\versoes\autoria04\previas-sinteticas\inspecao-artificial.xlsx.inspect.ndjson
+{"nota_permanece_com_chave":true,"inspecao_sha256":"aa6982ef294493b8f2b56afc0fe8c1a427523923c5f7873a8adaa711f54e4c8a","erros_scan_sha256":"acc0111e19cf44d2753fc9ecd164bf1b27fbd65597463a25cf48bd1c65e90146","controles_invalidos_expostos":true,"fontes_curriculares_conferidas":157,"fluxo_pre_requisitos_verificado":true,"detector_erros_comprovado":true,"controle_A_alterado_restaurado":true,"controle_B_alterado_restaurado":true,"ordenacao_alterada_restaurada":true,"previa_sem_observacoes_individuais_reais":true,"roundtrip_sem_erros":true,"xlsx_sha256":"49ea9d09e50071e11d9d7153ffd313fe95366665ffb9f51975473c36b954a84b","builder_sha256":"5d7a7dfb4f4d596f168ea703ec7efbcd29229d8941cb6698fd44e8aecc08bf33","entrada_sha256":"c7bc7a8db72d46b082f61bf34fc16bbf88e2ac121a083c6b5157218384b1da58","abas":["Metas","Intervenção nominal","Habilidades","Grupos","Cálculos","Fontes e Auditoria"],"aplicacoes":640,"medidas":6074,"engine":"artifact-tool JS, runtime oficial 26.1020.11127; sem execução no Excel nativo","renderizacao":{"isolada_sem_dados_individuais_reais":true,"status":"preparada_sem_render_local","tentativa_automatica":false,"codigo_saida":null,"imagens":0,"esperadas":16,"copia_artificial_sha256":"9ddac4a6562522cc64aa48ff55a2d25a3c6abaa3d705f17b38a2cf5cae172921","entrada_artificial_sha256":"36f3763643c719c8d5c55080399b444da185d7723eddc2a56ae8919d5b13ebba","limite":"Renderer Windows indisponivel (render-minimo01/02, 0xC0000005). Nao repetido. Copia artificial pronta para leitor alternativo; inspecao visual pendente."},"fila_conferida_todas_linhas":true,"ordem_fisica_reversa_conferida":true}

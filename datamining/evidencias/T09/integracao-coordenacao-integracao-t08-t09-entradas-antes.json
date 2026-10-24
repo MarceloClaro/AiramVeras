@@ -1,0 +1,16 @@
+{
+  "Utc": "2026-10-23T16:18:20.8471781Z",
+  "Tipo": "snapshot_extra_antes_suite_integrada",
+  "Head": "dad29f7293d876a8ca656251715a7367f8bdf907",
+  "Entradas": {
+    "restrito/t08/checkpoint.json": "44fe791ddfe15ea5449ac052fe1a7fc37838388732831c9d20f007255d2e4526",
+    "estatistica/t09/checkpoint.json": "150592d325fde9c80bfd98717a974b3a53e816987601b1b3968168e558f14339",
+    "restrito/t07/checkpoint.json": "17916019d8a8787c95ec3db580aae7987b11c5c93a72c34ad13846a7bf1bb8fe",
+    "restrito/t09/checkpoint.json": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901",
+    "estatistica/t08/checkpoint.json": "8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e",
+    "estatistica/t07/checkpoint.json": "71a0302d7ec9ae0f837069eea3b5c867052ff3885d5a9fb7491eee616abd9d58",
+    "estatistica/t05/checkpoint.json": "5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231",
+    "curriculo/t04/checkpoint.json": "a4a73d2523d459d0dda102f6e4b6f14176be444717f428bb6d1772822ffd5796",
+    "restrito/t05/checkpoint.json": "6e6090bee2bd483822a75aa1c18f9599953d353dfaac8e28cf7b0983a6bdb95b"
+  }
+}

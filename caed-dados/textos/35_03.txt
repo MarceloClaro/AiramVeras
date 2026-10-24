@@ -1,0 +1,9 @@
+D05_SAEB Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais, usando malhas quadriculadas.
+D06_SAEB Reconhecer ângulos como mudança de direção ou giros, identificando ângulos retos e não-retos.
+D07_SAEB Reconhecer que as imagens de uma figura construída por uma transformação homotética são semelhantes, identificando 
+propriedades e/ou medidas que se modificam ou não se alteram.
+D30_SAEB Calcular o valor numérico de uma expressão algébrica.
+D32_SAEB Identificar a expressão algébrica que expressa uma regularidade observada em sequências de números ou figuras 
+(padrões).
+D35_SAEB Identificar a relação entre as representações, algébrica e geométrica, de um sistema de equações do 1º grau.

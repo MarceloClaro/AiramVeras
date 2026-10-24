@@ -1,0 +1,9 @@
+{
+  "fase": "RENDER_TODAS_ABAS_FIXTURE_ARTIFICIAL",
+  "codigo_saida": 3221225477,
+  "fim": "2026-10-23T21:32:34.600616+00:00",
+  "snapshot": "render01-antes.json",
+  "snapshot_sha256": "929a265e2c6925c5d29925b751eb1f847570f821537630bb404c2fba777abadc",
+  "log": "render01.log",
+  "log_sha256": "cdbbbe9d0180071cbcde4b7087e672e3ca31363cd3fcc8a74689bf767013167d"
+}

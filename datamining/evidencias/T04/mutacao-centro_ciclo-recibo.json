@@ -1,0 +1,9 @@
+{
+  "estado": "RED",
+  "fase_solicitada": "RED",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T15:30:31.227518+00:00",
+  "snapshot": "mutacao-centro_ciclo-antes.json",
+  "snapshot_sha256": "2933b74885ad528222eb3f88194824e71be2e16b0606070d2b290eb327804276",
+  "log_sha256": "97ac83bcadbabbbf4a0ec27c2c9ba0a03e704464c9d7910702a2cc88a6198d26"
+}

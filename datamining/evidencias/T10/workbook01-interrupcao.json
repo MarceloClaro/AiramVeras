@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-10-23T21:03:21.4200858Z",
+  "pid": 12456,
+  "cpu_s": 671.765625,
+  "memoria_bytes": 3654696960,
+  "motivo": "Execucao real excedeu dez minutos sem exportar; interrompida para isolar custo de recalculo; nao e falha de dados"
+}

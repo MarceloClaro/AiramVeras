@@ -1,0 +1,9 @@
+{
+  "fase": "INTEGRACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T16:18:47.256034+00:00",
+  "snapshot": "integracao01-antes.json",
+  "snapshot_sha256": "97eb1101a9ffd39340dbc538a740ca3a2a29f89cd737fe94bad987c4dc6081e2",
+  "log": "integracao01.log",
+  "log_sha256": "2be5c695446059affc0ebf4a9997702b692de4524ee5c8d94f0f36557bb9dcad"
+}

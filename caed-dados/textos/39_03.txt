@@ -1,0 +1,29 @@
+CEARÁ 2ª AVALIE.CE 2024
+■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA |  5º ANO DO ENSINO FUND AMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D015_M Corresponder números racionais a pontos da reta numérica. 
+D007_M Corresponder números racionais na representação decimal à sua escrita por extenso.
+D010_M Identificar composições ou decomposições de números naturais.
+D026_M Executar adição ou subtração com números naturais.
+D027_M Executar multiplicação ou divisão com números naturais.
+D006_M Identificar uma sequência crescente ou decrescente, dentre uma coleção de sequências de números racionais.
+D009_M Reconhecer características do sistema de numeração decimal. 
+D013_M Reconhecer fração como representação associada a diferentes significados.
+D033_M Utilizar números naturais e racionais, envolvendo diferentes significados da adição ou da subtração, na resolução de 
+problemas.
+D005_M Corresponder diferentes representações de um número racional.
+D046_M Associar as representações 10%, 25%, 50%, 75% e 100%, respectivamente, à décima parte, quarta parte, metade, três 
+quartos e um inteiro, para calcular porcentagens.
+D145_M Corresponder figuras tridimensionais às suas planificações.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D140_M Identificar figuras bidimensionais por meio de suas características.
+D180_M Corresponder o horário de início e de término com o intervalo de duração de um evento ou acontecimento.
+D186_M Utilizar área de figuras bidimensionais na resolução de problema.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D195_M Utilizar perímetro de figuras bidimensionais na resolução de problema.
+D032_M Utilizar números naturais, envolvendo diferentes significados das operações de multiplicação e divisão, na resolução de 
+problemas.
+D201_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.

@@ -1,0 +1,251 @@
+{
+  "status": "PASS",
+  "verificacoes": 6994,
+  "perfis_conferidos": 133,
+  "comparacoes_ARI_Fraction": 294,
+  "arquivos_sem_identificadores": 93,
+  "diagnosticos": [
+    {
+      "ano": 1,
+      "componente": "LEITURA",
+      "n": 24,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 2,
+      "max_diferenca_distancias_quadradas_controle": 0.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "exploratorio_estavel",
+          "k": 4
+        }
+      }
+    },
+    {
+      "ano": 1,
+      "componente": "MATEMATICA",
+      "n": 24,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparacao_indisponivel",
+      "features_comuns": 0,
+      "max_diferenca_distancias_quadradas_controle": null,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {}
+    },
+    {
+      "ano": 2,
+      "componente": "LEITURA",
+      "n": 28,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 4,
+      "max_diferenca_distancias_quadradas_controle": 0.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "exploratorio_estavel",
+          "k": 2
+        }
+      }
+    },
+    {
+      "ano": 2,
+      "componente": "MATEMATICA",
+      "n": 28,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 2,
+      "max_diferenca_distancias_quadradas_controle": 0.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    },
+    {
+      "ano": 3,
+      "componente": "LEITURA",
+      "n": 24,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 4,
+      "max_diferenca_distancias_quadradas_controle": 0.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    },
+    {
+      "ano": 3,
+      "componente": "MATEMATICA",
+      "n": 24,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 5,
+      "max_diferenca_distancias_quadradas_controle": 0.4444444444444444,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    },
+    {
+      "ano": 4,
+      "componente": "LEITURA",
+      "n": 42,
+      "observado_status": "exploratorio_estavel",
+      "observado_k": 2,
+      "comparacao": "comparavel",
+      "features_comuns": 5,
+      "max_diferenca_distancias_quadradas_controle": 2.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "exploratorio_estavel",
+          "k": 2
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    },
+    {
+      "ano": 4,
+      "componente": "MATEMATICA",
+      "n": 42,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 7,
+      "max_diferenca_distancias_quadradas_controle": 2.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    },
+    {
+      "ano": 5,
+      "componente": "LEITURA",
+      "n": 53,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 2,
+      "max_diferenca_distancias_quadradas_controle": 0.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "exploratorio_estavel",
+          "k": 3
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "exploratorio_estavel",
+          "k": 3
+        }
+      }
+    },
+    {
+      "ano": 5,
+      "componente": "MATEMATICA",
+      "n": 54,
+      "observado_status": "sem_agrupamento_estavel",
+      "observado_k": null,
+      "comparacao": "comparavel",
+      "features_comuns": 9,
+      "max_diferenca_distancias_quadradas_controle": 2.0,
+      "interpretacao_geometria": "Geometrias iguais ate precisao numerica podem produzir selecoes distintas por empates/inicializacao; nao atribuir ganho ao grafo",
+      "controle": {
+        "observado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "observado_total": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        },
+        "propagado_controle": {
+          "status": "sem_agrupamento_estavel",
+          "k": null
+        }
+      }
+    }
+  ],
+  "hashes": {
+    "restrito/t08/checkpoint.json": "44fe791ddfe15ea5449ac052fe1a7fc37838388732831c9d20f007255d2e4526",
+    "estatistica/t08/checkpoint.json": "8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e"
+  },
+  "limites": "Contraprova de aritmetica/identidade/privacidade; nao e validacao externa ou docente; armazenamento ignorado nao certifica ACL"
+}

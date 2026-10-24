@@ -1,0 +1,12 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________ test_exportacao_reaberta_preservada_se_renderer_nativo_falhar ________
+tests\test_intervencao.py:186: in test_exportacao_reaberta_preservada_se_renderer_nativo_falhar
+    assert (tmp_path/'intervencao-restrita.xlsx').is_file(), 'Crash de imagem descartou exportacao calculada'
+E   AssertionError: Crash de imagem descartou exportacao calculada
+E   assert False
+E    +  where False = is_file()
+E    +    where is_file = (WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-77/test_exportacao_reaberta_prese0') / 'intervencao-restrita.xlsx').is_file
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_exportacao_reaberta_preservada_se_renderer_nativo_falhar
+1 failed, 16 deselected in 5.56s

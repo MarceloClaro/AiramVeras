@@ -1,0 +1,37 @@
+CEARÁ . Avaliação Somativa 2025
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 2ª SÉRIE DO ENSINO MÉDIO
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D16 Estabelecer relações entre representações fracionárias e decimais dos números racionais.
+D17_9EF Resolver situação-problema utilizando porcentagem.
+D18_9EF Resolver situação-problema envolvendo a variação proporcional entre grandezas direta ou inversamente proporcionais.
+D19 Resolver problema envolvendo juros simples.
+D24 Fatorar e simplificar expressões algébricas.
+D26_9EF Resolver situação-problema envolvendo equação do 2º grau.
+D28 Reconhecer a representação algébrica ou gráfica da função polinomial de 1º grau.
+D40 Relacionar as raízes de um polinômio com sua decomposição em fatores do 1º grau.
+D42 Resolver situação-problema envolvendo o cálculo da probabilidade de um evento.
+D49 Resolver problemas envolvendo semelhança de figuras planas.
+D50 Resolver situação-problema aplicando o Teorema de Pitágoras ou as demais relações métricas no triângulo retângulo.
+D51 Resolver problemas usando as propriedades dos polígonos (soma dos ângulos internos, número de diagonais e cálculo 
+do ângulo interno de polígonos regulares).
+D52 Identificar planificações de alguns poliedros e/ou corpos redondos.
+D53 Resolver situação-problema envolvendo as razões trigonométricas no triângulo retângulo (seno, cosseno, tangente).
+D57 Identificar a  localização de pontos no  plano cartesiano.
+D64 Resolver problema utilizando as relações entre diferentes unidades de medidas de capacidade e de volume.
+D65 Calcular o perímetro de figuras planas numa situação-problema.
+D67 Resolver problema  envolvendo o cálculo de área de figuras planas.
+D71 Calcular a área da superfície total de prismas, pirâmides, cones, cilindros e esfera.
+D72 Calcular o volume de  prismas, pirâmides, cilindros e cones em situação-problema.
+D75_9EF Resolver problema envolvendo informações apresentadas em tabelas ou gráficos.
+D76 Associar informações apresentadas em listas e/ou tabelas aos gráficos que as representam, e vice-versa.
+D78 Resolver problemas envolvendo medidas de tendência central: média, moda ou mediana.
+D04_SAEB Identificar a relação entre o número de vértices, faces e/ou arestas de poliedros expressa em um problema.
+D09_SAEB Relacionar a determinação do ponto de interseção de duas ou mais retas com a resolução de um sistema de equações 
+com duas incógnitas.
+D14_SAEB Identificar a localização de números reais na reta numérica.
+D18_SAEB Reconhecer expressão algébrica que representa uma função a partir de uma tabela.
+D19_SAEB Resolver problema envolvendo uma função do 1º grau.
+D20_SAEB Analisar crescimento/decrescimento, zeros de funções reais apresentadas em gráficos.
+D21_SAEB Identificar o gráfico que representa uma situação descrita em um texto.
+D25_SAEB Resolver problemas que envolvam os pontos de máximo ou de mínimo no gráfico de uma função polinomial do 2º grau.

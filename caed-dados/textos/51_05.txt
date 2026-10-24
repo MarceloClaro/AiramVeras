@@ -1,0 +1,29 @@
+CEARÁ . AVALIE.CE 2026.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 9º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01_5 Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.
+D03_9 Identificar propriedades de triângulos pela comparação de medidas de lados e ângulos.
+D04_9 Identificar relação entre quadriláteros por meio de suas propriedades.
+D05_5 Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais usando malhas quadriculadas.
+D06_9 Reconhecer ângulos como mudança de direção ou giros, identificando ângulos retos e não-retos.
+D07_9 Reconhecer que as imagens de uma figura construída por uma transformação homotética são semelhantes, identificando 
+propriedades e/ou medidas que se modificam ou não se alteram.
+D08_9 Resolver problema utilizando propriedades dos polígonos (soma de seus ângulos internos, número de diagonais, cálculo 
+da medida de cada ângulo interno nos polígonos regulares).
+D12_9 Resolver problema envolvendo o cálculo de perímetro de figuras planas.
+D13_9 Resolver problema envolvendo o cálculo de área de figuras planas.
+D15_9 Resolver problema utilizando relações entre diferentes unidades de medida.
+D18_9 Efetuar cálculos com números inteiros, envolvendo as operações (adição, subtração, multiplicação, divisão, potenciação).
+D19_9 Resolver problema com números naturais, envolvendo diferentes significados das operações (adição, subtração, 
+multiplicação, divisão, potenciação).
+D23_9 Identificar frações equivalentes.
+D28_9 Resolver problema que envolva porcentagem.
+D29_9 Resolver problema que envolva variação proporcional, direta ou inversa, entre grandezas.
+D30_9 Calcular o valor numérico de uma expressão algébrica.
+D33_9 Identificar uma equação ou inequação do 1º grau que expressa um problema.
+D34_9 Identificar um sistema de equações do 1º grau que expressa um problema.
+D35_9 Identificar a relação entre as representações algébrica e geométrica de um sistema de equações do 1º grau.
+D36_9 Resolver problema envolvendo informações apresentadas em tabelas e/ou gráficos.
+D77_9 Resolver problemas usando a média aritmética.

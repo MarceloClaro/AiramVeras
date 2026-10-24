@@ -1,0 +1,26 @@
+...F....................                                                 [100%]
+================================== FAILURES ===================================
+____________ test_manifesto_com_hash_identifica_sem_mudar_original ____________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-2/test_manifesto_com_hash_identi0')
+
+    def test_manifesto_com_hash_identifica_sem_mudar_original(tmp_path):
+        source = csv_source(tmp_path / "fonte.csv")
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        manifest(tmp_path, "fonte.csv", digest)
+        record = next(r for r in api("catalogar")(tmp_path) if r["caminho"] == "fonte.csv")
+        assert record["sha256"] == digest
+        assert record["avaliacao"]["ciclo"] == "I"
+        assert record["avaliacao"]["ano_avaliacao"] == 2026
+        assert record["status"] == "verificada"
+        assert record["fonte_id"]
+>       assert source.read_bytes() == f"Ano Escolar;Componente Curricular;Nome\n1º ANO;MATEMÁTICA;PESSOA_SINTETICA\n".encode()
+E       AssertionError: assert b'Ano Escolar...SINTETICA\r\n' == b'Ano Escolar...A_SINTETICA\n'
+E         
+E         At index 38 diff: b'\r' != b'\n'
+E         Use -v to get more diff
+
+tests\test_catalogo.py:72: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_catalogo.py::test_manifesto_com_hash_identifica_sem_mudar_original
+1 failed, 23 passed in 1.11s

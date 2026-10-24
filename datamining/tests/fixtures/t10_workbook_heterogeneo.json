@@ -1,0 +1,10 @@
+{
+  "versao_schema":"airam-workbook-t10-v1", "sintetico":true, "metas":{"A":0.8,"B":0.8},
+  "fontes":{"fixture":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "componentes":[{"ano_escolar":2,"componente":"LEITURA","nivel":"escola","turma":null}],
+  "habilidades":[],"grupos":[],"curriculo":[],"limites":["Fixture adversarial artificial."],
+  "intervencao":[
+    {"chave":"k-a","nome":"PESSOA ARTIFICIAL A","ano_escolar":2,"turma":"A","componente":"LEITURA","participacao":true,"categoria":"Abaixo","acertos":17,"oportunidades":22,"disponivel":true,"habilidades_prioritarias":[],"medidas":[],"grupos":[],"apoio_sugerido":"Revisar"},
+    {"chave":"k-b","nome":"PESSOA ARTIFICIAL B","ano_escolar":2,"turma":"A","componente":"LEITURA","participacao":true,"categoria":"Abaixo","acertos":17,"oportunidades":30,"disponivel":true,"habilidades_prioritarias":[],"medidas":[],"grupos":[],"apoio_sugerido":"Revisar"}
+  ]
+}

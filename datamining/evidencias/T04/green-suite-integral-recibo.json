@@ -1,0 +1,9 @@
+{
+  "estado": "GREEN",
+  "fase_solicitada": "GREEN",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:35:25.349465+00:00",
+  "snapshot": "green-suite-integral-antes.json",
+  "snapshot_sha256": "737ee7d5de6645d451a302c561b59849c23f23a0edc9868ede83966cef442f60",
+  "log_sha256": "d13c02559988db5893cdd54a26528b5d513a235b60209d0c41b1b1d8517d0a43"
+}

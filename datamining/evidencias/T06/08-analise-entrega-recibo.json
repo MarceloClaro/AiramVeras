@@ -1,0 +1,9 @@
+{
+  "fase": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T17:52:46.656685+00:00",
+  "snapshot": "08-analise-entrega-antes.json",
+  "snapshot_sha256": "4e41228f8ae050e4a6da709a355f29f96d0bd4d8f7faf2d7378bd68d2db4d4fd",
+  "log": "08-analise-entrega.log",
+  "log_sha256": "3ed094de4923df8f12cc79ecf23c0a0d85ccac80be41b9849676714a1b50fba1"
+}

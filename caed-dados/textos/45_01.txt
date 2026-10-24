@@ -1,0 +1,15 @@
+CEARÁ 2025 - AVALIE.CE 2025.2
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 2º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D002_M Reconhecer características do sistema de numeração decimal. 
+D003_M Identificar composições ou decomposições de números naturais.
+D004_M Executar adição ou subtração com números naturais.
+D005_M Utilizar números naturais, envolvendo diferentes significados da adição ou da subtração, na resolução de problemas.
+D009_M Identificar informações apresentadas em tabelas ou gráficos.
+D011_M Identificar representações de figuras tridimensionais.
+D013_M Identificar números naturais segundo critérios de ordem.
+D015_M Corresponder cédulas e/ou moedas do Sistema Monetário Brasileiro.
+D018_M Determinar termos ausentes em sequências de números naturais.
+D019_M Identificar instrumentos utilizados para medir determinadas grandezas (massa, comprimento, capacidade, tempo e 
+temperatura).

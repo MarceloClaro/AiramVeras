@@ -1,0 +1,9 @@
+{
+  "fase": "INSPECAO_NTFS_COMANDO_CORRIGIDO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:41:33.176072+00:00",
+  "snapshot": "acl02-antes.json",
+  "snapshot_sha256": "dd4e5cbf4795bb43717b2b62fef9280c91b5a9c4bb18b7741a80a8ee7991b196",
+  "log": "acl02.log",
+  "log_sha256": "04931ba9dc765ca1c4d5dff439e38936159fe772b7e256d7228c590cb2a4f764"
+}

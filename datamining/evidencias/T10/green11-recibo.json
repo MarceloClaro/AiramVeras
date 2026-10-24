@@ -1,0 +1,9 @@
+{
+  "fase": "REFACTOR_LEITURAS_SELETIVAS",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:27:13.418309+00:00",
+  "snapshot": "green11-antes.json",
+  "snapshot_sha256": "97b6d0b3c995da3f1188a1cad0abc3158f336870a2bf816aa53012acb772b93c",
+  "log": "green11.log",
+  "log_sha256": "0e5e22f2cf2e42b0fee2de283aaf375f2f951f78cd80754768568e6a2e777f5d"
+}

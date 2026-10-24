@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_ISOLAMENTO_RENDER",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:37:17.475538+00:00",
+  "snapshot": "green12-antes.json",
+  "snapshot_sha256": "9834a0fe378994197586a0e1d5094e99272230abd3a33b63acef521b417429e0",
+  "log": "green12.log",
+  "log_sha256": "736ce2d54a6ef1c7ef96dc8032c1288ff5444517f38f17d88a04e8ec70fe0208"
+}

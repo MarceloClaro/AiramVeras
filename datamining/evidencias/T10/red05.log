@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao _________
+tests\test_intervencao.py:138: in test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+    assert report['detector_erros_comprovado'] is True
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'detector_erros_comprovado'
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+1 failed, 13 deselected in 4.50s

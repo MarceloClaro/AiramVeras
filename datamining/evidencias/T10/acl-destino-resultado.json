@@ -1,0 +1,33 @@
+{
+  "heranca_protegida": false,
+  "regras": [
+    {
+      "categoria": "outra_identidade",
+      "tipo": "Allow",
+      "direitos": "ReadAndExecute, Synchronize",
+      "herdada": true
+    },
+    {
+      "categoria": "SYSTEM",
+      "tipo": "Allow",
+      "direitos": "FullControl",
+      "herdada": true
+    },
+    {
+      "categoria": "Administradores",
+      "tipo": "Allow",
+      "direitos": "FullControl",
+      "herdada": true
+    },
+    {
+      "categoria": "usuario_atual",
+      "tipo": "Allow",
+      "direitos": "FullControl",
+      "herdada": true
+    }
+  ],
+  "acl_alterada": false,
+  "restricao_por_cargos_escolares_certificada": false,
+  "timestamp": "2026-10-24T07:42:26.658599+00:00",
+  "pendencia": "Identidades/perfis escolares de leitura/edicao ainda pendentes; nenhuma ACL alterada."
+}

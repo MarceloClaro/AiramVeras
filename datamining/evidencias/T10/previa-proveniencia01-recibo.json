@@ -1,0 +1,9 @@
+{
+  "fase": "CORRECAO_ADITIVA_METADADO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:48:38.543980+00:00",
+  "snapshot": "previa-proveniencia01-antes.json",
+  "snapshot_sha256": "3838c7b0efe237ecad9ed75d181511825a1c7a8ad07ac79170b39d18337d1947",
+  "log": "previa-proveniencia01.log",
+  "log_sha256": "093a459ca4269c8a0c023f1c362129457ee72dd489868ecdce3c22a8bb8cb212"
+}

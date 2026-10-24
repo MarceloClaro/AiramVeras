@@ -1,0 +1,30 @@
+[
+  {
+    "mutacao": "centro_ciclo",
+    "teste": "tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i",
+    "codigo_saida": 1,
+    "original_sha256": "1aa5ad8bbe915abc90a6bc4e21221fc7a4f4c44457e65bd2a2fe8b9b75ddc795",
+    "detectada": true
+  },
+  {
+    "mutacao": "uniao_global",
+    "teste": "tests/test_vinculos.py::test_T27_nao_une_conjuntos_de_anos_ou_textos_divergentes",
+    "codigo_saida": 1,
+    "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420",
+    "detectada": true
+  },
+  {
+    "mutacao": "bncc_inativa",
+    "teste": "tests/test_vinculos.py::test_T29_inexistente_ou_inativo_permanece_nao_confirmado",
+    "codigo_saida": 1,
+    "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420",
+    "detectada": true
+  },
+  {
+    "mutacao": "sem_ressalva",
+    "teste": "tests/test_vinculos.py::test_T30_ressalva_semantica_preserva_os_dois_textos",
+    "codigo_saida": 1,
+    "original_sha256": "8039b53c6a91d76d18e90b0159bbee668ffe9cfe53fc9fc6b1ae12a742940420",
+    "detectada": true
+  }
+]

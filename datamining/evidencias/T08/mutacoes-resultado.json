@@ -1,0 +1,30 @@
+[
+  {
+    "mutacao": "ausencia_zero",
+    "codigo_saida": 1,
+    "detectada": true,
+    "snapshot_sha256": "47d8c77c5c5aaa9dd1dfbe22ce56cf5487296c6a223b48395f566b7df31e96e0",
+    "log_sha256": "7c13858a6c43feb2ff41b8db2b761dc9625dc10b3fe5f8be21935c63c1a56ff4"
+  },
+  {
+    "mutacao": "ignora_estabilidade_grupo",
+    "codigo_saida": 1,
+    "detectada": true,
+    "snapshot_sha256": "78f66c6164f61e0e148dad111d4b66c05bdd8eeb13269e9401ad6365318c35e8",
+    "log_sha256": "b1e692d94baa5f50cb5ceaf7dc1837aba56d02aa421577e848279fafcfe32a69"
+  },
+  {
+    "mutacao": "minimo_ignorado",
+    "codigo_saida": 1,
+    "detectada": true,
+    "snapshot_sha256": "55f39584f1903d2c6daf59279a6ba94f70dfa07b2d67cf41360e3ca65bc6f86e",
+    "log_sha256": "69199c7c0896b515b07ab8923a280cada7522867e7e07c33952e3439ef6c65e2"
+  },
+  {
+    "mutacao": "fanout_perfil",
+    "codigo_saida": 1,
+    "detectada": true,
+    "snapshot_sha256": "6b44e4d96ec26259f3c60129ef7576e258c3352c75fb408cc65b667574993ea9",
+    "log_sha256": "27688ea23c0a801080f3b01dd2ca561b5527297feb4364c5c2500cc374a6d8a7"
+  }
+]

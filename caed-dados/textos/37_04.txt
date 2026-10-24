@@ -1,0 +1,30 @@
+CEARÁ 1º AVALIE.CE 2024
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 8º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D004_M Comparar e ordenar números inteiros. 
+D015_M Corresponder números racionais a pontos da reta numérica. 
+D016_M Corresponder números inteiros a pontos da reta numérica. 
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.
+D040_M Utilizar números racionais, envolvendo diferentes significados das operações, na resolução de problemas.
+D041_M Utilizar números inteiros, envolvendo diferentes significados das operações, na resolução de problemas.
+D045_M Utilizar porcentagem, na resolução de problemas.
+D047_M Utilizar o princípio multiplicativo de contagem, na resolução de problemas.
+D072_M Utilizar cálculos envolvendo a igualdade de uma operação em que um dos termos é desconhecido, na resolução de 
+problemas.
+D075_M Utilizar proporcionalidade entre duas grandezas, na resolução de problemas.
+D078_M Reconhecer uma equação polinomial de 1º grau que expressa uma situação problema descrita textualmente.
+D079_M Identificar expressão algébrica que modela uma sequência numérica.
+D083_M Utilizar equação polinomial de 1º grau, na resolução de problemas.
+D143_M Reconhecer a condição de existência do triângulo quanto à medida dos lados.
+D145_M Corresponder figuras tridimensionais às suas planificações.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D157_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas 
+para se obter a medida de um ângulo especificado.
+D168_M Utilizar a soma das medidas dos ângulos internos de um triângulo, na resolução de problemas.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problemas.
+D182_M Utilizar a relação entre litro e decímetro cúbico ou litro e metro cúbico, na resolução de problemas.
+D186_M Utilizar área de figuras bidimensionais, na resolução de problemas.
+D189_M Utilizar volume/capacidade de paralelepípedos, na resolução de problemas.
+D207_M Utilizar medidas de tendência central, na resolução de problemas.

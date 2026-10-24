@@ -1,0 +1,1021 @@
+{
+  "documentos": 54,
+  "paginas": 143,
+  "matrizes": 129,
+  "registros": 2388,
+  "por_ano": {
+    "2017": 146,
+    "2018": 146,
+    "2019": 146,
+    "2022": 268,
+    "2023": 177,
+    "2024": 572,
+    "2025": 635,
+    "2026": 298
+  },
+  "verificacao_paginas": [
+    {
+      "documento_id": "f7c123397977a4c3",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "538701f5fe97360a",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "c4f527f003082434",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "05b502c7f91c9365",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "7532228a6bac8a88",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "66f6fc0938ab5d03",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "e1a97da039ffdb2a",
+      "pagina": 1,
+      "codigos_geometria": 25,
+      "codigos_extraidos": 25,
+      "ok": true
+    },
+    {
+      "documento_id": "58566ca4e947696e",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "78dfe3a91a2e765d",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "f9b8c590bc27c9b6",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "034bfe9709fe81bc",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "028fab9911db3596",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "63bbb029377d6a98",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "a779bc71949891d6",
+      "pagina": 1,
+      "codigos_geometria": 25,
+      "codigos_extraidos": 25,
+      "ok": true
+    },
+    {
+      "documento_id": "473a5e07eddf70e6",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "b22836e4c50fcfff",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "473f564cac32ca75",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "648232384165ea42",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "f93350122fa40fed",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "36f387f38d338a80",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "141103aa39888238",
+      "pagina": 1,
+      "codigos_geometria": 25,
+      "codigos_extraidos": 25,
+      "ok": true
+    },
+    {
+      "documento_id": "cb9cc545201ee62e",
+      "pagina": 1,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "fa687707a2614c9e",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "fa687707a2614c9e",
+      "pagina": 2,
+      "codigos_geometria": 25,
+      "codigos_extraidos": 25,
+      "ok": true
+    },
+    {
+      "documento_id": "29ed7653b4ab851e",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "29ed7653b4ab851e",
+      "pagina": 2,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "27282481177140a1",
+      "pagina": 1,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "adb5deb218565d58",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "fb779b2300a78643",
+      "pagina": 1,
+      "codigos_geometria": 14,
+      "codigos_extraidos": 14,
+      "ok": true
+    },
+    {
+      "documento_id": "fb779b2300a78643",
+      "pagina": 2,
+      "codigos_geometria": 7,
+      "codigos_extraidos": 7,
+      "ok": true
+    },
+    {
+      "documento_id": "69ed32fff2c2f599",
+      "pagina": 1,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "4fcb96d188400215",
+      "pagina": 1,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "4fcb96d188400215",
+      "pagina": 2,
+      "codigos_geometria": 4,
+      "codigos_extraidos": 4,
+      "ok": true
+    },
+    {
+      "documento_id": "d2ac42625c495341",
+      "pagina": 1,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "d2ac42625c495341",
+      "pagina": 2,
+      "codigos_geometria": 7,
+      "codigos_extraidos": 7,
+      "ok": true
+    },
+    {
+      "documento_id": "df29f33974186170",
+      "pagina": 1,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "df29f33974186170",
+      "pagina": 2,
+      "codigos_geometria": 6,
+      "codigos_extraidos": 6,
+      "ok": true
+    },
+    {
+      "documento_id": "fc422bcf031b778b",
+      "pagina": 1,
+      "codigos_geometria": 18,
+      "codigos_extraidos": 18,
+      "ok": true
+    },
+    {
+      "documento_id": "f87041cbf77fc7e5",
+      "pagina": 1,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "f87041cbf77fc7e5",
+      "pagina": 2,
+      "codigos_geometria": 7,
+      "codigos_extraidos": 7,
+      "ok": true
+    },
+    {
+      "documento_id": "59fd3763ac6971e0",
+      "pagina": 1,
+      "codigos_geometria": 8,
+      "codigos_extraidos": 8,
+      "ok": true
+    },
+    {
+      "documento_id": "59fd3763ac6971e0",
+      "pagina": 2,
+      "codigos_geometria": 2,
+      "codigos_extraidos": 2,
+      "ok": true
+    },
+    {
+      "documento_id": "83718c2edde4b165",
+      "pagina": 1,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "83718c2edde4b165",
+      "pagina": 2,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "83718c2edde4b165",
+      "pagina": 3,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "b998b7fe2b5fc33b",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "b998b7fe2b5fc33b",
+      "pagina": 2,
+      "codigos_geometria": 31,
+      "codigos_extraidos": 31,
+      "ok": true
+    },
+    {
+      "documento_id": "b998b7fe2b5fc33b",
+      "pagina": 3,
+      "codigos_geometria": 6,
+      "codigos_extraidos": 6,
+      "ok": true
+    },
+    {
+      "documento_id": "b998b7fe2b5fc33b",
+      "pagina": 4,
+      "codigos_geometria": 32,
+      "codigos_extraidos": 32,
+      "ok": true
+    },
+    {
+      "documento_id": "b998b7fe2b5fc33b",
+      "pagina": 5,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "7e35e09705224bb1",
+      "pagina": 1,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "7e35e09705224bb1",
+      "pagina": 2,
+      "codigos_geometria": 7,
+      "codigos_extraidos": 7,
+      "ok": true
+    },
+    {
+      "documento_id": "7e35e09705224bb1",
+      "pagina": 3,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "7e35e09705224bb1",
+      "pagina": 4,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "7e35e09705224bb1",
+      "pagina": 5,
+      "codigos_geometria": 17,
+      "codigos_extraidos": 17,
+      "ok": true
+    },
+    {
+      "documento_id": "a38a33cbb4a23422",
+      "pagina": 1,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "a38a33cbb4a23422",
+      "pagina": 2,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "a38a33cbb4a23422",
+      "pagina": 3,
+      "codigos_geometria": 18,
+      "codigos_extraidos": 18,
+      "ok": true
+    },
+    {
+      "documento_id": "a38a33cbb4a23422",
+      "pagina": 4,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "a38a33cbb4a23422",
+      "pagina": 5,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "a79d4fbb432fb2d6",
+      "pagina": 1,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "a79d4fbb432fb2d6",
+      "pagina": 2,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "a79d4fbb432fb2d6",
+      "pagina": 3,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "a79d4fbb432fb2d6",
+      "pagina": 4,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "a79d4fbb432fb2d6",
+      "pagina": 5,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "69c80b1dda48689c",
+      "pagina": 1,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "69c80b1dda48689c",
+      "pagina": 2,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "69c80b1dda48689c",
+      "pagina": 3,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "69c80b1dda48689c",
+      "pagina": 4,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "69c80b1dda48689c",
+      "pagina": 5,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 1,
+      "codigos_geometria": 8,
+      "codigos_extraidos": 8,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 2,
+      "codigos_geometria": 2,
+      "codigos_extraidos": 2,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 3,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 4,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "61d52ef2bd669778",
+      "pagina": 6,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 1,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 2,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 3,
+      "codigos_geometria": 28,
+      "codigos_extraidos": 28,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 4,
+      "codigos_geometria": 27,
+      "codigos_extraidos": 27,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 5,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 6,
+      "codigos_geometria": 31,
+      "codigos_extraidos": 31,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 7,
+      "codigos_geometria": 33,
+      "codigos_extraidos": 33,
+      "ok": true
+    },
+    {
+      "documento_id": "36d3038543fa19b9",
+      "pagina": 8,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 2,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 3,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 4,
+      "codigos_geometria": 14,
+      "codigos_extraidos": 14,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 5,
+      "codigos_geometria": 14,
+      "codigos_extraidos": 14,
+      "ok": true
+    },
+    {
+      "documento_id": "f0ae5a006415fea9",
+      "pagina": 6,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 1,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 2,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 3,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 4,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "de703a9bb16da396",
+      "pagina": 6,
+      "codigos_geometria": 19,
+      "codigos_extraidos": 19,
+      "ok": true
+    },
+    {
+      "documento_id": "643a7b406a55c7b4",
+      "pagina": 1,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "643a7b406a55c7b4",
+      "pagina": 2,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "643a7b406a55c7b4",
+      "pagina": 3,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "643a7b406a55c7b4",
+      "pagina": 4,
+      "codigos_geometria": 14,
+      "codigos_extraidos": 14,
+      "ok": true
+    },
+    {
+      "documento_id": "643a7b406a55c7b4",
+      "pagina": 5,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "80ea268a9120a570",
+      "pagina": 1,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "80ea268a9120a570",
+      "pagina": 2,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "80ea268a9120a570",
+      "pagina": 3,
+      "codigos_geometria": 20,
+      "codigos_extraidos": 20,
+      "ok": true
+    },
+    {
+      "documento_id": "80ea268a9120a570",
+      "pagina": 4,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "80ea268a9120a570",
+      "pagina": 5,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "1c9ed7baa72d0c2b",
+      "pagina": 1,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "26a76cb9b536afcd",
+      "pagina": 1,
+      "codigos_geometria": 23,
+      "codigos_extraidos": 23,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 1,
+      "codigos_geometria": 8,
+      "codigos_extraidos": 8,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 2,
+      "codigos_geometria": 2,
+      "codigos_extraidos": 2,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 3,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 4,
+      "codigos_geometria": 22,
+      "codigos_extraidos": 22,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "53dfc10d4d9b31d3",
+      "pagina": 6,
+      "codigos_geometria": 24,
+      "codigos_extraidos": 24,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 1,
+      "codigos_geometria": 25,
+      "codigos_extraidos": 25,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 2,
+      "codigos_geometria": 8,
+      "codigos_extraidos": 8,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 3,
+      "codigos_geometria": 2,
+      "codigos_extraidos": 2,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 4,
+      "codigos_geometria": 28,
+      "codigos_extraidos": 28,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 5,
+      "codigos_geometria": 29,
+      "codigos_extraidos": 29,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 6,
+      "codigos_geometria": 9,
+      "codigos_extraidos": 9,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 7,
+      "codigos_geometria": 31,
+      "codigos_extraidos": 31,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 8,
+      "codigos_geometria": 33,
+      "codigos_extraidos": 33,
+      "ok": true
+    },
+    {
+      "documento_id": "c7adf9fd96308fd6",
+      "pagina": 9,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "5ab518c3e28d7a6e",
+      "pagina": 1,
+      "codigos_geometria": 6,
+      "codigos_extraidos": 6,
+      "ok": true
+    },
+    {
+      "documento_id": "5ab518c3e28d7a6e",
+      "pagina": 2,
+      "codigos_geometria": 7,
+      "codigos_extraidos": 7,
+      "ok": true
+    },
+    {
+      "documento_id": "5ab518c3e28d7a6e",
+      "pagina": 3,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "5ab518c3e28d7a6e",
+      "pagina": 4,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "5ab518c3e28d7a6e",
+      "pagina": 5,
+      "codigos_geometria": 17,
+      "codigos_extraidos": 17,
+      "ok": true
+    },
+    {
+      "documento_id": "e21000fac79b91e2",
+      "pagina": 1,
+      "codigos_geometria": 11,
+      "codigos_extraidos": 11,
+      "ok": true
+    },
+    {
+      "documento_id": "e21000fac79b91e2",
+      "pagina": 2,
+      "codigos_geometria": 13,
+      "codigos_extraidos": 13,
+      "ok": true
+    },
+    {
+      "documento_id": "e21000fac79b91e2",
+      "pagina": 3,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "e21000fac79b91e2",
+      "pagina": 4,
+      "codigos_geometria": 20,
+      "codigos_extraidos": 20,
+      "ok": true
+    },
+    {
+      "documento_id": "e21000fac79b91e2",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "f7383b472acf5794",
+      "pagina": 1,
+      "codigos_geometria": 8,
+      "codigos_extraidos": 8,
+      "ok": true
+    },
+    {
+      "documento_id": "f7383b472acf5794",
+      "pagina": 2,
+      "codigos_geometria": 10,
+      "codigos_extraidos": 10,
+      "ok": true
+    },
+    {
+      "documento_id": "f7383b472acf5794",
+      "pagina": 3,
+      "codigos_geometria": 15,
+      "codigos_extraidos": 15,
+      "ok": true
+    },
+    {
+      "documento_id": "f7383b472acf5794",
+      "pagina": 4,
+      "codigos_geometria": 17,
+      "codigos_extraidos": 17,
+      "ok": true
+    },
+    {
+      "documento_id": "f7383b472acf5794",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "bae7d86045ee3a8d",
+      "pagina": 1,
+      "codigos_geometria": 20,
+      "codigos_extraidos": 20,
+      "ok": true
+    },
+    {
+      "documento_id": "bae7d86045ee3a8d",
+      "pagina": 2,
+      "codigos_geometria": 12,
+      "codigos_extraidos": 12,
+      "ok": true
+    },
+    {
+      "documento_id": "bae7d86045ee3a8d",
+      "pagina": 3,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    },
+    {
+      "documento_id": "bae7d86045ee3a8d",
+      "pagina": 4,
+      "codigos_geometria": 16,
+      "codigos_extraidos": 16,
+      "ok": true
+    },
+    {
+      "documento_id": "bae7d86045ee3a8d",
+      "pagina": 5,
+      "codigos_geometria": 21,
+      "codigos_extraidos": 21,
+      "ok": true
+    }
+  ],
+  "integridade_sqlite": "ok",
+  "chave": "matriz_id + codigo"
+}

@@ -1,0 +1,31 @@
+CEARÁ 2ª AVALIE.CE 2024
+■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA |  8º ANO DO ENSINO FUND AMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D011_M Executar cálculos entre números representados em forma de potência, com expoentes inteiros, expressando o 
+resultado em notação científica.
+D032_M Utilizar números naturais, envolvendo diferentes significados das operações de multiplicação e divisão, na resolução de 
+problemas.
+D047_M Utilizar o princípio multiplicativo de contagem na resolução de problema.
+D045_M Utilizar porcentagem na resolução de problemas.
+D012_M Representar um número em notação científica.
+D014_M Associar a representação algébrica de uma equação linear de 1º grau, com duas incógnitas, à sua representação 
+gráfica.
+D121_M Identificar um sistema de equações do 1º grau que expressa um problema.
+D119_M Identificar, no plano cartesiano, a solução de um sistema de equações do 1º grau com duas equações e duas 
+incógnitas.
+D083_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D118_M Utilizar o cálculo do valor numérico de expressões algébricas na resolução de problemas.
+D075_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D087_M Utilizar sistema de equações polinomiais de 1º grau na resolução de problema.
+D117_M Executar algoritmo de resolução de um sistema linear de duas equações polinomiais de 1º grau, com duas incógnitas.
+D145_M Corresponder figuras tridimensionais às suas planificações.
+D140_M Identificar figuras bidimensionais por meio de suas características.
+D017_M Reconhecer figuras obtidas por composições de transformações geométricas (translação, reflexão e rotação).
+D186_M Utilizar área de figuras bidimensionais na resolução de problema.
+D182_M Utilizar a relação entre litro e decímetro cúbico ou litro e metro cúbico na resolução de problema.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D189_M Utilizar volume/capacidade de paralelepípedos na resolução de problema.
+D203_M Utilizar noções de probabilidade na resolução de problema.
+D201_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D207_M Utilizar medidas de tendência central na resolução de problemas.

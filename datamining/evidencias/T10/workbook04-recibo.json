@@ -1,0 +1,9 @@
+{
+  "fase": "AUTORIA_REAL_FINAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:49:35.459968+00:00",
+  "snapshot": "workbook04-antes.json",
+  "snapshot_sha256": "758fe7f97e4ec62e46232452d1e7ac0196c75d2c8274d37162f206eca0590ede",
+  "log": "workbook04.log",
+  "log_sha256": "86681946a8218f3f144430c5b340bc5dae2ca376029e7a104ca6fe6188c06eb8"
+}

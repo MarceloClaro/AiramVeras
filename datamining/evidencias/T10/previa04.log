@@ -1,0 +1,10 @@
+{"etapa":"renderizar_sintetico","segundos":1,"rss_mb":332}
+{"etapa":"construir_abas","segundos":1,"rss_mb":332}
+{"etapa":"ajuste_calculos","segundos":3,"rss_mb":418}
+{"etapa":"calculos_wrap","segundos":3,"rss_mb":417}
+{"etapa":"ajuste_fila","segundos":3,"rss_mb":417}
+{"etapa":"ajuste_habilidades","segundos":4,"rss_mb":417}
+{"etapa":"ajuste_grupos","segundos":4,"rss_mb":418}
+{"etapa":"ajuste_fontes","segundos":5,"rss_mb":419}
+Inspect result written to file: restrito\outputs\01a16157-2a68-7253-9591-de126647cf53\apresentacao02\previas-sinteticas\inspecao-artificial.xlsx.inspect.ndjson
+{"isolada_sem_dados_individuais_reais":true,"status":"preparada_sem_render_local","tentativa_automatica":false,"codigo_saida":null,"imagens":0,"esperadas":16,"copia_artificial_sha256":"b471f3ef14e5538dde8a8d1d3e21cc874e61577d8f3e428d3ade49779e55ffb3","entrada_artificial_sha256":"654d2a5fc0709bdaecc66c007c4a634278f8d7daf195404327d196700f8463e4","limite":"Renderer Windows indisponivel (render-minimo01/02, 0xC0000005). Nao repetido. Copia artificial pronta para leitor alternativo; inspecao visual pendente."}

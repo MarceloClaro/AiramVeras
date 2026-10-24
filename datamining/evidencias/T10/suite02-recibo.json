@@ -1,0 +1,9 @@
+{
+  "fase": "SUITE_FINAL_FONTE_RESTAURADA",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:03:23.977317+00:00",
+  "snapshot": "suite02-antes.json",
+  "snapshot_sha256": "13f1d8a3a71ef4a3813c1ffcdab2e41ed0fe6d567ad9b6a639d319251aa5f4f0",
+  "log": "suite02.log",
+  "log_sha256": "858b4e53240655fe17c8f1634fa39293b76a9062aa2f1b864f6057420124124e"
+}

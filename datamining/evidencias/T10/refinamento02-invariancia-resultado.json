@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-10-24T13:04:11.864940+00:00",
+  "origem_sha256": "49ea9d09e50071e11d9d7153ffd313fe95366665ffb9f51975473c36b954a84b",
+  "xlsx_sha256": "f9c95451710664eee94409e165689ecb6a6fd615463b30991e5b264b1c0ca666",
+  "celulas_conferidas": 121928,
+  "formulas_identicas": 22843,
+  "textos_deliberados_alterados": 135,
+  "excecoes": "Somente Grupos!G8:G140, Metas!A9 e rotulo tecnico Intervencao!Z7; estilos deliberadamente modificados",
+  "demais_valores_iguais": true,
+  "validacoes_tabelas_iguais": true,
+  "referencias_externas_ausentes": true,
+  "metodo": "OOXML stdlib/Decimal independente, sem importar autor/produto"
+}

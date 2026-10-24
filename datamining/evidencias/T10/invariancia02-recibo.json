@@ -1,0 +1,9 @@
+{
+  "fase": "COMPARACAO_INTEGRAL_RELACOES_RESOLVIDAS",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:52:00.838036+00:00",
+  "snapshot": "invariancia02-antes.json",
+  "snapshot_sha256": "37c331ae1164a8c7f822e30d9f5bd9d818bfe364d0af5c086e986c6fc0ccff6a",
+  "log": "invariancia02.log",
+  "log_sha256": "166e38d95a583f7423fcf4193a1fe371d8b8af95ee8ca682cd9e8c783046e760"
+}

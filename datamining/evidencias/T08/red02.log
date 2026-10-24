@@ -1,0 +1,48 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+__________ test_T47_sem_casos_elegiveis_continua_resultado_explicito __________
+
+    def test_T47_sem_casos_elegiveis_continua_resultado_explicito():
+        f=features(); f.update(alunos=[],valores=[],cobertura=[])
+>       r=api('agrupar')(f,config(),18)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_clusters.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+features = {'contexto': {'ano_escolar': 2, 'componente': 'LEITURA'}, 'alunos': [], 'colunas': ['H1', 'H2', 'H3'], 'valores': [], ...}
+config = {'versao': 'airam-agrupamentos-v1', 'seed': 81022, 'seeds': [11, 29, 47], 'subamostras': 8, ...}
+seed = 18
+
+    def agrupar(features:dict,config:dict,seed:int)->dict:
+        """K=2..min(5,floor(N/5)); nenhum cluster é um resultado legítimo.
+    
+        Valores são proporções [0,1]; listas de alunos e membros nunca são públicas.
+        Casos incompletos são excluídos com motivo, não imputados. Ordem canônica precede
+        todo ajuste e sorteio. Contexto é transportado, nunca usado como feature.
+        """
+        students=features['alunos']; columns=features['colunas']
+        x=np.asarray(features['valores'],dtype=float)
+        coverage=np.asarray(features['cobertura'],dtype=float)
+        if (len(set(students))!=len(students) or len(set(columns))!=len(columns)
+                or x.shape!=(len(students),len(columns)) or coverage.shape!=(len(students),)):
+>           raise ValueError('Eixos invalidos ou duplicados')
+E           ValueError: Eixos invalidos ou duplicados
+
+airam\clusters.py:174: ValueError
+___________ test_T48_handoff_real_com_regras_sem_inventar_clusters ____________
+
+    def test_T48_handoff_real_com_regras_sem_inventar_clusters():
+        # Catches collectors that expose labels/members, lose source totals, or ship only APIs.
+        path=ROOT/'evidencias/T08/analisar.py'
+>       assert path.exists(), 'Coletor de entrega T08 ausente'
+E       AssertionError: Coletor de entrega T08 ausente
+E       assert False
+E        +  where False = exists()
+E        +    where exists = WindowsPath('C:/Users/marce/Downloads/Airam veras/datamining/evidencias/T08/analisar.py').exists
+
+tests\test_entrega_t08.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_clusters.py::test_T47_sem_casos_elegiveis_continua_resultado_explicito
+FAILED tests/test_entrega_t08.py::test_T48_handoff_real_com_regras_sem_inventar_clusters
+2 failed in 7.37s

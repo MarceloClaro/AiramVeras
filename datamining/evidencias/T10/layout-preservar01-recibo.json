@@ -1,0 +1,9 @@
+{
+  "fase": "PRESERVAR_AJUSTE_INTERMEDIARIO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:53:19.353692+00:00",
+  "snapshot": "layout-preservar01-antes.json",
+  "snapshot_sha256": "ad816e607d50c71047f04d8b028924d0bbe5fdde433b8c6ea4c5cdf844bc852d",
+  "log": "layout-preservar01.log",
+  "log_sha256": "043017fef07306f970a027c0e53632178823d360d21483906ec7f256c65c4781"
+}

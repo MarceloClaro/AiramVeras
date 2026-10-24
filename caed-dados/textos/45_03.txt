@@ -1,0 +1,26 @@
+CEARÁ 2025 - AVALIE.CE 2025.2
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 5º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D001_M Identificar a localização ou a movimentação de pessoas, ou objetos em uma representação plana do espaço.
+D002_M Reconhecer características do sistema de numeração decimal. 
+D003_M Identificar composições ou decomposições de números naturais.
+D009_M Identificar informações apresentadas em tabelas ou gráficos.
+D011_M Identificar representações de figuras tridimensionais.
+D014_M Corresponder o horário de início e de término com o intervalo de duração de um evento ou acontecimento.
+D017_M Corresponder números naturais à sua escrita por extenso.
+D020_M Corresponder figuras tridimensionais às suas planificações.
+D021_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D027_M Corresponder números racionais à sua escrita por extenso.
+D028_M Identificar frações equivalentes.
+D029_M Reconhecer fração como representação associada a diferentes significados.
+D030_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D031_M Utilizar números naturais e racionais, envolvendo diferentes significados da adição ou da subtração, na resolução de 
+problemas.
+D038_M Corresponder diferentes representações de um número racional.
+D087_M Corresponder objetos em uma representação plana do espaço à sua localização descrita por meio de um par ordenado.
+D106_M Identificar números racionais segundo critérios de ordem.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D132_M Associar as representações 10%, 25%, 50%, 75% e 100% respectivamente à décima parte, quarta parte, metade, três 
+quartos e um inteiro, para calcular porcentagens.

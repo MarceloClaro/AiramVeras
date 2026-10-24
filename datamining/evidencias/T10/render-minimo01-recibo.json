@@ -1,0 +1,9 @@
+{
+  "fase": "DIAGNOSTICO_RENDER_PUBLICO",
+  "codigo_saida": 3221225477,
+  "fim": "2026-10-23T21:33:13.264756+00:00",
+  "snapshot": "render-minimo01-antes.json",
+  "snapshot_sha256": "aff10f86013ee5d92e3f7829eae22837291ed63324fd68f4942066d8492b90b0",
+  "log": "render-minimo01.log",
+  "log_sha256": "a659d679959d19bd0a96e54270fa665ea56a0cfd0466f9c36c5ca130fd8cb202"
+}

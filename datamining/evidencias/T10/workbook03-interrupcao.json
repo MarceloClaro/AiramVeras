@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-10-23T21:21:45.5454010Z",
+  "pid": 3472,
+  "cpu_s": 378.703125,
+  "memoria_bytes": 2839162880,
+  "estagio": "verificar_ordem_base",
+  "motivo": "Autorrevisao detectou que a previa precisava substituir tambem observacoes individuais; interrompido antes de render/exportar, historico preservado"
+}

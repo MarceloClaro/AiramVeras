@@ -1,0 +1,21 @@
+CEARÁ . AVALIE.CE 2026.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 4º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01_5 Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.
+D02_5 Identificar propriedades comuns e diferenças entre poliedros e corpos redondos, relacionando figuras tridimensionais com 
+suas planificações.
+D03_5 Identificar propriedades comuns e diferenças entre figuras bidimensionais pelo número de lados, pelos tipos de ângulos.
+D06_5 Estimar a medida de grandezas utilizando unidades de medida convencionais ou não.
+D10_5 Num problema, estabelecer trocas entre cédulas e moedas do sistema monetário brasileiro, em função de seus valores.
+D13_5 Reconhecer e utilizar características do sistema de numeração decimal, tais como agrupamentos e trocas na base 10 e 
+princípio do valor posicional.
+D15_5 Reconhecer a decomposição de números naturais nas suas diversas ordens.
+D17_5 Calcular o resultado de uma adição ou subtração de números naturais.
+D18_5 Calcular o resultado de uma multiplicação ou divisão de números naturais.
+D19_5 Resolver problema com números naturais, envolvendo diferentes significados da adição ou subtração: juntar, alteração de 
+um estado inicial (positiva ou negativa), comparação e mais de uma transformação (positiva ou negativa).
+D20_5 Resolver problema com números naturais, envolvendo diferentes significados da multiplicação ou divisão: multiplicação 
+comparativa, ideia de proporcionalidade, configuração retangular e combinatória.
+D27_5 Ler informações e dados apresentados em tabelas.
+D28_5 Ler informações e dados apresentados em gráficos (particularmente em gráficos de colunas).

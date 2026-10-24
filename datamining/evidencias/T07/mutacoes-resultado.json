@@ -1,0 +1,30 @@
+[
+  {
+    "mutacao": "fanout",
+    "codigo_saida": 1,
+    "antes_sha256": "7d333740daaf195b18973ed555468dbb6b36a02b66a508c736d978b8f18294a9",
+    "log_sha256": "9026430fd508ed67a53baf26c6526e5a8b784310644fdc6aff5084fd85d88512",
+    "detectada": true
+  },
+  {
+    "mutacao": "dois_passos",
+    "codigo_saida": 1,
+    "antes_sha256": "b795c24f8a2944835f484c8316a91ca036c58ed377754792aea6c3e4128bd086",
+    "log_sha256": "b3a5677703ef0ea89ca86629f6f18f9d5c7909bcfc2d5e4ffed8c112d208bcfe",
+    "detectada": true
+  },
+  {
+    "mutacao": "ausencia_zero",
+    "codigo_saida": 1,
+    "antes_sha256": "bad8975e5e49faf2b3de8b85e8f5db12b93ae3e38c26e801dc938c71d6836d57",
+    "log_sha256": "d4c01dbb2f8ba50f71dfbeaa0760b138531599aa6362279f41f2f85dbc7dc5d5",
+    "detectada": true
+  },
+  {
+    "mutacao": "media_taxas",
+    "codigo_saida": 1,
+    "antes_sha256": "161c4de2d7bbb33fc026e82c158daa8836fdbb36b5820cfa6786ebeff98461e5",
+    "log_sha256": "95c0249edf73c5514d6a005f36d4f6e8d404e8c0a642549eab2e91129310dc0c",
+    "detectada": true
+  }
+]

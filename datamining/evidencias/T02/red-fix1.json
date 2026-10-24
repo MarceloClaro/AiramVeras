@@ -1,0 +1,57 @@
+{
+  "artefatos": [
+    {
+      "caminho": "evidencias/T02/red-fix1.log",
+      "sha256": "7fb27abc9050611533ccb1bf90f8804bdb39d7799be9690b9438e8c693e75a7c"
+    }
+  ],
+  "codigo_saida": 1,
+  "comando": [
+    ".venv/Scripts/python.exe -m pytest tests/test_ingestao.py tests/test_participacao.py -q --tb=short"
+  ],
+  "estado": "RED",
+  "executor": "Codex",
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+    "airam/esquemas.py": "26670879395dc8ef81e7c09ce92e5013f92f6c37f968a6fdef87595a0e6c1008",
+    "airam/ingestao.py": "30943dd887b7852a56f25210a4833e6ba7b7cd3efbf8156809473a6069a7c824",
+    "airam/recibos.py": "62c0fc07df7ba31548901c6f166e0e93c24f85623a0fab0a49eeeeaff9f5be4e",
+    "config/analise.json": "cc8f93abcb73b27ca3d44d2714f5d9e4010b643c0331a23e860e176ab47b943f",
+    "evidencias/T02/executar_testes.py": "f594307b9370801862503a6805171fe2510b11e54dcbb05c8bd745d90b117150",
+    "tests/test_catalogo.py": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e",
+    "tests/test_ingestao.py": "7e4b6a517bfcc0814b30cece487f12d3b1f0f9d0e7790dee97298c35e0bd1c77",
+    "tests/test_participacao.py": "06fbbdcd0a21de06d64e14332c2fa4de7b6444e83c9b83a90e9299348b2dd31a",
+    "tests/test_recibos.py": "da833654df5782a3c49b1652774f7837b9c661568b9c185dbc85e43933fba942",
+    "tests/test_registrar_execucao.py": "57e0b3eb1fabd7be025352439ad51572591495149d2171b1cff6fb2c2fb685e1"
+  },
+  "hashes_dados": {
+    "catalogo/fontes.json": "bac6fe9cc60800d5141e9dccd1dfec58093b4feaa1b6c56fcbbb023fb398c153",
+    "manifesto_prioritario": "0059670041831280892c45e9c3ed3c0b769f579c881631fb64c9afdf03409946"
+  },
+  "incremento": "T02",
+  "limites": [
+    "Testes sinteticos locais; nao comprova execucao Core nem validacao externa."
+  ],
+  "mutacao": null,
+  "requisitos": [
+    "R01",
+    "R02",
+    "R03",
+    "R05",
+    "R08",
+    "R22"
+  ],
+  "testes": [
+    "T07-T09",
+    "T12-T14",
+    "T18-T19",
+    "BOM-Turmma",
+    "guardas_ingestao"
+  ],
+  "timestamp": "2026-10-22T11:46:20.259006-03:00",
+  "versoes": {
+    "pytest": "9.1.1",
+    "python": "3.12.14"
+  }
+}

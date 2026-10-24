@@ -1,0 +1,11 @@
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D30 Calcular o valor numérico de uma expressão algébrica.
+D31 Resolver problema que envolva equação do 2º grau.
+D32 Identificar a expressão algébrica que expressa uma regularidade observada em sequências de números ou figuras 
+(padrões).
+D33 Identificar uma equação ou inequação do 1º grau que expressa um problema.
+D34 Identificar um sistema de equações do 1º grau que expressa um problema.
+D35 Identificar a relação entre as representações algébrica e geométrica de um sistema de equações do 1º grau.
+D36 Resolver problema envolvendo informações apresentadas em tabelas e/ou gráficos.
+D37 Associar informações apresentadas em listas e/ou tabelas simples aos gráficos que as representam e vice-versa.
+D77 Resolver problemas usando a média aritmética.

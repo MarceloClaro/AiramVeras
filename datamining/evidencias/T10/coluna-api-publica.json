@@ -1,0 +1,17 @@
+{
+  "ndjson": "{\"kind\":\"api\",\"name\":\"range.write\",\"summary\":\"Write a 2D matrix anchored at this range's top-left (auto-sizes the target).\",\"tags\":[\"range.write\"],\"examples\":[{\"code\":\"const anchor = sheet.getRange('B2');\\nconst block = anchor.write([['A','B'],[1,2],[3,4]]);\\n// block is the resized range (B2:C4)\\nblock.format.autofitColumns();\",\"summary\":\"Write a matrix without computing the end cell\"}],\"notes\":[\"Prefer this over hand-building A1 end-cells like 'B2:F17'.\",\"You can pass overwrite: 'error' to prevent overwriting existing content.\",\"1D input is treated as a single row (wrap as [[...]] for 2D).\"]}",
+  "truncated": false,
+  "metadata": {
+    "revision": "poqu6w",
+    "query": "range.write",
+    "include": {
+      "requested": "index,notes,examples",
+      "tokens": [
+        "index",
+        "notes",
+        "examples"
+      ]
+    },
+    "notices": []
+  }
+}

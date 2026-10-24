@@ -1,0 +1,22 @@
+{
+  "aplicacoes": 640,
+  "associacoes": 428,
+  "checkpoint_restrito_sha256": "c7bc7a8db72d46b082f61bf34fc16bbf88e2ac121a083c6b5157218384b1da58",
+  "componentes": 20,
+  "fontes_autenticadas": 11,
+  "grupos": 133,
+  "medidas": 6074,
+  "metas_A": 24,
+  "publico_sem_termos_individuais": true,
+  "saidas": {
+    "relatorios/t10/figuras/cobertura.png": "e5ebbc56d0aee79d806f4c9b0222982cf586bc2229ce884475974c0dd0f74594",
+    "relatorios/t10/figuras/cobertura.svg": "07b74bca3b7bba0e832c602762b1827d7a823106c57799aa246126209b9a1df1",
+    "relatorios/t10/figuras/habilidades.png": "52fa7ed6c98ad974fa35c1761eef660c2b7dbad7d6f03aca90289dd0782533f1",
+    "relatorios/t10/figuras/habilidades.svg": "b48f66bf911db9641d0074a0eef069ef05b3a185c5724e65515f36ba696dcbf0",
+    "relatorios/t10/figuras/meta-a.png": "0cf72aed5bf520bd0aa3e36e8b815daee59518b79424bca3721b34d04afdfd1a",
+    "relatorios/t10/figuras/meta-a.svg": "cabc6bc77e5ab76d8e3d8fbac5dd375d70f067eb9250ab6ac8aee3356337e0fc",
+    "relatorios/t10/relatorio.html": "8af96b50cf937aad2b523e8f4c40ba2e56343de3aa6991b4697e534d83e72c03",
+    "relatorios/t10/tabelas.json": "683f6f40709e2b24abc7b8285aceb79a8b180ad75ae4ab2c502269860ba358b0"
+  },
+  "status": "PASS"
+}

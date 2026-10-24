@@ -1,0 +1,17 @@
+CEARÁ - AVALIE.CE 2025.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 4º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D003_M Identificar composições ou decomposições de números naturais.
+D004_M Executar adição ou subtração com números naturais.
+D020_M Corresponder figuras tridimensionais às suas planificações.
+D126_M Identificar simetrias ou eixos de simetria em figuras geométricas planas.
+D009_M Identificar informações apresentadas em tabelas ou gráficos.
+D002_M Reconhecer características do sistema de numeração decimal. 
+D018_M Determinar termos ausentes em sequências de números naturais.
+D001_M Identificar a localização ou a movimentação de pessoas, ou objetos em uma representação plana do espaço.
+D016_M Corresponder números naturais a pontos da reta numérica. 
+D120_M Utilizar a escrita decimal de cédulas e moedas do sistema monetário brasileiro, na resolução de problema.
+D010_M Identificar representações de figuras bidimensionais.
+D085_M Reconhecer horas em relógios digitais e/ou analógicos.
+D084_M Utilizar conversão entre unidades de medidas de tempo na resolução de problema.

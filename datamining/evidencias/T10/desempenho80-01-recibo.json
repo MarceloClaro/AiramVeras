@@ -1,0 +1,9 @@
+{
+  "fase": "ENSAIO_ARTIFICIAL_80",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:28:34.384708+00:00",
+  "snapshot": "desempenho80-01-antes.json",
+  "snapshot_sha256": "3563a7867b58736ecc2d6ff6232a282ab95527a1d16c1f0534c001c3ed5511ad",
+  "log": "desempenho80-01.log",
+  "log_sha256": "ceb50d66ded228f940d83a3c81e0dcea884fb42b770df13b5400a06ff2b7c285"
+}

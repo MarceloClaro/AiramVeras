@@ -1,0 +1,9 @@
+{
+  "fase": "RED_PREVIA_INTEGRAL",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T21:23:33.649462+00:00",
+  "snapshot": "red07-antes.json",
+  "snapshot_sha256": "845fe73ce791b4a73f538748377f43d0532b6fb9186b6fa8d7a7b10251e51112",
+  "log": "red07.log",
+  "log_sha256": "43bed8017af52a6e468eff01805595024843c162537811df8eaa3efc3e79f2cd"
+}

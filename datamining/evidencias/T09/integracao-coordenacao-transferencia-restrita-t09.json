@@ -1,0 +1,22 @@
+{
+  "IniciadoUtc": "2026-10-23T16:09:47.9343416Z",
+  "FinalizadoUtc": "2026-10-23T16:09:48.3110283Z",
+  "Operacao": "copiar_derivados_restritos_T09_entre_checkouts",
+  "Arquivos": [
+    {
+      "Relativo": "checkpoint.json",
+      "ShaAntes": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901",
+      "ShaDepois": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901",
+      "ShaDestino": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901"
+    },
+    {
+      "Relativo": "versoes\\analise01.json",
+      "ShaAntes": "55d7e80d38dcbea5f0ebe32f51faf10e161b3ce6da671a9592cd1464fd310651",
+      "ShaDepois": "55d7e80d38dcbea5f0ebe32f51faf10e161b3ce6da671a9592cd1464fd310651",
+      "ShaDestino": "55d7e80d38dcbea5f0ebe32f51faf10e161b3ce6da671a9592cd1464fd310651"
+    }
+  ],
+  "Conferido": true,
+  "NominaisNoLog": false,
+  "AclCertificada": false
+}

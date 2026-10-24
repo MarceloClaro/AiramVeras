@@ -1,0 +1,9 @@
+{
+  "fase": "RED_EXIBICAO_HELPER",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:56:03.376236+00:00",
+  "snapshot": "red11-antes.json",
+  "snapshot_sha256": "f4d78c7cc488a8126ad2a0d6ce7a7135aa0c1b6746264d4243a1a8ff2b14b33c",
+  "log": "red11.log",
+  "log_sha256": "64aefce49fe1cfe109818c263b96bef135a0bb189e490e34cff6feae6e19d689"
+}

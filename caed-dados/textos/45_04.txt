@@ -1,0 +1,28 @@
+CEARÁ 2025 - AVALIE.CE 2025.2
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 8º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D010_M Identificar representações de figuras bidimensionais.
+D020_M Corresponder figuras tridimensionais às suas planificações.
+D021_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D022_M Utilizar números naturais, envolvendo diferentes significados da multiplicação ou da divisão, na resolução de problemas.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D030_M Utilizar conversão entre unidades de medida, na resolução de problema.
+D033_M Utilizar o princípio multiplicativo de contagem na resolução de problema.
+D034_M Utilizar probabilidade na resolução de problema.
+D035_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D044_M Utilizar porcentagem na resolução de problemas.
+D048_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D052_M Associar uma equação linear de 1º grau com duas incógnitas a uma reta no plano cartesiano.
+D055_M Representar um número em notação científica.
+D056_M Utilizar medidas de tendência central na resolução de problema.
+D057_M Utilizar o cálculo do valor numérico de expressões algébricas na resolução de problemas.
+D068_M Corresponder um sistema de equações polinomiais de 1º grau a uma situação-problema descrita textualmente.
+D072_M Utilizar sistema de equações polinomiais de 1º grau na resolução de problema.
+D094_M Executar cálculos entre números representados em forma de potência, com expoentes inteiros, expressando o resultado 
+em notação científica.
+D095_M Identificar, no plano cartesiano, a solução de um sistema de equações do 1º grau com duas equações e duas incógnitas.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D133_M Reconhecer figuras obtidas por composições de transformações geométricas (translação, reflexão e rotação).
+D134_M Utilizar a relação entre um litro e um decímetro cúbico e a relação entre litro e metro cúbico, na resolução de problema.
+D135_M Executar algoritmo de resolução de um sistema linear de duas equações polinomiais de 1º grau, com duas incógnitas.

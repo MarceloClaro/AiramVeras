@@ -1,0 +1,9 @@
+{
+  "fase": "CONSULTA_PUBLICA_ESCRITA_EM_BLOCO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:03:58.063629+00:00",
+  "snapshot": "escrita-help01-antes.json",
+  "snapshot_sha256": "aabcd720866bb01e9a478a1deade4a4600e0543f9544bb478b967e6e036c3e35",
+  "log": "escrita-help01.log",
+  "log_sha256": "ce6655380e51fff9225a4fc46fddf362d50da5b4563d3ff7ed486cb2094c966e"
+}

@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_COPIA_ARTIFICIAL_SEM_REPETIR_CRASH",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:38:56.827547+00:00",
+  "snapshot": "green13-antes.json",
+  "snapshot_sha256": "2fab7dcb54c67c989669fdf7a8f14a47bdbd7a1637149fdff0808cdad4e90492",
+  "log": "green13.log",
+  "log_sha256": "dc94a3328ad7d86f05ec5c6cc0178c25e48d1c35036d2372afb3f18519330084"
+}

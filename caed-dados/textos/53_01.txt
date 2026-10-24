@@ -1,0 +1,29 @@
+CEARÁ . Avalie.CE 2026.2
+ ■ MATRIZ DE REFERÊNCIA
+MateMática | 2º aNO DO eNSiNO FUND aMeNtaL
+DeScRit OR DeScRiÇÃO D a HaBiLiD aDe
+D05_2 Comparar OU ordenar números naturais de até 3 ordens com, ou sem suporte da reta numérica.
+D06_2 Identificar a ordem ocupada por um algarismo OU seu valor posicional (ou valor relativo) em um número natural de até 3 ordens.
+D07_2 Calcular o resultado de adições ou subtrações, envolvendo números naturais de até 3 ordens.
+D08_2 Compor OU decompor números naturais de até 3 ordens por meio de diferentes adições.
+D09_2 Resolver problemas de adição ou de subtração, envolvendo números naturais de até 3 ordens, com os significados de 
+juntar, acrescentar, separar ou retirar.
+D10_2 Resolver problemas de multiplicação ou de divisão (por 2, 3, 4 ou 5), envolvendo números naturais, com os significados de 
+formação de grupos iguais ou proporcionalidade (incluindo dobro, metade, triplo ou terça parte).
+D13_2 Inferir OU descrever atributos, ou propriedades comuns que os elementos que constituem uma sequência de números 
+naturais apresentam.
+D15_2 Inferir os elementos ausentes em uma sequência de números naturais ordenados, de objetos ou de figuras.
+D16_2 Identificar a localização OU a descrição/esboço do deslocamento de pessoas e/ou de objetos em representações 
+bidimensionais (mapas, esboço, etc.).
+D17_2 Reconhecer/nomear figuras geométricas espaciais (cubo, bloco retangular, pirâmide, cone, cilindro e esfera), 
+relacionando-as com objetos do mundo físico.
+D18_2 Reconhecer/nomear figuras geométricas planas (círculo, quadrado, retângulo e triângulo).
+D22_2 Identificar a medida do comprimento, da capacidade ou da massa de objetos, dada a imagem de um instrumento de medida.
+D23_2 Reconhecer unidades de medida e/ou instrumentos utilizados para medir comprimento, tempo, massa ou capacidade.
+D24_2 Identificar sequência de acontecimentos relativos a um dia.
+D27_2 Determinar a data de início, a data de término ou a duração de um acontecimento entre duas datas.
+D28_2 Determinar o horário de início, o horário de término ou a duração de um acontecimento.
+D29_2 Resolver problemas que envolvam moedas e/ou cédulas do sistema monetário brasileiro.
+D30_2 Classificar resultados de eventos cotidianos aleatórios como “pouco prováveis”, “muito prováveis”, “certos” ou“impossíveis”.
+D31_2 Ler/identificar OU comparar dados estatísticos, ou informações expressos em tabelas (simples ou de dupla entrada).
+D32_2 Ler/identificar OU comparar dados estatísticos expressos em gráficos (barras simples, colunas simples ou pictóricos).

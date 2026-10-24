@@ -1,0 +1,7 @@
+{
+	"dependencies": {
+		"@bncc/mcp": "^0.5.0",
+		"@bncc/dados": "^0.7.0",
+		"@modelcontextprotocol/sdk": "^1.32.1"
+	}
+}

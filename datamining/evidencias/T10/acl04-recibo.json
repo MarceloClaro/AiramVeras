@@ -1,0 +1,9 @@
+{
+  "fase": "INSPECAO_NTFS_PWSH_OFICIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:42:26.685075+00:00",
+  "snapshot": "acl04-antes.json",
+  "snapshot_sha256": "768ce7976ecd344493e4a44450a2ac02127ec1c9a44377b012bf41a8d41dc9d6",
+  "log": "acl04.log",
+  "log_sha256": "a09f2b36f1215c7fa92cd9800d51fd45c25f55a16b19aad8bd51661aca4a591e"
+}

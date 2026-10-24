@@ -1,0 +1,53 @@
+{
+  "associacoes": 214,
+  "checkpoint_sha256": "2a0472e9b391e0a1c66af53c6d4572f00109a81b49ff547fd5cf8bf8c3e42570",
+  "coeficientes": 428,
+  "contraprova": {
+    "coeficientes": {
+      "pearson": 185,
+      "spearman": 185
+    },
+    "contagens": {
+      "avaliacoes": 640,
+      "escrita": 864,
+      "fluencia": 592,
+      "habilidades": 4618,
+      "pares_conferidos": 7714,
+      "posicoes_conferidas": 124
+    },
+    "fontes_csv": {
+      "resultados-caed-ciclo-i-2026/csv_originais/1ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-06-25.csv": "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017",
+      "resultados-caed-ciclo-i-2026/csv_originais/1ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-09-25.csv": "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee",
+      "resultados-caed-ciclo-i-2026/csv_originais/2ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-11-26.csv": "5dab95321f1fe51fcf196067745c2effcf8f263a8eedf98d396a398c081e8071",
+      "resultados-caed-ciclo-i-2026/csv_originais/2ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-11-55.csv": "2143040a0c86c4933aa26745c6e0c5bd8ac863179a525e0ab2bbdd1fdc7f3308",
+      "resultados-caed-ciclo-i-2026/csv_originais/2ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-10-28.csv": "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48",
+      "resultados-caed-ciclo-i-2026/csv_originais/2ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-10-50.csv": "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9",
+      "resultados-caed-ciclo-i-2026/csv_originais/3ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-12-51.csv": "7bab53deb3a359dc7d26ceb0072ceb4b6c959d4ea2d1de11191b46b6a0caff69",
+      "resultados-caed-ciclo-i-2026/csv_originais/3ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-13-19.csv": "a4a3ebccd90215413be170310098a11100a76a3e5ab3cad0b9678782be8145bf",
+      "resultados-caed-ciclo-i-2026/csv_originais/3ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-12-20.csv": "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583",
+      "resultados-caed-ciclo-i-2026/csv_originais/3ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-12-38.csv": "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe",
+      "resultados-caed-ciclo-i-2026/csv_originais/4ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-13-55.csv": "f68868e1abfd63758972c94c47324bb8df68cec97096934a9a01c99ac0e58396",
+      "resultados-caed-ciclo-i-2026/csv_originais/4ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-14-16.csv": "659178dc9ae23eea97cc43f5cfc6641b4270a74136bbbda50a35416eefa1fa46",
+      "resultados-caed-ciclo-i-2026/csv_originais/4ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-13-30.csv": "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987",
+      "resultados-caed-ciclo-i-2026/csv_originais/4ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-13-42.csv": "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136",
+      "resultados-caed-ciclo-i-2026/csv_originais/5ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-14-52.csv": "1f6e2799922130fd792baac6c03f83fc159dd5b7d652ab95aef393e8bc6f64a1",
+      "resultados-caed-ciclo-i-2026/csv_originais/5ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-15-05.csv": "5b4a22a97e6a9f04983467c3fd452958aa432597ba73d6ffe9975c31cabf394e",
+      "resultados-caed-ciclo-i-2026/csv_originais/5ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-14-28.csv": "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375",
+      "resultados-caed-ciclo-i-2026/csv_originais/5ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-14-39.csv": "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170"
+    },
+    "max_diferenca": 5.0737192225369654e-14,
+    "metodo": "CSV_original+Fraction+somas_algebricas+SciPy"
+  },
+  "csv_sha256": "8df29410e5323f693703e06ccf705843bccb86607c137bd97f8b791b937a9cc9",
+  "estimaveis": 370,
+  "familias": 15,
+  "nao_inferenciais": {
+    "N_abaixo_minimo": 12,
+    "coluna_constante": 12,
+    "pares_insuficientes": 46
+  },
+  "p_disponivel": 358,
+  "plano_sha256": "48cbc2886971720c62d734edf6b6292432174054e38e409039e0197a0e6e4cbb",
+  "restrito_sha256": "dc4f3d0721db427c7001cabbd5199f98a653881be021d274fde2bfead4c58af6",
+  "status": "CONCLUIDO"
+}

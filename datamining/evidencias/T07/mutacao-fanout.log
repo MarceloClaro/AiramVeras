@@ -1,0 +1,27 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_t32_many_edges_and_duplicates_do_not_multiply_mass ___________
+
+    def test_t32_many_edges_and_duplicates_do_not_multiply_mass():
+        rows = [edge('a', b) for b in ['x','y','z']] + [edge('b','x')]
+        graph = api('construir_bipartida')(rows + [rows[0]], 'ressalvada')
+>       np.testing.assert_allclose(graph['B'], [[1/3]*3,[1,0,0]])
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0
+E       
+E       Mismatched elements: 3 / 6 (50%)
+E       Mismatch at indices:
+E        [0, 0]: 1.0 (ACTUAL), 0.3333333333333333 (DESIRED)
+E        [0, 1]: 1.0 (ACTUAL), 0.3333333333333333 (DESIRED)
+E        [0, 2]: 1.0 (ACTUAL), 0.3333333333333333 (DESIRED)
+E       Max absolute difference among violations: 0.66666667
+E       Max relative difference among violations: 2.
+E        ACTUAL: array([[1., 1., 1.],
+E              [1., 0., 0.]])
+E        DESIRED: array([[0.333333, 0.333333, 0.333333],
+E              [1.      , 0.      , 0.      ]])
+
+tests\test_grafo.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_grafo.py::test_t32_many_edges_and_duplicates_do_not_multiply_mass
+1 failed in 1.01s

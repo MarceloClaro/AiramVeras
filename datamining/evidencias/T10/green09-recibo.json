@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_D_HETEROGENEO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:15:08.782626+00:00",
+  "snapshot": "green09-antes.json",
+  "snapshot_sha256": "9e0c0261d614ceb2657e3224013c4166da2aadc0074fa8e1a35efd73c38ab14a",
+  "log": "green09.log",
+  "log_sha256": "a4dd36d0ac4a19debe81ba22e299efbe4c0b2226ba9da7621f5d4534cd3759c8"
+}

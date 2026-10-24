@@ -1,0 +1,16 @@
+{
+  "Utc": "2026-10-23T16:17:16.0679054Z",
+  "Operacao": "concluir_limpeza_metadados_git",
+  "CommitsAplicados": [
+    "0324926",
+    "dad29f7"
+  ],
+  "ErroAnterior": "could not remove .git/sequencer; fatal cherry-pick failed, após ambos commits aplicados",
+  "CodigoIndividualAnterior": null,
+  "NotaCodigoAnterior": "Não capturado imediatamente; comando final de consulta retornou zero. Não interpretar como sucesso da limpeza.",
+  "PastaVazia": true,
+  "AtributosAntes": "ReadOnly, Directory",
+  "SomenteAtributoReadOnlyRetirado": true,
+  "GitQuitExit": 0,
+  "PastaAindaExiste": false
+}

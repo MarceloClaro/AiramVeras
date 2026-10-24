@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:30:34.869606+00:00",
+  "snapshot": "contraprovas-antes.json",
+  "snapshot_sha256": "0b699c757cb34c58e4ba929f14b8ed4306684b39c200591290e0d382c52ac650",
+  "log_sha256": "1658ced44970e5b8623e4a846ffe5d0a4faab9f9d386a94eebed840caa2dd284"
+}

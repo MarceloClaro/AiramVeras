@@ -1,0 +1,14 @@
+{
+  "Utc": "2026-10-23T16:15:29.8229540Z",
+  "HeadPrimario": "d8e8d6cc8bc62771452f2861dcbd2a0e37ea6c84",
+  "HeadT09": "5d638846edd66da8c224f0f4005e2a1cf81364e3",
+  "HashT08": "8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e",
+  "HashT09": "150592d325fde9c80bfd98717a974b3a53e816987601b1b3968168e558f14339",
+  "HashT09Restrito": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901",
+  "Revisoes": [
+    "task-8-fix1-review.md",
+    "task-9-review.md"
+  ],
+  "CaminhoCompartilhado": ".gitattributes",
+  "OriginaisPreservados": true
+}

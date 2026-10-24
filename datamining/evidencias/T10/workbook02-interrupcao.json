@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-10-23T21:12:35.7782009Z",
+  "pid": 25896,
+  "cpu_s": 420.15625,
+  "memoria_bytes": 2631053312,
+  "estagio": "verificar_ordem_base",
+  "motivo": "Interrupcao para substituir contagens recursivas por contagens equivalentes sobre observacoes originais; nenhum XLSX exportado"
+}

@@ -1,0 +1,9 @@
+{
+  "fase": "WORKBOOK_REAL_REFACTOR",
+  "codigo_saida": 4294967295,
+  "fim": "2026-10-23T21:12:36.901600+00:00",
+  "snapshot": "workbook02-antes.json",
+  "snapshot_sha256": "f277107d959dfc24a7d8ffead4b4d14ad9b0bb964110bec678675f1106546b8f",
+  "log": "workbook02.log",
+  "log_sha256": "6b60d183290d8b91f3cea3d8d067679619bb74c7c27c88d39cb90764141a0191"
+}

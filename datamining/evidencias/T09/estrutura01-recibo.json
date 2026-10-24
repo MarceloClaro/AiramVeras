@@ -1,0 +1,9 @@
+{
+  "fase": "INSPECAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T06:23:44.843092+00:00",
+  "snapshot": "estrutura01-antes.json",
+  "snapshot_sha256": "0404276bd0579168a9f6c6543864ab603a15e335e874e7a01281e10c5acb2839",
+  "log": "estrutura01.log",
+  "log_sha256": "27c944f8ced4979806fb88ed3f0c2db322cd683dd9e16e7ab0d401fecb87a9eb"
+}

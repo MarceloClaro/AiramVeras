@@ -1,0 +1,9 @@
+{
+  "fase": "AUDITORIA_INDEPENDENTE_FINAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:05:18.270286+00:00",
+  "snapshot": "contraprova-final02-antes.json",
+  "snapshot_sha256": "97ddfcaff43d392a22b1739471bb21f155af50816db6fee35c4d1c74bf58106f",
+  "log": "contraprova-final02.log",
+  "log_sha256": "1c4880a1fdb5cea5dc92125d8a0d5a496071e1d371a2015dee6529deaf6dc379"
+}

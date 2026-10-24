@@ -1,0 +1,30 @@
+CEARÁ . AVALIE.CE 2026.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 8º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D02_9 Identificar propriedades comuns e diferenças entre figuras bidimensionais e tridimensionais, relacionando-as com as suas 
+planificações.
+D03_9 Identificar propriedades de triângulos pela comparação de medidas de lados e ângulos.
+D04_9 Identificar relação entre quadriláteros por meio de suas propriedades.
+D05_5 Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais usando malhas quadriculadas.
+D09_9 Interpretar informações apresentadas por meio de coordenadas cartesianas.
+D12_9 Resolver problema envolvendo o cálculo de perímetro de figuras planas.
+D15_9 Resolver problema utilizando relações entre diferentes unidades de medida.
+D16_9 Identificar a localização de números inteiros na reta numérica.
+D17_9 Identificar a localização de números racionais na reta numérica.
+D18_9 Efetuar cálculos com números inteiros, envolvendo as operações (adição, subtração, multiplicação, divisão, potenciação).
+D20_9 Resolver problema com números inteiros envolvendo as operações (adição, subtração, multiplicação, divisão, 
+potenciação).
+D25_9 Efetuar cálculos que envolvam operações com números racionais (adição, subtração, multiplicação, divisão, potenciação).
+D26_9 Resolver problema com números racionais envolvendo as operações (adição, subtração, multiplicação, divisão, 
+potenciação).
+D28_9 Resolver problema que envolva porcentagem.
+D29_9 Resolver problema que envolva variação proporcional, direta ou inversa, entre grandezas.
+D36_9 Resolver problema envolvendo informações apresentadas em tabelas e/ou gráficos.
+D20_5 Resolver problema com números naturais, envolvendo diferentes significados da multiplicação ou divisão: multiplicação 
+comparativa, ideia de proporcionalidade, configuração retangular e combinatória.
+D28_5 Ler informações e dados apresentados em gráficos (particularmente em gráficos de colunas).
+D13_5 Reconhecer e utilizar características do sistema de numeração decimal, tais como agrupamentos e trocas na base 10 e 
+princípio do valor posicional.
+D01_5 Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.

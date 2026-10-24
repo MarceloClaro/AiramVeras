@@ -1,0 +1,24 @@
+{
+  "versao_schema": "airam-workbook-t10-v1",
+  "sintetico": true,
+  "metas": {"A": 0.8, "B": 0.8},
+  "fontes": {"fixture": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "limites": ["Apenas fixture artificial."],
+  "habilidades": [],
+  "grupos": [],
+  "componentes": [
+    {"ano_escolar": 2, "componente": "LEITURA", "nivel": "escola", "turma": null},
+    {"ano_escolar": 2, "componente": "MATEMATICA", "nivel": "escola", "turma": null},
+    {"ano_escolar": 2, "componente": "ESCRITA", "nivel": "escola", "turma": null},
+    {"ano_escolar": 2, "componente": "FLUENCIA", "nivel": "escola", "turma": null}
+  ],
+  "curriculo": [{"ano_avaliado": 2, "componente": "LEITURA", "posicao": "H01", "codigo_caed": "2EF01_P", "texto_caed": "Descritor artificial", "codigo_bncc": "EF02LP01", "texto_bncc": "Texto artificial", "pagina_matriz": 7, "localizador_bncc": {"localizador_pdf": "BNCC p. 100"}, "status_contextual": "proprio_ano_ciclo_confirmado", "status_semantico": "ressalva", "peso_analitico": 1, "sha256_pdf": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "ocorrencia_id": "ocorrencia-artificial", "versao_posicao": "v1", "fonte_posicao": "mapa-artificial", "bncc": {"proveniencia_dataset": {"commit": "fixture"}}}],
+  "intervencao": [
+    {"chave": "k-c", "aluno_local_id": "id-c", "nome": "PESSOA ARTIFICIAL c", "avaliacao_local_id": "app-c", "ano_escolar": 2, "turma": "A", "componente": "LEITURA", "participacao": true, "categoria": "Adequado", "acertos": 17, "oportunidades": 22, "disponivel": true, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "", "fonte": "fixture", "linha_fonte": 1, "unidade": "itens"},
+    {"chave": "k-b", "aluno_local_id": "id-b", "nome": "PESSOA ARTIFICIAL b", "avaliacao_local_id": "app-b", "ano_escolar": 2, "turma": "A", "componente": "MATEMATICA", "participacao": true, "categoria": "Abaixo", "acertos": 0, "oportunidades": 22, "disponivel": true, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "NOTA ARTIFICIAL B", "fonte": "fixture", "linha_fonte": 1, "unidade": "itens"},
+    {"chave": "k-a", "aluno_local_id": "id-a", "nome": "PESSOA ARTIFICIAL a", "avaliacao_local_id": "app-a", "ano_escolar": 2, "turma": "A", "componente": "LEITURA", "participacao": true, "categoria": "Abaixo", "acertos": 17, "oportunidades": 22, "disponivel": true, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "", "fonte": "fixture", "linha_fonte": 1, "unidade": "itens"},
+    {"chave": "k-d", "aluno_local_id": "id-d", "nome": "PESSOA ARTIFICIAL d", "avaliacao_local_id": "app-d", "ano_escolar": 2, "turma": "A", "componente": "LEITURA", "participacao": false, "categoria": "Abaixo", "acertos": null, "oportunidades": null, "disponivel": false, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "", "fonte": "fixture", "linha_fonte": 1, "unidade": "itens"},
+    {"chave": "k-e", "aluno_local_id": "id-e", "nome": "PESSOA ARTIFICIAL e", "avaliacao_local_id": "app-e", "ano_escolar": 2, "turma": "A", "componente": "ESCRITA", "participacao": true, "categoria": "Abaixo", "acertos": null, "oportunidades": null, "disponivel": true, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "", "fonte": "fixture", "linha_fonte": 1, "unidade": "unidade original"},
+    {"chave": "k-f", "aluno_local_id": "id-f", "nome": "PESSOA ARTIFICIAL f", "avaliacao_local_id": "app-f", "ano_escolar": 2, "turma": "A", "componente": "FLUENCIA", "participacao": false, "categoria": "Abaixo", "acertos": null, "oportunidades": null, "disponivel": false, "habilidades_prioritarias": [], "medidas": [], "grupos": [], "apoio_sugerido": "Revisar evidência", "revisao_docente": "pendente", "notas_docentes": "", "fonte": "fixture", "linha_fonte": 1, "unidade": "unidade original"}
+  ]
+}

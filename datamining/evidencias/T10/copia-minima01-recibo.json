@@ -1,0 +1,9 @@
+{
+  "fase": "DIAGNOSTICO_COPYFROM_ARTIFICIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:05:39.198228+00:00",
+  "snapshot": "copia-minima01-antes.json",
+  "snapshot_sha256": "4905c36171faa33616883eddf84e8760aba6d8a2a48123715f104becdfcd0c74",
+  "log": "copia-minima01.log",
+  "log_sha256": "7bdfca29221261afc2345be4bf0702bf6b9e7e23ca3837ae1d205e7be685f93a"
+}

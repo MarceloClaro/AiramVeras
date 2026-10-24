@@ -1,0 +1,15 @@
+{
+  "total_descritores_por_matriz": 146,
+  "contagens": {
+    "SPAECE_LP_EF_5": 15,
+    "SPAECE_LP_EF_9": 19,
+    "SPAECE_LP_EM_3": 22,
+    "SPAECE_MT_EF_5": 22,
+    "SPAECE_MT_EF_9": 25,
+    "SPAECE_MT_EM_3": 24,
+    "SPAECE_LP_EF_2": 19
+  },
+  "validacao": "SHA256 das fontes, códigos completos e únicos por matriz, campos obrigatórios e integridade SQLite aprovados",
+  "limite": "Não confirma vigência específica em 2026; não estabelece equivalências com BNCC ou CAEd.",
+  "normalizacao": "Espaços e quebras de linha; situação- problema -> situação-problema; T eorema -> Teorema. Texto bruto preservado."
+}

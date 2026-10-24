@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_layout_legivel_e_refinamento_preserva_valores_formulas _________
+tests\test_intervencao.py:241: in test_layout_legivel_e_refinamento_preserva_valores_formulas
+    assert width('Metas',3)>=26, 'Rotulo de oportunidades ainda truncavel'
+E   AssertionError: Rotulo de oportunidades ainda truncavel
+E   assert 18.0 >= 26
+E    +  where 18.0 = <function test_layout_legivel_e_refinamento_preserva_valores_formulas.<locals>.width at 0x00000228CF855C60>('Metas', 3)
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_layout_legivel_e_refinamento_preserva_valores_formulas
+1 failed, 17 deselected in 8.43s

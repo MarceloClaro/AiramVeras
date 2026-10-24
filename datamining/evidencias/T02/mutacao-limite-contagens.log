@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________________ test_t07_rejeita_contagens_impossiveis[3/2] _________________
+tests\test_ingestao.py:135: in test_t07_rejeita_contagens_impossiveis
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_ingestao.py::test_t07_rejeita_contagens_impossiveis[3/2] - ...
+1 failed in 0.15s

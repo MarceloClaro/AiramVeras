@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:36:55.256479+00:00",
+  "snapshot": "auditoria-checkpoint-final-antes.json",
+  "snapshot_sha256": "8bec24908882214d81869600aed4ca8f68d6d2e719c26f94f88257357cea81b1",
+  "log_sha256": "80edb0ad734d3559097cdba23fc240154ca2e49305d8dc56d38a2aba8c4ff2ec"
+}

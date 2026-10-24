@@ -1,0 +1,9 @@
+{
+  "fase": "SCAN_FINAL_COPIA_INTEIRAMENTE_ARTIFICIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:58:13.327360+00:00",
+  "snapshot": "previa-conferencia05-antes.json",
+  "snapshot_sha256": "594f8a78919cf1a2e7dea60e5da0b709ffe5b38bb5af31439dba95ba845c2e9a",
+  "log": "previa-conferencia05.log",
+  "log_sha256": "ed0e1b0f1d75c7a03ce1bfb15abb3d944b505360d9b9dbf7097c94512923a1c6"
+}

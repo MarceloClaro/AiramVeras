@@ -1,0 +1,13 @@
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D20_SAEB Analisar crescimento/decrescimento, zeros de funções reais apresentadas em gráficos.
+D21_SAEB Identificar o gráfico que representa uma situação descrita em um texto.
+D22_SAEB Resolver problema envolvendo P.A./P.G., dada a fórmula do termo geral.
+D25_SAEB Resolver problemas que envolvam os pontos de máximo ou de mínimo no gráfico de uma função polinomial do 2º grau.
+D27_SAEB Identificar a representação algébrica e/ou gráfica de uma função exponencial.
+D28_SAEB Identificar a representação algébrica e/ou gráfica de uma função logarítmica, reconhecendo-a como inversa da função 
+exponencial.
+D29_SAEB Resolver problema que envolva função exponencial.
+D30_SAEB Identificar gráficos de funções trigonométricas (seno, cosseno, tangente), reconhecendo suas propriedades.
+D31_SAEB Determinar a solução de um sistema linear, associando-o à uma matriz.
+D32_SAEB Resolver problema de contagem utilizando o princípio multiplicativo ou noções de permutação simples, arranjo simples e/
+ou combinação simples.

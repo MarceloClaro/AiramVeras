@@ -1,0 +1,6 @@
+127.0.0.1 - - [23/Oct/2026 17:53:14] "GET /relatorio.html HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 17:53:14] "GET /figuras/cobertura.svg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 17:53:14] "GET /figuras/meta-a.svg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 17:53:14] "GET /figuras/habilidades.svg HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2026 17:53:16] code 404, message File not found
+127.0.0.1 - - [23/Oct/2026 17:53:16] "GET /favicon.ico HTTP/1.1" 404 -

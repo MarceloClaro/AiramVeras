@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T04\analisar_fontes_reais.py", line 97, in <module>
+    main()
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T04\analisar_fontes_reais.py", line 86, in main
+    write_json(ROOT / 'evidencias/T04/conferencia-real.json', dict(**summary,
+                                                              ^^^^^^^^^^^^^^^
+TypeError: dict() got multiple values for keyword argument 'bncc_uniao_contextos_auditados'

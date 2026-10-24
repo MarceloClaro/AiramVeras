@@ -1,0 +1,9 @@
+{
+  "fase": "ANALISE_REAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T20:41:39.411423+00:00",
+  "snapshot": "analise01-antes.json",
+  "snapshot_sha256": "a4bb42f757513e60e2af4de99848bb8cf2b13de217559d2f63aaa6da98fe7ef2",
+  "log": "analise01.log",
+  "log_sha256": "e13f538d56c637e420698cbd7988b553b3f39bb3b9cd64f574099801720d87d9"
+}

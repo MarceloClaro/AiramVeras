@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "verificacoes": 19539,
+  "aplicacoes_conferidas": 640,
+  "medidas_conferidas": 6074,
+  "relacoes_curriculares_conferidas": 157,
+  "arquivos_publicos_sem_identificadores": 342,
+  "metodo": "stdlib + Fraction + SQL + leitura OOXML independente; sem importar airam/builder",
+  "xlsx_sha256": "f9c95451710664eee94409e165689ecb6a6fd615463b30991e5b264b1c0ca666",
+  "checkpoint_restrito_sha256": "c7bc7a8db72d46b082f61bf34fc16bbf88e2ac121a083c6b5157218384b1da58",
+  "limites": "Caches e estruturas do XLSX conferidos; execução Excel nativo, eficácia e revisão docente não demonstradas."
+}

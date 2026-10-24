@@ -1,0 +1,9 @@
+{
+  "fase": "AUTORIA_MARCADOR",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T20:36:46.762194+00:00",
+  "snapshot": "marcador01-antes.json",
+  "snapshot_sha256": "51ed2c8a640701af8ed161916a41a3bbe8762b1f1e88f7bf5758147535e0af9d",
+  "log": "marcador01.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

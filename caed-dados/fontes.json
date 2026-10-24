@@ -1,0 +1,51 @@
+[
+  {
+    "arquivo": "CEARÁ - Avalie.CE 2026.2 - Matriz - LP.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2026/CEAR%C3%81%20-%20Avalie.CE%202026.2%20-%20Matriz%20-%20LP.pdf",
+    "bytes": 48920,
+    "sha256": "c7ecd6d4c9a24ce197a0c923683def44ab02561d4a2127d451dc7c10e14b02a3",
+    "grupo": "2026"
+  },
+  {
+    "arquivo": "CEARÁ - Avalie.CE 2026.2 - Matriz - MT.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2026/CEAR%C3%81%20-%20Avalie.CE%202026.2%20-%20Matriz%20-%20MT.pdf",
+    "bytes": 57487,
+    "sha256": "df74261b53c1e01bef967e4aa68391687d3487cdf2028962687a7fea60b9f380",
+    "grupo": "2026"
+  },
+  {
+    "arquivo": "CE 2026 - Av Diagnóstica - Matriz - LP.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2026/CE%202026%20-%20Av%20Diagn%C3%B3stica%20-%20Matriz%20-%20LP.pdf",
+    "bytes": 45220,
+    "sha256": "5d5934297c45bac2733b1be047c9b8262e6ffcca7e5bd8e4badf46891b1f1b17",
+    "grupo": "2026"
+  },
+  {
+    "arquivo": "CE 2026 - Av Diagnóstica - Matriz - MT.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2026/CE%202026%20-%20Av%20Diagn%C3%B3stica%20-%20Matriz%20-%20MT.pdf",
+    "bytes": 52994,
+    "sha256": "017f0cb6df372fb76d0db9bf644f7c100c8d158f765e9e2f9b5aa63e3873fa80",
+    "grupo": "2026"
+  },
+  {
+    "arquivo": "CE 2025 - Av Somativa - Matriz - LP.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2025/CE%202025%20-%20Av%20Somativa%20-%20Matriz%20-%20LP.pdf",
+    "bytes": 57046,
+    "sha256": "7c3f90ae6ebbd124c5c93e2090b300a83ca1f54278db4d05462c2d61629a2bab",
+    "grupo": "2025"
+  },
+  {
+    "arquivo": "CE 2025 - Av Somativa - Matriz - MT.pdf",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/2025/CE%202025%20-%20Av%20Somativa%20-%20Matriz%20-%20MT.pdf",
+    "bytes": 88938,
+    "sha256": "c5f0ef6fd1819a5d33706358b436167e7929423613ccdc6e929519e9e215e927",
+    "grupo": "2025"
+  },
+  {
+    "arquivo": "Matrizes_edicoes_anteriores_CE.zip",
+    "url": "https://prototipos.caeddigital.net/arquivos/ce/matrizes/Anteriores/Matrizes_edicoes_anteriores_CE.zip",
+    "bytes": 11522182,
+    "sha256": "cf19a91a0b8e5e519d8fa0b0abc2be8cfe26f8d0abc673409e2a7615134b712c",
+    "grupo": "Anteriores"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "fase": "REFACTOR_CONTAGENS_ORIGINAIS",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:13:01.875555+00:00",
+  "snapshot": "green08-antes.json",
+  "snapshot_sha256": "9ae4867c4de956cc5345ba5993524297a536dbe77de59a73ffbb91905c9353dd",
+  "log": "green08.log",
+  "log_sha256": "e775b84b5e816c4ec41aa1708c63ec3641f3bdf387c0ac8d883c03cf2bf87ce0"
+}

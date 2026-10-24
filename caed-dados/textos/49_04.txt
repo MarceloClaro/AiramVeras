@@ -1,0 +1,39 @@
+CEARÁ . Avaliação Somativa 2025
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 5º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01 Identificar a localização/movimentação de objeto em mapas, croquis e outras representações gráficas.
+D02 Identificar propriedades comuns e diferenças entre poliedros e corpos redondos, relacionando figuras tridimensionais com 
+suas planificações.
+D03 Identificar propriedades comuns e diferenças entre figuras bidimensionais pelo número de lados, pelos tipos de ângulos.
+D04 Identificar quadriláteros observando as posições relativas entre seus lados (paralelos, concorrentes, perpendiculares).
+D05 Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais usando malhas quadriculadas.
+D06 Estimar a medida de grandezas utilizando unidades de medida convencionais ou não.
+D07 Resolver problemas significativos utilizando unidades de medida padronizadas como km/m/cm/mm, kg/g/mg, l/ml.
+D08 Estabelecer relações entre unidades de medida de tempo.
+D09 Estabelecer relações entre o horário de início e término e/ou o intervalo da duração de um evento ou acontecimento.
+D10 Num problema, estabelecer trocas entre cédulas e moedas do sistema monetário brasileiro, em função de seus valores.
+D11 Resolver problema envolvendo o cálculo do perímetro de figuras planas, desenhadas em malhas quadriculadas.
+D12 Resolver problema envolvendo o cálculo ou estimativa de áreas de figuras planas, desenhadas em malhas 
+quadriculadas.
+D13 Reconhecer e utilizar características do sistema de numeração decimal, tais como agrupamentos e trocas na base 10 e 
+princípio do valor posicional.
+D14 Identificar a localização de números naturais na reta numérica.
+D15 Reconhecer a decomposição de números naturais nas suas diversas ordens.
+D16 Reconhecer a composição e a decomposição de números naturais em sua forma polinomial.
+D17 Calcular o resultado de uma adição ou subtração de números naturais.
+D18 Calcular o resultado de uma multiplicação ou divisão de números naturais.
+D19 Resolver problema com números naturais, envolvendo diferentes significados da adição ou subtração: juntar, alteração de 
+um estado inicial (positiva ou negativa), comparação e mais de uma transformação (positiva ou negativa).
+D20 Resolver problema com números naturais, envolvendo diferentes significados da multiplicação ou divisão: multiplicação 
+comparativa, ideia de proporcionalidade, configuração retangular e combinatória.
+D21 Identificar diferentes representações de um mesmo número racional.
+D22 Identificar a localização de números racionais representados na forma decimal na reta numérica.
+D23 Resolver problema utilizando a escrita decimal de cédulas e moedas do sistema monetário brasileiro.
+D24 Identificar fração como representação que pode estar associada a diferentes significados.
+D25 Resolver problema com números racionais expressos na forma decimal, envolvendo diferentes significados da adição ou 
+subtração.
+D26 Resolver problema envolvendo noções de porcentagem (25%, 50%, 100%).
+D27 Ler informações e dados apresentados em tabelas.
+D28 Ler informações e dados apresentados em gráficos (particularmente, em gráficos de colunas).

@@ -1,0 +1,9 @@
+{
+  "fase": "ENSAIO_COPYFROM_80_ARTIFICIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:09:43.950904+00:00",
+  "snapshot": "atomico-ensaio01-antes.json",
+  "snapshot_sha256": "06f57ccf185f4880cbdb22010b37705796c740ae3bb32cc1f06e881a19554fa4",
+  "log": "atomico-ensaio01.log",
+  "log_sha256": "05848b754da5643b5303e00bd004a6a1b74110d75c4fd0ec6571e1682bc2cfe0"
+}

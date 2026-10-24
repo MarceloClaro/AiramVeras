@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T10\inspecionar_acl.py", line 29, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T10\inspecionar_acl.py", line 23, in main
+    raise RuntimeError('Inspecao NTFS falhou sem alterar permissoes; diagnostico local')
+RuntimeError: Inspecao NTFS falhou sem alterar permissoes; diagnostico local

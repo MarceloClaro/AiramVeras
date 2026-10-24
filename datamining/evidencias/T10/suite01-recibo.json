@@ -1,0 +1,9 @@
+{
+  "fase": "SUITE_FINAL",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T20:59:43.251487+00:00",
+  "snapshot": "suite01-antes.json",
+  "snapshot_sha256": "357da06020502e8bdbf04d28bf3753ef02ba1d2372973b8d946e9ffa1145b51f",
+  "log": "suite01.log",
+  "log_sha256": "b1536cdd3a437c57e89eb44385dedd0b5f55d90bcbda2ba08454091c6bb87262"
+}

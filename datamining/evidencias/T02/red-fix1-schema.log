@@ -1,0 +1,166 @@
+.................FFFFFFFFFFFFFFFFFFFF.FF....FFF......................... [ 91%]
+.......                                                                  [100%]
+================================== FAILURES ===================================
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESTUDANTE-N\xedvel de aprendizagem] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESTUDANTE-H 09] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-2-ESTUDANTE-H 11] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-3-ESTUDANTE-H 11] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-4-ESTUDANTE-H 13] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-5-ESTUDANTE-H 16] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-1-ESTUDANTE-H 07] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-2-ESTUDANTE-H 11] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-3-ESTUDANTE-H 12] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-4-ESTUDANTE-H 15] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-5-ESTUDANTE-H 19] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESCOLA-Aprendizado adequado] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESCOLA-H 09 (%)] __
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-5-TURMA-H 19 (%)] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Categoria de escrita] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+__ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Nota] ___
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Quest\xe3o 3 - Aspecto 1] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-3-ESTUDANTE-Quest\xe3o 4 - Aspecto 4] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-4-ESTUDANTE-Quest\xe3o 1 - Aspecto 4] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-5-ESTUDANTE-Quest\xe3o 1 - Aspecto 4] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-3-TURMA-Quest\xe3o 4 - Aspecto 4] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-4-ESCOLA-Avan\xe7ado] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-2-ESCOLA-Previstos] _
+tests\test_ingestao.py:280: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    with pytest.raises(ValueError, match='[Cc]oluna|[Ee]squema'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-3-TURMA-Pr\xe9-leitor (N\xedvel 4)] _
+tests\test_ingestao.py:281: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    api('ingestao', 'ler_exportacoes')(catalogo)
+airam\ingestao.py:269: in ler_exportacoes
+    _audit_aggregate(aggregate, result['avaliacoes'])
+airam\ingestao.py:126: in _audit_aggregate
+    if counts['Pré-leitor (Total)'] != sum(counts[f'Pré-leitor (Nível {i})'] for i in range(1, 5)):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\ingestao.py:126: in <genexpr>
+    if counts['Pré-leitor (Total)'] != sum(counts[f'Pré-leitor (Nível {i})'] for i in range(1, 5)):
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'Pré-leitor (Nível 4)'
+_ test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-4-ESCOLA-Leitor Fluente] _
+tests\test_ingestao.py:281: in test_fix1_coluna_obrigatoria_ausente_rejeitada
+    api('ingestao', 'ler_exportacoes')(catalogo)
+airam\ingestao.py:269: in ler_exportacoes
+    _audit_aggregate(aggregate, result['avaliacoes'])
+airam\ingestao.py:128: in _audit_aggregate
+    if counts['Pré-leitor (Total)'] + counts['Leitor Iniciante'] + counts['Leitor Fluente'] != assessed:
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'Leitor Fluente'
+=========================== short test summary info ===========================
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESTUDANTE-N\xedvel de aprendizagem]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESTUDANTE-H 09]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-2-ESTUDANTE-H 11]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-3-ESTUDANTE-H 11]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-4-ESTUDANTE-H 13]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-5-ESTUDANTE-H 16]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-1-ESTUDANTE-H 07]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-2-ESTUDANTE-H 11]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-3-ESTUDANTE-H 12]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-4-ESTUDANTE-H 15]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-5-ESTUDANTE-H 19]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESCOLA-Aprendizado adequado]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[LEITURA-1-ESCOLA-H 09 (%)]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[MATEMATICA-5-TURMA-H 19 (%)]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Categoria de escrita]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Nota]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-2-ESTUDANTE-Quest\xe3o 3 - Aspecto 1]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-3-ESTUDANTE-Quest\xe3o 4 - Aspecto 4]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-4-ESTUDANTE-Quest\xe3o 1 - Aspecto 4]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-5-ESTUDANTE-Quest\xe3o 1 - Aspecto 4]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-3-TURMA-Quest\xe3o 4 - Aspecto 4]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[ESCRITA-4-ESCOLA-Avan\xe7ado]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-2-ESCOLA-Previstos]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-3-TURMA-Pr\xe9-leitor (N\xedvel 4)]
+FAILED tests/test_ingestao.py::test_fix1_coluna_obrigatoria_ausente_rejeitada[FLUENCIA-4-ESCOLA-Leitor Fluente]
+25 failed, 54 passed in 9.76s

@@ -1,0 +1,9 @@
+{
+  "fase": "PRESERVAR_DERIVADOS_ANTES_FINAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:29:26.208810+00:00",
+  "snapshot": "preservar02-antes.json",
+  "snapshot_sha256": "4785fbde058709fe08b7fa60479ba34051052e90d146c84ba6a416b18abb64b5",
+  "log": "preservar02.log",
+  "log_sha256": "fa279599f529ae1333ece06e4ed85e8d8734ec2f79a0677061bf192965ab28f2"
+}

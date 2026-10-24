@@ -1,0 +1,9 @@
+{
+  "fase": "MONTAGEM_FINAL_FONTES_EXISTENTES",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:30:45.531688+00:00",
+  "snapshot": "analise03-antes.json",
+  "snapshot_sha256": "3ba80a6b45bf27d3286a50ff0b55fc7de0c21b874f13a5a12fab9ab6de7a1f74",
+  "log": "analise03.log",
+  "log_sha256": "ad737e0511bd1b537ea46a9af38df134a9d92e31b70ed3bec020f2ec0a37fc0a"
+}

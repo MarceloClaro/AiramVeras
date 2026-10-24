@@ -1,0 +1,10 @@
+{
+  "spec_id": "TSPEC-4272ac13",
+  "status": "blocked",
+  "success": false,
+  "steps": 0,
+  "error": "Nenhum agente interno elegível foi atribuído pelo orquestrador.",
+  "agent_id": null,
+  "execution_verified": false,
+  "limitation": "Nenhuma inferência Core comprovada; não bloqueia execução pelos subagentes Codex."
+}

@@ -1,0 +1,16 @@
+CEARÁ - AVALIE.CE 2025.1
+ ■ MATRIZ DE REFERÊNCIA
+LÍNGUA PORTUGUESA | 4º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D009_P Ler palavras formadas por sílabas canônicas.
+D010_P Ler palavras formadas por sílabas não canônicas.
+D012_P Identificar efeito de sentido decorrente de recursos gráficos, seleção lexical e repetição.
+D015_P Ler frases.
+D016_P Identificar a finalidade de textos de diferentes gêneros.
+D021_P Localizar informação explícita.
+D022_P Inferir o sentido de palavra ou expressão a partir do contexto.
+D023_P Inferir informações em textos.
+D028_P Reconhecer o assunto de um texto lido.
+D030_P Reconhecer os elementos que compõem uma narrativa e o conflito gerador.
+D037_P Reconhecer as relações entre partes de um texto, identificando os recursos coesivos que contribuem para a sua 
+continuidade.

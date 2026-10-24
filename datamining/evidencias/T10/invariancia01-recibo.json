@@ -1,0 +1,9 @@
+{
+  "fase": "COMPARACAO_INTEGRAL_INTERMEDIARIA",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:50:45.648712+00:00",
+  "snapshot": "invariancia01-antes.json",
+  "snapshot_sha256": "ed45cb40fca07e741d5650a2b2f30965a01df274f0f69844d35cd794087ed9e5",
+  "log": "invariancia01.log",
+  "log_sha256": "ad851bfb138abdce98cf4e3a9910c723dab8bc36cb613f40aa22576cb297d4ef"
+}

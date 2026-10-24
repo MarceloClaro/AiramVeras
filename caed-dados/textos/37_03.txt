@@ -1,0 +1,24 @@
+CEARÁ 1º AVALIE.CE 2024
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 5º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D009_M Reconhecer características do sistema de numeração decimal. 
+D010_M Identificar composições ou decomposições de números naturais.
+D015_M Corresponder números racionais a pontos da reta numérica. 
+D025_M Executar cálculos com números naturais.
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.
+D032_M Utilizar números naturais, envolvendo diferentes significados das operações de multiplicação e divisão, na resolução de 
+problemas.
+D051_M Corresponder números naturais a pontos da reta numérica. 
+D129_M Identificar e registrar regularidades em sequências numéricas.
+D140_M Identificar figuras bidimensionais por meio de suas características.
+D145_M Corresponder figuras tridimensionais às suas planificações.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D218_M Identificar simetrias ou eixos de simetria em figuras geométricas planas.
+D180_M Corresponder o horário de início e de término com o intervalo de duração de um evento ou acontecimento.
+D181_M Utilizar conversão entre unidades de medida, na resolução de problemas.
+D186_M Utilizar área de figuras bidimensionais, na resolução de problemas.
+D195_M Utilizar perímetro de figuras bidimensionais, na resolução de problemas.
+D200_M Identificar informações a partir de dados dispostos em tabelas ou gráficos.
+D201_M Utilizar informações apresentadas em tabelas ou gráficos, na resolução de problemas.

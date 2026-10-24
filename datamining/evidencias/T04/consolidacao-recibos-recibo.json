@@ -1,0 +1,9 @@
+{
+  "estado": "ANALISE",
+  "fase_solicitada": "ANALISE",
+  "codigo_saida": 0,
+  "fim": "2026-10-22T15:38:35.549224+00:00",
+  "snapshot": "consolidacao-recibos-antes.json",
+  "snapshot_sha256": "808042fc219290dc2e81a013a653bf190a6c89352b5ad66f10fb1b99257f5c43",
+  "log_sha256": "d12e56cc11d38f50da5c00756c37884b37a523680aac3a182eecae15fb53b6f7"
+}

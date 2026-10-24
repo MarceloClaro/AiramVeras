@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_EXIBICAO_HELPER",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:57:05.679832+00:00",
+  "snapshot": "green16-antes.json",
+  "snapshot_sha256": "62b106851feae8ddd1c938de9d63e5896770378dfd7b1f927becb220721e4720",
+  "log": "green16.log",
+  "log_sha256": "b3b4c3695780c123202f48dd05b6e4b432fbcf98e850deda34d86ca33755f68d"
+}

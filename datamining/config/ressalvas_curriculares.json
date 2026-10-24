@@ -1,0 +1,11 @@
+{
+  "versao": "T04-v1",
+  "limite_geral": "Associação curricular documentada não demonstra equivalência integral, pré-requisito causal ou domínio individual da BNCC.",
+  "regras": [
+    {"codigos_caed": ["1EF10_P", "2EF06_P", "3EF06_P"], "codigo_bncc": "EF01LP02", "ressalva": "O descritor CAEd trata de ler frases; o texto BNCC trata de escrever palavras/frases. Associação publicada preservada com ressalva semântica."},
+    {"codigos_caed": ["3EF11_P", "4EF10_P"], "codigo_bncc": "EF15LP03", "ressalva": "O descritor CAEd trata de inferência; o texto BNCC trata de localizar informações explícitas. Associação publicada preservada com ressalva semântica."},
+    {"codigos_caed": ["4EF23_P"], "codigo_bncc": "EF05LP07", "ressalva": "O descritor CAEd trata de advérbios/expressões adverbiais; o texto BNCC trata de conjunções. Associação publicada preservada com ressalva semântica."},
+    {"codigos_caed": ["4EF17_P"], "codigo_bncc": "EF04LP15", "ressalva": "O descritor CAEd trata de opinião de personagem em narrativa; o texto BNCC trata de fatos/opiniões em textos informativos e outros gêneros. Associação publicada preservada com ressalva semântica."},
+    {"codigos_caed": ["5EF05_P"], "codigo_bncc": "EF35LP05", "ressalva": "O descritor CAEd trata de assunto global; o texto BNCC trata do sentido de palavras/expressões. Associação publicada preservada com ressalva semântica."}
+  ]
+}

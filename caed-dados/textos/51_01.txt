@@ -1,0 +1,20 @@
+CEARÁ . AVALIE.CE 2026.1
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 2º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01_2 Reconhecer o que os números naturais indicam em diferentes situações: quantidade, ordem, medida ou código de 
+identificação.
+D02_2 Identificar a posição ordinal de um objeto ou termo em uma sequência (1º, 2º etc.).
+D04_2 Comparar OU ordenar quantidades de objetos (até 2 ordens).
+D08_2 Compor OU decompor números naturais de até 3 ordens por meio de diferentes adições.
+D12_2 Identificar a classificação OU classificar objetos ou representações por figuras, por meio de atributos, tais como cor, forma 
+e medida.
+D16_2 Identificar a localização OU a descrição/esboço do deslocamento de pessoas e/ou de objetos em representações 
+bidimensionais (mapas, croquis, etc.).
+D18_2 Reconhecer/nomear figuras geométricas planas (círculo,quadrado, retângulo e triângulo).
+D20_2 Comparar comprimentos, capacidades ou massas OU ordenar imagens de objetos com base na comparação visual de 
+seus comprimentos, capacidades ou massas.
+D25_2 Identificar datas, dias da semana ou meses do ano em calendário OU escrever uma data, apresentando o dia, o mês e o 
+ano.
+D31_2 Ler/identificar OU comparar dados estatísticos ou informações expressos em tabelas (simples ou de dupla entrada).
+D32_2 Ler/identificar OU comparar dados estatísticos expressos em gráficos (barras simples, colunas simples ou pictóricos).

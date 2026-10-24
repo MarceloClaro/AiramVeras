@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T20:37:10.468569+00:00",
+  "snapshot": "green01-antes.json",
+  "snapshot_sha256": "6ca85ae92fc5f0d396b6571e62856c5488d0a22ebd158bfe97a479ac51b9b506",
+  "log": "green01.log",
+  "log_sha256": "57c11061df45b7247b9d8202e7bdaae414dfeaa7cc2c63cbdd3dda3966fff5b0"
+}

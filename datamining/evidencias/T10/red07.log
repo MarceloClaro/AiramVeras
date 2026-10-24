@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____ test_previa_substitui_toda_observacao_individual_por_regra_artificial ____
+tests\test_intervencao.py:155: in test_previa_substitui_toda_observacao_individual_por_regra_artificial
+    assert 'amostra_previa_artificial' in report, 'Transformacao integral da previa ausente'
+E   AssertionError: Transformacao integral da previa ausente
+E   assert 'amostra_previa_artificial' in {'ordem_inicial': ['k-d', 'k-f', 'k-b', 'k-a', 'k-c', 'k-e'], 'lacunas_iniciais': {'k-c': 1, 'k-b': 18, 'k-a': 1, 'k-d...a50': ['k-d', 'k-f', 'k-b', 'k-e', 'k-a', 'k-c'], 'ordem_proximidade': ['k-d', 'k-f', 'k-a', 'k-c', 'k-b', 'k-e'], ...}
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_previa_substitui_toda_observacao_individual_por_regra_artificial
+1 failed, 15 deselected in 7.56s

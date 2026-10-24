@@ -1,0 +1,34 @@
+[
+  {
+    "mutacao": "necessidade_invertida",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "df094b4c427145f948a9cede31bb570ebae1094f0f2c4e4737fb1e9aa18de417",
+    "snapshot_sha256": "2c8f5179530c6d07de4631d0eee4e7832e4f6fc1312d51732a45c5c0eccec324",
+    "fim": "2026-10-23T21:01:30.604490+00:00"
+  },
+  {
+    "mutacao": "vazamento_agregado",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "8b4d4f76860169b44ed779d7093314262ac50ed57f0c1cdadcb50992f266a441",
+    "snapshot_sha256": "6188bfff710c55f9831af5cef4d7b97606f0de831164e4e77cf24116890e3d50",
+    "fim": "2026-10-23T21:01:42.854289+00:00"
+  },
+  {
+    "mutacao": "obrigacao_80_por_H",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "b6d8e42649ad65a365eef75fe26ae8bc05ea9c09d74531c3e60d90d67ed9b4f0",
+    "snapshot_sha256": "21640797792772278b3d822e4b0f4763bdf515d884ba9bedd91363682e8a51ac",
+    "fim": "2026-10-23T21:01:45.438958+00:00"
+  },
+  {
+    "mutacao": "desempate_linha_fisica",
+    "detectada": true,
+    "codigo_saida": 1,
+    "log_sha256": "d3ba97bc184fde261dcc952aa7b312964c6c4564115439194c17183774d040db",
+    "snapshot_sha256": "c8e29519f8e865951e2e6c1908d9a94776aef43ceb336f4cece116c47738ff4d",
+    "fim": "2026-10-23T21:01:52.538717+00:00"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "fase": "CONSULTA_PUBLICA_RENDER",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:33:55.155405+00:00",
+  "snapshot": "render-help01-antes.json",
+  "snapshot_sha256": "2b9a94796abb8d61d437b925d384de8b8d72b140a172f5eaf9b2dd62f320394f",
+  "log": "render-help01.log",
+  "log_sha256": "b0bc54692c95b2145281f5adc475656f57014f52476a305b67567197c9db6439"
+}

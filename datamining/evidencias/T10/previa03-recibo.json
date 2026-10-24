@@ -1,0 +1,9 @@
+{
+  "fase": "PREPARAR_ARTIFICIAL_APRESENTACAO_CORRIGIDA",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:19:01.436132+00:00",
+  "snapshot": "previa03-antes.json",
+  "snapshot_sha256": "c8c1b079702df220c414a8768d0d1e766d93f42637b25b178557d5c5c0b512df",
+  "log": "previa03.log",
+  "log_sha256": "3f7220f8baedda9a0f6f3eb55b9250082bd2a9a2ff8d6fdf60a4d09e2f945a72"
+}

@@ -1,0 +1,21 @@
+CEARÁ 2ª AVALIE.CE 2024
+■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA |  4º ANO DO ENSINO FUND AMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D002_M Identificar o maior e/ou o menor número racional dentre uma coleção de números racionais.
+D043_M Resolver problema utilizando a escrita decimal de cédulas e moedas do sistema monetário brasileiro.
+D013_M Reconhecer fração como representação associada a diferentes significados.
+D032_M Utilizar números naturais, envolvendo diferentes significados das operações de multiplicação e divisão, na resolução de 
+problemas.
+D008_M Identificar as relações inversas entre as operações de adição, subtração, multiplicação e divisão.
+D027_M Executar multiplicação ou divisão com números naturais.
+D209_M Reconhecer horas em relógios digitais e/ou analógicos.
+D186_M Utilizar área de figuras bidimensionais na resolução de problema.
+D195_M Utilizar perímetro de figuras bidimensionais na resolução de problema.
+D200_M Identificar informações a partir de dados dispostos em tabelas ou gráficos.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D009_M Reconhecer características do sistema de numeração decimal. 
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.
+D010_M Identificar composições ou decomposições de números naturais.
+D145_M Corresponder figuras tridimensionais às suas planificações.

@@ -1,0 +1,9 @@
+{
+  "fase": "INSPECAO_NTFS_FALHAS_EXPLICITAS",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T07:42:09.879558+00:00",
+  "snapshot": "acl03-antes.json",
+  "snapshot_sha256": "e5b7cbea282f70fec0cce29dd1f387a4b1f41b15de716d2ce30d98cbce100957",
+  "log": "acl03.log",
+  "log_sha256": "599bcbf281f1a34f928b2a021066bd6c9fa7a5f56eb0ae338db639d5418fdc4e"
+}

@@ -1,0 +1,9 @@
+{
+  "fase": "RED_CONTRATO_D_HETEROGENEO",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T21:13:52.330108+00:00",
+  "snapshot": "red06-antes.json",
+  "snapshot_sha256": "1e48979a5bb473f8bac5bdbb8c6371cefbca717ab5dc9a769ffc90413f4d5126",
+  "log": "red06.log",
+  "log_sha256": "0ba8abadfded90b9f68299d8855928ff329f3363e3a40b940bb4039e105ef1f9"
+}

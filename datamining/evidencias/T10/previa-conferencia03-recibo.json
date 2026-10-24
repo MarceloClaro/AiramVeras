@@ -1,0 +1,9 @@
+{
+  "fase": "CONFERIR_ARTIFICIAL_CORRIGIDO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:20:19.702871+00:00",
+  "snapshot": "previa-conferencia03-antes.json",
+  "snapshot_sha256": "70d381a7839041931632efc528daf5c223efe80e0934ad215bbfb5197545cfd4",
+  "log": "previa-conferencia03.log",
+  "log_sha256": "df201e8388be7cafb9d83f3409df048ec467f2bd5872b57b76b39123fbf369b2"
+}

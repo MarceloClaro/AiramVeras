@@ -1,0 +1,9 @@
+{
+  "estado": "RED",
+  "fase_solicitada": "RED",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T15:30:33.679020+00:00",
+  "snapshot": "mutacao-bncc_inativa-antes.json",
+  "snapshot_sha256": "a7dc4c6480a571269c264ea00b9a8dfa2299ba50a2bd616516a56a434f12d393",
+  "log_sha256": "0d7e7050885a5d7d940bcfb5a53d7f484233afb9e9453a6268ea14beeaaf8676"
+}

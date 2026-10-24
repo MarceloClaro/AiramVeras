@@ -1,0 +1,25 @@
+{
+  "Utc": "2026-10-23T16:19:54.3860787Z",
+  "Estado": "integrado_testado",
+  "HeadAntesCommitEvidencia": "dad29f7293d876a8ca656251715a7367f8bdf907",
+  "CommitsRevisadosT09": [
+    "aaae09e6b7d45252a88420a51932c42fcdc1cca0",
+    "5d638846edd66da8c224f0f4005e2a1cf81364e3"
+  ],
+  "CommitsIntegradosT09": [
+    "0324926",
+    "dad29f7293d876a8ca656251715a7367f8bdf907"
+  ],
+  "Suíte": {
+    "Recibo": "integracao01-recibo.json",
+    "TestesAprovados": 332,
+    "CodigoSaida": 0
+  },
+  "NoveEntradasAnaliticasPreservadas": true,
+  "ConflitoResolvido": "Somente união de regras escopadas em .gitattributes",
+  "HashPublicoT08": "8c45186534b952df47574b636e2f101f3c784fcb9f03a7eb5c9e5537dba1e24e",
+  "HashRestritoT08": "44fe791ddfe15ea5449ac052fe1a7fc37838388732831c9d20f007255d2e4526",
+  "HashPublicoT09": "150592d325fde9c80bfd98717a974b3a53e816987601b1b3968168e558f14339",
+  "HashRestritoT09": "0e8359f648e3a4a01dce2a817d2fb7fb5397b31752a83c04ca2082f37cbc0901",
+  "Limite": "Revisão docente, validade externa e ACL não certificadas; Core inferência bloqueada conforme recibo separado."
+}

@@ -1,0 +1,54 @@
+{
+  "incremento": "T01",
+  "requisitos": [
+    "R01",
+    "R21",
+    "R22",
+    "R24"
+  ],
+  "testes": [
+    "T01",
+    "T02",
+    "T03",
+    "T53",
+    "ZIP_RAIZ"
+  ],
+  "estado": "RED",
+  "comando": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_catalogo.py",
+    "tests/test_recibos.py",
+    "-q"
+  ],
+  "timestamp": "2026-10-22T10:03:02.350989+00:00",
+  "codigo_saida": 1,
+  "hashes_codigo": {
+    "tests/test_catalogo.py": "47f772978cfb5eb7187d5d23615850950c14cf60c87ab391a4926d88f63318df",
+    "tests/test_recibos.py": "61556ac0f1b9ce08c2d82e279705b6164ce29872920bdc894693ac5281fb28d2"
+  },
+  "hashes_dados": {
+    "fixtures_sinteticas": "47f772978cfb5eb7187d5d23615850950c14cf60c87ab391a4926d88f63318df"
+  },
+  "versoes": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "plataforma": "win32",
+    "pytest": "9.1.1"
+  },
+  "mutacao": null,
+  "artefatos": [
+    {
+      "caminho": "evidencias/T01/red-stdout.txt",
+      "sha256": "eaaffa90a073ef208e4bbe32190b9dbb30d8682edfc6784097d4b61edc0fa7ba"
+    },
+    {
+      "caminho": "evidencias/T01/red-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limites": [
+    "Fixtures sinteticas; verificacao de fontes reais registrada separadamente."
+  ],
+  "executor": "Codex executor local; perfil Core nao representa execucao"
+}

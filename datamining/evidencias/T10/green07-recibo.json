@@ -1,0 +1,9 @@
+{
+  "fase": "REFACTOR_RECALCULO_DOCUMENTADO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:05:33.653476+00:00",
+  "snapshot": "green07-antes.json",
+  "snapshot_sha256": "47f8fba57d625884c3b934287a5159505fd5cfd4682afdbaced8528e9be7bde2",
+  "log": "green07.log",
+  "log_sha256": "ce6d2295bc6b17b07718325a7cb823c98243f9ae79e5b189e8b3d63e883b5a5b"
+}

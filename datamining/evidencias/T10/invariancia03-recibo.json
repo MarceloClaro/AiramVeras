@@ -1,0 +1,9 @@
+{
+  "fase": "INVARIANCIA_OOXML_FINAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:04:12.032239+00:00",
+  "snapshot": "invariancia03-antes.json",
+  "snapshot_sha256": "af022046ea7d47642d32bae3c6d21bcade4ceccf796b39f0116d7b196b0c8d21",
+  "log": "invariancia03.log",
+  "log_sha256": "2e799b5e8961d2b6dc6bdb763f9e1196a13c5e9183621444e8617a3420b207bd"
+}

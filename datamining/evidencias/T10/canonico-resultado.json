@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-24T11:13:10.935171+00:00",
+  "origem": "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\restrito\\outputs\\01a16157-2a68-7253-9591-de126647cf53\\versoes\\autoria04\\intervencao-restrita.xlsx",
+  "destino": "C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\restrito\\outputs\\01a16157-2a68-7253-9591-de126647cf53\\intervencao-restrita.xlsx",
+  "sha256_antes": "49ea9d09e50071e11d9d7153ffd313fe95366665ffb9f51975473c36b954a84b",
+  "sha256_depois": "49ea9d09e50071e11d9d7153ffd313fe95366665ffb9f51975473c36b954a84b",
+  "mesmo_volume": true,
+  "originais_modificados": false,
+  "nominal_canonico_unico": true
+}

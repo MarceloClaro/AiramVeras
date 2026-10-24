@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-10-24T07:37:34.1962481Z",
+  "pid": 29408,
+  "cpu_s": 124.0625,
+  "motivo": "Scan recomputava casefold do mesmo XML a cada termo; interrompido para guardar texto normalizado uma unica vez, sem reduzir universo de termos"
+}

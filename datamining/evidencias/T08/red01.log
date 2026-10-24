@@ -1,0 +1,391 @@
+FFFFFFFFFFFFFFFF                                                         [100%]
+================================== FAILURES ===================================
+________________ test_T45_sementes_subamostras_grupos_e_ordem _________________
+
+    def test_T45_sementes_subamostras_grupos_e_ordem():
+        # Catches row-position membership, missing per-group stability and a single-seed shortcut.
+        f, c = features(), config()
+>       r = api('agrupar')(f,c,18)
+            ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+____________ test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados _____________
+
+    def test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados():
+        f=features()
+        f['valores']=[[0,0,0]]*20
+>       r=api('agrupar')(f,config(),18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+_______ test_T47_ausencia_excluida_zero_obtido_e_constante_preservados ________
+
+    def test_T47_ausencia_excluida_zero_obtido_e_constante_preservados():
+        f=features()
+        f['valores'][0]=[None,None,None]
+        f['cobertura'][0]=0
+>       r=api('agrupar')(f,config(),18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+_________________ test_T46_replicacao_nao_impoe_minimo_cinco __________________
+
+    def test_T46_replicacao_nao_impoe_minimo_cinco():
+        f=features(24)
+        f['valores']=[[i//6/3, (i//6)%2,0] for i in range(24)]
+>       r=api('agrupar')(f,config(),18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+_________________ test_T45_falhas_planejadas_e_sem_separacao __________________
+
+    def test_T45_falhas_planejadas_e_sem_separacao():
+        f=features(10)
+        f['valores']=[[0,0,0]]+[[1,1,0]]*9
+        c=config(); c['subamostras']=20
+>       r=api('agrupar')(f,c,18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+_____ test_T47_rejeita_identidade_duplicada_e_dados_invalidos[duplicada] ______
+
+alteracao = 'duplicada'
+
+    @pytest.mark.parametrize('alteracao',['duplicada','fora_escala','cobertura_invalida'])
+    def test_T47_rejeita_identidade_duplicada_e_dados_invalidos(alteracao):
+        f=features()
+        if alteracao=='duplicada': f['alunos'][1]=f['alunos'][0]
+        elif alteracao=='fora_escala': f['valores'][0][0]=2
+        else: f['cobertura'][0]=-1
+>       with pytest.raises(ValueError): api('agrupar')(f,config(),18)
+                                        ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+____ test_T47_rejeita_identidade_duplicada_e_dados_invalidos[fora_escala] _____
+
+alteracao = 'fora_escala'
+
+    @pytest.mark.parametrize('alteracao',['duplicada','fora_escala','cobertura_invalida'])
+    def test_T47_rejeita_identidade_duplicada_e_dados_invalidos(alteracao):
+        f=features()
+        if alteracao=='duplicada': f['alunos'][1]=f['alunos'][0]
+        elif alteracao=='fora_escala': f['valores'][0][0]=2
+        else: f['cobertura'][0]=-1
+>       with pytest.raises(ValueError): api('agrupar')(f,config(),18)
+                                        ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+_ test_T47_rejeita_identidade_duplicada_e_dados_invalidos[cobertura_invalida] _
+
+alteracao = 'cobertura_invalida'
+
+    @pytest.mark.parametrize('alteracao',['duplicada','fora_escala','cobertura_invalida'])
+    def test_T47_rejeita_identidade_duplicada_e_dados_invalidos(alteracao):
+        f=features()
+        if alteracao=='duplicada': f['alunos'][1]=f['alunos'][0]
+        elif alteracao=='fora_escala': f['valores'][0][0]=2
+        else: f['cobertura'][0]=-1
+>       with pytest.raises(ValueError): api('agrupar')(f,config(),18)
+                                        ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+______________ test_T45_controle_mesmos_alunos_colunas_e_isolado ______________
+
+    def test_T45_controle_mesmos_alunos_colunas_e_isolado():
+        block=dict(contexto=features()['contexto'],matrizes=dict(alunos=['x','y'],posicoes=['A','B','C'],
+            P=[[0,1,0],[1,0,None]],D=[[1,1,1],[1,1,None]],Q=[[1,0,0],[0,1,0],[0,0,1]]),
+            propagacoes={'1':{'propagado':[[1,0,None],[0,1,None]],'sem_retorno':[[1,0,None],[0,1,None]]}})
+        graph={'A':[[0,1,0],[1,0,0],[0,0,0]]}
+>       r=api('preparar_bracos')(block,graph,config())
+          ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_clusters.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'preparar_bracos'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+__________ test_T45_comparar_particoes_recusa_identidades_diferentes __________
+
+    def test_T45_comparar_particoes_recusa_identidades_diferentes():
+>       r=api('agrupar')(features(),config(),18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+______________ test_T46_filtro_grupo_reprova_mesmo_com_ari_alto _______________
+
+    def test_T46_filtro_grupo_reprova_mesmo_com_ari_alto():
+>       r=api('agrupar')(features(),config(),18)
+          ^^^^^^^^^^^^^^
+
+tests\test_clusters.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'agrupar'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.clusters') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.clusters')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_clusters.py:14: AssertionError
+____________ test_T48_constante_lacuna_contagens_fontes_e_revisao _____________
+
+    def test_T48_constante_lacuna_contagens_fontes_e_revisao():
+        r,obs,links=fixture()
+>       p=api('descrever_grupos')(r,obs,links)[0]
+          ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfis_grupo.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'descrever_grupos'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.perfis_grupo') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.perfis_grupo')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_perfis_grupo.py:8: AssertionError
+_______ test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura _______
+
+    def test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura():
+        r,obs,links=fixture()
+        duplicate=deepcopy(links[0]); duplicate['codigo_bncc']='EF02LP02'
+        other=deepcopy(links[0]); other['ano_avaliado']=3; other['codigo_bncc']='ERRADO'
+>       p=api('descrever_grupos')(r,obs,links+[duplicate,other])[0]
+          ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfis_grupo.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'descrever_grupos'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.perfis_grupo') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.perfis_grupo')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_perfis_grupo.py:8: AssertionError
+_______________ test_T47_regras_separam_ausentes_e_metaB_total ________________
+
+    def test_T47_regras_separam_ausentes_e_metaB_total():
+        r,obs,links=fixture()
+        for row in obs:
+            if row['aluno_local_id']=='s0':
+                row.update(numerador=None,denominador=None,disponibilidade=False,participacao=False)
+>       result=api('grupos_por_regras')(obs,0.8)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfis_grupo.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'grupos_por_regras'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.perfis_grupo') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.perfis_grupo')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_perfis_grupo.py:8: AssertionError
+_________ test_T48_escrita_fluencia_mantem_unidades_sem_metaB_ou_bncc _________
+
+    def test_T48_escrita_fluencia_mantem_unidades_sem_metaB_ou_bncc():
+        _,obs,_=fixture()
+        for row in obs:
+            row.update(componente='ESCRITA',unidade='pontuacao_original',valor=1.5,numerador=None,
+                       denominador=None,posicao=None,campo_original='palavras')
+        obs=obs[::2]
+>       result=api('grupos_por_regras')(obs,0.8)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfis_grupo.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'grupos_por_regras'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.perfis_grupo') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.perfis_grupo')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_perfis_grupo.py:8: AssertionError
+___________ test_T48_publico_remove_membros_e_suprime_grupo_pequeno ___________
+
+    def test_T48_publico_remove_membros_e_suprime_grupo_pequeno():
+        r,obs,links=fixture()
+>       p=api('descrever_grupos')(r,obs,links)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_perfis_grupo.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'descrever_grupos'
+
+    def api(name):
+>       assert importlib.util.find_spec('airam.perfis_grupo') is not None, 'Funcionalidade T08 ausente'
+E       AssertionError: Funcionalidade T08 ausente
+E       assert None is not None
+E        +  where None = <function find_spec at 0x0000026BBB76BA60>('airam.perfis_grupo')
+E        +    where <function find_spec at 0x0000026BBB76BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_perfis_grupo.py:8: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_clusters.py::test_T45_sementes_subamostras_grupos_e_ordem
+FAILED tests/test_clusters.py::test_T46_um_perfil_e_grupo_pequeno_nao_sao_liberados
+FAILED tests/test_clusters.py::test_T47_ausencia_excluida_zero_obtido_e_constante_preservados
+FAILED tests/test_clusters.py::test_T46_replicacao_nao_impoe_minimo_cinco - A...
+FAILED tests/test_clusters.py::test_T45_falhas_planejadas_e_sem_separacao - A...
+FAILED tests/test_clusters.py::test_T47_rejeita_identidade_duplicada_e_dados_invalidos[duplicada]
+FAILED tests/test_clusters.py::test_T47_rejeita_identidade_duplicada_e_dados_invalidos[fora_escala]
+FAILED tests/test_clusters.py::test_T47_rejeita_identidade_duplicada_e_dados_invalidos[cobertura_invalida]
+FAILED tests/test_clusters.py::test_T45_controle_mesmos_alunos_colunas_e_isolado
+FAILED tests/test_clusters.py::test_T45_comparar_particoes_recusa_identidades_diferentes
+FAILED tests/test_clusters.py::test_T46_filtro_grupo_reprova_mesmo_com_ari_alto
+FAILED tests/test_perfis_grupo.py::test_T48_constante_lacuna_contagens_fontes_e_revisao
+FAILED tests/test_perfis_grupo.py::test_T48_fanout_nao_multiplica_contagens_e_contexto_nao_mistura
+FAILED tests/test_perfis_grupo.py::test_T47_regras_separam_ausentes_e_metaB_total
+FAILED tests/test_perfis_grupo.py::test_T48_escrita_fluencia_mantem_unidades_sem_metaB_ou_bncc
+FAILED tests/test_perfis_grupo.py::test_T48_publico_remove_membros_e_suprime_grupo_pequeno
+16 failed in 1.01s

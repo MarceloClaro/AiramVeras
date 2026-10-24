@@ -1,0 +1,16 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+______________ test_nao_mescla_versoes_de_mapa_na_mesma_posicao _______________
+tests\test_intervencao.py:98: in test_nao_mescla_versoes_de_mapa_na_mesma_posicao
+    with pytest.raises(ValueError,match='curricular'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_________ test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao _________
+tests\test_intervencao.py:155: in test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+    assert report['fontes_curriculares_conferidas']==1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'fontes_curriculares_conferidas'
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_nao_mescla_versoes_de_mapa_na_mesma_posicao
+FAILED tests/test_intervencao.py::test_t24_excel_recalcula_metas_fila_e_notas_com_reordenacao
+2 failed, 12 deselected in 6.40s

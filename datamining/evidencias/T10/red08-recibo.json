@@ -1,0 +1,9 @@
+{
+  "fase": "RED_EXPORTACAO_SOB_FALHA_RENDER",
+  "codigo_saida": 1,
+  "fim": "2026-10-23T21:36:10.861915+00:00",
+  "snapshot": "red08-antes.json",
+  "snapshot_sha256": "355d3b3dcc38f66015ba7b08e2a5aeef9b8107e6bc8581fe28f9b4c027f2f088",
+  "log": "red08.log",
+  "log_sha256": "edb99971c3e13c1e1a34845eedc52a611047b29afead5313f5dd296860c9411c"
+}

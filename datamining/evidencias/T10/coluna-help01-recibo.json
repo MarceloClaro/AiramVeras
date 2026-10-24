@@ -1,0 +1,9 @@
+{
+  "fase": "CONSULTA_PUBLICA_OCULTAR_HELPER",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:53:53.040206+00:00",
+  "snapshot": "coluna-help01-antes.json",
+  "snapshot_sha256": "7c07dd9bfc5dd936de8eefdbdb24505e9d9f3fe934923f9c4da6a3a3ac0a3c4d",
+  "log": "coluna-help01.log",
+  "log_sha256": "645e7323ada899ef45510fe9aa72b152980ac562ae6b2d1b2982a6033b27392c"
+}

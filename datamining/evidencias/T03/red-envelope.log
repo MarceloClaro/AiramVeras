@@ -1,0 +1,22 @@
+...........FFF                                                           [100%]
+================================== FAILURES ===================================
+_ test_auditoria_rejeita_metadados_adulterados_no_envelope[qualidade_vinculo-institucional_validada] _
+tests\test_pareamento.py:101: in test_auditoria_rejeita_metadados_adulterados_no_envelope
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_auditoria_rejeita_metadados_adulterados_no_envelope[nome_bruto-Pessoa Sint\xe9tica] _
+tests\test_pareamento.py:101: in test_auditoria_rejeita_metadados_adulterados_no_envelope
+    with pytest.raises(ValueError, match='Adulteracao'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______ test_auditoria_recusa_consulta_com_componentes_iguais_mesmo_vazia ______
+tests\test_pareamento.py:106: in test_auditoria_recusa_consulta_com_componentes_iguais_mesmo_vazia
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_pareamento.py::test_auditoria_rejeita_metadados_adulterados_no_envelope[qualidade_vinculo-institucional_validada]
+FAILED tests/test_pareamento.py::test_auditoria_rejeita_metadados_adulterados_no_envelope[nome_bruto-Pessoa Sint\xe9tica]
+FAILED tests/test_pareamento.py::test_auditoria_recusa_consulta_com_componentes_iguais_mesmo_vazia
+3 failed, 11 passed in 0.22s

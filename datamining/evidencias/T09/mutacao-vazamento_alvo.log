@@ -1,0 +1,43 @@
+FF....                                                                   [100%]
+================================== FAILURES ===================================
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value0-vazamento_alvo] _
+
+field = 'variaveis_entrada', value = ['resultado_futuro']
+motive = 'vazamento_alvo'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+        result=gate(rows,links)
+>       assert result['prontidao_inputs_temporais'] is False and motive in result['motivos']
+E       assert (True is False)
+
+tests\test_predicao_gate.py:67: AssertionError
+_ test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value1-vazamento_alvo] _
+
+field = 'variaveis_entrada', value = ['item_futuro'], motive = 'vazamento_alvo'
+
+    @pytest.mark.parametrize('field,value,motive', [
+        ('variaveis_entrada',['resultado_futuro'],'vazamento_alvo'),
+        ('variaveis_entrada',['item_futuro'],'vazamento_alvo'),
+        ('data_limite_features','2026-06-20','vazamento_temporal'),
+        ('processamento',{'ajustado_em':'todos','evidencia':evidence()},'processamento_fora_treino'),
+        ('comparabilidade',{'grupo':'mesmo_contrato','evidencia':True},'comparabilidade_nao_comprovada'),
+        ('desfecho_observado',True,'desfecho_futuro_nao_comprovado')])
+    def test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam(field,value,motive):
+        rows,links = complete(); rows[1][field]=value
+        result=gate(rows,links)
+>       assert result['prontidao_inputs_temporais'] is False and motive in result['motivos']
+E       assert (True is False)
+
+tests\test_predicao_gate.py:67: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value0-vazamento_alvo]
+FAILED tests/test_predicao_gate.py::test_T43_vazamento_e_precondicoes_sem_evidencia_bloqueiam[variaveis_entrada-value1-vazamento_alvo]
+2 failed, 4 passed, 6 deselected in 0.33s

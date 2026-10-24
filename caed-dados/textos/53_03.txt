@@ -1,0 +1,30 @@
+CEARÁ . Avalie.CE 2026.2
+ ■ MATRIZ DE REFERÊNCIA
+MateMática | 5º aNO DO eNSiNO FUND aMeNtaL
+DeScRit OR DeScRiÇÃO D a HaBiLiD aDe
+D01_5 Identificar a localização/movimentação de objeto em mapas, esboço e outras representações gráficas.
+D02_5 Identificar propriedades comuns e diferenças entre poliedros e corpos redondos, relacionando figuras tridimensionais com 
+suas planificações.
+D03_5 Identificar propriedades comuns e diferenças entre figuras bidimensionais pelo número de lados, pelos tipos de ângulos.
+D04_5 Identificar quadriláteros observando as posições relativas entre seus lados (paralelos, concorrentes, perpendiculares).
+D05_5 Reconhecer a conservação ou modificação de medidas dos lados, do perímetro, da área em ampliação e/ou redução de 
+figuras poligonais usando malhas quadriculadas.
+D06_5 Estimar a medida de grandezas utilizando unidades de medida convencionais ou não.
+D07_5 Resolver problemas significativos utilizando unidades de medida padronizadas como km/m/cm/mm, kg/g/mg, l/ml.
+D09_5 Estabelecer relações entre o horário de início e término e/ou o intervalo da duração de um evento, ou acontecimento.
+D11_5 Resolver problema envolvendo o cálculo do perímetro de figuras planas, desenhadas em malhas quadriculadas.
+D12_5 Resolver problema envolvendo o cálculo ou estimativa de áreas de figuras planas, desenhadas em malhas quadriculadas.
+D13_5 Reconhecer e utilizar características do sistema de numeração decimal, tais como agrupamentos e trocas na base 10 e 
+princípio do valor posicional.
+D18_5 Calcular o resultado de uma multiplicação ou divisão de números naturais.
+D20_5 Resolver problema com números naturais, envolvendo diferentes significados da multiplicação ou divisão: multiplicação 
+comparativa, ideia de proporcionalidade, configuração retangular e combinatória.
+D21_5 Identificar diferentes representações de um mesmo número racional.
+D22_5 Identificar a localização de números racionais representados na forma decimal na reta numérica.
+D23_5 Resolver problema utilizando a escrita decimal de cédulas e moedas do sistema monetário brasileiro.
+D24_5 Identificar fração como representação que pode estar associada a diferentes significados.
+D25_5 Resolver problema com números racionais expressos na forma decimal, envolvendo diferentes significados da adição 
+ou subtração.
+D26_5 Resolver problema envolvendo noções de porcentagem (25%, 50%, 100%).
+D27_5 Ler informações e dados apresentados em tabelas.
+D28_5 Ler informações e dados apresentados em gráficos (particularmente em gráficos de colunas).

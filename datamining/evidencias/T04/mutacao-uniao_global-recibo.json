@@ -1,0 +1,9 @@
+{
+  "estado": "RED",
+  "fase_solicitada": "RED",
+  "codigo_saida": 1,
+  "fim": "2026-10-22T15:30:32.504878+00:00",
+  "snapshot": "mutacao-uniao_global-antes.json",
+  "snapshot_sha256": "22dcffa455cacadecba0fb36dd8db5d58862c544b6f4b1c769474d5142c3385a",
+  "log_sha256": "51499edc1edf60fdf624bb930431e78e1d912261006d784155cd7c16769f0383"
+}

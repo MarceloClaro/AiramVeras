@@ -1,0 +1,78 @@
+FFFFF                                                                    [100%]
+================================== FAILURES ===================================
+____ test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel[ESCRITA] _____
+
+componente = 'ESCRITA'
+
+    @pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+    def test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel(componente):
+        # Catches counting all cadastral students as eligible when no E/F result exists.
+        rows=medidas_proprias(componente,[(None,False,False,None),(None,False,True,'Original')])
+        result=api('grupos_por_regras')(rows,0.8)
+        coverage=result['cobertura']
+>       assert coverage['cadastrados']==2 and coverage['elegiveis']==0
+E       assert (2 == 2 and 2 == 0)
+
+tests\test_perfis_grupo.py:129: AssertionError
+____ test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel[FLUENCIA] ____
+
+componente = 'FLUENCIA'
+
+    @pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+    def test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel(componente):
+        # Catches counting all cadastral students as eligible when no E/F result exists.
+        rows=medidas_proprias(componente,[(None,False,False,None),(None,False,True,'Original')])
+        result=api('grupos_por_regras')(rows,0.8)
+        coverage=result['cobertura']
+>       assert coverage['cadastrados']==2 and coverage['elegiveis']==0
+E       assert (2 == 2 and 2 == 0)
+
+tests\test_perfis_grupo.py:129: AssertionError
+____ test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor[ESCRITA] ____
+
+componente = 'ESCRITA'
+
+    @pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+    def test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor(componente):
+        # Catches truthiness excluding a valid zero or denominator/coverage lost in public profiles.
+        rows=medidas_proprias(componente,[(0,True,True,'Original')]*6+
+                             [(None,False,False,None),(None,False,True,None)])
+        result=api('grupos_por_regras')(rows,0.8)
+        coverage=result['cobertura']
+>       assert coverage['cadastrados']==8 and coverage['elegiveis']==6
+E       assert (8 == 8 and 8 == 6)
+
+tests\test_perfis_grupo.py:146: AssertionError
+___ test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor[FLUENCIA] ____
+
+componente = 'FLUENCIA'
+
+    @pytest.mark.parametrize('componente',['ESCRITA','FLUENCIA'])
+    def test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor(componente):
+        # Catches truthiness excluding a valid zero or denominator/coverage lost in public profiles.
+        rows=medidas_proprias(componente,[(0,True,True,'Original')]*6+
+                             [(None,False,False,None),(None,False,True,None)])
+        result=api('grupos_por_regras')(rows,0.8)
+        coverage=result['cobertura']
+>       assert coverage['cadastrados']==8 and coverage['elegiveis']==6
+E       assert (8 == 8 and 8 == 6)
+
+tests\test_perfis_grupo.py:146: AssertionError
+_______ test_T48_FIX1_medida_disponivel_sem_categoria_nao_vira_ausencia _______
+
+    def test_T48_FIX1_medida_disponivel_sem_categoria_nao_vira_ausencia():
+        # Catches conflating absence of category with absence of an observed measurement.
+        rows=medidas_proprias('ESCRITA',[(0,True,True,None)])
+        result=api('grupos_por_regras')(rows)
+>       assert result['cobertura']['com_resultado']==1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'com_resultado'
+
+tests\test_perfis_grupo.py:162: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_perfis_grupo.py::test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel[ESCRITA]
+FAILED tests/test_perfis_grupo.py::test_T48_FIX1_ef_totalmente_ausente_nao_conta_como_elegivel[FLUENCIA]
+FAILED tests/test_perfis_grupo.py::test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor[ESCRITA]
+FAILED tests/test_perfis_grupo.py::test_T48_FIX1_ef_misto_zero_valido_e_cobertura_no_consumidor[FLUENCIA]
+FAILED tests/test_perfis_grupo.py::test_T48_FIX1_medida_disponivel_sem_categoria_nao_vira_ausencia
+5 failed, 6 deselected in 10.77s

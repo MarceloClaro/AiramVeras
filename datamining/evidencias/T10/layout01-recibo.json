@@ -1,0 +1,9 @@
+{
+  "fase": "REFINAMENTO_VISUAL_SEM_NOVA_AUTORIA",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:50:18.603888+00:00",
+  "snapshot": "layout01-antes.json",
+  "snapshot_sha256": "07d3ad4e1484f09c127e6d0016aa2e9b8a268f6a2be5183314280f180601d236",
+  "log": "layout01.log",
+  "log_sha256": "529f024885e5fd4bff49fbd3954b8f91852ca237adf108a2a625218d4ea9a03f"
+}

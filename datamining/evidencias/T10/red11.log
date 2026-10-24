@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_layout_legivel_e_refinamento_preserva_valores_formulas _________
+tests\test_intervencao.py:244: in test_layout_legivel_e_refinamento_preserva_valores_formulas
+    assert sheets['Intervenção nominal'][1]['Z7'][0] in (None,''), 'Rotulo tecnico ainda visivel'
+E   AssertionError: Rotulo tecnico ainda visivel
+E   assert 'Índice da base (consulta por posição)' in (None, '')
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_layout_legivel_e_refinamento_preserva_valores_formulas
+1 failed, 17 deselected in 11.59s

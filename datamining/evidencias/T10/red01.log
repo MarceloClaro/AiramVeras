@@ -1,0 +1,256 @@
+FFFFFFFFFFFFFFFFFFFFF                                                    [100%]
+================================== FAILURES ===================================
+___________ test_gera_html_figuras_e_tabelas_agregadas_rastreaveis ____________
+tests\test_relatorio.py:26: in test_gera_html_figuras_e_tabelas_agregadas_rastreaveis
+    paths=api()(obj,tmp_path)
+          ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+________ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome] ________
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome_bruto] _____
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+___ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[aluno_local_id] ___
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[avaliacao_local_id] _
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[membros] _______
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[origens] _______
+tests\test_relatorio.py:42: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____ test_t48_perfil_sem_fonte_ou_descricao_curricular_bloqueia_entrega ______
+tests\test_relatorio.py:49: in test_t48_perfil_sem_fonte_ou_descricao_curricular_bloqueia_entrega
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+________________ test_nao_modifica_entrada_e_escapa_texto_html ________________
+tests\test_relatorio.py:55: in test_nao_modifica_entrada_e_escapa_texto_html
+    api()(obj,tmp_path)
+    ^^^^^
+tests\test_relatorio.py:11: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_______ test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem ________
+tests\test_intervencao.py:26: in test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem
+    result=api()(rows,{'A':.8,'B':.8},[],[])
+           ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_______ test_proximidade_nao_exclui_lacuna_grande_e_controle_muda_fila ________
+tests\test_intervencao.py:36: in test_proximidade_nao_exclui_lacuna_grande_e_controle_muda_fila
+    result=api()(rows,{'A':.8,'B':.8,'ordenacao':'proximidade'},[],[])
+           ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+______ test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual ______
+tests\test_intervencao.py:46: in test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual
+    result=api()(rows,{'A':.8,'B':.8},[],[])
+           ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_____ test_unidades_proprias_preservam_zero_ausencia_e_categoria[ESCRITA] _____
+tests\test_intervencao.py:59: in test_unidades_proprias_preservam_zero_ausencia_e_categoria
+    result=api()(rows,{'A':.8,'B':.8},[],[])
+           ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____ test_unidades_proprias_preservam_zero_ausencia_e_categoria[FLUENCIA] _____
+tests\test_intervencao.py:59: in test_unidades_proprias_preservam_zero_ausencia_e_categoria
+    result=api()(rows,{'A':.8,'B':.8},[],[])
+           ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+_________________ test_ausencia_nao_vira_zero_e_pede_sondagem _________________
+tests\test_intervencao.py:70: in test_ausencia_nao_vira_zero_e_pede_sondagem
+    r=api()([app('a',None,oportunidades=None,participacao=False)],{'A':.8,'B':.8},[],[])[0]
+      ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__________ test_vinculo_contextual_nao_confunde_ano_nem_multiplica_h __________
+tests\test_intervencao.py:83: in test_vinculo_contextual_nao_confunde_ano_nem_multiplica_h
+    r=api()([row],{'A':.8,'B':.8},edges,[])[0]
+      ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_recusa_contagens_ou_mascara_incoerentes[change0] ____________
+tests\test_intervencao.py:93: in test_recusa_contagens_ou_mascara_incoerentes
+    api()([app(**change)],{'A':.8,'B':.8},[],[])
+    ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_recusa_contagens_ou_mascara_incoerentes[change1] ____________
+tests\test_intervencao.py:93: in test_recusa_contagens_ou_mascara_incoerentes
+    api()([app(**change)],{'A':.8,'B':.8},[],[])
+    ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_recusa_contagens_ou_mascara_incoerentes[change2] ____________
+tests\test_intervencao.py:93: in test_recusa_contagens_ou_mascara_incoerentes
+    api()([app(**change)],{'A':.8,'B':.8},[],[])
+    ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+____________ test_recusa_contagens_ou_mascara_incoerentes[change3] ____________
+tests\test_intervencao.py:93: in test_recusa_contagens_ou_mascara_incoerentes
+    api()([app(**change)],{'A':.8,'B':.8},[],[])
+    ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+__________ test_chave_contextual_recusa_duplicata_e_distingue_versao __________
+tests\test_intervencao.py:99: in test_chave_contextual_recusa_duplicata_e_distingue_versao
+    api()([r,deepcopy(r)],{'A':.8,'B':.8},[],[])
+    ^^^^^
+tests\test_intervencao.py:9: in api
+    assert importlib.util.find_spec('airam.relatorio') is not None, 'Funcionalidade T10 ausente'
+E   AssertionError: Funcionalidade T10 ausente
+E   assert None is not None
+E    +  where None = <function find_spec at 0x0000023E67ACBA60>('airam.relatorio')
+E    +    where <function find_spec at 0x0000023E67ACBA60> = <module 'importlib.util' (frozen)>.find_spec
+E    +      where <module 'importlib.util' (frozen)> = importlib.util
+=========================== short test summary info ===========================
+FAILED tests/test_relatorio.py::test_gera_html_figuras_e_tabelas_agregadas_rastreaveis
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome_bruto]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[aluno_local_id]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[avaliacao_local_id]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[membros]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[origens]
+FAILED tests/test_relatorio.py::test_t48_perfil_sem_fonte_ou_descricao_curricular_bloqueia_entrega
+FAILED tests/test_relatorio.py::test_nao_modifica_entrada_e_escapa_texto_html
+FAILED tests/test_intervencao.py::test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem
+FAILED tests/test_intervencao.py::test_proximidade_nao_exclui_lacuna_grande_e_controle_muda_fila
+FAILED tests/test_intervencao.py::test_total80_nao_exige_80_em_cada_h_e_so_usa_evidencia_individual
+FAILED tests/test_intervencao.py::test_unidades_proprias_preservam_zero_ausencia_e_categoria[ESCRITA]
+FAILED tests/test_intervencao.py::test_unidades_proprias_preservam_zero_ausencia_e_categoria[FLUENCIA]
+FAILED tests/test_intervencao.py::test_ausencia_nao_vira_zero_e_pede_sondagem
+FAILED tests/test_intervencao.py::test_vinculo_contextual_nao_confunde_ano_nem_multiplica_h
+FAILED tests/test_intervencao.py::test_recusa_contagens_ou_mascara_incoerentes[change0]
+FAILED tests/test_intervencao.py::test_recusa_contagens_ou_mascara_incoerentes[change1]
+FAILED tests/test_intervencao.py::test_recusa_contagens_ou_mascara_incoerentes[change2]
+FAILED tests/test_intervencao.py::test_recusa_contagens_ou_mascara_incoerentes[change3]
+FAILED tests/test_intervencao.py::test_chave_contextual_recusa_duplicata_e_distingue_versao
+21 failed in 0.80s

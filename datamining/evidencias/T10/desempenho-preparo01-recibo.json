@@ -1,0 +1,9 @@
+{
+  "fase": "FIXTURES_DESEMPENHO_ARTIFICIAIS",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T21:27:26.733295+00:00",
+  "snapshot": "desempenho-preparo01-antes.json",
+  "snapshot_sha256": "0a9093b6ad9b450cfc3c61b5b5e8ad19d68b66ee2fcec1dd08ec38b595461981",
+  "log": "desempenho-preparo01.log",
+  "log_sha256": "46de337be3f4a737dffd329d45638c3dffe310b0f5e24f26c397ced4717bf450"
+}

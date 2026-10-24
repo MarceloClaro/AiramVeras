@@ -1,0 +1,18 @@
+# Ambientes virtuais e caches
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+**/.coverage
+**/htmlcov/
+**/*.egg-info/
+build/
+dist/
+
+# Metadados de sistema de arquivos do Windows
+**/desktop.ini
+
+# Worktrees locais e backups internos de git
+.airam-cenarios-t09/
+.airam-cli-t11/
+datamining/.git_backup/

@@ -1,0 +1,15 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_T37_oportunidades_heterogeneas_nao_viram_total_comparavel ________
+
+    def test_T37_oportunidades_heterogeneas_nao_viram_total_comparavel():
+        # Mesma posição/contexto mas instrumentos de comprimentos incompatíveis.
+        rows=[h('a','H 01',1,1),h('a','H 02',1,3),h('b','H 01',0,1),h('b','H 02',1,4)]
+>       with pytest.raises(ValueError):api('total_sem_bloco')(rows,'H 01')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_correlacoes.py:159: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_correlacoes.py::test_T37_oportunidades_heterogeneas_nao_viram_total_comparavel
+1 failed, 21 deselected in 3.49s

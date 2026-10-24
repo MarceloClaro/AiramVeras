@@ -1,0 +1,9 @@
+{
+  "fase": "PREPARAR_ARTIFICIAL_APRESENTACAO_FINAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:21:20.140518+00:00",
+  "snapshot": "previa04-antes.json",
+  "snapshot_sha256": "1c2d7ef7924a542fcff25375c8fbbf5db6673a2a699c5a15c704c7cea8a6097a",
+  "log": "previa04.log",
+  "log_sha256": "cb06fcfb3af1fd27a006fc281b7443c742f88ad8d9b13aab8ff4ef18375942c4"
+}

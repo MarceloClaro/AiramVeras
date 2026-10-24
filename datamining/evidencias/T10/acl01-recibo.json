@@ -1,0 +1,9 @@
+{
+  "fase": "INSPECAO_NTFS_DESTINO_SOMENTE_LEITURA",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T07:41:04.749193+00:00",
+  "snapshot": "acl01-antes.json",
+  "snapshot_sha256": "7597fe81e862544f394c8192c662e1b4530aaaccdce562104d197e50509577f3",
+  "log": "acl01.log",
+  "log_sha256": "eb2241afc351151a078601423051230671afb6b21b6ab8447c378d67f1634843"
+}

@@ -1,0 +1,9 @@
+{
+  "fase": "PRESERVACAO",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T20:50:47.139152+00:00",
+  "snapshot": "preservar01-antes.json",
+  "snapshot_sha256": "b53e08d4275a7cee2df7a8312f46e6ae4759d240963e9e263c00eae7e7265073",
+  "log": "preservar01.log",
+  "log_sha256": "fa279599f529ae1333ece06e4ed85e8d8734ec2f79a0677061bf192965ab28f2"
+}

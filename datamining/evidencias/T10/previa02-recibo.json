@@ -1,0 +1,9 @@
+{
+  "fase": "PREPARAR_COPIA_INTEIRAMENTE_ARTIFICIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:34:55.360873+00:00",
+  "snapshot": "previa02-antes.json",
+  "snapshot_sha256": "60eec6f0d4a87b04fb671fb573e954a6b28221e7ec45a307dc3da9aef2375330",
+  "log": "previa02.log",
+  "log_sha256": "0d3a4061e45afbddfa987ec92cb104fbc123dbac41a4d9c405b36140ba1a49aa"
+}

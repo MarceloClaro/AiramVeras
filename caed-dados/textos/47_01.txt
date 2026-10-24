@@ -1,0 +1,30 @@
+CEARÁ - AVALIE.CE ENSINO MÉDIO 2025
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 3ª SÉRIE DO ENSINO MÉDIO
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D059_M Corresponder números irracionais a pontos da reta numérica. 
+D053_M Executar cálculos com números reais.
+D070_M Utilizar função polinomial de 1º grau na resolução de problemas.
+D066_M Analisar regiões de crescimento/decrescimento, domínios de validade ou zeros de funções reais representadas 
+graficamente.
+D110_M Reconhecer a representação gráfica das funções trigonométricas (seno, cosseno e tangente).
+D124_M Reconhecer o gráfico de uma função polinomial de 1º grau por meio de seus coeficientes.
+D114_M Resolver problemas envolvendo noções de análise combinatória.
+D078_M Utilizar propriedades de progressões aritméticas ou geométricas na resolução de problemas.
+D076_M Utilizar função exponencial na resolução de problemas.
+D077_M Utilizar função polinomial de 2º grau na resolução de problemas.
+D035_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D105_M Utilizar equação polinomial de 2º grau na resolução de problema.
+D067_M Corresponder a representação algébrica e gráfica de uma função polinomial de 1º grau.
+D069_M Reconhecer a representação algébrica de uma função polinomial de 1º grau, a partir dos dados apresentados em uma 
+tabela.
+D047_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas, para 
+se obter a medida de um ângulo especificado.
+D064_M Utilizar relações métricas de um triângulo retângulo na resolução de problema.
+D039_M Corresponder pontos do plano a pares ordenados em um sistema de coordenadas cartesianas.
+D125_M Utilizar o Teorema de Euler para determinar o número de faces, de vértices ou de arestas de poliedros convexos.
+D113_M Resolver problemas que envolvam razões trigonométricas no triângulo retângulo.
+D075_M Utilizar a medida da área total e/ou lateral de um sólido na resolução de problema.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.
+D034_M Utilizar probabilidade na resolução de problema.
+D056_M Utilizar medidas de tendência central na resolução de problema.

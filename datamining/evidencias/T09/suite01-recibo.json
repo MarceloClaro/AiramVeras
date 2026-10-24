@@ -1,0 +1,9 @@
+{
+  "fase": "SUITE_INTEGRAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-23T15:59:50.608983+00:00",
+  "snapshot": "suite01-antes.json",
+  "snapshot_sha256": "f8ca8c6a2de50262649484726beb135b167db4ba0ab70a50f40d6b70b2ff30b6",
+  "log": "suite01.log",
+  "log_sha256": "0fc2a8ab91e480c634a317bbdac7cb37c6f0e4aa3c0bfc87b76744058537ba59"
+}

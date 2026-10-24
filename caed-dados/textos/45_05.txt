@@ -1,0 +1,27 @@
+CEARÁ 2025 - AVALIE.CE 2025.2
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 9º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D021_M Utilizar informações apresentadas em tabelas ou gráficos na resolução de problemas.
+D025_M Utilizar área de figuras bidimensionais na resolução de problema.
+D026_M Corresponder números racionais a pontos da reta numérica. 
+D034_M Utilizar probabilidade na resolução de problema.
+D035_M Utilizar proporcionalidade entre duas grandezas na resolução de problema.
+D037_M Classificar triângulos por meio de suas propriedades.
+D044_M Utilizar porcentagem na resolução de problemas.
+D047_M Utilizar as relações entre as medidas dos ângulos formados entre uma reta transversal e um feixe de retas paralelas, para 
+se obter a medida de um ângulo especificado.
+D048_M Utilizar equação polinomial de 1º grau na resolução de problema.
+D056_M Utilizar medidas de tendência central na resolução de problema.
+D057_M Utilizar o cálculo do valor numérico de expressões algébricas na resolução de problemas.
+D058_M Corresponder figuras tridimensionais às suas vistas.
+D059_M Corresponder números irracionais a pontos da reta numérica. 
+D061_M Identificar, dentre gráficos diversos, o gráfico que representa uma relação de dependência unívoca entre duas variáveis.
+D063_M Utilizar o Teorema de Tales na resolução de problema.
+D064_M Utilizar relações métricas de um triângulo retângulo na resolução de problema.
+D072_M Utilizar sistema de equações polinomiais de 1º grau na resolução de problema.
+D098_M Identificar uma relação entre conjuntos que representa uma função.
+D099_M Utilizar a razão entre duas grandezas de espécies diferentes, na resolução de problemas.
+D100_M Fatorar e/ou simplificar expressões algébricas, com base nos produtos notáveis.
+D105_M Utilizar equação polinomial de 2º grau na resolução de problema.
+D107_M Utilizar volume/capacidade de sólidos geométricos na resolução de problema.

@@ -1,0 +1,13 @@
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D25 Identificar datas, dias da semana ou meses do ano em calendário OU escrever uma data, apresentando o dia, o mês e o 
+ano.
+D26 Relacionar valores de moedas e/ou cédulas do sistema monetário brasileiro, com base nas imagens desses objetos.
+D27 Determinar a data de início, a data de término ou a duração de um acontecimento entre duas datas.
+D28 Determinar o horário de início, o horário de término ou a duração de um acontecimento.
+D29 Resolver problemas que envolvam moedas e/ou cédulas do sistema monetário brasileiro.
+D30 Classificar resultados de eventos cotidianos aleatórios como “pouco prováveis”, “muito prováveis”, “certos” ou 
+“impossíveis”.
+D31 Ler/identificar OU comparar dados estatísticos ou informações expressos em tabelas (simples ou de dupla entrada).
+D32 Ler/identificar OU comparar dados estatísticos expressos em gráficos (barras simples, colunas simples ou pictóricos).
+D33 Representar os dados de uma pesquisa estatística ou de um levantamento em listas, tabelas (simples ou de dupla 
+entrada) ou gráficos (barras simples, colunas simples ou pictóricos).

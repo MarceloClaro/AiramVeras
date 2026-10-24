@@ -1,0 +1,12 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem ________
+tests\test_intervencao.py:30: in test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem
+    assert [r['avaliacao_local_id'] for r in result] == ['app-b','app-a','app-c']
+E   AssertionError: assert ['app-a', 'app-c', 'app-b'] == ['app-b', 'app-a', 'app-c']
+E     
+E     At index 0 diff: 'app-a' != 'app-b'
+E     Use -v to get more diff
+=========================== short test summary info ===========================
+FAILED tests/test_intervencao.py::test_t25_maior_lacuna_recebe_apoio_e_empate_independe_da_ordem
+1 failed, 23 deselected in 0.49s

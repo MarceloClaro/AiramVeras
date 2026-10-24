@@ -1,0 +1,9 @@
+{
+  "fase": "DIAGNOSTICO_RUNTIME",
+  "codigo_saida": 3221225477,
+  "fim": "2026-10-23T20:49:00.810187+00:00",
+  "snapshot": "diagnostico02-antes.json",
+  "snapshot_sha256": "0ac6d0213301fa4d75739caf4ee12209d415d32453b2e72368bd69679921e339",
+  "log": "diagnostico02.log",
+  "log_sha256": "98bc550980ddbd7a2f869d6b4da072207f161789015dbc9543e955eb6a9d6ad7"
+}

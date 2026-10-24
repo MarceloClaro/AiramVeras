@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T10\conferir_refinamento.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\marce\Downloads\Airam veras\datamining\evidencias\T10\conferir_refinamento.py", line 56, in main
+    assert ad==bd and at==bt,'Validacoes ou tabelas alteradas'
+           ^^^^^^^^^^^^^^^^^
+AssertionError: Validacoes ou tabelas alteradas

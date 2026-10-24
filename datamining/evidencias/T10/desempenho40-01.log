@@ -1,0 +1,24 @@
+{"etapa":"construir_abas","segundos":0,"rss_mb":198}
+{"etapa":"ajuste_calculos","segundos":3,"rss_mb":306}
+{"etapa":"calculos_wrap","segundos":3,"rss_mb":306}
+{"etapa":"ajuste_fila","segundos":3,"rss_mb":309}
+{"etapa":"ajuste_fontes","segundos":3,"rss_mb":309}
+{"etapa":"verificar_formulas","segundos":3,"rss_mb":309}
+{"etapa":"verificar_ordem_base","segundos":3,"rss_mb":309}
+{"etapa":"verificar_notas_base","segundos":3,"rss_mb":309}
+{"etapa":"verificar_meta50","segundos":3,"rss_mb":309}
+{"etapa":"verificar_proximidade","segundos":4,"rss_mb":310}
+{"etapa":"verificar_permutacao","segundos":4,"rss_mb":316}
+{"etapa":"verificar_notas_permutadas","segundos":5,"rss_mb":327}
+{"etapa":"restaurar_base","segundos":5,"rss_mb":327}
+{"etapa":"verificar_metaA","segundos":5,"rss_mb":336}
+{"etapa":"verificar_controles_invalidos","segundos":5,"rss_mb":346}
+{"etapa":"verificar_fluxo_docente","segundos":7,"rss_mb":393}
+{"etapa":"verificar_detector_erros","segundos":7,"rss_mb":393}
+{"etapa":"verificar_erros_todas_abas","segundos":7,"rss_mb":393}
+{"etapa":"inspecionar_api_publica","segundos":7,"rss_mb":394}
+{"etapa":"recalcular_exportacao","segundos":7,"rss_mb":397}
+{"etapa":"exportar","segundos":7,"rss_mb":397}
+Inspect result written to file: .superpowers\sdd\implementation-plan\t10-desempenho\out040\fixture.xlsx.inspect.ndjson
+{"etapa":"reabrir","segundos":10,"rss_mb":511}
+{"etapa":"conferir_roundtrip","segundos":12,"rss_mb":558}

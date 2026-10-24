@@ -1,0 +1,10 @@
+{
+  "status": "exportado_reaberto",
+  "escopo": "Somente estilos e resumos agregados Grupos!G; invariancia integral conferida independentemente fora do autor.",
+  "origem_sha256": "49ea9d09e50071e11d9d7153ffd313fe95366665ffb9f51975473c36b954a84b",
+  "xlsx_sha256": "094b492f54b1a86ad6a6aadcef47b532a3eca24525317ff39ad9cc666ce3408d",
+  "builder_sha256": "67fdb1daa0acd7725a25c4e7b32b9932ee7c9e00fb45020258f8c3409051bc23",
+  "controles_preservados": true,
+  "formulas_amostradas_preservadas": true,
+  "aplicacoes": 640
+}

@@ -1,0 +1,59 @@
+{
+  "artefatos": [
+    {
+      "caminho": "evidencias/T03/green-sigilo.log",
+      "sha256": "460ce8e0f2b0e5ae89000e53e24d7ace891c0092a7ab181a067451a351411d66"
+    }
+  ],
+  "codigo_saida": 0,
+  "comando": [
+    ".venv/Scripts/python.exe -m pytest tests/test_identidade.py tests/test_pareamento.py -q --tb=short"
+  ],
+  "estado": "GREEN",
+  "executor": "Codex",
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+    "airam/esquemas.py": "cfd4b1e81f8648c1c3eaa3b55c12da0f7eb734ca5999bddf527bd4b1d8f8e156",
+    "airam/identidade.py": "5dfdc23c97d72b5237f8c3d3c2f29c19d521bcd07a8c786a0e778a796510c459",
+    "airam/ingestao.py": "a4fed987df21db5337db37ea67fbfa4efa23e91d0b48982f67bf1e8e899afb11",
+    "airam/pareamento.py": "f00074d18f29e82479af8e3d51a24bca1f4931620829b41064d2e0fe1d7fe85f",
+    "airam/recibos.py": "62c0fc07df7ba31548901c6f166e0e93c24f85623a0fab0a49eeeeaff9f5be4e",
+    "config/analise.json": "cc8f93abcb73b27ca3d44d2714f5d9e4010b643c0331a23e860e176ab47b943f",
+    "evidencias/T03/executar_testes.py": "9eea165fc0a629899be6cc7c3f8d3583a76dc727c766eea8e9af2851acadeff9",
+    "pyproject.toml": "b9d20bcdd904b3d97780f2de40b6bf188da6cadba1c75e5f9123aa091e6d5b66",
+    "requirements.lock.txt": "17aca480a83baeb99f72cbfe77c9778c49cc5484910985305ac11e68354e6792",
+    "tests/test_catalogo.py": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e",
+    "tests/test_identidade.py": "28df278fd2b9e9df23c05f13125dcd5e644b399c099c3852de90970a89f98c43",
+    "tests/test_ingestao.py": "7e4b6a517bfcc0814b30cece487f12d3b1f0f9d0e7790dee97298c35e0bd1c77",
+    "tests/test_pareamento.py": "7d7fb2278b41cbf2d6c2260937214675bd3ed89f61621f4cba0186b081c8e2d2",
+    "tests/test_participacao.py": "06fbbdcd0a21de06d64e14332c2fa4de7b6444e83c9b83a90e9299348b2dd31a",
+    "tests/test_recibos.py": "da833654df5782a3c49b1652774f7837b9c661568b9c185dbc85e43933fba942",
+    "tests/test_registrar_execucao.py": "57e0b3eb1fabd7be025352439ad51572591495149d2171b1cff6fb2c2fb685e1"
+  },
+  "hashes_dados": {
+    "catalogo/fontes.json": "bac6fe9cc60800d5141e9dccd1dfec58093b4feaa1b6c56fcbbb023fb398c153",
+    "manifesto_prioritario": "0059670041831280892c45e9c3ed3c0b769f579c881631fb64c9afdf03409946",
+    "restrito/t02/tabelas.json": "82a24045cb75d85eeefd4394a73cb0dcec37dbbd8a542350fb04d7da0653d9f5"
+  },
+  "incremento": "T03",
+  "limites": [
+    "Testes sinteticos locais; nao comprova execucao Core nem validacao externa."
+  ],
+  "mutacao": null,
+  "requisitos": [
+    "R02",
+    "R15",
+    "R22"
+  ],
+  "testes": [
+    "T04-T06",
+    "T38",
+    "vinculos_e_persistencia"
+  ],
+  "timestamp": "2026-10-22T12:00:42.744543-03:00",
+  "versoes": {
+    "pytest": "9.1.1",
+    "python": "3.12.14"
+  }
+}

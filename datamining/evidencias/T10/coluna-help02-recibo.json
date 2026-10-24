@@ -1,0 +1,9 @@
+{
+  "fase": "CONSULTA_PUBLICA_COLUNAS_REFORMULADA",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:54:22.546087+00:00",
+  "snapshot": "coluna-help02-antes.json",
+  "snapshot_sha256": "85c5d17fe27a97a1f74333ced228dcf395deaa098685f054b10573376c9eba74",
+  "log": "coluna-help02.log",
+  "log_sha256": "04e910af94ef5ddb13223d321b839ed4bb0a962fcd8c3067a93323d45788d6df"
+}

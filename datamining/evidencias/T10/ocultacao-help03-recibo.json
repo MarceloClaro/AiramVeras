@@ -1,0 +1,9 @@
+{
+  "fase": "CONSULTA_PUBLICA_RANGE",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:55:05.197206+00:00",
+  "snapshot": "ocultacao-help03-antes.json",
+  "snapshot_sha256": "c4e12a86faeed64783e6616638ec4c7b7540f6d1028872a0596c50b60b9746e9",
+  "log": "ocultacao-help03.log",
+  "log_sha256": "ff8a80dd0f3e159cc8239fa99e1ee0eace7ec443f4abca9fb11487df4b673b28"
+}

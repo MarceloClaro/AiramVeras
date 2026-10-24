@@ -1,0 +1,31 @@
+SPAECE Sistema Permanente de Avaliação da Educação Básica do Ceará
+■ MATRIZ DE REFERÊNCIA
+Língua Portuguesa | 2º ano do ensino FundamentaL
+eiXo 1: aProPriaÇÃo do sistema de esCrita – HaBiLidades reLaCionadas À identiFiCaÇÃo, ao
+reConHeCimento de asPeCtos reLaCionados À teCnoLogia da esCrita
+1.1 – QUANTO AO RECONHECIMENTO DE LETRAS
+D01 Identificar letras entre desenhos, números e outros símbolos gráficos.
+D02 Reconhecer as letras do alfabeto.
+1.2 – QUANTO AO DOMÍNIO DAS CONVENÇÕES GRÁFICAS
+D03 Identificar as direções da escrita.
+D04 Identificar o espaçamento entre palavras na segmentação da escrita.
+D05 Reconhecer as diferentes formas de grafar uma mesma letra ou palavra.
+1.3 – QUANTO AO DESENVOLVIMENTO DA CONSCIÊNCIA FONOLÓGICA
+D06 Identificar rimas.
+D07 Identificar o número de sílabas de uma palavra.
+D08 Identificar sílabas canônicas (consoante / vogal) em uma palavra.
+D09 Identificar sílabas não canônicas (vogal, consoante / vogal / consoante, consoante / consoante / vogal etc.) em uma palavra.
+eiXo 2: Leitura – HaBiLidades reLaCionadas À Leitura de PaLaVras, de Frases e de teXtos
+2.1 – QUANTO À LEITURA DE PALAVRAS
+D10 Ler palavras no padrão canônico (consoante / vogal).
+D11 Ler palavras nos padrões não canônicos (vogal, consoante / vogal / consoante, consoante / consoante / vogal etc.).
+2.2 – QUANTO À LEITURA DE FRASES
+D12 Ler frases.
+2.3 – QUANTO À LEITURA DE TEXTOS
+D13 Localizar informação explícita em textos.
+D14 Inferir informação em texto verbal.
+D16 Interpretar textos não verbais e textos que articulam elementos verbais e não verbais.
+D17 Reconhecer o tema ou assunto de um texto ouvido.
+D18 Reconhecer o tema ou assunto de um texto lido.
+D21 Reconhecer o gênero discursivo.
+D22 Identificar o propósito comunicativo em diferentes gêneros.

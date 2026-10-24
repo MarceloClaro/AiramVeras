@@ -1,0 +1,239 @@
+........................................................................ [ 20%]
+........................................................................ [ 40%]
+...............................................................FFFFFFFFF [ 60%]
+FFF..................................................................... [ 80%]
+...................................................................F     [100%]
+================================== FAILURES ===================================
+_____ test_inventario_real_tem_ocorrencias_independentes_com_proveniencia _____
+tests\test_matriz_cnca.py:28: in test_inventario_real_tem_ocorrencias_independentes_com_proveniencia
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-3-want0] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-4-want1] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-3-want2] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-4-want3] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-5-want4] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-3-want5] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-4-want6] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-5-want7] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-4-want8] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+____ test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-5-want9] _____
+tests\test_matriz_cnca.py:50: in test_T27_conjunto_bncc_pertence_a_celula_contextual
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+___________ test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i ____________
+tests\test_matriz_cnca.py:57: in test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+    ocorrencias = extrair()
+                  ^^^^^^^^^
+tests\test_matriz_cnca.py:24: in extrair
+    return api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+_______ test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes ________
+tests\test_vinculos.py:119: in test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes
+    occurrences = api('matriz_cnca', 'extrair_ocorrencias')(PDF)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+airam\matriz_cnca.py:40: in extrair_ocorrencias
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+                         ^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\marce\\Downloads\\Airam veras\\MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf'
+=========================== short test summary info ===========================
+FAILED tests/test_matriz_cnca.py::test_inventario_real_tem_ocorrencias_independentes_com_proveniencia
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-3-want0]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF06_M-4-want1]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-3-want2]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-4-want3]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF07_M-5-want4]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-3-want5]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-4-want6]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[3EF09_M-5-want7]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-4-want8]
+FAILED tests/test_matriz_cnca.py::test_T27_conjunto_bncc_pertence_a_celula_contextual[4EF07_M-5-want9]
+FAILED tests/test_matriz_cnca.py::test_T31_x_deslocado_pagina7_pertence_a_celula_ciclo_i
+FAILED tests/test_vinculos.py::test_conferencia_real_cobre_124_posicoes_e_ressalva_6_excecoes
+13 failed, 343 passed in 48.65s

@@ -1,0 +1,53 @@
+{
+  "comando": ".venv/Scripts/python.exe evidencias/T03/auditar_checkpoint.py real",
+  "executor": "Codex",
+  "hashes_codigo": {
+    "airam/__init__.py": "b9567c264788f274dc459165a7ab3d0249151f2fbda7278d92c43395b5acc7c8",
+    "airam/catalogo.py": "bfbeacd4d52abd112c3672a8caa064d9e50d1d08ec27a8f990ccf186a68a91b5",
+    "airam/esquemas.py": "cfd4b1e81f8648c1c3eaa3b55c12da0f7eb734ca5999bddf527bd4b1d8f8e156",
+    "airam/identidade.py": "5dfdc23c97d72b5237f8c3d3c2f29c19d521bcd07a8c786a0e778a796510c459",
+    "airam/ingestao.py": "a4fed987df21db5337db37ea67fbfa4efa23e91d0b48982f67bf1e8e899afb11",
+    "airam/pareamento.py": "f00074d18f29e82479af8e3d51a24bca1f4931620829b41064d2e0fe1d7fe85f",
+    "airam/recibos.py": "62c0fc07df7ba31548901c6f166e0e93c24f85623a0fab0a49eeeeaff9f5be4e",
+    "config/analise.json": "cc8f93abcb73b27ca3d44d2714f5d9e4010b643c0331a23e860e176ab47b943f",
+    "evidencias/T03/auditar_checkpoint.py": "b3653258e63af356e4a3194cdee01462f6429e58f977a0d82a69c35ebbf84025",
+    "evidencias/T03/executar_testes.py": "9eea165fc0a629899be6cc7c3f8d3583a76dc727c766eea8e9af2851acadeff9",
+    "pyproject.toml": "b9d20bcdd904b3d97780f2de40b6bf188da6cadba1c75e5f9123aa091e6d5b66",
+    "requirements.lock.txt": "17aca480a83baeb99f72cbfe77c9778c49cc5484910985305ac11e68354e6792",
+    "tests/test_catalogo.py": "f2f65b07e7633a0bd1d0c441e2ba288d7677dd413b0d71bf3c48ed316b74584e",
+    "tests/test_identidade.py": "28df278fd2b9e9df23c05f13125dcd5e644b399c099c3852de90970a89f98c43",
+    "tests/test_ingestao.py": "7e4b6a517bfcc0814b30cece487f12d3b1f0f9d0e7790dee97298c35e0bd1c77",
+    "tests/test_pareamento.py": "7d7fb2278b41cbf2d6c2260937214675bd3ed89f61621f4cba0186b081c8e2d2",
+    "tests/test_participacao.py": "06fbbdcd0a21de06d64e14332c2fa4de7b6444e83c9b83a90e9299348b2dd31a",
+    "tests/test_recibos.py": "da833654df5782a3c49b1652774f7837b9c661568b9c185dbc85e43933fba942",
+    "tests/test_registrar_execucao.py": "57e0b3eb1fabd7be025352439ad51572591495149d2171b1cff6fb2c2fb685e1"
+  },
+  "hashes_dados": {
+    "catalogo/fontes.json": "bac6fe9cc60800d5141e9dccd1dfec58093b4feaa1b6c56fcbbb023fb398c153",
+    "restrito/t02/tabelas.json": "82a24045cb75d85eeefd4394a73cb0dcec37dbbd8a542350fb04d7da0653d9f5",
+    "resultados-caed-ciclo-i-2026/csv_originais/1ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-06-25.csv": "8bab4aa7cc2dc8eed4ce6ae46ec19afa320dc2cd163b65b62a2590a7e70b7017",
+    "resultados-caed-ciclo-i-2026/csv_originais/1ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-09-25.csv": "cbfd36b487af413b090bab8c5b62e285c4b4ddbbb0be6b989f933d3b52d70cee",
+    "resultados-caed-ciclo-i-2026/csv_originais/2ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-11-26.csv": "5dab95321f1fe51fcf196067745c2effcf8f263a8eedf98d396a398c081e8071",
+    "resultados-caed-ciclo-i-2026/csv_originais/2ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-11-55.csv": "2143040a0c86c4933aa26745c6e0c5bd8ac863179a525e0ab2bbdd1fdc7f3308",
+    "resultados-caed-ciclo-i-2026/csv_originais/2ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-10-28.csv": "7aa25e49a394a183c2e49f22c3b15ea1aef77c3f9e26942969b32651a6d6da48",
+    "resultados-caed-ciclo-i-2026/csv_originais/2ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-10-50.csv": "1c5523dfa88dcf261b1b2aa14442fd229eccda0246e6ebc5df45bdef24550fd9",
+    "resultados-caed-ciclo-i-2026/csv_originais/3ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-12-51.csv": "7bab53deb3a359dc7d26ceb0072ceb4b6c959d4ea2d1de11191b46b6a0caff69",
+    "resultados-caed-ciclo-i-2026/csv_originais/3ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-13-19.csv": "a4a3ebccd90215413be170310098a11100a76a3e5ab3cad0b9678782be8145bf",
+    "resultados-caed-ciclo-i-2026/csv_originais/3ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-12-20.csv": "85d09f01990328c4056922659b93e3a8dd284695013af1cf548d023fdf0e7583",
+    "resultados-caed-ciclo-i-2026/csv_originais/3ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-12-38.csv": "2d0a02bef0f25c8aec86a724092fef090d3e9d4463cd590d8037c10e2a1aa4fe",
+    "resultados-caed-ciclo-i-2026/csv_originais/4ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-13-55.csv": "f68868e1abfd63758972c94c47324bb8df68cec97096934a9a01c99ac0e58396",
+    "resultados-caed-ciclo-i-2026/csv_originais/4ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-14-16.csv": "659178dc9ae23eea97cc43f5cfc6641b4270a74136bbbda50a35416eefa1fa46",
+    "resultados-caed-ciclo-i-2026/csv_originais/4ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-13-30.csv": "00bfbc5be0ec64d6ed274d1ee94c3a09d3de720d5869eb7f6a2d0b4ea81ea987",
+    "resultados-caed-ciclo-i-2026/csv_originais/4ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-13-42.csv": "893daaf01aec90cf9297463eab7aab43c045f4c5aa45ff750e275fbb0e721136",
+    "resultados-caed-ciclo-i-2026/csv_originais/5ANO_ESCRITA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-14-52.csv": "1f6e2799922130fd792baac6c03f83fc159dd5b7d652ab95aef393e8bc6f64a1",
+    "resultados-caed-ciclo-i-2026/csv_originais/5ANO_FLUENCIA_CICLO_I_2026/DOCUMENTO_DOWNLOAD_ESTUDANTE 22-10-2026 6-15-05.csv": "5b4a22a97e6a9f04983467c3fd452958aa432597ba73d6ffe9975c31cabf394e",
+    "resultados-caed-ciclo-i-2026/csv_originais/5ANO_LEITURA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-14-28.csv": "cb95048343095b0f6ed3c0f386bdb0fa680efc61aeb63e0aea2b617b7b211375",
+    "resultados-caed-ciclo-i-2026/csv_originais/5ANO_MATEMATICA_CICLO_I_2026/HABILIDADES_DESEMPENHO_ESTUDANTE 22-10-2026 6-14-39.csv": "2abe175d5c37adc85ed15a6a69128232d1afc2995bc74e95fc700795b3e93170"
+  },
+  "head": "0b0096c6780e897a0f3e780d6392e522e4793855",
+  "timestamp": "2026-10-22T12:01:50.915742-03:00",
+  "versoes": {
+    "pytest": "9.1.1",
+    "python": "3.12.14"
+  }
+}

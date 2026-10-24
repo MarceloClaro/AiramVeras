@@ -1,0 +1,29 @@
+CEARÁ Somativa 2023
+ ■ MATRIZ DE REFERÊNCIA
+LÍNGUA PORTUGUESA | 3ª SÉRIE DO ENSINO MÉDIO
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D01 Localizar informação explícita.
+D02 Inferir informação em texto verbal.
+D03 Inferir o sentido da palavra ou expressão.
+D04 Interpretar textos não verbais e textos que articulam elementos verbais e não verbais.
+D05 Identificar o tema ou assunto de um texto.
+D06 Distinguir fato de opinião relativa ao fato.
+D07 Diferenciar a informação principal das secundárias em um texto.
+D09 Reconhecer gênero discursivo.
+D10 Identificar o propósito comunicativo em diferentes gêneros.
+D11 Reconhecer os elementos que compõem uma narrativa e o conflito gerador.
+D12 Identificar semelhanças e/ou diferenças de ideias e opiniões na comparação entre textos.
+D13 Reconhecer diferentes formas de tratar uma informação na comparação de textos de um mesmo tema.
+D14 Reconhecer as relações entre partes de um texto, identificando os recursos coesivos que contribuem para sua 
+continuidade.
+D15 Identificar a tese de um texto.
+D16 Estabelecer relação entre tese e os argumentos oferecidos para sustentá-la.
+D17 Reconhecer o sentido das relações lógico-discursivas marcadas por conjunções, advérbios, etc.
+D18 Reconhecer o sentido do texto e suas partes, sem a presença de marcas coesivas.
+D19 Reconhecer o efeito de sentido decorrente da escolha de palavras, frases ou expressões.
+D20 Identificar o efeito de sentido decorrente do uso da pontuação e de outras notações.
+D21 Reconhecer o efeito decorrente do emprego de recursos estilísticos.
+D22 Reconhecer efeitos de humor e ironia.  
+D23 Identificar os níveis de linguagem e/ou as marcas linguísticas que evidenciam locutor e/ou interlocutor.
+D19_SAEB Reconhecer o efeito de sentido decorrente da exploração de recursos ortográficos e/ou morfossintáticos.
+D11_SAEB Estabelecer relação causa/consequência entre partes e elementos do texto.

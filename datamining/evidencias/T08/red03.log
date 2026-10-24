@@ -1,0 +1,18 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_T48_nao_inventa_lacuna_em_acerto_integral_ou_forca_em_zero _______
+
+    def test_T48_nao_inventa_lacuna_em_acerto_integral_ou_forca_em_zero():
+        # Catches naming the three smallest rates as deficits even when all are 100%.
+        r,obs,links=fixture()
+        for row in obs: row['numerador']=row['denominador']
+>       assert api('descrever_grupos')(r,obs,links)[0]['lacunas_priorizadas']==[]
+E       AssertionError: assert ['H1', 'H2'] == []
+E         
+E         Left contains 2 more items, first extra item: 'H1'
+E         Use -v to get more diff
+
+tests\test_perfis_grupo.py:103: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_perfis_grupo.py::test_T48_nao_inventa_lacuna_em_acerto_integral_ou_forca_em_zero
+1 failed in 8.18s

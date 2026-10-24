@@ -1,0 +1,24 @@
+{"etapa":"construir_abas","segundos":0,"rss_mb":190}
+{"etapa":"ajuste_calculos","segundos":7,"rss_mb":337}
+{"etapa":"calculos_wrap","segundos":7,"rss_mb":337}
+{"etapa":"ajuste_fila","segundos":7,"rss_mb":341}
+{"etapa":"ajuste_fontes","segundos":7,"rss_mb":340}
+{"etapa":"verificar_formulas","segundos":7,"rss_mb":341}
+{"etapa":"verificar_ordem_base","segundos":7,"rss_mb":341}
+{"etapa":"verificar_notas_base","segundos":7,"rss_mb":341}
+{"etapa":"verificar_meta50","segundos":7,"rss_mb":341}
+{"etapa":"verificar_proximidade","segundos":8,"rss_mb":348}
+{"etapa":"verificar_permutacao","segundos":10,"rss_mb":368}
+{"etapa":"verificar_notas_permutadas","segundos":13,"rss_mb":411}
+{"etapa":"restaurar_base","segundos":13,"rss_mb":411}
+{"etapa":"verificar_metaA","segundos":16,"rss_mb":452}
+{"etapa":"verificar_controles_invalidos","segundos":17,"rss_mb":472}
+{"etapa":"verificar_fluxo_docente","segundos":23,"rss_mb":544}
+{"etapa":"verificar_detector_erros","segundos":23,"rss_mb":544}
+{"etapa":"verificar_erros_todas_abas","segundos":23,"rss_mb":544}
+{"etapa":"inspecionar_api_publica","segundos":23,"rss_mb":547}
+{"etapa":"recalcular_exportacao","segundos":23,"rss_mb":546}
+{"etapa":"exportar","segundos":23,"rss_mb":546}
+Inspect result written to file: C:\Users\marce\Downloads\Airam veras\datamining\.superpowers\sdd\implementation-plan\t10-atomico01\out\fixture.xlsx.inspect.ndjson
+{"etapa":"reabrir","segundos":27,"rss_mb":665}
+{"etapa":"conferir_roundtrip","segundos":30,"rss_mb":755}

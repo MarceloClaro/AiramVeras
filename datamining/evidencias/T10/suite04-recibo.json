@@ -1,0 +1,9 @@
+{
+  "fase": "SUITE_FINAL_EXPORTACAO_PREVIA_SEPARADAS",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T07:37:10.121411+00:00",
+  "snapshot": "suite04-antes.json",
+  "snapshot_sha256": "1e5a622f72d38d7eb49d870673e3cdc623352ab7a974905e5afb8fe973464b38",
+  "log": "suite04.log",
+  "log_sha256": "894a9376418f7fa8f9fe2e6775f3b397b0b9462a1706ef79fa4835793fc4e528"
+}

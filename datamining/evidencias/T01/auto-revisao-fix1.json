@@ -1,0 +1,19 @@
+{
+  "base": "1eeef4da46fc5eca64e62ab7b976890ac96bd1e5",
+  "findings_corrigidos": [
+    "I1",
+    "M1"
+  ],
+  "testes_focais": "22 passed; exit0",
+  "suite_inteira": "38 passed; exit0",
+  "hashes_artefatos_fix1": 6,
+  "hashes_codigo_final_reconciliados": 8,
+  "evidencias_historicas_intactas": true,
+  "diff_check_codigo_exit": 0,
+  "catalogo_checkpoint_preservado": "bac6fe9cc60800d5141e9dccd1dfec58093b4feaa1b6c56fcbbb023fb398c153",
+  "fontes_reais_reexecutadas": false,
+  "limites": [
+    "A correcao valida estrutura de versoes; nao classifica nomes em texto livre.",
+    "Catalogo e analises posteriores fora do escopo; nenhuma fonte original modificada."
+  ]
+}

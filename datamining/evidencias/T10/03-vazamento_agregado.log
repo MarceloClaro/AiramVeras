@@ -1,0 +1,40 @@
+FFFFFF                                                                   [100%]
+================================== FAILURES ===================================
+________ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome] ________
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_____ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome_bruto] _____
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+___ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[aluno_local_id] ___
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+_ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[avaliacao_local_id] _
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[membros] _______
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+______ test_t52_bloqueia_identidade_aninhada_antes_de_escrever[origens] _______
+tests\test_relatorio.py:41: in test_t52_bloqueia_identidade_aninhada_antes_de_escrever
+    with pytest.raises(ValueError,match='privacidade'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[nome_bruto]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[aluno_local_id]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[avaliacao_local_id]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[membros]
+FAILED tests/test_relatorio.py::test_t52_bloqueia_identidade_aninhada_antes_de_escrever[origens]
+6 failed, 21 deselected in 5.05s

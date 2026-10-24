@@ -1,0 +1,18 @@
+CEARÁ 1º AVALIE.CE 2024
+ ■ MATRIZ DE REFERÊNCIA
+MATEMÁTICA | 4º ANO DO ENSINO FUNDAMENTAL
+DESCRITOR DESCRIÇÃO DA HABILIDADE
+D009_M Reconhecer características do sistema de numeração decimal. 
+D001_M Corresponder números naturais à sua escrita por extenso.
+D010_M Identificar composições ou decomposições de números naturais.
+D025_M Executar cálculos com números naturais.
+D031_M Utilizar números naturais, envolvendo diferentes significados das operações de adição e subtração, na resolução de 
+problemas.
+D032_M Utilizar números naturais, envolvendo diferentes significados das operações de multiplicação e divisão, na resolução de 
+problemas.
+D145_M Corresponder figuras tridimensionais às suas planificações.
+D150_M Identificar a localização ou a movimentação de pessoas ou objetos em uma representação plana do espaço.
+D178_M Reconhecer a unidade adequada para registrar uma determinada medição de comprimento, massa ou capacidade.
+D209_M Reconhecer horas em relógios digitais e/ou analógicos.
+D212_M Corresponder cédulas e/ou moedas do sistema monetário brasileiro.
+D200_M Identificar informações a partir de dados dispostos em tabelas ou gráficos.

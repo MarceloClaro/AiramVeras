@@ -1,0 +1,340 @@
+{
+  "data_coleta": "2026-10-22",
+  "programa": "CNCA / Avaliação Contínua da Aprendizagem",
+  "ano_avaliacao": 2026,
+  "ciclo": "I",
+  "avaliacao_id": "AV12026",
+  "escola": "AIRAM VERAS ESC CID",
+  "codigo_escola": "23084995",
+  "rede": "MUNICIPAL",
+  "origem_dos_filtros": "Controles e URL observados no navegador antes de cada exportação.",
+  "limite": "O ciclo não consta nos CSVs. Escrita e fluência também não trazem ano escolar e componente. Essas informações são de proveniência da interface.",
+  "exportacoes": [
+    {
+      "ano_escolar": 1,
+      "componente": "LEITURA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 1º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "LÍNGUA PORTUGUESA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%201%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=L%C3%8DNGUA%20PORTUGUESA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/1ANO_LEITURA_CICLO_I_2026.zip",
+      "sha256": "c534d7592866b4b0bf28f17732e09855b50b299b29705e37959d996c660ef825"
+    },
+    {
+      "ano_escolar": 1,
+      "componente": "MATEMATICA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 1º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "MATEMÁTICA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%201%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=MATEM%C3%81TICA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/1ANO_MATEMATICA_CICLO_I_2026.zip",
+      "sha256": "4123d2b69046a7cfad3c28fc9210a70aecc359906738061955b17581ea218bb8"
+    },
+    {
+      "ano_escolar": 1,
+      "componente": "ESCRITA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 1º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "ESCRITA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%201%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=ESCRITA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "Nenhum resultado encontrado no portal"
+    },
+    {
+      "ano_escolar": 1,
+      "componente": "FLUENCIA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 1º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "FLUÊNCIA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%201%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=FLU%C3%8ANCIA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "Nenhum resultado encontrado no portal"
+    },
+    {
+      "ano_escolar": 2,
+      "componente": "LEITURA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 2º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "LÍNGUA PORTUGUESA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%202%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=L%C3%8DNGUA%20PORTUGUESA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/2ANO_LEITURA_CICLO_I_2026.zip",
+      "sha256": "1570bc68c9a5bdfb537bd5a56334ed0e45f57abf8468fd1c1378b76e3b77243b"
+    },
+    {
+      "ano_escolar": 2,
+      "componente": "MATEMATICA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 2º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "MATEMÁTICA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%202%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=MATEM%C3%81TICA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/2ANO_MATEMATICA_CICLO_I_2026.zip",
+      "sha256": "58b7cc95c465d047f906a31b51ab6488355c3a444f66e22ac184133c86012d17"
+    },
+    {
+      "ano_escolar": 2,
+      "componente": "ESCRITA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 2º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "ESCRITA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%202%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=ESCRITA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/2ANO_ESCRITA_CICLO_I_2026.zip",
+      "sha256": "a1c966ebe22d2b7014956fb63cd8aab83c5e58ac4567f7d3a52a1b277ce26939"
+    },
+    {
+      "ano_escolar": 2,
+      "componente": "FLUENCIA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 2º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "FLUÊNCIA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%202%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=FLU%C3%8ANCIA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/2ANO_FLUENCIA_CICLO_I_2026.zip",
+      "sha256": "a284bf68f1f0c00f34e1f06ab6d6612031d278ead0728c766ba95df661943121"
+    },
+    {
+      "ano_escolar": 3,
+      "componente": "LEITURA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 3º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "LÍNGUA PORTUGUESA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%203%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=L%C3%8DNGUA%20PORTUGUESA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/3ANO_LEITURA_CICLO_I_2026.zip",
+      "sha256": "1e0110eb7af2a4a7f65a4976c3473b50372e0df8488c52a4f3a312a08cce9904"
+    },
+    {
+      "ano_escolar": 3,
+      "componente": "MATEMATICA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 3º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "MATEMÁTICA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%203%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=MATEM%C3%81TICA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/3ANO_MATEMATICA_CICLO_I_2026.zip",
+      "sha256": "693ca95fdb16a0f9ecb47010f80d858862aabee5ba4edae441269bd816a10fbb"
+    },
+    {
+      "ano_escolar": 3,
+      "componente": "ESCRITA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 3º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "ESCRITA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%203%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=ESCRITA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/3ANO_ESCRITA_CICLO_I_2026.zip",
+      "sha256": "b729db7da09fb96d5ae37914dfb15f167af78fe30a3064fdab0cdba5cbd416d4"
+    },
+    {
+      "ano_escolar": 3,
+      "componente": "FLUENCIA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 3º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "FLUÊNCIA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%203%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=FLU%C3%8ANCIA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/3ANO_FLUENCIA_CICLO_I_2026.zip",
+      "sha256": "4c85c0596ef06b16c8275ead982e194414fd1f95178360f16d887058ff8a661a"
+    },
+    {
+      "ano_escolar": 4,
+      "componente": "LEITURA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 4º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "LÍNGUA PORTUGUESA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%204%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=L%C3%8DNGUA%20PORTUGUESA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/4ANO_LEITURA_CICLO_I_2026.zip",
+      "sha256": "87c22013450614b836f020e0dcf81ebd3c59962b727f5564153591f380ce86b5"
+    },
+    {
+      "ano_escolar": 4,
+      "componente": "MATEMATICA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 4º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "MATEMÁTICA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%204%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=MATEM%C3%81TICA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/4ANO_MATEMATICA_CICLO_I_2026.zip",
+      "sha256": "d3f61ef9284fa544cadd1118a0bda223d6900e11d2d743fd1af20471cc0f4b4d"
+    },
+    {
+      "ano_escolar": 4,
+      "componente": "ESCRITA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 4º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "ESCRITA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%204%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=ESCRITA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/4ANO_ESCRITA_CICLO_I_2026.zip",
+      "sha256": "028c31b69fd3aebdcbf10e93ca6ed94e8d02e0f41ed2ec7bd9a7ae13d97bf641"
+    },
+    {
+      "ano_escolar": 4,
+      "componente": "FLUENCIA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 4º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "FLUÊNCIA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%204%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=FLU%C3%8ANCIA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/4ANO_FLUENCIA_CICLO_I_2026.zip",
+      "sha256": "9a58697f46ad74867d96be09a939c7ff8d081c50d41f0f63e1b797a8fe8164ee"
+    },
+    {
+      "ano_escolar": 5,
+      "componente": "LEITURA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 5º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "LÍNGUA PORTUGUESA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%205%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=L%C3%8DNGUA%20PORTUGUESA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/5ANO_LEITURA_CICLO_I_2026.zip",
+      "sha256": "ad4abcf72a9119345e4346421cb9e629929206ff1686a93d2c887e013187d619"
+    },
+    {
+      "ano_escolar": 5,
+      "componente": "MATEMATICA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 5º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "MATEMÁTICA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL",
+        "DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE": "Alto-Médio Baixo-Médio Alto-Baixo"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%205%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=MATEM%C3%81TICA&DADOS.VL_FILTRO_REDE=MUNICIPAL&DADOS.DC_FAIXA_PERCENTUAL_HABILIDADE=Alto-M%C3%A9dio%20Baixo-M%C3%A9dio%20Alto-Baixo",
+      "status": "baixado",
+      "arquivo": "originais/5ANO_MATEMATICA_CICLO_I_2026.zip",
+      "sha256": "90bcbc7552faf89a9ef3a115eb07a3bd561bb57de49fada7702887eefe2cc548"
+    },
+    {
+      "ano_escolar": 5,
+      "componente": "ESCRITA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 5º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "ESCRITA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%205%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=ESCRITA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/5ANO_ESCRITA_CICLO_I_2026.zip",
+      "sha256": "14e7e3abc50a26affd9cefcbb16bbd8e3bda6b40bbfffcfb538358bd2ebfd62b"
+    },
+    {
+      "ano_escolar": 5,
+      "componente": "FLUENCIA",
+      "ciclo": "I",
+      "avaliacao_id": "AV12026",
+      "filtros_observados_no_portal": {
+        "DADOS.VL_FILTRO_AVALIACAO": "AV12026",
+        "DADOS.VL_FILTRO_ETAPA": "ENSINO FUNDAMENTAL DE 9 ANOS - 5º ANO",
+        "DADOS.VL_FILTRO_DISCIPLINA": "FLUÊNCIA",
+        "DADOS.VL_FILTRO_REDE": "MUNICIPAL"
+      },
+      "url_filtros": "https://criancaalfabetizada.caeddigital.net/#!/pagina/VIEW_RESULTADOS?DADOS.VL_FILTRO_AVALIACAO=AV12026&DADOS.VL_FILTRO_ETAPA=ENSINO%20FUNDAMENTAL%20DE%209%20ANOS%20-%205%C2%BA%20ANO&DADOS.VL_FILTRO_DISCIPLINA=FLU%C3%8ANCIA&DADOS.VL_FILTRO_REDE=MUNICIPAL",
+      "status": "baixado",
+      "arquivo": "originais/5ANO_FLUENCIA_CICLO_I_2026.zip",
+      "sha256": "bd43afd9712efa566d5551080b6be96b8cb893cad04048d07ede685833bc5c96"
+    }
+  ]
+}

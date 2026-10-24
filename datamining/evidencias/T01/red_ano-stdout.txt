@@ -1,0 +1,21 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________________ test_ano_da_etapa_nao_e_duracao_de_nove_anos _________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-7/test_ano_da_etapa_nao_e_duraca0')
+
+    def test_ano_da_etapa_nao_e_duracao_de_nove_anos(tmp_path):
+        source = tmp_path / "fonte.csv"
+        source.write_bytes("Ano Escolar;Componente Curricular\nENSINO FUNDAMENTAL DE 9 ANOS - 1º ANO;MATEMÁTICA\n".encode())
+        manifest(tmp_path, "fonte.csv", hashlib.sha256(source.read_bytes()).hexdigest())
+        record = next(r for r in api("catalogar")(tmp_path) if r["tipo"] == "csv")
+>       assert record["anos_observados"] == [1]
+E       assert [9] == [1]
+E         
+E         At index 0 diff: 9 != 1
+E         Use -v to get more diff
+
+tests\test_catalogo.py:80: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_catalogo.py::test_ano_da_etapa_nao_e_duracao_de_nove_anos
+1 failed in 0.52s
