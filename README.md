@@ -172,7 +172,44 @@ Os diagnósticos de neurodesenvolvimento, condições genéticas e síndromes ne
 
 ---
 
-### 2. O Marco Jurídico da Educação Especial Inclusiva (AEE / PDI)
+### 2. Protocolo Específico de Manejo do TOD (Transtorno Opositivo Desafiador — CID-10: F91.3 / CID-11: 6C90)
+
+O **Transtorno Desafiador Opositivo (TOD)** / **Transtorno Opositivo Desafiador** exige atenção especializada e diferenciada no ambiente escolar, pois seus sintomas se manifestam primariamente na relação interpessoal e na resposta a exigências estruturadas, como testes diagnósticos e avaliações formais.
+
+#### A. Natureza Clínica e Distinção Pedagógica
+- **Definição Diagnóstica (CID-10: `F91.3` / CID-11: `6C90`)**: Caracteriza-se por um padrão recorrente e persistente de humor raivoso/irritável, comportamento questionador/desafiante e índole vingativa direcionada a figuras de autoridade (professores, coordenadores, aplicadores).
+- **Não é Déficit de Inteligência nem Mera "Indisciplina"**: O estudante com TOD possui capacidade cognitiva e potencial de aprendizagem plenamente preservados. Sua dificuldade reside na **desregulação emocional**, na **baixa tolerância à frustração** e na **sensibilidade aguda a comandos percebidos como impositivos ou ameaçadores à sua autonomia**.
+- **Comorbidades Críticas na Escola**:
+  - **TOD + TDAH (`F91.3 + F90.0` / `6C90 + 6A05`)**: Presente em 40% a 60% dos educandos diagnosticados. A impulsividade do TDAH acelera reações explosivas do TOD antes que o estudante processe as consequências.
+  - **TOD + TEA (`F91.3 + F84.0` / `6C90 + 6A02`)**: A rigidez cognitiva típica do espectro autista intensifica crises de oposição quando há quebra imprevista de rotina ou sensação de sobrecarga sensorial.
+
+#### B. Impacto Específico no Desempenho e nas Avaliações do CAEd
+1. **O Fenômeno da Recusa e Autossabotagem Avaliativa**:
+   - Diante de uma questão longa ou percebida como complexa, o estudante com TOD tende a não admitir dúvida; em vez disso, assume postura desafiadora: recusa-se a ler, chuta intencionalmente todas as alternativas em poucos segundos, rasura o cartão de respostas ou declara abertamente que "não vai fazer".
+2. **Prevenção de Distorções Psicométricas no Pipeline de Dados**:
+   - Se o aplicador não registrar a ocorrência comportamental, o modelo psicométrico (TRI / Rasch) registrará taxa de acerto zero para esses blocos, calculando um $\theta$ espúrio que rebaixa o aluno para o nível "Abaixo do Básico", mascarando sua real competência leitora ou matemática.
+   - **Diretriz do Pipeline**: O protocolo orienta que aplicações com recusa comportamental sejam sinalizadas com flag `aplicacao_mediada_necessaria`, permitindo reaplicação em ambiente acolhedor antes de consolidar o perfil analítico do aluno.
+
+#### C. Diretrizes Práticas de Manejo e Aplicação de Provas para Alunos com TOD
+- 🎯 **Técnica da "Escolha Controlada" (Autonomia Guiada)**:
+  - Nunca utilize ordens imperativas diretas (*"Sente-se e faça a prova agora"*).
+  - Ofereça opções limitadas onde todas as alternativas atendem ao objetivo pedagógico:
+    - *"Você prefere começar respondendo a prova de Língua Portuguesa ou a de Matemática?"*
+    - *"Prefere resolver primeiro as questões com ilustrações ou os textos curtos?"*
+    - *"Quer usar lápis grafite ou lapiseira para preencher o caderno?"*
+- ⏱️ **Micro-Metas e Fracionamento Avaliativo**:
+  - Divida o caderno de 22 itens em blocos de 4 a 5 questões.
+  - Combine previamente: *"Vamos responder até a questão 5; ao terminar, você terá 3 minutos para beber água e esticar os braços antes da questão 6"*.
+- 🤝 **Aplicação Mediada por Profissional de Vínculo**:
+  - Designe para a aplicação do teste o professor de AEE ou o assistente educacional com quem o estudante possua vínculo afetivo seguro e relação de confiança prévia.
+- 🚫 **Tolerância Zero ao Confronto Público**:
+  - Jamais repreenda ou discuta com o estudante na frente da turma. Havendo recusa, faça a mediação em tom de voz calmo, firme, baixo e acolhedor, longe dos olhares dos colegas.
+- 📋 **Integração ao PDI (Plano de Suporte Comportamental Positivo — PBS)**:
+  - O Plano de Desenvolvimento Individualizado do estudante com TOD deve conter o inventário de seus gatilhos de estresse (ex.: comparação com colegas, cobrança por tempo, excesso de barulho) e a lista de reforçadores funcionais de engajamento escolar.
+
+---
+
+### 3. O Marco Jurídico da Educação Especial Inclusiva (AEE / PDI)
 
 A inclusão pedagógica de estudantes público-alvo da educação especial é amparada por legislação cogente no Brasil:
 
@@ -189,7 +226,7 @@ A inclusão pedagógica de estudantes público-alvo da educação especial é am
 
 ---
 
-### 3. Rede Interdisciplinar: Cruzamento do CAEd com Todos os Componentes da BNCC
+### 4. Rede Interdisciplinar: Cruzamento do CAEd com Todos os Componentes da BNCC
 
 Embora os instrumentos do CAEd avaliem primariamente **Língua Portuguesa** e **Matemática**, a Base Nacional Comum Curricular (BNCC) é orgânica e interdisciplinar. As defasagens identificadas no diagnóstico repercutem diretamente em todas as áreas do conhecimento:
 
