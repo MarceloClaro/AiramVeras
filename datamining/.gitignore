@@ -8,6 +8,7 @@ dados/*
 !dados/schema_completo_ecossistema.sql
 !dados/schema_api_contratos.json
 !dados/airam_veras_ecossistema.sqlite
+!dados/relatorio_longitudinal_multiciclos.json
 restrito/
 relatorios/
 *.sqlite

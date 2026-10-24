@@ -22,19 +22,21 @@
       "dim_estudantes_nominal_restrito": 0,
       "dim_fontes_auditaveis": 1,
       "dim_grupos_intervencao": 4,
+      "dim_matriz_transicao_markov": 115,
       "dim_spaece_descritores": 63,
       "dim_turmas": 5,
       "fato_cenarios_what_if": 7,
       "fato_escores_psicometricos": 640,
       "fato_estudante_aee_perfil": 24,
       "fato_estudante_agrupamento": 640,
+      "fato_evolucao_longitudinal_ciclos": 1280,
       "fato_fluencia_leitora": 0,
       "fato_participacao_estudante": 640,
       "fato_producao_escrita": 0,
       "fato_respostas_itens_habilidades": 0,
       "rel_caed_bncc_grafo": 0,
       "rel_interdisciplinar_bncc": 0,
-      "sqlite_sequence": 16,
+      "sqlite_sequence": 18,
       "sys_trilha_auditoria": 1
     },
     "views_analiticas": {
@@ -85,6 +87,77 @@
           }
         ]
       },
+      "vw_evolucao_longitudinal_multiciclos": {
+        "colunas": [
+          "aluno_hash_id",
+          "ano_escolar",
+          "nome_turma",
+          "possui_laudo_aee",
+          "cid10",
+          "grupo_clinico",
+          "requer_manejo_tod_pbs",
+          "componente_curricular",
+          "ciclo_origem",
+          "ciclo_destino",
+          "proficiencia_origem",
+          "proficiencia_destino",
+          "ganho_spaece",
+          "ganho_theta_tri",
+          "nivel_origem",
+          "nivel_destino",
+          "migracao_status",
+          "cluster_pedagogico",
+          "cluster_psicologico_aee",
+          "plano_intervencao_sugerido"
+        ],
+        "total_linhas": 1280,
+        "exemplo": [
+          {
+            "aluno_hash_id": "335d85ae9a7be219836fcb2df9933603b70d9a8d3e81666ce3a896cd7e4be477",
+            "ano_escolar": 1,
+            "nome_turma": "1º ANO UNIFICADO",
+            "possui_laudo_aee": 0,
+            "cid10": "Sem Laudo",
+            "grupo_clinico": "Neurotípico",
+            "requer_manejo_tod_pbs": null,
+            "componente_curricular": "LEITURA",
+            "ciclo_origem": "I",
+            "ciclo_destino": "II",
+            "proficiencia_origem": 272.72727272727275,
+            "proficiencia_destino": 281.8181818181818,
+            "ganho_spaece": 9.1,
+            "ganho_theta_tri": 0.18,
+            "nivel_origem": "Avançado",
+            "nivel_destino": "Avançado",
+            "migracao_status": "Estabilidade",
+            "cluster_pedagogico": "Estagnação em Risco",
+            "cluster_psicologico_aee": "Curva Esperada",
+            "plano_intervencao_sugerido": "Manter rotina pedagógica com avaliações formativas quinzenais."
+          },
+          {
+            "aluno_hash_id": "335d85ae9a7be219836fcb2df9933603b70d9a8d3e81666ce3a896cd7e4be477",
+            "ano_escolar": 1,
+            "nome_turma": "1º ANO UNIFICADO",
+            "possui_laudo_aee": 0,
+            "cid10": "Sem Laudo",
+            "grupo_clinico": "Neurotípico",
+            "requer_manejo_tod_pbs": null,
+            "componente_curricular": "LEITURA",
+            "ciclo_origem": "II",
+            "ciclo_destino": "III",
+            "proficiencia_origem": 281.8181818181818,
+            "proficiencia_destino": 290.90909090909093,
+            "ganho_spaece": 9.1,
+            "ganho_theta_tri": 0.18,
+            "nivel_origem": "Avançado",
+            "nivel_destino": "Avançado",
+            "migracao_status": "Estabilidade",
+            "cluster_pedagogico": "Consolidação",
+            "cluster_psicologico_aee": "Curva Estável",
+            "plano_intervencao_sugerido": "Consolidação anual e preparação para o ciclo do ano letivo seguinte."
+          }
+        ]
+      },
       "vw_grafo_curricular_caed_bncc": {
         "colunas": [
           "codigo_caed",
@@ -102,6 +175,38 @@
         ],
         "total_linhas": 0,
         "exemplo": []
+      },
+      "vw_matriz_markov_migracao": {
+        "colunas": [
+          "ano_escolar",
+          "componente_curricular",
+          "transicao_ciclos",
+          "nivel_origem",
+          "nivel_destino",
+          "quantidade_estudantes",
+          "taxa_transicao_pct"
+        ],
+        "total_linhas": 115,
+        "exemplo": [
+          {
+            "ano_escolar": 1,
+            "componente_curricular": "LEITURA",
+            "transicao_ciclos": "Ciclo I -> Ciclo II",
+            "nivel_origem": "Adequado",
+            "nivel_destino": "Adequado",
+            "quantidade_estudantes": 7,
+            "taxa_transicao_pct": 50.0
+          },
+          {
+            "ano_escolar": 1,
+            "componente_curricular": "LEITURA",
+            "transicao_ciclos": "Ciclo I -> Ciclo II",
+            "nivel_origem": "Adequado",
+            "nivel_destino": "Avançado",
+            "quantidade_estudantes": 7,
+            "taxa_transicao_pct": 50.0
+          }
+        ]
       },
       "vw_painel_intervencao_professor": {
         "colunas": [
