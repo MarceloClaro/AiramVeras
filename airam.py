@@ -268,10 +268,11 @@ def menu_interativo():
         print("  4. 🔄 Executar Análise Longitudinal Multi-Ciclos (Ciclos I, II e III)")
         print("  5. 🌐 Iniciar Dashboard Web Interativo no Navegador")
         print("  6. 📑 Gerar Fichas de Intervenção Pedagógica (PIP) e AEE")
-        print("  7. 🧪 Executar Contraprova Matemática e Auditoria de Testes")
+        print("  7. 🧠 Raio-X Universal Neurocognitivo & Interdisciplinar (RTI)")
+        print("  8. 🧪 Executar Contraprova Matemática e Auditoria de Testes")
         print("  0. 🚪 Sair\n")
         
-        escolha = input(f"{BOLD}Opção [0-7]: {RESET}").strip()
+        escolha = input(f"{BOLD}Opção [0-8]: {RESET}").strip()
 
         if escolha == '1':
             cmd_metas()
@@ -296,6 +297,9 @@ def menu_interativo():
                 print(f"{YELLOW}Gerando fichas...{RESET}")
             input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
         elif escolha == '7':
+            cmd_raiox()
+            input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
+        elif escolha == '8':
             cmd_contraprova()
             input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
         elif escolha == '0':
@@ -305,6 +309,73 @@ def menu_interativo():
             print(f"{RED}Opção inválida.{RESET}")
             time.sleep(1)
 
+def cmd_raiox(termo=None):
+    """Exibe o Raio-X Universal Neurocognitivo & Interdisciplinar dos estudantes."""
+    conn = get_connection()
+    cur = conn.cursor()
+    
+    print(f"\n{BLUE}{BOLD}=== RAIO-X UNIVERSAL NEUROCOGNITIVO & INTERDISCIPLINAR (MODELO CHC & RTI) ==={RESET}")
+    print(f"{CYAN}Escola Municipal Airam Veras | Município de Crateús - CE | INEP: 23084995{RESET}\n")
+
+    if not termo:
+        termo = input(f"{BOLD}Digite o ID Seguro do Aluno ou pressione Enter para ver os casos em Alerta: {RESET}").strip()
+
+    if termo:
+        cur.execute("""
+            SELECT aluno_hash_id, nome_turma, ano_escolar, cid10, grupo_cid, tod_pbs,
+                   score_memoria, score_fonologia, score_inferencia, score_calculo,
+                   score_problemas, score_visuoespacial, score_executivas,
+                   indice_global_eficiencia_cognitiva, classificacao_risco_aprendizagem,
+                   hipotese_rastreio_clinico, camada_intervencao_rti, hash_validacao_forense
+            FROM vw_raiox_universal_interdisciplinar
+            WHERE aluno_hash_id LIKE ?;
+        """, (f"%{termo}%",))
+    else:
+        cur.execute("""
+            SELECT aluno_hash_id, nome_turma, ano_escolar, cid10, grupo_cid, tod_pbs,
+                   score_memoria, score_fonologia, score_inferencia, score_calculo,
+                   score_problemas, score_visuoespacial, score_executivas,
+                   indice_global_eficiencia_cognitiva, classificacao_risco_aprendizagem,
+                   hipotese_rastreio_clinico, camada_intervencao_rti, hash_validacao_forense
+            FROM vw_raiox_universal_interdisciplinar
+            ORDER BY tod_pbs DESC, cid10 != 'Sem Laudo' DESC, indice_global_eficiencia_cognitiva ASC
+            LIMIT 10;
+        """)
+
+    rows = cur.fetchall()
+    conn.close()
+
+    if not rows:
+        print(f"{RED}Nenhum registro encontrado para '{termo}'.{RESET}")
+        return
+
+    for r in rows:
+        aid, turma, ano, c10, gcid, tod, s_mem, s_fon, s_inf, s_num, s_prob, s_vis, s_exe, iglob, risco, hip, rti, doc_hash = r
+        
+        cor_risco = GREEN if iglob >= 70 else (YELLOW if iglob >= 50 else RED)
+        tod_str = f" {MAGENTA}[TOD/PBS ATIVO]{RESET}" if tod else ""
+
+        print(f"\n{BOLD}ESTUDANTE:{RESET} {aid} | {BOLD}TURMA:{RESET} {turma} ({ano}º Ano) | {BOLD}CID:{RESET} {c10} ({gcid}){tod_str}")
+        print(f"{BOLD}Índice Global de Eficiência Cognitiva:{RESET} {cor_risco}{iglob:.1f}% ({risco}){RESET}")
+        print(f"{'-' * 80}")
+        
+        def bar(val):
+            blocks = int(val / 5)
+            c = GREEN if val >= 70 else (YELLOW if val >= 50 else RED)
+            return f"{c}{'█' * blocks}{'░' * (20 - blocks)}{RESET} {val:5.1f}%"
+
+        print(f"  1. Memória de Trabalho & Atenção    : {bar(s_mem)}")
+        print(f"  2. Consciência Fonológica & Decod   : {bar(s_fon)}")
+        print(f"  3. Compreensão Inferencial & Sentido: {bar(s_inf)}")
+        print(f"  4. Senso Numérico & Magnitude       : {bar(s_num)}")
+        print(f"  5. Campos Conceituais (Vergnaud)    : {bar(s_prob)}")
+        print(f"  6. Raciocínio Visuoespacial         : {bar(s_vis)}")
+        print(f"  7. Funções Executivas & Flexibilid  : {bar(s_exe)}")
+        print(f"\n  {YELLOW}🔍 Hipótese Clínica/Pedagógica:{RESET} {hip}")
+        print(f"  {CYAN}🎯 Encaminhamento RTI         :{RESET} {rti}")
+        print(f"  {WHITE}🛡️ Hash Validação Forense     :{RESET} {doc_hash[:24]}...")
+        print("=" * 80)
+
 def main():
     parser = argparse.ArgumentParser(description="Airam CLI — Ecossistema Educacional Airam Veras")
     parser.add_argument("--metas", action="store_true", help="Exibe diagnóstico das Metas A e B")
@@ -312,6 +383,8 @@ def main():
     parser.add_argument("--tod", action="store_true", help="Exibe casos e protocolo de TOD (F91.3 / PBS)")
     parser.add_argument("--aee", action="store_true", help="Exibe prontuário e protocolos de manejo de TODOS os CIDs")
     parser.add_argument("--manejos", action="store_true", help="Exibe catálogo completo de diretrizes clínicas por CID")
+    parser.add_argument("--raiox", action="store_true", help="Exibe o Raio-X Universal Neurocognitivo & Interdisciplinar")
+    parser.add_argument("--cognitivo", action="store_true", help="Exibe o Raio-X Neurocognitivo (sinônimo de --raiox)")
     parser.add_argument("--longitudinal", action="store_true", help="Roda a análise longitudinal multi-ciclos")
     parser.add_argument("--web", action="store_true", help="Inicia o dashboard web no navegador")
     parser.add_argument("--contraprova", action="store_true", help="Executa a contraprova matemática")
@@ -324,6 +397,8 @@ def main():
         cmd_estudante(args.aluno)
     elif args.tod or args.aee or args.manejos:
         cmd_tod_aee()
+    elif args.raiox or args.cognitivo:
+        cmd_raiox()
     elif args.longitudinal:
         cmd_longitudinal()
     elif args.web:
