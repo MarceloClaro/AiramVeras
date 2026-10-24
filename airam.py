@@ -37,6 +37,7 @@ YELLOW = "\033[93m"
 RED = "\033[91m"
 MAGENTA = "\033[95m"
 BLUE = "\033[94m"
+WHITE = "\033[97m"
 BOLD = "\033[1m"
 RESET = "\033[0m"
 
@@ -145,34 +146,80 @@ def cmd_estudante(termo=None):
     conn.close()
 
 def cmd_tod_aee():
-    """Exibe os casos de AEE com destaque para o Protocolo TOD (F91.3 / PBS)."""
+    """Exibe o prontuário de AEE com os protocolos clínicos de manejo para TODOS os CIDs da escola."""
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
         SELECT aluno_hash_id, nome_turma, codigo_cid10, codigo_cid11, grupo_diagnostico,
-               requer_manejo_tod_pbs, recurso_tempo_estendido_50pct, recurso_pausas_ativas_fracionadas,
-               estrategias_manejo_recomendadas
+               nomenclatura_oficial, requer_manejo_tod_pbs, recurso_tempo_estendido_50pct,
+               recurso_ledor_oficial, recurso_transcritor_oficial, recurso_pausas_ativas_fracionadas,
+               protocolo_sala_aula, protocolo_avaliativo_caed, fundamentacao_legal
         FROM vw_relatorio_aee_inclusao
         ORDER BY requer_manejo_tod_pbs DESC, codigo_cid10;
     """)
     rows = cur.fetchall()
-    conn.close()
 
     print(f"\n{MAGENTA}{BOLD}================================================================================")
-    print("  🧠 PRONTUÁRIO CLÍNICO DE AEE & PROTOCOLO TOD (F91.3 / 6C90)")
+    print("  🧠 PRONTUÁRIO CLÍNICO DE AEE & MATRIZ DE MANEJOS PARA TODOS OS CIDs")
     print(f"================================================================================{RESET}")
-    print(f"{'ID Seguro':<14} | {'Turma':<12} | {'CID-10':<7} | {'CID-11':<7} | {'Diagnóstico':<20} | {'Manejo TOD':<10}")
-    print("-" * 80)
-    for r in rows:
-        tod_badge = f"{GREEN}SIM (PBS){RESET}" if r[5] == 1 else "Padrão"
-        print(f"{r[0][:12]}... | {r[1]:<12} | {r[2]:<7} | {r[3]:<7} | {r[4]:<20} | {tod_badge}")
+    print(f"{'ID Seguro':<14} | {'Turma':<12} | {'CID-10':<7} | {'CID-11':<7} | {'Diagnóstico':<20} | {'Protocolo Clínico':<18}")
+    print("-" * 88)
     
-    print(f"\n{YELLOW}{BOLD}REGRAS DE CONDUTA OBRIGATÓRIAS PARA TOD (F91.3 / PBS):{RESET}")
-    print("1. Escolha Controlada: Apresente 2 a 3 alternativas legítimas para tarefas e avaliações.")
-    print("2. Desescalada: Jamais repreenda ou discuta em público com o aluno.")
-    print("3. Reforço Positivo: Elogie imediatamente comportamentos colaborativos (proporção 4:1).")
-    print("4. Proteção Psicométrica: Não interprete recusa como ausência de saber; aplique pausas ativas.")
-    print("=" * 80)
+    for r in rows:
+        aid, turma, c10, c11, grupo, nome_cid, tod, t_est, ledor, trans, pausas, p_sala, p_prova, legal = r
+        if tod == 1:
+            manejo_tag = f"{GREEN}PBS / Desescalada{RESET}"
+        elif c10 == 'F90.0':
+            manejo_tag = f"{YELLOW}Foco / Pausa 20m{RESET}"
+        elif c10 == 'F84.0':
+            manejo_tag = f"{CYAN}TEACCH / +50% Tempo{RESET}"
+        elif c10 == 'R48':
+            manejo_tag = f"{BLUE}Ledor / Transcritor{RESET}"
+        elif c10 == 'G40':
+            manejo_tag = f"{MAGENTA}Neuroprotetor{RESET}"
+        elif c10 == 'G80':
+            manejo_tag = f"{GREEN}TA / Prancha CAA{RESET}"
+        elif c10 == 'F72':
+            manejo_tag = f"{YELLOW}PDI / Art. 59 LDB{RESET}"
+        elif c10 == 'E10':
+            manejo_tag = f"{CYAN}Glicemia Livre{RESET}"
+        else:
+            manejo_tag = f"{WHITE}Fluência Adaptada{RESET}"
+            
+        print(f"{aid[:12]}... | {turma:<12} | {c10:<7} | {c11:<7} | {grupo:<20} | {manejo_tag}")
+
+    # Consulta ao catálogo completo de protocolos
+    cur.execute("""
+        SELECT codigo_cid10, codigo_cid11, grupo_diagnostico, nomenclatura_oficial,
+               protocolo_sala_aula, protocolo_avaliativo_caed, fundamentacao_legal
+        FROM dim_cid_catalogo
+        ORDER BY codigo_cid10;
+    """)
+    cids_cat = cur.fetchall()
+    conn.close()
+
+    print(f"\n{CYAN}{BOLD}================================================================================")
+    print("  📋 PROTOCOLOS CLÍNICOS E REGRAS DE MANEJO POR CID (SALA DE AULA & PROVAS)")
+    print(f"================================================================================{RESET}")
+    
+    for c in cids_cat:
+        c10, c11, grupo, nome_cid, p_sala, p_prova, legal = c
+        print(f"\n{YELLOW}{BOLD}▶ CID-10: {c10} | CID-11: {c11} — {nome_cid.upper()} ({grupo}){RESET}")
+        print(f"  {BOLD}🏫 Manejo em Sala de Aula:{RESET} {p_sala}")
+        print(f"  {BOLD}📝 Manejo em Provas CAEd/SPAECE:{RESET} {p_prova}")
+        print(f"  {BOLD}⚖️ Fundamentação Legal:{RESET} {legal}")
+        print("  " + "-" * 76)
+
+    print(f"\n{GREEN}{BOLD}>>> SÍNTESE DE CONDUTA PARA A EQUIPE PEDAGÓGICA E PSICÓLOGOS <<<{RESET}")
+    print("1. TOD (F91.3): Escolha controlada (2 opções) e proibição absoluta de confronto público.")
+    print("2. TDAH (F90.0): Pausas ativas a cada 20 min e provas fracionadas em blocos menores (Lei 14.254/21).")
+    print("3. TEA (F84.0): Previsibilidade visual, redução sensorial e tempo estendido +50% (Lei 12.764/12).")
+    print("4. Dislexia/Discalculia (R48): Ledor oficial, transcritor e material concreto liberado.")
+    print("5. Epilepsia (G40): Reagendamento sem penalidade em crises recentes e monitoramento de fadiga.")
+    print("6. Paralisia Cerebral (G80): Tecnologia Assistiva (TA) e prancha de Comunicação Alternativa (CAA).")
+    print("7. Deficiência Intelectual (F72): PDI funcional e critérios de Terminalidade Específica (Art. 59 LDB).")
+    print("8. Diabetes (E10): Acesso livre a água/banheiro e kit glicêmico na mesa durante exames.")
+    print("================================================================================")
 
 def cmd_longitudinal():
     """Executa e exibe o resumo da análise longitudinal multi-ciclos."""
@@ -217,7 +264,7 @@ def menu_interativo():
         print(f"{BOLD}Escolha uma operação:{RESET}\n")
         print("  1. 📊 Diagnóstico Executivo das Metas A e B")
         print("  2. 🔍 Consultar Estudante por ID Seguro ou Turma")
-        print("  3. 🧠 Prontuário AEE & Diretrizes de TOD (F91.3 / PBS)")
+        print("  3. 🧠 Prontuário AEE & Manejos Clínicos para TODOS os CIDs (TOD, TEA, TDAH, Dislexia, etc.)")
         print("  4. 🔄 Executar Análise Longitudinal Multi-Ciclos (Ciclos I, II e III)")
         print("  5. 🌐 Iniciar Dashboard Web Interativo no Navegador")
         print("  6. 📑 Gerar Fichas de Intervenção Pedagógica (PIP) e AEE")
@@ -263,6 +310,8 @@ def main():
     parser.add_argument("--metas", action="store_true", help="Exibe diagnóstico das Metas A e B")
     parser.add_argument("--aluno", type=str, help="Consulta prontuário do aluno por ID Seguro")
     parser.add_argument("--tod", action="store_true", help="Exibe casos e protocolo de TOD (F91.3 / PBS)")
+    parser.add_argument("--aee", action="store_true", help="Exibe prontuário e protocolos de manejo de TODOS os CIDs")
+    parser.add_argument("--manejos", action="store_true", help="Exibe catálogo completo de diretrizes clínicas por CID")
     parser.add_argument("--longitudinal", action="store_true", help="Roda a análise longitudinal multi-ciclos")
     parser.add_argument("--web", action="store_true", help="Inicia o dashboard web no navegador")
     parser.add_argument("--contraprova", action="store_true", help="Executa a contraprova matemática")
@@ -273,7 +322,7 @@ def main():
         cmd_metas()
     elif args.aluno:
         cmd_estudante(args.aluno)
-    elif args.tod:
+    elif args.tod or args.aee or args.manejos:
         cmd_tod_aee()
     elif args.longitudinal:
         cmd_longitudinal()

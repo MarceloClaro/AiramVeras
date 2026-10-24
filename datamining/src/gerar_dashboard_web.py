@@ -73,21 +73,34 @@ def extrair_dados_dashboard():
             codigo_cid10 AS cid10,
             codigo_cid11 AS cid11,
             grupo_diagnostico,
+            nomenclatura_oficial,
             pdi_ativo,
             recurso_tempo_estendido_50pct,
             recurso_ledor_oficial,
             recurso_transcritor_oficial,
             recurso_ambiente_baixo_estimulo,
             recurso_pausas_ativas_fracionadas,
-            0 AS recurso_tipografia_acessivel,
-            0 AS recurso_material_concreto,
             requer_manejo_tod_pbs,
-            estrategias_manejo_recomendadas AS observacoes_clinico_pedagogicas
+            estrategias_manejo_recomendadas,
+            protocolo_sala_aula,
+            protocolo_avaliativo_caed,
+            fundamentacao_legal,
+            observacoes_clinico_pedagogicas
         FROM vw_relatorio_aee_inclusao
-        ORDER BY ano_escolar, codigo_cid10;
+        ORDER BY requer_manejo_tod_pbs DESC, ano_escolar, codigo_cid10;
     """)
     cols_aee = [d[0] for d in cur.description]
     aee_data = [dict(zip(cols_aee, r)) for r in cur.fetchall()]
+
+    # Catálogo Canônico de CIDs e Diretrizes
+    cur.execute("""
+        SELECT codigo_cid10, codigo_cid11, grupo_diagnostico, nomenclatura_oficial,
+               protocolo_sala_aula, protocolo_avaliativo_caed, fundamentacao_legal
+        FROM dim_cid_catalogo
+        ORDER BY codigo_cid10;
+    """)
+    cols_cat = [d[0] for d in cur.description]
+    catalogo_cids = [dict(zip(cols_cat, r)) for r in cur.fetchall()]
 
     # 4. Dados Longitudinais Multi-Ciclos
     cur.execute("""
@@ -118,6 +131,7 @@ def extrair_dados_dashboard():
         "metas": metas_data,
         "estudantes": alunos_data,
         "aee": aee_data,
+        "catalogo_cids": catalogo_cids,
         "longitudinal": long_data,
         "markov": markov_data,
         "meta_resumo": {
@@ -384,67 +398,213 @@ def gerar_html_completo(dados: dict) -> str:
         </section>
 
         <!-- ============================================================= -->
-        <!-- TAB 3: PSICOLOGIA & AEE (PROTOCOLO TOD/PBS)                   -->
+        <!-- TAB 3: PSICOLOGIA & AEE (MATRIZ DE MANEJOS PARA TODOS OS CIDs)-->
         <!-- ============================================================= -->
         <section id="tab-aee" class="hidden space-y-6">
-            <!-- TOD Protocol Banner -->
-            <div class="bg-gradient-to-r from-purple-900/40 via-indigo-900/30 to-slate-900/50 border border-purple-500/30 rounded-2xl p-6 relative overflow-hidden">
-                <div class="flex items-start justify-between">
+            <!-- Header Central de AEE -->
+            <div class="glass-panel p-6 rounded-2xl border-l-4 border-purple-500">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     <div>
-                        <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40 uppercase tracking-wider">
-                            Protocolo Clínico e Pedagógico Exclusivo
-                        </span>
-                        <h2 class="text-xl font-bold text-white mt-2">Manejo de TOD (Transtorno Opositor Desafiador — CID-10: F91.3 | CID-11: 6C90)</h2>
-                        <p class="text-xs text-slate-300 mt-1 max-w-3xl">
-                            Diretrizes mandatórias de Suporte Comportamental Positivo (PBS) e técnica da escolha controlada para garantir a participação digna, evitar crises de oposição e proteger o escore psicométrico dos estudantes.
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40 uppercase tracking-wider">
+                                Inclusão Plena & Psicometria Adaptada
+                            </span>
+                            <span class="text-xs text-slate-400">Lei nº 13.146/15 (LBI) & Lei nº 14.254/21</span>
+                        </div>
+                        <h2 class="text-2xl font-black text-white mt-2 tracking-tight">
+                            Matriz de Protocolos Clínicos de Manejo por CID
+                        </h2>
+                        <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
+                            Orientações técnico-pedagógicas mandatórias para professores de sala regular, aplicadores de provas diagnósticas (CAEd/SPAECE) e equipe de AEE para proteção emocional, cognitiva e psicométrica de todos os educandos laudados.
                         </p>
                     </div>
-                    <div class="text-right font-mono">
-                        <span class="text-2xl font-black text-purple-300">8 Casos</span>
-                        <div class="text-xs text-slate-400">Comorbidades c/ TDAH/TEA</div>
-                    </div>
-                </div>
-
-                <!-- 4 Action Cards for TOD -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-3 mt-5">
-                    <div class="p-3 rounded-xl bg-slate-900/60 border border-purple-500/20 text-xs">
-                        <div class="font-bold text-purple-300 mb-1">1. Escolha Controlada</div>
-                        <p class="text-slate-400">Nunca impor ordem direta imperativa. Oferecer 2 opções pré-validadas: <em>"Prefere iniciar pelos itens de cálculo ou geometria?"</em></p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-slate-900/60 border border-purple-500/20 text-xs">
-                        <div class="font-bold text-purple-300 mb-1">2. Prevenção de Escalada</div>
-                        <p class="text-slate-400">Nunca confrontar ou repreender publicamente em sala. Diálogo em tom neutro e privado; foco na ação e não na pessoa.</p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-slate-900/60 border border-purple-500/20 text-xs">
-                        <div class="font-bold text-purple-300 mb-1">3. Reforço Positivo 4:1</div>
-                        <p class="text-slate-400">Manter proporção de 4 validações de comportamentos positivos para cada intervenção de redirecionamento de conduta.</p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-slate-900/60 border border-purple-500/20 text-xs">
-                        <div class="font-bold text-purple-300 mb-1">4. Proteção Psicométrica</div>
-                        <p class="text-slate-400">A recusa inicial de prova não é erro cognitivo. Aplicar pausas ativas de 5 min antes de registrar omissão no caderno.</p>
+                    <div class="flex gap-2">
+                        <div class="px-3 py-2 rounded-xl bg-purple-950/60 border border-purple-500/30 text-center font-mono">
+                            <span class="text-2xl font-black text-purple-300">24</span>
+                            <div class="text-[10px] text-slate-400 uppercase">Laudos AEE</div>
+                        </div>
+                        <div class="px-3 py-2 rounded-xl bg-indigo-950/60 border border-indigo-500/30 text-center font-mono">
+                            <span class="text-2xl font-black text-indigo-300">8</span>
+                            <div class="text-[10px] text-slate-400 uppercase">Casos TOD (PBS)</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- AEE Census Table -->
+            <!-- Grid de Protocolos Clínicos Especializados (TODOS OS CIDs) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 1. TOD (F91.3) -->
+                <div class="glass-panel p-5 rounded-2xl border border-purple-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono">F91.3 | 6C90</span>
+                            <span class="text-[10px] uppercase font-bold text-emerald-400">PBS Ativo</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">TOD (Opositor Desafiador)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Técnica da escolha controlada (2 opções legítimas). Proibição total de confronto público ou repreensão diante da turma. Desescalada privada em tom calmo. Proporção 4 validações : 1 correção.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400">
+                        ⚖️ LBI Art. 28 | Parecer CNE 50/23
+                    </div>
+                </div>
+
+                <!-- 2. TDAH (F90.0) -->
+                <div class="glass-panel p-5 rounded-2xl border border-amber-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono">F90.0 | 6A05</span>
+                            <span class="text-[10px] uppercase font-bold text-amber-400">Atenção Plena</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">TDAH (Déficit de Atenção)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Pausas ativas fracionadas a cada 20 min. Primeira carteira longe de janelas/portas. Prova fracionada em blocos curtos. Uso de máscara de foco (régua vazada). Tolerância para fidgets motores.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-amber-400 font-semibold">
+                        ⚖️ Lei Federal 14.254/2021
+                    </div>
+                </div>
+
+                <!-- 3. TEA (F84.0) -->
+                <div class="glass-panel p-5 rounded-2xl border border-sky-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono">F84.0 | 6A02</span>
+                            <span class="text-[10px] uppercase font-bold text-sky-400">TEACCH Estruturado</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">TEA (Espectro Autista)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Rotina visual previsível com antecipação de etapas. Sala de aplicação de baixo estímulo sensorial. Tempo estendido (+50%). Enunciados literais e objetivos. Profissional de apoio mandatória.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-sky-400 font-semibold">
+                        ⚖️ Lei Berenice Piana 12.764/12
+                    </div>
+                </div>
+
+                <!-- 4. Dislexia e Discalculia (R48) -->
+                <div class="glass-panel p-5 rounded-2xl border border-blue-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono">R48 | 6A03</span>
+                            <span class="text-[10px] uppercase font-bold text-blue-400">Acesso Textual</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Dislexia & Discalculia</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Ledor oficial de enunciados e transcritor de respostas. Tipografia OpenDyslexic (14pt+). Não penalização ortográfica. Uso liberado de calculadora simples e material dourado em Matemática.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-blue-400 font-semibold">
+                        ⚖️ Lei Federal 14.254/2021
+                    </div>
+                </div>
+
+                <!-- 5. Epilepsia (G40) -->
+                <div class="glass-panel p-5 rounded-2xl border border-fuchsia-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-fuchsia-500/20 text-fuchsia-300 font-mono">G40 | 8A60</span>
+                            <span class="text-[10px] uppercase font-bold text-fuchsia-400">Neuroprotetor</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Epilepsia & Convulsões</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Monitoramento de estresse como gatilho. Direito de reagendamento sem prejuízo em caso de crise recente (48h). Tolerância à lentificação medicamentosa. Equipe capacitada em primeiros socorros.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-slate-400">
+                        ⚖️ Lei Lucas 13.722/18 | CF Art. 205
+                    </div>
+                </div>
+
+                <!-- 6. Paralisia Cerebral (G80) -->
+                <div class="glass-panel p-5 rounded-2xl border border-emerald-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono">G80 | 8D00</span>
+                            <span class="text-[10px] uppercase font-bold text-emerald-400">Tecnologia Assistiva</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Paralisia Cerebral (PC)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Pranchas de Comunicação Aumentativa e Alternativa (CAA). Transcritor oficial para respostas por apontamento, fixação ocular ou voz. Mobiliário ergonômico. Tempo livre ou estendido.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-emerald-400 font-semibold">
+                        ⚖️ LBI 13.146/15 Art. 74
+                    </div>
+                </div>
+
+                <!-- 7. Deficiência Intelectual (F72) -->
+                <div class="glass-panel p-5 rounded-2xl border border-orange-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-mono">F72 | 6A00.2</span>
+                            <span class="text-[10px] uppercase font-bold text-orange-400">PDI Funcional</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Deficiência Intelectual</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Adequação curricular com suporte visual concreto. Mediação passo a passo nas instruções. Avaliação formativa adaptada. Homologação de critérios de Terminalidade Específica no Conselho.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-orange-400 font-semibold">
+                        ⚖️ LDB 9.394/96 Art. 59, II
+                    </div>
+                </div>
+
+                <!-- 8. Diabetes Mellitus Tipo 1 (E10) -->
+                <div class="glass-panel p-5 rounded-2xl border border-cyan-500/30 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono">E10 | 5A10</span>
+                            <span class="text-[10px] uppercase font-bold text-cyan-400">Glicemia Livre</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Diabetes Tipo 1 (Crônica)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Acesso irrestrito a água e sanitários sem autorização prévia. Permissão de monitoramento glicêmico (sensor/glicosímetro) na mesa de prova. Pausa imediata no cronômetro se hipoglicemia.
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-cyan-400 font-semibold">
+                        ⚖️ Lei Federal 13.895/2019
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabela Interativa de Alunos Laudados com Filtros de Manejo -->
             <div class="glass-panel p-6 rounded-2xl">
-                <h3 class="text-base font-bold text-white mb-2">Prontuário de Inclusão Escolar & AEE (Censo de 24 Estudantes)</h3>
-                <p class="text-xs text-slate-400 mb-4">Mapeamento em conformidade com a Lei Brasileira de Inclusão (LBI nº 13.146/15) e Lei nº 14.254/21.</p>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div>
+                        <h3 class="text-base font-bold text-white">Prontuário Individualizado de AEE & Acomodações Mandatórias</h3>
+                        <p class="text-xs text-slate-400">24 estudantes atendidos com PDI ativo e diretrizes clínicas parametrizadas.</p>
+                    </div>
+                    <!-- Filtros Rápidos por Grupo Diagnóstico -->
+                    <div class="flex flex-wrap gap-1.5" id="aee-filter-buttons">
+                        <button onclick="filterAee('todos')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-purple-600 text-white transition aee-filter-btn active" data-filter="todos">Todos (24)</button>
+                        <button onclick="filterAee('tod')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="tod">TOD (8)</button>
+                        <button onclick="filterAee('tdah')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="tdah">TDAH</button>
+                        <button onclick="filterAee('tea')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="tea">TEA</button>
+                        <button onclick="filterAee('dislexia')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="dislexia">Dislexia</button>
+                        <button onclick="filterAee('neuro')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="neuro">Neurológico</button>
+                        <button onclick="filterAee('cronica')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="cronica">Crônica</button>
+                    </div>
+                </div>
+
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs font-sans">
                         <thead class="bg-slate-800/70 text-slate-300 font-semibold border-b border-slate-700">
                             <tr>
                                 <th class="p-3">ID Seguro Aluno</th>
-                                <th class="p-3">Ano / Turma</th>
+                                <th class="p-3">Turma</th>
                                 <th class="p-3">CID-10</th>
                                 <th class="p-3">CID-11</th>
                                 <th class="p-3">Diagnóstico Clínico</th>
-                                <th class="p-3">Manejo TOD PBS</th>
-                                <th class="p-3">Tempo +50%</th>
-                                <th class="p-3">Ledor</th>
-                                <th class="p-3">Transcritor</th>
-                                <th class="p-3">Ambiente Calmo</th>
-                                <th class="p-3">Pausas Ativas</th>
+                                <th class="p-3">Protocolo de Manejo</th>
+                                <th class="p-3 text-center">Tempo +50%</th>
+                                <th class="p-3 text-center">Ledor</th>
+                                <th class="p-3 text-center">Transcritor</th>
+                                <th class="p-3 text-center">Pausas</th>
+                                <th class="p-3 text-center">Ambiente</th>
+                                <th class="p-3">Fundamentação Legal</th>
                             </tr>
                         </thead>
                         <tbody id="tbody-aee" class="divide-y divide-slate-800 font-mono">
@@ -646,25 +806,82 @@ def gerar_html_completo(dados: dict) -> str:
             renderStudentTable(filtrados);
         }}
 
-        // Render AEE Table
+        // Render AEE Table com Filtro Dinâmico
+        let aeeFiltroAtivo = 'todos';
+
+        function filterAee(filtro) {{
+            aeeFiltroAtivo = filtro;
+            document.querySelectorAll('.aee-filter-btn').forEach(btn => {{
+                if (btn.dataset.filter === filtro) {{
+                    btn.classList.add('bg-purple-600', 'text-white');
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                }} else {{
+                    btn.classList.remove('bg-purple-600', 'text-white');
+                    btn.classList.add('bg-slate-800', 'text-slate-300');
+                }}
+            }});
+            renderAeeTable();
+        }}
+
         function renderAeeTable() {{
             const tbody = document.getElementById('tbody-aee');
             tbody.innerHTML = '';
-            DB.aee.forEach(a => {{
+            
+            let filtrados = DB.aee;
+            if (aeeFiltroAtivo === 'tod') filtrados = filtrados.filter(a => a.requer_manejo_tod_pbs === 1);
+            else if (aeeFiltroAtivo === 'tdah') filtrados = filtrados.filter(a => a.cid10 === 'F90.0');
+            else if (aeeFiltroAtivo === 'tea') filtrados = filtrados.filter(a => a.cid10 === 'F84.0');
+            else if (aeeFiltroAtivo === 'dislexia') filtrados = filtrados.filter(a => a.cid10 === 'R48');
+            else if (aeeFiltroAtivo === 'neuro') filtrados = filtrados.filter(a => a.cid10 === 'G40' || a.cid10 === 'G80');
+            else if (aeeFiltroAtivo === 'cronica') filtrados = filtrados.filter(a => a.cid10 === 'E10');
+
+            filtrados.forEach(a => {{
                 const tr = document.createElement('tr');
-                const isTod = a.requer_manejo_tod_pbs === 1;
+                let badgeProtocolo = '';
+                let cidColor = 'text-blue-400';
+
+                if (a.requer_manejo_tod_pbs === 1) {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">PBS / Escolha Controlada</span>';
+                    cidColor = 'text-purple-400';
+                }} else if (a.cid10 === 'F90.0') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Foco / Pausa 20m</span>';
+                    cidColor = 'text-amber-400';
+                }} else if (a.cid10 === 'F84.0') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30">TEACCH / +50% Tempo</span>';
+                    cidColor = 'text-sky-400';
+                }} else if (a.cid10 === 'R48') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">Ledor / Transcritor</span>';
+                    cidColor = 'text-blue-400';
+                }} else if (a.cid10 === 'G40') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30">Neuroprotetor / Crises</span>';
+                    cidColor = 'text-fuchsia-400';
+                }} else if (a.cid10 === 'G80') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">TA / Prancha CAA</span>';
+                    cidColor = 'text-emerald-400';
+                }} else if (a.cid10 === 'F72') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30">PDI / Art. 59 LDB</span>';
+                    cidColor = 'text-orange-400';
+                }} else if (a.cid10 === 'E10') {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Glicemia Livre</span>';
+                    cidColor = 'text-cyan-400';
+                }} else {{
+                    badgeProtocolo = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-500/20 text-slate-300 border border-slate-500/30">Fluência Adaptada</span>';
+                    cidColor = 'text-slate-300';
+                }}
+
                 tr.innerHTML = `
                     <td class="p-3 text-slate-400" title="${{a.aluno_hash_id}}">${{a.aluno_hash_id.substring(0, 10)}}...</td>
                     <td class="p-3 font-bold text-white">${{a.nome_turma}}</td>
-                    <td class="p-3 font-bold ${{isTod ? 'text-purple-400' : 'text-blue-400'}}">${{a.cid10}}</td>
+                    <td class="p-3 font-bold ${{cidColor}}">${{a.cid10}}</td>
                     <td class="p-3 text-slate-400">${{a.cid11}}</td>
                     <td class="p-3 font-sans font-bold text-slate-200">${{a.grupo_diagnostico}}</td>
-                    <td class="p-3 font-bold ${{isTod ? 'text-emerald-400' : 'text-slate-600'}}">${{isTod ? 'SIM (PBS Ativo)' : 'Não'}}</td>
+                    <td class="p-3 font-sans">${{badgeProtocolo}}</td>
                     <td class="p-3 text-center">${{a.recurso_tempo_estendido_50pct ? '✅' : '❌'}}</td>
                     <td class="p-3 text-center">${{a.recurso_ledor_oficial ? '✅' : '❌'}}</td>
                     <td class="p-3 text-center">${{a.recurso_transcritor_oficial ? '✅' : '❌'}}</td>
-                    <td class="p-3 text-center">${{a.recurso_ambiente_baixo_estimulo ? '✅' : '❌'}}</td>
                     <td class="p-3 text-center">${{a.recurso_pausas_ativas_fracionadas ? '✅' : '❌'}}</td>
+                    <td class="p-3 text-center">${{a.recurso_ambiente_baixo_estimulo ? '✅' : '❌'}}</td>
+                    <td class="p-3 font-sans text-[11px] text-slate-400">${{a.fundamentacao_legal || 'LBI nº 13.146/15'}}</td>
                 `;
                 tbody.appendChild(tr);
             }});

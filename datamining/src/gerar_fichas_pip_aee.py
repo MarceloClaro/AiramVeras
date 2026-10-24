@@ -198,7 +198,11 @@ def gerar_prontuario_aee():
             recurso_ambiente_baixo_estimulo,
             recurso_pausas_ativas_fracionadas,
             requer_manejo_tod_pbs,
-            estrategias_manejo_recomendadas
+            estrategias_manejo_recomendadas,
+            protocolo_sala_aula,
+            protocolo_avaliativo_caed,
+            fundamentacao_legal,
+            observacoes_clinico_pedagogicas
         FROM vw_relatorio_aee_inclusao
         ORDER BY requer_manejo_tod_pbs DESC, ano_escolar, codigo_cid10;
     """)
@@ -207,14 +211,71 @@ def gerar_prontuario_aee():
 
     html_casos = []
     for c in casos:
-        aid, turma, ano, c10, c11, grupo, nome_cid, pdi, t_est, ledor, trans, amb, pausas, tod, estrat = c
+        (aid, turma, ano, c10, c11, grupo, nome_cid, pdi, t_est, ledor, trans, amb, 
+         pausas, tod, estrat, p_sala, p_prova, legal, obs) = c
         is_tod = (tod == 1)
 
+        # Determina o banner específico por CID
+        if is_tod:
+            banner_html = """<div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>"""
+            border_cls = "tod-border"
+        elif c10 == 'F90.0':
+            banner_html = f"""<div class="cid-banner banner-tdah">
+                <strong>⚡ PROTOCOLO NEUROEXECUTIVO & ATENÇÃO PLENA (TDAH / F90.0 — Lei 14.254/21):</strong><br>
+                Pausas ativas a cada 20 min. Caderno de avaliação fracionado em blocos menores. Primeira carteira e redução de distratores.
+            </div>"""
+            border_cls = "tdah-border"
+        elif c10 == 'F84.0':
+            banner_html = f"""<div class="cid-banner banner-tea">
+                <strong>🧩 PROTOCOLO ESTRUTURADO TEACCH & REGULAÇÃO SENSORIAL (TEA / F84.0 — Lei 12.764/12):</strong><br>
+                Previsibilidade de rotina visual. Sala de baixo estímulo auditivo/visual. Tempo estendido (+50%) e mediador não-indutivo.
+            </div>"""
+            border_cls = "tea-border"
+        elif c10 == 'R48':
+            banner_html = f"""<div class="cid-banner banner-dislexia">
+                <strong>📖 PROTOCOLO DE ACESSIBILIDADE TEXTUAL & SIMBÓLICA (DISLEXIA / R48 — Lei 14.254/21):</strong><br>
+                Ledor e transcritor oficial mandatória. Tipografia OpenDyslexic (14pt+). Não penalização ortográfica. Material concreto e calculadora básica.
+            </div>"""
+            border_cls = "dislexia-border"
+        elif c10 == 'G40':
+            banner_html = f"""<div class="cid-banner banner-neuro">
+                <strong>🧠 PROTOCOLO NEUROPROTETOR & SEGURANÇA (EPILEPSIA / G40 — Lei Lucas 13.722/18):</strong><br>
+                Direito a reagendamento de provas se houver crise nas 48h anteriores. Tolerância à lentificação medicamentosa.
+            </div>"""
+            border_cls = "neuro-border"
+        elif c10 == 'G80':
+            banner_html = f"""<div class="cid-banner banner-ta">
+                <strong>♿ PROTOCOLO DE TECNOLOGIA ASSISTIVA & CAA (PARALISIA CEREBRAL / G80 — LBI Art. 74):</strong><br>
+                Prancha de Comunicação Alternativa (CAA). Transcritor oficial para respostas por apontamento ou voz. Mobiliário ergonômico.
+            </div>"""
+            border_cls = "ta-border"
+        elif c10 == 'F72':
+            banner_html = f"""<div class="cid-banner banner-di">
+                <strong>🎯 PROTOCOLO DE ADEQUAÇÃO CURRICULAR & PDI (DEFICIÊNCIA INTELECTUAL / F72 — LDB Art. 59):</strong><br>
+                Avaliação formativa adaptada às metas do PDI. Suporte concreto contínuo. Aplicação de critérios de Terminalidade Específica.
+            </div>"""
+            border_cls = "di-border"
+        elif c10 == 'E10':
+            banner_html = f"""<div class="cid-banner banner-diab">
+                <strong>🩸 PROTOCOLO METABÓLICO ESCOLAR (DIABETES TIPO 1 / E10 — Lei 13.895/19):</strong><br>
+                Livre acesso a água e sanitários sem restrição. Monitoramento glicêmico na mesa da prova e pausa imediata de tempo em hipoglicemia.
+            </div>"""
+            border_cls = "diab-border"
+        else:
+            banner_html = f"""<div class="cid-banner banner-malform">
+                <strong>🌱 PROTOCOLO DE EQUIDADE FONOAUDIOLÓGICA (MALFORMAÇÃO / {c10}):</strong><br>
+                Dispensa de penalidade na prova cronometrada de Fluência Oral CAEd. Valorização das habilidades receptivas e multissensoriais.
+            </div>"""
+            border_cls = "malform-border"
+
         card = f"""
-        <div class="aee-card {'tod-border' if is_tod else ''}">
+        <div class="aee-card {border_cls}">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge {'badge-tod' if is_tod else 'badge-aee'}">
+                    <span class="aee-badge badge-{grupo.lower().replace(' ', '-')}">
                         {grupo} — CID-10: {c10} | CID-11: {c11}
                     </span>
                     <h2 class="aluno-name">{nome_cid}</h2>
@@ -222,11 +283,11 @@ def gerar_prontuario_aee():
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> {'ATIVO' if pdi else 'INATIVO'}<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            {'<div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>' if is_tod else ''}
+            {banner_html}
 
             <div class="grid-acessibilidade">
                 <div class="acess-item {'active' if t_est else ''}">⏱️ Tempo Estendido +50%</div>
@@ -234,18 +295,32 @@ def gerar_prontuario_aee():
                 <div class="acess-item {'active' if trans else ''}">✍️ Transcritor Oficial</div>
                 <div class="acess-item {'active' if amb else ''}">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item {'active' if pausas else ''}">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                {estrat}
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                {p_sala or estrat}
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                {p_prova or 'Aplicação com acessibilidade garantida e pausas fracionadas.'}
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>{legal or 'Lei Brasileira de Inclusão (Lei 13.146/2015)'}</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> {obs or 'Seguir as metas individualizadas do PDI.'}
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -272,10 +347,16 @@ def gerar_prontuario_aee():
             margin-bottom: 25px;
             page-break-after: always;
         }}
-        .tod-border {{
-            border: 2px solid #7c3aed;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
-        }}
+        .tod-border {{ border: 2px solid #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15); }}
+        .tdah-border {{ border: 2px solid #d97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15); }}
+        .tea-border {{ border: 2px solid #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); }}
+        .dislexia-border {{ border: 2px solid #2563eb; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); }}
+        .neuro-border {{ border: 2px solid #9333ea; box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15); }}
+        .ta-border {{ border: 2px solid #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15); }}
+        .di-border {{ border: 2px solid #ea580c; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15); }}
+        .diab-border {{ border: 2px solid #0891b2; box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15); }}
+        .malform-border {{ border: 2px solid #475569; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.15); }}
+
         .aee-header {{
             display: flex;
             justify-content: space-between;
@@ -291,6 +372,8 @@ def gerar_prontuario_aee():
             padding: 3px 8px;
             border-radius: 4px;
             text-transform: uppercase;
+            background: #2563eb;
+            color: #ffffff;
         }}
         .badge-tod {{ background: #7c3aed; color: #ffffff; }}
         .badge-aee {{ background: #2563eb; color: #ffffff; }}
@@ -298,16 +381,24 @@ def gerar_prontuario_aee():
         .turma-info {{ font-size: 12px; color: #64748b; }}
         .mono {{ font-family: monospace; }}
         .pdi-status {{ text-align: right; font-size: 11px; color: #047857; font-weight: bold; }}
-        .tod-banner {{
-            background: #f5f3ff;
-            border: 1px solid #c4b5fd;
+        
+        .cid-banner {{
             border-radius: 6px;
-            padding: 10px;
+            padding: 10px 12px;
             font-size: 12px;
-            color: #5b21b6;
-            font-weight: 600;
+            line-height: 1.45;
             margin-bottom: 15px;
         }}
+        .banner-tod {{ background: #f5f3ff; border: 1px solid #c4b5fd; color: #5b21b6; }}
+        .banner-tdah {{ background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }}
+        .banner-tea {{ background: #f0f9ff; border: 1px solid #bae6fd; color: #075985; }}
+        .banner-dislexia {{ background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }}
+        .banner-neuro {{ background: #faf5ff; border: 1px solid #e9d5ff; color: #6b21a8; }}
+        .banner-ta {{ background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }}
+        .banner-di {{ background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }}
+        .banner-diab {{ background: #ecfeff; border: 1px solid #a5f3fc; color: #155e75; }}
+        .banner-malform {{ background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; }}
+
         .grid-acessibilidade {{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -332,15 +423,35 @@ def gerar_prontuario_aee():
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
-            padding: 12px;
+            padding: 10px 12px;
             font-size: 12px;
             line-height: 1.5;
+            margin-bottom: 8px;
+        }}
+        .prova-box {{
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #713f12;
+            margin-bottom: 8px;
+        }}
+        .legal-box {{
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: #166534;
             margin-bottom: 15px;
         }}
-        .obs-box {{ font-size: 12px; margin-top: 20px; }}
+        .obs-box {{ font-size: 12px; margin-top: 15px; }}
         @media print {{
             body {{ background: transparent; padding: 0; }}
-            .aee-card {{ margin: 0; box-shadow: none; border: 1px solid #000; }}
+            .aee-card {{ margin: 0; box-shadow: none; border: 1px solid #000; page-break-after: always; }}
+            .no-print {{ display: none; }}
         }}
     </style>
 </head>

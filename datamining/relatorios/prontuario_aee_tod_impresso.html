@@ -18,10 +18,16 @@
             margin-bottom: 25px;
             page-break-after: always;
         }
-        .tod-border {
-            border: 2px solid #7c3aed;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
-        }
+        .tod-border { border: 2px solid #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15); }
+        .tdah-border { border: 2px solid #d97706; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15); }
+        .tea-border { border: 2px solid #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15); }
+        .dislexia-border { border: 2px solid #2563eb; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15); }
+        .neuro-border { border: 2px solid #9333ea; box-shadow: 0 4px 12px rgba(147, 51, 234, 0.15); }
+        .ta-border { border: 2px solid #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15); }
+        .di-border { border: 2px solid #ea580c; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15); }
+        .diab-border { border: 2px solid #0891b2; box-shadow: 0 4px 12px rgba(8, 145, 178, 0.15); }
+        .malform-border { border: 2px solid #475569; box-shadow: 0 4px 12px rgba(71, 85, 105, 0.15); }
+
         .aee-header {
             display: flex;
             justify-content: space-between;
@@ -37,6 +43,8 @@
             padding: 3px 8px;
             border-radius: 4px;
             text-transform: uppercase;
+            background: #2563eb;
+            color: #ffffff;
         }
         .badge-tod { background: #7c3aed; color: #ffffff; }
         .badge-aee { background: #2563eb; color: #ffffff; }
@@ -44,16 +52,24 @@
         .turma-info { font-size: 12px; color: #64748b; }
         .mono { font-family: monospace; }
         .pdi-status { text-align: right; font-size: 11px; color: #047857; font-weight: bold; }
-        .tod-banner {
-            background: #f5f3ff;
-            border: 1px solid #c4b5fd;
+        
+        .cid-banner {
             border-radius: 6px;
-            padding: 10px;
+            padding: 10px 12px;
             font-size: 12px;
-            color: #5b21b6;
-            font-weight: 600;
+            line-height: 1.45;
             margin-bottom: 15px;
         }
+        .banner-tod { background: #f5f3ff; border: 1px solid #c4b5fd; color: #5b21b6; }
+        .banner-tdah { background: #fffbeb; border: 1px solid #fde68a; color: #92400e; }
+        .banner-tea { background: #f0f9ff; border: 1px solid #bae6fd; color: #075985; }
+        .banner-dislexia { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; }
+        .banner-neuro { background: #faf5ff; border: 1px solid #e9d5ff; color: #6b21a8; }
+        .banner-ta { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+        .banner-di { background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }
+        .banner-diab { background: #ecfeff; border: 1px solid #a5f3fc; color: #155e75; }
+        .banner-malform { background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; }
+
         .grid-acessibilidade {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -78,15 +94,35 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
-            padding: 12px;
+            padding: 10px 12px;
             font-size: 12px;
             line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .prova-box {
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #713f12;
+            margin-bottom: 8px;
+        }
+        .legal-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 11px;
+            color: #166534;
             margin-bottom: 15px;
         }
-        .obs-box { font-size: 12px; margin-top: 20px; }
+        .obs-box { font-size: 12px; margin-top: 15px; }
         @media print {
             body { background: transparent; padding: 0; }
-            .aee-card { margin: 0; box-shadow: none; border: 1px solid #000; }
+            .aee-card { margin: 0; box-shadow: none; border: 1px solid #000; page-break-after: always; }
+            .no-print { display: none; }
         }
     </style>
 </head>
@@ -100,7 +136,7 @@
         <div class="aee-card tod-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-tod">
+                    <span class="aee-badge badge-tea">
                         TEA — CID-10: F84.0 | CID-11: 6A02
                     </span>
                     <h2 class="aluno-name">Transtorno do Espectro Autista</h2>
@@ -108,11 +144,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -120,18 +159,32 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tempo adicional (+50%); enunciados visuais objetivos; apoio de profissional de apoio; redução de estímulos auditivos/visuais.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Rotina visual estruturada (antecipação de transições no quadro TEACCH); comunicação direta sem metáforas ou duplo sentido; fones abafadores disponíveis; respeito ao tempo de resposta; mediação de profissional de apoio.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tempo estendido (+50%); sala de aplicação individualizada de baixo estímulo sensorial; permissão de objeto de transição; enunciados com apoio pictográfico; profissional de apoio escolar.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 12.764/2012 (Lei Berenice Piana) e LBI 13.146/2015 Art. 28.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TEA com TDAH e traços opositores; mediador, tempo estendido e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,11 +200,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -159,18 +215,32 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Técnica da escolha controlada (apresentar 2 a 3 alternativas legítimas); proibição de confronto público (desescalada privada em tom calmo); proporção 4 elogios para 1 correção; contratos de contingência não-punitivos.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Aplicação mediada por profissional de vínculo afetivo consolidado; respeito ao tempo de desescalada sem insistência forçada em itens de recusa; pausas para regulação socioemocional.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 28; Parecer CNE/CP 50/2023; Protocolo de Suporte Comportamental Positivo (PBS).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TOD com comorbidade de TDAH; protocolo de escolha controlada e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,11 +256,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -198,18 +271,32 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Técnica da escolha controlada (apresentar 2 a 3 alternativas legítimas); proibição de confronto público (desescalada privada em tom calmo); proporção 4 elogios para 1 correção; contratos de contingência não-punitivos.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Aplicação mediada por profissional de vínculo afetivo consolidado; respeito ao tempo de desescalada sem insistência forçada em itens de recusa; pausas para regulação socioemocional.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 28; Parecer CNE/CP 50/2023; Protocolo de Suporte Comportamental Positivo (PBS).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TOD com comorbidade de TDAH; protocolo de escolha controlada e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -217,7 +304,7 @@
         <div class="aee-card tod-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-tod">
+                    <span class="aee-badge badge-tea">
                         TEA — CID-10: F84.0 | CID-11: 6A02
                     </span>
                     <h2 class="aluno-name">Transtorno do Espectro Autista</h2>
@@ -225,11 +312,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -237,18 +327,32 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tempo adicional (+50%); enunciados visuais objetivos; apoio de profissional de apoio; redução de estímulos auditivos/visuais.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Rotina visual estruturada (antecipação de transições no quadro TEACCH); comunicação direta sem metáforas ou duplo sentido; fones abafadores disponíveis; respeito ao tempo de resposta; mediação de profissional de apoio.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tempo estendido (+50%); sala de aplicação individualizada de baixo estímulo sensorial; permissão de objeto de transição; enunciados com apoio pictográfico; profissional de apoio escolar.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 12.764/2012 (Lei Berenice Piana) e LBI 13.146/2015 Art. 28.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TEA com TDAH e traços opositores; mediador, tempo estendido e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,7 +360,7 @@
         <div class="aee-card tod-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-tod">
+                    <span class="aee-badge badge-tea">
                         TEA — CID-10: F84.0 | CID-11: 6A02
                     </span>
                     <h2 class="aluno-name">Transtorno do Espectro Autista</h2>
@@ -264,11 +368,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -276,18 +383,32 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tempo adicional (+50%); enunciados visuais objetivos; apoio de profissional de apoio; redução de estímulos auditivos/visuais.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Rotina visual estruturada (antecipação de transições no quadro TEACCH); comunicação direta sem metáforas ou duplo sentido; fones abafadores disponíveis; respeito ao tempo de resposta; mediação de profissional de apoio.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tempo estendido (+50%); sala de aplicação individualizada de baixo estímulo sensorial; permissão de objeto de transição; enunciados com apoio pictográfico; profissional de apoio escolar.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 12.764/2012 (Lei Berenice Piana) e LBI 13.146/2015 Art. 28.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TEA com TDAH e traços opositores; mediador, tempo estendido e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
@@ -303,11 +424,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            <div class="tod-banner">⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO: Aluno com Transtorno Opositor Desafiador. Proibido confronto público. Usar técnica de escolha controlada.</div>
+            <div class="cid-banner banner-tod">
+                <strong>⚠️ PROTOCOLO DE MANEJO COMPORTAMENTAL POSITIVO (PBS) ATIVO (TOD / F91.3):</strong><br>
+                Proibição absoluta de confronto público. Técnica da escolha controlada (2 opções válidas). Desescalada em tom de voz neutro.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -315,26 +439,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Técnica da escolha controlada (apresentar 2 a 3 alternativas legítimas); proibição de confronto público (desescalada privada em tom calmo); proporção 4 elogios para 1 correção; contratos de contingência não-punitivos.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Aplicação mediada por profissional de vínculo afetivo consolidado; respeito ao tempo de desescalada sem insistência forçada em itens de recusa; pausas para regulação socioemocional.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 28; Parecer CNE/CP 50/2023; Protocolo de Suporte Comportamental Positivo (PBS).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TOD com comorbidade de TDAH; protocolo de escolha controlada e PBS.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card tdah-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-tdah">
                         TDAH — CID-10: F90.0 | CID-11: 6A05
                     </span>
                     <h2 class="aluno-name">Transtorno do Déficit de Atenção com Hiperatividade</h2>
@@ -342,11 +480,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-tdah">
+                <strong>⚡ PROTOCOLO NEUROEXECUTIVO & ATENÇÃO PLENA (TDAH / F90.0 — Lei 14.254/21):</strong><br>
+                Pausas ativas a cada 20 min. Caderno de avaliação fracionado em blocos menores. Primeira carteira e redução de distratores.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -354,26 +495,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Primeira fileira longe de janelas/portas; comandos curtos e sequenciais; checagem de compreensão antes de iniciar; permissão de fidgets motores; reforço imediato de micro-tarefas.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Pausas ativas de 3 a 5 min a cada 20 min de prova; caderno fracionado em blocos; máscara de foco de leitura; ambiente silencioso com distratores minimizados.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Apoio Integral ao TDAH e Dislexia) e Resolução CNE/CEB 04/2009.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TDAH desatento; necessita de pausas fracionadas e instruções curtas.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card neuro-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G40 | CID-11: 8A60
                     </span>
                     <h2 class="aluno-name">Epilepsia e Síndromes Convulsivas</h2>
@@ -381,11 +536,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-neuro">
+                <strong>🧠 PROTOCOLO NEUROPROTETOR & SEGURANÇA (EPILEPSIA / G40 — Lei Lucas 13.722/18):</strong><br>
+                Direito a reagendamento de provas se houver crise nas 48h anteriores. Tolerância à lentificação medicamentosa.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -393,26 +551,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Protocolo de segurança; flexibilidade de datas de aplicação em caso de crises recentes.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Monitoramento de fadiga extrema ou estresse agudo (gatilhos convulsivos); protocolo de emergência em sala com equipe treinada; tolerância à sonolência induzida por anticonvulsivantes.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Direito pleno a reagendamento da prova em caso de crise convulsiva recente (nas 48h anteriores); pausas de descanso cognitivo; ambiente ventilado sem iluminação piscante.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Constituição Federal Art. 205; LBI 13.146/2015 e Lei Lucas 13.722/2018 (Primeiros Socorros nas Escolas).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Epilepsia associada a TEA; tolerância a fadiga pós-crítica.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card ta-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G80 | CID-11: 8D00
                     </span>
                     <h2 class="aluno-name">Paralisia Cerebral (Encefalopatia Crônica)</h2>
@@ -420,11 +592,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-ta">
+                <strong>♿ PROTOCOLO DE TECNOLOGIA ASSISTIVA & CAA (PARALISIA CEREBRAL / G80 — LBI Art. 74):</strong><br>
+                Prancha de Comunicação Alternativa (CAA). Transcritor oficial para respostas por apontamento ou voz. Mobiliário ergonômico.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -432,26 +607,40 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tecnologia Assistiva (TA); pranchas de Comunicação Alternativa (CAA); resposta oral mediada.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Mobiliário ergonômico estabilizador; prancha de Comunicação Aumentativa e Alternativa (CAA) física ou tablet; engrossadores de escrita; tempo flexibilizado para resposta.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tecnologia Assistiva (TA); transcritor oficial para registro de respostas por apontamento, fixação ocular ou voz; tempo estendido ou livre; dispensa de marcação motora do cartão-resposta.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 74 (Acesso a Recursos de Tecnologia Assistiva) e Decreto 5.296/2004.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Paralisia Cerebral e crises; prancha CAA e mobiliário adaptado.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card malform-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-malformacao">
                         Malformacao — CID-10: Q02 | CID-11: LA00
                     </span>
                     <h2 class="aluno-name">Microcefalia Congênita</h2>
@@ -459,11 +648,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-malform">
+                <strong>🌱 PROTOCOLO DE EQUIDADE FONOAUDIOLÓGICA (MALFORMAÇÃO / Q02):</strong><br>
+                Dispensa de penalidade na prova cronometrada de Fluência Oral CAEd. Valorização das habilidades receptivas e multissensoriais.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -471,26 +663,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Avaliação qualitativa; não penalização na prova de fluência oral.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Ambiente acolhedor com estímulo motor e cognitivo integrado; materiais didáticos com contraste de cores e texturas; mediação da equipe multidisciplinar.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Dispensa de penalização em prova cronometrada oral (Fluência Leitora); avaliação por apontamento pictográfico; registro descritivo dos avanços na linha de base individual.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Portaria Conjunta MDS/MEC 01/2017 e LBI 13.146/2015.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Microcefalia; adaptação de ritmo e estímulo visual.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card dislexia-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-transtorno-aprendizagem">
                         Transtorno Aprendizagem — CID-10: R48 | CID-11: 6A03
                     </span>
                     <h2 class="aluno-name">Dislexia, Discalculia e Disfunções Simbólicas</h2>
@@ -498,11 +704,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-dislexia">
+                <strong>📖 PROTOCOLO DE ACESSIBILIDADE TEXTUAL & SIMBÓLICA (DISLEXIA / R48 — Lei 14.254/21):</strong><br>
+                Ledor e transcritor oficial mandatória. Tipografia OpenDyslexic (14pt+). Não penalização ortográfica. Material concreto e calculadora básica.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -510,26 +719,40 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Ledor e transcritor oficial; fonte OpenDyslexic; calculadora básica; uso liberado de material concreto.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Não expor o estudante a leitura em voz alta desnecessária; material impresso com tipografia acessível (fonte 14pt+, entrelinhas 1.5); uso liberado de calculadora simples e material concreto (material dourado, ábaco).
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Ledor oficial humano treinado para leitura neutra de enunciados e textos; transcritor oficial de respostas; tempo adicional (+50%); não penalização de ortografia ou caligrafia na prova de Língua Portuguesa.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Art. 1º e 3º) e Nota Técnica MEC/SECADI nº 04/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Dislexia grave; ledor, transcritor, tipografia acessível e material concreto.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card diab-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-doenca-cronica">
                         Doenca Cronica — CID-10: E10 | CID-11: 5A10
                     </span>
                     <h2 class="aluno-name">Diabetes Mellitus Tipo 1</h2>
@@ -537,11 +760,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-diab">
+                <strong>🩸 PROTOCOLO METABÓLICO ESCOLAR (DIABETES TIPO 1 / E10 — Lei 13.895/19):</strong><br>
+                Livre acesso a água e sanitários sem restrição. Monitoramento glicêmico na mesa da prova e pausa imediata de tempo em hipoglicemia.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item ">⏱️ Tempo Estendido +50%</div>
@@ -549,26 +775,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Livre acesso a água e sanitários; pausa de prova em hipoglicemia.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Livre acesso a bebedouros e sanitários a qualquer instante sem autorização prévia; autorização de lanche/glicose rápida na sala; equipe ciente dos sinais de hipoglicemia.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Permissão de monitoramento contínuo de glicemia (sensor/glicosímetro) na mesa; pausa imediata de prova no cronômetro em episódios de hipoglicemia/hiperglicemia com retorno seguro; kit glicêmico ao alcance.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 13.895/2019 (Política Nacional de Prevenção do Diabetes) e Lei Federal 12.984/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Diabetes Tipo 1; hidratação e pausas glicêmicas livres.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card tdah-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-tdah">
                         TDAH — CID-10: F90.0 | CID-11: 6A05
                     </span>
                     <h2 class="aluno-name">Transtorno do Déficit de Atenção com Hiperatividade</h2>
@@ -576,11 +816,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-tdah">
+                <strong>⚡ PROTOCOLO NEUROEXECUTIVO & ATENÇÃO PLENA (TDAH / F90.0 — Lei 14.254/21):</strong><br>
+                Pausas ativas a cada 20 min. Caderno de avaliação fracionado em blocos menores. Primeira carteira e redução de distratores.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -588,26 +831,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Primeira fileira longe de janelas/portas; comandos curtos e sequenciais; checagem de compreensão antes de iniciar; permissão de fidgets motores; reforço imediato de micro-tarefas.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Pausas ativas de 3 a 5 min a cada 20 min de prova; caderno fracionado em blocos; máscara de foco de leitura; ambiente silencioso com distratores minimizados.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Apoio Integral ao TDAH e Dislexia) e Resolução CNE/CEB 04/2009.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TDAH desatento; necessita de pausas fracionadas e instruções curtas.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card diab-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-doenca-cronica">
                         Doenca Cronica — CID-10: E10 | CID-11: 5A10
                     </span>
                     <h2 class="aluno-name">Diabetes Mellitus Tipo 1</h2>
@@ -615,11 +872,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-diab">
+                <strong>🩸 PROTOCOLO METABÓLICO ESCOLAR (DIABETES TIPO 1 / E10 — Lei 13.895/19):</strong><br>
+                Livre acesso a água e sanitários sem restrição. Monitoramento glicêmico na mesa da prova e pausa imediata de tempo em hipoglicemia.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item ">⏱️ Tempo Estendido +50%</div>
@@ -627,26 +887,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Livre acesso a água e sanitários; pausa de prova em hipoglicemia.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Livre acesso a bebedouros e sanitários a qualquer instante sem autorização prévia; autorização de lanche/glicose rápida na sala; equipe ciente dos sinais de hipoglicemia.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Permissão de monitoramento contínuo de glicemia (sensor/glicosímetro) na mesa; pausa imediata de prova no cronômetro em episódios de hipoglicemia/hiperglicemia com retorno seguro; kit glicêmico ao alcance.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 13.895/2019 (Política Nacional de Prevenção do Diabetes) e Lei Federal 12.984/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Diabetes Tipo 1; hidratação e pausas glicêmicas livres.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card neuro-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G40 | CID-11: 8A60
                     </span>
                     <h2 class="aluno-name">Epilepsia e Síndromes Convulsivas</h2>
@@ -654,11 +928,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-neuro">
+                <strong>🧠 PROTOCOLO NEUROPROTETOR & SEGURANÇA (EPILEPSIA / G40 — Lei Lucas 13.722/18):</strong><br>
+                Direito a reagendamento de provas se houver crise nas 48h anteriores. Tolerância à lentificação medicamentosa.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -666,26 +943,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Protocolo de segurança; flexibilidade de datas de aplicação em caso de crises recentes.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Monitoramento de fadiga extrema ou estresse agudo (gatilhos convulsivos); protocolo de emergência em sala com equipe treinada; tolerância à sonolência induzida por anticonvulsivantes.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Direito pleno a reagendamento da prova em caso de crise convulsiva recente (nas 48h anteriores); pausas de descanso cognitivo; ambiente ventilado sem iluminação piscante.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Constituição Federal Art. 205; LBI 13.146/2015 e Lei Lucas 13.722/2018 (Primeiros Socorros nas Escolas).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Epilepsia associada a TEA; tolerância a fadiga pós-crítica.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card ta-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G80 | CID-11: 8D00
                     </span>
                     <h2 class="aluno-name">Paralisia Cerebral (Encefalopatia Crônica)</h2>
@@ -693,11 +984,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-ta">
+                <strong>♿ PROTOCOLO DE TECNOLOGIA ASSISTIVA & CAA (PARALISIA CEREBRAL / G80 — LBI Art. 74):</strong><br>
+                Prancha de Comunicação Alternativa (CAA). Transcritor oficial para respostas por apontamento ou voz. Mobiliário ergonômico.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -705,26 +999,40 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tecnologia Assistiva (TA); pranchas de Comunicação Alternativa (CAA); resposta oral mediada.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Mobiliário ergonômico estabilizador; prancha de Comunicação Aumentativa e Alternativa (CAA) física ou tablet; engrossadores de escrita; tempo flexibilizado para resposta.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tecnologia Assistiva (TA); transcritor oficial para registro de respostas por apontamento, fixação ocular ou voz; tempo estendido ou livre; dispensa de marcação motora do cartão-resposta.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 74 (Acesso a Recursos de Tecnologia Assistiva) e Decreto 5.296/2004.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Paralisia Cerebral e crises; prancha CAA e mobiliário adaptado.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card malform-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-malformacao">
                         Malformacao — CID-10: Q02 | CID-11: LA00
                     </span>
                     <h2 class="aluno-name">Microcefalia Congênita</h2>
@@ -732,11 +1040,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-malform">
+                <strong>🌱 PROTOCOLO DE EQUIDADE FONOAUDIOLÓGICA (MALFORMAÇÃO / Q02):</strong><br>
+                Dispensa de penalidade na prova cronometrada de Fluência Oral CAEd. Valorização das habilidades receptivas e multissensoriais.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -744,26 +1055,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Avaliação qualitativa; não penalização na prova de fluência oral.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Ambiente acolhedor com estímulo motor e cognitivo integrado; materiais didáticos com contraste de cores e texturas; mediação da equipe multidisciplinar.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Dispensa de penalização em prova cronometrada oral (Fluência Leitora); avaliação por apontamento pictográfico; registro descritivo dos avanços na linha de base individual.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Portaria Conjunta MDS/MEC 01/2017 e LBI 13.146/2015.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Microcefalia; adaptação de ritmo e estímulo visual.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card dislexia-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-transtorno-aprendizagem">
                         Transtorno Aprendizagem — CID-10: R48 | CID-11: 6A03
                     </span>
                     <h2 class="aluno-name">Dislexia, Discalculia e Disfunções Simbólicas</h2>
@@ -771,11 +1096,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-dislexia">
+                <strong>📖 PROTOCOLO DE ACESSIBILIDADE TEXTUAL & SIMBÓLICA (DISLEXIA / R48 — Lei 14.254/21):</strong><br>
+                Ledor e transcritor oficial mandatória. Tipografia OpenDyslexic (14pt+). Não penalização ortográfica. Material concreto e calculadora básica.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -783,26 +1111,40 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Ledor e transcritor oficial; fonte OpenDyslexic; calculadora básica; uso liberado de material concreto.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Não expor o estudante a leitura em voz alta desnecessária; material impresso com tipografia acessível (fonte 14pt+, entrelinhas 1.5); uso liberado de calculadora simples e material concreto (material dourado, ábaco).
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Ledor oficial humano treinado para leitura neutra de enunciados e textos; transcritor oficial de respostas; tempo adicional (+50%); não penalização de ortografia ou caligrafia na prova de Língua Portuguesa.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Art. 1º e 3º) e Nota Técnica MEC/SECADI nº 04/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Dislexia grave; ledor, transcritor, tipografia acessível e material concreto.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card diab-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-doenca-cronica">
                         Doenca Cronica — CID-10: E10 | CID-11: 5A10
                     </span>
                     <h2 class="aluno-name">Diabetes Mellitus Tipo 1</h2>
@@ -810,11 +1152,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-diab">
+                <strong>🩸 PROTOCOLO METABÓLICO ESCOLAR (DIABETES TIPO 1 / E10 — Lei 13.895/19):</strong><br>
+                Livre acesso a água e sanitários sem restrição. Monitoramento glicêmico na mesa da prova e pausa imediata de tempo em hipoglicemia.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item ">⏱️ Tempo Estendido +50%</div>
@@ -822,26 +1167,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Livre acesso a água e sanitários; pausa de prova em hipoglicemia.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Livre acesso a bebedouros e sanitários a qualquer instante sem autorização prévia; autorização de lanche/glicose rápida na sala; equipe ciente dos sinais de hipoglicemia.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Permissão de monitoramento contínuo de glicemia (sensor/glicosímetro) na mesa; pausa imediata de prova no cronômetro em episódios de hipoglicemia/hiperglicemia com retorno seguro; kit glicêmico ao alcance.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 13.895/2019 (Política Nacional de Prevenção do Diabetes) e Lei Federal 12.984/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Diabetes Tipo 1; hidratação e pausas glicêmicas livres.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card tdah-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-tdah">
                         TDAH — CID-10: F90.0 | CID-11: 6A05
                     </span>
                     <h2 class="aluno-name">Transtorno do Déficit de Atenção com Hiperatividade</h2>
@@ -849,11 +1208,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-tdah">
+                <strong>⚡ PROTOCOLO NEUROEXECUTIVO & ATENÇÃO PLENA (TDAH / F90.0 — Lei 14.254/21):</strong><br>
+                Pausas ativas a cada 20 min. Caderno de avaliação fracionado em blocos menores. Primeira carteira e redução de distratores.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -861,26 +1223,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Primeira fileira longe de janelas/portas; comandos curtos e sequenciais; checagem de compreensão antes de iniciar; permissão de fidgets motores; reforço imediato de micro-tarefas.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Pausas ativas de 3 a 5 min a cada 20 min de prova; caderno fracionado em blocos; máscara de foco de leitura; ambiente silencioso com distratores minimizados.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Apoio Integral ao TDAH e Dislexia) e Resolução CNE/CEB 04/2009.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> TDAH desatento; necessita de pausas fracionadas e instruções curtas.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card neuro-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G40 | CID-11: 8A60
                     </span>
                     <h2 class="aluno-name">Epilepsia e Síndromes Convulsivas</h2>
@@ -888,11 +1264,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-neuro">
+                <strong>🧠 PROTOCOLO NEUROPROTETOR & SEGURANÇA (EPILEPSIA / G40 — Lei Lucas 13.722/18):</strong><br>
+                Direito a reagendamento de provas se houver crise nas 48h anteriores. Tolerância à lentificação medicamentosa.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -900,26 +1279,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Protocolo de segurança; flexibilidade de datas de aplicação em caso de crises recentes.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Monitoramento de fadiga extrema ou estresse agudo (gatilhos convulsivos); protocolo de emergência em sala com equipe treinada; tolerância à sonolência induzida por anticonvulsivantes.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Direito pleno a reagendamento da prova em caso de crise convulsiva recente (nas 48h anteriores); pausas de descanso cognitivo; ambiente ventilado sem iluminação piscante.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Constituição Federal Art. 205; LBI 13.146/2015 e Lei Lucas 13.722/2018 (Primeiros Socorros nas Escolas).</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Epilepsia associada a TEA; tolerância a fadiga pós-crítica.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card ta-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-neurologico">
                         Neurologico — CID-10: G80 | CID-11: 8D00
                     </span>
                     <h2 class="aluno-name">Paralisia Cerebral (Encefalopatia Crônica)</h2>
@@ -927,11 +1320,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-ta">
+                <strong>♿ PROTOCOLO DE TECNOLOGIA ASSISTIVA & CAA (PARALISIA CEREBRAL / G80 — LBI Art. 74):</strong><br>
+                Prancha de Comunicação Alternativa (CAA). Transcritor oficial para respostas por apontamento ou voz. Mobiliário ergonômico.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -939,26 +1335,40 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Tecnologia Assistiva (TA); pranchas de Comunicação Alternativa (CAA); resposta oral mediada.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Mobiliário ergonômico estabilizador; prancha de Comunicação Aumentativa e Alternativa (CAA) física ou tablet; engrossadores de escrita; tempo flexibilizado para resposta.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Tecnologia Assistiva (TA); transcritor oficial para registro de respostas por apontamento, fixação ocular ou voz; tempo estendido ou livre; dispensa de marcação motora do cartão-resposta.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>LBI 13.146/2015 Art. 74 (Acesso a Recursos de Tecnologia Assistiva) e Decreto 5.296/2004.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Paralisia Cerebral e crises; prancha CAA e mobiliário adaptado.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card malform-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-malformacao">
                         Malformacao — CID-10: Q02 | CID-11: LA00
                     </span>
                     <h2 class="aluno-name">Microcefalia Congênita</h2>
@@ -966,11 +1376,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-malform">
+                <strong>🌱 PROTOCOLO DE EQUIDADE FONOAUDIOLÓGICA (MALFORMAÇÃO / Q02):</strong><br>
+                Dispensa de penalidade na prova cronometrada de Fluência Oral CAEd. Valorização das habilidades receptivas e multissensoriais.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -978,26 +1391,40 @@
                 <div class="acess-item ">✍️ Transcritor Oficial</div>
                 <div class="acess-item active">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item active">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Avaliação qualitativa; não penalização na prova de fluência oral.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Ambiente acolhedor com estímulo motor e cognitivo integrado; materiais didáticos com contraste de cores e texturas; mediação da equipe multidisciplinar.
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Dispensa de penalização em prova cronometrada oral (Fluência Leitora); avaliação por apontamento pictográfico; registro descritivo dos avanços na linha de base individual.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Portaria Conjunta MDS/MEC 01/2017 e LBI 13.146/2015.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Microcefalia; adaptação de ritmo e estímulo visual.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="aee-card ">
+        <div class="aee-card dislexia-border">
             <div class="aee-header">
                 <div>
-                    <span class="aee-badge badge-aee">
+                    <span class="aee-badge badge-transtorno-aprendizagem">
                         Transtorno Aprendizagem — CID-10: R48 | CID-11: 6A03
                     </span>
                     <h2 class="aluno-name">Dislexia, Discalculia e Disfunções Simbólicas</h2>
@@ -1005,11 +1432,14 @@
                 </div>
                 <div class="pdi-status">
                     <strong>PDI:</strong> ATIVO<br>
-                    <strong>LBI:</strong> Conforme Art. 28
+                    <strong>Amparo:</strong> Conforme LBI Art. 28
                 </div>
             </div>
 
-            
+            <div class="cid-banner banner-dislexia">
+                <strong>📖 PROTOCOLO DE ACESSIBILIDADE TEXTUAL & SIMBÓLICA (DISLEXIA / R48 — Lei 14.254/21):</strong><br>
+                Ledor e transcritor oficial mandatória. Tipografia OpenDyslexic (14pt+). Não penalização ortográfica. Material concreto e calculadora básica.
+            </div>
 
             <div class="grid-acessibilidade">
                 <div class="acess-item active">⏱️ Tempo Estendido +50%</div>
@@ -1017,18 +1447,32 @@
                 <div class="acess-item active">✍️ Transcritor Oficial</div>
                 <div class="acess-item ">🔇 Ambiente Baixo Estímulo</div>
                 <div class="acess-item ">⏸️ Pausas Ativas Fracionadas</div>
-                <div class="acess-item active">📐 Materiais Concretos / Visuais</div>
+                <div class="acess-item active">📐 Apoio Concreto & Visual</div>
             </div>
 
             <div class="estrat-box">
-                <strong>Orientações Clínico-Pedagógicas para Sala de Aula:</strong><br>
-                Ledor e transcritor oficial; fonte OpenDyslexic; calculadora básica; uso liberado de material concreto.
+                <strong>🏫 Manejo Obrigatório em Sala de Aula Regular:</strong><br>
+                Não expor o estudante a leitura em voz alta desnecessária; material impresso com tipografia acessível (fonte 14pt+, entrelinhas 1.5); uso liberado de calculadora simples e material concreto (material dourado, ábaco).
+            </div>
+
+            <div class="prova-box">
+                <strong>📝 Protocolo para Aplicação de Avaliações (CAEd, SPAECE e SAEB):</strong><br>
+                Ledor oficial humano treinado para leitura neutra de enunciados e textos; transcritor oficial de respostas; tempo adicional (+50%); não penalização de ortografia ou caligrafia na prova de Língua Portuguesa.
+            </div>
+
+            <div class="legal-box">
+                <strong>⚖️ Fundamentação Legal e Jurídica:</strong><br>
+                <em>Lei Federal 14.254/2021 (Art. 1º e 3º) e Nota Técnica MEC/SECADI nº 04/2014.</em>
             </div>
 
             <div class="obs-box">
-                <strong>Assinatura do Profissional do AEE / Sala de Recursos:</strong>
-                <div style="margin-top: 25px; border-top: 1px solid #94a3b8; width: 300px; padding-top: 5px; font-size: 11px;">
-                    Especialista em Educação Especial e Inclusiva
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 15px;">
+                    <div>
+                        <strong>Observações da Sala de Recursos:</strong> Dislexia grave; ledor, transcritor, tipografia acessível e material concreto.
+                    </div>
+                    <div style="text-align: center; border-top: 1px solid #94a3b8; width: 280px; padding-top: 5px; font-size: 11px;">
+                        Profissional Especialista de AEE / Coordenação
+                    </div>
                 </div>
             </div>
         </div>

@@ -56,41 +56,86 @@ def main():
     cids_data = [
         ('F90.0', '6A05', 'TDAH', 'Transtorno do Déficit de Atenção com Hiperatividade', 
          'Déficit atencional e labilidade executiva em provas longas.', 
-         'Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco.'),
+         'Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco.',
+         'Primeira fileira longe de janelas/portas; comandos curtos e sequenciais; checagem de compreensão antes de iniciar; permissão de fidgets motores; reforço imediato de micro-tarefas.',
+         'Pausas ativas de 3 a 5 min a cada 20 min de prova; caderno fracionado em blocos; máscara de foco de leitura; ambiente silencioso com distratores minimizados.',
+         'Lei Federal 14.254/2021 (Apoio Integral ao TDAH e Dislexia) e Resolução CNE/CEB 04/2009.'),
+        
         ('F91.3', '6C90', 'TOD', 'Transtorno Opositivo Desafiador / Desafiador Opositor', 
          'Risco de recusa e autossabotagem em itens percebidos como frustrantes.', 
-         'Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS.'),
+         'Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS.',
+         'Técnica da escolha controlada (apresentar 2 a 3 alternativas legítimas); proibição de confronto público (desescalada privada em tom calmo); proporção 4 elogios para 1 correção; contratos de contingência não-punitivos.',
+         'Aplicação mediada por profissional de vínculo afetivo consolidado; respeito ao tempo de desescalada sem insistência forçada em itens de recusa; pausas para regulação socioemocional.',
+         'LBI 13.146/2015 Art. 28; Parecer CNE/CP 50/2023; Protocolo de Suporte Comportamental Positivo (PBS).'),
+        
         ('F84.0', '6A02', 'TEA', 'Transtorno do Espectro Autista', 
          'Dificuldade de compreensão de metáforas, rigidez de rotina e sobrecarga sensorial.', 
-         'Tempo adicional (+50%); enunciados visuais objetivos; apoio de profissional de apoio; redução de estímulos auditivos/visuais.'),
+         'Tempo adicional (+50%); enunciados visuais objetivos; apoio de profissional de apoio; redução de estímulos auditivos/visuais.',
+         'Rotina visual estruturada (antecipação de transições no quadro TEACCH); comunicação direta sem metáforas ou duplo sentido; fones abafadores disponíveis; respeito ao tempo de resposta; mediação de profissional de apoio.',
+         'Tempo estendido (+50%); sala de aplicação individualizada de baixo estímulo sensorial; permissão de objeto de transição; enunciados com apoio pictográfico; profissional de apoio escolar.',
+         'Lei Federal 12.764/2012 (Lei Berenice Piana) e LBI 13.146/2015 Art. 28.'),
+        
         ('R48', '6A03', 'Transtorno Aprendizagem', 'Dislexia, Discalculia e Disfunções Simbólicas', 
          'Dificuldade na decodificação grafêmica e processamento numérico de base.', 
-         'Ledor e transcritor oficial; fonte OpenDyslexic; calculadora básica; uso liberado de material concreto.'),
-        ('F72', '6A00.2', 'Deficiência Intelectual', 'Deficiência Intelectual Grave', 
-         'Limitações no raciocínio abstrato conceitual.', 
-         'Terminalidade específica (Art. 59 LDB); avaliação adaptada funcional ligada ao PDI.'),
+         'Ledor e transcritor oficial; fonte OpenDyslexic; calculadora básica; uso liberado de material concreto.',
+         'Não expor o estudante a leitura em voz alta desnecessária; material impresso com tipografia acessível (fonte 14pt+, entrelinhas 1.5); uso liberado de calculadora simples e material concreto (material dourado, ábaco).',
+         'Ledor oficial humano treinado para leitura neutra de enunciados e textos; transcritor oficial de respostas; tempo adicional (+50%); não penalização de ortografia ou caligrafia na prova de Língua Portuguesa.',
+         'Lei Federal 14.254/2021 (Art. 1º e 3º) e Nota Técnica MEC/SECADI nº 04/2014.'),
+        
+        ('F72', '6A00.2', 'Deficiência Intelectual', 'Deficiência Intelectual Grave / Moderada', 
+         'Limitações no raciocínio abstrato conceitual e consolidação simbólica.', 
+         'Terminalidade específica (Art. 59 LDB); avaliação adaptada funcional ligada ao PDI.',
+         'Plano de Desenvolvimento Individualizado (PDI) com adequação curricular; mediação passo a passo com suporte visual concreto; foco em competências funcionais e de autonomia.',
+         'Avaliação formativa adaptada às metas do PDI; tempo livre flexibilizado; mediação pedagógica nas instruções; aplicação de critérios de Terminalidade Específica homologados no Conselho Escolar.',
+         'LDB Lei Federal 9.394/1996 Art. 59, inciso II; Parecer CNE/CEB 17/2001 e LBI 13.146/2015.'),
+        
         ('G40', '8A60', 'Neurologico', 'Epilepsia e Síndromes Convulsivas', 
          'Lentificação cognitiva pós-crítica ou efeito medicamentoso.', 
-         'Protocolo de segurança; flexibilidade de datas de aplicação em caso de crises recentes.'),
+         'Protocolo de segurança; flexibilidade de datas de aplicação em caso de crises recentes.',
+         'Monitoramento de fadiga extrema ou estresse agudo (gatilhos convulsivos); protocolo de emergência em sala com equipe treinada; tolerância à sonolência induzida por anticonvulsivantes.',
+         'Direito pleno a reagendamento da prova em caso de crise convulsiva recente (nas 48h anteriores); pausas de descanso cognitivo; ambiente ventilado sem iluminação piscante.',
+         'Constituição Federal Art. 205; LBI 13.146/2015 e Lei Lucas 13.722/2018 (Primeiros Socorros nas Escolas).'),
+        
         ('G80', '8D00', 'Neurologico', 'Paralisia Cerebral (Encefalopatia Crônica)', 
          'Comprometimento da coordenação motora fina e fala fonoarticulatória.', 
-         'Tecnologia Assistiva (TA); pranchas de Comunicação Alternativa (CAA); resposta oral mediada.'),
+         'Tecnologia Assistiva (TA); pranchas de Comunicação Alternativa (CAA); resposta oral mediada.',
+         'Mobiliário ergonômico estabilizador; prancha de Comunicação Aumentativa e Alternativa (CAA) física ou tablet; engrossadores de escrita; tempo flexibilizado para resposta.',
+         'Tecnologia Assistiva (TA); transcritor oficial para registro de respostas por apontamento, fixação ocular ou voz; tempo estendido ou livre; dispensa de marcação motora do cartão-resposta.',
+         'LBI 13.146/2015 Art. 74 (Acesso a Recursos de Tecnologia Assistiva) e Decreto 5.296/2004.'),
+        
         ('Q99.8', 'LD90', 'Malformacao', 'Outras Anomalias Cromossômicas Especificadas', 
-         'Variações no ritmo neuropsicomotor.', 
-         'Estimulação multissensorial e tempo flexibilizado.'),
+         'Variações no ritmo neuropsicomotor e tônus muscular.', 
+         'Estimulação multissensorial e tempo flexibilizado.',
+         'Estimulação multissensorial com objetos manipuláveis e pistas visuais coloridas; ritmo de instrução adaptado; mediação por pares em duplas produtivas.',
+         'Tempo adicional (+50%); leitor de enunciados; apoio concreto de cálculo; prova com diagramação limpa e fonte ampliada.',
+         'LBI 13.146/2015 e Convenção da ONU sobre os Direitos das Pessoas com Deficiência (Decreto 6.949/2009).'),
+        
         ('Q02', 'LA00', 'Malformacao', 'Microcefalia Congênita', 
          'Atraso global do desenvolvimento e fala.', 
-         'Avaliação qualitativa; não penalização na prova de fluência oral.'),
+         'Avaliação qualitativa; não penalização na prova de fluência oral.',
+         'Ambiente acolhedor com estímulo motor e cognitivo integrado; materiais didáticos com contraste de cores e texturas; mediação da equipe multidisciplinar.',
+         'Dispensa de penalização em prova cronometrada oral (Fluência Leitora); avaliação por apontamento pictográfico; registro descritivo dos avanços na linha de base individual.',
+         'Portaria Conjunta MDS/MEC 01/2017 e LBI 13.146/2015.'),
+        
         ('Q37', 'CA21', 'Malformacao', 'Fenda Palatina com Lábio Leporino', 
          'Limitação fonoarticulatória anatômica.', 
-         'Dispensa de penalidade em leitura oral cronometrada.'),
+         'Dispensa de penalidade em leitura oral cronometrada.',
+         'Acolhimento socioemocional protetivo contra constrangimentos; valorização da expressão escrita e gráfica; acompanhamento fonoaudiológico integrado.',
+         'Dispensa mandatória de penalização na prova de Fluência Oral CAEd devido à limitação anatômica fonoarticulatória; validação sem exigência de velocidade silábica.',
+         'LBI 13.146/2015 Art. 28 e Diretrizes Curriculares Nacionais para a Educação Básica.'),
+        
         ('E10', '5A10', 'Doenca Cronica', 'Diabetes Mellitus Tipo 1', 
          'Necessidade de controle glicêmico e hidratação.', 
-         'Livre acesso a água e sanitários; pausa de prova em hipoglicemia.')
+         'Livre acesso a água e sanitários; pausa de prova em hipoglicemia.',
+         'Livre acesso a bebedouros e sanitários a qualquer instante sem autorização prévia; autorização de lanche/glicose rápida na sala; equipe ciente dos sinais de hipoglicemia.',
+         'Permissão de monitoramento contínuo de glicemia (sensor/glicosímetro) na mesa; pausa imediata de prova no cronômetro em episódios de hipoglicemia/hiperglicemia com retorno seguro; kit glicêmico ao alcance.',
+         'Lei Federal 13.895/2019 (Política Nacional de Prevenção do Diabetes) e Lei Federal 12.984/2014.')
     ]
     cur.executemany("""
-        INSERT INTO dim_cid_catalogo (codigo_cid10, codigo_cid11, grupo_diagnostico, nomenclatura_oficial, impacto_avaliativo_resumo, estrategias_manejo_recomendadas)
-        VALUES (?, ?, ?, ?, ?, ?);
+        INSERT INTO dim_cid_catalogo 
+        (codigo_cid10, codigo_cid11, grupo_diagnostico, nomenclatura_oficial, impacto_avaliativo_resumo, 
+         estrategias_manejo_recomendadas, protocolo_sala_aula, protocolo_avaliativo_caed, fundamentacao_legal)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
     """, cids_data)
 
     # 4. Popula Grupos de Intervenção Pedagógica (G1 a G4)

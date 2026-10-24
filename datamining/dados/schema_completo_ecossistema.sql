@@ -95,7 +95,10 @@ CREATE TABLE IF NOT EXISTS dim_cid_catalogo (
     grupo_diagnostico TEXT NOT NULL, -- 'TEA', 'TDAH', 'TOD', 'Transtorno Aprendizagem', 'Deficiencia Intelectual', 'Neurologico', 'Malformacao', 'Doenca Cronica'
     nomenclatura_oficial TEXT NOT NULL,
     impacto_avaliativo_resumo TEXT NOT NULL,
-    estrategias_manejo_recomendadas TEXT NOT NULL
+    estrategias_manejo_recomendadas TEXT NOT NULL,
+    protocolo_sala_aula TEXT,
+    protocolo_avaliativo_caed TEXT,
+    fundamentacao_legal TEXT
 );
 
 CREATE TABLE IF NOT EXISTS fato_estudante_aee_perfil (
@@ -376,7 +379,11 @@ SELECT
     perfil.recurso_ambiente_baixo_estimulo,
     perfil.recurso_pausas_ativas_fracionadas,
     perfil.requer_manejo_tod_pbs,
-    cid.estrategias_manejo_recomendadas
+    cid.estrategias_manejo_recomendadas,
+    cid.protocolo_sala_aula,
+    cid.protocolo_avaliativo_caed,
+    cid.fundamentacao_legal,
+    perfil.observacoes_clinico_pedagogicas
 FROM fato_estudante_aee_perfil perfil
 JOIN dim_estudantes e ON perfil.aluno_hash_id = e.aluno_hash_id
 JOIN dim_turmas t ON e.turma_id = t.id
