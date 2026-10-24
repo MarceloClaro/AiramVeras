@@ -150,6 +150,99 @@ Catálogo consolidado e auditável de todos os documentos normativos, planilhas 
 
 ---
 
+## ♿ Educação Especial Inclusiva (AEE), Mapeamento CID-10/CID-11 e Cruzamento Multidisciplinar da BNCC
+
+Para garantir a **equidade educacional** preconizada pela legislação brasileira, o ecossistema incorpora a dimensão do **Atendimento Educacional Especializado (AEE)** e das **Necessidades Educacionais Específicas (NEE)**, integrando laudos clínicos, códigos CID e adequações pedagógicas personalizadas.
+
+### 1. Matriz Canônica de Equivalência CID-10 ➔ CID-11 e Impactos na Avaliação
+
+Os diagnósticos de neurodesenvolvimento, condições genéticas e síndromes neurológicas identificados na comunidade escolar são mapeados com suas respectivas adaptações de avaliação diagnóstica e pedagógica:
+
+| Categoria / Condição Clínica | Código CID-10 | Código CID-11 | Descrição Clínica e Comorbidades Típicas | Adaptações Avaliativas e de Acessibilidade (LBI / PDI) |
+|:---|:---:|:---:|:---|:---|
+| **Transtorno do Espectro Autista (TEA)** | `F84` / `F84.0` | `6A02`<br>• `6A02.0` (sem DI / sem def. ling.)<br>• `6A02.1` (com DI)<br>• `6A02.2` (com def. ling.)<br>• `6A02.4` / `6A02.5` | Transtorno do neurodesenvolvimento caracterizado por déficits de comunicação social e padrões comportamentais restritos e repetitivos. Comum associação com TDAH (`F84+F90`). | • Ambiente de baixo estímulo sensorial.<br>• Apoio de profissional de apoio escolar.<br>• Tempo adicional (+50%).<br>• Enunciados fracionados e uso de recursos visuais (PECS/Rotinas ilustradas).<br>• Mediação em metáforas e ironias. |
+| **Transtorno de Déficit de Atenção e Hiperatividade (TDAH)** | `F90.0` / `F90.9` | `6A05`<br>• `6A05.0` (Desatento)<br>• `6A05.1` (Hiperativo-Impulsivo)<br>• `6A05.2` (Combinado) | Padrão persistente de desatenção e/ou hiperatividade-impulsividade que interfere diretamente nas funções executivas e na velocidade de processamento. | • Aplicação fracionada com pausas ativas a cada 20–25 minutos.<br>• Posição estratégica na sala (longe de portas e janelas).<br>• Uso de marcadores de linha e máscaras de leitura.<br>• Provas com menor densidade de texto por página. |
+| **Transtorno Desafiador Opositivo (TOD)** | `F91.3` | `6C90` | Padrão persistente de humor irritável, comportamento desafiador e conduta vingativa diante de figuras de autoridade. Frequentemente comórbido ao TDAH (`F90+F91.3`). | • Contrato pedagógico prévio e previsibilidade de horário.<br>• Reforço positivo contingente.<br>• Redução de gatilhos de estresse e cobrança comparativa pública. |
+| **Transtornos Específicos de Aprendizagem (Dislexia / Discalculia / Dispraxia)** | `R48` / `F81` | `6A03` / `MB4B` | Disfunções simbólicas na decodificação leitora, grafia ou processamento numérico, sem comprometimento da inteligência geral. | • Disponibilização de **ledor de prova** e **transcritor** oficial.<br>• Tipografia acessível (fonte OpenDyslexic, entrelinhas 1.5).<br>• Uso permitido de calculadora básica e material concreto (material dourado, ábaco).<br>• Avaliação baseada no raciocínio e não na ortografia/grafismo. |
+| **Deficiência Intelectual Grave** | `F72` | `6A00.2` | Limitações significativas tanto no funcionamento intelectual quanto no comportamento adaptativo social e prático. | • Adaptação curricular de **terminalidade específica** (Art. 59 da LDB).<br>• Instrumentos avaliativos qualitativos e funcionais.<br>• Metas vinculadas ao PDI individual e não à escala padrão CAEd. |
+| **Epilepsia e Síndromes Convulsivas** | `G40` / `G40.0` | `8A60` | Condição neurológica crônica caracterizada por crises recorrentes. Frequentemente associada ao TEA ou Paralisia Cerebral (`F84+G40` / `G80+G40`). | • Protocolo médico de contingência em sala de aula.<br>• Tolerância a fadiga cognitiva ou lentificação medicamentosa pós-crítica.<br>• Reagendamento de prova se houver crise recente. |
+| **Paralisia Cerebral (Encefalopatia Crônica)** | `G80` | `8D00` | Transtorno motor não progressivo resultante de lesão encefálica precoce, afetando tônus, postura e coordenação motora fina. | • Tecnologia Assistiva (TA) e Comunicação Alternativa e Aumentativa (CAA).<br>• Pranchas de comunicação, engrossadores de lápis ou resposta verbal via transcritor.<br>• Mobiliário ergonômico acessível. |
+| **Anomalias Cromossômicas e Malformações (Microcefalia / Fenda Palatina)** | `Q99.8`<br>`Q02` (Microcefalia)<br>`Q37` (Fenda palatina) | `LD90`<br>`LA00`<br>`CA21` | Síndromes congênitas que afetam o perímetro cefálico, fala fonoarticulatória e ritmos de desenvolvimento neuropsicomotor. | • Adaptação de avaliações de fluência leitora oral (não penalizar limitações fonoaudiológicas anatômicas).<br>• Estimulação visual e multissensorial. |
+| **Diabetes Mellitus Tipo 1** | `E10` | `5A10` | Doença crônica autoimune caracterizada pela destruição de células beta pancreáticas e dependência de insulina exógena. | • Livre acesso a líquidos (hidratação contínua) e idas ao banheiro.<br>• Permissão para lanche e monitoramento glicêmico durante as provas.<br>• Interrupção de contagem de tempo em caso de hipoglicemia. |
+
+---
+
+### 2. O Marco Jurídico da Educação Especial Inclusiva (AEE / PDI)
+
+A inclusão pedagógica de estudantes público-alvo da educação especial é amparada por legislação cogente no Brasil:
+
+- **Lei Brasileira de Inclusão da Pessoa com Deficiência (LBI — Lei nº 13.146/2015, Art. 28)**:
+  Obriga o sistema educacional a ofertar *adaptações razoáveis*, disponibilizar profissionais de apoio escolar, recursos de acessibilidade nas avaliações e tempo estendido sem custo adicional para a família.
+- **Lei Berenice Piana (Lei nº 12.764/2012)**:
+  Equipara a pessoa com Transtorno do Espectro Autista à pessoa com deficiência para todos os efeitos legais, assegurando acompanhante especializado em sala de aula regular e atendimento individualizado.
+- **Lei do Acompanhamento Integral para TDAH e Dislexia (Lei nº 14.254/2021)**:
+  Determina que o poder público deve assegurar a identificação precoce, o encaminhamento para diagnóstico e o apoio educacional especializado com intervenção pedagógica na própria rede escolar.
+- **Plano de Desenvolvimento Individualizado (PDI / PEI)**:
+  Instrumento jurídico-pedagógico obrigatório (Resolução CNE/CEB nº 4/2009) onde são registradas as metas pedagógicas adaptadas, os recursos de tecnologia assistiva necessários e a forma de avaliação de cada estudante do AEE.
+- **Proteção de Dados Sensíveis de Saúde na LGPD (Art. 11 e Art. 14 da Lei nº 13.709/2018)**:
+  Laudos médicos e CIDs são **dados pessoais sensíveis**. Devem permanecer sob sigilo absoluto na camada local `restrito/`, sendo vedada a exposição nominal pública em relatórios abertos. Apenas o perfil pedagógico funcional de acessibilidade é compartilhado com a equipe escolar.
+
+---
+
+### 3. Rede Interdisciplinar: Cruzamento do CAEd com Todos os Componentes da BNCC
+
+Embora os instrumentos do CAEd avaliem primariamente **Língua Portuguesa** e **Matemática**, a Base Nacional Comum Curricular (BNCC) é orgânica e interdisciplinar. As defasagens identificadas no diagnóstico repercutem diretamente em todas as áreas do conhecimento:
+
+```mermaid
+flowchart TD
+    subgraph AVAL_CAED ["🎯 Núcleo Avaliativo CAEd (Língua Portuguesa & Matemática)"]
+        LP_DEC["🔤 LP: Decodificação e Consciência Fonológica"]
+        LP_INF["📖 LP: Localização de Informação e Inferência Textual"]
+        MAT_NUM["🔢 MAT: Sistema de Numeração Decimal e Operações"]
+        MAT_GEO["📐 MAT: Grandezas, Medidas, Escala e Espaço"]
+    end
+
+    subgraph CIENCIAS ["🔬 Ciências da Natureza"]
+        CI_EXP["Leitura de Procedimentos Experimentais\n(EF01CI01, EF03CI02)"]
+        CI_TAB["Interpretação de Gráficos e Tabelas Ecológicas\n(EF04CI01, EF05CI02)"]
+    end
+
+    subgraph HUMANAS ["🌍 Ciências Humanas (História & Geografia)"]
+        GEO_MAP["Alfabetização Cartográfica: Escalas e Coordenadas\n(EF03GE06, EF04GE08)"]
+        HIST_DOC["Análise Crítica de Fontes e Linha do Tempo\n(EF02HI04, EF05HI08)"]
+    end
+
+    subgraph ARTES_CORPO ["🎨 Linguagens, Arte & Ed. Física"]
+        ARTE_SEM["Semiótica Visual, Cores e Leitura de Imagens\n(EF15AR01)"]
+        EF_MOTOR["Desenvolvimento Psicomotor, Esquema Corporal e Praxia\n(EF12EF01)"]
+    end
+
+    subgraph COMPUTA ["💻 Cultura Digital & Computação (BNCC 2022)"]
+        COMP_ALG["Pensamento Computacional: Algoritmos e Decomposição\n(EF01CO01, EF04CO03)"]
+        COMP_LOG["Lógica Booleana e Resolução de Problemas Complexos\n(EF03CO04, EF05CO05)"]
+    end
+
+    LP_DEC --> EF_MOTOR
+    LP_INF --> CI_EXP & HIST_DOC & ARTE_SEM
+    MAT_NUM --> CI_TAB & COMP_ALG & COMP_LOG
+    MAT_GEO --> GEO_MAP & ARTE_SEM
+```
+
+#### Matriz de Correspondência e Transferência Pedagógica
+
+1. **Ciências da Natureza**:
+   - Um estudante que apresenta defasagem na habilidade CAEd de inferência textual (`3EF09_P`) invariavelmente não compreende hipóteses em textos de divulgação científica ou manuais de experimentos (`EF03CI02`).
+   - A fraqueza em representação numérica e frações compromete a leitura de tabelas nutricionais, gráficos de temperatura e balanços ecológicos (`EF05CI02`).
+2. **Geografia e História**:
+   - As habilidades matemáticas de grandezas, proporção e plano cartesiano (`4EF12_M`) são a base indispensável para a alfabetização cartográfica, escalas de mapas e fusos horários na Geografia (`EF04GE08`).
+   - A ordenação cronológica e a identificação de causas e consequências históricas (`EF05HI08`) dependem diretamente da proficiência leitora de coesão textual avaliada pelo CAEd.
+3. **Arte e Educação Física**:
+   - O desenvolvimento da coordenação motora fina, controle postural e orientação visoespacial trabalhado na Educação Física (`EF12EF01`) e nas Artes Visuais (`EF15AR01`) é pré-requisito fisiológico para a superação de dispraxias e disgrafias (`CID-10 R48`), impactando diretamente a escrita avaliada no Ciclo I.
+4. **Computação e Pensamento Computacional (Norma CNE/CEB nº 2/2022)**:
+   - A resolução de problemas matemáticos de múltiplos passos no CAEd se apoia nos pilares da computação: **decomposição**, **reconhecimento de padrões**, **abstração** e **algoritmos** (`EF01CO01` a `EF05CO05`). Reforçar o pensamento computacional alavanca diretamente a proficiência matemática do 4º e 5º anos.
+
+---
+
 ## ⚙️ Arquitetura de Engenharia do Pipeline e Modelagem Psicométrica
 
 A infraestrutura computacional do projeto foi desenhada segundo o rigor de **Sistemas de Informação Educacional Auditáveis**, combinando teoria psicométrica avançada, teoria de grafos curriculares e engenharia de software com dupla conferência independente.
