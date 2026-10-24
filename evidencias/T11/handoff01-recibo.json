@@ -1,0 +1,9 @@
+{
+  "fase": "HANDOFF_PARCIAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:04:32.137830+00:00",
+  "snapshot": "handoff01-antes.json",
+  "snapshot_sha256": "a59f3aecdee227879627d0b28bf98b5b79d0a2bce7ce9617486b2074802f0c13",
+  "log": "handoff01.log",
+  "log_sha256": "0783e738b2611844713604c886ffa295644343546343a8b8ef779b11437e113b"
+}

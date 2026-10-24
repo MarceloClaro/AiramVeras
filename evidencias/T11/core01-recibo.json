@@ -1,0 +1,9 @@
+{
+  "fase": "IMPORTACAO_RECIBOS",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:48:56.502153+00:00",
+  "snapshot": "core01-antes.json",
+  "snapshot_sha256": "485bd3c08541fcd749e2b79211ccc90e46751ba5b61bb7346ed6de980ea3c49d",
+  "log": "core01.log",
+  "log_sha256": "0448be152a0f9f27dbc6113074f92c43ac2837e8b34f4157fa15064998e16e17"
+}

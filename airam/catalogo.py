@@ -138,6 +138,7 @@ def catalogar(root: Path) -> list[dict]:
         raise ValueError("A raiz do catalogo deve ser um diretorio")
     config = _configuration()
     excluded = set(config.get("catalogo", {}).get("excluir_diretorios", []))
+    excluded_files = set(config.get("catalogo", {}).get("excluir_arquivos", []))
     files = []
     for directory, subdirs, filenames in os.walk(root, followlinks=False):
         subdirs[:] = sorted(d for d in subdirs if d not in excluded)
@@ -145,6 +146,8 @@ def catalogar(root: Path) -> list[dict]:
             _inside(Path(directory) / dirname, root)
         for name in sorted(filenames):
             path = Path(directory) / name
+            if path.relative_to(root).as_posix() in excluded_files:
+                continue
             _inside(path, root)
             files.append(path)
     files.sort(key=lambda p: p.relative_to(root).as_posix())

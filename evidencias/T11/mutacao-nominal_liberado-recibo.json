@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:55:25.629977+00:00",
+  "snapshot": "mutacao-nominal_liberado-antes.json",
+  "snapshot_sha256": "c3744d818d1291d7f95197f73171cd15ba5e87de1d861854c45ce34a2ece44a3",
+  "log": "mutacao-nominal_liberado.log",
+  "log_sha256": "ba85c97bb217d714752745582fb9a9e0a73e846c1b8a1144847e70274c2398db"
+}

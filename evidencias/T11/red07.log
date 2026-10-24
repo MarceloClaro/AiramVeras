@@ -1,0 +1,20 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_persistencia_manifesto_truncado_nao_esconde_saida_adulterada ______
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-110/test_persistencia_manifesto_tr0')
+
+    def test_persistencia_manifesto_truncado_nao_esconde_saida_adulterada(tmp_path):
+        module=api('persistencia');tables={'avaliacoes':[{'aluno_local_id':'artificial','acertos':0}]}
+        output=module.persistir(tables,tmp_path/'restrito/banco',tmp_path,{'fonte':'a'*64})
+        manifest=Path(output['manifesto']);data=json.loads(manifest.read_text())
+        data['hashes']={};manifest.write_text(json.dumps(data))
+        Path(output['sqlite']).write_bytes(b'ADULTERADO ARTIFICIAL')
+>       with pytest.raises(ValueError):module.persistir(tables,tmp_path/'restrito/banco',tmp_path,{'fonte':'a'*64})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_cli.py:303: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_persistencia_manifesto_truncado_nao_esconde_saida_adulterada
+1 failed, 30 deselected in 0.58s

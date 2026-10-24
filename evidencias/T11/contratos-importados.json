@@ -1,0 +1,9 @@
+{
+  "base": "28d88e356f3ce744f250331aa2f90a8de5bdc6be",
+  "baseline_sha256": "bfd8a10f4efe70c35b1551a65791e4938a08050476353682186ea478eecef2e9",
+  "cache_sha256": "4ffa58a561fc1baed64c12962e98bf4a4b94ccbc55cf41d834d962f937f8c142",
+  "checkpoints": 15,
+  "fontes": 76,
+  "nova_inferencia": false,
+  "tipo": "importacao_documental_operacional"
+}

@@ -1,0 +1,8 @@
+{
+  "estado": "PASS",
+  "codigo_saida": 0,
+  "arquivos_candidatos_verificados": 141,
+  "arquivos_com_falha": 0,
+  "termos_nominais_ou_identificadores_emitidos": false,
+  "limite": "Varredura literal complementar; nao substitui revisao independente nem ACL."
+}

@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:55:22.877256+00:00",
+  "snapshot": "mutacao-runtime_ignorado-antes.json",
+  "snapshot_sha256": "a445f301623f7385a9deeaac382a7efc79d7243cfebabd3a1b0af58d0229d8a2",
+  "log": "mutacao-runtime_ignorado.log",
+  "log_sha256": "419c3f9818fa33078b4023ca1b2b74f8355d9783179ed0c425213ab6b777728d"
+}

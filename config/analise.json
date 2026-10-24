@@ -1,72 +1,94 @@
 {
-  "spec_id": "SPEC-AIRAM-001",
-  "versao": "0.1.0",
-  "raiz_fontes": "..",
-  "meta_a": {
-    "proporcao_adequados": 0.8,
-    "denominador": "avaliados",
-    "classificacao": "original_CAEd"
+  "ausencia": {
+    "converter_para_zero": false,
+    "valores": [
+      "",
+      "-",
+      "sem resultado"
+    ]
   },
-  "meta_b": {
-    "proporcao_acertos": 0.8,
-    "unidade": "acertos_oportunidades",
-    "escrita_fluencia": "nao_aplicar_sem_contrato"
+  "baseline": {
+    "caminho": "config/fontes-baseline.json",
+    "sha256": "bfd8a10f4efe70c35b1551a65791e4938a08050476353682186ea478eecef2e9"
+  },
+  "cache_analise": {
+    "caminho": "config/cache-analise-aprovada.json",
+    "sha256": "4ffa58a561fc1baed64c12962e98bf4a4b94ccbc55cf41d834d962f937f8c142"
   },
   "catalogo": {
+    "excluir_arquivos": [
+      "COMECE_AQUI.lnk"
+    ],
     "excluir_diretorios": [
-      "datamining",
-      ".git",
+      ".airam-cenarios-t09",
+      ".airam-cli-t11",
       ".codex",
-      ".venv",
-      "__pycache__",
+      ".git",
       ".pytest_cache",
+      ".venv",
+      "00_ORGANIZACAO",
+      "__pycache__",
+      "datamining",
       "node_modules"
     ],
     "saida": "catalogo/fontes.json"
   },
+  "checkpoint_ingestao": {
+    "caminho": "restrito/t02/tabelas.json",
+    "sha256": "82a24045cb75d85eeefd4394a73cb0dcec37dbbd8a542350fb04d7da0653d9f5"
+  },
   "fontes": {
+    "bncc_canonico": {
+      "caminho": "bncc-dados",
+      "commit": "9c268978efa2aa250834c6a9edb6074432752838",
+      "papel": "dataset_curricular"
+    },
     "coleta_ciclo_i_2026": {
       "caminho": "resultados-caed-ciclo-i-2026/manifesto_coleta.json",
       "papel": "proveniencia_observada"
     },
-    "matriz_cnca_2026": {
-      "caminho": "MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf",
-      "papel": "matriz_curricular"
-    },
-    "mapa_caed_observado": {
-      "caminho": "resultados-caed-ciclo-i-2026/conferencia/mapa_posicao_codigo_caed.csv",
-      "papel": "mapa_portal"
-    },
-    "bncc_canonico": {
-      "caminho": "bncc-dados",
-      "papel": "dataset_curricular",
-      "commit": "9c268978efa2aa250834c6a9edb6074432752838"
+    "dados_atuais_zip_restrito": {
+      "caminho": "CAEd_Airam_Veras_Ciclo_I_2026_1ao5_ANO_RESTRITO.zip",
+      "papel": "arquivo_restrito_duplicado_para_auditoria"
     },
     "historico_matematica_1ano": {
       "caminho": "CAEd_DadosExportados-1ANO-CICLOI-AIRAMVERAS-MATEMATICA.zip",
       "papel": "auditoria_incompatibilidade_conteudo"
     },
-    "historico_resultados": {
-      "caminho": "CAEd_Airam_Veras_2026_Resultados_SDD_TDD-1ANO.zip",
-      "papel": "auditoria_sem_temporalidade_validada"
-    },
     "historico_pacote": {
       "caminho": "CAEd_Airam_Veras_2026_Colab_SDD_TDD_PACOTE-1ANO.zip",
       "papel": "auditoria"
     },
-    "dados_atuais_zip_restrito": {
-      "caminho": "CAEd_Airam_Veras_Ciclo_I_2026_1ao5_ANO_RESTRITO.zip",
-      "papel": "arquivo_restrito_duplicado_para_auditoria"
+    "historico_resultados": {
+      "caminho": "CAEd_Airam_Veras_2026_Resultados_SDD_TDD-1ANO.zip",
+      "papel": "auditoria_sem_temporalidade_validada"
+    },
+    "mapa_caed_observado": {
+      "caminho": "resultados-caed-ciclo-i-2026/conferencia/mapa_posicao_codigo_caed.csv",
+      "papel": "mapa_portal"
+    },
+    "matriz_cnca_2026": {
+      "caminho": "MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf",
+      "papel": "matriz_curricular"
     }
   },
-  "temporalidade": "previsao_temporal_nao_estimavel_com_validacao",
-  "ausencia": {
-    "valores": [
-      "",
-      "-",
-      "sem resultado"
-    ],
-    "converter_para_zero": false
+  "identidade": "vinculacao_local_provisoria_sem_identidade_longitudinal_validada",
+  "meta_a": {
+    "classificacao": "original_CAEd",
+    "denominador": "avaliados",
+    "proporcao_adequados": 0.8
   },
-  "identidade": "vinculacao_local_provisoria_sem_identidade_longitudinal_validada"
+  "meta_b": {
+    "escrita_fluencia": "nao_aplicar_sem_contrato",
+    "proporcao_acertos": 0.8,
+    "unidade": "acertos_oportunidades"
+  },
+  "raiz_fontes": "..",
+  "spec_id": "SPEC-AIRAM-001",
+  "temporalidade": "previsao_temporal_nao_estimavel_com_validacao",
+  "versao": "0.1.0",
+  "agentes": {
+    "caminho": "agents/contratos.json",
+    "sha256": "b44ad4a2c5e06d66667db3d9a2f46809725b2eae6bc83264bbf46a7ce67993bf"
+  }
 }

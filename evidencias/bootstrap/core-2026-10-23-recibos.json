@@ -1,0 +1,683 @@
+{
+  "registrado_utc": "2026-10-23 06:25:28 UTC",
+  "escopo": "Sonda minimizada de integração, não TDD de produto nem contraprova científica; horário é o do registro posterior das respostas.",
+  "integracao": {
+    "spec_id": "SPEC-935-R662",
+    "orchestrator": "marceloclaro",
+    "status": "config_checked",
+    "executed": false,
+    "execution_verified": false,
+    "components": {
+      "agents": {
+        "configured_count": 314,
+        "primary": "marceloclaro"
+      },
+      "hooks": {
+        "events": [
+          "PreToolUse",
+          "PostToolUse",
+          "SessionStart",
+          "SessionEnd"
+        ],
+        "verification": "contract_only"
+      },
+      "mcp": {
+        "configured_count": 16,
+        "entries": [
+          {
+            "name": "rea",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "ecosystem-network",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "litert-lm",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "metacognitive-interconnect",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "antigravity-bridge",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "pypi-search",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "colibri-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "scanners-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "arxiv-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "latexmk-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "artigo-academico-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "polymath-labs-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "web-deploy-mcp",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "fetch",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "sequential-thinking",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          },
+          {
+            "name": "filesystem",
+            "kind": "local",
+            "launcher_installed": true,
+            "verification": "configuration_only"
+          }
+        ]
+      },
+      "cli": {
+        "command_count": 33,
+        "verification": "configuration_only"
+      },
+      "plugins": {
+        "count": 33,
+        "verification": "discovery_only"
+      },
+      "skills": {
+        "count": 251,
+        "verification": "discovery_only"
+      }
+    },
+    "issues": [],
+    "ecosystems_present": [
+      "antigravity",
+      "chatgpt",
+      "claude",
+      "codex"
+    ],
+    "ecosystems_missing": []
+  },
+  "inventario_resumo": {
+    "status": "blocked",
+    "executed": false,
+    "registered": false,
+    "profiles": 255,
+    "rejected": 59,
+    "relevantes": [
+      {
+        "agent_id": "bncc-dados-specialist",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/bncc-dados-specialist.md",
+        "source_sha256": "45f8cd3cdb4700ad41ba66635fd79aa1361344486e936dbaeb0f76955e0ebb4b",
+        "unique_capability": "profile_bncc_dados_specialist",
+        "external_validation": false
+      },
+      {
+        "agent_id": "caed-spaece-educacao-ceara",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/caed-spaece-educacao-ceara.md",
+        "source_sha256": "12a7254e76ec8e1901f0c13dc4b625bc9ab4b4350f66ab271cd33438259481df",
+        "unique_capability": "profile_caed_spaece_educacao_ceara",
+        "external_validation": false
+      },
+      {
+        "agent_id": "plugin-data",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/plugin-data.md",
+        "source_sha256": "b010bd040ea64e0a7271bc3c50c1c5e7c554e2a8081bf9f330c65e86a3923e17",
+        "unique_capability": "profile_plugin_data",
+        "external_validation": false
+      },
+      {
+        "agent_id": "red-history-final-audit",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/red-history-final-audit.md",
+        "source_sha256": "d6ae84557bc4c4ed2c1d4eb1aefd4d00e3142e75adeffc41bff6d6fdc0205f2f",
+        "unique_capability": "profile_red_history_final_audit",
+        "external_validation": false
+      },
+      {
+        "agent_id": "scientific-profile",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/scientific-profile.md",
+        "source_sha256": "dca996c9f8931ca0e11ec8a422bd074f3ebee4f9c1a74f9b0498450d718612a7",
+        "unique_capability": "profile_scientific_profile",
+        "external_validation": false
+      },
+      {
+        "agent_id": "scientific-review",
+        "mode": "managed-v1",
+        "definition_validated": true,
+        "validation_scope": "definition_policy_and_references",
+        "executed": false,
+        "source_file": "agents/catalog/scientific-review.md",
+        "source_sha256": "a4570a2b1c34738c560964f0a47f6a2881816e9a0e2de7797b1dc9a10ffe3f61",
+        "unique_capability": "profile_scientific_review",
+        "external_validation": false
+      }
+    ]
+  },
+  "validacao": {
+    "mode": "managed-v1",
+    "agent_id": "caed-spaece-educacao-ceara",
+    "definition_validated": true,
+    "validation_scope": "definition_policy_and_references",
+    "executed": false,
+    "source_file": "agents/catalog/caed-spaece-educacao-ceara.md",
+    "source_sha256": "12a7254e76ec8e1901f0c13dc4b625bc9ab4b4350f66ab271cd33438259481df",
+    "profile": {
+      "agent_id": "caed-spaece-educacao-ceara",
+      "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+      "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+      "version": "1.0.0",
+      "type": "specialist",
+      "category": "audit",
+      "language": "pt-BR",
+      "lifecycle": "managed-v1",
+      "parent": "marceloclaro",
+      "spec_file": "specs/SPEC-935-R942-caed-spaece-legislacao-ceara.md",
+      "test_file": "tests/test_r942_caed_spaece_educacao_ceara.py",
+      "source": "user_requested_specialist:caed-spaece-educacao-ceara",
+      "allow_edit": false,
+      "tags": [
+        "profile_caed_spaece_educacao_ceara",
+        "caed_matrix_inventory",
+        "spaece_edition_analysis",
+        "education_law_versioning",
+        "ceara_education_plan",
+        "bncc_matrix_crosswalk"
+      ],
+      "skills": [
+        {
+          "id": "caed-spaece-educacao-ceara",
+          "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+          "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+          "tags": [
+            "profile_caed_spaece_educacao_ceara",
+            "caed_matrix_inventory",
+            "spaece_edition_analysis",
+            "education_law_versioning",
+            "ceara_education_plan",
+            "bncc_matrix_crosswalk"
+          ],
+          "examples": [
+            "Execute o escopo solicitado e cite os arquivos e limites observados."
+          ]
+        }
+      ],
+      "capabilities": {
+        "extendedAgentCard": true
+      },
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "webfetch": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "python3 -m marceloclaro.cli doctor": "allow",
+          "python3 -m pytest tests/test_r942_caed_spaece_educacao_ceara.py -q": "allow"
+        }
+      },
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": false,
+        "write": false
+      },
+      "output_contract": {
+        "required_fields": [
+          "status",
+          "findings",
+          "evidence",
+          "limitations"
+        ],
+        "evidence_required": true,
+        "external_validation": false
+      }
+    },
+    "unique_capability": "profile_caed_spaece_educacao_ceara",
+    "external_validation": false,
+    "registered": false,
+    "confidence_promoted": false,
+    "status": "definition_validated",
+    "metacognition": {
+      "observation_id": "fb237c9b-f687-417e-afdf-1c131632a322",
+      "persisted": true,
+      "scope_id": "ef86d9de86c405272761d1e05dce38d0f54237759f05d9327914b634c7582ba9",
+      "previous_observation_id": null,
+      "state_transition": {
+        "from": null,
+        "to": "definition_validated"
+      }
+    }
+  },
+  "registro": {
+    "mode": "managed-v1",
+    "agent_id": "caed-spaece-educacao-ceara",
+    "definition_validated": true,
+    "validation_scope": "definition_policy_and_references",
+    "executed": false,
+    "source_file": "agents/catalog/caed-spaece-educacao-ceara.md",
+    "source_sha256": "12a7254e76ec8e1901f0c13dc4b625bc9ab4b4350f66ab271cd33438259481df",
+    "profile": {
+      "agent_id": "caed-spaece-educacao-ceara",
+      "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+      "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+      "version": "1.0.0",
+      "type": "specialist",
+      "category": "audit",
+      "language": "pt-BR",
+      "lifecycle": "managed-v1",
+      "parent": "marceloclaro",
+      "spec_file": "specs/SPEC-935-R942-caed-spaece-legislacao-ceara.md",
+      "test_file": "tests/test_r942_caed_spaece_educacao_ceara.py",
+      "source": "user_requested_specialist:caed-spaece-educacao-ceara",
+      "allow_edit": false,
+      "tags": [
+        "profile_caed_spaece_educacao_ceara",
+        "caed_matrix_inventory",
+        "spaece_edition_analysis",
+        "education_law_versioning",
+        "ceara_education_plan",
+        "bncc_matrix_crosswalk"
+      ],
+      "skills": [
+        {
+          "id": "caed-spaece-educacao-ceara",
+          "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+          "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+          "tags": [
+            "profile_caed_spaece_educacao_ceara",
+            "caed_matrix_inventory",
+            "spaece_edition_analysis",
+            "education_law_versioning",
+            "ceara_education_plan",
+            "bncc_matrix_crosswalk"
+          ],
+          "examples": [
+            "Execute o escopo solicitado e cite os arquivos e limites observados."
+          ]
+        }
+      ],
+      "capabilities": {
+        "extendedAgentCard": true
+      },
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "webfetch": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "python3 -m marceloclaro.cli doctor": "allow",
+          "python3 -m pytest tests/test_r942_caed_spaece_educacao_ceara.py -q": "allow"
+        }
+      },
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": false,
+        "write": false
+      },
+      "output_contract": {
+        "required_fields": [
+          "status",
+          "findings",
+          "evidence",
+          "limitations"
+        ],
+        "evidence_required": true,
+        "external_validation": false
+      }
+    },
+    "unique_capability": "profile_caed_spaece_educacao_ceara",
+    "external_validation": false,
+    "registered": true,
+    "confidence_promoted": false,
+    "status": "registered",
+    "metacognition": {
+      "observation_id": "599676ea-7e56-4b51-bedd-2a02a2dec9a7",
+      "persisted": true,
+      "scope_id": "ef86d9de86c405272761d1e05dce38d0f54237759f05d9327914b634c7582ba9",
+      "previous_observation_id": "fb237c9b-f687-417e-afdf-1c131632a322",
+      "state_transition": {
+        "from": "definition_validated",
+        "to": "registered"
+      }
+    }
+  },
+  "spec_textual": {
+    "success": true,
+    "spec_id": "TSPEC-a6e24d1b",
+    "task": "SPEC-AIRAM-001: sonda de execução do especialista CAEd usando EXCLUSIVAMENTE estes agregados fornecidos, sem ler arquivos, sem comandos, sem rede e sem dados individuais. Dados: matemática 4º ano, N avaliado=42, Adequado CAEd=16; leitura 5º ano, N avaliado=53, Adequado CAEd=45. Meta A=80% avaliados Adequados. Instrumentos L/M têm22itens; Meta B=80%acertos por estudante. Responda em JSON com status, findings, evidence e limitations: teto de0,8N e conversões mínimas por cada um dos dois escopos; corte inteiro MetaB; declarar que essas contas agregadas não estabelecem corte oficial CAEd, previsão temporal ou eficácia pedagógica. Não revisar código nem repetir revisão de etapa. Evidência é somente o texto agregado desta solicitação, derivado do checkpoint público T05 autenticado SHA256 5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231.",
+    "criteria": [
+      "MetaA matemática4: alvo34 e18conversões; leitura5: alvo43 e0conversões",
+      "MetaB22itens: corte18; não inferir quem individualmente atende",
+      "Declarar fonte textual agregada e limites; nenhuma leitura de arquivos, comando, rede ou dado individual"
+    ],
+    "verification": "criteria_only",
+    "software_delivery": false,
+    "externally_validated": false,
+    "limitations": [
+      "Critérios de texto são heurísticos; não comprovam qualidade ou correção.",
+      "ID válido nesta sessão MCP; não constitui entrega de software nem substitui RED→GREEN."
+    ]
+  },
+  "ativacao": {
+    "mode": "managed-v1",
+    "agent_id": "caed-spaece-educacao-ceara",
+    "definition_validated": true,
+    "validation_scope": "definition_policy_and_references",
+    "executed": false,
+    "source_file": "agents/catalog/caed-spaece-educacao-ceara.md",
+    "source_sha256": "12a7254e76ec8e1901f0c13dc4b625bc9ab4b4350f66ab271cd33438259481df",
+    "profile": {
+      "agent_id": "caed-spaece-educacao-ceara",
+      "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+      "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+      "version": "1.0.0",
+      "type": "specialist",
+      "category": "audit",
+      "language": "pt-BR",
+      "lifecycle": "managed-v1",
+      "parent": "marceloclaro",
+      "spec_file": "specs/SPEC-935-R942-caed-spaece-legislacao-ceara.md",
+      "test_file": "tests/test_r942_caed_spaece_educacao_ceara.py",
+      "source": "user_requested_specialist:caed-spaece-educacao-ceara",
+      "allow_edit": false,
+      "tags": [
+        "profile_caed_spaece_educacao_ceara",
+        "caed_matrix_inventory",
+        "spaece_edition_analysis",
+        "education_law_versioning",
+        "ceara_education_plan",
+        "bncc_matrix_crosswalk"
+      ],
+      "skills": [
+        {
+          "id": "caed-spaece-educacao-ceara",
+          "name": "Especialista CAEd/SPAECE e Legislação Educacional do Ceará",
+          "description": "Inventariar matrizes públicas CAEd/SPAECE em todas as edições disponíveis e analisar legislação educacional federal e do Ceará com proveniência temporal.",
+          "tags": [
+            "profile_caed_spaece_educacao_ceara",
+            "caed_matrix_inventory",
+            "spaece_edition_analysis",
+            "education_law_versioning",
+            "ceara_education_plan",
+            "bncc_matrix_crosswalk"
+          ],
+          "examples": [
+            "Execute o escopo solicitado e cite os arquivos e limites observados."
+          ]
+        }
+      ],
+      "capabilities": {
+        "extendedAgentCard": true
+      },
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "webfetch": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "python3 -m marceloclaro.cli doctor": "allow",
+          "python3 -m pytest tests/test_r942_caed_spaece_educacao_ceara.py -q": "allow"
+        }
+      },
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": false,
+        "write": false
+      },
+      "output_contract": {
+        "required_fields": [
+          "status",
+          "findings",
+          "evidence",
+          "limitations"
+        ],
+        "evidence_required": true,
+        "external_validation": false
+      }
+    },
+    "unique_capability": "profile_caed_spaece_educacao_ceara",
+    "external_validation": false,
+    "registered": true,
+    "confidence_promoted": false,
+    "task_id": "task-5820fc2d",
+    "status": "assigned",
+    "assigned_to": "caed-spaece-educacao-ceara",
+    "execution_status": "pending_executor",
+    "metacognition": {
+      "observation_id": "1dbf6634-1192-49fa-b3d2-99860630f696",
+      "persisted": true,
+      "scope_id": "ef86d9de86c405272761d1e05dce38d0f54237759f05d9327914b634c7582ba9",
+      "previous_observation_id": "599676ea-7e56-4b51-bedd-2a02a2dec9a7",
+      "state_transition": {
+        "from": "registered",
+        "to": "assigned"
+      }
+    }
+  },
+  "chamada_execucao": {
+    "spec_id": "TSPEC-a6e24d1b",
+    "ecosystem": "codex",
+    "required_capabilities": [
+      "profile_caed_spaece_educacao_ceara"
+    ],
+    "max_steps": 1,
+    "timeout": 45
+  },
+  "execucao": {
+    "status": "blocked",
+    "success": false,
+    "task_id": "task-cb45c5f2",
+    "agent_id": null,
+    "ecosystem": "codex",
+    "origin_ecosystem": "claude",
+    "execution_mode": "adapted_instructions",
+    "artifact": {
+      "artifact_id": "claude:skill:third_party:code-review",
+      "ecosystem": "claude",
+      "kind": "skill",
+      "name": "code-review",
+      "slug": "code-review",
+      "emission_slug": "code-review",
+      "description": "AI-powered code review using CodeRabbit. Default code-review skill. Trigger for any explicit review request AND autonomously when the agent thinks a review is needed (code/PR/quality/security).",
+      "source_path": "/home/marceloclaro/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/skills/code-review/SKILL.md",
+      "source_root": "claude:plugin_cache",
+      "origin": "third_party",
+      "license": "MIT",
+      "execution_verified": false,
+      "instruction_only": true,
+      "version": "",
+      "capabilities": [],
+      "tags": [],
+      "hook_events": [],
+      "hook_commands": [],
+      "content_sha256": "2e182f08520ac200600bf70d4a4ae1af7bda6d9e4a45272a774a99e5260a3058",
+      "source_file_sha256": "18c9c3c69a6a58ae0b7baa5b19637eaa9aaf02c21b1242f0bb073dc24942fe0a",
+      "status": "ok",
+      "available": true,
+      "degraded_reasons": [],
+      "duplicate_paths": [],
+      "metadata": {
+        "frontmatter_keys": [
+          "description",
+          "metadata",
+          "name"
+        ],
+        "derived_source_artifact_id": null,
+        "instruction_root": "/home/marceloclaro/.claude/plugins/cache/claude-plugins-official/coderabbit/1.1.1/skills/code-review",
+        "support_files": [],
+        "validation_reasons": [],
+        "invocation_policy": {
+          "disable_model_invocation": false,
+          "allow_implicit_invocation": null
+        },
+        "portable_frontmatter": {}
+      }
+    },
+    "output": "",
+    "steps": 0,
+    "routing": {
+      "status": "ready",
+      "error": "",
+      "executor": "codex",
+      "available_executors": [
+        "claude",
+        "codex",
+        "antigravity"
+      ],
+      "ranking": [
+        [
+          "claude:skill:third_party:code-review",
+          0.3706323948750183
+        ],
+        [
+          "claude:skill:third_party:receiving-code-review",
+          0.3585886260135509
+        ],
+        [
+          "claude:skill:third_party:requesting-code-review",
+          0.3585886260135509
+        ],
+        [
+          "codex:skill:third_party:dsh-code-review:76bb1e7e60b4690d",
+          0.3585886260135509
+        ],
+        [
+          "claude:agent:third_party:code-reviewer:d3e2acc79e9a9163",
+          0.3293701478139685
+        ]
+      ],
+      "weights": {
+        "semantic": 0.35,
+        "capability": 0.3,
+        "maturity": 0.2,
+        "license": 0.15
+      },
+      "spec_id": "SPEC-935-R621",
+      "excluded_artifacts": {
+        "claude:command:third_party:coderabbit-review": "inert_artifact_kind",
+        "claude:hook:third_party:superpowers:83ffa7fd64ca18e7": "inert_artifact_kind",
+        "claude:hook:third_party:superpowers:dfcaaca15d9dc162": "inert_artifact_kind",
+        "claude:command:third_party:maker-setup": "inert_artifact_kind",
+        "claude:command:third_party:code-review": "inert_artifact_kind",
+        "claude:command:third_party:review-pr": "inert_artifact_kind",
+        "claude:command:third_party:modernize-status": "inert_artifact_kind",
+        "claude:command:third_party:help:aaaabe26c4d7bc28": "inert_artifact_kind",
+        "claude:command:third_party:list": "inert_artifact_kind",
+        "claude:command:third_party:revise-claude-md": "inert_artifact_kind",
+        "claude:command:third_party:configure": "inert_artifact_kind",
+        "claude:command:third_party:modernize-map": "inert_artifact_kind",
+        "claude:hook:third_party:hookify": "inert_artifact_kind",
+        "claude:command:third_party:hookify": "inert_artifact_kind",
+        "claude:hook:third_party:ralph-loop": "inert_artifact_kind",
+        "claude:hook:third_party:security-guidance": "inert_artifact_kind",
+        "claude:command:third_party:example-command": "inert_artifact_kind",
+        "claude:hook:third_party:explanatory-output-style": "inert_artifact_kind",
+        "claude:hook:third_party:learning-output-style": "inert_artifact_kind",
+        "claude:command:third_party:create-plugin": "inert_artifact_kind"
+      },
+      "excluded_count": 37,
+      "excluded_reasons": {
+        "inert_artifact_kind": 37
+      },
+      "ranked_count": 5
+    },
+    "error": "Nenhum agente interno elegível foi atribuído pelo orquestrador.",
+    "evaluation_kind": "heuristic",
+    "final_grade": null,
+    "attempts": [],
+    "fallbacks": [],
+    "sdd_preflight": {
+      "ready": true,
+      "red_history_required": false,
+      "verification_scope": "criteria_only"
+    }
+  },
+  "limites": [
+    "Somente dois escopos agregados e alvo22itens foram fornecidos no texto. Nenhum dado de estudante foi enviado.",
+    "Validado/registrado/assigned não significa inferido. Execução blocked: zero passos, agent_id nulo e nenhuma tentativa de executor.",
+    "Inventário configurado314 difere do registro histórico312; não repetir doctor antigo como evidência atual.",
+    "Nenhuma política global ou cartão rejeitado foi alterado; perfil existente específico foi registrado pela fachada do primário."
+  ]
+}

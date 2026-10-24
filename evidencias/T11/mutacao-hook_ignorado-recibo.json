@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:55:19.743574+00:00",
+  "snapshot": "mutacao-hook_ignorado-antes.json",
+  "snapshot_sha256": "cb6469f0104abaeba4314ddd196c4e8fc4616e62f473302014405ecddb7cd48f",
+  "log": "mutacao-hook_ignorado.log",
+  "log_sha256": "61bdb8844f4a16770d5e4c6b698f6ac8e79133656e54487c71adf34c008bd08e"
+}

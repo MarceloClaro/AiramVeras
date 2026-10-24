@@ -1,0 +1,67 @@
+FF.FF                                                                    [100%]
+================================== FAILURES ===================================
+____________ test_validar_verifica_esquema_real_antes_de_persistir ____________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-90/test_validar_verifica_esquema_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002663FAC7680>
+
+    def test_validar_verifica_esquema_real_antes_de_persistir(tmp_path,monkeypatch):
+        from test_ingestao import fonte
+        _,target=fonte(tmp_path,monkeypatch,sem_coluna=('ESTUDANTE','Estudante'))
+        old=json.loads((tmp_path/'config.json').read_text())
+        baseline=tmp_path/'baseline.json'
+        baseline.write_text(json.dumps({'fontes':{p.relative_to(tmp_path/'fontes').as_posix():sha(p)
+            for p in (tmp_path/'fontes').rglob('*') if p.is_file()}}))
+        config=tmp_path/'analise.json'
+        config.write_text(json.dumps(old|{'projeto':str(tmp_path),'baseline':{'caminho':'baseline.json','sha256':sha(baseline)}}))
+>       assert invoke(config,'validar').returncode != 0
+E       assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe', '-m', 'aira...1ad363f65e5493c341c9656833fd08d3a9eac3e82cda6f", "fontes": 5, "fim": "2026-10-24T08:21:06.414222+00:00"}\n', stderr='').returncode
+E        +    where CompletedProcess(args=['C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe', '-m', 'aira...1ad363f65e5493c341c9656833fd08d3a9eac3e82cda6f", "fontes": 5, "fim": "2026-10-24T08:21:06.414222+00:00"}\n', stderr='') = invoke(WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-90/test_validar_verifica_esquema_0/analise.json'), 'validar')
+
+tests\test_cli.py:172: AssertionError
+_____ test_analisar_reusa_autenticado_e_grava_sqlite_csv_sem_dados_stdout _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-90/test_analisar_reusa_autenticad0')
+
+    def test_analisar_reusa_autenticado_e_grava_sqlite_csv_sem_dados_stdout(tmp_path):
+        config=analytic_fixture(tmp_path)
+        result=invoke(config,'analisar')
+>       assert result.returncode==0, result.stdout
+E       AssertionError: {"tipo": "operacional", "versao_schema": "airam-operacao-v1", "comando": "analisar", "timestamp": "2026-10-24T08:21:07.528579+00:00", "codigo_saida": 2, "estado": "bloqueado", "hooks": [{"nome": "preflight", "codigo_saida": 0, "disparo_real": true}], "snapshot_sha256": "819bcc8429be1446540067fc1c3b990f93d3650798cac3eca1492b15a7924ba7", "motivo": "integracao_analitica_em_implementacao", "fim": "2026-10-24T08:21:09.891113+00:00"}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe', '-m', 'aira...a7924ba7", "motivo": "integracao_analitica_em_implementacao", "fim": "2026-10-24T08:21:09.891113+00:00"}\n', stderr='').returncode
+
+tests\test_cli.py:199: AssertionError
+_________________ test_release_csv_nominal_sem_mapa_nao_passa _________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-90/test_release_csv_nominal_sem_m0')
+
+    def test_release_csv_nominal_sem_mapa_nao_passa(tmp_path):
+        fixture=release_fixture(tmp_path); p=tmp_path/'vazamento.csv'
+        p.write_text('nome,total\nPESSOA ARTIFICIAL,2\n')
+        fixture['artefatos'][p.name]=sha(p); fixture['publicos'].append(p.name)
+>       assert api('gates').avaliar_gate('release',fixture)['codigo_saida']!=0
+E       assert 0 != 0
+
+tests\test_cli.py:219: AssertionError
+____________ test_snapshot_cli_autentica_fontes_antes_da_execucao _____________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-90/test_snapshot_cli_autentica_fo0')
+
+    def test_snapshot_cli_autentica_fontes_antes_da_execucao(tmp_path):
+        config,original=fixture_config(tmp_path)
+        assert invoke(config,'validar').returncode==0
+        before=[json.loads(p.read_text()) for p in (tmp_path/'evidencias/operacionais').rglob('antes.json')]
+>       assert any(b.get('entradas',{}).get('original.txt')==sha(original) for b in before)
+E       assert False
+E        +  where False = any(<generator object test_snapshot_cli_autentica_fontes_antes_da_execucao.<locals>.<genexpr> at 0x000002663FC1CE40>)
+
+tests\test_cli.py:226: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_validar_verifica_esquema_real_antes_de_persistir
+FAILED tests/test_cli.py::test_analisar_reusa_autenticado_e_grava_sqlite_csv_sem_dados_stdout
+FAILED tests/test_cli.py::test_release_csv_nominal_sem_mapa_nao_passa - asser...
+FAILED tests/test_cli.py::test_snapshot_cli_autentica_fontes_antes_da_execucao
+4 failed, 1 passed, 18 deselected in 15.68s

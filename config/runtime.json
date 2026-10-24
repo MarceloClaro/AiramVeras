@@ -1,0 +1,7 @@
+{
+  "bundle": "26.1020.11127",
+  "node": "C:/Users/marce/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+  "base": "C:/Users/marce/.cache/codex-runtimes/codex-primary-runtime/dependencies/node",
+  "origem": "mcp__codex_app__load_workspace_dependencies",
+  "politica": "Resolucao publica somente leitura; nao instalar nem modificar dependencias."
+}

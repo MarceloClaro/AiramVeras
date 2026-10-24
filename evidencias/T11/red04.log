@@ -1,0 +1,32 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_______________ test_catalogar_nao_escreve_sobre_fonte_primaria _______________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-95/test_catalogar_nao_escreve_sob0')
+
+    def test_catalogar_nao_escreve_sobre_fonte_primaria(tmp_path):
+        config,original=fixture_config(tmp_path); before=original.read_bytes()
+        cfg=json.loads(config.read_text());cfg['catalogo']['saida']='fontes/original.txt'
+        config.write_text(json.dumps(cfg))
+>       assert invoke(config,'catalogar').returncode!=0
+E       assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe', '-m', 'aira...d076258078b27a78178778fc2c321ab7ffb23495694f12f7e53902e74e"}, "fim": "2026-10-24T12:48:41.830336+00:00"}\n', stderr='').returncode
+E        +    where CompletedProcess(args=['C:\\Users\\marce\\Downloads\\Airam veras\\datamining\\.venv\\Scripts\\python.exe', '-m', 'aira...d076258078b27a78178778fc2c321ab7ffb23495694f12f7e53902e74e"}, "fim": "2026-10-24T12:48:41.830336+00:00"}\n', stderr='') = invoke(WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-95/test_catalogar_nao_escreve_sob0/analise.json'), 'catalogar')
+
+tests\test_cli.py:272: AssertionError
+____________ test_release_inspecao_pendente_com_exit_zero_bloqueia ____________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-95/test_release_inspecao_pendente0')
+
+    def test_release_inspecao_pendente_com_exit_zero_bloqueia(tmp_path):
+        fixture=release_fixture(tmp_path)
+        path=tmp_path/'inspecao.json';path.write_text(json.dumps({'codigo_saida':0,'estado':'PENDING'}))
+        fixture['recibos']['inspecao']['sha256']=sha(path)
+>       assert api('gates').avaliar_gate('release',fixture)['codigo_saida']!=0
+E       assert 0 != 0
+
+tests\test_cli.py:280: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_catalogar_nao_escreve_sobre_fonte_primaria - a...
+FAILED tests/test_cli.py::test_release_inspecao_pendente_com_exit_zero_bloqueia
+2 failed, 25 deselected in 4.09s

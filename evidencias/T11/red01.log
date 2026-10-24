@@ -1,0 +1,559 @@
+FFFFFFFFFFFFFFFFFFFFFFF                                                  [100%]
+================================== FAILURES ===================================
+____________ test_catalogo_regenerado_nao_promove_fonte_adulterada ____________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_catalogo_regenerado_nao_p0')
+
+    def test_catalogo_regenerado_nao_promove_fonte_adulterada(tmp_path):
+        config, original = fixture_config(tmp_path)
+>       assert invoke(config, 'catalogar').returncode == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cli.py:38: in invoke
+    api('cli')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cli'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cli
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cli'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+______________ test_validar_recibo_operacional_separado_de_green ______________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_validar_recibo_operaciona0')
+
+    def test_validar_recibo_operacional_separado_de_green(tmp_path):
+        config, _ = fixture_config(tmp_path)
+>       result = invoke(config, 'validar')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_cli.py:38: in invoke
+    api('cli')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cli'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cli
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cli'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_______________ test_exclui_navegacao_worktrees_e_arquivo_exato _______________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_exclui_navegacao_worktree0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001836899B050>
+
+    def test_exclui_navegacao_worktrees_e_arquivo_exato(tmp_path, monkeypatch):
+>       api('cli')
+
+tests\test_cli.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cli'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cli
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cli'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_________ test_gate_temporal_falso_mantem_analise_e_bloqueia_previsao _________
+
+    def test_gate_temporal_falso_mantem_analise_e_bloqueia_previsao():
+>       gate=api('gates').avaliar_gate('temporal',{'avaliacoes':[],'vinculos':[]})
+             ^^^^^^^^^^^^
+
+tests\test_cli.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+____________________ test_gate_desconhecido_falha_fechado _____________________
+
+    def test_gate_desconhecido_falha_fechado():
+>       assert api('gates').avaliar_gate('desconhecido',{})['codigo_saida'] != 0
+               ^^^^^^^^^^^^
+
+tests\test_cli.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+__ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[teste_falhou] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_t53_t58_release_rejeita_e0')
+attack = 'teste_falhou'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+>       gates=api('gates'); fixture=release_fixture(tmp_path)
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+______ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[hash] ______
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_t53_t58_release_rejeita_e1')
+attack = 'hash'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+>       gates=api('gates'); fixture=release_fixture(tmp_path)
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_____ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[rastro] _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_t53_t58_release_rejeita_e2')
+attack = 'rastro'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+>       gates=api('gates'); fixture=release_fixture(tmp_path)
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+____ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[nominal] _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_t53_t58_release_rejeita_e3')
+attack = 'nominal'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+>       gates=api('gates'); fixture=release_fixture(tmp_path)
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+__ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[sem_inspecao] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_t53_t58_release_rejeita_e4')
+attack = 'sem_inspecao'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+>       gates=api('gates'); fixture=release_fixture(tmp_path)
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'gates'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: gates
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'gates'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[entrada] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_cache_invalida_cada_depen0')
+axis = 'entrada'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+>       cache=api('cache')
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cache'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cache
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cache'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+__ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[codigo] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_cache_invalida_cada_depen1')
+axis = 'codigo'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+>       cache=api('cache')
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cache'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cache
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cache'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+__ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[config] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_cache_invalida_cada_depen2')
+axis = 'config'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+>       cache=api('cache')
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cache'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cache
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cache'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[runtime] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_cache_invalida_cada_depen3')
+axis = 'runtime'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+>       cache=api('cache')
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cache'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cache
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cache'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+__ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[saida] ___
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_cache_invalida_cada_depen4')
+axis = 'saida'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+>       cache=api('cache')
+              ^^^^^^^^^^^^
+
+tests\test_cli.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cache'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cache
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cache'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_______ test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica _______
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_persistencia_conserva_zer0')
+
+    def test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica(tmp_path):
+>       module=api('persistencia')
+               ^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'persistencia'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: persistencia
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'persistencia'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_____ test_persistencia_bloqueia_nominal_e_destino_publico[fora_restrito] _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_persistencia_bloqueia_nom0')
+attack = 'fora_restrito'
+
+    @pytest.mark.parametrize('attack',['fora_restrito','nome_aninhado'])
+    def test_persistencia_bloqueia_nominal_e_destino_publico(tmp_path,attack):
+>       module=api('persistencia'); row={'aluno_local_id':'artificial'}
+               ^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'persistencia'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: persistencia
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'persistencia'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_____ test_persistencia_bloqueia_nominal_e_destino_publico[nome_aninhado] _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_persistencia_bloqueia_nom1')
+attack = 'nome_aninhado'
+
+    @pytest.mark.parametrize('attack',['fora_restrito','nome_aninhado'])
+    def test_persistencia_bloqueia_nominal_e_destino_publico(tmp_path,attack):
+>       module=api('persistencia'); row={'aluno_local_id':'artificial'}
+               ^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'persistencia'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: persistencia
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'persistencia'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+___________ test_preflight_real_falha_interrompe_cli_antes_catalogo ___________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_preflight_real_falha_inte0')
+
+    def test_preflight_real_falha_interrompe_cli_antes_catalogo(tmp_path):
+        config, original=fixture_config(tmp_path)
+        original.write_text('ATAQUE ARTIFICIAL')
+>       assert run_hook('preflight','-Config',str(config)).returncode != 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_hooks.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+name = 'preflight'
+args = ('-Config', 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-87\\test_preflight_real_falha_inte0\\analise.json')
+
+    def run_hook(name,*args):
+        path=ROOT/'hooks'/(name+'.ps1')
+>       assert path.is_file(), 'Hook T11 ausente'
+E       AssertionError: Hook T11 ausente
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = WindowsPath('C:/Users/marce/Downloads/Airam veras/.airam-cli-t11/hooks/preflight.ps1').is_file
+
+tests\test_hooks.py:13: AssertionError
+__________________ test_release_real_propaga_falha_e_sucesso __________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-87/test_release_real_propaga_falh0')
+
+    def test_release_real_propaga_falha_e_sucesso(tmp_path):
+>       api('cli'); config,_=fixture_config(tmp_path)
+        ^^^^^^^^^^
+
+tests\test_hooks.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'cli'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: cli
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'cli'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+____________ test_perfil_registrado_sem_recibo_nao_vira_inferencia ____________
+
+    def test_perfil_registrado_sem_recibo_nao_vira_inferencia():
+>       status=api('operacao').estado_agente({'configurado':True,'validado':True,'ativado':True,
+               ^^^^^^^^^^^^^^^
+            'status':'pending_executor','spec_id':'TSPEC-artificial'})
+
+tests\test_agent_receipts.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'operacao'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: operacao
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'operacao'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+____________ test_execucao_bloqueada_com_spec_preserva_zero_passos ____________
+
+    def test_execucao_bloqueada_com_spec_preserva_zero_passos():
+>       status=api('operacao').estado_agente({'status':'blocked','spec_id':'TSPEC-artificial','steps':0,'agent_id':None})
+               ^^^^^^^^^^^^^^^
+
+tests\test_agent_receipts.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'operacao'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: operacao
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'operacao'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+____________ test_evento_configurado_sem_disparo_real_nao_e_ativo _____________
+
+    def test_evento_configurado_sem_disparo_real_nao_e_ativo():
+>       status=api('operacao').estado_evento({'configurado':True,'estado':'contract_only'})
+               ^^^^^^^^^^^^^^^
+
+tests\test_agent_receipts.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'operacao'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: operacao
+E       assert None
+E        +  where None = <function find_spec at 0x000001836753BA60>(('airam.' + 'operacao'))
+E        +    where <function find_spec at 0x000001836753BA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_catalogo_regenerado_nao_promove_fonte_adulterada
+FAILED tests/test_cli.py::test_validar_recibo_operacional_separado_de_green
+FAILED tests/test_cli.py::test_exclui_navegacao_worktrees_e_arquivo_exato - A...
+FAILED tests/test_cli.py::test_gate_temporal_falso_mantem_analise_e_bloqueia_previsao
+FAILED tests/test_cli.py::test_gate_desconhecido_falha_fechado - AssertionErr...
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[teste_falhou]
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[hash]
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[rastro]
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[nominal]
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[sem_inspecao]
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[entrada]
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[codigo]
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[config]
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[runtime]
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[saida]
+FAILED tests/test_cli.py::test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica
+FAILED tests/test_cli.py::test_persistencia_bloqueia_nominal_e_destino_publico[fora_restrito]
+FAILED tests/test_cli.py::test_persistencia_bloqueia_nominal_e_destino_publico[nome_aninhado]
+FAILED tests/test_hooks.py::test_preflight_real_falha_interrompe_cli_antes_catalogo
+FAILED tests/test_hooks.py::test_release_real_propaga_falha_e_sucesso - Asser...
+FAILED tests/test_agent_receipts.py::test_perfil_registrado_sem_recibo_nao_vira_inferencia
+FAILED tests/test_agent_receipts.py::test_execucao_bloqueada_com_spec_preserva_zero_passos
+FAILED tests/test_agent_receipts.py::test_evento_configurado_sem_disparo_real_nao_e_ativo
+23 failed in 0.79s

@@ -1,0 +1,9 @@
+{
+  "fase": "DIAGNOSTICO",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:51:44.313577+00:00",
+  "snapshot": "diagnostico01-antes.json",
+  "snapshot_sha256": "3cdfe5cf603bbbb6af28256398db23a3a16d752189f6b85444ce6666e8fa73a5",
+  "log": "diagnostico01.log",
+  "log_sha256": "b6bb64e6f0c96bc88fb3057a5e87df879bb4706626cff161f207533fe5510d4d"
+}

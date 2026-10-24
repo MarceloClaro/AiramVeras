@@ -1,0 +1,24 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_ test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[runtime] __
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-102/test_cache_invalida_cada_depen0')
+axis = 'runtime'
+
+    @pytest.mark.parametrize('axis',['entrada','codigo','config','runtime','saida'])
+    def test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia(tmp_path,axis):
+        cache=api('cache')
+        for name in ['entrada','codigo','config','saida']: (tmp_path/name).write_text(name)
+        manifest=cache.criar_manifesto(tmp_path,['entrada'],['codigo'],['config'],['saida'],{'python':'3.12'},'teste_artificial')
+        assert cache.verificar_cache(tmp_path,manifest,{'python':'3.12'})['reutilizavel']
+        runtime={'python':'3.12'}
+        if axis=='runtime': runtime['python']='3.13'
+        else: (tmp_path/axis).write_text('alterado')
+        result=cache.verificar_cache(tmp_path,manifest,runtime)
+>       assert result['reutilizavel'] is False
+E       assert True is False
+
+tests\test_cli.py:132: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_cache_invalida_cada_dependencia_sem_promover_nova_inferencia[runtime]
+1 failed in 0.28s

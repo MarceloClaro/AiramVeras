@@ -1,0 +1,41 @@
+{
+  "estado": "PASS",
+  "resultados": [
+    {
+      "mutacao": "baseline_ignorada",
+      "codigo_saida": 1,
+      "morta_por_falha_funcional": true,
+      "snapshot_sha256": "4f8bfdfed68076626868efa73350b8e93661aca68ec7543b4be7128f8627e013",
+      "original_sha256": "ab4630fc479a85827ad31fafe7b80957dc530ed2ea625943a63112222437275d"
+    },
+    {
+      "mutacao": "hook_ignorado",
+      "codigo_saida": 1,
+      "morta_por_falha_funcional": true,
+      "snapshot_sha256": "cb6469f0104abaeba4314ddd196c4e8fc4616e62f473302014405ecddb7cd48f",
+      "original_sha256": "050017589f536e8f19f02cf59b8bc654825486b110a10719d1351e932a856c15"
+    },
+    {
+      "mutacao": "runtime_ignorado",
+      "codigo_saida": 1,
+      "morta_por_falha_funcional": true,
+      "snapshot_sha256": "a445f301623f7385a9deeaac382a7efc79d7243cfebabd3a1b0af58d0229d8a2",
+      "original_sha256": "add42c6905fe7847660dbe98dbc950030d531fa5471d37d8cd0765147b2542c2"
+    },
+    {
+      "mutacao": "nominal_liberado",
+      "codigo_saida": 1,
+      "morta_por_falha_funcional": true,
+      "snapshot_sha256": "c3744d818d1291d7f95197f73171cd15ba5e87de1d861854c45ce34a2ece44a3",
+      "original_sha256": "ab4630fc479a85827ad31fafe7b80957dc530ed2ea625943a63112222437275d"
+    },
+    {
+      "mutacao": "evento_promovido",
+      "codigo_saida": 1,
+      "morta_por_falha_funcional": true,
+      "snapshot_sha256": "ac5d09a2d80a08822e05ab617e9b842d12c80247a3f01031e0b4269eb1db7afc",
+      "original_sha256": "3df00f1ed63cb1ec41a7bf0e0fab21f0184dae3fb006227e378abce1d81a8fd4"
+    }
+  ],
+  "restauracao_bytes_verificada": true
+}

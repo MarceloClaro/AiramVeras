@@ -1,0 +1,115 @@
+...............F.......                                                  [100%]
+================================== FAILURES ===================================
+_______ test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica _______
+
+tabelas = {'avaliacoes': [{'aluno_local_id': 'artificial', 'avaliacao_local_id': 'app', 'fonte_id': 'f', 'ano_escolar': 1, ...}]}
+destino = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0/restrito/banco')
+projeto = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0')
+fontes = {'fonte': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
+
+    def persistir(tabelas,destino,projeto,fontes):
+        root=Path(projeto).resolve(); target=Path(destino).resolve()
+        if not target.is_relative_to(root/'restrito'):
+            raise ValueError('Dados individuais exigem destino restrito local')
+        _validar_sem_nominais(tabelas)
+        if not fontes or not isinstance(tabelas,dict) or not tabelas:
+            raise ValueError('Persistencia sem proveniencia ou tabelas')
+        for table,rows in tabelas.items():
+            if not re.fullmatch('[a-z][a-z0-9_]*',table) or table=='proveniencia' or not isinstance(rows,list) or not all(isinstance(r,dict) for r in rows):
+                raise ValueError('Tabela invalida')
+        raw=json.dumps({'tabelas':tabelas,'fontes':fontes},ensure_ascii=False,sort_keys=True,allow_nan=False).encode()
+        digest=hashlib.sha256(raw).hexdigest()
+        final=target/digest
+        if final.exists():
+            receipt=json.loads((final/'manifesto.json').read_text(encoding='utf-8'))
+            if any(sha(final/p)!=h for p,h in receipt['hashes'].items()):
+                raise ValueError('Persistencia anterior adulterada')
+        else:
+            target.mkdir(parents=True,exist_ok=True)
+            staging=Path(tempfile.mkdtemp(prefix='.persistencia-',dir=target))
+            try:
+                with sqlite3.connect(staging/'analise.sqlite3') as db:
+                    db.execute('PRAGMA user_version=1')
+                    db.execute('CREATE TABLE proveniencia (schema_versao INTEGER NOT NULL, fontes_json TEXT NOT NULL, conteudo_sha256 TEXT NOT NULL)')
+                    db.execute('INSERT INTO proveniencia VALUES (1,?,?)',(json.dumps(fontes,sort_keys=True),digest))
+                    for table, rows in tabelas.items():
+                        fields=sorted({k for row in rows for k in row})
+                        db.execute(f'CREATE TABLE "{table}" (ordem INTEGER PRIMARY KEY, fonte_id TEXT, ano_escolar INTEGER, componente TEXT, avaliacao_local_id TEXT, registro_json TEXT NOT NULL)')
+                        db.executemany(f'INSERT INTO "{table}" VALUES (?,?,?,?,?,?)',[(i,row.get('fonte_id'),row.get('ano_escolar'),row.get('componente'),row.get('avaliacao_local_id'),json.dumps(row,ensure_ascii=False,sort_keys=True,allow_nan=False)) for i,row in enumerate(rows)])
+                        with (staging/(table+'.csv')).open('w',encoding='utf-8-sig',newline='') as stream:
+                            writer=csv.DictWriter(stream,fieldnames=fields); writer.writeheader()
+                            for row in rows:
+                                writer.writerow({k:json.dumps(v,ensure_ascii=False,sort_keys=True) if isinstance(v,(list,dict)) else v for k,v in row.items()})
+                hashes={p.name:sha(p) for p in staging.iterdir()}
+                (staging/'manifesto.json').write_text(json.dumps({'schema':1,'conteudo_sha256':digest,'hashes':hashes},sort_keys=True),encoding='utf-8')
+>               staging.rename(final)
+
+airam\persistencia.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0/restrito/banco/.persistencia-xinywu58')
+target = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0/restrito/banco/aeb3c22c9eb4438be04b3e4f0c94c657ad1dc93cde1d897799cac865b2f3bb3c')
+
+    def rename(self, target):
+        """
+        Rename this path to the target path.
+    
+        The target path may be absolute or relative. Relative paths are
+        interpreted relative to the current working directory, *not* the
+        directory of the Path object.
+    
+        Returns the new Path instance pointing to the target path.
+        """
+>       os.rename(self, target)
+E       PermissionError: [WinError 5] Acesso negado: 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-88\\test_persistencia_conserva_zer0\\restrito\\banco\\.persistencia-xinywu58' -> 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-88\\test_persistencia_conserva_zer0\\restrito\\banco\\aeb3c22c9eb4438be04b3e4f0c94c657ad1dc93cde1d897799cac865b2f3bb3c'
+
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1363: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0')
+
+    def test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica(tmp_path):
+        module=api('persistencia')
+        tables={'avaliacoes':[{'aluno_local_id':'artificial','avaliacao_local_id':'app',
+            'fonte_id':'f','ano_escolar':1,'componente':'LEITURA','acertos':0,'taxa':None,
+            'origens':[{'sha256':'a'*64,'linha_fonte':2}]}]}
+>       first=module.persistir(tables,tmp_path/'restrito/banco',tmp_path,{'fonte':'a'*64})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_cli.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+airam\persistencia.py:52: in persistir
+    if staging.exists(): shutil.rmtree(staging)
+                         ^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:781: in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:635: in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-88/test_persistencia_conserva_zer0/restrito/banco/.persistencia-xinywu58')
+onexc = <function rmtree.<locals>.onexc at 0x000001FF16EFFA60>
+
+    def _rmtree_unsafe(path, onexc):
+        def onerror(err):
+            onexc(os.scandir, err.filename, err)
+        results = os.walk(path, topdown=False, onerror=onerror, followlinks=os._walk_symlinks_as_files)
+        for dirpath, dirnames, filenames in results:
+            for name in dirnames:
+                fullname = os.path.join(dirpath, name)
+                try:
+                    os.rmdir(fullname)
+                except OSError as err:
+                    onexc(os.rmdir, fullname, err)
+            for name in filenames:
+                fullname = os.path.join(dirpath, name)
+                try:
+>                   os.unlink(fullname)
+E                   PermissionError: [WinError 32] O arquivo já está sendo usado por outro processo: 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-88\\test_persistencia_conserva_zer0\\restrito\\banco\\.persistencia-xinywu58\\analise.sqlite3'
+
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\shutil.py:633: PermissionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_persistencia_conserva_zero_ausencia_contexto_e_nao_duplica
+1 failed, 22 passed in 12.67s

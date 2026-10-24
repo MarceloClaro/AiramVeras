@@ -1,0 +1,51 @@
+{
+  "codigo_saida": 2,
+  "comando": "analisar",
+  "estado": "bloqueado",
+  "fim": "2026-10-24T12:49:17.566425+00:00",
+  "hooks": [
+    {
+      "codigo_saida": 0,
+      "disparo_real": true,
+      "nome": "preflight"
+    }
+  ],
+  "integracao_core": {
+    "dados_externos": "nenhum dado individual transmitido",
+    "eventos_sessao": {
+      "ativo_verificado": false,
+      "configurado": true,
+      "estado": "contract_only"
+    },
+    "perfis": [
+      {
+        "ativado": true,
+        "configurado": true,
+        "entregue": false,
+        "executado": false,
+        "id": "plugin-data",
+        "spec_id": "TSPEC-4272ac13",
+        "status": "blocked",
+        "testado": false,
+        "validado": true
+      },
+      {
+        "ativado": true,
+        "configurado": true,
+        "entregue": false,
+        "executado": false,
+        "id": "caed-spaece-educacao-ceara",
+        "spec_id": "TSPEC-a6e24d1b",
+        "status": "blocked",
+        "testado": false,
+        "validado": true
+      }
+    ],
+    "primario": "marceloclaro"
+  },
+  "motivo": "contrato_ou_dependencia_nao_verificado",
+  "snapshot_sha256": "ccd712fd96e82e837bdfef4148d8e5df5dae487c8ac48c63a87588a9cac198ba",
+  "timestamp": "2026-10-24T12:48:59.110738+00:00",
+  "tipo": "operacional",
+  "versao_schema": "airam-operacao-v1"
+}

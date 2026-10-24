@@ -1,0 +1,9 @@
+{
+  "fase": "GREEN_TENTATIVA",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T12:54:44.475214+00:00",
+  "snapshot": "suite01-antes.json",
+  "snapshot_sha256": "d900d6750794d114cd5843cc8480a82309395c5933b50846912531bd9fe09c83",
+  "log": "suite01.log",
+  "log_sha256": "1b12bdf6b218fe788b5ab82cdff6414eae6cddb2f6a93fa3e9ef1685c99c46ca"
+}

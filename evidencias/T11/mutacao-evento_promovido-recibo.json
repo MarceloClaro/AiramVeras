@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:55:27.942689+00:00",
+  "snapshot": "mutacao-evento_promovido-antes.json",
+  "snapshot_sha256": "ac5d09a2d80a08822e05ab617e9b842d12c80247a3f01031e0b4269eb1db7afc",
+  "log": "mutacao-evento_promovido.log",
+  "log_sha256": "4b65a64f05ef6db6e36ca78b22709553f68f82c8a423cac38be77016a3d4f093"
+}

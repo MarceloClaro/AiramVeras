@@ -1,0 +1,19 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_preflight_real_falha_interrompe_cli_antes_catalogo ___________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-100/test_preflight_real_falha_inte0')
+
+    def test_preflight_real_falha_interrompe_cli_antes_catalogo(tmp_path):
+        config, original=fixture_config(tmp_path)
+        original.write_text('ATAQUE ARTIFICIAL')
+>       assert run_hook('preflight','-Config',str(config)).returncode != 0
+E       assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\marce\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powersh...": "integridade_verificada", "codigo_saida": 0, "fontes": 1}, "fim": "2026-10-24T12:55:10.438188+00:00"}\n', stderr='').returncode
+E        +    where CompletedProcess(args=['C:\\Users\\marce\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powersh...": "integridade_verificada", "codigo_saida": 0, "fontes": 1}, "fim": "2026-10-24T12:55:10.438188+00:00"}\n', stderr='') = run_hook('preflight', '-Config', 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-100\\test_preflight_real_falha_inte0\\analise.json')
+E        +      where 'C:\\Users\\marce\\AppData\\Local\\Temp\\pytest-of-marce\\pytest-100\\test_preflight_real_falha_inte0\\analise.json' = str(WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-100/test_preflight_real_falha_inte0/analise.json'))
+
+tests\test_hooks.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_hooks.py::test_preflight_real_falha_interrompe_cli_antes_catalogo
+1 failed in 3.11s

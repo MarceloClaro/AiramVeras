@@ -1,0 +1,52 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+_ test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[codigo_posterior] _
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-107/test_release_rejeita_testes_ob0')
+attack = 'codigo_posterior'
+
+    @pytest.mark.parametrize('attack',['codigo_posterior','log_adulterado','snapshot_adulterado'])
+    def test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado(tmp_path,attack):
+        fixture=release_fixture(tmp_path)
+        assert api('gates').avaliar_gate('release',fixture)['codigo_saida']==0
+        filename={'codigo_posterior':'produtor.py','log_adulterado':'testes.log','snapshot_adulterado':'testes-antes.json'}[attack]
+        (tmp_path/filename).write_text('alterado apos teste')
+>       assert api('gates').avaliar_gate('release',fixture)['codigo_saida']!=0
+E       assert 0 != 0
+
+tests\test_cli.py:294: AssertionError
+_ test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[log_adulterado] _
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-107/test_release_rejeita_testes_ob1')
+attack = 'log_adulterado'
+
+    @pytest.mark.parametrize('attack',['codigo_posterior','log_adulterado','snapshot_adulterado'])
+    def test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado(tmp_path,attack):
+        fixture=release_fixture(tmp_path)
+        assert api('gates').avaliar_gate('release',fixture)['codigo_saida']==0
+        filename={'codigo_posterior':'produtor.py','log_adulterado':'testes.log','snapshot_adulterado':'testes-antes.json'}[attack]
+        (tmp_path/filename).write_text('alterado apos teste')
+>       assert api('gates').avaliar_gate('release',fixture)['codigo_saida']!=0
+E       assert 0 != 0
+
+tests\test_cli.py:294: AssertionError
+_ test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[snapshot_adulterado] _
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-107/test_release_rejeita_testes_ob2')
+attack = 'snapshot_adulterado'
+
+    @pytest.mark.parametrize('attack',['codigo_posterior','log_adulterado','snapshot_adulterado'])
+    def test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado(tmp_path,attack):
+        fixture=release_fixture(tmp_path)
+        assert api('gates').avaliar_gate('release',fixture)['codigo_saida']==0
+        filename={'codigo_posterior':'produtor.py','log_adulterado':'testes.log','snapshot_adulterado':'testes-antes.json'}[attack]
+        (tmp_path/filename).write_text('alterado apos teste')
+>       assert api('gates').avaliar_gate('release',fixture)['codigo_saida']!=0
+E       assert 0 != 0
+
+tests\test_cli.py:294: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[codigo_posterior]
+FAILED tests/test_cli.py::test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[log_adulterado]
+FAILED tests/test_cli.py::test_release_rejeita_testes_obsoletos_ou_sem_recibo_autenticado[snapshot_adulterado]
+3 failed, 27 deselected in 0.78s

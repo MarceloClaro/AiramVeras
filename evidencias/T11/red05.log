@@ -1,0 +1,48 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+___________________ test_runtime_ausente_falha_sem_instalar ___________________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-99/test_runtime_ausente_falha_sem0')
+
+    def test_runtime_ausente_falha_sem_instalar(tmp_path):
+>       module=api('runtime_artifact')
+               ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_runtime.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'runtime_artifact'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: runtime_artifact
+E       assert None
+E        +  where None = <function find_spec at 0x000001FD58ABBA60>(('airam.' + 'runtime_artifact'))
+E        +    where <function find_spec at 0x000001FD58ABBA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+_________ test_runtime_oficial_importa_exports_sem_scratch_ou_autoria _________
+
+    def test_runtime_oficial_importa_exports_sem_scratch_ou_autoria():
+>       module=api('runtime_artifact')
+               ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_runtime.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = 'runtime_artifact'
+
+    def api(module):
+>       assert importlib.util.find_spec('airam.' + module), 'Funcionalidade T11 ausente: ' + module
+E       AssertionError: Funcionalidade T11 ausente: runtime_artifact
+E       assert None
+E        +  where None = <function find_spec at 0x000001FD58ABBA60>(('airam.' + 'runtime_artifact'))
+E        +    where <function find_spec at 0x000001FD58ABBA60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_cli.py:15: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_runtime.py::test_runtime_ausente_falha_sem_instalar - Asser...
+FAILED tests/test_runtime.py::test_runtime_oficial_importa_exports_sem_scratch_ou_autoria
+2 failed in 0.44s

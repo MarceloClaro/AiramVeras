@@ -1,0 +1,9 @@
+{
+  "fase": "MUTACAO",
+  "codigo_saida": 1,
+  "fim": "2026-10-24T12:55:12.076356+00:00",
+  "snapshot": "mutacao-baseline_ignorada-antes.json",
+  "snapshot_sha256": "4f8bfdfed68076626868efa73350b8e93661aca68ec7543b4be7128f8627e013",
+  "log": "mutacao-baseline_ignorada.log",
+  "log_sha256": "cd538ac4398176b7666e3b1b5f4e230b6bb591aa826523c464e11bd5caf3ce59"
+}

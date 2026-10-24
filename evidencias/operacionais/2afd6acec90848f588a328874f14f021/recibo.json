@@ -1,0 +1,49 @@
+{
+  "codigo_saida": 0,
+  "comando": "gate",
+  "estado": "integridade_verificada",
+  "fim": "2026-10-24T12:49:01.836535+00:00",
+  "hooks": [],
+  "integracao_core": {
+    "dados_externos": "nenhum dado individual transmitido",
+    "eventos_sessao": {
+      "ativo_verificado": false,
+      "configurado": true,
+      "estado": "contract_only"
+    },
+    "perfis": [
+      {
+        "ativado": true,
+        "configurado": true,
+        "entregue": false,
+        "executado": false,
+        "id": "plugin-data",
+        "spec_id": "TSPEC-4272ac13",
+        "status": "blocked",
+        "testado": false,
+        "validado": true
+      },
+      {
+        "ativado": true,
+        "configurado": true,
+        "entregue": false,
+        "executado": false,
+        "id": "caed-spaece-educacao-ceara",
+        "spec_id": "TSPEC-a6e24d1b",
+        "status": "blocked",
+        "testado": false,
+        "validado": true
+      }
+    ],
+    "primario": "marceloclaro"
+  },
+  "resultado": {
+    "codigo_saida": 0,
+    "estado": "integridade_verificada",
+    "fontes": 76
+  },
+  "snapshot_sha256": "ca77e8fe37265910681653611ac47f4a00f9cf45dd1194df8869697da86b33e7",
+  "timestamp": "2026-10-24T12:49:01.074278+00:00",
+  "tipo": "operacional",
+  "versao_schema": "airam-operacao-v1"
+}

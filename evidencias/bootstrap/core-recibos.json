@@ -1,0 +1,213 @@
+{
+  "registered": {
+    "mode": "managed-v1",
+    "agent_id": "plugin-data",
+    "definition_validated": true,
+    "validation_scope": "definition_policy_and_references",
+    "executed": false,
+    "source_file": "agents/catalog/plugin-data.md",
+    "source_sha256": "b010bd040ea64e0a7271bc3c50c1c5e7c554e2a8081bf9f330c65e86a3923e17",
+    "profile": {
+      "agent_id": "plugin-data",
+      "name": "data — integração Core",
+      "description": "Coordenar capacidades de data sob o MarceloClaro com proveniência e limites.",
+      "version": "1.0.0",
+      "type": "specialist",
+      "category": "audit",
+      "language": "pt-BR",
+      "lifecycle": "managed-v1",
+      "parent": "marceloclaro",
+      "spec_file": "specs/SPEC-935-R895-plugins-solicitados-orquestrados.md",
+      "test_file": "tests/test_r895_requested_plugins.py",
+      "source": "user_requested_plugin:data",
+      "allow_edit": false,
+      "tags": [
+        "profile_plugin_data",
+        "plugin_data",
+        "plugin_orchestration"
+      ],
+      "skills": [
+        {
+          "id": "plugin-data",
+          "name": "data — integração Core",
+          "description": "Coordenar capacidades de data sob o MarceloClaro com proveniência e limites.",
+          "tags": [
+            "profile_plugin_data",
+            "plugin_data",
+            "plugin_orchestration"
+          ],
+          "examples": [
+            "Execute o escopo solicitado e cite os arquivos e limites observados."
+          ]
+        }
+      ],
+      "capabilities": {
+        "extendedAgentCard": true
+      },
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "webfetch": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "python3 -m marceloclaro.cli doctor": "allow",
+          "python3 -m pytest tests/test_r895_requested_plugins.py -q": "allow"
+        }
+      },
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": false,
+        "write": false
+      },
+      "output_contract": {
+        "required_fields": [
+          "status",
+          "findings",
+          "evidence",
+          "limitations"
+        ],
+        "evidence_required": true,
+        "external_validation": false
+      }
+    },
+    "unique_capability": "profile_plugin_data",
+    "external_validation": false,
+    "registered": true,
+    "confidence_promoted": false,
+    "status": "registered",
+    "metacognition": {
+      "observation_id": "92adb01c-9a02-4b7f-bcfa-0a1546975241",
+      "persisted": true,
+      "scope_id": "f916994d160700b69e36ee6f586e2ba069624b62bf52322711f93089b69b9d89",
+      "previous_observation_id": "1a8a20ef-e429-4b37-9be5-bda5e59b0837",
+      "state_transition": {
+        "from": "definition_validated",
+        "to": "registered"
+      }
+    }
+  },
+  "activation": {
+    "mode": "managed-v1",
+    "agent_id": "plugin-data",
+    "definition_validated": true,
+    "validation_scope": "definition_policy_and_references",
+    "executed": false,
+    "source_file": "agents/catalog/plugin-data.md",
+    "source_sha256": "b010bd040ea64e0a7271bc3c50c1c5e7c554e2a8081bf9f330c65e86a3923e17",
+    "profile": {
+      "agent_id": "plugin-data",
+      "name": "data — integração Core",
+      "description": "Coordenar capacidades de data sob o MarceloClaro com proveniência e limites.",
+      "version": "1.0.0",
+      "type": "specialist",
+      "category": "audit",
+      "language": "pt-BR",
+      "lifecycle": "managed-v1",
+      "parent": "marceloclaro",
+      "spec_file": "specs/SPEC-935-R895-plugins-solicitados-orquestrados.md",
+      "test_file": "tests/test_r895_requested_plugins.py",
+      "source": "user_requested_plugin:data",
+      "allow_edit": false,
+      "tags": [
+        "profile_plugin_data",
+        "plugin_data",
+        "plugin_orchestration"
+      ],
+      "skills": [
+        {
+          "id": "plugin-data",
+          "name": "data — integração Core",
+          "description": "Coordenar capacidades de data sob o MarceloClaro com proveniência e limites.",
+          "tags": [
+            "profile_plugin_data",
+            "plugin_data",
+            "plugin_orchestration"
+          ],
+          "examples": [
+            "Execute o escopo solicitado e cite os arquivos e limites observados."
+          ]
+        }
+      ],
+      "capabilities": {
+        "extendedAgentCard": true
+      },
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "webfetch": "deny",
+        "task": "deny",
+        "bash": {
+          "*": "deny",
+          "python3 -m marceloclaro.cli doctor": "allow",
+          "python3 -m pytest tests/test_r895_requested_plugins.py -q": "allow"
+        }
+      },
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": false,
+        "write": false
+      },
+      "output_contract": {
+        "required_fields": [
+          "status",
+          "findings",
+          "evidence",
+          "limitations"
+        ],
+        "evidence_required": true,
+        "external_validation": false
+      }
+    },
+    "unique_capability": "profile_plugin_data",
+    "external_validation": false,
+    "registered": true,
+    "confidence_promoted": false,
+    "task_id": "task-1df22359",
+    "status": "assigned",
+    "assigned_to": "plugin-data",
+    "execution_status": "pending_executor",
+    "metacognition": {
+      "observation_id": "b08f576f-5c5f-4e5b-a35d-ba5842e4f0f1",
+      "persisted": true,
+      "scope_id": "f916994d160700b69e36ee6f586e2ba069624b62bf52322711f93089b69b9d89",
+      "previous_observation_id": "92adb01c-9a02-4b7f-bcfa-0a1546975241",
+      "state_transition": {
+        "from": "registered",
+        "to": "assigned"
+      }
+    }
+  },
+  "text_spec": {
+    "success": true,
+    "spec_id": "TSPEC-fa8267bd",
+    "task": "Auditoria e desenho metodológico somente leitura do projeto Airam Veras, antes da implementação. Inspecionar dados CAEd/CNCA do1ºao5º, relatórios existentes, proveniência BNCC e perfis Core. Definir duas metas independentes (80%adequados;80%acertos), contraprovas, correlações, clusters exploratórios e projeções condicionadas à existência de validação temporal. Não enviar dados nominais a executores nem declarar entrega analítica sem execução.",
+    "criteria": [
+      "Auditoria identifica fontes e granularidade sem expor nomes de menores",
+      "Define chaves e denominadores antes de cruzar componentes ou agregar",
+      "Separa meta institucional de adequação e meta individual de acertos",
+      "Distingue correlação, relação curricular e causalidade",
+      "Cluster é agrupamento pedagógico exploratório e revisável",
+      "Projeção não vira previsão validada sem desfecho temporal e teste fora da amostra",
+      "Implementação segue aprovação arquitetural exigida pelo Superpowers"
+    ],
+    "verification": "criteria_only",
+    "software_delivery": false,
+    "externally_validated": false,
+    "limitations": [
+      "Critérios de texto são heurísticos; não comprovam qualidade ou correção.",
+      "ID válido nesta sessão MCP; não constitui entrega de software nem substitui RED→GREEN."
+    ]
+  },
+  "limitation": "Registro e A2A preparado não comprovam inferência. Codex executa os incrementos; Core preserva coordenação dos seus perfis."
+}

@@ -1,0 +1,64 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+______ test_persistencia_inclui_derivados_sem_renomear_nomes_individuais ______
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-93/test_persistencia_inclui_deriv0')
+
+    def test_persistencia_inclui_derivados_sem_renomear_nomes_individuais(tmp_path):
+        config=analytic_fixture(tmp_path)
+        cfg=json.loads(config.read_text()); manifest=json.loads((tmp_path/'cache.json').read_text())
+        derived={
+            'restrito/t05/checkpoint.json':{'metricas_alunos':[{'aluno_local_id':'ficticio','acertos':0}],
+                'metas_individuais':[{'aluno_local_id':'ficticio','meta_B':{'lacuna':18}}]},
+            'restrito/t07/checkpoint.json':{'blocos':[{'observado':[[0,None]],'mask':[[True,False]]}],
+                'visoes_aluno':[{'aluno_local_id':'ficticio','derivado':0.5}]},
+            'restrito/t08/checkpoint.json':{'instrumentos':[{'regras':{'perfis':[{'nome':'PERFIL ARTIFICIAL','n':5}]}}],
+                'unidades_proprias':[]},
+            'restrito/t09/checkpoint.json':{'cenarios_individuais':[{'aluno_local_id':'ficticio','hipotese':0.1}],
+                'outros_instrumentos':[]}}
+        for rel,obj in derived.items():
+            p=tmp_path/rel; p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps(obj))
+            manifest['saidas'][rel]=sha(p)
+        (tmp_path/'cache.json').write_text(json.dumps(manifest)); cfg['cache_analise']['sha256']=sha(tmp_path/'cache.json')
+        config.write_text(json.dumps(cfg))
+        result=invoke(config,'analisar'); assert result.returncode==0,result.stdout
+        import sqlite3
+        dbpath=next((tmp_path/'restrito').rglob('analise.sqlite3'))
+        with sqlite3.connect(dbpath) as db:
+>           assert db.execute('SELECT count(*) FROM t05_metas_individuais').fetchone()[0]==1
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           sqlite3.OperationalError: no such table: t05_metas_individuais
+
+tests\test_cli.py:250: OperationalError
+_____________ test_gravacao_versionada_preserva_bytes_anteriores ______________
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-93/test_gravacao_versionada_prese0')
+
+    def test_gravacao_versionada_preserva_bytes_anteriores(tmp_path):
+        operation=api('operacao')
+        fn=getattr(operation,'gravar_versionado',None)
+>       assert callable(fn),'Preservacao versionada ausente'
+E       AssertionError: Preservacao versionada ausente
+E       assert False
+E        +  where False = callable(None)
+
+tests\test_cli.py:260: AssertionError
+_______ test_contrato_consumido_autentica_recibo_e_nao_promove_registro _______
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-93/test_contrato_consumido_autent0')
+
+    def test_contrato_consumido_autentica_recibo_e_nao_promove_registro(tmp_path):
+        import json
+        from test_cli import sha
+        operation=api('operacao'); fn=getattr(operation,'carregar_contratos',None)
+>       assert callable(fn),'Consumo de contratos ausente'
+E       AssertionError: Consumo de contratos ausente
+E       assert False
+E        +  where False = callable(None)
+
+tests\test_agent_receipts.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_persistencia_inclui_derivados_sem_renomear_nomes_individuais
+FAILED tests/test_cli.py::test_gravacao_versionada_preserva_bytes_anteriores
+FAILED tests/test_agent_receipts.py::test_contrato_consumido_autentica_recibo_e_nao_promove_registro
+3 failed, 26 deselected in 4.26s

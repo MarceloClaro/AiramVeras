@@ -1,0 +1,9 @@
+{
+  "fase": "BASELINE",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T08:16:35.170218+00:00",
+  "snapshot": "baseline-antes.json",
+  "snapshot_sha256": "acb1630204743571c7164138f143e8fc339549f770237b8cbfa6ae4d133d1ede",
+  "log": "baseline.log",
+  "log_sha256": "0d7ff61bd6bd3b709e3ad233ac903e299d79b79b079dd13ac4bc8780cd883524"
+}

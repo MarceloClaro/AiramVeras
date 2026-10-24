@@ -1,0 +1,45 @@
+{
+  "codigo_saida": 0,
+  "comando": "analisar",
+  "estado": "analise_disponibilizada",
+  "fim": "2026-10-24T08:23:44.528952+00:00",
+  "hooks": [
+    {
+      "codigo_saida": 0,
+      "disparo_real": true,
+      "nome": "preflight"
+    }
+  ],
+  "resultado": {
+    "agregados": {
+      "relatorios/agregados/5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231/agregados.csv": "63a6581aa426e7a73ffe783aa5abea0ca9abe58f35d9a7291a36b21cd7a8f239",
+      "relatorios/agregados/5bfa87b38394d171589a7799751127dceb7d81587bbbfcefa67d2bb4a8420231/metas_A.csv": "b6bfabd96a39304ef5d6c9594a2bf6dfdde5edf14751bec9cd5701340068f91f"
+    },
+    "cache_sha256": "4ffa58a561fc1baed64c12962e98bf4a4b94ccbc55cf41d834d962f937f8c142",
+    "cenarios_disponiveis": true,
+    "contagens_ingestao": {
+      "agregados": 44,
+      "avaliacoes": 640,
+      "disponibilidade_arquivos": 20,
+      "escrita": 864,
+      "fluencia": 592,
+      "habilidades": 4618,
+      "habilidades_bncc": 1304,
+      "matriculas": 172
+    },
+    "limites": [
+      "Dados pseudonimizados permanecem pessoais e restritos.",
+      "Reutilizacao autenticada de entregas revisadas, sem nova inferencia.",
+      "Validacao local; T02 RED inicial sem hashes/versoes contemporaneos."
+    ],
+    "modo": "reutilizacao_autenticada",
+    "nova_inferencia": false,
+    "persistencia_sha256": "716ccc90aaf917f47f338c051cd9a7163165f5fd445a78cabfd0855ba87d6ec1",
+    "previsao_temporal_validada": false,
+    "sqlite": "restrito\\banco\\32b6636a86a0f74fd218a45c8d907800e538991094b6e75c8f6a089f1c82e7ab\\analise.sqlite3"
+  },
+  "snapshot_sha256": "61c4b7598f69bae8a61715f960f912197ba7067e5fe926c5d281cca8449c3e3f",
+  "timestamp": "2026-10-24T08:23:23.810902+00:00",
+  "tipo": "operacional",
+  "versao_schema": "airam-operacao-v1"
+}

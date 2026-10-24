@@ -1,0 +1,16 @@
+{
+  "codigo_saida": 0,
+  "comando": "gate",
+  "estado": "integridade_verificada",
+  "fim": "2026-10-24T08:23:27.227725+00:00",
+  "hooks": [],
+  "resultado": {
+    "codigo_saida": 0,
+    "estado": "integridade_verificada",
+    "fontes": 76
+  },
+  "snapshot_sha256": "de1c04556d440b3b93ca11a58b378e655847411fe540480bd340fcb4c5648f43",
+  "timestamp": "2026-10-24T08:23:26.195881+00:00",
+  "tipo": "operacional",
+  "versao_schema": "airam-operacao-v1"
+}

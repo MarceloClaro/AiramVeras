@@ -1,0 +1,9 @@
+{
+  "fase": "VERIFICACAO_LOCAL",
+  "codigo_saida": 0,
+  "fim": "2026-10-24T13:01:39.396496+00:00",
+  "snapshot": "sigilo01-antes.json",
+  "snapshot_sha256": "e8dd0b23465cb2ca4784879d29462ffd2ca3f47124d5c4e91fade7f8ca669077",
+  "log": "sigilo01.log",
+  "log_sha256": "61db60bef49689a0651737e561ae9c46ee450d45318b4fc8ceb445fa995f662a"
+}

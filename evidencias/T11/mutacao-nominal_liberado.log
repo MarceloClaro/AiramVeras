@@ -1,0 +1,27 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____ test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[nominal] _____
+
+tmp_path = WindowsPath('C:/Users/marce/AppData/Local/Temp/pytest-of-marce/pytest-103/test_t53_t58_release_rejeita_e0')
+attack = 'nominal'
+
+    @pytest.mark.parametrize('attack',['teste_falhou','hash','rastro','nominal','sem_inspecao'])
+    def test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada(tmp_path,attack):
+        gates=api('gates'); fixture=release_fixture(tmp_path)
+        assert gates.avaliar_gate('release',fixture)['codigo_saida']==0
+        if attack=='teste_falhou':
+            p=tmp_path/'testes.json'; p.write_text(json.dumps({'codigo_saida':1}))
+            fixture['recibos']['testes']['sha256']=sha(p)
+        elif attack=='hash': (tmp_path/'agregado.json').write_text('{}')
+        elif attack=='rastro': fixture['rastreabilidade'].pop()
+        elif attack=='sem_inspecao': del fixture['recibos']['inspecao']
+        else:
+            p=tmp_path/'agregado.json'; p.write_text(json.dumps({'detalhes':{'nome':'FICTICIO'}}))
+            fixture['artefatos']['agregado.json']=sha(p)
+>       assert gates.avaliar_gate('release',fixture)['codigo_saida'] != 0
+E       assert 0 != 0
+
+tests\test_cli.py:119: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_cli.py::test_t53_t58_release_rejeita_evidencia_incompleta_ou_vazada[nominal]
+1 failed in 0.27s

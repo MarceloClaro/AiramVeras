@@ -27,3 +27,13 @@ evidencias/T09/** -text whitespace=cr-at-eol
 estatistica/t09/** -text whitespace=cr-at-eol
 evidencias/T09/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 evidencias/T09/executar.py whitespace=-blank-at-eof,cr-at-eol
+# T11: preserve exact receipt bytes and the contracts pinned by configuration.
+evidencias/T11/** -text whitespace=cr-at-eol
+evidencias/T11/*.log whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+evidencias/T11/executar.py whitespace=-blank-at-eof,cr-at-eol
+evidencias/operacionais/** -text whitespace=cr-at-eol
+evidencias/bootstrap/*.json -text whitespace=cr-at-eol
+config/analise.json -text whitespace=cr-at-eol
+config/fontes-baseline.json -text whitespace=cr-at-eol
+config/cache-analise-aprovada.json -text whitespace=cr-at-eol
+agents/contratos.json -text whitespace=cr-at-eol
