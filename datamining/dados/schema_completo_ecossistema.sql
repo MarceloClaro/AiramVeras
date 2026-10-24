@@ -484,4 +484,101 @@ FROM fato_rastreio_altas_habilidades ah
 JOIN dim_estudantes e ON ah.aluno_hash_id = e.aluno_hash_id
 JOIN dim_turmas t ON e.turma_id = t.id
 LEFT JOIN dim_cid_catalogo cid ON ah.codigo_cid_comorbidade_2e = cid.codigo_cid10;
+-- ============================================================================
+-- CAMADA OURO: METODOLOGIAS DE APRENDIZAGEM, KUMON GRANULAR E MÉTODO FÔNICO
+-- Validação Neurocientífica, Autodidatismo e Rastreio Interdisciplinar Conectado
+-- ============================================================================
 
+CREATE TABLE IF NOT EXISTS dim_metodologias_aprendizagem (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_metodologia TEXT NOT NULL UNIQUE,
+    nome_metodologia TEXT NOT NULL,
+    foco_pedagogico TEXT NOT NULL,
+    fundamento_neurocientifico TEXT NOT NULL,
+    mecanismo_autodidatismo TEXT NOT NULL,
+    referencia_principal TEXT NOT NULL,
+    doi_referencia TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dim_kumon_niveis_granulares (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_nivel TEXT NOT NULL UNIQUE,
+    disciplina_eixo TEXT NOT NULL,
+    nome_nivel TEXT NOT NULL,
+    ano_escolar_sugerido TEXT NOT NULL,
+    foco_operacional_micro_passo TEXT NOT NULL,
+    tempo_padrao_conclusao_min INTEGER NOT NULL,
+    meta_maestria_pct REAL NOT NULL,
+    descritores_caed_alvo TEXT NOT NULL,
+    habilidades_bncc_alvo TEXT NOT NULL,
+    prerequisito_nivel TEXT,
+    FOREIGN KEY (prerequisito_nivel) REFERENCES dim_kumon_niveis_granulares(codigo_nivel)
+);
+
+CREATE TABLE IF NOT EXISTS dim_metodo_fonico_estagios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_estagio TEXT NOT NULL UNIQUE,
+    nome_estagio TEXT NOT NULL,
+    fase_ehri_correspondente TEXT NOT NULL,
+    processo_neurofuncional TEXT NOT NULL,
+    estrategias_instrucionais TEXT NOT NULL,
+    criterio_dominio_sucesso TEXT NOT NULL,
+    descritores_caed TEXT NOT NULL,
+    habilidades_bncc TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS rel_kumon_fonico_rede_interdisciplinar (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    origem_tipo TEXT NOT NULL,
+    origem_codigo TEXT NOT NULL,
+    componente_conectado TEXT NOT NULL,
+    habilidade_bncc_conectada TEXT NOT NULL,
+    descritor_caed_conectado TEXT NOT NULL,
+    mecanismo_interdisciplinar TEXT NOT NULL,
+    peso_conexao REAL NOT NULL,
+    hash_conexao TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS fato_trilha_aprendizagem_granular_aluno (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL,
+    ano_escolar TEXT NOT NULL,
+    estagio_fonico_atual TEXT NOT NULL,
+    nivel_kumon_mat_atual TEXT NOT NULL,
+    nivel_kumon_leit_atual TEXT NOT NULL,
+    indice_autodidatismo_pct REAL NOT NULL,
+    taxa_maestria_granular_pct REAL NOT NULL,
+    tempo_medio_folha_min REAL NOT NULL,
+    status_evolucao_kumon TEXT NOT NULL,
+    estrategia_interdisciplinar_ativa TEXT NOT NULL,
+    hash_validacao_forense TEXT NOT NULL,
+    data_homologacao TEXT NOT NULL,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id),
+    FOREIGN KEY (estagio_fonico_atual) REFERENCES dim_metodo_fonico_estagios(codigo_estagio),
+    FOREIGN KEY (nivel_kumon_mat_atual) REFERENCES dim_kumon_niveis_granulares(codigo_nivel),
+    FOREIGN KEY (nivel_kumon_leit_atual) REFERENCES dim_kumon_niveis_granulares(codigo_nivel)
+);
+
+-- Visão 6: Painel Unificado de Rastreio Interdisciplinar (Fônico + Kumon + CAEd)
+CREATE VIEW IF NOT EXISTS vw_painel_fonico_kumon_rastreio AS
+SELECT 
+    t.aluno_hash_id,
+    e.turma_id,
+    tur.nome_turma,
+    t.ano_escolar,
+    f.nome_estagio AS estagio_fonico,
+    f.fase_ehri_correspondente,
+    km.nome_nivel AS kumon_mat_nivel,
+    kl.nome_nivel AS kumon_leit_nivel,
+    t.indice_autodidatismo_pct,
+    t.taxa_maestria_granular_pct,
+    t.tempo_medio_folha_min,
+    t.status_evolucao_kumon,
+    t.estrategia_interdisciplinar_ativa,
+    t.hash_validacao_forense
+FROM fato_trilha_aprendizagem_granular_aluno t
+JOIN dim_estudantes e ON t.aluno_hash_id = e.aluno_hash_id
+JOIN dim_turmas tur ON e.turma_id = tur.id
+JOIN dim_metodo_fonico_estagios f ON t.estagio_fonico_atual = f.codigo_estagio
+JOIN dim_kumon_niveis_granulares km ON t.nivel_kumon_mat_atual = km.codigo_nivel
+JOIN dim_kumon_niveis_granulares kl ON t.nivel_kumon_leit_atual = kl.codigo_nivel;
