@@ -96,6 +96,60 @@ graph TD
 
 ---
 
+## 📑 Sumário Completo de Documentação, Planilhas e Gráficos
+
+Catálogo consolidado e auditável de todos os documentos normativos, planilhas operacionais, bases relacionais e artefatos visuais do projeto.
+
+### 1. 📄 Documentação Técnica, Pedagógica e Contratos SDD/TDD
+
+| Arquivo / Recurso | Formato | Descrição e Finalidade | Governança |
+|:---|:---:|:---|:---:|
+| [SPEC-AIRAM-001 (Design Técnico)](file:///c:/Users/marce/Downloads/Airam%20veras/docs/superpowers/specs/2026-10-22-airam-datamining-design.md) | Markdown | Especificação formal completa: metas A e B, modelo de entidades, formalização do grafo curricular, TRI/Rasch e clusters. | Público / Auditável |
+| [Contrato de Testes TDD](file:///c:/Users/marce/Downloads/Airam%20veras/docs/tdd/CONTRATO_TESTES_AIRAM.md) | Markdown | Especificação dos 58 casos de teste de regressão, tolerâncias numéricas ($\epsilon < 10^{-9}$) e ciclo RED-GREEN-REFACTOR. | Público / Auditável |
+| [Plano de Implementação SDD](file:///c:/Users/marce/Downloads/Airam%20veras/docs/superpowers/plans/2026-10-22-airam-datamining.md) | Markdown | Plano mestre em 12 incrementos (T01 a T12), interfaces de integração, comandos de validação e critérios de aceite. | Público / Auditável |
+| [Auditoria Inicial de Achados](file:///c:/Users/marce/Downloads/Airam%20veras/docs/auditoria/2026-10-22-auditoria-inicial.md) | Markdown | Diagnóstico das limitações de planilhas anteriores e comprovação do erro de até 10,91 p.p. por média de blocos $H$. | Público / Auditável |
+| [Relatório Técnico-Pedagógico CAEd/BNCC](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/reports/diagnosticos_2026/Relatorio_Tecnico_Pedagogico_CAEd_BNCC_Airam_Veras_2026.docx) | DOCX | Relatório pedagógico aprofundado com análise qualitativa das turmas e recomendações didáticas por descritor. | Público / Auditável |
+| [Matriz MEC/CNCA Defeso 2026](file:///c:/Users/marce/Downloads/Airam%20veras/MEC_2026_CNCA_Av_Cont_Apren_Matriz_Ref_Defeso.pdf) | PDF (29 p.) | Documento regulatório oficial com matrizes de referência de avaliação contínua e códigos de habilidades prioritárias. | Fonte Oficial |
+| [Dicionário de Dados T10](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/docs/dicionario-t10.md) | Markdown | Dicionário de campos, variáveis e metadados das tabelas de saída e do builder da planilha canônica. | Público / Auditável |
+| [Dicionário BNCC](file:///c:/Users/marce/Downloads/Airam%20veras/bncc-dados/docs/dicionario-de-dados.md) | Markdown | Dicionário de esquemas de campos curriculares, competências gerais e objetivos de aprendizagem da BNCC. | Público / Auditável |
+| [Recibo Oficial de Fechamento T10](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/evidencias/T10/entrega-final02.json) | JSON | Manifesto com hashes SHA-256 de todas as saídas, códigos e provas de conformidade da Task 10. | Criptográfico |
+| [Resultado da Contraprova Independente](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/evidencias/T10/contraprova-resultado.json) | JSON | Certificado de **19.474 verificações PASS**, validando 640 aplicações e 6.074 medidas célula a célula. | Criptográfico |
+
+---
+
+### 2. 📊 Planilhas Oficiais, Datasets e Bancos de Dados
+
+| Arquivo / Base | Formato | Conteúdo e Estrutura | Governança |
+|:---|:---:|:---|:---:|
+| **Planilha Oficial Canônica**<br>`datamining/restrito/outputs/.../intervencao-restrita.xlsx` | XLSX Canônico (OOXML Estrito) | **Planilha central de intervenção docente**, composta por 6 abas oficiais:<br>• **`Resumo`**: Painel executivo consolidado com totais, taxas de adequação e status das Metas A e B.<br>• **`Intervenção nominal`**: Matriz individual por estudante com notas, acertos, lacuna para adequação e prioridades BNCC.<br>• **`Grupos de intervenção`**: Agrupamentos pedagógicos (G1 a G4) com estratégias didáticas detalhadas.<br>• **`Metas e prioridades`**: Fila de conversão e metas quantitativas por turma e componente.<br>• **`Cálculos`**: Matriz de apoio com fórmulas dinâmicas (`=MATCH`, `=INDEX`) e parâmetros psicométricos.<br>• **`Validações`**: Tabela de regras de integridade e checagem de consistência cruzada. | 🔒 Restrito / Nominal (Sem PII pública) |
+| **Dataset Auditável CAEd 2026**<br>`00_ORGANIZACAO/02_Dados_e_banco/...RESTRITO.xlsx` | XLSX | Consolidação tabular de todos os resultados brutos exportados do portal CAEd para os 1º ao 5º anos. | 🔒 Restrito / Nominal |
+| **Matriz BNCC Completa com Filtros**<br>`00_ORGANIZACAO/03_Analises/...filtros.xlsx` | XLSX | Matriz de habilidades da BNCC estruturada com filtros por componente, ano escolar e unidade temática. | Público / Referência |
+| **Matrizes BNCC EF e EM**<br>`bncc-dados/fontes/BNCC_Ensino Fundamental.xlsx` | XLSX | Tabelas de fontes originais de habilidades curriculares do Ensino Fundamental e Médio. | Fonte Pública |
+| **Pacote Microdados Ciclo I 1º ao 5º**<br>`00_ORGANIZACAO/02_Dados_e_banco/...RESTRITO.zip` | ZIP (CSVs) | Pacote compacto com os 54 CSVs originais extraídos do portal CAEd (estudante, turma e escola). | 🔒 Restrito / Bruto |
+| **Matrizes Estaduais CAEd Ceará**<br>`caed-dados/Matrizes_CAEd/...Completo.zip` | ZIP (12 MB) | Coleção completa das matrizes e cadernos de teste do CAEd Ceará. | Referência Oficial |
+| **Banco Relacional BNCC**<br>`bncc-dados/derivados/bncc.sqlite` | SQLite 3 | Base normalizada com competências gerais, específicas e habilidades curriculares com chaves relacionais. | Público / Relacional |
+| **Banco Histórico SPAECE**<br>`spaece-dados/dados/spaece.sqlite` | SQLite 3 | Banco relacional dos descritores históricos de Língua Portuguesa e Matemática do SPAECE. | Público / Relacional |
+| **Tabelas Analíticas Consolidadas**<br>`datamining/relatorios/t10/tabelas.json` | JSON (11,6 MB) | Base analítica completa com correlações Pearson/Spearman, p-valores, q-valores Benjamini-Hochberg e sensibilidade. | Auditável / Censitário |
+
+---
+
+### 3. 📈 Catálogo de Gráficos, Painéis e Artefatos Visuais
+
+| Gráfico / Painel | Formato | Indicadores e Análises Representadas | Localização / Acesso |
+|:---|:---:|:---|:---:|
+| **Painel de Cobertura Censitária** | SVG / PNG | Cobertura de estudantes avaliados, ausências e taxas de participação por ano e turma escolar. | [`datamining/relatorios/t10/figuras/cobertura.svg`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/t10/figuras/cobertura.svg) |
+| **Distribuição de Habilidades Críticas** | SVG / PNG | Taxa de acerto por habilidade CAEd com cruzamento visual para habilidades associadas da BNCC. | [`datamining/relatorios/t10/figuras/habilidades.svg`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/t10/figuras/habilidades.svg) |
+| **Curva de Adequação da Meta A** | SVG / PNG | Dispersão de estudantes por nível CAEd e distância aritmética para a linha de corte dos 80%. | [`datamining/relatorios/t10/figuras/meta-a.svg`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/t10/figuras/meta-a.svg) |
+| **Painel Executivo Web Interativo** | HTML5 / CSS | Relatório completo responsivo com gráficos SVG vetoriais, filtros dinâmicos e tabelas ordenáveis. | [`datamining/relatorios/t10/relatorio.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/t10/relatorio.html) |
+| **Índices Navegáveis de Governança** | HTML5 | Guias de navegação direta para fontes, relatórios e análises nas pastas organizacionais. | `00_ORGANIZACAO/*/INDICE.html` |
+| **Conferência Alfa SPAECE** | PNG | Registro visual de auditoria da calibração psicométrica das escalas do SPAECE. | [`spaece-dados/fontes/conferencia-alfa.png`](file:///c:/Users/marce/Downloads/Airam%20veras/spaece-dados/fontes/conferencia-alfa.png) |
+| **Mapa do Repositório (Mermaid)** | Mermaid Dinâmico | Grafo interativo e navegável de todos os módulos e subdiretórios com links clicáveis. | Embutido no topo deste `README.md` |
+| **Gráfico de Barras Meta A (Mermaid)** | xychart-beta | Gráfico comparativo das taxas de adequação observadas versus o alvo de 80% nos 5 anos. | Embutido na Seção de Diagnósticos |
+| **Matriz de Prioridade (Mermaid)** | quadrantChart | Classificação das turmas em 4 quadrantes de defasagem combinada Leitura vs. Matemática. | Embutido na Seção de Diagnósticos |
+| **Fluxograma de Grupos (Mermaid)** | flowchart LR | Roteamento visual dos perfis de aprendizagem (G1 a G4) até as ações pedagógicas práticas. | Embutido na Seção de Diagnósticos |
+
+---
+
 ## 📊 Gráficos e Diagnósticos Consolidados (Ciclo I / 2026)
 
 O diagnóstico analítico foi processado sobre **172 estudantes cadastrados**, totalizando **640 aplicações avaliadas**, **6.074 medidas auditadas** e **157 cruzamentos curriculares**, cobrindo do 1º ao 5º ano do Ensino Fundamental nas áreas de **Língua Portuguesa (Leitura, Escrita e Fluência)** e **Matemática**.
