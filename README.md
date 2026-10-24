@@ -1090,11 +1090,29 @@ graph TD
 
 | Eixo de Modernização | Artefato Principal | Descrição e Como Usar |
 | :--- | :--- | :--- |
-| **1. Dashboard Web SPA** | [`dashboard.html`](file:///c:/Users/marce/Downloads/Airam%20veras/dashboard.html)<br>*(Espelho: `datamining/relatorios/dashboard_interativo.html`)* | Interface web moderna (Glassmorphism, Tailwind, Chart.js) com 5 abas: Executiva (Metas A e B), Pedagógica (filtros por ano e grupos G1-G4), Psicologia/AEE (CIDs e TOD/PBS), Longitudinal Multi-Ciclos e Matriz de Markov. Abre com duplo clique! |
-| **2. CLI Central Unificado** | [`airam.py`](file:///c:/Users/marce/Downloads/Airam%20veras/airam.py) | Ponto de entrada no terminal com menu interativo: `python airam.py` ou flags diretas (`--metas`, `--tod`, `--aluno <hash>`, `--longitudinal`, `--web`). |
-| **3. Fichas de Intervenção (PIP & AEE)** | [`datamining/relatorios/fichas_intervencao_pip.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/fichas_intervencao_pip.html)<br>[`datamining/relatorios/prontuario_aee_tod_impresso.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/prontuario_aee_tod_impresso.html) | Fichas individuais formatadas em folha A4 com checklist didático, códigos BNCC e regras comportamentais para TOD e AEE, prontas para impressão e sala de aula. |
-| **4. Pipeline CI/CD GitHub Actions** | [`.github/workflows/ci.yml`](file:///c:/Users/marce/Downloads/Airam%20veras/.github/workflows/ci.yml) | Automação contínua que executa a cada push a suíte de 360+ testes pytest, validação da integridade do banco SQLite 3FN, contraprova matemática e scanner de Zero-PII. |
-| **5. Servidor de API RESTful** | [`datamining/src/api_servidor.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/api_servidor.py) | API backend que expõe endpoints JSON (`/api/metas`, `/api/aee/tod`, `/api/longitudinal/markov`, `/api/estudantes?id=<hash>`) para consumo por qualquer aplicação web, mobile ou nuvem. |
+| **1. Showcase Animado D3.js (Mira)** | [`index.html`](file:///c:/Users/marce/Downloads/Airam%20veras/index.html)<br>*(Espelho: [`docs/index.html`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/index.html))* | **Showcase oficial construído com a tecnologia [MarceloClaro/mira-animator](https://github.com/MarceloClaro/mira-animator)**. Apresentação animada em slides com D3.js v7 em loops contínuos, Glassmorphism, navegação por teclado (←/→/F) e publicação instantânea no **GitHub Pages**! |
+| **2. Dashboard Web SPA** | [`dashboard.html`](file:///c:/Users/marce/Downloads/Airam%20veras/dashboard.html)<br>*(Espelho: `datamining/relatorios/dashboard_interativo.html`)* | Interface web analítica completa com 5 abas: Executiva (Metas A e B), Pedagógica (filtros por ano e grupos G1-G4), Psicologia/AEE (CIDs e TOD/PBS), Longitudinal Multi-Ciclos e Matriz de Markov. Abre com duplo clique! |
+| **3. CLI Central Unificado** | [`airam.py`](file:///c:/Users/marce/Downloads/Airam%20veras/airam.py) | Ponto de entrada no terminal com menu interativo: `python airam.py` ou flags diretas (`--metas`, `--tod`, `--aluno <hash>`, `--longitudinal`, `--web`). |
+| **4. Fichas de Intervenção (PIP & AEE)** | [`datamining/relatorios/fichas_intervencao_pip.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/fichas_intervencao_pip.html)<br>[`datamining/relatorios/prontuario_aee_tod_impresso.html`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/relatorios/prontuario_aee_tod_impresso.html) | Fichas individuais formatadas em folha A4 com checklist didático, códigos BNCC e regras comportamentais para TOD e AEE, prontas para impressão e sala de aula. |
+| **5. Pipeline CI/CD GitHub Actions** | [`.github/workflows/ci.yml`](file:///c:/Users/marce/Downloads/Airam%20veras/.github/workflows/ci.yml) | Automação contínua que executa a cada push a suíte de 360+ testes pytest, validação da integridade do banco SQLite 3FN, contraprova matemática e scanner de Zero-PII. |
+| **6. Servidor de API RESTful** | [`datamining/src/api_servidor.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/api_servidor.py) | API backend que expõe endpoints JSON (`/api/metas`, `/api/aee/tod`, `/api/longitudinal/markov`, `/api/estudantes?id=<hash>`) para consumo por qualquer aplicação web, mobile ou nuvem. |
+
+---
+
+### 🌐 Como Publicar o Site no GitHub Pages (Guia para o UX Designer)
+
+O showcase animado e o dashboard estão prontos para publicação pública ou restrita via **GitHub Pages**:
+
+1. Acesse o repositório no GitHub: [https://github.com/MarceloClaro/AiramVeras](https://github.com/MarceloClaro/AiramVeras)
+2. Clique na aba superior **Settings** (Configurações do Repositório).
+3. No menu lateral esquerdo, navegue até a seção **Pages** (em *Code and automation*).
+4. Em **Build and deployment** / **Source**:
+   - Selecione: **Deploy from a branch**
+   - **Branch**: Selecione `main`
+   - **Folder**: Selecione `/ (root)` ou `/docs` (ambos possuem `index.html` idênticos e autônomos)
+5. Clique em **Save**.
+6. Em cerca de 60 segundos, o GitHub publicará o site no link oficial:
+   `https://marceloclaro.github.io/AiramVeras/`
 
 ---
 
@@ -1106,5 +1124,5 @@ graph TD
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (360+ cenários TDD automatizados)
 - **Banco de Dados Analítico**: SQLite 3 canônico, PostgreSQL 15+, Schemas OpenAPI 3.0 e JSON Schema
-- **Interface e Dashboard**: HTML5, Vanilla CSS / Tailwind, Chart.js, Glassmorphism
+- **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)

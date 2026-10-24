@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airam Veras — Ecossistema Educacional & Psicométrico 2026 (Mira Showcase)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- D3.js v7 CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           MIRA THEME: mira-neon-blue (Inspirado no Mira Animator)
+           Paleta de alto contraste, Glassmorphism, stage 16:9 D3.js
+           ============================================================ */
+        :root {
+            --mira-primary: #3b82f6;
+            --mira-primary-glow: rgba(59, 130, 246, 0.35);
+            --mira-accent: #10b981;
+            --mira-accent-purple: #8b5cf6;
+            --mira-bg: #070a12;
+            --mira-card-bg: rgba(15, 23, 42, 0.75);
+            --mira-card-border: rgba(255, 255, 255, 0.08);
+            --mira-stage-glow: rgba(59, 130, 246, 0.08);
+            --mira-pill-bg: rgba(255, 255, 255, 0.04);
+            --mira-pill-border: rgba(255, 255, 255, 0.10);
+        }
+
+        body {
+            background-color: var(--mira-bg);
+            color: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Barra de progresso Mira */
+        #mira-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6);
+            z-index: 100;
+            transition: width 0.15s ease-out;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--mira-card-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--mira-card-border);
+            box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.45);
+            border-radius: 1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 48px 0 rgba(59, 130, 246, 0.15);
+        }
+
+        .icon-hero {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            color: #60a5fa;
+            flex-shrink: 0;
+        }
+
+        .attribute-pill {
+            background: var(--mira-pill-bg);
+            border: 1px solid var(--mira-pill-border);
+            border-radius: 9999px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            transition: all 0.2s ease;
+        }
+
+        .attribute-pill:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Palco de Animação D3.js (Proporção 16:9 Mira) */
+        .anim-stage {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: radial-gradient(circle at 50% 50%, var(--mira-stage-glow), transparent 75%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0.875rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .anim-stage svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .replay-btn {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 20;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #cbd5e1;
+            border-radius: 9999px;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .replay-btn:hover {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+
+        /* Botão Flutuante de Avanço Mira */
+        #mira-next {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 90;
+            transition: all 0.25s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #mira-next.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #mira-next:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Seções de Slide em Tela Cheia / Card */
+        section.mira-slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 24px;
+            position: relative;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="mira-progress"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card mx-auto max-w-7xl mt-4 px-6 py-3 flex items-center justify-between border border-slate-800">
+        <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-sm">
+                AV
+            </div>
+            <div>
+                <span class="text-sm font-bold text-white tracking-tight flex items-center gap-2">
+                    Airam Veras Analytics 2026
+                    <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">Mira Showcase</span>
+                </span>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-3 text-xs">
+            <a href="dashboard.html" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/30">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Abrir Dashboard SPA
+            </a>
+            <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                <i data-lucide="github" class="w-4 h-4"></i> GitHub Repo
+            </a>
+        </div>
+    </header>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 1: HERO / ABERTURA DO ECOSSISTEMA                           -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-hero">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="flex flex-wrap gap-2">
+                    <span class="attribute-pill font-mono">INEP: 23084995</span>
+                    <span class="attribute-pill font-mono">Tianguá - CE</span>
+                    <span class="attribute-pill font-mono text-emerald-400 border-emerald-500/30">Base 3FN Auditável</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+                    Mineração de Dados, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Psicometria TRI</span> e Inclusão Escolar.
+                </h1>
+                <p class="text-base text-slate-300 leading-relaxed font-normal">
+                    Ecossistema canônico integrado que transforma microdados de avaliação do CAEd/CNCA e matrizes da BNCC em planos acionáveis de intervenção pedagógica, com rastreamento neurodesenvolvimental e conformidade legal estrita.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button onclick="goToSlide(1)" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition flex items-center gap-2 shadow-lg shadow-blue-600/30 text-sm">
+                        Explorar Metas e Gráficos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <a href="dashboard.html" class="px-5 py-2.5 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-semibold transition text-sm flex items-center gap-2">
+                        Dashboard Completo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Palco D3.js: Partículas Vivas do Censo e Conexões da Escola -->
+            <div class="lg:col-span-7">
+                <div class="anim-stage glass-card" id="stage-hero">
+                    <button class="replay-btn" onclick="window.__replayHero()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Coorte de 172 estudantes orbitando competências curriculares.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 2: DIAGNÓSTICO DAS METAS A E B                              -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-metas">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+                <div class="anim-stage glass-card" id="stage-metas">
+                    <button class="replay-btn" onclick="window.__replayMetas()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Confronto dinâmico dos 1º ao 5º anos contra a linha de corte de 80%.</p>
+            </div>
+
+            <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="icon-hero">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-mono font-bold text-blue-400">Dimensão Executiva</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Metas A e B Desmistificadas</h2>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                        <span class="font-bold text-blue-400 block mb-1">🎯 Meta A (Adequação Geral):</span>
+                        80% dos alunos da turma posicionados nos níveis <strong>Adequado</strong> ou <strong>Avançado</strong>. O 5º ano de Língua Portuguesa já superou a meta com <strong>84.9%</strong>.
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+                        <span class="font-bold text-emerald-400 block mb-1">⭐ Meta B (Alta Performance):</span>
+                        Acerto de pelo menos 18 das 22 questões aplicadas (≥ 80% do instrumento). O 3º ano de Leitura atinge <strong>75.0%</strong> de cumprimento.
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                    <div class="p-3 rounded-xl glass-card text-center">
+                        <div class="text-2xl font-black text-blue-400 font-mono">56.4%</div>
+                        <div class="text-[11px] text-slate-400">Adequação Média Escola</div>
+                    </div>
+                    <div class="p-3 rounded-xl glass-card text-center">
+                        <div class="text-2xl font-black text-emerald-400 font-mono">41.8%</div>
+                        <div class="text-[11px] text-slate-400">Taxa Geral da Meta B</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 3: O GRAFO CURRICULAR BIPARTIDO (CAEd ➔ BNCC)              -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-grafo">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="icon-hero" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #34d399;">
+                        <i data-lucide="git-fork" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-mono font-bold text-emerald-400">Inteligência Curricular</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Grafo Bipartido de Propagação</h2>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    O alinhamento entre as matrizes de avaliação do CAEd/CNCA e as habilidades da BNCC é modelado matematicamente como uma <strong>matriz de adjacência bipartida</strong>:
+                </p>
+                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-emerald-300 text-center">
+                    A<sub>curr</sub> = B · B<sup>T</sup> (Pesos normalizados por grau)
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Descritores críticos como <code>3EF06_M</code> e <code>4EF07_M</code> propagam evidência de aprendizagem para habilidades adjacentes da BNCC, preservando as ressalvas semânticas oficiais.
+                </p>
+                <div class="flex gap-2">
+                    <span class="attribute-pill">1.460 Descritores CAEd</span>
+                    <span class="attribute-pill">574 Habilidades BNCC</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="anim-stage glass-card" id="stage-grafo">
+                    <button class="replay-btn" onclick="window.__replayGrafo()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Grafo de força com partículas viajando em loop entre descritores e BNCC.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 4: ACESSIBILIDADE E PROTOCOLO TOD (PBS)                     -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-tod">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+                <div class="anim-stage glass-card" id="stage-tod">
+                    <button class="replay-btn" onclick="window.__replayTod()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Metáfora da Escolha Controlada e Desescalada Comportamental.</p>
+            </div>
+
+            <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="icon-hero" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.35); color: #c084fc;">
+                        <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-mono font-bold text-purple-400">Clínica & Inclusão (LBI Art. 28)</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Manejo de TOD (F91.3 / 6C90)</h2>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    Garantia de acomodação digna para os <strong>8 estudantes laudados com Transtorno Opositor Desafiador</strong>, integrando Suporte Comportamental Positivo (PBS):
+                </p>
+
+                <div class="space-y-2 text-xs">
+                    <div class="p-3 rounded-lg bg-purple-950/30 border border-purple-800/30 flex items-start gap-2.5">
+                        <span class="text-purple-400 font-bold">1.</span>
+                        <div><strong>Escolha Controlada:</strong> Substituição de ordens imperativas por 2 opções legítimas pré-validadas.</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-purple-950/30 border border-purple-800/30 flex items-start gap-2.5">
+                        <span class="text-purple-400 font-bold">2.</span>
+                        <div><strong>Desescalada & Tom Neutro:</strong> Diálogo reservado, evitando embates e constrangimento público.</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-purple-950/30 border border-purple-800/30 flex items-start gap-2.5">
+                        <span class="text-purple-400 font-bold">3.</span>
+                        <div><strong>Proteção do Escore Psicométrico:</strong> A recusa é sintoma de desregulação, não falta de competência cognitiva.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 5: LONGITUDINAL MULTI-CICLOS & CADEIA DE MARKOV             -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-markov">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="icon-hero" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-mono font-bold text-amber-400">Engenharia Longitudinal</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Transição de Markov (Ciclos I, II e III)</h2>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    Acompanhamento da trajetória evolutiva individualizada através dos 3 ciclos de avaliação contínua anual.
+                </p>
+
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs space-y-2">
+                    <div class="text-slate-400">Matriz de Probabilidade (Ciclo I ➔ Ciclo II):</div>
+                    <div class="flex justify-between text-emerald-400"><span>Abaixo Básico ➔ Básico:</span> <strong>68.2%</strong></div>
+                    <div class="flex justify-between text-blue-400"><span>Básico ➔ Adequado (Meta A):</span> <strong>54.5%</strong></div>
+                    <div class="flex justify-between text-purple-400"><span>Adequado ➔ Avançado:</span> <strong>38.9%</strong></div>
+                    <div class="flex justify-between text-emerald-400"><span>Retenção no Avançado:</span> <strong>100.0%</strong></div>
+                </div>
+
+                <div class="flex gap-2">
+                    <span class="attribute-pill">1.280 Projeções Multi-Ciclos</span>
+                    <span class="attribute-pill">115 Células de Markov</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="anim-stage glass-card" id="stage-markov">
+                    <button class="replay-btn" onclick="window.__replayMarkov()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Fluxo de partículas migrando continuamente entre os 4 níveis de desempenho.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 6: HUB CENTRAL DO ECOSSISTEMA                               -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-hub">
+        <div class="max-w-6xl mx-auto w-full text-center space-y-8">
+            <span class="attribute-pill font-mono">Entrega Canônica Completa</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white">Central de Acesso ao Ecossistema</h2>
+            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
+                Todos os artefatos estão integrados, auditados e disponíveis para pedagogos, psicólogos, auditores jurídicos e desenvolvedores.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-left">
+                <a href="dashboard.html" class="p-5 rounded-xl glass-card hover:border-blue-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Dashboard SPA</h3>
+                    <p class="text-xs text-slate-400">5 abas interativas com Chart.js, filtros dinâmicos e prontuário.</p>
+                </a>
+
+                <div class="p-5 rounded-xl glass-card">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-3">
+                        <i data-lucide="terminal" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">CLI airam.py</h3>
+                    <p class="text-xs text-slate-400 font-mono">python airam.py --metas</p>
+                    <p class="text-[11px] text-slate-500 mt-1">Menu interativo central no console.</p>
+                </div>
+
+                <a href="datamining/relatorios/fichas_intervencao_pip.html" target="_blank" class="p-5 rounded-xl glass-card hover:border-purple-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="printer" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Fichas PIP & AEE</h3>
+                    <p class="text-xs text-slate-400">Folhas A4 prontas para imprimir para sala de aula.</p>
+                </a>
+
+                <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank" class="p-5 rounded-xl glass-card hover:border-amber-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-3 group-hover:scale-110 transition">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1">Banco 3FN SQLite</h3>
+                    <p class="text-xs text-slate-400">25 tabelas, 6 views analíticas e hash SHA-256 auditável.</p>
+                </a>
+            </div>
+
+            <div class="pt-6 font-mono text-xs text-slate-500">
+                Pressione <kbd class="px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">F</kbd> para tela cheia | 
+                <kbd class="px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">↓ / →</kbd> para próximo slide
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Next Button -->
+    <button id="mira-next" title="Próximo Slide">
+        <i data-lucide="chevron-down" id="mira-next-icon" class="w-6 h-6"></i>
+    </button>
+
+    <!-- ================================================================= -->
+    <!-- D3.JS ANIMATION SCRIPTS (MIRA PHILOSOPHY: MANDATORY INTERNAL LOOP) -->
+    <!-- ================================================================= -->
+    <script>
+        lucide.createIcons();
+
+        const PRIMARY = "#3b82f6";
+        const ACCENT_EMERALD = "#10b981";
+        const ACCENT_PURPLE = "#8b5cf6";
+        const ACCENT_AMBER = "#f59e0b";
+        const W = 960, H = 540;
+
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 1: HERO / COORTE DE ESTUDANTES EM ÓRBITA
+        // -------------------------------------------------------------
+        (function() {
+            const svg = d3.select("#stage-hero").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+            const cx = W / 2, cy = H / 2;
+
+            // Anéis orbitais
+            [100, 160, 220].forEach((r, i) => {
+                svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", r)
+                    .attr("fill", "none").attr("stroke", "rgba(255,255,255,0.06)").attr("stroke-dasharray", "4,6");
+            });
+
+            // Centro: Escola Airam Veras
+            const centerG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+            centerG.append("circle").attr("r", 38).attr("fill", "rgba(59, 130, 246, 0.15)")
+                .attr("stroke", PRIMARY).attr("stroke-width", 2.5)
+                .style("filter", `drop-shadow(0 0 16px ${PRIMARY})`);
+            centerG.append("text").text("AIRAM").attr("text-anchor", "middle").attr("dy", -3)
+                .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 900).attr("letter-spacing", 1.5);
+            centerG.append("text").text("VERAS").attr("text-anchor", "middle").attr("dy", 12)
+                .attr("fill", "#60a5fa").attr("font-size", 10).attr("font-weight", 700);
+
+            // Estudantes orbitando (Partículas D3)
+            const numParticles = 24;
+            const particlesData = d3.range(numParticles).map(i => ({
+                id: i,
+                radius: 100 + (i % 3) * 60,
+                speed: 0.0008 + (i % 4) * 0.0004,
+                angle: (i / numParticles) * 2 * Math.PI,
+                size: 4 + (i % 3) * 2.5,
+                color: i % 7 === 0 ? ACCENT_PURPLE : (i % 2 === 0 ? PRIMARY : ACCENT_EMERALD)
+            }));
+
+            const particles = svg.selectAll(".hero-particle")
+                .data(particlesData).enter().append("circle")
+                .attr("class", "hero-particle")
+                .attr("r", d => d.size)
+                .attr("fill", d => d.color)
+                .style("filter", d => `drop-shadow(0 0 6px ${d.color})`);
+
+            function loopHero() {
+                d3.timer(elapsed => {
+                    particles.each(function(d) {
+                        const currentAngle = d.angle + elapsed * d.speed;
+                        const x = cx + Math.cos(currentAngle) * d.radius;
+                        const y = cy + Math.sin(currentAngle) * d.radius;
+                        d3.select(this).attr("cx", x).attr("cy", y);
+                    });
+                });
+            }
+            loopHero();
+            window.__replayHero = () => loopHero();
+        })();
+
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 2: METAS A E B (BARRAS VIVAS & LINHA DE CORTE 80%)
+        // -------------------------------------------------------------
+        (function() {
+            const svg = d3.select("#stage-metas").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+            const dataMetas = [
+                { ano: "1º Ano", lp: 41.7, mat: 45.8 },
+                { ano: "2º Ano", lp: 52.3, mat: 50.0 },
+                { ano: "3º Ano", lp: 56.2, mat: 53.1 },
+                { ano: "4º Ano", lp: 47.6, mat: 38.1 },
+                { ano: "5º Ano", lp: 84.9, mat: 79.2 }
+            ];
+
+            const margin = { top: 70, right: 60, bottom: 80, left: 80 };
+            const innerW = W - margin.left - margin.right;
+            const innerH = H - margin.top - margin.bottom;
+
+            const g = svg.append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            const x0 = d3.scaleBand().domain(dataMetas.map(d => d.ano)).range([0, innerW]).padding(0.35);
+            const x1 = d3.scaleBand().domain(["lp", "mat"]).range([0, x0.bandwidth()]).padding(0.1);
+            const y = d3.scaleLinear().domain([0, 100]).range([innerH, 0]);
+
+            // Linha de corte da Meta A (80%)
+            const line80 = g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", y(80)).attr("y2", y(80))
+                .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2).attr("stroke-dasharray", "6,6");
+            g.append("text").attr("x", innerW - 10).attr("y", y(80) - 8).attr("text-anchor", "end")
+                .attr("fill", ACCENT_EMERALD).attr("font-size", 12).attr("font-weight", 800)
+                .text("LINHA DE CORTE META A (80%)");
+
+            // Barras animadas
+            function animateBars() {
+                g.selectAll(".bar-group").remove();
+                const groups = g.selectAll(".bar-group").data(dataMetas).enter().append("g")
+                    .attr("class", "bar-group")
+                    .attr("transform", d => `translate(${x0(d.ano)}, 0)`);
+
+                // LP Bar
+                groups.append("rect")
+                    .attr("x", x1("lp"))
+                    .attr("y", innerH)
+                    .attr("width", x1.bandwidth())
+                    .attr("height", 0)
+                    .attr("fill", PRIMARY)
+                    .attr("rx", 5)
+                    .transition().duration(1200).delay((d, i) => i * 150)
+                    .attr("y", d => y(d.lp))
+                    .attr("height", d => innerH - y(d.lp));
+
+                // MAT Bar
+                groups.append("rect")
+                    .attr("x", x1("mat"))
+                    .attr("y", innerH)
+                    .attr("width", x1.bandwidth())
+                    .attr("height", 0)
+                    .attr("fill", "rgba(16, 185, 129, 0.85)")
+                    .attr("rx", 5)
+                    .transition().duration(1200).delay((d, i) => i * 150 + 80)
+                    .attr("y", d => y(d.mat))
+                    .attr("height", d => innerH - y(d.mat));
+
+                // X Labels
+                groups.append("text").attr("x", x0.bandwidth() / 2).attr("y", innerH + 30)
+                    .attr("text-anchor", "middle").attr("fill", "#94a3b8").attr("font-size", 13).attr("font-weight", 600)
+                    .text(d => d.ano);
+            }
+            animateBars();
+            window.__replayMetas = () => animateBars();
+        })();
+
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 3: GRAFO CURRICULAR BIPARTIDO CAEd ➔ BNCC
+        // -------------------------------------------------------------
+        (function() {
+            const svg = d3.select("#stage-grafo").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
+            const nodesCAEd = [
+                { id: "3EF01_P", label: "3EF01 (Letras)", y: 120 },
+                { id: "3EF06_M", label: "3EF06 (Soma)", y: 220 },
+                { id: "3EF09_M", label: "3EF09 (Multiplicação)", y: 320 },
+                { id: "4EF07_M", label: "4EF07 (Frações)", y: 420 }
+            ];
+
+            const nodesBNCC = [
+                { id: "EF03LP01", label: "BNCC EF03LP01", y: 150 },
+                { id: "EF03MA05", label: "BNCC EF03MA05", y: 270 },
+                { id: "EF04MA02", label: "BNCC EF04MA02", y: 390 }
+            ];
+
+            const links = [
+                { source: nodesCAEd[0], target: nodesBNCC[0] },
+                { source: nodesCAEd[1], target: nodesBNCC[1] },
+                { source: nodesCAEd[2], target: nodesBNCC[1] },
+                { source: nodesCAEd[3], target: nodesBNCC[2] }
+            ];
+
+            const xCAEd = 200, xBNCC = 760;
+
+            // Linhas
+            links.forEach(l => {
+                svg.append("line").attr("x1", xCAEd).attr("y1", l.source.y).attr("x2", xBNCC).attr("y2", l.target.y)
+                    .attr("stroke", "rgba(255,255,255,0.12)").attr("stroke-width", 2);
+            });
+
+            // Partículas viajando ao longo das arestas (Loop contínuo)
+            links.forEach((l, idx) => {
+                const p = svg.append("circle").attr("r", 5).attr("fill", ACCENT_EMERALD)
+                    .style("filter", `drop-shadow(0 0 6px ${ACCENT_EMERALD})`);
+
+                function travelEdge() {
+                    p.attr("cx", xCAEd).attr("cy", l.source.y).attr("opacity", 1)
+                        .transition().duration(2400 + idx * 400).ease(d3.easeCubicInOut)
+                        .attr("cx", xBNCC).attr("cy", l.target.y)
+                        .transition().duration(200).attr("opacity", 0)
+                        .on("end", travelEdge);
+                }
+                travelEdge();
+            });
+
+            // Nós CAEd
+            nodesCAEd.forEach(n => {
+                const g = svg.append("g").attr("transform", `translate(${xCAEd}, ${n.y})`);
+                g.append("circle").attr("r", 24).attr("fill", "#0f172a").attr("stroke", PRIMARY).attr("stroke-width", 2.5);
+                g.append("text").text("CAEd").attr("text-anchor", "middle").attr("dy", 4)
+                    .attr("fill", PRIMARY).attr("font-size", 10).attr("font-weight", 800);
+                g.append("text").text(n.label).attr("text-anchor", "end").attr("dx", -35).attr("dy", 4)
+                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+            });
+
+            // Nós BNCC
+            nodesBNCC.forEach(n => {
+                const g = svg.append("g").attr("transform", `translate(${xBNCC}, ${n.y})`);
+                g.append("circle").attr("r", 26).attr("fill", "#0f172a").attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2.5);
+                g.append("text").text("BNCC").attr("text-anchor", "middle").attr("dy", 4)
+                    .attr("fill", ACCENT_EMERALD).attr("font-size", 10).attr("font-weight", 800);
+                g.append("text").text(n.label).attr("text-anchor", "start").attr("dx", 35).attr("dy", 4)
+                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+            });
+
+            window.__replayGrafo = () => {};
+        })();
+
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 4: METÁFORA VISUAL TOD (ESCOLHA CONTROLADA)
+        // -------------------------------------------------------------
+        (function() {
+            const svg = d3.select("#stage-tod").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+            const cx = W / 2, cy = H / 2;
+
+            // Círculo Central do Aluno
+            const alunoG = svg.append("g").attr("transform", `translate(${cx - 180}, ${cy})`);
+            alunoG.append("circle").attr("r", 40).attr("fill", "rgba(139, 92, 246, 0.2)")
+                .attr("stroke", ACCENT_PURPLE).attr("stroke-width", 3)
+                .style("filter", `drop-shadow(0 0 16px ${ACCENT_PURPLE})`);
+            alunoG.append("text").text("ALUNO").attr("text-anchor", "middle").attr("dy", -2)
+                .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 800);
+            alunoG.append("text").text("TOD / F91.3").attr("text-anchor", "middle").attr("dy", 14)
+                .attr("fill", "#c084fc").attr("font-size", 9).attr("font-weight", 700);
+
+            // Duas Opções Válidas (Escolha Controlada)
+            const opcoes = [
+                { title: "Opção A: Iniciar por Leitura", y: cy - 90, color: PRIMARY },
+                { title: "Opção B: Iniciar por Desenho/Cálculo", y: cy + 90, color: ACCENT_EMERALD }
+            ];
+
+            opcoes.forEach(op => {
+                const g = svg.append("g").attr("transform", `translate(${cx + 160}, ${op.y})`);
+                g.append("rect").attr("x", -120).attr("y", -28).attr("width", 240).attr("height", 56)
+                    .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", op.color).attr("stroke-width", 2);
+                g.append("text").text(op.title).attr("text-anchor", "middle").attr("dy", 5)
+                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+
+                // Linhas conectoras
+                svg.append("path")
+                    .attr("d", `M ${cx - 140} ${cy} C ${cx} ${cy}, ${cx + 40} ${op.y}, ${cx + 40} ${op.y}`)
+                    .attr("fill", "none").attr("stroke", op.color).attr("stroke-width", 2).attr("stroke-dasharray", "4,4");
+            });
+
+            // Partícula de decisão navegando (Loop suave)
+            const pDecisao = svg.append("circle").attr("r", 7).attr("fill", "#ffffff")
+                .style("filter", "drop-shadow(0 0 10px #ffffff)");
+
+            function loopEscolha() {
+                pDecisao.attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+                    .transition().duration(1800).ease(d3.easeCubicOut)
+                    .attr("cx", cx + 40).attr("cy", opcoes[0].y)
+                    .transition().duration(600).attr("opacity", 0)
+                    .transition().duration(100)
+                    .attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+                    .transition().duration(1800).ease(d3.easeCubicOut)
+                    .attr("cx", cx + 40).attr("cy", opcoes[1].y)
+                    .transition().duration(600).attr("opacity", 0)
+                    .on("end", loopEscolha);
+            }
+            loopEscolha();
+            window.__replayTod = () => loopEscolha();
+        })();
+
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 5: CADEIA DE MARKOV (TRANSIÇÃO ENTRE NÍVEIS)
+        // -------------------------------------------------------------
+        (function() {
+            const svg = d3.select("#stage-markov").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
+            const estados = [
+                { id: "AB", label: "Abaixo Básico", x: 140, y: H / 2, color: "#ef4444" },
+                { id: "B", label: "Básico", x: 380, y: H / 2, color: "#f59e0b" },
+                { id: "AD", label: "Adequado", x: 620, y: H / 2, color: "#3b82f6" },
+                { id: "AV", label: "Avançado", x: 840, y: H / 2, color: "#10b981" }
+            ];
+
+            // Arestas de transição Markov
+            for (let i = 0; i < estados.length - 1; i++) {
+                svg.append("line").attr("x1", estados[i].x).attr("y1", H / 2).attr("x2", estados[i + 1].x).attr("y2", H / 2)
+                    .attr("stroke", "rgba(255,255,255,0.15)").attr("stroke-width", 2);
+            }
+
+            // Partículas fluindo ao longo da cadeia de Markov
+            const numFluxo = 12;
+            for (let k = 0; k < numFluxo; k++) {
+                const p = svg.append("circle").attr("r", 5).attr("fill", "#60a5fa")
+                    .style("filter", "drop-shadow(0 0 6px #60a5fa)");
+
+                function flow() {
+                    const dur = 3200 + Math.random() * 800;
+                    p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 1)
+                        .transition().duration(dur).ease(d3.easeCubicInOut)
+                        .attr("cx", estados[3].x)
+                        .transition().duration(200).attr("opacity", 0)
+                        .on("end", flow);
+                }
+                setTimeout(flow, k * 350);
+            }
+
+            // Renderizar Nós de Estado
+            estados.forEach(e => {
+                const g = svg.append("g").attr("transform", `translate(${e.x}, ${e.y})`);
+                g.append("circle").attr("r", 36).attr("fill", "#0f172a").attr("stroke", e.color).attr("stroke-width", 3)
+                    .style("filter", `drop-shadow(0 0 10px ${e.color})`);
+                g.append("text").text(e.id).attr("text-anchor", "middle").attr("dy", 5)
+                    .attr("fill", e.color).attr("font-size", 14).attr("font-weight", 900);
+                g.append("text").text(e.label).attr("text-anchor", "middle").attr("dy", 60)
+                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+            });
+
+            window.__replayMarkov = () => {};
+        })();
+
+        // -------------------------------------------------------------
+        // NAVEGAÇÃO ENTRE SLIDES (CONTROLE TECLADO & SCROLL MIRA)
+        // -------------------------------------------------------------
+        const slides = Array.from(document.querySelectorAll('section.mira-slide'));
+        const progressBar = document.getElementById('mira-progress');
+        const nextBtn = document.getElementById('mira-next');
+        const nextIcon = document.getElementById('mira-next-icon');
+
+        function getCurrentSlideIndex() {
+            const y = window.scrollY + window.innerHeight * 0.35;
+            let idx = 0;
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].offsetTop <= y) idx = i;
+            }
+            return idx;
+        }
+
+        function goToSlide(i) {
+            const target = Math.max(0, Math.min(slides.length - 1, i));
+            slides[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+            progressBar.style.width = pct + '%';
+
+            const atEnd = (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+            nextBtn.classList.toggle('visible', window.scrollY > 150);
+            nextIcon.setAttribute('data-lucide', atEnd ? 'chevron-up' : 'chevron-down');
+            lucide.createIcons();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const atEnd = (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
+            if (atEnd) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                goToSlide(getCurrentSlideIndex() + 1);
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key)) {
+                e.preventDefault();
+                goToSlide(getCurrentSlideIndex() + 1);
+            } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+                e.preventDefault();
+                goToSlide(getCurrentSlideIndex() - 1);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                goToSlide(slides.length - 1);
+            } else if (e.key.toLowerCase() === 'f') {
+                if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+                else document.exitFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
