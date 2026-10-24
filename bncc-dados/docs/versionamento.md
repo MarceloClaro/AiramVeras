@@ -1,0 +1,80 @@
+**Português** · [English](en/versioning.md)
+
+# Versionamento e ciclo de vida
+
+Como o dataset evolui quando as fontes oficiais mudam, e o que os consumidores podem assumir.
+
+## Duas trilhas de versão
+
+- **Conteúdo**: data-version no formato `dados-AAAA.MM` (patch: `dados-AAAA.MM.N`). Atual: `dados-2026.08`.
+- **Formato**: semver dos JSON Schemas. Atual: `schema-v1.1.0`. Mudança aditiva = minor; mudança que quebra consumidores = major.
+
+As duas trilhas respondem perguntas diferentes: a data-version diz **de quando** é o retrato das fontes oficiais; o semver do schema diz **se quebra** quem já consome. Por isso não são colapsadas numa só.
+
+Releases são imutáveis (tags git). O histórico de textos vive nas releases; o estado vive no registro.
+
+## Vigência no registro
+
+Todo registro normativo carrega:
+
+```json
+"vigencia": {"status": "vigente", "desde": "dados-2026.07", "ate": null}
+```
+
+Regras invioláveis:
+
+1. **Registro publicado nunca é apagado.** Revogação muda `status` para `revogado` e preenche `ate`; o registro permanece consultável. `desde` e `ate` são sempre data-versions, nunca datas do ato: `ate` recebe a data-version em que o registro deixou de valer tal como está (a da revogação, ou a da alteração normativa quando `status` passa a `alterado`). Um patch de correção não muda o `desde` de quem já estava no dataset.
+2. **Código nunca é reutilizado**, nem para substituir habilidade revogada por outra parecida.
+3. Toda mudança de conteúdo referencia a fonte oficial que a motivou.
+4. **Id cunhado é imutável depois de publicado**, com uma exceção documentada (decisão 14 do DECISOES.md): id gerado por defeito de extração, que nunca representou uma entidade da BNCC, pode ser removido, com o mapa de substituição publicado no CHANGELOG.
+
+## Taxonomia de eventos
+
+| Evento | Exemplo | Tratamento |
+|---|---|---|
+| Mudança normativa | CNE altera ou revoga habilidade | Atualiza registro e vigência; changelog categoria `normativa`; nova data-version |
+| Errata oficial | MEC corrige o documento | Como mudança normativa, com a errata como fonte |
+| Novo ato ou complemento | Computação (CNE/CEB 2/2022) | Novo `documento_curricular` ligado por `derivado_de`; não altera os registros existentes |
+| Correção de extração | Erro nosso em relação à fonte | Corrige o registro; changelog categoria `correcao`; data-version patch |
+| Mudança de schema | Campo novo, renomeação | Semver do schema |
+
+A distinção `normativa` (o mundo mudou) versus `correcao` (nós erramos) é obrigatória no changelog.
+
+## Processo de release no git
+
+Passo a passo operacional para publicar uma data-version:
+
+1. **Preparar em branch**: mudanças de dado entram por PR (nunca direto na `main`), com a fonte oficial citada e o CI verde.
+2. **Atualizar o CHANGELOG**: entrada categorizada (`normativa`, `correcao`, `schema`, `editorial`) antes do merge.
+3. **Taggear na `main`** após o merge:
+
+   ```bash
+   git tag -a dados-2026.08 -m "dados-2026.08: <resumo em uma linha>"
+   git push origin dados-2026.08
+   ```
+
+   A versão da release fica em `version` no `CITATION.cff`, de onde o `derivar.py` lê o `meta.data_version` do SQLite. Patch de correção usa sufixo: `dados-2026.08.1`. Mudança de formato ganha tag própria: `schema-v1.1.0`.
+4. **Release no GitHub**: criar a release a partir da tag, com o trecho do CHANGELOG como corpo e os derivados (`bncc.sqlite`, CSVs zipados) como assets. Assim consumidores baixam artefatos versionados sem clonar o repo.
+5. **Arquivar no Zenodo**: cada data-version é depositada no Zenodo, que atribui DOI e a torna citável em publicação acadêmica. Os depósitos de `dados-2026.07` (27/07/2026), `dados-2026.07.1` (11/08/2026) e `dados-2026.08` (15/10/2026) foram feitos manualmente; enquanto a integração Zenodo/GitHub não estiver ligada, cada release nova exige repetir o depósito pela interface.
+6. **Imutabilidade**: tag publicada nunca é movida ou apagada. Errou? Nova tag patch.
+
+Convenções de branch: `main` sempre reproduzível (o CI garante); branches de trabalho com prefixo do tipo (`correcao/`, `normativa/`, `schema/`, `docs/`).
+
+## Onde o dataset está arquivado
+
+O dataset é depositado no [Zenodo](https://doi.org/10.5281/zenodo.21625233), que garante preservação de longo prazo e DOI citável. São quatro identificadores: um de conceito e um por versão.
+
+| DOI | O que aponta | Quando usar |
+|---|---|---|
+| `10.5281/zenodo.21625233` | Conceito: resolve sempre para a versão mais recente | README, site, citação genérica do projeto |
+| `10.5281/zenodo.23403987` | A versão `dados-2026.08` | Artigo que precisa fixar exatamente os dados analisados |
+| `10.5281/zenodo.21881682` | A versão `dados-2026.07.1` | Citação histórica |
+| `10.5281/zenodo.21625234` | A versão `dados-2026.07` | Citação histórica da primeira release |
+
+Os três ficam registrados no `CITATION.cff`, que o GitHub usa para gerar a citação formatada. O registro é indexado pelo OpenAIRE automaticamente.
+
+## Para consumidores
+
+- Fixe a data-version que você validou; atualize deliberadamente lendo o changelog.
+- `vigencia.status` existe para você filtrar: aplicações novas não deveriam sugerir aprendizagens revogadas.
+- Os JSONs são a fonte canônica; SQLite e CSV são derivados gerados e conferidos no CI.

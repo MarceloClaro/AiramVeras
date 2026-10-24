@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bncc.dev/schema/marcos-legais.schema.json",
+  "title": "Marcos legais da educação básica (dados/bncc-2018/marcos-legais.json)",
+  "description": "Referências estruturadas aos atos normativos que fundamentam a BNCC e a educação básica: id, ementa, link oficial e relações com entidades do dataset. Sem texto integral.",
+  "type": "object",
+  "properties": {
+    "marcos_legais": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "definicoes.json#/$defs/id_slug" },
+          "tipo": { "enum": ["constituicao", "emenda_constitucional", "lei", "resolucao", "parecer"] },
+          "titulo": { "type": "string", "minLength": 10 },
+          "ementa": { "type": ["string", "null"], "minLength": 20, "description": "Ementa oficial do ato, transcrita da publicação oficial; null quando o ato não tem ementa (Constituição). Para pareceres do CNE, que não trazem ementa, o campo ASSUNTO do cabeçalho do parecer, transcrito literalmente." },
+          "url_oficial": { "type": "string", "pattern": "^https://[a-z0-9.-]+\\.gov\\.br/" },
+          "nota": { "type": "string", "description": "Comentário do projeto: o que o ato significa para a educação básica e para este dataset. Nunca é texto normativo." },
+          "relaciona": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "entidade": {
+                  "oneOf": [
+                    { "$ref": "definicoes.json#/$defs/id_slug" },
+                    { "enum": ["EI", "EF", "EM"] }
+                  ]
+                },
+                "natureza": { "enum": ["fundamenta", "fundamenta_destaque", "institui", "abrange", "altera", "diretrizes", "complementa"] }
+              },
+              "required": ["entidade", "natureza"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["id", "tipo", "titulo", "ementa", "url_oficial", "relaciona"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["marcos_legais"],
+  "additionalProperties": false
+}
