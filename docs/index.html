@@ -4,30 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airam Veras — Ecossistema Educacional & Psicométrico 2026 (Mira Showcase)</title>
+    <title>Airam Veras Analytics 2026 — Mira Animator Showcase & UX</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- D3.js v7 CDN -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- D3.js v7 CDN (Mandatory for Mira Animator) -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        /* ============================================================
-           MIRA THEME: mira-neon-blue (Inspirado no Mira Animator)
-           Paleta de alto contraste, Glassmorphism, stage 16:9 D3.js
-           ============================================================ */
         :root {
-            --mira-primary: #3b82f6;
-            --mira-primary-glow: rgba(59, 130, 246, 0.35);
-            --mira-accent: #10b981;
-            --mira-accent-purple: #8b5cf6;
-            --mira-bg: #070a12;
-            --mira-card-bg: rgba(15, 23, 42, 0.75);
+            --mira-bg: #030712;
+            --mira-card-bg: rgba(15, 23, 42, 0.80);
             --mira-card-border: rgba(255, 255, 255, 0.08);
-            --mira-stage-glow: rgba(59, 130, 246, 0.08);
+            --mira-stage-glow: rgba(59, 130, 246, 0.12);
             --mira-pill-bg: rgba(255, 255, 255, 0.04);
             --mira-pill-border: rgba(255, 255, 255, 0.10);
         }
@@ -43,6 +41,18 @@
 
         .font-mono { font-family: 'JetBrains Mono', monospace; }
 
+        /* Canvas de Fundo Dinâmico Cósmico */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
         /* Barra de progresso Mira */
         #mira-progress {
             position: fixed;
@@ -50,25 +60,25 @@
             left: 0;
             height: 3px;
             width: 0%;
-            background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6);
+            background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6, #f59e0b);
             z-index: 100;
             transition: width 0.15s ease-out;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
         }
 
         /* Glassmorphism Cards */
         .glass-card {
             background: var(--mira-card-bg);
-            backdrop-filter: blur(14px);
+            backdrop-filter: blur(16px);
             border: 1px solid var(--mira-card-border);
-            box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.45);
+            box-shadow: 0 14px 40px 0 rgba(0, 0, 0, 0.5);
             border-radius: 1rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            box-shadow: 0 20px 48px 0 rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.35);
+            box-shadow: 0 20px 48px 0 rgba(59, 130, 246, 0.18);
         }
 
         .icon-hero {
@@ -106,7 +116,7 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             background: radial-gradient(circle at 50% 50%, var(--mira-stage-glow), transparent 75%);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 0.875rem;
             overflow: hidden;
             position: relative;
@@ -118,31 +128,100 @@
             height: 100%;
         }
 
-        .replay-btn {
+        .stage-controls {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            z-index: 20;
+            top: 12px;
+            right: 12px;
+            z-index: 25;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stage-btn {
             background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #cbd5e1;
             border-radius: 9999px;
-            padding: 5px 12px;
-            font-size: 0.75rem;
+            padding: 5px 11px;
+            font-size: 0.70rem;
             font-weight: 600;
             cursor: pointer;
             backdrop-filter: blur(8px);
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
 
-        .replay-btn:hover {
+        .stage-btn:hover {
             background: #1e293b;
             color: #ffffff;
             border-color: #3b82f6;
-            transform: scale(1.05);
+            transform: scale(1.04);
+        }
+
+        .stage-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #60a5fa;
+        }
+
+        /* Navegador Lateral de Bolinhas (Scroll-Spy) */
+        #mira-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mira-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .mira-dot:hover {
+            background: #60a5fa;
+            transform: scale(1.3);
+        }
+
+        .mira-dot.active {
+            background: #3b82f6;
+            border-color: #93c5fd;
+            box-shadow: 0 0 10px #3b82f6;
+            transform: scale(1.4);
+        }
+
+        .mira-dot .dot-label {
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .mira-dot:hover .dot-label {
+            opacity: 1;
         }
 
         /* Botão Flutuante de Avanço Mira */
@@ -183,43 +262,78 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 80px 24px;
+            padding: 90px 24px 60px 24px;
             position: relative;
             box-sizing: border-box;
+            z-index: 10;
+        }
+
+        /* Tooltip D3 */
+        .d3-tooltip {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #f8fafc;
+            font-size: 11px;
+            pointer-events: none;
+            z-index: 30;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0;
+            transition: opacity 0.15s ease;
         }
     </style>
 </head>
 
 <body>
+    <!-- Background Canvas (Constelação de Partículas) -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Top Progress Bar -->
     <div id="mira-progress"></div>
+
+    <!-- Navegador Lateral de Bolinhas (Scroll-Spy) -->
+    <nav id="mira-dots">
+        <div class="mira-dot active" onclick="goToSlide(0)"><span class="dot-label">01. Coorte Censitária</span></div>
+        <div class="mira-dot" onclick="goToSlide(1)"><span class="dot-label">02. Metas A e B</span></div>
+        <div class="mira-dot" onclick="goToSlide(2)"><span class="dot-label">03. Grafo Curricular</span></div>
+        <div class="mira-dot" onclick="goToSlide(3)"><span class="dot-label">04. Manejos CIDs (AEE)</span></div>
+        <div class="mira-dot" onclick="goToSlide(4)"><span class="dot-label">05. Cadeia de Markov</span></div>
+        <div class="mira-dot" onclick="goToSlide(5)"><span class="dot-label">06. Hub Ecossistema</span></div>
+    </nav>
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-card mx-auto max-w-7xl mt-4 px-6 py-3 flex items-center justify-between border border-slate-800">
         <div class="flex items-center space-x-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-sm">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-emerald-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-sm">
                 AV
             </div>
             <div>
                 <span class="text-sm font-bold text-white tracking-tight flex items-center gap-2">
                     Airam Veras Analytics 2026
-                    <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">Mira Showcase</span>
+                    <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">Mira Showcase 2.0</span>
                 </span>
             </div>
         </div>
 
-        <div class="flex items-center space-x-3 text-xs">
+        <div class="flex items-center space-x-2.5 text-xs">
+            <!-- Botão de Áudio Efeitos Sonoros -->
+            <button id="audio-toggle" onclick="toggleAudio()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5 font-mono" title="Ativar/Desativar Efeitos Sonoros Web Audio">
+                <i data-lucide="volume-x" id="audio-icon" class="w-3.5 h-3.5 text-slate-400"></i> Som: OFF
+            </button>
             <a href="dashboard.html" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/30">
                 <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Abrir Dashboard SPA
             </a>
-            <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
-                <i data-lucide="github" class="w-4 h-4"></i> GitHub Repo
+            <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+                <i data-lucide="github" class="w-4 h-4"></i> GitHub
             </a>
         </div>
     </header>
 
     <!-- ================================================================= -->
-    <!-- SLIDE 1: HERO / ABERTURA DO ECOSSISTEMA                           -->
+    <!-- SLIDE 1: HERO / COORTE EM ÓRBITA                                  -->
     <!-- ================================================================= -->
     <section class="mira-slide" id="slide-hero">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -245,26 +359,42 @@
                 </div>
             </div>
 
-            <!-- Palco D3.js: Partículas Vivas do Censo e Conexões da Escola -->
+            <!-- Palco D3.js: Coorte Interativa de Estudantes -->
             <div class="lg:col-span-7">
                 <div class="anim-stage glass-card" id="stage-hero">
-                    <button class="replay-btn" onclick="window.__replayHero()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                    <div class="stage-controls">
+                        <button class="stage-btn active" id="btn-speed-1" onclick="setHeroSpeed(1)">1x</button>
+                        <button class="stage-btn" id="btn-speed-2" onclick="setHeroSpeed(2)">2x</button>
+                        <button class="stage-btn" onclick="window.__replayHero()"><i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reiniciar</button>
+                    </div>
+                    <div class="d3-tooltip" id="tooltip-hero"></div>
                 </div>
-                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Coorte de 172 estudantes orbitando competências curriculares.</p>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Passe o cursor sobre os 172 estudantes orbitando a Escola Airam Veras para inspecionar seus dados psicométricos.</p>
             </div>
         </div>
     </section>
 
     <!-- ================================================================= -->
-    <!-- SLIDE 2: DIAGNÓSTICO DAS METAS A E B                              -->
+    <!-- SLIDE 2: DIAGNÓSTICO DAS METAS A E B COM SIMULADOR WHAT-IF        -->
     <!-- ================================================================= -->
     <section class="mira-slide" id="slide-metas">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 order-2 lg:order-1">
                 <div class="anim-stage glass-card" id="stage-metas">
-                    <button class="replay-btn" onclick="window.__replayMetas()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                    <div class="stage-controls">
+                        <button class="stage-btn active" id="btn-comp-lp" onclick="setMetasComp('lp')">Língua Portuguesa</button>
+                        <button class="stage-btn" id="btn-comp-mat" onclick="setMetasComp('mat')">Matemática</button>
+                        <button class="stage-btn" onclick="window.__replayMetas()"><i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reiniciar</button>
+                    </div>
                 </div>
-                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Confronto dinâmico dos 1º ao 5º anos contra a linha de corte de 80%.</p>
+                <!-- Controle Deslizante Interativo What-If -->
+                <div class="mt-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+                        <span>🎚️ Simulação What-If (Ganho Pedagógico):</span>
+                        <span id="slider-val-label" class="font-mono text-emerald-400 font-bold">+0 acertos</span>
+                    </div>
+                    <input type="range" id="whatif-slider" min="0" max="5" step="1" value="0" oninput="onWhatIfSlide(this.value)" class="w-48 accent-emerald-500 cursor-pointer">
+                </div>
             </div>
 
             <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
@@ -291,11 +421,11 @@
 
                 <div class="grid grid-cols-2 gap-3 pt-2">
                     <div class="p-3 rounded-xl glass-card text-center">
-                        <div class="text-2xl font-black text-blue-400 font-mono">56.4%</div>
+                        <div class="text-2xl font-black text-blue-400 font-mono" id="stat-adequacao">56.4%</div>
                         <div class="text-[11px] text-slate-400">Adequação Média Escola</div>
                     </div>
                     <div class="p-3 rounded-xl glass-card text-center">
-                        <div class="text-2xl font-black text-emerald-400 font-mono">41.8%</div>
+                        <div class="text-2xl font-black text-emerald-400 font-mono" id="stat-metab">41.8%</div>
                         <div class="text-[11px] text-slate-400">Taxa Geral da Meta B</div>
                     </div>
                 </div>
@@ -326,7 +456,7 @@
                     A<sub>curr</sub> = B · B<sup>T</sup> (Pesos normalizados por grau)
                 </div>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Descritores críticos como <code>3EF06_M</code> e <code>4EF07_M</code> propagam evidência de aprendizagem para habilidades adjacentes da BNCC, preservando as ressalvas semânticas oficiais.
+                    Clique em qualquer nó do CAEd no palco para ver as conexões com as habilidades da BNCC se acenderem com feixe luminoso.
                 </p>
                 <div class="flex gap-2">
                     <span class="attribute-pill">1.460 Descritores CAEd</span>
@@ -336,23 +466,40 @@
 
             <div class="lg:col-span-7">
                 <div class="anim-stage glass-card" id="stage-grafo">
-                    <button class="replay-btn" onclick="window.__replayGrafo()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                    <div class="stage-controls">
+                        <button class="stage-btn" onclick="window.__replayGrafo()"><i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reiniciar</button>
+                    </div>
+                    <!-- Painel HUD de Detalhes Curriculares -->
+                    <div id="grafo-hud" class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs font-mono hidden">
+                        <div class="flex justify-between text-emerald-400 font-bold mb-1">
+                            <span id="hud-caed">Descritor: 3EF06_M</span>
+                            <span id="hud-bncc">BNCC: EF03MA05</span>
+                        </div>
+                        <div id="hud-desc" class="text-slate-300 text-[11px]">Adição e subtração com reagrupamento no sistema de numeração decimal.</div>
+                    </div>
                 </div>
-                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Grafo de força com partículas viajando em loop entre descritores e BNCC.</p>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique nos nós de avaliação para inspecionar os vínculos pedagógicos.</p>
             </div>
         </div>
     </section>
 
     <!-- ================================================================= -->
-    <!-- SLIDE 4: ACESSIBILIDADE E PROTOCOLO TOD (PBS)                     -->
+    <!-- SLIDE 4: MATRIZ DE MANEJOS CLÍNICOS POR CID (INCLUSÃO AEE)        -->
     <!-- ================================================================= -->
     <section class="mira-slide" id="slide-tod">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-7 order-2 lg:order-1">
                 <div class="anim-stage glass-card" id="stage-tod">
-                    <button class="replay-btn" onclick="window.__replayTod()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                    <!-- Botões de Seletor dos CIDs no Palco D3 -->
+                    <div class="stage-controls">
+                        <button class="stage-btn active" id="btn-cid-tod" onclick="selectCidMode('tod')">TOD (F91.3)</button>
+                        <button class="stage-btn" id="btn-cid-tdah" onclick="selectCidMode('tdah')">TDAH (F90.0)</button>
+                        <button class="stage-btn" id="btn-cid-tea" onclick="selectCidMode('tea')">TEA (F84.0)</button>
+                        <button class="stage-btn" id="btn-cid-dislexia" onclick="selectCidMode('dislexia')">Dislexia (R48)</button>
+                        <button class="stage-btn" id="btn-cid-pc" onclick="selectCidMode('pc')">PC / CAA (G80)</button>
+                    </div>
                 </div>
-                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Metáfora da Escolha Controlada e Desescalada Comportamental.</p>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2" id="cid-stage-caption">Metáfora da Escolha Controlada: Apresentação de alternativas válidas pré-aprovadas.</p>
             </div>
 
             <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
@@ -432,9 +579,12 @@
 
             <div class="lg:col-span-7">
                 <div class="anim-stage glass-card" id="stage-markov">
-                    <button class="replay-btn" onclick="window.__replayMarkov()"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar</button>
+                    <div class="stage-controls">
+                        <button class="stage-btn active" id="btn-run-sim" onclick="runMonteCarloSim()"><i data-lucide="play" class="w-3 h-3"></i> Lançar Simulação (50 Alunos)</button>
+                        <button class="stage-btn" onclick="window.__replayMarkov()"><i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reiniciar</button>
+                    </div>
                 </div>
-                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Animação D3.js programática: Fluxo de partículas migrando continuamente entre os 4 níveis de desempenho.</p>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique em 'Lançar Simulação' para observar a migração estocástica real dos estudantes entre os níveis de aprendizagem.</p>
             </div>
         </div>
     </section>
@@ -485,24 +635,150 @@
                 </a>
             </div>
 
-            <div class="pt-6 font-mono text-xs text-slate-500">
-                Pressione <kbd class="px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">F</kbd> para tela cheia | 
-                <kbd class="px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">↓ / →</kbd> para próximo slide
+            <div class="pt-6 font-mono text-xs text-slate-500 flex flex-wrap justify-center items-center gap-3">
+                <span>Navegação: <kbd class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">← / →</kbd></span>
+                <span>Tela Cheia: <kbd class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">F</kbd></span>
+                <span>Áudio: <kbd class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">M</kbd></span>
+                <button onclick="goToSlide(0)" class="text-blue-400 hover:underline ml-2">Reiniciar Apresentação ↺</button>
             </div>
         </div>
     </section>
 
     <!-- Floating Next Button -->
-    <button id="mira-next" title="Próximo Slide">
+    <button id="mira-next" title="Próximo Slide" onclick="advanceSlide()">
         <i data-lucide="chevron-down" id="mira-next-icon" class="w-6 h-6"></i>
     </button>
 
     <!-- ================================================================= -->
-    <!-- D3.JS ANIMATION SCRIPTS (MIRA PHILOSOPHY: MANDATORY INTERNAL LOOP) -->
+    <!-- D3.JS ANIMATION SCRIPTS (MIRA PHILOSOPHY: LOOPS INTERNOS VIVOS)   -->
     <!-- ================================================================= -->
     <script>
         lucide.createIcons();
 
+        // -------------------------------------------------------------
+        // WEB AUDIO FX MINIMALISTA E SUTIL (SEM DEPENDÊNCIAS EXTERNAS)
+        // -------------------------------------------------------------
+        const AudioFX = {
+            ctx: null,
+            enabled: false,
+            init() {
+                if (!this.ctx && typeof AudioContext !== 'undefined') {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            },
+            playTone(freq, type = 'sine', duration = 0.12, gainVal = 0.04) {
+                if (!this.enabled) return;
+                this.init();
+                if (!this.ctx) return;
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(gainVal, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e) {}
+            },
+            slide() { this.playTone(587.33, 'sine', 0.15, 0.03); },
+            click() { this.playTone(880, 'sine', 0.07, 0.02); },
+            celebrate() {
+                [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
+                    setTimeout(() => this.playTone(f, 'triangle', 0.22, 0.04), i * 90);
+                });
+            }
+        };
+
+        function toggleAudio() {
+            AudioFX.enabled = !AudioFX.enabled;
+            const btn = document.getElementById('audio-toggle');
+            const icon = document.getElementById('audio-icon');
+            if (AudioFX.enabled) {
+                AudioFX.init();
+                btn.innerHTML = `<i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-400"></i> Som: ON`;
+                btn.classList.add('border-emerald-500/50', 'text-emerald-300');
+                AudioFX.click();
+            } else {
+                btn.innerHTML = `<i data-lucide="volume-x" class="w-3.5 h-3.5 text-slate-400"></i> Som: OFF`;
+                btn.classList.remove('border-emerald-500/50', 'text-emerald-300');
+            }
+            lucide.createIcons();
+        }
+
+        // -------------------------------------------------------------
+        // CANVAS DE FUNDO: CONSTELAÇÃO CÓSMICA DE PARTÍCULAS
+        // -------------------------------------------------------------
+        (function initBgCanvas() {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const numDots = Math.min(50, Math.floor(window.innerWidth / 30));
+            const dots = d3.range(numDots).map(() => ({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                r: Math.random() * 1.5 + 0.8
+            }));
+
+            let mouseX = -1000, mouseY = -1000;
+            window.addEventListener('mousemove', e => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function renderBg() {
+                ctx.clearRect(0, 0, w, h);
+                dots.forEach(d => {
+                    d.x += d.vx;
+                    d.y += d.vy;
+                    if (d.x < 0 || d.x > w) d.vx *= -1;
+                    if (d.y < 0 || d.y > h) d.vy *= -1;
+
+                    // Atração do mouse suave
+                    const dx = mouseX - d.x;
+                    const dy = mouseY - d.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 140) {
+                        d.x += (dx / dist) * 0.3;
+                        d.y += (dy / dist) * 0.3;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
+                    ctx.fill();
+                });
+
+                // Linhas entre nós próximos
+                for (let i = 0; i < dots.length; i++) {
+                    for (let j = i + 1; j < dots.length; j++) {
+                        const dist = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
+                        if (dist < 110) {
+                            ctx.beginPath();
+                            ctx.moveTo(dots[i].x, dots[i].y);
+                            ctx.lineTo(dots[j].x, dots[j].y);
+                            ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 110)})`;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(renderBg);
+            }
+            renderBg();
+        })();
+
+        // Cores da Identidade Visual Mira
         const PRIMARY = "#3b82f6";
         const ACCENT_EMERALD = "#10b981";
         const ACCENT_PURPLE = "#8b5cf6";
@@ -510,21 +786,30 @@
         const W = 960, H = 540;
 
         // -------------------------------------------------------------
-        // ANIMAÇÃO 1: HERO / COORTE DE ESTUDANTES EM ÓRBITA
+        // ANIMAÇÃO 1: HERO / COORTE DE ESTUDANTES EM ÓRBITA & GRAVIDADE
         // -------------------------------------------------------------
+        let heroSpeedMultiplier = 1;
+        function setHeroSpeed(val) {
+            heroSpeedMultiplier = val;
+            document.getElementById('btn-speed-1').classList.toggle('active', val === 1);
+            document.getElementById('btn-speed-2').classList.toggle('active', val === 2);
+            AudioFX.click();
+        }
+
         (function() {
             const svg = d3.select("#stage-hero").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
             const cx = W / 2, cy = H / 2;
+            const tooltip = d3.select("#tooltip-hero");
 
             // Anéis orbitais
-            [100, 160, 220].forEach((r, i) => {
+            [110, 170, 230].forEach((r, i) => {
                 svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", r)
                     .attr("fill", "none").attr("stroke", "rgba(255,255,255,0.06)").attr("stroke-dasharray", "4,6");
             });
 
             // Centro: Escola Airam Veras
             const centerG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
-            centerG.append("circle").attr("r", 38).attr("fill", "rgba(59, 130, 246, 0.15)")
+            centerG.append("circle").attr("r", 40).attr("fill", "rgba(59, 130, 246, 0.15)")
                 .attr("stroke", PRIMARY).attr("stroke-width", 2.5)
                 .style("filter", `drop-shadow(0 0 16px ${PRIMARY})`);
             centerG.append("text").text("AIRAM").attr("text-anchor", "middle").attr("dy", -3)
@@ -532,107 +817,179 @@
             centerG.append("text").text("VERAS").attr("text-anchor", "middle").attr("dy", 12)
                 .attr("fill", "#60a5fa").attr("font-size", 10).attr("font-weight", 700);
 
-            // Estudantes orbitando (Partículas D3)
-            const numParticles = 24;
-            const particlesData = d3.range(numParticles).map(i => ({
-                id: i,
-                radius: 100 + (i % 3) * 60,
-                speed: 0.0008 + (i % 4) * 0.0004,
-                angle: (i / numParticles) * 2 * Math.PI,
-                size: 4 + (i % 3) * 2.5,
-                color: i % 7 === 0 ? ACCENT_PURPLE : (i % 2 === 0 ? PRIMARY : ACCENT_EMERALD)
-            }));
+            // Estudantes orbitando (32 partículas representando os 172 da coorte)
+            const numParticles = 32;
+            const particlesData = d3.range(numParticles).map(i => {
+                const isAEE = i % 7 === 0;
+                return {
+                    id: i,
+                    hashId: `aluno_${(i * 13 + 7).toString(16).padStart(4, '0')}...`,
+                    turma: `${(i % 5) + 1}º Ano`,
+                    proficiencia: (160 + (i * 7.5) % 180).toFixed(1),
+                    radius: 110 + (i % 3) * 60,
+                    baseSpeed: 0.0006 + (i % 4) * 0.0003,
+                    angle: (i / numParticles) * 2 * Math.PI,
+                    size: isAEE ? 6 : (4 + (i % 3) * 1.5),
+                    color: isAEE ? ACCENT_PURPLE : (i % 2 === 0 ? PRIMARY : ACCENT_EMERALD),
+                    isAEE: isAEE
+                };
+            });
 
             const particles = svg.selectAll(".hero-particle")
                 .data(particlesData).enter().append("circle")
                 .attr("class", "hero-particle")
                 .attr("r", d => d.size)
                 .attr("fill", d => d.color)
-                .style("filter", d => `drop-shadow(0 0 6px ${d.color})`);
-
-            function loopHero() {
-                d3.timer(elapsed => {
-                    particles.each(function(d) {
-                        const currentAngle = d.angle + elapsed * d.speed;
-                        const x = cx + Math.cos(currentAngle) * d.radius;
-                        const y = cy + Math.sin(currentAngle) * d.radius;
-                        d3.select(this).attr("cx", x).attr("cy", y);
-                    });
+                .style("cursor", "pointer")
+                .style("filter", d => `drop-shadow(0 0 6px ${d.color})`)
+                .on("mouseenter", function(event, d) {
+                    d3.select(this).transition().duration(150).attr("r", d.size * 1.8);
+                    tooltip.style("opacity", 1)
+                        .html(`<strong>Estudante ID:</strong> ${d.hashId}<br><strong>Turma:</strong> ${d.turma}<br><strong>SPAECE:</strong> ${d.proficiencia} pts<br><strong>Status:</strong> ${d.isAEE ? 'AEE (PDI Ativo)' : 'Regular'}`);
+                    AudioFX.click();
+                })
+                .on("mousemove", function(event) {
+                    const rect = document.getElementById('stage-hero').getBoundingClientRect();
+                    tooltip.style("left", (event.clientX - rect.left + 15) + "px")
+                           .style("top", (event.clientY - rect.top - 20) + "px");
+                })
+                .on("mouseleave", function(event, d) {
+                    d3.select(this).transition().duration(200).attr("r", d.size);
+                    tooltip.style("opacity", 0);
                 });
-            }
-            loopHero();
-            window.__replayHero = () => loopHero();
+
+            let elapsedAcc = 0;
+            let lastT = 0;
+            d3.timer(t => {
+                const dt = t - lastT;
+                lastT = t;
+                elapsedAcc += dt * heroSpeedMultiplier;
+                particles.each(function(d) {
+                    const currentAngle = d.angle + elapsedAcc * d.baseSpeed;
+                    const x = cx + Math.cos(currentAngle) * d.radius;
+                    const y = cy + Math.sin(currentAngle) * d.radius;
+                    d3.select(this).attr("cx", x).attr("cy", y);
+                });
+            });
+
+            window.__replayHero = () => {
+                elapsedAcc = 0;
+                AudioFX.click();
+            };
         })();
 
         // -------------------------------------------------------------
-        // ANIMAÇÃO 2: METAS A E B (BARRAS VIVAS & LINHA DE CORTE 80%)
+        // ANIMAÇÃO 2: METAS A E B + SIMULADOR WHAT-IF
         // -------------------------------------------------------------
+        let currentMetasComp = 'lp';
+        let whatIfGain = 0;
+
+        const baseMetas = {
+            lp: [
+                { ano: "1º Ano", val: 41.7 },
+                { ano: "2º Ano", val: 52.3 },
+                { ano: "3º Ano", val: 56.2 },
+                { ano: "4º Ano", val: 47.6 },
+                { ano: "5º Ano", val: 84.9 }
+            ],
+            mat: [
+                { ano: "1º Ano", val: 45.8 },
+                { ano: "2º Ano", val: 50.0 },
+                { ano: "3º Ano", val: 53.1 },
+                { ano: "4º Ano", val: 38.1 },
+                { ano: "5º Ano", val: 79.2 }
+            ]
+        };
+
+        let updateMetasVisual = () => {};
+
         (function() {
             const svg = d3.select("#stage-metas").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
-            const dataMetas = [
-                { ano: "1º Ano", lp: 41.7, mat: 45.8 },
-                { ano: "2º Ano", lp: 52.3, mat: 50.0 },
-                { ano: "3º Ano", lp: 56.2, mat: 53.1 },
-                { ano: "4º Ano", lp: 47.6, mat: 38.1 },
-                { ano: "5º Ano", lp: 84.9, mat: 79.2 }
-            ];
-
             const margin = { top: 70, right: 60, bottom: 80, left: 80 };
             const innerW = W - margin.left - margin.right;
             const innerH = H - margin.top - margin.bottom;
 
             const g = svg.append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-            const x0 = d3.scaleBand().domain(dataMetas.map(d => d.ano)).range([0, innerW]).padding(0.35);
-            const x1 = d3.scaleBand().domain(["lp", "mat"]).range([0, x0.bandwidth()]).padding(0.1);
+            const x = d3.scaleBand().domain(["1º Ano", "2º Ano", "3º Ano", "4º Ano", "5º Ano"]).range([0, innerW]).padding(0.4);
             const y = d3.scaleLinear().domain([0, 100]).range([innerH, 0]);
 
             // Linha de corte da Meta A (80%)
-            const line80 = g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", y(80)).attr("y2", y(80))
-                .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2).attr("stroke-dasharray", "6,6");
+            g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", y(80)).attr("y2", y(80))
+                .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2.5).attr("stroke-dasharray", "6,6");
             g.append("text").attr("x", innerW - 10).attr("y", y(80) - 8).attr("text-anchor", "end")
                 .attr("fill", ACCENT_EMERALD).attr("font-size", 12).attr("font-weight", 800)
                 .text("LINHA DE CORTE META A (80%)");
 
-            // Barras animadas
-            function animateBars() {
-                g.selectAll(".bar-group").remove();
-                const groups = g.selectAll(".bar-group").data(dataMetas).enter().append("g")
-                    .attr("class", "bar-group")
-                    .attr("transform", d => `translate(${x0(d.ano)}, 0)`);
+            // Eixo X
+            g.append("g").attr("transform", `translate(0, ${innerH})`)
+                .call(d3.axisBottom(x).tickSize(0))
+                .selectAll("text").attr("fill", "#94a3b8").attr("font-size", 13).attr("dy", 15);
+            g.selectAll(".domain").attr("stroke", "rgba(255,255,255,0.1)");
 
-                // LP Bar
-                groups.append("rect")
-                    .attr("x", x1("lp"))
+            updateMetasVisual = function() {
+                const data = baseMetas[currentMetasComp].map(d => ({
+                    ano: d.ano,
+                    val: Math.min(100, d.val + whatIfGain * 7.5)
+                }));
+
+                const bars = g.selectAll(".meta-bar").data(data, d => d.ano);
+                const labels = g.selectAll(".meta-label").data(data, d => d.ano);
+
+                bars.enter().append("rect")
+                    .attr("class", "meta-bar")
+                    .attr("x", d => x(d.ano))
                     .attr("y", innerH)
-                    .attr("width", x1.bandwidth())
+                    .attr("width", x.bandwidth())
                     .attr("height", 0)
-                    .attr("fill", PRIMARY)
-                    .attr("rx", 5)
-                    .transition().duration(1200).delay((d, i) => i * 150)
-                    .attr("y", d => y(d.lp))
-                    .attr("height", d => innerH - y(d.lp));
+                    .attr("rx", 6)
+                    .merge(bars)
+                    .transition().duration(600).ease(d3.easeCubicOut)
+                    .attr("y", d => y(d.val))
+                    .attr("height", d => innerH - y(d.val))
+                    .attr("fill", d => d.val >= 80 ? ACCENT_EMERALD : (currentMetasComp === 'lp' ? PRIMARY : ACCENT_AMBER));
 
-                // MAT Bar
-                groups.append("rect")
-                    .attr("x", x1("mat"))
-                    .attr("y", innerH)
-                    .attr("width", x1.bandwidth())
-                    .attr("height", 0)
-                    .attr("fill", "rgba(16, 185, 129, 0.85)")
-                    .attr("rx", 5)
-                    .transition().duration(1200).delay((d, i) => i * 150 + 80)
-                    .attr("y", d => y(d.mat))
-                    .attr("height", d => innerH - y(d.mat));
+                labels.enter().append("text")
+                    .attr("class", "meta-label")
+                    .attr("text-anchor", "middle")
+                    .attr("font-weight", 800)
+                    .attr("font-size", 12)
+                    .merge(labels)
+                    .transition().duration(600)
+                    .attr("x", d => x(d.ano) + x.bandwidth() / 2)
+                    .attr("y", d => y(d.val) - 8)
+                    .attr("fill", d => d.val >= 80 ? ACCENT_EMERALD : "#f8fafc")
+                    .text(d => `${d.val.toFixed(1)}%`);
 
-                // X Labels
-                groups.append("text").attr("x", x0.bandwidth() / 2).attr("y", innerH + 30)
-                    .attr("text-anchor", "middle").attr("fill", "#94a3b8").attr("font-size", 13).attr("font-weight", 600)
-                    .text(d => d.ano);
-            }
-            animateBars();
-            window.__replayMetas = () => animateBars();
+                // Recalcula média geral
+                const avg = d3.mean(data, d => d.val);
+                document.getElementById('stat-adequacao').innerText = `${avg.toFixed(1)}%`;
+                if (whatIfGain > 0 && data.filter(d => d.val >= 80).length >= 4) {
+                    AudioFX.celebrate();
+                }
+            };
+            updateMetasVisual();
+            window.__replayMetas = () => {
+                whatIfGain = 0;
+                document.getElementById('whatif-slider').value = 0;
+                document.getElementById('slider-val-label').innerText = "+0 acertos";
+                updateMetasVisual();
+                AudioFX.click();
+            };
         })();
+
+        function setMetasComp(comp) {
+            currentMetasComp = comp;
+            document.getElementById('btn-comp-lp').classList.toggle('active', comp === 'lp');
+            document.getElementById('btn-comp-mat').classList.toggle('active', comp === 'mat');
+            updateMetasVisual();
+            AudioFX.click();
+        }
+
+        function onWhatIfSlide(val) {
+            whatIfGain = parseInt(val);
+            document.getElementById('slider-val-label').innerText = `+${val} acertos`;
+            updateMetasVisual();
+        }
 
         // -------------------------------------------------------------
         // ANIMAÇÃO 3: GRAFO CURRICULAR BIPARTIDO CAEd ➔ BNCC
@@ -641,16 +998,16 @@
             const svg = d3.select("#stage-grafo").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
 
             const nodesCAEd = [
-                { id: "3EF01_P", label: "3EF01 (Letras)", y: 120 },
-                { id: "3EF06_M", label: "3EF06 (Soma)", y: 220 },
-                { id: "3EF09_M", label: "3EF09 (Multiplicação)", y: 320 },
-                { id: "4EF07_M", label: "4EF07 (Frações)", y: 420 }
+                { id: "3EF01_P", label: "3EF01 (Letras e Grafemas)", desc: "Reconhecimento e escrita correta de grafemas complexos.", bncc: "EF03LP01", y: 120 },
+                { id: "3EF06_M", label: "3EF06 (Adição e Reserva)", desc: "Operações no campo aditivo com reagrupamento no QVL.", bncc: "EF03MA05", y: 220 },
+                { id: "3EF09_M", label: "3EF09 (Multiplicação)", desc: "Cálculo mental e algoritmos da multiplicação por 2 e 3.", bncc: "EF03MA05", y: 320 },
+                { id: "4EF07_M", label: "4EF07 (Frações Unitárias)", desc: "Compreensão de partes de um todo e reta numérica.", bncc: "EF04MA02", y: 420 }
             ];
 
             const nodesBNCC = [
-                { id: "EF03LP01", label: "BNCC EF03LP01", y: 150 },
-                { id: "EF03MA05", label: "BNCC EF03MA05", y: 270 },
-                { id: "EF04MA02", label: "BNCC EF04MA02", y: 390 }
+                { id: "EF03LP01", label: "BNCC EF03LP01 (Ortografia)", y: 150 },
+                { id: "EF03MA05", label: "BNCC EF03MA05 (Cálculo Aditivo)", y: 270 },
+                { id: "EF04MA02", label: "BNCC EF04MA02 (Frações)", y: 390 }
             ];
 
             const links = [
@@ -660,11 +1017,11 @@
                 { source: nodesCAEd[3], target: nodesBNCC[2] }
             ];
 
-            const xCAEd = 200, xBNCC = 760;
+            const xCAEd = 220, xBNCC = 740;
 
             // Linhas
-            links.forEach(l => {
-                svg.append("line").attr("x1", xCAEd).attr("y1", l.source.y).attr("x2", xBNCC).attr("y2", l.target.y)
+            const linkElements = links.map(l => {
+                return svg.append("line").attr("x1", xCAEd).attr("y1", l.source.y).attr("x2", xBNCC).attr("y2", l.target.y)
                     .attr("stroke", "rgba(255,255,255,0.12)").attr("stroke-width", 2);
             });
 
@@ -683,14 +1040,24 @@
                 travelEdge();
             });
 
-            // Nós CAEd
+            // Nós CAEd interativos
             nodesCAEd.forEach(n => {
-                const g = svg.append("g").attr("transform", `translate(${xCAEd}, ${n.y})`);
-                g.append("circle").attr("r", 24).attr("fill", "#0f172a").attr("stroke", PRIMARY).attr("stroke-width", 2.5);
+                const g = svg.append("g").attr("transform", `translate(${xCAEd}, ${n.y})`).style("cursor", "pointer");
+                const circle = g.append("circle").attr("r", 25).attr("fill", "#0f172a").attr("stroke", PRIMARY).attr("stroke-width", 2.5);
                 g.append("text").text("CAEd").attr("text-anchor", "middle").attr("dy", 4)
                     .attr("fill", PRIMARY).attr("font-size", 10).attr("font-weight", 800);
                 g.append("text").text(n.label).attr("text-anchor", "end").attr("dx", -35).attr("dy", 4)
                     .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+
+                g.on("click", () => {
+                    circle.transition().duration(150).attr("r", 30).transition().duration(200).attr("r", 25);
+                    const hud = document.getElementById('grafo-hud');
+                    hud.classList.remove('hidden');
+                    document.getElementById('hud-caed').innerText = `Descritor CAEd: ${n.id}`;
+                    document.getElementById('hud-bncc').innerText = `Habilidade Vinculada: ${n.bncc}`;
+                    document.getElementById('hud-desc').innerText = n.desc;
+                    AudioFX.click();
+                });
             });
 
             // Nós BNCC
@@ -703,67 +1070,152 @@
                     .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
             });
 
-            window.__replayGrafo = () => {};
+            window.__replayGrafo = () => {
+                document.getElementById('grafo-hud').classList.add('hidden');
+                AudioFX.click();
+            };
         })();
 
         // -------------------------------------------------------------
-        // ANIMAÇÃO 4: METÁFORA VISUAL TOD (ESCOLHA CONTROLADA)
+        // ANIMAÇÃO 4: MATRIZ DE MANEJOS CLÍNICOS POR CID
         // -------------------------------------------------------------
+        let currentCidMode = 'tod';
+        let renderCidAnimation = () => {};
+
+        function selectCidMode(mode) {
+            currentCidMode = mode;
+            ['tod', 'tdah', 'tea', 'dislexia', 'pc'].forEach(m => {
+                const btn = document.getElementById(`btn-cid-${m}`);
+                if (btn) btn.classList.toggle('active', m === mode);
+            });
+            renderCidAnimation();
+            AudioFX.click();
+        }
+
         (function() {
             const svg = d3.select("#stage-tod").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
             const cx = W / 2, cy = H / 2;
 
-            // Círculo Central do Aluno
-            const alunoG = svg.append("g").attr("transform", `translate(${cx - 180}, ${cy})`);
-            alunoG.append("circle").attr("r", 40).attr("fill", "rgba(139, 92, 246, 0.2)")
-                .attr("stroke", ACCENT_PURPLE).attr("stroke-width", 3)
-                .style("filter", `drop-shadow(0 0 16px ${ACCENT_PURPLE})`);
-            alunoG.append("text").text("ALUNO").attr("text-anchor", "middle").attr("dy", -2)
-                .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 800);
-            alunoG.append("text").text("TOD / F91.3").attr("text-anchor", "middle").attr("dy", 14)
-                .attr("fill", "#c084fc").attr("font-size", 9).attr("font-weight", 700);
+            renderCidAnimation = function() {
+                svg.selectAll("*").remove();
 
-            // Duas Opções Válidas (Escolha Controlada)
-            const opcoes = [
-                { title: "Opção A: Iniciar por Leitura", y: cy - 90, color: PRIMARY },
-                { title: "Opção B: Iniciar por Desenho/Cálculo", y: cy + 90, color: ACCENT_EMERALD }
-            ];
+                if (currentCidMode === 'tod') {
+                    // Metáfora: Escolha Controlada e Desescalada
+                    document.getElementById('cid-stage-caption').innerText = "TOD (F91.3): Metáfora da Escolha Controlada. Duas alternativas legítimas sem confronto público.";
+                    
+                    const alunoG = svg.append("g").attr("transform", `translate(${cx - 180}, ${cy})`);
+                    alunoG.append("circle").attr("r", 40).attr("fill", "rgba(139, 92, 246, 0.2)")
+                        .attr("stroke", ACCENT_PURPLE).attr("stroke-width", 3)
+                        .style("filter", `drop-shadow(0 0 16px ${ACCENT_PURPLE})`);
+                    alunoG.append("text").text("ALUNO").attr("text-anchor", "middle").attr("dy", -2)
+                        .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 800);
+                    alunoG.append("text").text("TOD / F91.3").attr("text-anchor", "middle").attr("dy", 14)
+                        .attr("fill", "#c084fc").attr("font-size", 9).attr("font-weight", 700);
 
-            opcoes.forEach(op => {
-                const g = svg.append("g").attr("transform", `translate(${cx + 160}, ${op.y})`);
-                g.append("rect").attr("x", -120).attr("y", -28).attr("width", 240).attr("height", 56)
-                    .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", op.color).attr("stroke-width", 2);
-                g.append("text").text(op.title).attr("text-anchor", "middle").attr("dy", 5)
-                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+                    const opcoes = [
+                        { title: "Opção 1: Iniciar por Leitura", y: cy - 90, color: PRIMARY },
+                        { title: "Opção 2: Iniciar por Geometria", y: cy + 90, color: ACCENT_EMERALD }
+                    ];
 
-                // Linhas conectoras
-                svg.append("path")
-                    .attr("d", `M ${cx - 140} ${cy} C ${cx} ${cy}, ${cx + 40} ${op.y}, ${cx + 40} ${op.y}`)
-                    .attr("fill", "none").attr("stroke", op.color).attr("stroke-width", 2).attr("stroke-dasharray", "4,4");
-            });
+                    opcoes.forEach(op => {
+                        const g = svg.append("g").attr("transform", `translate(${cx + 160}, ${op.y})`);
+                        g.append("rect").attr("x", -130).attr("y", -28).attr("width", 260).attr("height", 56)
+                            .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", op.color).attr("stroke-width", 2);
+                        g.append("text").text(op.title).attr("text-anchor", "middle").attr("dy", 5)
+                            .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
 
-            // Partícula de decisão navegando (Loop suave)
-            const pDecisao = svg.append("circle").attr("r", 7).attr("fill", "#ffffff")
-                .style("filter", "drop-shadow(0 0 10px #ffffff)");
+                        svg.append("path")
+                            .attr("d", `M ${cx - 140} ${cy} C ${cx} ${cy}, ${cx + 30} ${op.y}, ${cx + 30} ${op.y}`)
+                            .attr("fill", "none").attr("stroke", op.color).attr("stroke-width", 2).attr("stroke-dasharray", "4,4");
+                    });
 
-            function loopEscolha() {
-                pDecisao.attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
-                    .transition().duration(1800).ease(d3.easeCubicOut)
-                    .attr("cx", cx + 40).attr("cy", opcoes[0].y)
-                    .transition().duration(600).attr("opacity", 0)
-                    .transition().duration(100)
-                    .attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
-                    .transition().duration(1800).ease(d3.easeCubicOut)
-                    .attr("cx", cx + 40).attr("cy", opcoes[1].y)
-                    .transition().duration(600).attr("opacity", 0)
-                    .on("end", loopEscolha);
-            }
-            loopEscolha();
-            window.__replayTod = () => loopEscolha();
+                    const p = svg.append("circle").attr("r", 7).attr("fill", "#ffffff")
+                        .style("filter", "drop-shadow(0 0 10px #ffffff)");
+
+                    function loopEscolha() {
+                        p.attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+                            .transition().duration(1600).ease(d3.easeCubicOut)
+                            .attr("cx", cx + 30).attr("cy", opcoes[0].y)
+                            .transition().duration(500).attr("opacity", 0)
+                            .transition().duration(100)
+                            .attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+                            .transition().duration(1600).ease(d3.easeCubicOut)
+                            .attr("cx", cx + 30).attr("cy", opcoes[1].y)
+                            .transition().duration(500).attr("opacity", 0)
+                            .on("end", loopEscolha);
+                    }
+                    loopEscolha();
+
+                } else if (currentCidMode === 'tdah') {
+                    // Metáfora: Cronômetro de Foco 20m + Pausa Ativa (Lei 14.254)
+                    document.getElementById('cid-stage-caption').innerText = "TDAH (F90.0): Cronômetro Neuroexecutivo. Ciclos de foco de 20 min com pausas ativas e provas fracionadas.";
+
+                    const clockG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+                    clockG.append("circle").attr("r", 90).attr("fill", "rgba(245, 158, 11, 0.1)")
+                        .attr("stroke", ACCENT_AMBER).attr("stroke-width", 3).attr("stroke-dasharray", "8,8");
+
+                    clockG.append("text").text("FOCO: 20 MIN").attr("text-anchor", "middle").attr("dy", -10)
+                        .attr("fill", "#ffffff").attr("font-size", 14).attr("font-weight", 800);
+                    clockG.append("text").text("PAUSA ATIVA MANDATÓRIA").attr("text-anchor", "middle").attr("dy", 15)
+                        .attr("fill", ACCENT_AMBER).attr("font-size", 10).attr("font-weight", 700);
+
+                    // Ponteiro giratório
+                    const hand = clockG.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", -70)
+                        .attr("stroke", "#ffffff").attr("stroke-width", 3).attr("stroke-linecap", "round");
+
+                    function rotateHand() {
+                        hand.transition().duration(3000).ease(d3.easeLinear)
+                            .attrTween("transform", () => d3.interpolateString("rotate(0)", "rotate(360)"))
+                            .on("end", rotateHand);
+                    }
+                    rotateHand();
+
+                } else if (currentCidMode === 'tea') {
+                    // Metáfora: Previsibilidade Visual TEACCH + Escudo Sensorial (Lei 12.764)
+                    document.getElementById('cid-stage-caption').innerText = "TEA (F84.0): Rotina Visual Estruturada TEACCH, tempo estendido (+50%) e sala de baixo ruído.";
+
+                    const steps = ["1. Acolhimento", "2. Bloco A (+50% Tempo)", "3. Pausa Sensorial", "4. Conclusão"];
+                    steps.forEach((st, i) => {
+                        const xPos = 140 + i * 190;
+                        const g = svg.append("g").attr("transform", `translate(${xPos}, ${cy})`);
+                        g.append("rect").attr("x", -80).attr("y", -35).attr("width", 160).attr("height", 70)
+                            .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", "#38bdf8").attr("stroke-width", 2);
+                        g.append("text").text(st).attr("text-anchor", "middle").attr("dy", 5)
+                            .attr("fill", "#ffffff").attr("font-size", 11).attr("font-weight", 700);
+                    });
+
+                } else if (currentCidMode === 'dislexia') {
+                    // Metáfora: Ledor e Transcritor Oficial + Tipografia OpenDyslexic (Lei 14.254)
+                    document.getElementById('cid-stage-caption').innerText = "Dislexia (R48): Ledor e transcritor oficial com tipografia ampliada e calculadora liberada.";
+
+                    const g = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+                    g.append("rect").attr("x", -240).attr("y", -60).attr("width", 480).attr("height", 120)
+                        .attr("rx", 12).attr("fill", "rgba(15, 23, 42, 0.95)").attr("stroke", PRIMARY).attr("stroke-width", 2);
+                    g.append("text").text("LEITURA MEDIADA POR LEDOR OFICIAL").attr("text-anchor", "middle").attr("dy", -15)
+                        .attr("fill", PRIMARY).attr("font-size", 13).attr("font-weight", 800);
+                    g.append("text").text("Sem penalização ortográfica | Material Concreto Liberado").attr("text-anchor", "middle").attr("dy", 15)
+                        .attr("fill", "#94a3b8").attr("font-size", 11);
+
+                } else if (currentCidMode === 'pc') {
+                    // Metáfora: Tecnologia Assistiva e Prancha CAA (LBI Art. 74)
+                    document.getElementById('cid-stage-caption').innerText = "Paralisia Cerebral (G80): Prancha de Comunicação Alternativa (CAA) e apontamento mediado.";
+
+                    const g = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+                    g.append("circle").attr("r", 70).attr("fill", "rgba(16, 185, 129, 0.15)")
+                        .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 3);
+                    g.append("text").text("PRANCHA CAA").attr("text-anchor", "middle").attr("dy", -5)
+                        .attr("fill", "#ffffff").attr("font-size", 13).attr("font-weight", 800);
+                    g.append("text").text("TECNOLOGIA ASSISTIVA").attr("text-anchor", "middle").attr("dy", 15)
+                        .attr("fill", ACCENT_EMERALD).attr("font-size", 9).attr("font-weight", 700);
+                }
+            };
+
+            renderCidAnimation();
+            window.__replayTod = () => renderCidAnimation();
         })();
 
         // -------------------------------------------------------------
-        // ANIMAÇÃO 5: CADEIA DE MARKOV (TRANSIÇÃO ENTRE NÍVEIS)
+        // ANIMAÇÃO 5: CADEIA DE MARKOV & SIMULADOR MONTE CARLO
         // -------------------------------------------------------------
         (function() {
             const svg = d3.select("#stage-markov").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
@@ -775,101 +1227,127 @@
                 { id: "AV", label: "Avançado", x: 840, y: H / 2, color: "#10b981" }
             ];
 
-            // Arestas de transição Markov
+            // Linhas de transição
             for (let i = 0; i < estados.length - 1; i++) {
                 svg.append("line").attr("x1", estados[i].x).attr("y1", H / 2).attr("x2", estados[i + 1].x).attr("y2", H / 2)
-                    .attr("stroke", "rgba(255,255,255,0.15)").attr("stroke-width", 2);
+                    .attr("stroke", "rgba(255,255,255,0.15)").attr("stroke-width", 2.5);
             }
 
-            // Partículas fluindo ao longo da cadeia de Markov
-            const numFluxo = 12;
-            for (let k = 0; k < numFluxo; k++) {
-                const p = svg.append("circle").attr("r", 5).attr("fill", "#60a5fa")
-                    .style("filter", "drop-shadow(0 0 6px #60a5fa)");
-
-                function flow() {
-                    const dur = 3200 + Math.random() * 800;
-                    p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 1)
-                        .transition().duration(dur).ease(d3.easeCubicInOut)
-                        .attr("cx", estados[3].x)
-                        .transition().duration(200).attr("opacity", 0)
-                        .on("end", flow);
-                }
-                setTimeout(flow, k * 350);
-            }
-
-            // Renderizar Nós de Estado
+            // Nós dos estados
             estados.forEach(e => {
                 const g = svg.append("g").attr("transform", `translate(${e.x}, ${e.y})`);
-                g.append("circle").attr("r", 36).attr("fill", "#0f172a").attr("stroke", e.color).attr("stroke-width", 3)
-                    .style("filter", `drop-shadow(0 0 10px ${e.color})`);
-                g.append("text").text(e.id).attr("text-anchor", "middle").attr("dy", 5)
+                g.append("circle").attr("r", 38).attr("fill", "#0f172a").attr("stroke", e.color).attr("stroke-width", 3)
+                    .style("filter", `drop-shadow(0 0 12px ${e.color})`);
+                g.append("text").text(e.id).attr("text-anchor", "middle").attr("dy", -3)
                     .attr("fill", e.color).attr("font-size", 14).attr("font-weight", 900);
-                g.append("text").text(e.label).attr("text-anchor", "middle").attr("dy", 60)
-                    .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+                g.append("text").text(e.label).attr("text-anchor", "middle").attr("dy", 15)
+                    .attr("fill", "#ffffff").attr("font-size", 9).attr("font-weight", 600);
             });
 
-            window.__replayMarkov = () => {};
+            // Simulação Monte Carlo Interativa
+            window.runMonteCarloSim = function() {
+                AudioFX.click();
+                const numAlunos = 40;
+                for (let i = 0; i < numAlunos; i++) {
+                    const p = svg.append("circle").attr("r", 4.5).attr("fill", "#ffffff")
+                        .style("filter", "drop-shadow(0 0 8px #60a5fa)");
+
+                    const targetIdx = Math.random() < 0.25 ? 1 : (Math.random() < 0.65 ? 2 : 3);
+                    const destX = estados[targetIdx].x;
+
+                    p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 1)
+                        .transition().delay(i * 60).duration(1800 + Math.random() * 800).ease(d3.easeCubicInOut)
+                        .attr("cx", destX)
+                        .transition().duration(400).attr("opacity", 0)
+                        .remove();
+                }
+            };
+
+            // Loop de fundo
+            function backgroundFlow() {
+                for (let k = 0; k < 8; k++) {
+                    const p = svg.append("circle").attr("r", 4).attr("fill", "#60a5fa").attr("opacity", 0.7);
+                    function flow() {
+                        p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 0.8)
+                            .transition().duration(3200 + Math.random() * 600).ease(d3.easeCubicInOut)
+                            .attr("cx", estados[3].x)
+                            .transition().duration(200).attr("opacity", 0)
+                            .on("end", flow);
+                    }
+                    setTimeout(flow, k * 400);
+                }
+            }
+            backgroundFlow();
+
+            window.__replayMarkov = () => {
+                window.runMonteCarloSim();
+            };
         })();
 
         // -------------------------------------------------------------
-        // NAVEGAÇÃO ENTRE SLIDES (CONTROLE TECLADO & SCROLL MIRA)
+        // NAVEGAÇÃO ENTRE SLIDES, PROGRESSO E ATALHOS DE TECLADO
         // -------------------------------------------------------------
         const slides = Array.from(document.querySelectorAll('section.mira-slide'));
+        const dots = Array.from(document.querySelectorAll('.mira-dot'));
         const progressBar = document.getElementById('mira-progress');
         const nextBtn = document.getElementById('mira-next');
-        const nextIcon = document.getElementById('mira-next-icon');
+        let currentSlideIdx = 0;
 
-        function getCurrentSlideIndex() {
-            const y = window.scrollY + window.innerHeight * 0.35;
-            let idx = 0;
-            for (let i = 0; i < slides.length; i++) {
-                if (slides[i].offsetTop <= y) idx = i;
-            }
-            return idx;
-        }
+        function updateProgress() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = `${progress}%`;
 
-        function goToSlide(i) {
-            const target = Math.max(0, Math.min(slides.length - 1, i));
-            slides[target].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+            // Detecta slide ativo para scroll-spy
+            slides.forEach((sl, idx) => {
+                const rect = sl.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= window.innerHeight * 0.45) {
+                    currentSlideIdx = idx;
+                    dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+                }
+            });
 
-        window.addEventListener('scroll', () => {
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const pct = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-            progressBar.style.width = pct + '%';
-
-            const atEnd = (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
-            nextBtn.classList.toggle('visible', window.scrollY > 150);
-            nextIcon.setAttribute('data-lucide', atEnd ? 'chevron-up' : 'chevron-down');
-            lucide.createIcons();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            const atEnd = (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 50);
-            if (atEnd) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (currentSlideIdx < slides.length - 1) {
+                nextBtn.classList.add('visible');
             } else {
-                goToSlide(getCurrentSlideIndex() + 1);
+                nextBtn.classList.remove('visible');
             }
-        });
+        }
 
-        document.addEventListener('keydown', e => {
-            if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key)) {
+        window.addEventListener('scroll', updateProgress);
+
+        function goToSlide(idx) {
+            if (idx >= 0 && idx < slides.length) {
+                slides[idx].scrollIntoView({ behavior: 'smooth' });
+                AudioFX.slide();
+            }
+        }
+
+        function advanceSlide() {
+            if (currentSlideIdx < slides.length - 1) {
+                goToSlide(currentSlideIdx + 1);
+            }
+        }
+
+        // Atalhos de Teclado
+        window.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
                 e.preventDefault();
-                goToSlide(getCurrentSlideIndex() + 1);
-            } else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) {
+                advanceSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
                 e.preventDefault();
-                goToSlide(getCurrentSlideIndex() - 1);
-            } else if (e.key === 'Home') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (e.key === 'End') {
-                e.preventDefault();
-                goToSlide(slides.length - 1);
+                if (currentSlideIdx > 0) goToSlide(currentSlideIdx - 1);
             } else if (e.key.toLowerCase() === 'f') {
-                if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-                else document.exitFullscreen();
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(() => {});
+                } else {
+                    document.exitFullscreen().catch(() => {});
+                }
+            } else if (e.key.toLowerCase() === 'm') {
+                toggleAudio();
+            } else if (e.key >= '1' && e.key <= '6') {
+                goToSlide(parseInt(e.key) - 1);
             }
         });
     </script>
