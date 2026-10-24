@@ -1,0 +1,41 @@
+{
+  "versao_schema": "airam-t10-adendo-entrega-v3",
+  "status": "DONE_WITH_CONCERNS",
+  "timestamp": "2026-10-24T21:46:23+00:00",
+  "motivo": "O controlador atualizou o texto do recibo de inspecao visual final apos nova conferencia; o manifesto 02 conserva o hash da versao anterior. Esta divergencia de metadados nao corresponde a alteracao das fontes, do codigo ou do XLSX.",
+  "manifesto_anterior": {
+    "caminho": "evidencias/T10/entrega-final02.json",
+    "sha256": "b5700aa2f0071d9e37f91c27909752a11a97b2ce10c977d26c114999e41aa51b",
+    "preservado_sem_alteracao": true
+  },
+  "inspecao_visual_final": {
+    "caminho": ".superpowers/sdd/implementation-plan/inspecao-nativa-artificial-t10-final.md",
+    "sha256_referenciado_no_manifesto_02": "a83f1cfad7c5ae4b661ebcbc75b06319727da7a7e3c6936a3a6d794d89a2806d",
+    "sha256_atual": "0843a96b65908a82a33f849ab0d650251fa46676acb3fe1eab4c4cd72387ca5f",
+    "escopo": "Tres recortes finais de Grupos e borda direita da Intervencao em copia inteiramente artificial; aprovacao visual somente no escopo observado, sem Microsoft Excel nativo ou dados nominais reais."
+  },
+  "saidas_inalteradas": {
+    "xlsx_canonico": {
+      "caminho": "restrito/outputs/01a16157-2a68-7253-9591-de126647cf53/intervencao-restrita.xlsx",
+      "sha256": "f9c95451710664eee94409e165689ecb6a6fd615463b30991e5b264b1c0ca666"
+    },
+    "previa_artificial": {
+      "caminho": "restrito/outputs/01a16157-2a68-7253-9591-de126647cf53/apresentacao03/previas-sinteticas/inspecao-artificial.xlsx",
+      "sha256": "00cb270aa5f070b575cfa0fd0efceaebeba591336804ea39b4e92b3680af5882"
+    },
+    "checkpoint_t11": {
+      "caminho": "restrito/t10/checkpoint.json",
+      "sha256": "c7bc7a8db72d46b082f61bf34fc16bbf88e2ac121a083c6b5157218384b1da58"
+    }
+  },
+  "recibos_preservados": {
+    "evidencias/T10/previa-segura-05-resultado.json": "2ee78e199e8293fb71354454b7d295aff1986558c7c818655b1ab59e59c9ad41",
+    "evidencias/T10/layout02-recibo.json": "0638836beeaabee9703dd0467a531ce95705b24f8c6d8341db6c6f4b6cb8b84b",
+    "evidencias/T10/invariancia03-recibo.json": "f10d3f9d1ff1bf48c8b84ea0c8107a6af25cd68c354760671133ad01b92cad0e",
+    "evidencias/T10/refinamento02-invariancia-resultado.json": "dee6d4f30b863593fc9cd542902618c99a4fdf6f1b5b5308ce6edecf9a0eb694",
+    "evidencias/T10/contraprova-final02-recibo.json": "07eb7807625f41b1ec6910ff85d88af4e552d6ac1c5eafe94f9c8fe612000e18",
+    "evidencias/T10/contraprova02-resultado.json": "21a251ad01f84acbdd966575e9f9efcd22637d4102d1b25fc30bc25c3013ad3c",
+    "evidencias/T10/suite06-recibo.json": "7f2747c83c90ac7353a1b5227d884433777818cfc279ffbf1441d594d570c3cb"
+  },
+  "limites": "Renderer Windows e Microsoft Excel nativo nao validados; ACL por contas escolares e validacao educacional externa pendentes. A coleta posterior dos ciclos II/III nao integra esta baseline do ciclo I."
+}

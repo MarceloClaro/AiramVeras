@@ -407,3 +407,81 @@ SELECT
 FROM rel_caed_bncc_grafo grafo
 JOIN dim_caed_descritores dcaed ON grafo.caed_descritor_id = dcaed.id
 JOIN dim_bncc_habilidades dbncc ON grafo.bncc_habilidade_id = dbncc.id;
+
+-- ============================================================================
+-- 9. MÓDULO DE BIOMARCADORES ESTATÍSTICOS, ALTAS HABILIDADES E TOPOLOGIA
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_biomarcadores_psicometricos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_biomarcador TEXT NOT NULL UNIQUE,
+    nome_biomarcador TEXT NOT NULL,
+    categoria_analitica TEXT NOT NULL,
+    notacao_matematica TEXT NOT NULL,
+    descricao_funcional TEXT NOT NULL,
+    interpretacao_clinico_pedagogica TEXT NOT NULL,
+    intervalo_normativo_referencia TEXT NOT NULL,
+    valor_obtido_airam_veras TEXT NOT NULL,
+    relevancia_achado_escola TEXT NOT NULL,
+    autor_fundamental TEXT NOT NULL,
+    ano_publicacao INTEGER NOT NULL,
+    doi_referencia TEXT NOT NULL,
+    referencia_bibliografica_abnt TEXT NOT NULL,
+    hash_auditoria_sha256 TEXT NOT NULL,
+    data_atualizacao TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS fato_rastreio_altas_habilidades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL UNIQUE,
+    ano_escolar INTEGER NOT NULL,
+    indice_global_eficiencia_cognitiva REAL NOT NULL,
+    score_senso_numerico REAL NOT NULL,
+    score_compreensao_inferencial REAL NOT NULL,
+    score_raciocinio_visuoespacial REAL NOT NULL,
+    score_funcoes_executivas REAL NOT NULL,
+    dominio_talento_predominante TEXT NOT NULL,
+    possui_dupla_excepcionalidade_2e BOOLEAN NOT NULL DEFAULT 0,
+    codigo_cid_comorbidade_2e TEXT,
+    tipo_enriquecimento_renzulli TEXT NOT NULL,
+    estrategias_compactacao_curricular TEXT NOT NULL,
+    indicacao_aceleracao_conteudo BOOLEAN NOT NULL DEFAULT 0,
+    hash_validacao_forense TEXT NOT NULL,
+    data_homologacao TEXT NOT NULL,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id)
+);
+
+CREATE TABLE IF NOT EXISTS dim_mapas_estruturais_processos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_processo TEXT NOT NULL UNIQUE,
+    nome_processo TEXT NOT NULL,
+    camada_arquitetura TEXT NOT NULL,
+    tabelas_origem TEXT NOT NULL,
+    tabelas_destino TEXT NOT NULL,
+    regras_transformacao_negocio TEXT NOT NULL,
+    frequencia_execucao TEXT NOT NULL,
+    mecanismo_auditoria_contraprova TEXT NOT NULL,
+    hash_especificacao_sha256 TEXT NOT NULL,
+    data_homologacao TEXT NOT NULL
+);
+
+-- Visão 5: Painel de Rastreio de Altas Habilidades e Dupla Excepcionalidade (2e)
+CREATE VIEW IF NOT EXISTS vw_rastreio_altas_habilidades_dupla_excepcionalidade AS
+SELECT 
+    ah.aluno_hash_id,
+    t.nome_turma,
+    ah.ano_escolar,
+    ah.indice_global_eficiencia_cognitiva AS igec,
+    ah.dominio_talento_predominante,
+    ah.possui_dupla_excepcionalidade_2e,
+    ah.codigo_cid_comorbidade_2e,
+    cid.nomenclatura_oficial AS comorbidade_nome,
+    ah.tipo_enriquecimento_renzulli,
+    ah.estrategias_compactacao_curricular,
+    ah.indicacao_aceleracao_conteudo,
+    ah.hash_validacao_forense
+FROM fato_rastreio_altas_habilidades ah
+JOIN dim_estudantes e ON ah.aluno_hash_id = e.aluno_hash_id
+JOIN dim_turmas t ON e.turma_id = t.id
+LEFT JOIN dim_cid_catalogo cid ON ah.codigo_cid_comorbidade_2e = cid.codigo_cid10;
+

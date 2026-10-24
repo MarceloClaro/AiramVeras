@@ -1,0 +1,21 @@
+ciclo_solicitado,ano_avaliacao_solicitado,escola_solicitada,codigo_escola_solicitado,ano_escolar_solicitado,componente_solicitado,status,ciclo_confirmado,escola_confirmada,ano_componente_confirmados,arquivo,sha256,disponibilidade,motivo
+III,2026,AIRAM VERAS ESC CID,23084995,1,LEITURA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,1,MATEMATICA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,1,ESCRITA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,1,FLUENCIA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,2,LEITURA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,2,MATEMATICA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,2,ESCRITA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,2,FLUENCIA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,3,LEITURA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,3,MATEMATICA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,3,ESCRITA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,3,FLUENCIA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,4,LEITURA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,4,MATEMATICA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,4,ESCRITA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,4,FLUENCIA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,5,LEITURA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,5,MATEMATICA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,5,ESCRITA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface
+III,2026,AIRAM VERAS ESC CID,23084995,5,FLUENCIA,PENDENTE_VERIFICACAO_PORTAL,False,False,False,,,NAO_VERIFICADA,API oficial de navegador indisponivel antes da obtencao do estado da interface

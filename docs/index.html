@@ -498,6 +498,7 @@
                         <button class="stage-btn" id="btn-cid-tea" onclick="selectCidMode('tea')">TEA (F84.0)</button>
                         <button class="stage-btn" id="btn-cid-dislexia" onclick="selectCidMode('dislexia')">Dislexia (R48)</button>
                         <button class="stage-btn" id="btn-cid-pc" onclick="selectCidMode('pc')">PC / CAA (G80)</button>
+                        <button class="stage-btn" id="btn-cid-ahsd" onclick="selectCidMode('ahsd')">🌟 AH/SD (Z73.8)</button>
                     </div>
                 </div>
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2" id="cid-stage-caption">Metáfora da Escolha Controlada: Apresentação de alternativas válidas pré-aprovadas.</p>
@@ -627,13 +628,16 @@
                     <div class="flex justify-between text-amber-400">
                         <span>Correlação Vergnaud (Pearson r):</span> <strong>r = +0.979 (p = 9.0e-120)</strong>
                     </div>
+                    <div class="flex justify-between text-yellow-400">
+                        <span>Rastreio AH/SD (Renzulli):</span> <strong>12 Alunos (1 com 2e - F91.3)</strong>
+                    </div>
                 </div>
 
                 <!-- Seletor de Perfil do Radar D3 -->
                 <div class="flex flex-wrap gap-2 pt-1">
                     <button class="stage-btn active text-xs" id="btn-perfil-media" onclick="setPerfilRadar('media')">Média Geral Escola</button>
                     <button class="stage-btn text-xs" id="btn-perfil-rti3" onclick="setPerfilRadar('rti3')">RTI Camada 3 (AEE)</button>
-                    <button class="stage-btn text-xs" id="btn-perfil-avancado" onclick="setPerfilRadar('avancado')">Alta Performance</button>
+                    <button class="stage-btn text-xs" id="btn-perfil-avancado" onclick="setPerfilRadar('avancado')">🌟 AH/SD & Potencial Superior</button>
                 </div>
                 <div>
                     <a href="relatorio_bioestatistica_anova_fisher.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:underline font-mono">
@@ -1181,7 +1185,7 @@
 
         function selectCidMode(mode) {
             currentCidMode = mode;
-            ['tod', 'tdah', 'tea', 'dislexia', 'pc'].forEach(m => {
+            ['tod', 'tdah', 'tea', 'dislexia', 'pc', 'ahsd'].forEach(m => {
                 const btn = document.getElementById(`btn-cid-${m}`);
                 if (btn) btn.classList.toggle('active', m === mode);
             });
@@ -1304,6 +1308,31 @@
                         .attr("fill", "#ffffff").attr("font-size", 13).attr("font-weight", 800);
                     g.append("text").text("TECNOLOGIA ASSISTIVA").attr("text-anchor", "middle").attr("dy", 15)
                         .attr("fill", ACCENT_EMERALD).attr("font-size", 9).attr("font-weight", 700);
+
+                } else if (currentCidMode === 'ahsd') {
+                    // Metáfora: Modelo dos Três Anéis de Renzulli (Capacidade Superior + Criatividade + Comprometimento)
+                    document.getElementById('cid-stage-caption').innerText = "AH/SD (Z73.8): Modelo dos Três Anéis de Renzulli. Enriquecimento Triádico Tipo I, II e III, compactação curricular e suporte a 2e.";
+
+                    const rings = [
+                        { label: "Capacidade Superior", x: cx - 65, y: cy - 35, color: "#eab308" },
+                        { label: "Criatividade", x: cx + 65, y: cy - 35, color: "#f97316" },
+                        { label: "Comprometimento", x: cx, y: cy + 45, color: "#38bdf8" }
+                    ];
+
+                    rings.forEach(r => {
+                        svg.append("circle").attr("cx", r.x).attr("cy", r.y).attr("r", 75)
+                            .attr("fill", "rgba(15, 23, 42, 0.45)")
+                            .attr("stroke", r.color).attr("stroke-width", 2.5)
+                            .style("filter", `drop-shadow(0 0 10px ${r.color})`);
+                        svg.append("text").attr("x", r.x).attr("y", r.y).text(r.label)
+                            .attr("text-anchor", "middle").attr("dy", 4)
+                            .attr("fill", r.color).attr("font-size", 10).attr("font-weight", 800);
+                    });
+
+                    const centerG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+                    centerG.append("circle").attr("r", 25).attr("fill", "#fbbf24").style("filter", "drop-shadow(0 0 14px #fbbf24)");
+                    centerG.append("text").text("AH/SD").attr("text-anchor", "middle").attr("dy", 4)
+                        .attr("fill", "#0f172a").attr("font-size", 10).attr("font-weight", 900);
                 }
             };
 

@@ -434,6 +434,23 @@
                         ⚖️ Lei Federal 13.895/2019
                     </div>
                 </div>
+
+                <!-- 9. Superdotação e Altas Habilidades (AH/SD) / Dupla Excepcionalidade -->
+                <div class="glass-panel p-5 rounded-2xl border border-yellow-500/40 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-300 font-mono">Z73.8 | MB23.8</span>
+                            <span class="text-[10px] uppercase font-bold text-yellow-400">Potencial Superior & 2e</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-2">Altas Habilidades / Superdotação (AH/SD)</h3>
+                        <p class="text-[11px] text-slate-300 leading-relaxed mb-3">
+                            <strong>Manejo:</strong> Enriquecimento Triádico de Renzulli (Tipos I, II e III). Compactação curricular para eliminar redundâncias e tédio. Prevenção de dissinfonia idade vs intelecto. Suporte especial a <strong>Dupla Excepcionalidade (2e)</strong> (ex: AH/SD + TOD/TDAH).
+                        </p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-800 text-[10px] text-yellow-400 font-semibold">
+                        ⚖️ Lei Federal 13.234/2015 | LDB Art. 59-A
+                    </div>
+                </div>
             </div>
 
             <!-- Tabela Interativa de Alunos Laudados com Filtros de Manejo -->
@@ -441,7 +458,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div>
                         <h3 class="text-base font-bold text-white">Prontuário Individualizado de AEE & Acomodações Mandatórias</h3>
-                        <p class="text-xs text-slate-400">24 estudantes atendidos com PDI ativo e diretrizes clínicas parametrizadas.</p>
+                        <p class="text-xs text-slate-400">24 estudantes atendidos com PDI ativo e 12 rastreados em Altas Habilidades / Dupla Excepcionalidade.</p>
                     </div>
                     <!-- Filtros Rápidos por Grupo Diagnóstico -->
                     <div class="flex flex-wrap gap-1.5" id="aee-filter-buttons">
@@ -452,6 +469,7 @@
                         <button onclick="filterAee('dislexia')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="dislexia">Dislexia</button>
                         <button onclick="filterAee('neuro')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="neuro">Neurológico</button>
                         <button onclick="filterAee('cronica')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition aee-filter-btn" data-filter="cronica">Crônica</button>
+                        <button onclick="filterAee('ahsd')" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-yellow-300 transition aee-filter-btn border border-yellow-500/30" data-filter="ahsd">🌟 AH/SD & 2e</button>
                     </div>
                 </div>
 
@@ -700,6 +718,7 @@
             else if (aeeFiltroAtivo === 'dislexia') filtrados = filtrados.filter(a => a.cid10 === 'R48');
             else if (aeeFiltroAtivo === 'neuro') filtrados = filtrados.filter(a => a.cid10 === 'G40' || a.cid10 === 'G80');
             else if (aeeFiltroAtivo === 'cronica') filtrados = filtrados.filter(a => a.cid10 === 'E10');
+            else if (aeeFiltroAtivo === 'ahsd') filtrados = filtrados.filter(a => a.requer_manejo_tod_pbs === 1 || a.cid10 === 'F91.3' || (a.fundamentacao_legal && a.fundamentacao_legal.includes('13.234')));
 
             filtrados.forEach(a => {
                 const tr = document.createElement('tr');
