@@ -301,7 +301,8 @@
         <div class="mira-dot" onclick="goToSlide(2)"><span class="dot-label">03. Grafo Curricular</span></div>
         <div class="mira-dot" onclick="goToSlide(3)"><span class="dot-label">04. Manejos CIDs (AEE)</span></div>
         <div class="mira-dot" onclick="goToSlide(4)"><span class="dot-label">05. Cadeia de Markov</span></div>
-        <div class="mira-dot" onclick="goToSlide(5)"><span class="dot-label">06. Hub Ecossistema</span></div>
+        <div class="mira-dot" onclick="goToSlide(5)"><span class="dot-label">06. Raio-X & Bioestatística</span></div>
+        <div class="mira-dot" onclick="goToSlide(6)"><span class="dot-label">07. Hub Ecossistema</span></div>
     </nav>
 
     <!-- Navigation Header -->
@@ -590,7 +591,72 @@
     </section>
 
     <!-- ================================================================= -->
-    <!-- SLIDE 6: HUB CENTRAL DO ECOSSISTEMA                               -->
+    <!-- SLIDE 6: RAIO-X NEUROCOGNITIVO & INFERÊNCIA BIOESTATÍSTICA        -->
+    <!-- ================================================================= -->
+    <section class="mira-slide" id="slide-raiox">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 space-y-5">
+                <div class="flex items-center gap-3">
+                    <div class="icon-hero" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #34d399;">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-mono font-bold text-emerald-400">Modelo CHC & Bioestatística</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Raio-X Cognitivo & Inferência</h2>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    Mapeamento de 7 domínios neuropsicológicos correlacionados a 1.460 descritores CAEd e validado por testes de significância (ANOVA, Fisher, t-Pareado e Cohen's d).
+                </p>
+
+                <!-- Tabela de Inferência Bioestatística -->
+                <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-[11px] space-y-1.5">
+                    <div class="text-slate-400 font-bold border-b border-slate-800 pb-1 flex justify-between">
+                        <span>TESTE BIOESTATÍSTICO</span><span>RESULTADO</span>
+                    </div>
+                    <div class="flex justify-between text-cyan-400">
+                        <span>ANOVA Séries (F):</span> <strong>F = 18.17 (p = 3.8e-14, η² = 0.103)</strong>
+                    </div>
+                    <div class="flex justify-between text-purple-400">
+                        <span>Teste Exato Fisher (AEE):</span> <strong>OR = 1.161 (IC 95%: 0.74 - 1.83)</strong>
+                    </div>
+                    <div class="flex justify-between text-emerald-400">
+                        <span>Ganho Longitudinal (t-Pareado):</span> <strong>t = 48.64 (d = 1.923, p &lt; 0.001)</strong>
+                    </div>
+                    <div class="flex justify-between text-amber-400">
+                        <span>Correlação Vergnaud (Pearson r):</span> <strong>r = +0.979 (p = 9.0e-120)</strong>
+                    </div>
+                </div>
+
+                <!-- Seletor de Perfil do Radar D3 -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                    <button class="stage-btn active text-xs" id="btn-perfil-media" onclick="setPerfilRadar('media')">Média Geral Escola</button>
+                    <button class="stage-btn text-xs" id="btn-perfil-rti3" onclick="setPerfilRadar('rti3')">RTI Camada 3 (AEE)</button>
+                    <button class="stage-btn text-xs" id="btn-perfil-avancado" onclick="setPerfilRadar('avancado')">Alta Performance</button>
+                </div>
+                <div>
+                    <a href="relatorio_bioestatistica_anova_fisher.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:underline font-mono">
+                        Abrir Dossiê Bioestatístico Completo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Palco D3.js: Gráfico Radar dos 7 Domínios Neurocognitivos -->
+            <div class="lg:col-span-7">
+                <div class="anim-stage glass-card" id="stage-radar">
+                    <div class="stage-controls">
+                        <span class="text-[11px] font-mono text-emerald-400 font-bold" id="radar-profile-label">Perfil: Média da Escola (74.2% Eficiência)</span>
+                        <button class="stage-btn" onclick="window.__replayRadar()"><i data-lucide="rotate-ccw" class="w-3 h-3"></i> Reiniciar</button>
+                    </div>
+                </div>
+                <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique nos botões à esquerda para transmutar em tempo real a geometria do radar dos 7 domínios neurocognitivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 7: HUB CENTRAL DO ECOSSISTEMA                               -->
     <!-- ================================================================= -->
     <section class="mira-slide" id="slide-hub">
         <div class="max-w-6xl mx-auto w-full text-center space-y-8">
@@ -1310,8 +1376,114 @@
             }
             backgroundFlow();
 
-            window.__replayMarkov = () => {
-                window.runMonteCarloSim();
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 6: GRÁFICO RADAR NEUROCOGNITIVO (7 DOMÍNIOS CHC)
+        // -------------------------------------------------------------
+        let currentPerfilRadar = 'media';
+        (function() {
+            const svg = d3.select("#stage-radar").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+            const cx = W / 2, cy = H / 2;
+            const radius = Math.min(W, H) * 0.38;
+
+            const dominios = [
+                "1. Memória & Atenção",
+                "2. Consciência Fonológica",
+                "3. Compreensão Inferencial",
+                "4. Senso Numérico",
+                "5. Resolução Problemas",
+                "6. Raciocínio Espacial",
+                "7. Funções Executivas"
+            ];
+            const numEixos = dominios.length;
+            const angleSlice = (Math.PI * 2) / numEixos;
+
+            // Perfis de dados (0 a 100%)
+            const perfisData = {
+                media: { label: "Perfil: Média da Escola (74.2% Eficiência)", vals: [74.5, 77.8, 80.2, 76.9, 78.5, 74.0, 70.8], color: "#10b981" },
+                rti3: { label: "Perfil: Aluno RTI Camada 3 / AEE (34.3% Crítico)", vals: [32.0, 28.5, 42.0, 35.0, 30.5, 48.0, 25.0], color: "#f43f5e" },
+                avancado: { label: "Perfil: Estudante Avançado (93.9% Destaque)", vals: [92.0, 95.0, 96.5, 94.0, 95.2, 90.0, 88.5], color: "#38bdf8" }
+            };
+
+            // Grade concêntrica (20%, 40%, 60%, 80%, 100%)
+            const levels = [0.2, 0.4, 0.6, 0.8, 1.0];
+            levels.forEach(lvl => {
+                const r = radius * lvl;
+                svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", r)
+                    .attr("fill", "none").attr("stroke", "rgba(255,255,255,0.07)").attr("stroke-dasharray", "3,3");
+                svg.append("text").attr("x", cx + 4).attr("y", cy - r - 2)
+                    .attr("fill", "rgba(255,255,255,0.25)").attr("font-size", 9).attr("font-family", "monospace")
+                    .text(`${Math.round(lvl * 100)}%`);
+            });
+
+            // Eixos radiais e rótulos
+            dominios.forEach((d, i) => {
+                const angle = i * angleSlice - Math.PI / 2;
+                const x2 = cx + radius * Math.cos(angle);
+                const y2 = cy + radius * Math.sin(angle);
+
+                svg.append("line").attr("x1", cx).attr("y1", cy).attr("x2", x2).attr("y2", y2)
+                    .attr("stroke", "rgba(255,255,255,0.12)").attr("stroke-width", 1.2);
+
+                const labelR = radius + 22;
+                const lx = cx + labelR * Math.cos(angle);
+                const ly = cy + labelR * Math.sin(angle);
+                const anchor = Math.abs(Math.cos(angle)) < 0.2 ? "middle" : (Math.cos(angle) > 0 ? "start" : "end");
+
+                svg.append("text").attr("x", lx).attr("y", ly + 4).attr("text-anchor", anchor)
+                    .attr("fill", "#cbd5e1").attr("font-size", 10.5).attr("font-weight", 600)
+                    .text(d);
+            });
+
+            // Polígono do radar
+            const radarPath = svg.append("path").attr("stroke-width", 2.5);
+            const dotsGroup = svg.append("g");
+
+            function updateRadar(perfilKey, duration = 800) {
+                const data = perfisData[perfilKey];
+                document.getElementById('radar-profile-label').innerText = data.label;
+                document.getElementById('radar-profile-label').style.color = data.color;
+
+                const coords = data.vals.map((v, i) => {
+                    const angle = i * angleSlice - Math.PI / 2;
+                    const r = radius * (v / 100.0);
+                    return [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
+                });
+
+                const lineGen = d3.line().curve(d3.curveLinearClosed);
+                const pathStr = lineGen(coords);
+
+                radarPath.transition().duration(duration).ease(d3.easeCubicOut)
+                    .attr("d", pathStr)
+                    .attr("fill", data.color)
+                    .attr("fill-opacity", 0.25)
+                    .attr("stroke", data.color)
+                    .style("filter", `drop-shadow(0 0 10px ${data.color})`);
+
+                // Atualizar pontos nos vértices
+                const dots = dotsGroup.selectAll("circle").data(coords);
+                dots.enter().append("circle").attr("r", 5)
+                    .merge(dots)
+                    .transition().duration(duration).ease(d3.easeCubicOut)
+                    .attr("cx", d => d[0]).attr("cy", d => d[1])
+                    .attr("fill", "#ffffff")
+                    .attr("stroke", data.color).attr("stroke-width", 2);
+                dots.exit().remove();
+            }
+
+            updateRadar('media', 0);
+
+            window.setPerfilRadar = function(tipo) {
+                currentPerfilRadar = tipo;
+                document.querySelectorAll('#slide-raiox .stage-btn').forEach(btn => btn.classList.remove('active'));
+                if (document.getElementById(`btn-perfil-${tipo}`)) {
+                    document.getElementById(`btn-perfil-${tipo}`).classList.add('active');
+                }
+                updateRadar(tipo, 750);
+                AudioFX.click();
+            };
+
+            window.__replayRadar = () => {
+                setPerfilRadar('media');
             };
         })();
 
