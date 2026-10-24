@@ -1,0 +1,402 @@
+-- ============================================================================
+-- PROJETO AIRAM VERAS — SCHEMA RELACIONAL CANÔNICO E AUDITÁVEL DO ECOSSISTEMA
+-- ============================================================================
+-- Banco de Dados: airam_veras_ecossistema.sqlite
+-- Compatibilidade: SQLite 3, PostgreSQL, Supabase, MySQL e Cloud SQL
+-- Padrão de Engenharia: 3FN (Terceira Forma Normal) com Views Desnormalizadas
+-- Padrão de Segurança: Zero-PII e Proteção de Dados Sensíveis de Saúde (LGPD)
+-- ============================================================================
+
+PRAGMA foreign_keys = ON;
+PRAGMA encoding = 'UTF-8';
+
+-- ============================================================================
+-- 1. MÓDULO DE GOVERNANÇA, PROVENIÊNCIA E AUDITORIA (LINEAGE)
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_fontes_auditaveis (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    caminho_relativo TEXT NOT NULL UNIQUE,
+    tipo_arquivo TEXT NOT NULL CHECK(tipo_arquivo IN ('CSV', 'ZIP', 'PDF', 'XLSX', 'SQLITE', 'JSON')),
+    sha256_hash TEXT NOT NULL,
+    tamanho_bytes INTEGER NOT NULL,
+    orgao_emissor TEXT NOT NULL, -- 'CAEd', 'MEC_CNCA', 'SEDUC_CE', 'BNCC_MEC'
+    ano_referencia INTEGER NOT NULL,
+    ciclo_avaliacao TEXT, -- 'I', 'II', 'III', 'HISTORICO'
+    data_extracao TEXT NOT NULL,
+    data_registro_utc TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS sys_trilha_auditoria (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp_utc TEXT NOT NULL DEFAULT (datetime('now')),
+    operacao TEXT NOT NULL CHECK(operacao IN ('INSERT', 'UPDATE', 'DELETE', 'CALCULO_PSICOMETRICO', 'INGESTAO', 'CONTRAPROVA')),
+    tabela_afetada TEXT NOT NULL,
+    id_registro_afetado TEXT,
+    agente_executor TEXT NOT NULL,
+    detalhes_operacao TEXT,
+    sha256_estado_apos TEXT
+);
+
+-- ============================================================================
+-- 2. MÓDULO INSTITUCIONAL, TURMAS E CENSO ESCOLAR
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_escola (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    inep_codigo TEXT NOT NULL UNIQUE,
+    nome_escola TEXT NOT NULL,
+    municipio TEXT NOT NULL DEFAULT 'Sobral',
+    uf TEXT NOT NULL DEFAULT 'CE',
+    dependencia_administrativa TEXT NOT NULL DEFAULT 'Municipal',
+    data_criacao_registro TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS dim_turmas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    turma_codigo TEXT NOT NULL UNIQUE,
+    ano_escolar INTEGER NOT NULL CHECK(ano_escolar BETWEEN 1 AND 5),
+    nome_turma TEXT NOT NULL,
+    turno TEXT NOT NULL DEFAULT 'Manhã',
+    ano_letivo INTEGER NOT NULL DEFAULT 2026,
+    escola_id INTEGER NOT NULL,
+    FOREIGN KEY (escola_id) REFERENCES dim_escola(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS dim_estudantes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL UNIQUE, -- HMAC-SHA256 determinístico (Zero-PII pública)
+    turma_id INTEGER NOT NULL,
+    ano_escolar INTEGER NOT NULL CHECK(ano_escolar BETWEEN 1 AND 5),
+    situacao_matricula TEXT NOT NULL DEFAULT 'Matriculado' CHECK(situacao_matricula IN ('Matriculado', 'Transferido', 'Evadido', 'Não Avaliado')),
+    possui_laudo_aee BOOLEAN NOT NULL DEFAULT 0,
+    data_cadastro_utc TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (turma_id) REFERENCES dim_turmas(id) ON DELETE RESTRICT
+);
+
+-- Tabela isolada restrita com nomes civis (acesso restrito autorizado / LGPD)
+CREATE TABLE IF NOT EXISTS dim_estudantes_nominal_restrito (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL UNIQUE,
+    nome_completo_criptografado TEXT NOT NULL,
+    data_nascimento TEXT,
+    matricula_institucional TEXT,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id) ON DELETE CASCADE
+);
+
+-- ============================================================================
+-- 3. MÓDULO DE EDUCAÇÃO ESPECIAL (AEE), CIDs E ACESSIBILIDADE AVALIATIVA
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_cid_catalogo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_cid10 TEXT NOT NULL,
+    codigo_cid11 TEXT NOT NULL,
+    grupo_diagnostico TEXT NOT NULL, -- 'TEA', 'TDAH', 'TOD', 'Transtorno Aprendizagem', 'Deficiencia Intelectual', 'Neurologico', 'Malformacao', 'Doenca Cronica'
+    nomenclatura_oficial TEXT NOT NULL,
+    impacto_avaliativo_resumo TEXT NOT NULL,
+    estrategias_manejo_recomendadas TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS fato_estudante_aee_perfil (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL UNIQUE,
+    cid_primario_id INTEGER NOT NULL,
+    cid_secundario_id INTEGER, -- Comorbidade (ex: F84.0 + F90.0 ou F91.3)
+    pdi_ativo BOOLEAN NOT NULL DEFAULT 1,
+    data_ultima_revisao_pdi TEXT,
+    terminalidade_especifica BOOLEAN NOT NULL DEFAULT 0,
+    -- Flags de recursos de acessibilidade mandatórios (LBI / Art. 28)
+    recurso_tempo_estendido_50pct BOOLEAN NOT NULL DEFAULT 0,
+    recurso_ledor_oficial BOOLEAN NOT NULL DEFAULT 0,
+    recurso_transcritor_oficial BOOLEAN NOT NULL DEFAULT 0,
+    recurso_ambiente_baixo_estimulo BOOLEAN NOT NULL DEFAULT 0,
+    recurso_pausas_ativas_fracionadas BOOLEAN NOT NULL DEFAULT 0,
+    recurso_tipografia_acessivel BOOLEAN NOT NULL DEFAULT 0,
+    recurso_material_concreto BOOLEAN NOT NULL DEFAULT 0,
+    recurso_prancha_comunicacao_caa BOOLEAN NOT NULL DEFAULT 0,
+    -- Protocolo comportamental específico
+    requer_manejo_tod_pbs BOOLEAN NOT NULL DEFAULT 0, -- Plano de Suporte Comportamental Positivo
+    observacoes_clinico_pedagogicas TEXT,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id) ON DELETE CASCADE,
+    FOREIGN KEY (cid_primario_id) REFERENCES dim_cid_catalogo(id) ON DELETE RESTRICT,
+    FOREIGN KEY (cid_secundario_id) REFERENCES dim_cid_catalogo(id) ON DELETE RESTRICT
+);
+
+-- ============================================================================
+-- 4. MÓDULO CURRICULAR: BNCC, CAEd, CNCA E SPAECE
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_bncc_habilidades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_bncc TEXT NOT NULL UNIQUE, -- 'EF01LP01', 'EF04MA02', 'EF03CI01', etc.
+    etapa TEXT NOT NULL, -- 'Ensino Fundamental'
+    ano_escolar INTEGER NOT NULL CHECK(ano_escolar BETWEEN 1 AND 5),
+    componente_curricular TEXT NOT NULL, -- 'Língua Portuguesa', 'Matemática', 'Ciências', 'Geografia', 'História', 'Arte', 'Educação Física', 'Computação'
+    unidade_tematica TEXT NOT NULL,
+    objeto_conhecimento TEXT NOT NULL,
+    descricao_habilidade TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dim_caed_descritores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_caed TEXT NOT NULL, -- '3EF09_P', '4EF07_M', etc.
+    ano_escolar INTEGER NOT NULL CHECK(ano_escolar BETWEEN 1 AND 5),
+    componente_curricular TEXT NOT NULL, -- 'LEITURA', 'MATEMATICA', 'ESCRITA', 'FLUENCIA'
+    descricao_descritor TEXT NOT NULL,
+    UNIQUE(codigo_caed, ano_escolar, componente_curricular)
+);
+
+CREATE TABLE IF NOT EXISTS dim_spaece_descritores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_spaece TEXT NOT NULL UNIQUE, -- 'D01', 'D12', etc.
+    componente_curricular TEXT NOT NULL,
+    etapa_ano TEXT NOT NULL,
+    descricao_descritor TEXT NOT NULL
+);
+
+-- Arestas do Grafo Curricular Bipartido: CAEd ➔ BNCC
+CREATE TABLE IF NOT EXISTS rel_caed_bncc_grafo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    caed_descritor_id INTEGER NOT NULL,
+    bncc_habilidade_id INTEGER NOT NULL,
+    ano_contextual INTEGER NOT NULL,
+    peso_aresta REAL NOT NULL DEFAULT 1.0, -- Normalizado por grau para propagação
+    tem_ressalva_semantica BOOLEAN NOT NULL DEFAULT 0,
+    descricao_ressalva TEXT,
+    FOREIGN KEY (caed_descritor_id) REFERENCES dim_caed_descritores(id) ON DELETE RESTRICT,
+    FOREIGN KEY (bncc_habilidade_id) REFERENCES dim_bncc_habilidades(id) ON DELETE RESTRICT,
+    UNIQUE(caed_descritor_id, bncc_habilidade_id, ano_contextual)
+);
+
+-- Correlação Interdisciplinar: Habilidades CAEd ➔ Ciências, Humanas, Artes e Computação
+CREATE TABLE IF NOT EXISTS rel_interdisciplinar_bncc (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    bncc_origem_id INTEGER NOT NULL, -- Habilidade LP ou Matemática
+    bncc_correlata_id INTEGER NOT NULL, -- Habilidade Ciências, Geografia, História, etc.
+    tipo_transferencia TEXT NOT NULL, -- 'Pré-requisito', 'Aplicação Prática', 'Pensamento Computacional', 'Semiótica'
+    justificativa_pedagogica TEXT NOT NULL,
+    FOREIGN KEY (bncc_origem_id) REFERENCES dim_bncc_habilidades(id) ON DELETE CASCADE,
+    FOREIGN KEY (bncc_correlata_id) REFERENCES dim_bncc_habilidades(id) ON DELETE CASCADE
+);
+
+-- ============================================================================
+-- 5. MÓDULO DE AVALIAÇÕES DIAGNÓSTICAS, RESPOSTAS E INSTRUMENTOS
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS dim_avaliacoes_cadernos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    avaliacao_codigo TEXT NOT NULL UNIQUE, -- 'AV12026', 'AV22026', 'AV32026'
+    ciclo TEXT NOT NULL CHECK(ciclo IN ('I', 'II', 'III')),
+    ano_letivo INTEGER NOT NULL DEFAULT 2026,
+    ano_escolar INTEGER NOT NULL CHECK(ano_escolar BETWEEN 1 AND 5),
+    componente_curricular TEXT NOT NULL CHECK(componente_curricular IN ('LEITURA', 'MATEMATICA', 'ESCRITA', 'FLUENCIA')),
+    total_itens_instrumento INTEGER NOT NULL DEFAULT 22,
+    alvo_meta_b INTEGER NOT NULL DEFAULT 18 -- 80% de 22 itens
+);
+
+CREATE TABLE IF NOT EXISTS fato_participacao_estudante (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL,
+    avaliacao_caderno_id INTEGER NOT NULL,
+    turma_id INTEGER NOT NULL,
+    status_participacao TEXT NOT NULL CHECK(status_participacao IN ('Avaliado', 'Ausente', 'Sem Resultado', 'Aplicação Mediada')),
+    houve_recusa_comportamental_tod BOOLEAN NOT NULL DEFAULT 0,
+    aplicacao_com_recursos_aee BOOLEAN NOT NULL DEFAULT 0,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id) ON DELETE RESTRICT,
+    FOREIGN KEY (avaliacao_caderno_id) REFERENCES dim_avaliacoes_cadernos(id) ON DELETE RESTRICT,
+    FOREIGN KEY (turma_id) REFERENCES dim_turmas(id) ON DELETE RESTRICT,
+    UNIQUE(aluno_hash_id, avaliacao_caderno_id)
+);
+
+CREATE TABLE IF NOT EXISTS fato_respostas_itens_habilidades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    participacao_id INTEGER NOT NULL,
+    posicao_bloco TEXT NOT NULL, -- 'H01', 'H02', etc.
+    caed_descritor_id INTEGER,
+    acertos INTEGER NOT NULL CHECK(acertos >= 0),
+    oportunidades INTEGER NOT NULL CHECK(oportunidades > 0),
+    FOREIGN KEY (participacao_id) REFERENCES fato_participacao_estudante(id) ON DELETE CASCADE,
+    FOREIGN KEY (caed_descritor_id) REFERENCES dim_caed_descritores(id) ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS fato_producao_escrita (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    participacao_id INTEGER NOT NULL UNIQUE,
+    nota_pontuacao REAL,
+    categoria_nivel TEXT, -- 'Nível 1' a 'Nível 4'
+    atendeu_proposta BOOLEAN,
+    adequacao_vocabular TEXT,
+    FOREIGN KEY (participacao_id) REFERENCES fato_participacao_estudante(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS fato_fluencia_leitora (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    participacao_id INTEGER NOT NULL UNIQUE,
+    palavras_lidas_minuto REAL,
+    pseudopalavras_lidas REAL,
+    precisao_leitura_pct REAL,
+    perfil_leitor TEXT CHECK(perfil_leitor IN ('Pré-Leitor', 'Leitor de Sílabas/Palavras', 'Leitor de Frases', 'Leitor de Texto sem Fluência', 'Leitor Fluente')),
+    FOREIGN KEY (participacao_id) REFERENCES fato_participacao_estudante(id) ON DELETE CASCADE
+);
+
+-- ============================================================================
+-- 6. MÓDULO PSICOMÉTRICO (TRI/TCT), METAS E INTERVENÇÃO DOCENTE
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS fato_escores_psicometricos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    participacao_id INTEGER NOT NULL UNIQUE,
+    -- Escore Aritmético Censitário
+    total_acertos INTEGER NOT NULL,
+    total_oportunidades INTEGER NOT NULL,
+    taxa_rendimento_ponderada REAL NOT NULL, -- ∑ Acertos / ∑ Oportunidades
+    -- Modelagem Psicométrica TRI / Rasch
+    theta_habilidade_latente REAL,
+    erro_padrao_theta REAL,
+    proficiencia_escala_spaece REAL, -- Escala 0 a 500
+    nivel_desempenho_caed TEXT NOT NULL CHECK(nivel_desempenho_caed IN ('Abaixo do Básico', 'Básico', 'Adequado', 'Avançado', 'Não Aplicável')),
+    -- Metas Institucionais
+    atingiu_meta_a_adequado BOOLEAN NOT NULL DEFAULT 0,
+    acertos_adicionais_para_meta_a INTEGER DEFAULT 0,
+    atingiu_meta_b_80pct BOOLEAN NOT NULL DEFAULT 0, -- Acertos >= 18
+    lacuna_meta_b INTEGER NOT NULL DEFAULT 0, -- max(0, 18 - acertos)
+    data_processamento TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (participacao_id) REFERENCES fato_participacao_estudante(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS dim_grupos_intervencao (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo_grupo TEXT NOT NULL UNIQUE, -- 'G1', 'G2', 'G3', 'G4'
+    nome_perfil TEXT NOT NULL,
+    descricao_clinico_pedagogica TEXT NOT NULL,
+    estrategias_didaticas_prioritarias TEXT NOT NULL,
+    frequencia_semanal_reforco_sugerida TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS fato_estudante_agrupamento (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    aluno_hash_id TEXT NOT NULL,
+    avaliacao_caderno_id INTEGER NOT NULL,
+    grupo_id INTEGER NOT NULL,
+    estabilidade_bootstrap_pct REAL NOT NULL DEFAULT 100.0,
+    FOREIGN KEY (aluno_hash_id) REFERENCES dim_estudantes(aluno_hash_id) ON DELETE CASCADE,
+    FOREIGN KEY (avaliacao_caderno_id) REFERENCES dim_avaliacoes_cadernos(id) ON DELETE CASCADE,
+    FOREIGN KEY (grupo_id) REFERENCES dim_grupos_intervencao(id) ON DELETE RESTRICT,
+    UNIQUE(aluno_hash_id, avaliacao_caderno_id)
+);
+
+CREATE TABLE IF NOT EXISTS fato_cenarios_what_if (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ano_escolar INTEGER NOT NULL,
+    componente_curricular TEXT NOT NULL,
+    ciclo TEXT NOT NULL,
+    nome_cenario TEXT NOT NULL CHECK(nome_cenario IN ('sem_mudanca', 'ganho_um', 'perda_um', 'ganho_um_perda_um')),
+    taxa_adequacao_projetada_pct REAL NOT NULL,
+    alunos_adequados_projetados INTEGER NOT NULL,
+    meta_a_atingida_projetada BOOLEAN NOT NULL,
+    alunos_meta_b_projetados INTEGER NOT NULL
+);
+
+-- ============================================================================
+-- 7. VIEWS ANALÍTICAS PARA FRAMEWORKS (REACT, NEXT.JS, FASTAPI, FLUTTER, BI)
+-- ============================================================================
+
+-- Visão 1: Painel Executivo Consolidado por Ano e Componente (Meta A e Meta B)
+CREATE VIEW IF NOT EXISTS vw_dashboard_escola_metas AS
+SELECT 
+    t.ano_escolar,
+    ac.componente_curricular,
+    ac.ciclo,
+    COUNT(fpe.id) AS total_cadastros,
+    SUM(CASE WHEN fpe.status_participacao = 'Avaliado' THEN 1 ELSE 0 END) AS total_avaliados,
+    SUM(CASE WHEN fpe.status_participacao = 'Ausente' THEN 1 ELSE 0 END) AS total_ausentes,
+    SUM(CASE WHEN fep.atingiu_meta_a_adequado = 1 THEN 1 ELSE 0 END) AS total_adequados,
+    ROUND(100.0 * SUM(CASE WHEN fep.atingiu_meta_a_adequado = 1 THEN 1 ELSE 0 END) / 
+          NULLIF(SUM(CASE WHEN fpe.status_participacao = 'Avaliado' THEN 1 ELSE 0 END), 0), 1) AS taxa_adequacao_pct,
+    CAST(ROUND(0.8 * SUM(CASE WHEN fpe.status_participacao = 'Avaliado' THEN 1 ELSE 0 END) + 0.499) AS INTEGER) AS alvo_meta_a_80pct,
+    MAX(0, CAST(ROUND(0.8 * SUM(CASE WHEN fpe.status_participacao = 'Avaliado' THEN 1 ELSE 0 END) + 0.499) AS INTEGER) - 
+           SUM(CASE WHEN fep.atingiu_meta_a_adequado = 1 THEN 1 ELSE 0 END)) AS conversoes_necessarias_meta_a,
+    SUM(CASE WHEN fep.atingiu_meta_b_80pct = 1 THEN 1 ELSE 0 END) AS total_atingiram_meta_b,
+    ROUND(AVG(fep.proficiencia_escala_spaece), 1) AS media_proficiencia_spaece
+FROM dim_avaliacoes_cadernos ac
+JOIN fato_participacao_estudante fpe ON ac.id = fpe.avaliacao_caderno_id
+JOIN dim_turmas t ON fpe.turma_id = t.id
+LEFT JOIN fato_escores_psicometricos fep ON fpe.id = fep.participacao_id
+GROUP BY t.ano_escolar, ac.componente_curricular, ac.ciclo;
+
+-- Visão 2: Painel Operacional do Professor (Intervenção Individual por Turma)
+CREATE VIEW IF NOT EXISTS vw_painel_intervencao_professor AS
+SELECT 
+    e.aluno_hash_id,
+    t.nome_turma,
+    t.ano_escolar,
+    ac.componente_curricular,
+    fpe.status_participacao,
+    fep.total_acertos,
+    fep.total_oportunidades,
+    ROUND(fep.taxa_rendimento_ponderada * 100, 1) AS rendimento_pct,
+    fep.nivel_desempenho_caed,
+    fep.atingiu_meta_a_adequado,
+    fep.atingiu_meta_b_80pct,
+    fep.lacuna_meta_b,
+    gi.codigo_grupo,
+    gi.nome_perfil AS grupo_nome,
+    e.possui_laudo_aee,
+    cid.codigo_cid10,
+    cid.codigo_cid11,
+    perfil.requer_manejo_tod_pbs,
+    perfil.recurso_tempo_estendido_50pct,
+    perfil.recurso_ledor_oficial
+FROM dim_estudantes e
+JOIN dim_turmas t ON e.turma_id = t.id
+JOIN fato_participacao_estudante fpe ON e.aluno_hash_id = fpe.aluno_hash_id
+JOIN dim_avaliacoes_cadernos ac ON fpe.avaliacao_caderno_id = ac.id
+LEFT JOIN fato_escores_psicometricos fep ON fpe.id = fep.participacao_id
+LEFT JOIN fato_estudante_agrupamento fea ON e.aluno_hash_id = fea.aluno_hash_id AND ac.id = fea.avaliacao_caderno_id
+LEFT JOIN dim_grupos_intervencao gi ON fea.grupo_id = gi.id
+LEFT JOIN fato_estudante_aee_perfil perfil ON e.aluno_hash_id = perfil.aluno_hash_id
+LEFT JOIN dim_cid_catalogo cid ON perfil.cid_primario_id = cid.id;
+
+-- Visão 3: Relatório de Acessibilidade e Educação Especial Inclusiva (AEE)
+CREATE VIEW IF NOT EXISTS vw_relatorio_aee_inclusao AS
+SELECT 
+    e.aluno_hash_id,
+    t.nome_turma,
+    t.ano_escolar,
+    cid.codigo_cid10,
+    cid.codigo_cid11,
+    cid.grupo_diagnostico,
+    cid.nomenclatura_oficial,
+    perfil.pdi_ativo,
+    perfil.terminalidade_especifica,
+    perfil.recurso_tempo_estendido_50pct,
+    perfil.recurso_ledor_oficial,
+    perfil.recurso_transcritor_oficial,
+    perfil.recurso_ambiente_baixo_estimulo,
+    perfil.recurso_pausas_ativas_fracionadas,
+    perfil.requer_manejo_tod_pbs,
+    cid.estrategias_manejo_recomendadas
+FROM fato_estudante_aee_perfil perfil
+JOIN dim_estudantes e ON perfil.aluno_hash_id = e.aluno_hash_id
+JOIN dim_turmas t ON e.turma_id = t.id
+JOIN dim_cid_catalogo cid ON perfil.cid_primario_id = cid.id;
+
+-- Visão 4: Grafo Curricular Completo (CAEd ➔ BNCC com Áreas e Objetos)
+CREATE VIEW IF NOT EXISTS vw_grafo_curricular_caed_bncc AS
+SELECT 
+    dcaed.codigo_caed,
+    dcaed.ano_escolar,
+    dcaed.componente_curricular,
+    dcaed.descricao_descritor,
+    dbncc.codigo_bncc,
+    dbncc.componente_curricular AS bncc_componente,
+    dbncc.unidade_tematica,
+    dbncc.objeto_conhecimento,
+    dbncc.descricao_habilidade,
+    grafo.peso_aresta,
+    grafo.tem_ressalva_semantica,
+    grafo.descricao_ressalva
+FROM rel_caed_bncc_grafo grafo
+JOIN dim_caed_descritores dcaed ON grafo.caed_descritor_id = dcaed.id
+JOIN dim_bncc_habilidades dbncc ON grafo.bncc_habilidade_id = dbncc.id;

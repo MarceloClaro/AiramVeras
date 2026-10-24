@@ -4,10 +4,16 @@ __pycache__/
 .pytest_cache/
 *.pyc
 catalogo/
-dados/
+dados/*
+!dados/schema_completo_ecossistema.sql
+!dados/schema_api_contratos.json
+!dados/airam_veras_ecossistema.sqlite
 restrito/
 relatorios/
 *.sqlite
+!*.sqlite
+!datamining/dados/airam_veras_ecossistema.sqlite
+!00_ORGANIZACAO/02_Dados_e_banco/airam_veras_ecossistema.sqlite
 *.sqlite3
 *.db
 *.xlsx

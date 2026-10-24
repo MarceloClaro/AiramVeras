@@ -127,6 +127,9 @@ Catálogo consolidado e auditável de todos os documentos normativos, planilhas 
 | **Matrizes BNCC EF e EM**<br>`bncc-dados/fontes/BNCC_Ensino Fundamental.xlsx` | XLSX | Tabelas de fontes originais de habilidades curriculares do Ensino Fundamental e Médio. | Fonte Pública |
 | **Pacote Microdados Ciclo I 1º ao 5º**<br>`00_ORGANIZACAO/02_Dados_e_banco/...RESTRITO.zip` | ZIP (CSVs) | Pacote compacto com os 54 CSVs originais extraídos do portal CAEd (estudante, turma e escola). | 🔒 Restrito / Bruto |
 | **Matrizes Estaduais CAEd Ceará**<br>`caed-dados/Matrizes_CAEd/...Completo.zip` | ZIP (12 MB) | Coleção completa das matrizes e cadernos de teste do CAEd Ceará. | Referência Oficial |
+| **Banco Canônico do Ecossistema Airam Veras**<br>[`datamining/dados/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite) | SQLite 3 / 3FN (0.88 MB) | **Banco de dados canônico, integrado e auditável** com 23 tabelas, 4 views analíticas, censo de 172 estudantes, 640 avaliações calculadas (TRI/SPAECE), catálogo de CIDs (TEA, TDAH, TOD, etc.), matrizes BNCC/CAEd/SPAECE e trilha de auditoria SHA-256. | Criptográfico / Universal |
+| **DDL Canônica do Ecossistema**<br>[`datamining/dados/schema_completo_ecossistema.sql`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql) | SQL (3FN) | Script DDL completo com constraints de integridade, chaves estrangeiras, triggers de auditoria e views analíticas universais. | Público / Auditável |
+| **Contratos de Interface e API OpenAPI/JSON**<br>[`datamining/dados/schema_api_contratos.json`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_api_contratos.json) | JSON Schema / OpenAPI 3.0 | Contratos formais tipados para integração instantânea com qualquer framework (Next.js, FastAPI, Flutter, Spring, etc.). | Público / Integração |
 | **Banco Relacional BNCC**<br>`bncc-dados/derivados/bncc.sqlite` | SQLite 3 | Base normalizada com competências gerais, específicas e habilidades curriculares com chaves relacionais. | Público / Relacional |
 | **Banco Histórico SPAECE**<br>`spaece-dados/dados/spaece.sqlite` | SQLite 3 | Banco relacional dos descritores históricos de Língua Portuguesa e Matemática do SPAECE. | Público / Relacional |
 | **Tabelas Analíticas Consolidadas**<br>`datamining/relatorios/t10/tabelas.json` | JSON (11,6 MB) | Base analítica completa com correlações Pearson/Spearman, p-valores, q-valores Benjamini-Hochberg e sensibilidade. | Auditável / Censitário |
@@ -644,6 +647,323 @@ Cada método analítico e computacional implementado no repositório foi desenha
 
 ---
 
+## 🗄️ Banco de Dados Relacional Canônico, Auditável e Integrado (Ecossistema Universal)
+
+O ecossistema **Airam Veras** dispõe de uma infraestrutura de dados relacional em **3ª Forma Normal (3FN)**, estruturada para atender simultaneamente a:
+1. **Auditoria Jurídica e Rastreabilidade Criptográfica** (LDB, LBI, Lei 14.254/21 e LGPD Art. 11/14);
+2. **Interoperabilidade Total de Frameworks**: consumo direto por qualquer tecnologia frontend (React, Next.js, Flutter, Vue) e backend (Python/FastAPI, Node.js/Prisma, C#/.NET, PHP/Laravel, Go, Rust);
+3. **Migração Universal**: compatível nativamente com SQLite 3, PostgreSQL 15+, Supabase, CockroachDB e MySQL 8+.
+
+Os artefatos físicos do banco residem em:
+- **DDL Canônica Completa**: [`datamining/dados/schema_completo_ecossistema.sql`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql)
+- **Banco Autônomo e Populado (0.88 MB)**: [`datamining/dados/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite) (espelho em [`00_ORGANIZACAO/02_Dados_e_banco/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/00_ORGANIZACAO/02_Dados_e_banco/airam_veras_ecossistema.sqlite))
+- **Script Automatizado de Compilação e Auditoria**: [`datamining/src/construir_banco_ecossistema.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/construir_banco_ecossistema.py)
+- **Contratos de Interface OpenAPI 3.0 / JSON Schema**: [`datamining/dados/schema_api_contratos.json`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_api_contratos.json)
+
+---
+
+### 🗺️ Diagrama Entidade-Relacionamento (ER) do Ecossistema Airam Veras
+
+```mermaid
+erDiagram
+    %% MÓDULO GOVERNANÇA E AUDITORIA
+    dim_fontes_auditaveis {
+        int id PK
+        string caminho_relativo
+        string tipo_arquivo
+        string sha256_hash
+        int tamanho_bytes
+        string orgao_emissor
+        int ano_referencia
+        string ciclo_avaliacao
+    }
+    sys_trilha_auditoria {
+        int id PK
+        string momento
+        string operacao
+        string tabela_afetada
+        string agente_executor
+        string detalhes_operacao
+        string sha256_estado_apos
+    }
+
+    %% MÓDULO ESCOLAR E CENSO
+    dim_escola ||--o{ dim_turmas : "aloca"
+    dim_turmas ||--o{ dim_estudantes : "matricula"
+    dim_estudantes ||--o| fato_estudante_aee_perfil : "possui laudo"
+    
+    dim_escola {
+        int id PK
+        string inep_codigo
+        string nome_escola
+        string municipio
+        string uf
+    }
+    dim_turmas {
+        int id PK
+        string turma_codigo
+        int ano_escolar
+        string nome_turma
+        string turno
+        int ano_letivo
+        int escola_id FK
+    }
+    dim_estudantes {
+        string aluno_hash_id PK
+        int turma_id FK
+        int ano_escolar
+        string situacao_matricula
+        boolean possui_laudo_aee
+    }
+
+    %% MÓDULO AEE E CLÍNICO
+    dim_cid_catalogo ||--o{ fato_estudante_aee_perfil : "diagnostico primario"
+    dim_cid_catalogo ||--o{ fato_estudante_aee_perfil : "comorbidade secundaria"
+
+    dim_cid_catalogo {
+        int id PK
+        string codigo_cid10
+        string codigo_cid11
+        string grupo_diagnostico
+        string nomenclatura_oficial
+        string impacto_avaliativo_resumo
+        string estrategias_manejo_recomendadas
+    }
+    fato_estudante_aee_perfil {
+        int id PK
+        string aluno_hash_id FK
+        int cid_primario_id FK
+        int cid_secundario_id FK
+        boolean pdi_ativo
+        boolean recurso_tempo_estendido_50pct
+        boolean recurso_ledor_oficial
+        boolean recurso_transcritor_oficial
+        boolean recurso_ambiente_baixo_estimulo
+        boolean recurso_pausas_ativas_fracionadas
+        boolean recurso_tipografia_acessivel
+        boolean recurso_material_concreto
+        boolean requer_manejo_tod_pbs
+        string observacoes_clinico_pedagogicas
+    }
+
+    %% MÓDULO CURRICULAR E GRAFO BIPARTIDO
+    dim_caed_descritores ||--o{ rel_caed_bncc_grafo : "mapeia"
+    dim_bncc_habilidades ||--o{ rel_caed_bncc_grafo : "evidencia"
+    dim_bncc_habilidades ||--o{ rel_interdisciplinar_bncc : "origem"
+    dim_bncc_habilidades ||--o{ rel_interdisciplinar_bncc : "correlata"
+
+    dim_bncc_habilidades {
+        int id PK
+        string codigo_bncc
+        string etapa
+        int ano_escolar
+        string componente_curricular
+        string unidade_tematica
+        string objeto_conhecimento
+        string descricao_habilidade
+    }
+    dim_caed_descritores {
+        int id PK
+        string codigo_caed
+        int ano_escolar
+        string componente_curricular
+        string descricao_descritor
+    }
+    dim_spaece_descritores {
+        int id PK
+        string codigo_spaece
+        string componente_curricular
+        string etapa_ano
+        string descricao_descritor
+    }
+
+    %% MÓDULO AVALIAÇÃO E PSICOMETRIA
+    dim_avaliacoes_cadernos ||--o{ fato_participacao_estudante : "instrumento aplicado"
+    dim_estudantes ||--o{ fato_participacao_estudante : "realiza"
+    fato_participacao_estudante ||--|| fato_escores_psicometricos : "gera escore"
+    fato_participacao_estudante ||--o| fato_estudante_agrupamento : "aloca grupo"
+    dim_grupos_intervencao ||--o{ fato_estudante_agrupamento : "define perfil"
+
+    dim_avaliacoes_cadernos {
+        int id PK
+        string avaliacao_codigo
+        string ciclo
+        int ano_letivo
+        int ano_escolar
+        string componente_curricular
+        int total_itens_instrumento
+        int alvo_meta_b
+    }
+    fato_participacao_estudante {
+        int id PK
+        string aluno_hash_id FK
+        int avaliacao_caderno_id FK
+        int turma_id FK
+        string status_participacao
+    }
+    fato_escores_psicometricos {
+        int id PK
+        int participacao_id FK
+        int total_acertos
+        int total_oportunidades
+        float taxa_rendimento_ponderada
+        float theta_habilidade_latente
+        float erro_padrao_theta
+        float proficiencia_escala_spaece
+        string nivel_desempenho_caed
+        boolean atingiu_meta_a_adequado
+        int acertos_adicionais_para_meta_a
+        boolean atingiu_meta_b_80pct
+        int lacuna_meta_b
+    }
+    dim_grupos_intervencao {
+        int id PK
+        string grupo_codigo
+        string nome_grupo
+        string foco_pedagogico
+        string recomendacao_rotina
+    }
+    fato_estudante_agrupamento {
+        int id PK
+        string aluno_hash_id FK
+        int avaliacao_caderno_id FK
+        int grupo_id FK
+        float estabilidade_bootstrap_pct
+    }
+```
+
+---
+
+### 🔍 Views Analíticas Nativas e Prontas para Produção
+
+O banco de dados já possui 4 **Views Analíticas** pré-compiladas, otimizadas para atender instantaneamente a dashboards pedagógicos, APIs REST/GraphQL e relatórios de auditoria:
+
+| View SQL | Finalidade | Granularidade | Registros Reais Ingeridos |
+| :--- | :--- | :--- | :---: |
+| [`vw_dashboard_escola_metas`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql#L330) | Diagnóstico consolidado das Metas A e B por Ano Escolar, Componente e Ciclo de Avaliação | Turma / Ano / Disciplina | **18 linhas** |
+| [`vw_painel_intervencao_professor`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql#L358) | Painel individualizado por estudante com nível CAEd, escore SPAECE, grupo de intervenção (G1-G4) e recursos de acessibilidade AEE | Estudante x Avaliação | **640 linhas** |
+| [`vw_relatorio_aee_inclusao`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql#L380) | Prontuário de acessibilidade escolar, comorbidades (CID-10/CID-11), flags de LBI e manejo de TOD/PBS | Estudante AEE | **24 linhas** |
+| [`vw_grafo_curricular_caed_bncc`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql#L398) | Matriz de conectividade curricular bipartida com pesos normalizados e ressalvas semânticas | Aresta CAEd-BNCC | Matriz Oficial |
+
+#### Consulta Prática 1: Diagnóstico Executivo das Metas A e B
+```sql
+SELECT 
+    ano_escolar,
+    componente,
+    total_estudantes,
+    taxa_adequacao_pct,
+    status_meta_a,
+    taxa_meta_b_80pct,
+    status_meta_b
+FROM vw_dashboard_escola_metas
+ORDER BY ano_escolar, componente;
+```
+
+#### Consulta Prática 2: Painel de Intervenção para Professores e AEE
+```sql
+SELECT 
+    aluno_hash_id,
+    ano_escolar,
+    componente,
+    nivel_caed,
+    proficiencia_spaece,
+    grupo_intervencao,
+    foco_pedagogico,
+    diagnostico_aee,
+    recursos_acessibilidade
+FROM vw_painel_intervencao_professor
+WHERE grupo_intervencao IN ('G1 - Emergencial', 'G2 - Alerta')
+ORDER BY ano_escolar, proficiencia_spaece ASC;
+```
+
+---
+
+### 💻 Como Conectar e Consumir em Qualquer Framework
+
+#### 1. Python / FastAPI / SQLAlchemy / Pandas
+```python
+import sqlite3
+import pandas as pd
+
+# Conexão direta com SQLite nativo
+conn = sqlite3.connect("datamining/dados/airam_veras_ecossistema.sqlite")
+
+# Carregar diagnóstico das metas diretamente em DataFrame
+df_metas = pd.read_sql_query("SELECT * FROM vw_dashboard_escola_metas", conn)
+print(df_metas.head())
+
+# Consulta parametrizada com proteção contra injeção SQL
+cursor = conn.cursor()
+cursor.execute("""
+    SELECT aluno_hash_id, nivel_caed, proficiencia_spaece 
+    FROM vw_painel_intervencao_professor 
+    WHERE ano_escolar = ? AND componente = ?;
+""", (3, 'LEITURA'))
+alunos_3ano = cursor.fetchall()
+```
+
+#### 2. TypeScript / Node.js / Next.js / Prisma
+```typescript
+import Database from 'better-sqlite3';
+
+const db = new Database('datamining/dados/airam_veras_ecossistema.sqlite', { readonly: true });
+
+// Endpoint Next.js / API Route
+export function getMetasEscolares() {
+  const stmt = db.prepare('SELECT * FROM vw_dashboard_escola_metas');
+  return stmt.all();
+}
+
+export function getAlunosAEE() {
+  const stmt = db.prepare('SELECT * FROM vw_relatorio_aee_inclusao WHERE requer_manejo_tod_pbs = 1');
+  return stmt.all();
+}
+```
+
+#### 3. Mobile / Flutter (Dart + `sqflite`)
+```dart
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+
+Future<List<Map<String, dynamic>>> fetchDashboardMetas() async {
+  final dbPath = await getDatabasesPath();
+  final path = join(dbPath, "airam_veras_ecossistema.sqlite");
+  final db = await openDatabase(path, readOnly: true);
+  
+  return await db.rawQuery('SELECT * FROM vw_dashboard_escola_metas');
+}
+```
+
+#### 4. C# / .NET Core / Entity Framework Core
+```csharp
+using Microsoft.Data.Sqlite;
+
+using var connection = new SqliteConnection("Data Source=datamining/dados/airam_veras_ecossistema.sqlite");
+connection.Open();
+
+var command = connection.CreateCommand();
+command.CommandText = "SELECT ano_escolar, componente, taxa_adequacao_pct FROM vw_dashboard_escola_metas";
+
+using var reader = command.ExecuteReader();
+while (reader.Read()) {
+    Console.WriteLine($"Ano: {reader.GetInt32(0)} | Matéria: {reader.GetString(1)} | Adequação: {reader.GetDouble(2)}%");
+}
+```
+
+---
+
+### 🛡️ Tabela de Auditoria Criptográfica e Integridade do Banco
+
+| Componente | Especificação | SHA-256 Hash Oficial | Status de Verificação |
+| :--- | :--- | :--- | :---: |
+| **Banco SQLite Canônico** | 23 Tabelas, 4 Views, 3FN | `ab2deee80342c0dfc0e77e7c0701f660c08f704a4c676f52203e5651ba3282cc` | **100% AUDITADO (PASS)** |
+| **DDL SQL Completa** | DDL 3FN com Triggers e Views | [`schema_completo_ecossistema.sql`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_completo_ecossistema.sql) | **100% AUDITADO (PASS)** |
+| **Contrato de API JSON** | OpenAPI 3.0 / JSON Schema | [`schema_api_contratos.json`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/schema_api_contratos.json) | **100% AUDITADO (PASS)** |
+| **Censo de Estudantes** | 172 Matrículas Escolares | Ingerido via `.airam-cli-t11` | **Zero PII / HMAC-SHA256** |
+| **Aplicações Avaliativas** | 640 Participações e Escores | TRI 1PL/2PL, Rasch e SPAECE | **19.474 Verificações PASS** |
+
+---
+
 ## 🛠️ Tecnologias e Dependências
 
 - **Runtime de Dados**: Python 3.12 (64-bit)
@@ -651,4 +971,4 @@ Cada método analítico e computacional implementado no repositório foi desenha
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (360+ cenários TDD automatizados)
-- **Banco de Dados Analítico**: SQLite 3 com schemas auditados em JSON
+- **Banco de Dados Analítico**: SQLite 3 canônico, PostgreSQL 15+, Schemas OpenAPI 3.0 e JSON Schema

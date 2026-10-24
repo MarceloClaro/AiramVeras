@@ -1,0 +1,399 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Ecossistema de Dados Escola Airam Veras - API Canônica",
+    "version": "1.0.0",
+    "description": "Especificação universal e tipada para integração de qualquer framework frontend (Next.js, React, Flutter, Vue) ou backend (FastAPI, NestJS, Spring, Django) com o banco de dados canônico e auditável da Escola Airam Veras.",
+    "contact": {
+      "name": "Equipe de Engenharia Pedagógica e Psicométrica",
+      "url": "https://github.com/MarceloClaro/AiramVeras"
+    }
+  },
+  "banco_metadados": {
+    "rdbms": "SQLite 3 / Compatível com PostgreSQL 15+ e Supabase",
+    "sha256": "ab2deee80342c0dfc0e77e7c0701f660c08f704a4c676f52203e5651ba3282cc",
+    "tabelas_registradas": {
+      "dim_avaliacoes_cadernos": 20,
+      "dim_bncc_habilidades": 574,
+      "dim_caed_descritores": 1460,
+      "dim_cid_catalogo": 11,
+      "dim_escola": 1,
+      "dim_estudantes": 172,
+      "dim_estudantes_nominal_restrito": 0,
+      "dim_fontes_auditaveis": 1,
+      "dim_grupos_intervencao": 4,
+      "dim_spaece_descritores": 63,
+      "dim_turmas": 5,
+      "fato_cenarios_what_if": 7,
+      "fato_escores_psicometricos": 640,
+      "fato_estudante_aee_perfil": 24,
+      "fato_estudante_agrupamento": 640,
+      "fato_fluencia_leitora": 0,
+      "fato_participacao_estudante": 640,
+      "fato_producao_escrita": 0,
+      "fato_respostas_itens_habilidades": 0,
+      "rel_caed_bncc_grafo": 0,
+      "rel_interdisciplinar_bncc": 0,
+      "sqlite_sequence": 16,
+      "sys_trilha_auditoria": 1
+    },
+    "views_analiticas": {
+      "vw_dashboard_escola_metas": {
+        "colunas": [
+          "ano_escolar",
+          "componente_curricular",
+          "ciclo",
+          "total_cadastros",
+          "total_avaliados",
+          "total_ausentes",
+          "total_adequados",
+          "taxa_adequacao_pct",
+          "alvo_meta_a_80pct",
+          "conversoes_necessarias_meta_a",
+          "total_atingiram_meta_b",
+          "media_proficiencia_spaece"
+        ],
+        "total_linhas": 18,
+        "exemplo": [
+          {
+            "ano_escolar": 1,
+            "componente_curricular": "LEITURA",
+            "ciclo": "I",
+            "total_cadastros": 24,
+            "total_avaliados": 24,
+            "total_ausentes": 0,
+            "total_adequados": 24,
+            "taxa_adequacao_pct": 100.0,
+            "alvo_meta_a_80pct": 20,
+            "conversoes_necessarias_meta_a": 0,
+            "total_atingiram_meta_b": 9,
+            "media_proficiencia_spaece": 251.9
+          },
+          {
+            "ano_escolar": 1,
+            "componente_curricular": "MATEMATICA",
+            "ciclo": "I",
+            "total_cadastros": 24,
+            "total_avaliados": 24,
+            "total_ausentes": 0,
+            "total_adequados": 24,
+            "taxa_adequacao_pct": 100.0,
+            "alvo_meta_a_80pct": 20,
+            "conversoes_necessarias_meta_a": 0,
+            "total_atingiram_meta_b": 24,
+            "media_proficiencia_spaece": 280.3
+          }
+        ]
+      },
+      "vw_grafo_curricular_caed_bncc": {
+        "colunas": [
+          "codigo_caed",
+          "ano_escolar",
+          "componente_curricular",
+          "descricao_descritor",
+          "codigo_bncc",
+          "bncc_componente",
+          "unidade_tematica",
+          "objeto_conhecimento",
+          "descricao_habilidade",
+          "peso_aresta",
+          "tem_ressalva_semantica",
+          "descricao_ressalva"
+        ],
+        "total_linhas": 0,
+        "exemplo": []
+      },
+      "vw_painel_intervencao_professor": {
+        "colunas": [
+          "aluno_hash_id",
+          "nome_turma",
+          "ano_escolar",
+          "componente_curricular",
+          "status_participacao",
+          "total_acertos",
+          "total_oportunidades",
+          "rendimento_pct",
+          "nivel_desempenho_caed",
+          "atingiu_meta_a_adequado",
+          "atingiu_meta_b_80pct",
+          "lacuna_meta_b",
+          "codigo_grupo",
+          "grupo_nome",
+          "possui_laudo_aee",
+          "codigo_cid10",
+          "codigo_cid11",
+          "requer_manejo_tod_pbs",
+          "recurso_tempo_estendido_50pct",
+          "recurso_ledor_oficial"
+        ],
+        "total_linhas": 640,
+        "exemplo": [
+          {
+            "aluno_hash_id": "335d85ae9a7be219836fcb2df9933603b70d9a8d3e81666ce3a896cd7e4be477",
+            "nome_turma": "1º ANO UNIFICADO",
+            "ano_escolar": 1,
+            "componente_curricular": "LEITURA",
+            "status_participacao": "Avaliado",
+            "total_acertos": 19,
+            "total_oportunidades": 22,
+            "rendimento_pct": 86.4,
+            "nivel_desempenho_caed": "Avançado",
+            "atingiu_meta_a_adequado": 1,
+            "atingiu_meta_b_80pct": 1,
+            "lacuna_meta_b": 0,
+            "codigo_grupo": "G4",
+            "grupo_nome": "Aprofundamento e Autonomia",
+            "possui_laudo_aee": 0,
+            "codigo_cid10": null,
+            "codigo_cid11": null,
+            "requer_manejo_tod_pbs": null,
+            "recurso_tempo_estendido_50pct": null,
+            "recurso_ledor_oficial": null
+          },
+          {
+            "aluno_hash_id": "9ad1d51f7a14a0af81a3aebba63bc2ed7859ce138f08cb9d3fb81e03ee6e40bc",
+            "nome_turma": "1º ANO UNIFICADO",
+            "ano_escolar": 1,
+            "componente_curricular": "LEITURA",
+            "status_participacao": "Avaliado",
+            "total_acertos": 14,
+            "total_oportunidades": 22,
+            "rendimento_pct": 63.6,
+            "nivel_desempenho_caed": "Adequado",
+            "atingiu_meta_a_adequado": 1,
+            "atingiu_meta_b_80pct": 0,
+            "lacuna_meta_b": 4,
+            "codigo_grupo": "G3",
+            "grupo_nome": "Compreensão e Inferência",
+            "possui_laudo_aee": 0,
+            "codigo_cid10": null,
+            "codigo_cid11": null,
+            "requer_manejo_tod_pbs": null,
+            "recurso_tempo_estendido_50pct": null,
+            "recurso_ledor_oficial": null
+          }
+        ]
+      },
+      "vw_relatorio_aee_inclusao": {
+        "colunas": [
+          "aluno_hash_id",
+          "nome_turma",
+          "ano_escolar",
+          "codigo_cid10",
+          "codigo_cid11",
+          "grupo_diagnostico",
+          "nomenclatura_oficial",
+          "pdi_ativo",
+          "terminalidade_especifica",
+          "recurso_tempo_estendido_50pct",
+          "recurso_ledor_oficial",
+          "recurso_transcritor_oficial",
+          "recurso_ambiente_baixo_estimulo",
+          "recurso_pausas_ativas_fracionadas",
+          "requer_manejo_tod_pbs",
+          "estrategias_manejo_recomendadas"
+        ],
+        "total_linhas": 24,
+        "exemplo": [
+          {
+            "aluno_hash_id": "e5619b7dcee9ea40683e55b713ff099d8ff81d634ffb763531f84b6b2a64152d",
+            "nome_turma": "1º ANO UNIFICADO",
+            "ano_escolar": 1,
+            "codigo_cid10": "F90.0",
+            "codigo_cid11": "6A05",
+            "grupo_diagnostico": "TDAH",
+            "nomenclatura_oficial": "Transtorno do Déficit de Atenção com Hiperatividade",
+            "pdi_ativo": 1,
+            "terminalidade_especifica": 0,
+            "recurso_tempo_estendido_50pct": 1,
+            "recurso_ledor_oficial": 0,
+            "recurso_transcritor_oficial": 0,
+            "recurso_ambiente_baixo_estimulo": 1,
+            "recurso_pausas_ativas_fracionadas": 1,
+            "requer_manejo_tod_pbs": 0,
+            "estrategias_manejo_recomendadas": "Pausas ativas a cada 20 min; sala de baixo estímulo; provas fracionadas; máscaras de foco."
+          },
+          {
+            "aluno_hash_id": "cd433364c1e8018f0b6cc0badd839f01fe15d428bde200e839566e17207f07a2",
+            "nome_turma": "1º ANO UNIFICADO",
+            "ano_escolar": 1,
+            "codigo_cid10": "F91.3",
+            "codigo_cid11": "6C90",
+            "grupo_diagnostico": "TOD",
+            "nomenclatura_oficial": "Transtorno Opositivo Desafiador / Desafiador Opositor",
+            "pdi_ativo": 1,
+            "terminalidade_especifica": 0,
+            "recurso_tempo_estendido_50pct": 1,
+            "recurso_ledor_oficial": 0,
+            "recurso_transcritor_oficial": 0,
+            "recurso_ambiente_baixo_estimulo": 1,
+            "recurso_pausas_ativas_fracionadas": 1,
+            "requer_manejo_tod_pbs": 1,
+            "estrategias_manejo_recomendadas": "Técnica da escolha controlada; mediação por profissional de vínculo; contratos de micro-metas; tolerância zero ao confronto público; Plano PBS."
+          }
+        ]
+      }
+    }
+  },
+  "schemas": {
+    "Estudante": {
+      "type": "object",
+      "properties": {
+        "aluno_hash_id": {
+          "type": "string",
+          "example": "4ef09930f305f..."
+        },
+        "ano_escolar": {
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "turma_id": {
+          "type": "integer"
+        },
+        "possui_laudo_aee": {
+          "type": "boolean"
+        },
+        "situacao_matricula": {
+          "type": "string",
+          "example": "Matriculado"
+        }
+      },
+      "required": [
+        "aluno_hash_id",
+        "ano_escolar",
+        "turma_id"
+      ]
+    },
+    "EscorePsicometrico": {
+      "type": "object",
+      "properties": {
+        "participacao_id": {
+          "type": "integer"
+        },
+        "total_acertos": {
+          "type": "integer",
+          "example": 19
+        },
+        "total_oportunidades": {
+          "type": "integer",
+          "example": 22
+        },
+        "taxa_rendimento_ponderada": {
+          "type": "number",
+          "example": 0.8636
+        },
+        "theta_habilidade_latente": {
+          "type": "number",
+          "example": 1.4545
+        },
+        "erro_padrao_theta": {
+          "type": "number",
+          "example": 0.28
+        },
+        "proficiencia_escala_spaece": {
+          "type": "number",
+          "example": 272.7
+        },
+        "nivel_desempenho_caed": {
+          "type": "string",
+          "enum": [
+            "Abaixo do Básico",
+            "Básico",
+            "Adequado",
+            "Avançado"
+          ]
+        },
+        "atingiu_meta_a_adequado": {
+          "type": "boolean",
+          "example": true
+        },
+        "atingiu_meta_b_80pct": {
+          "type": "boolean",
+          "example": true
+        },
+        "lacuna_meta_b": {
+          "type": "integer",
+          "example": 0
+        }
+      }
+    },
+    "PerfilClinicoAEE": {
+      "type": "object",
+      "properties": {
+        "aluno_hash_id": {
+          "type": "string"
+        },
+        "cid10": {
+          "type": "string",
+          "example": "F91.3"
+        },
+        "cid11": {
+          "type": "string",
+          "example": "6C90"
+        },
+        "grupo_diagnostico": {
+          "type": "string",
+          "example": "TOD"
+        },
+        "pdi_ativo": {
+          "type": "boolean",
+          "example": true
+        },
+        "recurso_tempo_estendido_50pct": {
+          "type": "boolean",
+          "example": true
+        },
+        "recurso_pausas_ativas_fracionadas": {
+          "type": "boolean",
+          "example": true
+        },
+        "requer_manejo_tod_pbs": {
+          "type": "boolean",
+          "example": true
+        },
+        "observacoes_clinico_pedagogicas": {
+          "type": "string"
+        }
+      }
+    },
+    "DiagnosticoMetas": {
+      "type": "object",
+      "properties": {
+        "ano_escolar": {
+          "type": "integer",
+          "example": 3
+        },
+        "componente": {
+          "type": "string",
+          "example": "LEITURA"
+        },
+        "total_estudantes": {
+          "type": "integer",
+          "example": 32
+        },
+        "taxa_adequacao_pct": {
+          "type": "number",
+          "example": 56.25
+        },
+        "taxa_meta_b_80pct": {
+          "type": "number",
+          "example": 40.62
+        },
+        "meta_a_atingida": {
+          "type": "string",
+          "example": "SIM (Meta A Superada)"
+        },
+        "meta_b_atingida": {
+          "type": "string",
+          "example": "NÃO (Em Progressão)"
+        }
+      }
+    }
+  }
+}
