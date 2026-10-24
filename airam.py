@@ -269,10 +269,11 @@ def menu_interativo():
         print("  5. 🌐 Iniciar Dashboard Web Interativo no Navegador")
         print("  6. 📑 Gerar Fichas de Intervenção Pedagógica (PIP) e AEE")
         print("  7. 🧠 Raio-X Universal Neurocognitivo & Interdisciplinar (RTI)")
-        print("  8. 🧪 Executar Contraprova Matemática e Auditoria de Testes")
+        print("  8. 📈 Suíte Bioestatística & Inferencial (ANOVA, Fisher, t-Pareado, Cohen's d)")
+        print("  9. 🧪 Executar Contraprova Matemática e Auditoria de Testes")
         print("  0. 🚪 Sair\n")
         
-        escolha = input(f"{BOLD}Opção [0-8]: {RESET}").strip()
+        escolha = input(f"{BOLD}Opção [0-9]: {RESET}").strip()
 
         if escolha == '1':
             cmd_metas()
@@ -300,6 +301,9 @@ def menu_interativo():
             cmd_raiox()
             input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
         elif escolha == '8':
+            cmd_bioestatistica()
+            input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
+        elif escolha == '9':
             cmd_contraprova()
             input(f"\n{CYAN}Pressione Enter para continuar...{RESET}")
         elif escolha == '0':
@@ -376,6 +380,34 @@ def cmd_raiox(termo=None):
         print(f"  {WHITE}🛡️ Hash Validação Forense     :{RESET} {doc_hash[:24]}...")
         print("=" * 80)
 
+def cmd_bioestatistica():
+    """Executa a suíte bioestatística e exibe os testes ANOVA, Fisher, t-Pareado e correlações."""
+    print(f"{CYAN}Executando suíte bioestatística e psicométrica avançada...{RESET}")
+    script = ROOT_DIR / "datamining" / "src" / "analise_bioestatistica_avancada.py"
+    os.system(f'python "{script}"')
+
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT nome_teste, variavel_dependente, estatistica_valor, p_valor,
+               tamanho_efeito_nome, tamanho_efeito_valor, magnitude_efeito, conclusao_cientifica
+        FROM fato_testes_bioestatisticos
+        ORDER BY id ASC;
+    """)
+    rows = cur.fetchall()
+    conn.close()
+
+    print(f"\n{BLUE}{BOLD}=== SÍNTESE EXECUTIVA DE INFERÊNCIA BIOESTATÍSTICA (AUDITORIA CIÊNCIA) ==={RESET}")
+    print(f"{'Teste':<32} | {'Estatística':<12} | {'p-valor':<12} | {'Tamanho Efeito':<22} | {'Significância'}")
+    print("-" * 95)
+    for r in rows:
+        teste, vd, stat, pval, te_nome, te_val, mag, conc = r
+        sig_str = f"{GREEN}SIM (p < 0.05){RESET}" if pval < 0.05 else f"{YELLOW}NÃO SIGNIFICANTE{RESET}"
+        te_str = f"{te_nome}: {te_val:.3f}" if te_val is not None else "-"
+        print(f"{teste:<32} | {stat:<12.3f} | {pval:<12.4e} | {te_str:<22} | {sig_str}")
+    print("=" * 95)
+    print(f"\n{GREEN}Relatório interativo disponível em: datamining/relatorios/relatorio_bioestatistica_anova_fisher.html{RESET}\n")
+
 def main():
     parser = argparse.ArgumentParser(description="Airam CLI — Ecossistema Educacional Airam Veras")
     parser.add_argument("--metas", action="store_true", help="Exibe diagnóstico das Metas A e B")
@@ -385,6 +417,9 @@ def main():
     parser.add_argument("--manejos", action="store_true", help="Exibe catálogo completo de diretrizes clínicas por CID")
     parser.add_argument("--raiox", action="store_true", help="Exibe o Raio-X Universal Neurocognitivo & Interdisciplinar")
     parser.add_argument("--cognitivo", action="store_true", help="Exibe o Raio-X Neurocognitivo (sinônimo de --raiox)")
+    parser.add_argument("--bioestatistica", action="store_true", help="Executa testes bioestatísticos (ANOVA, Fisher, t-Pareado)")
+    parser.add_argument("--anova", action="store_true", help="Executa ANOVA e testes bioestatísticos (sinônimo de --bioestatistica)")
+    parser.add_argument("--fisher", action="store_true", help="Executa Teste Exato de Fisher (sinônimo de --bioestatistica)")
     parser.add_argument("--longitudinal", action="store_true", help="Roda a análise longitudinal multi-ciclos")
     parser.add_argument("--web", action="store_true", help="Inicia o dashboard web no navegador")
     parser.add_argument("--contraprova", action="store_true", help="Executa a contraprova matemática")
@@ -399,6 +434,8 @@ def main():
         cmd_tod_aee()
     elif args.raiox or args.cognitivo:
         cmd_raiox()
+    elif args.bioestatistica or args.anova or args.fisher:
+        cmd_bioestatistica()
     elif args.longitudinal:
         cmd_longitudinal()
     elif args.web:
