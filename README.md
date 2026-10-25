@@ -106,11 +106,11 @@ graph TD
 
 > **Documento Oficial de Referência e Base de Todos os Dossiês das Turmas (1º ao 5º Ano)**  
 > **Arquivo Homologado**: [`DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf)  
-> **Hash SHA-256 Forense**: `6b2156ab3d44cdad9d2d9046dea8ab6b7f1cfe512e14df4e4e46bb1a2008dfc7` (6,97 MB)  
-> **Total de Páginas**: **1.000 laudas vetoriais A4** (40 laudas de Front Matter Master + 960 laudas de cadernos individualizados: $24 \text{ estudantes} \times 40 \text{ laudas cada}$)  
-> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 14: hash `c8d31fbefc8785300d17573ba8a0ae1cb2194b3de4590130a30a2369e748af8c`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
+> **Hash SHA-256 Forense**: `b4352a4aef7f3401b1e062e3cdd57117e25502df8820775209de05a9d5fe0099` (7,04 MB)  
+> **Total de Páginas**: **1.000 laudas vetoriais A4** (40 laudas de Front Matter Master Universal + 960 laudas de cadernos individualizados: $24 \text{ estudantes} \times 40 \text{ laudas cada}$)  
+> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 16: hash `0dd853dd592d22be95bf738d0da51f76a21a6b531e5c018ca1e11b6e046b9773`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
 
-Este documento estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva e acompanhamento longitudinal.
+Este documento estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal.
 
 ```mermaid
 graph TD
@@ -122,8 +122,8 @@ graph TD
     classDef pratBox fill:#701a75,stroke:#ec4899,stroke-width:2px,color:#ffffff;
     classDef multiBox fill:#312e81,stroke:#818cf8,stroke-width:2px,color:#ffffff;
 
-    subgraph DOSSIE ["📘 Arquitetura Canônica do Dossiê Mestre (1.000 Laudas A4)"]
-        S1["1. Front Matter Master: Capa, Legalidade, 12 DOIs & Censo (40 laudas)"]:::capBox
+    subgraph DOSSIE ["📘 Arquitetura Canônica Universal dos Dossiês (1º ao 5º Ano)"]
+        S1["1. Front Matter Universal: Marco Legal, 14 DOIs & Guias Leigos (40 laudas)"]:::capBox
         S2["2. Identificação Individual, Raio-X Cognitivo 7D, PEI & PAEE (4 laudas/aluno = 96 laudas)"]:::indBox
         S3["3. Língua Portuguesa: Alfabetização Fônica Sistemática (26 laudas/aluno = 624 laudas)"]:::pratBox
         S4["4. Matemática: Aritmética Kumon Granular & CAEd (4 laudas/aluno = 96 laudas)"]:::sciBox
@@ -203,15 +203,18 @@ O Plano Curricular do Dossiê Mestre é composto por **7 Diretrizes Anuais Integ
 
 ---
 
-### 5. 🗄️ Arquitetura do Banco de Dados Relacional Canônico (56 Estruturas Relacionais, Sem Ilhas)
+### 5. 🗄️ Arquitetura do Banco de Dados Relacional Canônico (57 Tabelas Canônicas + 5 Views, Sem Ilhas)
 
-Todas as informações, predições, registros de PEI, PAEE e trilhas de práticas diárias estão armazenados em [`datamining/dados/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite) com **100% de integridade relacional**:
+Todas as informações, predições, registros de PEI, PAEE, guias para leigos e trilhas de práticas diárias estão armazenados em [`datamining/dados/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite) com **100% de integridade relacional**:
 
 ```
-Total de Tabelas: 55 canônicas + 5 views analíticas | Tabelas Vazias ("Ilhas"): 0 | Violações de Chave Estrangeira: 0
-Blocos no Ledger SHA-256: 14 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
+Total de Estruturas: 57 tabelas canônicas + 5 views analíticas (62 estruturas) | Ilhas: 0 | Violações FK: 0
+Blocos no Ledger SHA-256: 16 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
 ```
 
+- **`dim_arquitetura_dossie_universal`** (5 registros): Modelo paramétrico de cálculo de laudas para todas as turmas da escola ($40 + N \times 40$).
+- **`dim_guia_interpretacao_bioestatistica_leiga`** (8 registros): Explicações sem jargões para leigos, fórmulas, valores de referência e ações práticas (EWS, Markov, Correlações, ANOVA, Fisher, Yates e t-Pareado).
+- **`dim_referencias_cientificas_doi`** (14 registros): Base epistemológica formal com 14 DOIs ativos e auditáveis (Balfanz 2007, Heckman 1981, Duncan 2007, Cohen 1988, Hattie 2009, etc.).
 - **`dim_estudantes_nominal_restrito`** (172 registros): Mapeamento nominal e institucional auditável de todos os estudantes da escola.
 - **`dim_legislacao_educacional_inclusiva`** (7 registros): Artigos, ementas e diretrizes das leis federais, resoluções e notas técnicas.
 - **`fato_pei_estudante_adaptacoes`** (96 registros): 24 estudantes $\times$ 4 bimestres de PEI com acomodações DUA, metas adaptadas e hash forense.
@@ -226,7 +229,7 @@ Blocos no Ledger SHA-256: 14 | Estudantes Censitários: 172 | Micro-Respostas H0
 - **`fato_analise_preditiva_multidisciplinar`** (216 registros): Predição de risco e alcance das Metas A e B para os 24 alunos nos 9 componentes curriculares.
 - **`fato_monitoramento_docente_semanal`** (192 registros): Acompanhamento semanal (Semanas 1 a 8) com rubrica formativa e ação pedagógica imediata.
 - **`fato_respostas_itens_habilidades`** (4.618 registros): Micro-itens individuais vinculados a descritores CAEd e cadernos avaliativos.
-- **`fato_auditoria_transacional_ledger`** (14 blocos): Encadeamento criptográfico imutável com hashes SHA-256.
+- **`fato_auditoria_transacional_ledger`** (16 blocos): Encadeamento criptográfico imutável com hashes SHA-256.
 
 ---
 
