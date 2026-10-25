@@ -15,4 +15,7 @@ dist/
 # Worktrees locais e backups internos de git
 .airam-cenarios-t09/
 .airam-cli-t11/
+.airam-cli-t11-retomada/
+AiramVeras-main.zip
+AiramVeras-main/
 datamining/.git_backup/
