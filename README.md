@@ -605,65 +605,76 @@ O ecossistema Airam Veras padronizou os protocolos de atendimento para os 12 dia
 
 ### 5. 🗺️ Mapas Estruturais da Arquitetura do Banco de Dados Relacional e Topologia de Processos
 
-O ecossistema é sustentado pelo banco de dados relacional canônico [`airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite), modelado em Terceira Forma Normal (3FN), contendo 28 tabelas, 5 views analíticas de alta performance e rastreabilidade criptográfica integral.
+O ecossistema é sustentado pelo banco de dados relacional canônico [`airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite), modelado em Terceira Forma Normal (3FN), contendo **51 tabelas relacionais**, 5 views analíticas de alta performance, 100% de integridade referencial sem ilhas e rastreabilidade criptográfica no Ledger SHA-256 (13 blocos encadeados).
 
 #### 📊 Diagrama Entidade-Relacionamento Completo (ERD em Mermaid)
 
 ```mermaid
 erDiagram
-    dim_escola ||--o{ dim_turmas : "aloca turmas"
-    dim_turmas ||--o{ dim_estudantes : "matricula estudantes"
-    dim_estudantes ||--o{ fato_respostas_itens_habilidades : "responde itens"
-    dim_estudantes ||--o{ fato_escores_psicometricos : "recebe proficiência TRI"
-    dim_estudantes ||--o| fato_estudante_aee_perfil : "possui laudo AEE"
-    dim_estudantes ||--o| fato_raiox_cognitivo_estudante : "possui perfil 7D"
-    dim_estudantes ||--o| fato_rastreio_altas_habilidades : "homologado em AH/SD"
+    dim_escola ||--o{ dim_turmas : aloca_turmas
+    dim_turmas ||--o{ dim_estudantes : matricula_estudantes
+    dim_estudantes ||--o{ fato_respostas_itens_habilidades : responde_itens
+    dim_estudantes ||--o{ fato_escores_psicometricos : recebe_proficiencia_tri
+    dim_estudantes ||--o| fato_estudante_aee_perfil : possui_laudo_aee
+    dim_estudantes ||--o| fato_raiox_cognitivo_estudante : possui_perfil_7d
+    dim_estudantes ||--o| fato_rastreio_altas_habilidades : homologado_ahsd
+    dim_estudantes ||--o{ fato_pei_estudante_adaptacoes : possui_pei_bimestral
+    dim_estudantes ||--o| fato_paee_plano_atendimento : possui_paee_srm
     
-    dim_cid_catalogo ||--o{ fato_estudante_aee_perfil : "classifica CID"
-    dim_cid_catalogo ||--o{ fato_rastreio_altas_habilidades : "associa comorbidade 2e"
+    dim_cid_catalogo ||--o{ fato_estudante_aee_perfil : classifica_cid
+    dim_cid_catalogo ||--o{ fato_rastreio_altas_habilidades : associa_comorbidade
+    dim_legislacao_educacional_inclusiva ||--o{ fato_pei_estudante_adaptacoes : fundamenta_pei
     
-    dim_avaliacoes_cadernos ||--o{ fato_respostas_itens_habilidades : "contém cadernos"
-    dim_caed_descritores ||--o{ fato_respostas_itens_habilidades : "avalia descritores"
-    dim_caed_descritores ||--o{ rel_caed_bncc_grafo : "mapeia habilidades"
-    dim_bncc_habilidades ||--o{ rel_caed_bncc_grafo : "conecta matriz BNCC"
-    dim_bncc_habilidades ||--o{ rel_interdisciplinar_bncc : "expande interdisciplinaridade"
+    dim_avaliacoes_cadernos ||--o{ fato_respostas_itens_habilidades : contem_cadernos
+    dim_caed_descritores ||--o{ fato_respostas_itens_habilidades : avalia_descritores
+    dim_caed_descritores ||--o{ rel_caed_bncc_grafo : mapeia_habilidades
+    dim_bncc_habilidades ||--o{ rel_caed_bncc_grafo : conecta_matriz_bncc
+    dim_bncc_habilidades ||--o{ rel_interdisciplinar_bncc : expande_interdisciplinaridade
     
-    dim_dominios_neurocognitivos ||--o{ rel_caed_bncc_neurocognitivo_interdisciplinar : "sustenta cognitivo"
-    dim_grupos_intervencao ||--o{ fato_estudante_agrupamento : "aloca grupos G1 a G4"
+    dim_dominios_neurocognitivos ||--o{ rel_caed_bncc_neurocognitivo_interdisciplinar : sustenta_cognitivo
+    dim_grupos_intervencao ||--o{ fato_estudante_agrupamento : aloca_grupos
     
-    dim_biomarcadores_psicometricos ||--o{ fato_testes_bioestatisticos : "padroniza métricas"
-    dim_mapas_estruturais_processos ||--o{ sys_trilha_auditoria : "audita processos ETL"
+    dim_biomarcadores_psicometricos ||--o{ fato_testes_bioestatisticos : padroniza_metricas
+    dim_mapas_estruturais_processos ||--o{ sys_trilha_auditoria : audita_processos_etl
+    fato_auditoria_transacional_ledger ||--o{ sys_trilha_auditoria : consolida_blocos
 ```
 
 #### 🔄 Pipeline de Engenharia Analítica em 4 Camadas (Data Lakehouse)
 
 ```mermaid
 graph TD
-    subgraph BRONZE ["🥉 Camada Bronze (Staging & Raw Data)"]
-        CSV["54 Arquivos CSV Brutos (CAEd)<br>Cadernos 1º ao 5º Ano"]
-        FONTES["dim_fontes_auditaveis<br>(Hash SHA-256 e proveniência)"]
-        RAW_TAB["dim_estudantes | dim_turmas<br>dim_avaliacoes_cadernos"]
-        CSV --> FONTES --> RAW_TAB
+    subgraph BRONZE [Camada Bronze - Staging e Raw Data]
+        CSV["54 Arquivos CSV Brutos (CAEd)<br/>Cadernos 1º ao 5º Ano"]
+        FONTES["dim_fontes_auditaveis<br/>(Hash SHA-256 e proveniência)"]
+        RAW_TAB["dim_estudantes e dim_turmas<br/>dim_avaliacoes_cadernos"]
+        CSV --> FONTES
+        FONTES --> RAW_TAB
     end
 
-    subgraph SILVER ["🥈 Camada Silver (Curated & Psicométrica)"]
-        TRI["Motor TRI & Rasch<br>(Lord & Birnbaum)"]
-        SILV_TAB["fato_respostas_itens_habilidades<br>fato_escores_psicometricos<br>fato_estudante_agrupamento (G1-G4)"]
-        RAW_TAB --> TRI --> SILV_TAB
+    subgraph SILVER [Camada Silver - Curated e Psicométrica]
+        TRI["Motor TRI e Rasch<br/>(Lord e Birnbaum)"]
+        SILV_TAB["fato_respostas_itens_habilidades<br/>fato_escores_psicometricos<br/>fato_estudante_agrupamento (G1-G4)"]
+        RAW_TAB --> TRI
+        TRI --> SILV_TAB
     end
 
-    subgraph GOLD ["🥇 Camada Gold (Analytics & Bioestatística)"]
-        BIO_ENG["Suíte Bioestatística SciPy<br>(ANOVA, Fisher, t-Pareado, Markov)"]
-        GRAFO_ENG["Grafo Semântico Interdisciplinar<br>(1.460 Arestas CAEd ➔ BNCC)"]
-        GOLD_TAB["fato_testes_bioestatisticos<br>fato_raiox_cognitivo_estudante<br>dim_biomarcadores_psicometricos"]
-        SILV_TAB --> BIO_ENG & GRAFO_ENG --> GOLD_TAB
+    subgraph GOLD [Camada Gold - Analytics e Bioestatística]
+        BIO_ENG["Suíte Bioestatística SciPy<br/>(ANOVA, Fisher, t-Pareado, Markov)"]
+        GRAFO_ENG["Grafo Semântico Interdisciplinar<br/>(1.460 Arestas CAEd para BNCC)"]
+        GOLD_TAB["fato_testes_bioestatisticos<br/>fato_raiox_cognitivo_estudante<br/>dim_biomarcadores_psicometricos"]
+        SILV_TAB --> BIO_ENG
+        SILV_TAB --> GRAFO_ENG
+        BIO_ENG --> GOLD_TAB
+        GRAFO_ENG --> GOLD_TAB
     end
 
-    subgraph PLATINUM ["💎 Camada Platinum (Clínica & Entrega Auditável)"]
-        AHSD_ENG["Mapeador de AH/SD & Dupla Excepcionalidade (2e)<br>Protocolo Triádico de Renzulli"]
-        PLAT_TAB["fato_rastreio_altas_habilidades<br>fato_estudante_aee_perfil<br>vw_painel_intervencao_professor"]
-        DELIVERY["Portais Web HTML5 / D3.js<br>Planilhas XLSX OOXML<br>Dossiês PEI A4 com Hash SHA-256"]
-        GOLD_TAB --> AHSD_ENG --> PLAT_TAB --> DELIVERY
+    subgraph PLATINUM [Camada Platinum - Clínica e Entrega Auditável]
+        AHSD_ENG["Mapeador de AH/SD e Dupla Excepcionalidade (2e)<br/>Protocolo Triádico de Renzulli"]
+        PLAT_TAB["fato_rastreio_altas_habilidades<br/>fato_estudante_aee_perfil<br/>vw_painel_intervencao_professor"]
+        DELIVERY["Portais Web HTML5 e D3.js<br/>Planilhas XLSX OOXML<br/>Dossiês PEI A4 com Hash SHA-256"]
+        GOLD_TAB --> AHSD_ENG
+        AHSD_ENG --> PLAT_TAB
+        PLAT_TAB --> DELIVERY
     end
 ```
 
