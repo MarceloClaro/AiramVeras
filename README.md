@@ -1943,6 +1943,38 @@ Homologada canonicamente na tabela `dim_rotina_semanal_integral_35h` do banco SQ
 | **6ª Aula**<br>(13:00–13:50) | **Arte**<br>Artes Visuais: Ponto, Linha, Cores e Autorretrato (EF15AR01) | **Geografia**<br>O Espaço Escolar: Croquis da Sala e Lateralidade (EF01GE09) | **Arte**<br>Música e Expressão Corporal: Sons do Corpo e Paisagem (EF15AR14) | **Ciências da Natureza**<br>Materiais do Cotidiano e Reciclagem Sustentável (EF01CI01) | **Educação Física**<br>Jogos Cooperativos, Coordenação Motora Fina/Ampla e Cooperação |
 | **7ª Aula**<br>(13:50–14:40) | **Educação Física**<br>Esquema Corporal, Equilíbrio e Regulação Sensorial DUA | **Ensino Religioso**<br>Círculo de Empatia, Alteridade e Validação PBS (EF01ER01) | **Educação Física**<br>Brincadeiras Tradicionais da Tradição Cearense e Cirandas | **Prática Interdisciplinar / DUA**<br>Laboratório de Recomposição & Apoio à SRM/AEE Modular | **Círculo Formativo Semanal**<br>Assembleia de Turma, Autoavaliação de Metas & Portfólio |
 
+
+---
+
+### 8. 📚 Dossiês Pedagógicos Mestres Multidisciplinares (1º e 2º Anos — Arquitetura de Paginação Estrita)
+
+Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} + N \times 40\text{ Caderno Individual}$), os Dossiês Mestres da Escola Municipal Airam Veras consolidam a integração de todos os 9 componentes curriculares da BNCC, diagnóstico censitário CAEd Ciclo I 2026, Método Fônico Sistemático, Aritmética Kumon Adaptada, BNCC Computacional desplugada, PEI/PAEE (DUA/PBS) e a grade oficial **INTEGRAL 35H** da Secretaria de Educação de Crateús:
+
+| Dossiê Mestre | Coorte | Meta de Paginação Estrita | Front Matter Master | Cadernos Individuais Customizados | Hash SHA-256 do Documento | Bloco Ledger SHA-256 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Dossiê Mestre 1º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Bioestatística, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `c7fd7ecbbec05be5fc9a4fa1d8eeb318f72782b54d3eb97c5053e18a0e303ea5` | **Bloco 18** |
+| **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Bioestatística, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `04d0c93031b04021c9e48b1d0bd7119aefdb8c3ef1ea079f773b7b9281ef396f` | **Bloco 19** |
+
+#### Arquitetura Detalhada do Dossiê do 2º Ano (1.160 Laudas Vetoriais A4)
+- **Diagnóstico Censitário CAEd Ciclo I 2026**:
+  - **Língua Portuguesa (28 alunos)**: 64% Adequado (18 alunos), 11% Intermediário (3 alunos), 25% Defasagem (7 alunos).
+  - **Descritores Críticos**: H01 (grafofonêmica, 36% de acerto) e H07 (localização de informação explícita, 48% de acerto).
+  - **Matemática (28 alunos)**: 54% Adequado (15 alunos), 25% Intermediário (7 alunos), 21% Defasagem (6 alunos).
+  - **Descritores Críticos**: H06 (geometria de figuras planas, 41% de acerto) e H07 (sistema monetário brasileiro, 55% de acerto).
+  - **Fluência Leitora**: 19 pré-leitores em aceleração, 9 leitores iniciantes em consolidação da rota lexical ventral VWFA.
+  - **Produção Escrita**: Média 5.7 / 10 (57% em nível alto/autônomo).
+- **Clusters de Intervenção Pedagógica Granular (2º Ano)**:
+  - **Cluster 2A — Recomposição Fonêmica Intensiva (7 alunos)**: Foco em H01/H02 e Kumon 4A/3A.
+  - **Cluster 2B — Automação e Fluência Leitora (6 alunos)**: Foco em WCPM > 60 e Kumon 2A (fatos de adição até 10).
+  - **Cluster 2C — Compreensão Textual e Resolução Algorítmica (10 alunos)**: Foco em inferência H05/H07 e Kumon Nível A.
+  - **Cluster 2D — Enriquecimento Curricular e Altas Habilidades (5 alunos)**: Atividades investigativas abertas e iniciação à robótica desplugada.
+- **Estrutura por Aluno (40 laudas individuais por estudante)**:
+  - 4 laudas iniciais customizadas: Capa Nominal Oficial, Raio-X 7D + CAEd Ciclo I, PEI/PAEE DUA/PBS e Trilha Kumon/Fônico.
+  - 26 laudas de Língua Portuguesa / Fônico (extraídas da matriz unificada original).
+  - 4 laudas de Matemática / Monitoramento formativo (extraídas da matriz unificada original).
+  - 6 laudas finais customizadas: Ciências da Natureza, Geografia/História, Arte/Educação Física, BNCC Computacional desplugada, Ficha de Monitoramento Semanal (Semanas 1-8) e Termo de Homologação Forense Institucional.
+- **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 19** (`acc8da2ee3af2797596b78bd02240bcc93786e3e420f409aac58bf12cf05bb8d`).
+
 ---
 
 ## 🛠️ Tecnologias e Dependências
@@ -1952,6 +1984,7 @@ Homologada canonicamente na tabela `dim_rotina_semanal_integral_35h` do banco SQ
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 18).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 19).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
+
