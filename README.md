@@ -1913,6 +1913,38 @@ Uma view analítica em 3FN consolidando os 172 estudantes com:
 
 ---
 
+### 7. 🏛️ Arquitetura da Rotina Semanal Oficial INTEGRAL 35H (Secretaria de Educação de Crateús)
+
+Homologada canonicamente na tabela `dim_rotina_semanal_integral_35h` do banco SQLite e materializada na **Lauda 7** do Dossiê Mestre de 1.000 laudas (Bloco 18 do Ledger), a jornada de **Tempo Integral (35 Horas Semanais)** atende rigorosamente às diretrizes da Secretaria de Educação do Município de Crateús:
+
+#### Grade Horária Oficial (7 Aulas Diárias de 50 min + 2 Intervalos Nutricionais/Repouso)
+| Período | Horário de Aula | Duração | Natureza do Horário | Destaque Visual Oficial |
+| :---: | :---: | :---: | :--- | :--- |
+| **1ª Aula** | **07:00 – 07:50** | 50 min | Componente Curricular Cognitivo | Instrução Direta e Explícita (Fônico / CAEd) |
+| **2ª Aula** | **07:50 – 08:40** | 50 min | Prática Diária Estruturada | Fichas de Fixação e Caligrafia Bastão |
+| **3ª Aula** | **08:40 – 09:30** | 50 min | Matemática & Senso Numérico | Kumon Adaptado e Reta Numérica Concreta |
+| **Lanche** | **09:30 – 09:50** | 20 min | Intervalo Nutricional / Merenda Saudável | Higienização Bucal & Convivência Saudável |
+| **4ª Aula** | **09:50 – 10:40** | 50 min | Pensamento Lógico / BNCC Computação | Algoritmos Desplugados e Resolução Concreta |
+| **5ª Aula** | **10:40 – 11:30** | 50 min | Ciências & Identidade Social | Corpo Humano, Ciclos Naturais e História |
+| **Almoço** | **11:30 – 13:00** | 90 min | Almoço Escolar Completo & Repouso | Higiene Pessoal, Descompressão e Atividades Calmas |
+| **6ª Aula** | **13:00 – 13:50** | 50 min | Expressão Estética & Território | Artes Visuais, Croquis e Paisagem Sonora |
+| **7ª Aula** | **13:50 – 14:40** | 50 min | Psicomotricidade, DUA & Assembleia | Regulação Sensorial, SRM/AEE e Portfólio de Metas |
+
+#### Matriz Semanal Multidisciplinar Integrada (35 Horas-Aula = 1.750 min/semana)
+| Horário / Aula | Segunda-feira | Terça-feira | Quarta-feira | Quinta-feira | Sexta-feira |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **1ª Aula**<br>(07:00–07:50) | **Língua Portuguesa**<br>Consciência Fonêmica e Sons Contínuos (P, M, V) • CAEd H01 | **Língua Portuguesa**<br>Decodificação Silábica Regular (C+V) e Palavras • CAEd H02 | **Língua Portuguesa**<br>Segmentação Fonêmica e Reconhecimento de Rimas • CAEd H03 | **Língua Portuguesa**<br>Fluência Leitora Inicial: Precisão e Automatização • CAEd H04 | **Língua Portuguesa**<br>Diagnóstico Semanal de Fluência (WCPM) e Leitura Guiada |
+| **2ª Aula**<br>(07:50–08:40) | **Língua Portuguesa**<br>Prática Diária Fônica Ficha Semanal e Caligrafia | **Língua Portuguesa**<br>Ortografia Regular, Ditado Fônico e Legendas | **Língua Portuguesa**<br>Leitura Expressiva de Textos Curtos e Parlendas | **Língua Portuguesa**<br>Compreensão Narrativa e Localização Explícita • CAEd H05 | **Matemática**<br>Kumon Adaptado 7A: Desafio de Contagem e Reta Numérica |
+| **3ª Aula**<br>(08:40–09:30) | **Matemática**<br>Kumon 7A: Sequência Numérica e Cardinalidade até 20 • H01 | **Matemática**<br>Kumon 6A: Composição e Decomposição de Quantidades • H02 | **Matemática**<br>Estruturas Aditivas Concretas: Juntar e Acrescentar • H03 | **Matemática**<br>Geometria Espacial: Sólidos Tridimensionais no Espaço • H04 | **Matemática**<br>Medidas de Tempo: Calendário, Dias da Semana e Rotina • H05 |
+| **Lanche**<br>(09:30–09:50) | <center colspan="5">**LANCHE ESCOLAR SAUDÁVEL E NUTRITIVO (20 MIN) • HIGIENIZAÇÃO ORIENTADA & CONVIVÊNCIA COMUNITÁRIA**</center> |
+| **4ª Aula**<br>(09:50–10:40) | **Matemática**<br>Resolução Concreta com Material Dourado e Cuisenaire | **BNCC Computacional**<br>Algoritmos Desplugados: Sequenciamento Passo a Passo | **Matemática**<br>Kumon 6A: Fatos Básicos da Adição e Raciocínio Dedutivo | **BNCC Computacional**<br>Reconhecimento de Padrões Visuais e Labirintos no Pátio | **BNCC Computacional**<br>Decomposição de Problemas e Instruções Lógicas Estruturadas |
+| **5ª Aula**<br>(10:40–11:30) | **Ciências da Natureza**<br>Corpo Humano, Sentidos e Hábitos Saudáveis (EF01CI02) | **Ciências da Natureza**<br>Ciclos Temporais: Dia e Noite e Efeitos Biológicos (EF01CI05) | **História**<br>Identidade Pessoal, Nome Próprio e Família (EF01HI01) | **Geografia**<br>A Moradia e seus Compartimentos: Noções Espaciais (EF01GE01) | **História**<br>A Escola e a Comunidade: Memória e Transformações (EF01HI04) |
+| **Almoço**<br>(11:30–13:00) | <center colspan="5">**ALMOÇO ESCOLAR COMPLETO • HIGIENE BUCAL • REPOUSO / ATIVIDADES LÚDICAS CALMAS (90 MIN)**</center> |
+| **6ª Aula**<br>(13:00–13:50) | **Arte**<br>Artes Visuais: Ponto, Linha, Cores e Autorretrato (EF15AR01) | **Geografia**<br>O Espaço Escolar: Croquis da Sala e Lateralidade (EF01GE09) | **Arte**<br>Música e Expressão Corporal: Sons do Corpo e Paisagem (EF15AR14) | **Ciências da Natureza**<br>Materiais do Cotidiano e Reciclagem Sustentável (EF01CI01) | **Educação Física**<br>Jogos Cooperativos, Coordenação Motora Fina/Ampla e Cooperação |
+| **7ª Aula**<br>(13:50–14:40) | **Educação Física**<br>Esquema Corporal, Equilíbrio e Regulação Sensorial DUA | **Ensino Religioso**<br>Círculo de Empatia, Alteridade e Validação PBS (EF01ER01) | **Educação Física**<br>Brincadeiras Tradicionais da Tradição Cearense e Cirandas | **Prática Interdisciplinar / DUA**<br>Laboratório de Recomposição & Apoio à SRM/AEE Modular | **Círculo Formativo Semanal**<br>Assembleia de Turma, Autoavaliação de Metas & Portfólio |
+
+---
+
 ## 🛠️ Tecnologias e Dependências
 
 - **Runtime de Dados**: Python 3.12 (64-bit)
@@ -1920,6 +1952,6 @@ Uma view analítica em 3FN consolidando os 172 estudantes com:
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**30 tabelas e 7 views em 3FN com Modo WAL**), PostgreSQL 15+, Schemas OpenAPI 3.0 e JSON Schema
+- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 18).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)

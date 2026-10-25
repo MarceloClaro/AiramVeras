@@ -609,64 +609,123 @@ def build_front_matter_40_pages():
     """
     pages.append(p6)
 
-    # Lauda 7: Rotina Semanal Multidisciplinar Integrada
+    # Lauda 7: Rotina Semanal Multidisciplinar Integrada (INTEGRAL 35H - SME Crateús)
     p7 = f"""
     <div class="page-block">
         {make_header(7)}
-        <h1 class="section-title">Arquitetura da Rotina Semanal Multidisciplinar Integrada</h1>
+        <h1 class="section-title">Arquitetura da Rotina Semanal Multidisciplinar Integrada — Tempo Integral (35H)</h1>
         
-        <p style="font-size:7pt;">A matriz de 25 horas semanais do 1º Ano organiza os 9 componentes em ciclos integrados com o Método Fônico e o Kumon Adaptado:</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; background:#f8fafc; border:1.5px solid #0f172a; border-radius:4px; padding:3px 8px; margin-bottom:4px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+                <div style="font-weight:900; font-size:7.5pt; color:#15803d; text-transform:uppercase; letter-spacing:0.3px;">Secretaria de Educação</div>
+                <div style="height:14px; width:1.5px; background:#94a3b8;"></div>
+                <div style="font-size:7pt; font-weight:700; color:#0f172a;">
+                    <span style="color:#0284c7; font-weight:900;">GOVERNO DE CRATEÚS</span> — <span style="font-size:6pt; color:#475569;">CUIDANDO DA NOSSA GENTE</span>
+                </div>
+            </div>
+            <div style="background:#0f172a; color:#ffffff; font-size:7pt; font-weight:900; padding:2px 8px; border-radius:3px; letter-spacing:0.8px;">
+                INTEGRAL 35H • HORÁRIOS DE AULA
+            </div>
+        </div>
 
-        <table class="data-table">
+        <p style="font-size:6.4pt; margin: 2px 0 4px 0; color:#334155;">
+            A matriz curricular de <strong>Tempo Integral (35 Horas Semanais)</strong> da Rede Municipal de Crateús organiza os 9 componentes em ciclos integrados de 7 aulas diárias de 50 minutos, articulando o Método Fônico, Kumon Adaptado, BNCC Computacional e práticas DUA/AEE:
+        </p>
+
+        <table class="data-table" style="font-size:5.6pt; line-height:1.15; margin-bottom:4px;">
             <tr>
-                <th style="width:14%;">Horário / Dia</th>
-                <th style="width:17%;">Segunda-feira</th>
-                <th style="width:17%;">Terça-feira</th>
-                <th style="width:17%;">Quarta-feira</th>
-                <th style="width:17%;">Quinta-feira</th>
-                <th style="width:18%;">Sexta-feira</th>
+                <th style="width:14%; background-color:#0f172a;">Horário / Aula</th>
+                <th style="width:17.2%;">Segunda-feira</th>
+                <th style="width:17.2%;">Terça-feira</th>
+                <th style="width:17.2%;">Quarta-feira</th>
+                <th style="width:17.2%;">Quinta-feira</th>
+                <th style="width:17.2%;">Sexta-feira</th>
             </tr>
             <tr>
-                <td><strong>07:30 - 08:20</strong><br>(50 min)</td>
-                <td><strong>Língua Portuguesa:</strong><br>Consciência Fonêmica e Sons Contínuos (P, M, V)</td>
-                <td><strong>Matemática:</strong><br>Kumon 7A - Contagem e Reta Numérica (1-20)</td>
-                <td><strong>Língua Portuguesa:</strong><br>Decodificação Silábica e Formação de Palavras</td>
-                <td><strong>Matemática:</strong><br>Kumon 6A - Estruturas Aditivas e Decomposição</td>
-                <td><strong>Língua Portuguesa:</strong><br>Miniavaliação de Fluência e Leitura Expressiva</td>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>1ª Aula</strong><br>07:00 – 07:50</td>
+                <td><strong>Língua Portuguesa:</strong><br>Consciência Fonêmica e Sons Contínuos (P, M, V) • CAEd H01</td>
+                <td><strong>Língua Portuguesa:</strong><br>Decodificação Silábica Regular (C+V) e Formação de Palavras • H02</td>
+                <td><strong>Língua Portuguesa:</strong><br>Segmentação Fonêmica e Reconhecimento de Rimas • H03</td>
+                <td><strong>Língua Portuguesa:</strong><br>Fluência Leitora Inicial: Precisão e Automatização • H04</td>
+                <td><strong>Língua Portuguesa:</strong><br>Diagnóstico Formativo Semanal de Fluência (WCPM) e Leitura Guiada</td>
             </tr>
             <tr>
-                <td><strong>08:20 - 09:10</strong><br>(50 min)</td>
-                <td><strong>Língua Portuguesa:</strong><br>Prática Diária Fônica Ficha Semanal</td>
-                <td><strong>Matemática:</strong><br>Resolução Guiada com Material Concreto</td>
-                <td><strong>Língua Portuguesa:</strong><br>Ortografia Regular e Ditado Ilustrado</td>
-                <td><strong>Matemática:</strong><br>Geometria e Grandezas Espaciais</td>
-                <td><strong>Matemática:</strong><br>Desafio Cumulativo e Cálculo Mental Lúdico</td>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>2ª Aula</strong><br>07:50 – 08:40</td>
+                <td><strong>Língua Portuguesa:</strong><br>Prática Diária Fônica Ficha Semanal e Caligrafia Bastão</td>
+                <td><strong>Língua Portuguesa:</strong><br>Ortografia Regular, Ditado Fônico e Produção de Legendas</td>
+                <td><strong>Língua Portuguesa:</strong><br>Leitura Expressiva de Textos Curtos, Parlendas e Cantigas</td>
+                <td><strong>Língua Portuguesa:</strong><br>Compreensão Narrativa e Localização Explícita • CAEd H05</td>
+                <td><strong>Matemática:</strong><br>Kumon Adaptado 7A: Desafio de Contagem e Reta Numérica Lúdica</td>
             </tr>
             <tr>
-                <td><strong>09:10 - 09:30</strong></td>
-                <td colspan="5" style="text-align:center; background:#e2e8f0; font-weight:bold;">INTERVALO PEDAGÓGICO / MERENDA ESCOLAR SAUDÁVEL (20 MINUTOS)</td>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>3ª Aula</strong><br>08:40 – 09:30</td>
+                <td><strong>Matemática:</strong><br>Kumon 7A: Sequência Numérica e Cardinalidade até 20 • CAEd H01</td>
+                <td><strong>Matemática:</strong><br>Kumon 6A: Composição e Decomposição de Quantidades • CAEd H02</td>
+                <td><strong>Matemática:</strong><br>Estruturas Aditivas Concretas: Juntar e Acrescentar • CAEd H03</td>
+                <td><strong>Matemática:</strong><br>Geometria Espacial: Sólidos Tridimensionais no Espaço • CAEd H04</td>
+                <td><strong>Matemática:</strong><br>Medidas de Tempo: Calendário, Dias da Semana e Rotina Diária • H05</td>
+            </tr>
+            <tr style="background:#e8eedd;">
+                <td style="font-weight:900; color:#2d4a22; text-align:center; border:1.5px solid #b6cc9a;"><strong>Lanche</strong><br>09:30 – 09:50</td>
+                <td colspan="5" style="text-align:center; font-weight:700; color:#2d4a22; font-size:6.2pt; border:1.5px solid #b6cc9a; letter-spacing:0.4px;">
+                    LANCHE ESCOLAR SAUDÁVEL E NUTRITIVO (20 MIN) • HIGIENIZAÇÃO ORIENTADA & CONVIVÊNCIA COMUNITÁRIA
+                </td>
             </tr>
             <tr>
-                <td><strong>09:30 - 10:20</strong><br>(50 min)</td>
-                <td><strong>Arte:</strong><br>Artes Visuais, Cores Primárias e Autorretrato</td>
-                <td><strong>Ciências da Natureza:</strong><br>Corpo Humano, Órgãos dos Sentidos e Higiene</td>
-                <td><strong>História:</strong><br>Identidade da Criança, Família e Nome</td>
-                <td><strong>BNCC Computacional:</strong><br>Algoritmos Desplugados e Decomposição</td>
-                <td><strong>Educação Física:</strong><br>Brincadeiras Tradicionais e Cirandas Regionais</td>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>4ª Aula</strong><br>09:50 – 10:40</td>
+                <td><strong>Matemática:</strong><br>Resolução Concreta com Material Dourado e Cuisenaire</td>
+                <td><strong>BNCC Computacional:</strong><br>Algoritmos Desplugados: Sequenciamento Passo a Passo de Tarefas</td>
+                <td><strong>Matemática:</strong><br>Kumon 6A: Fatos Básicos da Adição e Raciocínio Dedutivo Cumulativo</td>
+                <td><strong>BNCC Computacional:</strong><br>Reconhecimento de Padrões Visuais e Labirintos Lógicos no Pátio</td>
+                <td><strong>BNCC Computacional:</strong><br>Decomposição de Problemas e Criação de Instruções Lógicas</td>
             </tr>
             <tr>
-                <td><strong>10:20 - 11:10</strong><br>(50 min)</td>
-                <td><strong>Educação Física:</strong><br>Consciência Corporal e Equilíbrio Motor</td>
-                <td><strong>Ciências da Natureza:</strong><br>Materiais do Cotidiano e Reciclagem</td>
-                <td><strong>Geografia:</strong><br>Espaço da Casa, Escola e Lateralidade</td>
-                <td><strong>BNCC Computacional:</strong><br>Reconhecimento de Padrões e Labirintos</td>
-                <td><strong>Ensino Religioso:</strong><br>Círculo de Empatia, Afeto e Valores (PBS)</td>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>5ª Aula</strong><br>10:40 – 11:30</td>
+                <td><strong>Ciências da Natureza:</strong><br>Corpo Humano, Órgãos dos Sentidos e Higiene (EF01CI02)</td>
+                <td><strong>Ciências da Natureza:</strong><br>Ciclos Temporais: Dia e Noite e Efeitos nos Seres Vivos (EF01CI05)</td>
+                <td><strong>História:</strong><br>Identidade Pessoal, Nome Próprio e Vínculos Familiares (EF01HI01)</td>
+                <td><strong>Geografia:</strong><br>A Moradia e seus Compartimentos: Noções Espaciais (EF01GE01)</td>
+                <td><strong>História:</strong><br>A Escola e a Comunidade: Transformações e Memória (EF01HI04)</td>
+            </tr>
+            <tr style="background:#dcd6e8;">
+                <td style="font-weight:900; color:#3b2d54; text-align:center; border:1.5px solid #bcaecf;"><strong>Almoço</strong><br>11:30 – 13:00</td>
+                <td colspan="5" style="text-align:center; font-weight:700; color:#3b2d54; font-size:6.2pt; border:1.5px solid #bcaecf; letter-spacing:0.4px;">
+                    ALMOÇO ESCOLAR COMPLETO • HIGIENE BUCAL • REPOUSO / ATIVIDADES LÚDICAS CALMAS (90 MIN)
+                </td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>6ª Aula</strong><br>13:00 – 13:50</td>
+                <td><strong>Arte:</strong><br>Artes Visuais: Ponto, Linha, Cores Primárias e Autorretrato (EF15AR01)</td>
+                <td><strong>Geografia:</strong><br>O Espaço Escolar: Croquis da Sala de Aula e Lateralidade (EF01GE09)</td>
+                <td><strong>Arte:</strong><br>Música e Expressão Corporal: Sons do Corpo e Paisagem Sonora (EF15AR14)</td>
+                <td><strong>Ciências da Natureza:</strong><br>Materiais do Cotidiano e Práticas Sustentáveis (EF01CI01)</td>
+                <td><strong>Educação Física:</strong><br>Jogos Cooperativos, Coordenação Motora Fina/Ampla e Socialização</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold; background:#f1f5f9; text-align:center;"><strong>7ª Aula</strong><br>13:50 – 14:40</td>
+                <td><strong>Educação Física:</strong><br>Esquema Corporal, Equilíbrio Vestibular e Regulação Sensorial DUA</td>
+                <td><strong>Ensino Religioso:</strong><br>Círculo de Empatia, Alteridade e Validação Emocional PBS (EF01ER01)</td>
+                <td><strong>Educação Física:</strong><br>Brincadeiras Tradicionais da Cultura Cearense e Cirandas de Roda</td>
+                <td><strong>Prática Interdisciplinar / DUA:</strong><br>Laboratório de Recomposição & Apoio à SRM/AEE Modular</td>
+                <td><strong>Círculo Formativo Semanal:</strong><br>Assembleia de Turma, Autoavaliação de Metas & Portfólio</td>
             </tr>
         </table>
 
-        <div class="card-highlight" style="font-size:7pt;">
-            <strong>Mecanismo de Articulação com a SRM (AEE):</strong> Os 24 estudantes da Educação Especial realizam 2 a 3 sessões semanais de 50 minutos no contraturno na Sala de Recursos Multifuncionais, focadas em estimulação de funções executivas, tecnologia assistiva e adequação dos materiais fônicos/Kumon.
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; margin-top:3px;">
+            <div class="card" style="font-size:6.3pt; padding:4px 6px;">
+                <strong style="color:#1e3a8a;">Síntese Curricular Semanal (35 Horas-Aula = 1.750 min/semana):</strong><br>
+                • <strong>Língua Portuguesa:</strong> 9 h/a (25,7%) • <strong>Matemática:</strong> 8 h/a (22,9%)<br>
+                • <strong>BNCC Computacional:</strong> 3 h/a (8,6%) • <strong>Ciências:</strong> 3 h/a (8,6%)<br>
+                • <strong>História:</strong> 2 h/a (5,7%) • <strong>Geografia:</strong> 2 h/a (5,7%) • <strong>Arte:</strong> 2 h/a (5,7%)<br>
+                • <strong>Educação Física:</strong> 3 h/a (8,6%) • <strong>Ensino Religioso:</strong> 1 h/a (2,9%)<br>
+                • <strong>Recomposição / Articulação AEE:</strong> 2 h/a (5,7%) • <strong>Total:</strong> 35 h/a (100%)
+            </div>
+            <div class="card-highlight" style="font-size:6.3pt; padding:4px 6px;">
+                <strong style="color:#1e40af;">Articulação com a SRM (Atendimento Educacional Especializado):</strong><br>
+                Os 24 estudantes da Educação Especial realizam atendimentos no contraturno modular e em momentos planejados da rotina na Sala de Recursos Multifuncionais (SRM), com pranchas de comunicação alternativa (PECS/TEACCH), tecnologia assistiva e adequação multissensorial dos materiais fônicos e do Kumon adaptado.
+            </div>
         </div>
+
         {make_footer(7)}
     </div>
     """
@@ -1948,7 +2007,8 @@ def register_block_ledger(hash_pdf):
     tipo_op = "HOMOLOGACAO_1000_LAUDAS_DIDATICO"
     reg_id = hash_pdf
     resumo = (
-        "Homologação e Auditoria Forense do Dossiê Mestre 1º Ano de 1.000 Laudas Vetoriais A4 com Guia Didático para Leigos "
+        "Homologação e Auditoria Forense do Dossiê Mestre 1º Ano de 1.000 Laudas Vetoriais A4 com Matriz e Rotina Semanal "
+        "INTEGRAL 35H Oficial da SME Crateús (7 Aulas Diárias de 50 min, Lanche e Almoço Integrados), Guia Didático para Leigos "
         "(EWS, Cadeia de Markov, Correlações Multidisciplinares, ANOVA, Kruskal-Wallis, Fisher, Yates e t-Pareado), "
         "Eliminação Integral de Notação LaTeX Bruta, 14 DOIs Científicos Ativos e Padronização Universal Paramétrica."
     )
