@@ -102,13 +102,13 @@ graph TD
 
 ---
 
-## 📘 Dossiê Pedagógico Mestre e Matriz Canônica das Turmas (670 Laudas Vetoriais A4)
+## 📘 Dossiê Pedagógico Mestre e Matriz Canônica das Turmas (1.000 Laudas Vetoriais A4)
 
 > **Documento Oficial de Referência e Base de Todos os Dossiês das Turmas (1º ao 5º Ano)**  
 > **Arquivo Homologado**: [`DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf)  
-> **Hash SHA-256 Forense**: `cfda547ea9ba6e670375d10dfdf5d08e1b364286718d48a39c124107f04e90e1` (3,12 MB)  
-> **Total de Páginas**: **670 laudas vetoriais A4** (46 laudas de Front Matter Master + 624 laudas de cadernos individualizados)  
-> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 13) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
+> **Hash SHA-256 Forense**: `6b2156ab3d44cdad9d2d9046dea8ab6b7f1cfe512e14df4e4e46bb1a2008dfc7` (6,97 MB)  
+> **Total de Páginas**: **1.000 laudas vetoriais A4** (40 laudas de Front Matter Master + 960 laudas de cadernos individualizados: $24 \text{ estudantes} \times 40 \text{ laudas cada}$)  
+> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 14: hash `c8d31fbefc8785300d17573ba8a0ae1cb2194b3de4590130a30a2369e748af8c`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
 
 Este documento estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva e acompanhamento longitudinal.
 
@@ -120,19 +120,19 @@ graph TD
     classDef planBox fill:#1e1b4b,stroke:#6366f1,stroke-width:2px,color:#ffffff;
     classDef indBox fill:#14532d,stroke:#22c55e,stroke-width:2px,color:#ffffff;
     classDef pratBox fill:#701a75,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+    classDef multiBox fill:#312e81,stroke:#818cf8,stroke-width:2px,color:#ffffff;
 
-    subgraph DOSSIE ["📘 Arquitetura Canônica do Dossiê Mestre (670 Laudas)"]
-        S1["1. Capa Master Oficial & Chancela Forense"]:::capBox
-        S2["2. Fundamentação Científica: 9 DOIs Reais Ativos"]:::sciBox
-        S3["3. Rotina Diária Interdisciplinar (Segunda a Sexta)"]:::sciBox
-        S4["4. Marco Legal Inclusivo, PEI, PAEE & Psiconeuropedagogia"]:::legBox
-        S5["5. Matriz BNCC Computação (Resolução CNE/CP 1/2022)"]:::planBox
-        S6["6. Plano Anual e Planos Bimestrais I a IV (9 Componentes)"]:::planBox
-        S7["7. Censo Coletivo & Matrizes de Markov (Ciclos I, II, III)"]:::sciBox
-        S8["8. Fichas Individuais (24 Lauda-Raio-X, EWS & Metas PEI)"]:::indBox
-        S9["9. Caderno de Práticas Diárias (24 alunos x 26 pág = 624 pág)"]:::pratBox
+    subgraph DOSSIE ["📘 Arquitetura Canônica do Dossiê Mestre (1.000 Laudas A4)"]
+        S1["1. Front Matter Master: Capa, Legalidade, 12 DOIs & Censo (40 laudas)"]:::capBox
+        S2["2. Identificação Individual, Raio-X Cognitivo 7D, PEI & PAEE (4 laudas/aluno = 96 laudas)"]:::indBox
+        S3["3. Língua Portuguesa: Alfabetização Fônica Sistemática (26 laudas/aluno = 624 laudas)"]:::pratBox
+        S4["4. Matemática: Aritmética Kumon Granular & CAEd (4 laudas/aluno = 96 laudas)"]:::sciBox
+        S5["5. Multidisciplinar: Ciências, História, Geografia, Arte & Ed. Física (3 laudas/aluno = 72 laudas)"]:::multiBox
+        S6["6. BNCC Computação, Ensino Religioso & Matriz Interdisciplinar (1 lauda/aluno = 24 laudas)"]:::planBox
+        S7["7. Monitoramento Docente Semanal: Semanas 1 a 8 com Rubricas (1 lauda/aluno = 24 laudas)"]:::legBox
+        S8["8. Termo de Homologação Forense & Assinaturas SHA-256 (1 lauda/aluno = 24 laudas)"]:::capBox
 
-        S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
+        S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
     end
 ```
 
@@ -191,7 +191,7 @@ O dossiê estabelece uma rotina precisa e exequível tanto para o professor rege
 
 ### 4. 📅 Plano Anual da Turma e Planos Bimestrais (Bimestres I, II, III e IV)
 
-O Plano Curricular do Dossiê Mestre é composto por **7 Diretrizes Anuais Integradas** e **36 Matrizes Bimestrais Detalhadas** (4 bimestres $	imes$ 9 componentes):
+O Plano Curricular do Dossiê Mestre é composto por **7 Diretrizes Anuais Integradas** e **36 Matrizes Bimestrais Detalhadas** (4 bimestres $\times$ 9 componentes):
 
 - **Língua Portuguesa (Alfabetização Fônica e Letramento):** Domínio fonema-grafema, escrita alfabética canônica e alcance de fluência mínima de 60 PPM no final do Ciclo III.
 - **Matemática (Kumon Cumulativo e Senso Numérico):** Domínio dos fatos básicos de adição e subtração sem reagrupamento, contagem até 100 e resolução de problemas em 2 passos.
@@ -203,25 +203,30 @@ O Plano Curricular do Dossiê Mestre é composto por **7 Diretrizes Anuais Integ
 
 ---
 
-### 5. 🗄️ Arquitetura do Banco de Dados Relacional Canônico (51 Tabelas, Sem Ilhas)
+### 5. 🗄️ Arquitetura do Banco de Dados Relacional Canônico (56 Estruturas Relacionais, Sem Ilhas)
 
 Todas as informações, predições, registros de PEI, PAEE e trilhas de práticas diárias estão armazenados em [`datamining/dados/airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite) com **100% de integridade relacional**:
 
 ```
-Total de Tabelas: 51 | Tabelas Vazias ("Ilhas"): 0 | Violações de Chave Estrangeira: 0
-Blocos no Ledger SHA-256: 13 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
+Total de Tabelas: 55 canônicas + 5 views analíticas | Tabelas Vazias ("Ilhas"): 0 | Violações de Chave Estrangeira: 0
+Blocos no Ledger SHA-256: 14 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
 ```
 
 - **`dim_estudantes_nominal_restrito`** (172 registros): Mapeamento nominal e institucional auditável de todos os estudantes da escola.
 - **`dim_legislacao_educacional_inclusiva`** (7 registros): Artigos, ementas e diretrizes das leis federais, resoluções e notas técnicas.
-- **`fato_pei_estudante_adaptacoes`** (96 registros): 24 estudantes $	imes$ 4 bimestres de PEI com acomodações DUA, metas adaptadas e hash forense.
+- **`fato_pei_estudante_adaptacoes`** (96 registros): 24 estudantes $\times$ 4 bimestres de PEI com acomodações DUA, metas adaptadas e hash forense.
 - **`fato_paee_plano_atendimento`** (24 registros): Modalidade, frequência semanal e cronograma de atendimento na SRM.
 - **`fato_plano_anual_turma_bncc_caed`** (7 registros): Componentes curriculares anuais integrados.
 - **`fato_plano_bimestral_bncc_interdisciplinar`** (36 registros): Matrizes bimestrais completas dos 9 componentes curriculares.
+- **`fato_plano_bimestral_multidisciplinar`** (36 registros): Conteúdos detalhados, objetivos cognitivos e conexões computacionais dos 9 componentes $\times$ 4 bimestres.
 - **`fato_praticas_adaptadas_cluster`** (4 registros): Diretrizes de sala regular e SRM para os clusters G1 a G4.
 - **`fato_praticas_diarias_execucao`** (960 registros): Registro transacional das 40 folhas diárias para os 24 alunos do 1º ano.
+- **`fato_praticas_diarias_multidisciplinares`** (960 registros): Práticas diárias de Ciências, História, Geografia, Arte, Ed. Física, Ensino Religioso e Computação.
+- **`fato_correlacao_multidisciplinar_caed`** (8 registros): Coeficientes Pearson/Spearman relacionando componentes curriculares com fluência leitora e proficiência matemática.
+- **`fato_analise_preditiva_multidisciplinar`** (216 registros): Predição de risco e alcance das Metas A e B para os 24 alunos nos 9 componentes curriculares.
+- **`fato_monitoramento_docente_semanal`** (192 registros): Acompanhamento semanal (Semanas 1 a 8) com rubrica formativa e ação pedagógica imediata.
 - **`fato_respostas_itens_habilidades`** (4.618 registros): Micro-itens individuais vinculados a descritores CAEd e cadernos avaliativos.
-- **`fato_auditoria_transacional_ledger`** (13 blocos): Encadeamento criptográfico imutável com hashes SHA-256.
+- **`fato_auditoria_transacional_ledger`** (14 blocos): Encadeamento criptográfico imutável com hashes SHA-256.
 
 ---
 
@@ -605,7 +610,7 @@ O ecossistema Airam Veras padronizou os protocolos de atendimento para os 12 dia
 
 ### 5. 🗺️ Mapas Estruturais da Arquitetura do Banco de Dados Relacional e Topologia de Processos
 
-O ecossistema é sustentado pelo banco de dados relacional canônico [`airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite), modelado em Terceira Forma Normal (3FN), contendo **51 tabelas relacionais**, 5 views analíticas de alta performance, 100% de integridade referencial sem ilhas e rastreabilidade criptográfica no Ledger SHA-256 (13 blocos encadeados).
+O ecossistema é sustentado pelo banco de dados relacional canônico [`airam_veras_ecossistema.sqlite`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/dados/airam_veras_ecossistema.sqlite), modelado em Terceira Forma Normal (3FN), contendo **56 estruturas relacionais (55 tabelas canônicas e 5 views analíticas)**, 100% de integridade referencial sem ilhas e rastreabilidade criptográfica no Ledger SHA-256 (14 blocos encadeados).
 
 #### 📊 Diagrama Entidade-Relacionamento Completo (ERD em Mermaid)
 
@@ -620,6 +625,9 @@ erDiagram
     dim_estudantes ||--o| fato_rastreio_altas_habilidades : homologado_ahsd
     dim_estudantes ||--o{ fato_pei_estudante_adaptacoes : possui_pei_bimestral
     dim_estudantes ||--o| fato_paee_plano_atendimento : possui_paee_srm
+    dim_estudantes ||--o{ fato_praticas_diarias_multidisciplinares : executa_praticas_diarias
+    dim_estudantes ||--o{ fato_analise_preditiva_multidisciplinar : avalia_risco_preditivo
+    dim_estudantes ||--o{ fato_monitoramento_docente_semanal : acompanha_semanalmente
     
     dim_cid_catalogo ||--o{ fato_estudante_aee_perfil : classifica_cid
     dim_cid_catalogo ||--o{ fato_rastreio_altas_habilidades : associa_comorbidade
