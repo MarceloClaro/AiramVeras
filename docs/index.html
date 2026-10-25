@@ -1522,12 +1522,13 @@
                 }
             }
             backgroundFlow();
+        })();
 
-            // -------------------------------------------------------------
-            // ANIMAÇÃO 6: GRÁFICO RADAR NEUROCOGNITIVO (7 DOMÍNIOS CHC)
-            // -------------------------------------------------------------
-            let currentPerfilRadar = 'media';
-            (function () {
+        // -------------------------------------------------------------
+        // ANIMAÇÃO 6: GRÁFICO RADAR NEUROCOGNITIVO (7 DOMÍNIOS CHC)
+        // -------------------------------------------------------------
+        let currentPerfilRadar = 'media';
+        (function () {
                 const svg = d3.select("#stage-radar").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
                 const cx = W / 2, cy = H / 2;
                 const radius = Math.min(W, H) * 0.38;
