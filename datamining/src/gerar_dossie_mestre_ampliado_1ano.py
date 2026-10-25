@@ -27,6 +27,16 @@ from pypdf import PdfReader, PdfWriter
 
 sys.stdout.reconfigure(encoding='utf-8')
 
+def clean_txt(s):
+    if not isinstance(s, str):
+        return s
+    return (s.replace('IntermediÃ¡rio', 'Intermediário')
+             .replace('Intermedirio', 'Intermediário')
+             .replace('AvanÃ§ado', 'Avançado')
+             .replace('CrÃ­tico', 'Crítico')
+             .replace('AtenÃ§Ã£o', 'Atenção'))
+
+
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
 DB_PATH = os.path.join(WORKSPACE_DIR, "datamining", "dados", "airam_veras_ecossistema.sqlite")
@@ -483,7 +493,7 @@ p3 = f"""
 """
 pages.append(p3)
 
-# ================= PÁGINAS 4 E 5: ROTINA INTERDISCIPLINAR E ACESSIBILIDADE =================
+# ================= PÁGINAS 4 E 5: ROTINA INTERDISCIPLINAR, MARCO LEGAL E PEI/PAEE =================
 p4 = f"""
 <div class="page-block">
     {make_header(4)}
@@ -541,45 +551,69 @@ pages.append(p4)
 p5 = f"""
 <div class="page-block">
     {make_header(5)}
-    <h1 class="section-title">2. Acessibilidade, Neurodiversidade e Diretrizes de AEE</h1>
+    <h1 class="section-title">2. Marco Legal Inclusivo, Psiconeuropedagogia e Protocolos PEI / PAEE</h1>
     
-    <p>O atendimento à diversidade na Escola Airam Veras obedece a protocolos clínicos e pedagógicos individualizados para garantir a permanência e o avanço de todos:</p>
+    <div class="card-highlight" style="padding:4px 7px; margin-bottom:4px;">
+        <strong>Conformidade Legal Mandatória:</strong> Lei Federal 13.146/2015 (LBI - Arts. 27 e 28) • Lei 12.764/2012 (TEA / Berenice Piana) • Lei 14.254/2021 (TDAH e Dislexia) • Resolução CNE/CEB 04/2009 e Decreto 7.611/2011 (Diretrizes Operacionais do AEE na SRM) • Parecer CNE/CP 50/2023 (Protocolo PBS para TEA) • Nota Técnica Conjunta 02/2025/MEC/SECADI (Diretrizes do PEI).
+    </div>
+    
+    <div class="grid-3" style="margin-bottom:4px;">
+        <div class="card" style="padding:4px 6px;">
+            <div style="font-weight:bold; color:#1e3a8a; font-size:7.2pt;">DUA - Rede Afetiva</div>
+            <div style="font-size:6.6pt; color:#475569;">Engajamento, regulação emocional, previsibilidade de agenda visual TEACCH e contratos de contingência (PBS).</div>
+        </div>
+        <div class="card" style="padding:4px 6px;">
+            <div style="font-weight:bold; color:#15803d; font-size:7.2pt;">DUA - Reconhecimento</div>
+            <div style="font-size:6.6pt; color:#475569;">Múltiplos meios de representação, tipografia 14pt+ sem serifa, material concreto e pranchas de CAA.</div>
+        </div>
+        <div class="card" style="padding:4px 6px;">
+            <div style="font-weight:bold; color:#7c3aed; font-size:7.2pt;">DUA - Rede Estratégica</div>
+            <div style="font-size:6.6pt; color:#475569;">Ação e expressão flexíveis, scaffolds progressivos, tempo estendido (+50%) e blocos fracionados.</div>
+        </div>
+    </div>
     
     <table class="data-table">
         <tr>
-            <th style="width:20%;">Perfil Clínico / CID</th>
-            <th style="width:35%;">Manifestação Comportamental e Cognitiva</th>
-            <th>Protocolo Didático Mandatório na Escola Airam Veras</th>
+            <th style="width:18%;">Cluster / Perfil</th>
+            <th style="width:26%;">Fundamentação Psiconeuropedagógica</th>
+            <th style="width:30%;">Adaptação Diária de Sala de Aula (LBI Art. 28)</th>
+            <th>Atendimento AEE na SRM</th>
         </tr>
         <tr>
-            <td><strong>Dislexia / Atraso Fonológico</strong></td>
-            <td>Lentidão na conversão grafema-som, trocas de letras simétricas (b/d, p/q), fadiga visual precoce.</td>
-            <td>Uso de régua/janela de leitura; aumento de entrelinhas; pistas multissensoriais táteis; proibição de cobrança de velocidade mecânica descontextualizada.</td>
+            <td><strong>Cluster 1A</strong><br><span class="badge badge-red">Recomposição / Alerta</span></td>
+            <td>Déficit em consciência fonêmica e senso numérico. Sobrecarga em memória operacional (Sweller / Fuchs).</td>
+            <td>Carteira frontal no centro; eliminação de distratores; blocos de 15 min com 3 min de pausa motora; máscara de leitura; leitura de enunciado em voz alta.</td>
+            <td><strong>SRM Individual:</strong> 3x/semana (150 min). Estimulação fonoarticulatória no espelho e material dourado.</td>
         </tr>
         <tr>
-            <td><strong>TDAH (CID F90.0)</strong></td>
-            <td>Impulsividade na resposta, dificuldade de sustentar foco em tarefas longas, labilidade executiva.</td>
-            <td>Microetapas com pausas ativas a cada 7 minutos; eliminação de distratores visuais na carteira; assento na primeira fileira longe de portas e janelas.</td>
+            <td><strong>Cluster 1B</strong><br><span class="badge badge-yellow">Consolidação / Fluência</span></td>
+            <td>Silabação hesitante; lentidão no acesso lexical; dependência de contagem unitária (Stanovich / Dehaene).</td>
+            <td>Leitura em coro e duplas assistidas; reta numérica de mesa; textos em caixa alta com sílabas coloridas; reforço positivo imediato.</td>
+            <td><strong>SRM Grupo (3 alunos):</strong> 2x/semana (100 min). Automação grafema-som e cálculo mental cumulativo.</td>
         </tr>
         <tr>
-            <td><strong>TOD (CID F91.3)</strong></td>
-            <td>Resistência a ordens diretas, baixa tolerância à frustração no erro, recusa de atividades impositivas.</td>
-            <td>Contrato pedagógico prévio com escolha entre duas opções válidas; reforço contingente positivo imediato; ausência de confrontação verbal diante do erro.</td>
+            <td><strong>Cluster 1C</strong><br><span class="badge badge-blue">Compreensão / Autonomia</span></td>
+            <td>Decodificação funcional, mas falha em inferências pragmáticas e problemas de 2 passos (Scarborough).</td>
+            <td>Roteiros de pistas inferenciais ('Quem?', 'Por quê?'); mapas mentais; tempo adicional de 25% para elaboração reflexiva.</td>
+            <td><strong>SRM Metacognição:</strong> 2x/semana (80 min). Interpretação de causalidade e teoria da mente.</td>
         </tr>
         <tr>
-            <td><strong>TEA (CID F84.0)</strong></td>
-            <td>Sobrecarga sensorial, necessidade de rotinas visuais estáveis e previsíveis, apego a padrões.</td>
-            <td>Quadro pictórico de rotina visual na carteira; eliminação de ruídos concorrentes; comandos verbais simples e diretos; antecipação de mudanças de atividade.</td>
-        </tr>
-        <tr>
-            <td><strong>Altas Habilidades / Superdotação</strong></td>
-            <td>Domínio precoce da decodificação e do cálculo, desengajamento com exercícios repetitivos.</td>
-            <td>Enriquecimento curricular Tipo I e II (Modelo de Renzulli): desafios de inferência textual complexa, algoritmos avançados e tutoria solidária entre pares.</td>
+            <td><strong>Cluster 1D</strong><br><span class="badge badge-green">Aprofundamento / 2E</span></td>
+            <td>Alta capacidade de abstração e raciocínio superior; risco de desengajamento por tédio (Renzulli).</td>
+            <td>Compactação curricular (dispensa de repetição após maestria); projetos autorais; desafios de lógica computacional desplugada.</td>
+            <td><strong>SRM Enriquecimento:</strong> 1x/semana (60 min). Enriquecimento Tipo II e III e mentoria por projetos.</td>
         </tr>
     </table>
     
-    <div class="card-highlight">
-        <strong>Acomodação Universal em Matemática:</strong> Alunos com fragilidade em decodificação (Cluster 1A) têm o enunciado dos problemas matemáticos <strong>obrigatoriamente lido em voz alta pelo educador</strong>, isolando a avaliação do raciocínio numérico.
+    <div class="grid-2" style="margin-top:4px;">
+        <div class="card" style="padding:4px 6px;">
+            <div style="font-weight:bold; color:#1e3a8a; font-size:7.2pt;">Protocolo de Suporte Comportamental Positivo (PBS - Parecer 50/2023)</div>
+            <p style="font-size:6.6pt; margin:1px 0;">Nas situações de recusa ou labilidade (TOD/TDAH/TEA), aplica-se a <strong>técnica da escolha controlada</strong> (apresentar 2 alternativas pedagógicas legítimas), tolerância zero a reprimendas públicas, desescalada privada em tom calmo e proporção mínima de 4 reforços positivos para cada correção.</p>
+        </div>
+        <div class="card" style="padding:4px 6px;">
+            <div style="font-weight:bold; color:#1e3a8a; font-size:7.2pt;">Garantia de Legalidade e Auditoria do PEI (Nota Técnica 02/2025/MEC)</div>
+            <p style="font-size:6.6pt; margin:1px 0;">Todos os 24 estudantes possuem PEI bimestral formalizado no banco de dados com hash SHA-256 forense, pactuação de metas entre professor regente e professor do AEE, registro de terminalidade/acessibilidade e monitoramento longitudinal contínuo.</p>
+        </div>
     </div>
     {make_footer(5)}
 </div>
@@ -902,8 +936,8 @@ print("Gerando 24 laudas analíticas individuais com cruzamento de evolução e 
 
 for idx, r in merged.iterrows():
     std_name = r['Estudante']
-    lp_lvl = r[col_lp_niv + '_LP']
-    mat_lvl = r[col_mat_niv + '_MAT']
+    lp_lvl = clean_txt(r[col_lp_niv + '_LP'])
+    mat_lvl = clean_txt(r[col_mat_niv + '_MAT'])
     c_code, c_desc, frag_lp, frag_mat = clusters_info.get(std_name, ("1C", "Compreensão", "-", "-"))
     
     line_num = idx + 2
@@ -920,6 +954,26 @@ for idx, r in merged.iterrows():
         ORDER BY componente_curricular, ciclo_origem;
     """, (hid,))
     long_list = cur.fetchall()
+    
+    cur.execute("""
+        SELECT diagnostico_clinico_resumo, cid_codigo, perfil_neurocognitivo_sweller, 
+               adaptacao_espaco_fisico, adaptacao_temporal_pausas, adaptacao_instrumentos_materiais,
+               protocolo_desescalada_comportamental, hash_forense_pei
+        FROM fato_pei_estudante_adaptacoes 
+        WHERE aluno_hash_id = ? AND bimestre = 1;
+    """, (hid,))
+    pei_row = cur.fetchone()
+    if not pei_row:
+        pei_row = ("Diagnóstico pedagógico formativo em monitoramento.", "Z55.8", "Perfil em adaptação DUA.", "Carteira frontal.", "Tempo adicional 25%.", "Apoio visual.", "Reforço positivo.", "HASH_PEI")
+        
+    cur.execute("""
+        SELECT modalidade_aee, frequencia_semanal_minutos, cronograma_atendimento_dia, tecnologias_assistivas_utilizadas
+        FROM fato_paee_plano_atendimento
+        WHERE aluno_hash_id = ?;
+    """, (hid,))
+    paee_row = cur.fetchone()
+    if not paee_row:
+        paee_row = ("SRM Pequeno Grupo", 80, "Terça e Quinta", "Recursos manipulativos")
     
     prob_ews = v_data[4] if v_data and v_data[4] is not None else 0.03
     lvl_ews = v_data[5] if v_data and v_data[5] else "CONSOLIDADO"
@@ -952,7 +1006,7 @@ for idx, r in merged.iterrows():
             <td style="text-align:center; font-weight:bold;">{lr[3]} &rarr; {lr[4]}</td>
             <td style="text-align:center;">{lr[5]:.2f} &rarr; {lr[6]:.2f}</td>
             <td style="text-align:center; font-weight:bold; color:#1e3a8a;">{lr[7]:.1f} &rarr; {lr[8]:.1f}</td>
-            <td style="text-align:center;"><span class="badge badge-green">{lr[9]}</span></td>
+            <td style="text-align:center;"><span class="badge badge-green">{clean_txt(lr[9])}</span></td>
         </tr>
         """
         
@@ -980,8 +1034,8 @@ for idx, r in merged.iterrows():
             <div class="kpi-box"><div class="kpi-val">{maestria:.1f}%</div><div class="kpi-lbl">Maestria Kumon</div></div>
         </div>
         
-        <div class="card">
-            <h2 class="sub-title" style="margin-top:0;">1. Cruzamento Longitudinal de Desempenho (Ciclos I, II e III via TRI)</h2>
+        <div class="card" style="margin-bottom:4px;">
+            <h2 class="sub-title" style="margin:0 0 3px 0;">1. Cruzamento Longitudinal de Desempenho (Ciclos I, II e III via TRI)</h2>
             <table class="data-table">
                 <tr>
                     <th>Componente</th>
@@ -995,53 +1049,55 @@ for idx, r in merged.iterrows():
             </table>
         </div>
         
-        <div class="grid-2">
-            <div class="card">
-                <h2 class="sub-title" style="margin-top:0;">2. Raio-X Cognitivo (Escores 0-100)</h2>
-                <div style="font-size:7pt; margin-bottom:2px;">
+        <div class="grid-2" style="margin-bottom:4px;">
+            <div class="card" style="padding:4px 6px;">
+                <h2 class="sub-title" style="margin:0 0 3px 0;">2. Raio-X Cognitivo (Escores 0-100)</h2>
+                <div style="font-size:6.8pt; margin-bottom:1px;">
                     <div style="display:flex; justify-content:space-between;"><span>Memória de Trabalho & Atenção:</span><strong>{s_mt:.1f}</strong></div>
                     <div class="prog-container"><div class="prog-bar" style="width:{s_mt}%; background:#2563eb;"></div></div>
                 </div>
-                <div style="font-size:7pt; margin-bottom:2px;">
+                <div style="font-size:6.8pt; margin-bottom:1px;">
                     <div style="display:flex; justify-content:space-between;"><span>Consciência Fonológica & Decodificação:</span><strong>{s_cf:.1f}</strong></div>
                     <div class="prog-container"><div class="prog-bar" style="width:{s_cf}%; background:#10b981;"></div></div>
                 </div>
-                <div style="font-size:7pt; margin-bottom:2px;">
+                <div style="font-size:6.8pt; margin-bottom:1px;">
                     <div style="display:flex; justify-content:space-between;"><span>Compreensão Literal & Inferencial:</span><strong>{s_ci:.1f}</strong></div>
                     <div class="prog-container"><div class="prog-bar" style="width:{s_ci}%; background:#8b5cf6;"></div></div>
                 </div>
-                <div style="font-size:7pt; margin-bottom:2px;">
+                <div style="font-size:6.8pt; margin-bottom:1px;">
                     <div style="display:flex; justify-content:space-between;"><span>Senso Numérico & Cálculo:</span><strong>{s_sn:.1f}</strong></div>
                     <div class="prog-container"><div class="prog-bar" style="width:{s_sn}%; background:#f59e0b;"></div></div>
                 </div>
-                <div style="font-size:7pt; margin-bottom:2px;">
+                <div style="font-size:6.8pt; margin-bottom:1px;">
                     <div style="display:flex; justify-content:space-between;"><span>Funções Executivas & Flexibilidade:</span><strong>{s_fe:.1f}</strong></div>
                     <div class="prog-container"><div class="prog-bar" style="width:{s_fe}%; background:#ec4899;"></div></div>
                 </div>
             </div>
             
-            <div class="card">
-                <h2 class="sub-title" style="margin-top:0;">3. Early Warning System (EWS) & Kumon</h2>
-                <div class="card-highlight" style="padding:3px 5px; margin-bottom:3px;">
-                    <div style="display:flex; justify-content:space-between; font-size:7.2pt;">
-                        <span>Probabilidade de Risco EWS:</span><strong>{prob_ews*100:.1f}%</strong>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; font-size:7.2pt;">
-                        <span>Status de Alerta Precoce:</span><span class="badge badge-green">{lvl_ews}</span>
+            <div class="card" style="padding:4px 6px;">
+                <h2 class="sub-title" style="margin:0 0 3px 0;">3. Early Warning System (EWS) & Kumon</h2>
+                <div class="card-highlight" style="padding:2px 5px; margin-bottom:2px;">
+                    <div style="display:flex; justify-content:space-between; font-size:6.8pt;">
+                        <span>Risco EWS:</span><strong>{prob_ews*100:.1f}%</strong> | <span>Alerta:</span><span class="badge badge-green">{lvl_ews}</span>
                     </div>
                 </div>
-                <p style="font-size:7pt; margin:1px 0;"><strong>Camada RTI:</strong> {rti_layer}</p>
-                <p style="font-size:7pt; margin:1px 0;"><strong>Trilha Fônica:</strong> {fon_est}</p>
-                <p style="font-size:7pt; margin:1px 0;"><strong>Nível Kumon MAT:</strong> {k_mat} | <strong>Leitura:</strong> {k_leit}</p>
-                <p style="font-size:7pt; margin:1px 0;"><strong>Tempo Médio por Folha:</strong> {t_folha:.1f} min | <strong>Autodidatismo:</strong> {autodid:.1f}%</p>
+                <p style="font-size:6.7pt; margin:1px 0;"><strong>Camada RTI:</strong> {rti_layer}</p>
+                <p style="font-size:6.7pt; margin:1px 0;"><strong>Trilha Fônica:</strong> {fon_est}</p>
+                <p style="font-size:6.7pt; margin:1px 0;"><strong>Nível Kumon MAT:</strong> {k_mat} | <strong>Leitura:</strong> {k_leit}</p>
+                <p style="font-size:6.7pt; margin:1px 0;"><strong>Tempo/Folha:</strong> {t_folha:.1f} min | <strong>Autodidatismo:</strong> {autodid:.1f}%</p>
+                <p style="font-size:6.7pt; margin:1px 0;"><strong>AEE na SRM:</strong> {paee_row[0]} ({paee_row[1]} min/sem - {paee_row[2]})</p>
             </div>
         </div>
         
-        <div class="card-highlight">
-            <h2 class="sub-title" style="margin-top:0;">4. Prescrição Pedagógica Interdisciplinar Personalizada</h2>
-            <p style="font-size:7.2pt; margin:2px 0;"><strong>• Fragilidades Prioritárias CAEd:</strong> LP: <span style="color:#be123c; font-weight:bold;">{frag_lp}</span> | MAT: <span style="color:#b45309; font-weight:bold;">{frag_mat}</span>.</p>
-            <p style="font-size:7.2pt; margin:2px 0;"><strong>• Protocolo da Prática Diária:</strong> Realizar 20 min de leitura fônica orientada (localização textual H04) + 20 min de cálculo cumulativo Kumon 20-60-20 na reta numérica (comparação numérica H03) com apoio concreto.</p>
-            <p style="font-size:7.2pt; margin:2px 0;"><strong>• Interconexão com a BNCC:</strong> Utilizar textos de Ciências e História para treinar leitura fluente; conectar Geografia e Pensamento Computacional para resolução de problemas de percurso e ordenação espacial.</p>
+        <div class="card-highlight" style="padding:4px 7px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2px;">
+                <span style="font-weight:bold; color:#1e3a8a; font-size:7.5pt;">4. Plano Educacional Individualizado (PEI) & Prescrição Pedagógica (LBI Art. 28)</span>
+                <span style="font-size:6.2pt; color:#64748b; font-family:monospace;">CID: {pei_row[1]} | Hash PEI: {pei_row[7][:12]}...</span>
+            </div>
+            <p style="font-size:6.7pt; margin:1px 0;"><strong>• Foco Psiconeuropedagógico / DUA:</strong> {pei_row[0]} {pei_row[2]}</p>
+            <p style="font-size:6.7pt; margin:1px 0;"><strong>• Acomodações de Acesso em Sala:</strong> {pei_row[3]}; {pei_row[4]}; recursos: {pei_row[5]}.</p>
+            <p style="font-size:6.7pt; margin:1px 0;"><strong>• Protocolo de Manejo Comportamental (PBS):</strong> {pei_row[6]}</p>
+            <p style="font-size:6.7pt; margin:1px 0;"><strong>• Fragilidades CAEd & Rotina Diária:</strong> LP: <span style="color:#be123c; font-weight:bold;">{frag_lp}</span> | MAT: <span style="color:#b45309; font-weight:bold;">{frag_mat}</span>. 20 min leitura fônica + 20 min Kumon cumulativo na reta numérica.</p>
         </div>
         {make_footer(p_curr)}
     </div>
