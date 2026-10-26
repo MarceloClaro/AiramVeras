@@ -1956,9 +1956,10 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
 | **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `680b0f4056ef6e44a79a2acde54f848e1f4d48f3ec9966032c4179f55fd519e9` | **Bloco 22** |
 | **Dossiê Mestre 3º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 3º Ano, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `a42ece16390ea288257fd60cae2ddf3ed3e8be7114a6fd019772208f6f548d6c` | **Bloco 21** |
 | **Dossiê Mestre 4º Ano (A e B)** | 42 estudantes (22 no 4º A + 20 no 4º B) | **1.720 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 4º Ano, Grafo 2D, DOIs, Diagnóstico A vs B) | 42 cadernos $\times$ 40 laudas (4 custom + 26 LP Vol. 4 + 4 MAT Kumon + 6 custom) | `b4ef92b9744ce5f9314371f18e3ef2e6a362035ee38b369bb8c1908d68ae6811` | **Bloco 24** |
+| **Dossiê Mestre 5º Ano (A e B)** | 54 estudantes (27 no 5º A + 27 no 5º B) | **2.200 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 5º Ano, Grafo 2D, DOIs, Diagnóstico A vs B) | 54 cadernos $\times$ 40 laudas (4 custom + 26 LP Vol. 5 + 4 MAT Kumon + 6 custom) | `a690f4bc6fa1a3ad1655d5bcfdbad86df9619e0129e055e91087c0e1365bc923` | **Bloco 25** |
 
 #### 🗺️ Padrão Universal: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Lauda 27)
-Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as turmas (1º, 2º, 3º e 4º Anos) como **Mapa 2D (Fluxograma Vetorial SVG de Alta Resolução)**:
+Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as turmas (1º, 2º, 3º, 4º e 5º Anos) como **Mapa 2D (Fluxograma Vetorial SVG de Alta Resolução)**:
 - **Título Padrão**: `TOPOLOGIA DA REDE INTERDISCIPLINAR & GRAFO DE APRENDIZAGEM`
 - **Subtítulo Padrão**: `Grafo Direcionado Ponderado: Conexões sinérgicas entre os 9 componentes curriculares do [X]º Ano.`
 - **Tese Central Homologada**:
@@ -2011,6 +2012,43 @@ Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as tur
   - 6 laudas finais customizadas: Ciências da Natureza (som, luz, saúde auditiva/visual - EF03CI01/02), Geografia/História (paisagens urbanas/rurais de Crateús, marcos de memória - EF03GE01/EF03HI01), Arte/Educação Física (linguagens artísticas, jogos pré-desportivos inclusivos - EF15AR01/EF35EF01), BNCC Computação (algoritmos, ordenação e loops desplugados - EF03CO01-04), Ficha Semanal Semanas 1 a 8 com rubricas DUA e Termo de Homologação Forense Institucional com carimbo e hash SHA-256.
 - **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 21** (`2477d7a6f03b7d81fb91ece0b84f6e04f03cfe649be3144421c0e8583547a46f`).
 
+#### Arquitetura Detalhada do Dossiê do 4º Ano (Turmas A e B — 1.720 Laudas Vetoriais A4)
+- **Diagnóstico Censitário CAEd Ciclo I 2026**:
+  - **Coorte Censitária**: 42 estudantes (22 na Turma A + 20 na Turma B, 100% de participação).
+  - **Língua Portuguesa**: 66.7% Adequado (28 alunos), 26.2% Intermediário (11 alunos), 7.1% Defasagem (3 alunos).
+  - **Matemática**: 64.3% Adequado (27 alunos), 21.4% Intermediário (9 alunos), 14.3% Defasagem (6 alunos).
+  - **Fluência Leitora**: 22 fluentes (52.4%), 15 iniciantes (35.7%), 5 em aceleração (11.9%).
+- **Clusters de Intervenção Pedagógica Granular (4º Ano)**:
+  - **Cluster 4A — Recomposição Crítica (6 alunos)**: Recomposição de fatos de multiplicação/divisão e consciência fonêmica avançada.
+  - **Cluster 4B — Fluência e Consolidação Operatória (13 alunos)**: Rota lexical fluente e operações aritméticas com múltiplos dígitos.
+  - **Cluster 4C — Inferência e Problemas Contextualizados (15 alunos)**: Interpretação crítica de textos e resolução de problemas SPAECE D01 a D28.
+  - **Cluster 4D — Altas Habilidades e Enriquecimento (8 alunos)**: Resolução autônoma, projetos interdisciplinares e robótica/computação.
+- **Estrutura por Aluno (40 laudas individuais por estudante)**:
+  - 4 laudas iniciais customizadas: Capa Nominal Oficial, Raio-X 7D + CAEd Ciclo I, PEI/PAEE DUA/PBS e Trilha Kumon/Fônico 4º Ano.
+  - 26 laudas de Língua Portuguesa / Fônico (extraídas do `Volume_4_4ano_v1.0.pdf`, 1.092 laudas rotacionadas sem sobreposição).
+  - 4 laudas de Matemática Kumon (operações formais com múltiplos dígitos, frações e situações-problema H01-H12).
+  - 6 laudas finais customizadas: Ciências da Natureza, Geografia/História de Crateús, Arte/Educação Física, BNCC Computação desplugada, Ficha Semanal Semanas 1 a 8 com rubricas DUA e Termo Forense com fé pública.
+- **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 24** (`034982e699aa4ac879c54cbd1865674cdcd77df6d7e1b2bc3950034bc5fa3ea3`).
+
+#### Arquitetura Detalhada do Dossiê do 5º Ano (Turmas A e B — 2.200 Laudas Vetoriais A4)
+- **Diagnóstico Censitário CAEd Ciclo I 2026**:
+  - **Coorte Censitária**: 54 estudantes (27 na Turma A + 27 na Turma B, 100% de participação).
+  - **Língua Portuguesa**: 70.4% Adequado (38 alunos), 20.4% Intermediário (11 alunos), 9.3% Defasagem (5 alunos).
+  - **Matemática**: 68.5% Adequado (37 alunos), 18.5% Intermediário (10 alunos), 13.0% Defasagem (7 alunos).
+  - **Fluência Leitora**: 31 fluentes (57.4%), 18 iniciantes (33.3%), 5 em aceleração (9.3%).
+  - **Educação Especial Inclusiva (AEE)**: 8 estudantes laudados (4 na Turma A: Ana Allycia, Antonio Arthur, Maria Rita, Thyago Alexandre; 4 na Turma B: Davi Santiago, Guilherme Duarte, João Emanuel, Luiz Celso) com protocolos PEI/PAEE DUA/PBS individualizados.
+- **Clusters de Intervenção Pedagógica Granular (5º Ano)**:
+  - **Cluster 5A — Recomposição e Apoio Estruturado (11 alunos)**: Recomposição de decimais, frações elementares e decodificação crítica.
+  - **Cluster 5B — Consolidação de Fluência e Cálculo Aritmético (16 alunos)**: Automação da rota lexical, frações equivalentes e algoritmo formal de divisão/multiplicação.
+  - **Cluster 5C — Compreensão Crítica e Resolução SPAECE (6 alunos)**: Interpretação de efeitos de sentido, porcentagem e problemas de geometria/espaço.
+  - **Cluster 5D — Enriquecimento Curricular e Transição para Anos Finais (21 alunos)**: Altas habilidades, raciocínio lógico avançado, BNCC computação e autonomia intelectual.
+- **Estrutura por Aluno (40 laudas individuais por estudante)**:
+  - 4 laudas iniciais customizadas: Capa Nominal Oficial, Raio-X 7D + CAEd Ciclo I, PEI/PAEE DUA/PBS e Trilha Kumon/Fônico 5º Ano.
+  - 26 laudas de Língua Portuguesa / Fônico (extraídas do `Volume_5_5ano_v1.0.pdf`, 1.404 laudas rotacionadas sem sobreposição).
+  - 4 laudas de Matemática Kumon (operações formais com decimais, frações equivalentes, porcentagem e situações-problema SPAECE D01-D28).
+  - 6 laudas finais customizadas: Ciências da Natureza, Geografia/História de Crateús, Arte/Educação Física, BNCC Computação desplugada, Ficha Semanal Semanas 1 a 8 com rubricas DUA e Termo Forense Institucional com fé pública e hash SHA-256.
+- **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 25** (`0602f82c61690e62c57d2dfb0267728f5be0e5578d7d71f41c91e3a9803d00a7`).
+
 ---
 
 ## 🛠️ Tecnologias e Dependências
@@ -2020,7 +2058,8 @@ Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as tur
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 23).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 25).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
+
 
