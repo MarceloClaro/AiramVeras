@@ -25,6 +25,9 @@ from pypdf import PdfReader, PdfWriter
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
+sys.path.append(os.path.dirname(__file__))
+from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
 DB_PATH = os.path.join(WORKSPACE_DIR, "datamining", "dados", "airam_veras_ecossistema.sqlite")
@@ -786,73 +789,10 @@ def build_front_matter_40_pages():
     """
     pages.append(p26)
 
-    # Lauda 27: Matriz de Correlações Multidisciplinares CAEd & BNCC
-    p27 = f"""
-    <div class="page-block">
-        {make_header(27)}
-        <h1 class="section-title">Matriz de Correlações Multidisciplinares CAEd & BNCC</h1>
-        
-        <p style="font-size:7pt;">Coeficientes empíricos demonstrando como a fluência leitora e a matemática básica atuam como alavanca nas demais disciplinas:</p>
-
-        <table class="data-table">
-            <tr>
-                <th style="width:28%;">Conexão Interdisciplinar</th>
-                <th style="width:18%; text-align:center;">Pearson r</th>
-                <th style="width:18%; text-align:center;">Spearman ρ</th>
-                <th style="width:18%; text-align:center;">Coeficiente R²</th>
-                <th style="width:18%; text-align:center;">Força de Alavanca</th>
-            </tr>
-            <tr>
-                <td><strong>Língua Portuguesa ➔ Ciências</strong></td>
-                <td style="text-align:center; font-weight:bold;">r = +0.892</td>
-                <td style="text-align:center; font-weight:bold;">ρ = +0.874</td>
-                <td style="text-align:center; font-weight:bold; color:#1e40af;">R² = 79.6%</td>
-                <td style="text-align:center;"><span class="badge badge-green">Muito Alta</span></td>
-            </tr>
-            <tr>
-                <td><strong>Língua Portuguesa ➔ História</strong></td>
-                <td style="text-align:center; font-weight:bold;">r = +0.914</td>
-                <td style="text-align:center; font-weight:bold;">ρ = +0.898</td>
-                <td style="text-align:center; font-weight:bold; color:#1e40af;">R² = 83.5%</td>
-                <td style="text-align:center;"><span class="badge badge-green">Determinante</span></td>
-            </tr>
-            <tr>
-                <td><strong>Língua Portuguesa ➔ Geografia</strong></td>
-                <td style="text-align:center; font-weight:bold;">r = +0.885</td>
-                <td style="text-align:center; font-weight:bold;">ρ = +0.868</td>
-                <td style="text-align:center; font-weight:bold; color:#1e40af;">R² = 78.3%</td>
-                <td style="text-align:center;"><span class="badge badge-green">Muito Alta</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matemática ➔ BNCC Computação</strong></td>
-                <td style="text-align:center; font-weight:bold;">r = +0.941</td>
-                <td style="text-align:center; font-weight:bold;">ρ = +0.926</td>
-                <td style="text-align:center; font-weight:bold; color:#1e40af;">R² = 88.5%</td>
-                <td style="text-align:center;"><span class="badge badge-green">Determinante</span></td>
-            </tr>
-            <tr>
-                <td><strong>Matemática ➔ Ciências</strong></td>
-                <td style="text-align:center; font-weight:bold;">r = +0.876</td>
-                <td style="text-align:center; font-weight:bold;">ρ = +0.859</td>
-                <td style="text-align:center; font-weight:bold; color:#1e40af;">R² = 76.7%</td>
-                <td style="text-align:center;"><span class="badge badge-green">Muito Alta</span></td>
-            </tr>
-        </table>
-
-        <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:4px; padding:4px 6px; margin-top:4px;">
-            <div style="font-weight:900; font-size:7pt; color:#1e3a8a; text-transform:uppercase;">
-                Guia Didático do Efeito Alavanca Multidisciplinar (Como Interpretar):
-            </div>
-            <div style="font-size:6.3pt; line-height:1.25; color:#334155; margin-top:2px;">
-                • <strong>Analogia da Locomotiva Curricular:</strong> A Língua Portuguesa (capacidade de ler e compreender) e a Matemática básica (raciocínio lógico) funcionam como os trilhos e a locomotiva de toda a aprendizagem escolar. Quando a criança aprende a decodificar com fluência e a calcular mentalmente, todas as outras matérias (Ciências, História, Geografia e Computação) avançam no mesmo ritmo.<br>
-                • <strong>O que significa o R² de 88.5%?</strong> Significa que 88.5% da capacidade de uma criança resolver problemas de Computação e lógica desplugada decorre diretamente do seu domínio de operações matemáticas básicas. Fortalecer a leitura e a matemática é a chave para o sucesso em todo o currículo.<br>
-                • <strong>Citação Científica com DOI Auditável:</strong> Stanovich (1986) <em>Matthew Effects in Reading</em> [DOI: 10.1177/002221948601900801] e Duncan et al. (2007) <em>School Readiness and Later Achievement</em> [DOI: 10.1037/0012-1649.43.6.1428].
-            </div>
-        </div>
-        {make_footer(27)}
-    </div>
-    """
+    # Lauda 27: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Fluxograma 2D SVG)
+    p27 = gerar_html_lauda_27_topologia(ano=2, make_header=make_header, make_footer=make_footer)
     pages.append(p27)
+
 
     # Lauda 28: Modelagem de Cadeias de Markov
     p28 = f"""

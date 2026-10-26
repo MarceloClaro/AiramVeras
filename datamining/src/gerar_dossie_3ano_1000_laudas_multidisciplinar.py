@@ -25,6 +25,9 @@ from pypdf import PdfReader, PdfWriter
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
+sys.path.append(os.path.dirname(__file__))
+from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
 DB_PATH = os.path.join(WORKSPACE_DIR, "datamining", "dados", "airam_veras_ecossistema.sqlite")
@@ -703,23 +706,10 @@ def build_front_matter_40_pages():
     """
     pages.append(p26)
 
-    p27 = f"""
-    <div class="page-block">
-        {make_header(27)}
-        <h1 class="section-title">Matriz de Correlações Interdisciplinares (Pearson r e Spearman ρ)</h1>
-        <div class="card-highlight">
-            <strong>Sinergia entre Componentes Curriculares:</strong> Demonstração matemática de como o domínio da leitura alavanca a matemática e as ciências no 3º Ano.
-        </div>
-        <table class="data-table">
-            <tr><th>Pares Interdisciplinares</th><th style="text-align:center;">Pearson r</th><th style="text-align:center;">Spearman ρ</th><th>Interpretação e Implicação Pedagógica</th></tr>
-            <tr><td><strong>Fluência Leitora ➔ Matemática (H02)</strong></td><td style="text-align:center; font-weight:bold;">+0.78</td><td style="text-align:center; font-weight:bold;">+0.75</td><td>Alunos fluentes compreendem enunciados de problemas matemáticos com 3x mais facilidade.</td></tr>
-            <tr><td><strong>Kumon Aritmética ➔ BNCC Computação</strong></td><td style="text-align:center; font-weight:bold;">+0.82</td><td style="text-align:center; font-weight:bold;">+0.80</td><td>O cálculo mental automatizado desbloqueia o sequenciamento algorítmico e depuração.</td></tr>
-            <tr><td><strong>Consciência Fonêmica ➔ Produção Escrita</strong></td><td style="text-align:center; font-weight:bold;">+0.85</td><td style="text-align:center; font-weight:bold;">+0.83</td><td>A rota ortográfica consolidada elimina trocas grafofonêmicas na escrita espontânea.</td></tr>
-        </table>
-        {make_footer(27)}
-    </div>
-    """
+    # Lauda 27: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Fluxograma 2D SVG)
+    p27 = gerar_html_lauda_27_topologia(ano=3, make_header=make_header, make_footer=make_footer)
     pages.append(p27)
+
 
     p28 = f"""
     <div class="page-block">

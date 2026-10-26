@@ -22,7 +22,11 @@ import hashlib
 import pandas as pd
 from pypdf import PdfReader, PdfWriter
 
-sys.stdout.reconfigure(encoding='utf-8')
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
+sys.path.append(os.path.dirname(__file__))
+from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -895,94 +899,10 @@ def build_front_matter_40_pages():
     """
     pages.append(p26)
 
-    p27 = f"""
-    <div class="page-block">
-        {make_header(27)}
-        <h1 class="section-title">Matriz de Correlações Multidisciplinares CAEd & BNCC: O Efeito Alavanca</h1>
-        
-        <div class="card-highlight">
-            <strong>Modelagem Preditiva Cruzada (Pearson r, Spearman ρ e R²):</strong> Demonstração empírica de como o domínio precoce em Língua Portuguesa e Matemática atua como <strong>alavanca cognitiva multiplicadora</strong> sobre as demais disciplinas curriculares (Ciências, História, Geografia, Arte e Computação):
-        </div>
-
-        <table class="data-table">
-            <tr>
-                <th style="width:24%;">Habilidade Origem (CAEd)</th>
-                <th style="width:22%;">Componente Alvo da BNCC</th>
-                <th style="width:12%; text-align:center;">Pearson r</th>
-                <th style="width:12%; text-align:center;">Spearman ρ</th>
-                <th style="width:12%; text-align:center;">R² (%)</th>
-                <th style="width:18%;">Mecanismo Neurocognitivo de Alavanca</th>
-            </tr>
-            <tr>
-                <td><strong>LP: H01 / H02</strong><br>(Consciência Fonêmica &amp; Letras)</td>
-                <td><strong>Ciências da Natureza</strong><br>(Termos Biológicos e Sentidos)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,892</td>
-                <td style="text-align:center;">0,884</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">79,5%</td>
-                <td>A automação alfabética libera a memória de trabalho para assimilar conceitos do corpo humano.</td>
-            </tr>
-            <tr>
-                <td><strong>LP: H04</strong><br>(Decodificação de Palavras)</td>
-                <td><strong>História</strong><br>(Fontes Orais e Narrativas)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,934</td>
-                <td style="text-align:center;">0,921</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">87,2%</td>
-                <td>Precisão na leitura é preditor mandatório da compreensão de marcos temporais da família.</td>
-            </tr>
-            <tr>
-                <td><strong>LP: H07</strong><br>(Localizar Informação Explícita)</td>
-                <td><strong>Geografia</strong><br>(Legendas e Pontos no Mapa)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,915</td>
-                <td style="text-align:center;">0,898</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">83,7%</td>
-                <td>A varredura visual leitora espelha a decodificação de croquis, trajetos e pontos cardeais.</td>
-            </tr>
-            <tr>
-                <td><strong>MAT: H01</strong><br>(Contagem e Cardinalidade)</td>
-                <td><strong>BNCC Computação</strong><br>(Algoritmos e Decomposição)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,941</td>
-                <td style="text-align:center;">0,935</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">88,5%</td>
-                <td>A correspondência um a um fundamenta o pensamento computacional desplugado e loops binários.</td>
-            </tr>
-            <tr>
-                <td><strong>MAT: H04</strong><br>(Estruturas Aditivas Simples)</td>
-                <td><strong>Ciências da Natureza</strong><br>(Medições e Experimentos)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,886</td>
-                <td style="text-align:center;">0,872</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">78,5%</td>
-                <td>Cálculo de adição/subtração viabiliza mensuração empírica de crescimento de plantas e tempo.</td>
-            </tr>
-            <tr>
-                <td><strong>MAT: H06</strong><br>(Figuras Geométricas Espaciais)</td>
-                <td><strong>Arte</strong><br>(Artes Visuais e Perspectiva)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,908</td>
-                <td style="text-align:center;">0,895</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">82,4%</td>
-                <td>A discriminação visual de formas bidimensionais e tridimensionais alicerça o desenho expressivo.</td>
-            </tr>
-            <tr>
-                <td><strong>MAT: H02</strong><br>(Reta Numérica e Ordenação)</td>
-                <td><strong>História</strong><br>(Linhas do Tempo Cronológicas)</td>
-                <td style="text-align:center; font-weight:bold; color:#1d4ed8;">0,925</td>
-                <td style="text-align:center;">0,912</td>
-                <td style="text-align:center; font-weight:bold; color:#16a34a;">85,6%</td>
-                <td>A ordenação linear de grandezas é isomorfa à seriação dos acontecimentos históricos vividos.</td>
-            </tr>
-        </table>
-
-        <div class="card" style="margin-top:4px;">
-            <div style="font-weight:bold; color:#1e3a8a; margin-bottom:2px;">💡 O QUE O EFEITO ALAVANCA SIGNIFICA PARA O PROFESSOR E PARA OS PAIS?</div>
-            <div style="font-size:6.8pt; line-height:1.35;">
-                • <strong>O Efeito Dominó Positivo:</strong> Aprender a ler (rota fonológica) e a contar não serve apenas para tirar nota em Português e Matemática. Esses dois saberes são as ferramentas cognitivas mestras do cérebro infantil.<br>
-                • <strong>Entendendo o R² (78% a 88%):</strong> Revela que mais de 80% do sucesso escolar de uma criança em Ciências e História decorre da facilidade leitora. Quando a criança tem dificuldade em Ciências, na imensa maioria das vezes o obstáculo não é a matéria de ciências, mas o fato de não conseguir decodificar as palavras do enunciado!<br>
-                • <strong>Fundamentação Científica com DOIs Ativos:</strong> Stanovich (1986) [DOI: <a href="https://doi.org/10.1598/RRQ.21.4.1" style="color:#2563eb;">10.1598/RRQ.21.4.1</a>] (Efeito Mateus); Duncan et al. (2007) [DOI: <a href="https://doi.org/10.1037/0012-1649.43.6.1428" style="color:#2563eb;">10.1037/0012-1649.43.6.1428</a>] (Prontidão Escolar).
-            </div>
-        </div>
-        {make_footer(27)}
-    </div>
-    """
+    # Lauda 27: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Fluxograma 2D SVG)
+    p27 = gerar_html_lauda_27_topologia(ano=1, make_header=make_header, make_footer=make_footer)
     pages.append(p27)
+
 
     p28 = f"""
     <div class="page-block">

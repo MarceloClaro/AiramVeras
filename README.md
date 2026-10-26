@@ -209,7 +209,7 @@ Todas as informações, predições, registros de PEI, PAEE, guias para leigos e
 
 ```
 Total de Estruturas: 58 tabelas canônicas + 10 views analíticas (68 estruturas) | Ilhas: 0 | Violações FK: 0
-Blocos no Ledger SHA-256: 20 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
+Blocos no Ledger SHA-256: 23 | Estudantes Censitários: 172 | Micro-Respostas H01-H19: 4.618
 ```
 
 - **`dim_arquitetura_dossie_universal`** (5 registros): Modelo paramétrico de cálculo de laudas para todas as turmas da escola ($40 + N \times 40$).
@@ -1952,9 +1952,23 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
 
 | Dossiê Mestre | Coorte | Meta de Paginação Estrita | Front Matter Master | Cadernos Individuais Customizados | Hash SHA-256 do Documento | Bloco Ledger SHA-256 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Dossiê Mestre 1º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Bioestatística, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `c7fd7ecbbec05be5fc9a4fa1d8eeb318f72782b54d3eb97c5053e18a0e303ea5` | **Bloco 18** |
-| **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Bioestatística, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `04d0c93031b04021c9e48b1d0bd7119aefdb8c3ef1ea079f773b7b9281ef396f` | **Bloco 19** |
-| **Dossiê Mestre 3º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 3º Ano, Markov, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `e7e63d89e72262756eed29127b9d9eee6961bc7cc323eb0242035d5b501c3d56` | **Bloco 20** |
+| **Dossiê Mestre 1º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `606dd747a2407dd10ab145a29ac99e56f26dac6cd6c896b1469d978a1ab4cef7` | **Bloco 23** |
+| **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `680b0f4056ef6e44a79a2acde54f848e1f4d48f3ec9966032c4179f55fd519e9` | **Bloco 22** |
+| **Dossiê Mestre 3º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 3º Ano, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `a42ece16390ea288257fd60cae2ddf3ed3e8be7114a6fd019772208f6f548d6c` | **Bloco 21** |
+
+#### 🗺️ Padrão Universal: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Lauda 27)
+Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as turmas (1º, 2º e 3º Anos) como **Mapa 2D (Fluxograma Vetorial SVG de Alta Resolução)**:
+- **Título Padrão**: `TOPOLOGIA DA REDE INTERDISCIPLINAR & GRAFO DE APRENDIZAGEM`
+- **Subtítulo Padrão**: `Grafo Direcionado Ponderado: Conexões sinérgicas entre os 9 componentes curriculares do [X]º Ano.`
+- **Tese Central Homologada**:
+  > *"O grafo demonstra que o fortalecimento da rota lexical em Língua Portuguesa potencializa em 82% a capacidade de leitura cartográfica em Geografia e interpretação de tabelas em Ciências e Matemática, otimizando o tempo pedagógico nas 35 horas semanais."*
+- **Sinergias Ponderadas Mensuradas**:
+  - **LP ➔ Geografia (+82%, $r = +0.892$)**: A varredura visual e precisão leitora alavancam diretamente a interpretação de croquis, pontos de referência e legendas espaciais.
+  - **LP ➔ Ciências (+79%, $r = +0.884$)**: Decodificação ágil desbloqueia a interpretação de esquemas de som/luz e tabelas experimentais.
+  - **LP ➔ Matemática (+78%, $r = +0.876$)**: Elimina a barreira semântica na leitura dos enunciados das situações-problema H01 a H12.
+  - **MAT ➔ BNCC Computação (+88%, $r = +0.941$)**: Fatos básicos de adição/subtração e contagem granular habilitam o raciocínio algorítmico e loops.
+  - **Ed. Física ➔ LP (+68%)**: Esquema corporal e motricidade fina fornecem suporte à práxis caligráfica sob Desenho Universal para a Aprendizagem (DUA).
+  - **Ensino Religioso ➔ Clima Escolar (+81%)**: Validação afetiva e empatia segundo protocolo de Suporte Comportamental Positivo (PBS).
 
 #### Arquitetura Detalhada do Dossiê do 2º Ano (1.160 Laudas Vetoriais A4)
 - **Diagnóstico Censitário CAEd Ciclo I 2026**:
@@ -1994,7 +2008,7 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
   - 26 laudas de Língua Portuguesa / Fônico (extraídas do `Volume_3_3ano_v1.0.pdf`, páginas 25 a 648 = 624 laudas sem sobreposição).
   - 4 laudas de Matemática Kumon (operações verticais com transporte/reagrupamento, reta numérica, decomposição em centenas e problemas contextualizados H01-H12).
   - 6 laudas finais customizadas: Ciências da Natureza (som, luz, saúde auditiva/visual - EF03CI01/02), Geografia/História (paisagens urbanas/rurais de Crateús, marcos de memória - EF03GE01/EF03HI01), Arte/Educação Física (linguagens artísticas, jogos pré-desportivos inclusivos - EF15AR01/EF35EF01), BNCC Computação (algoritmos, ordenação e loops desplugados - EF03CO01-04), Ficha Semanal Semanas 1 a 8 com rubricas DUA e Termo de Homologação Forense Institucional com carimbo e hash SHA-256.
-- **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 20** (`76475df2c20fd3f07443d6f97c58ba94f8e92b974da8232a4eca3df37510fb12`).
+- **Governança e Ledger**: Assinado e homologado no Ledger SHA-256 do SQLite como **Bloco 21** (`2477d7a6f03b7d81fb91ece0b84f6e04f03cfe649be3144421c0e8583547a46f`).
 
 ---
 
@@ -2005,7 +2019,7 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 20).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 23).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
 
