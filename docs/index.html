@@ -1,2089 +1,4254 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Airam Veras Analytics 2026 — Mira Animator Showcase & UX</title>
 
+
+
     <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
 
+
+
     <!-- Google Fonts: Inter & JetBrains Mono -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
+
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+
         rel="stylesheet">
 
+
+
     <!-- D3.js v7 CDN (Mandatory for Mira Animator) -->
+
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
+
+
     <!-- Lucide Icons -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
 
+
+
     <style>
+
         :root {
+
             --mira-bg: #030712;
+
             --mira-card-bg: rgba(15, 23, 42, 0.80);
+
             --mira-card-border: rgba(255, 255, 255, 0.08);
+
             --mira-stage-glow: rgba(59, 130, 246, 0.12);
+
             --mira-pill-bg: rgba(255, 255, 255, 0.04);
+
             --mira-pill-border: rgba(255, 255, 255, 0.10);
+
         }
+
+
 
         body {
+
             background-color: var(--mira-bg);
+
             color: #f1f5f9;
+
             font-family: 'Inter', sans-serif;
+
             margin: 0;
+
             overflow-x: hidden;
+
             scroll-behavior: smooth;
+
         }
+
+
 
         .font-mono {
+
             font-family: 'JetBrains Mono', monospace;
+
         }
+
+
 
         /* Canvas de Fundo Dinâmico Cósmico */
+
         #bg-canvas {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 100vw;
+
             height: 100vh;
+
             z-index: 0;
+
             pointer-events: none;
+
             opacity: 0.45;
+
         }
+
+
 
         /* Barra de progresso Mira */
+
         #mira-progress {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             height: 3px;
+
             width: 0%;
+
             background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6, #f59e0b);
+
             z-index: 100;
+
             transition: width 0.15s ease-out;
+
             box-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+
         }
+
+
 
         /* Glassmorphism Cards */
+
         .glass-card {
+
             background: var(--mira-card-bg);
+
             backdrop-filter: blur(16px);
+
             border: 1px solid var(--mira-card-border);
+
             box-shadow: 0 14px 40px 0 rgba(0, 0, 0, 0.5);
+
             border-radius: 1rem;
+
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
         }
+
+
 
         .glass-card:hover {
+
             border-color: rgba(59, 130, 246, 0.35);
+
             box-shadow: 0 20px 48px 0 rgba(59, 130, 246, 0.18);
+
         }
+
+
 
         .icon-hero {
+
             width: 52px;
+
             height: 52px;
+
             border-radius: 14px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background: rgba(59, 130, 246, 0.15);
+
             border: 1px solid rgba(59, 130, 246, 0.35);
+
             color: #60a5fa;
+
             flex-shrink: 0;
+
         }
+
+
 
         .attribute-pill {
+
             background: var(--mira-pill-bg);
+
             border: 1px solid var(--mira-pill-border);
+
             border-radius: 9999px;
+
             padding: 4px 12px;
+
             font-size: 0.75rem;
+
             color: #94a3b8;
+
             transition: all 0.2s ease;
+
         }
+
+
 
         .attribute-pill:hover {
+
             background: rgba(59, 130, 246, 0.15);
+
             border-color: rgba(59, 130, 246, 0.4);
+
             color: #ffffff;
+
             transform: translateY(-2px);
+
         }
+
+
 
         /* Palco de Animação D3.js (Proporção 16:9 Mira) */
+
         .anim-stage {
+
             width: 100%;
+
             aspect-ratio: 16 / 9;
+
             background: radial-gradient(circle at 50% 50%, var(--mira-stage-glow), transparent 75%);
+
             border: 1px solid rgba(255, 255, 255, 0.08);
+
             border-radius: 0.875rem;
+
             overflow: hidden;
+
             position: relative;
+
         }
+
+
 
         .anim-stage svg {
+
             display: block;
+
             width: 100%;
+
             height: 100%;
+
         }
+
+
 
         .stage-controls {
+
             position: absolute;
+
             top: 12px;
+
             right: 12px;
+
             z-index: 25;
+
             display: flex;
+
             align-items: center;
+
             gap: 6px;
+
         }
+
+
 
         .stage-btn {
+
             background: rgba(15, 23, 42, 0.85);
+
             border: 1px solid rgba(255, 255, 255, 0.15);
+
             color: #cbd5e1;
+
             border-radius: 9999px;
+
             padding: 5px 11px;
+
             font-size: 0.70rem;
+
             font-weight: 600;
+
             cursor: pointer;
+
             backdrop-filter: blur(8px);
+
             transition: all 0.2s ease;
+
             display: flex;
+
             align-items: center;
+
             gap: 5px;
+
         }
+
+
 
         .stage-btn:hover {
+
             background: #1e293b;
+
             color: #ffffff;
+
             border-color: #3b82f6;
+
             transform: scale(1.04);
+
         }
+
+
 
         .stage-btn.active {
+
             background: #2563eb;
+
             color: #ffffff;
+
             border-color: #60a5fa;
+
         }
+
+
 
         /* Navegador Lateral de Bolinhas (Scroll-Spy) */
+
         #mira-dots {
+
             position: fixed;
+
             right: 20px;
+
             top: 50%;
+
             transform: translateY(-50%);
+
             z-index: 90;
+
             display: flex;
+
             flex-direction: column;
+
             gap: 12px;
+
         }
+
+
 
         .mira-dot {
+
             width: 12px;
+
             height: 12px;
+
             border-radius: 9999px;
+
             background: rgba(255, 255, 255, 0.2);
+
             border: 1px solid rgba(255, 255, 255, 0.4);
+
             cursor: pointer;
+
             transition: all 0.25s ease;
+
             position: relative;
+
         }
+
+
 
         .mira-dot:hover {
+
             background: #60a5fa;
+
             transform: scale(1.3);
+
         }
+
+
 
         .mira-dot.active {
+
             background: #3b82f6;
+
             border-color: #93c5fd;
+
             box-shadow: 0 0 10px #3b82f6;
+
             transform: scale(1.4);
+
         }
+
+
 
         .mira-dot .dot-label {
+
             position: absolute;
+
             right: 22px;
+
             top: 50%;
+
             transform: translateY(-50%);
+
             background: rgba(15, 23, 42, 0.95);
+
             border: 1px solid rgba(255, 255, 255, 0.1);
+
             color: #e2e8f0;
+
             padding: 3px 8px;
+
             border-radius: 6px;
+
             font-size: 11px;
+
             white-space: nowrap;
+
             opacity: 0;
+
             pointer-events: none;
+
             transition: opacity 0.2s ease;
+
             font-family: 'JetBrains Mono', monospace;
+
         }
+
+
 
         .mira-dot:hover .dot-label {
+
             opacity: 1;
+
         }
+
+
 
         /* Botão Flutuante de Avanço Mira */
+
         #mira-next {
+
             position: fixed;
+
             bottom: 24px;
+
             right: 24px;
+
             width: 48px;
+
             height: 48px;
+
             border-radius: 9999px;
+
             background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+
             color: #ffffff;
+
             border: 1px solid rgba(255, 255, 255, 0.2);
+
             box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             cursor: pointer;
+
             z-index: 90;
+
             transition: all 0.25s ease;
+
             opacity: 0;
+
             pointer-events: none;
+
         }
+
+
 
         #mira-next.visible {
+
             opacity: 1;
+
             pointer-events: auto;
+
         }
+
+
 
         #mira-next:hover {
+
             transform: translateY(-4px) scale(1.08);
+
             box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6);
+
         }
+
+
 
         /* Seções de Slide em Tela Cheia / Card */
+
         section.mira-slide {
+
             min-height: 100vh;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             padding: 90px 24px 60px 24px;
+
             position: relative;
+
             box-sizing: border-box;
+
             z-index: 10;
+
         }
+
+
 
         /* Tooltip D3 */
+
         .d3-tooltip {
+
             position: absolute;
+
             background: rgba(15, 23, 42, 0.95);
+
             border: 1px solid rgba(59, 130, 246, 0.4);
+
             border-radius: 8px;
+
             padding: 8px 12px;
+
             color: #f8fafc;
+
             font-size: 11px;
+
             pointer-events: none;
+
             z-index: 30;
+
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
             font-family: 'JetBrains Mono', monospace;
+
             opacity: 0;
+
             transition: opacity 0.15s ease;
+
         }
+
     </style>
+
 </head>
 
+
+
 <body>
+
     <!-- Background Canvas (Constelação de Partículas) -->
+
     <canvas id="bg-canvas"></canvas>
 
+
+
     <!-- Top Progress Bar -->
+
     <div id="mira-progress"></div>
 
+
+
     <!-- Navegador Lateral de Bolinhas (Scroll-Spy) -->
+
     <nav id="mira-dots">
+
         <div class="mira-dot active" onclick="goToSlide(0)"><span class="dot-label">01. Coorte Censitária</span></div>
+
         <div class="mira-dot" onclick="goToSlide(1)"><span class="dot-label">02. Metas A e B</span></div>
+
         <div class="mira-dot" onclick="goToSlide(2)"><span class="dot-label">03. Grafo Curricular</span></div>
+
         <div class="mira-dot" onclick="goToSlide(3)"><span class="dot-label">04. Manejos CIDs (AEE)</span></div>
+
         <div class="mira-dot" onclick="goToSlide(4)"><span class="dot-label">05. Cadeia de Markov</span></div>
+
         <div class="mira-dot" onclick="goToSlide(5)"><span class="dot-label">06. Raio-X & Bioestatística</span></div>
+
         <div class="mira-dot" onclick="goToSlide(6)"><span class="dot-label">07. Dossiês (1º e 2º Ano) & Hub</span></div>
+
     </nav>
 
+
+
     <!-- Navigation Header -->
+
     <header
+
         class="fixed top-0 left-0 right-0 z-50 glass-card mx-auto max-w-7xl mt-4 px-6 py-3 flex items-center justify-between border border-slate-800">
+
         <div class="flex items-center space-x-3">
+
             <div
+
                 class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-emerald-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 text-sm">
+
                 AV
+
             </div>
+
             <div>
+
                 <span class="text-sm font-bold text-white tracking-tight flex items-center gap-2">
+
                     Airam Veras Analytics 2026
+
                     <span
+
                         class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">Mira
+
                         Showcase 2.0</span>
+
                 </span>
+
             </div>
+
         </div>
+
+
 
         <div class="flex items-center space-x-2 text-xs">
+
             <!-- Botão de Áudio Efeitos Sonoros -->
+
             <button id="audio-toggle" onclick="toggleAudio()"
+
                 class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition flex items-center gap-1.5 font-mono"
+
                 title="Ativar/Desativar Efeitos Sonoros Web Audio">
+
                 <i data-lucide="volume-x" id="audio-icon" class="w-3.5 h-3.5 text-slate-400"></i> Som: OFF
+
             </button>
+
             <a href="DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                 class="px-2 py-1.5 rounded-lg bg-purple-900/60 hover:bg-purple-800 text-purple-200 border border-purple-700/70 transition flex items-center gap-1 font-semibold text-[11px]"
+
                 title="Dossiê Pedagógico Mestre 1º Ano (1.000 Laudas Vetoriais A4)">
+
                 <i data-lucide="file-text" class="w-3 h-3 text-purple-400"></i> 1º Ano (1000p)
+
             </a>
+
             <a href="DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                 class="px-2 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-emerald-200 border border-emerald-700/70 transition flex items-center gap-1 font-semibold text-[11px]"
+
                 title="Dossiê Pedagógico Mestre 2º Ano (1.160 Laudas Vetoriais A4)">
+
                 <i data-lucide="file-check" class="w-3 h-3 text-emerald-400"></i> 2º Ano (1160p)
+
             </a>
+
             <a href="DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                 class="px-2 py-1.5 rounded-lg bg-blue-900/60 hover:bg-blue-800 text-blue-200 border border-blue-700/70 transition flex items-center gap-1 font-semibold text-[11px]"
+
                 title="Dossiê Pedagógico Mestre 3º Ano (1.000 Laudas Vetoriais A4)">
+
                 <i data-lucide="file-spreadsheet" class="w-3 h-3 text-blue-400"></i> 3º Ano (1000p)
+
             </a>
+            <a href="DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+                class="px-2 py-1.5 rounded-lg bg-indigo-900/60 hover:bg-indigo-800 text-indigo-200 border border-indigo-700/70 transition flex items-center gap-1 font-semibold text-[11px]"
+                title="Dossiê Pedagógico Mestre 4º Ano A e B (1.720 Laudas Vetoriais A4)">
+                <i data-lucide="file-spreadsheet" class="w-3 h-3 text-indigo-400"></i> 4º Ano A e B (1720p)
+            </a>
+
             <a href="dashboard.html" target="_blank"
+
                 class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/30">
+
                 <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard SPA
+
             </a>
+
             <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank"
+
                 class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+
                 <i data-lucide="github" class="w-4 h-4"></i> GitHub
+
             </a>
+
         </div>
+
     </header>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 1: HERO / COORTE EM ÓRBITA                                  -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-hero">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-5 space-y-6">
+
                 <div class="flex flex-wrap gap-2">
+
                     <span class="attribute-pill font-mono">INEP: 23084995</span>
+
                     <span class="attribute-pill font-mono">Crateús - CE</span>
+
                     <span class="attribute-pill font-mono text-emerald-400 border-emerald-500/30">Banco 3FN • 58 Tabelas (0 Ilhas)</span>
+
                     <a href="DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="attribute-pill font-mono text-purple-300 border-purple-500/40 hover:bg-purple-500/20 transition flex items-center gap-1">
+
                         <i data-lucide="file-text" class="w-3 h-3"></i> 1º Ano (1.000p)
+
                     </a>
+
                     <a href="DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="attribute-pill font-mono text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/20 transition flex items-center gap-1">
+
                         <i data-lucide="file-check" class="w-3 h-3"></i> 2º Ano (1.160p)
+
                     </a>
+
                     <a href="DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="attribute-pill font-mono text-blue-300 border-blue-500/40 hover:bg-blue-500/20 transition flex items-center gap-1">
+
                         <i data-lucide="file-spreadsheet" class="w-3 h-3"></i> 3º Ano (1.000p)
+
                     </a>
+
+                    <a href="DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
+                        class="attribute-pill font-mono text-indigo-300 border-indigo-500/40 hover:bg-indigo-500/20 transition flex items-center gap-1">
+
+                        <i data-lucide="file-spreadsheet" class="w-3 h-3"></i> 4º Ano A e B (1.720p)
+
+                    </a>
+
                 </div>
+
                 <h1 class="text-4xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+
                     Mineração de Dados, <span
+
                         class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Psicometria
+
                         TRI</span> e Inclusão Escolar.
+
                 </h1>
+
                 <p class="text-base text-slate-300 leading-relaxed font-normal">
+
                     Ecossistema canônico integrado que transforma microdados de avaliação do CAEd/CNCA e matrizes da
+
                     BNCC em planos acionáveis de intervenção pedagógica, com rastreamento neurodesenvolvimental e
+
                     conformidade legal estrita.
+
                 </p>
+
                 <div class="flex flex-wrap gap-2 pt-2">
+
                     <a href="DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="px-3 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition flex items-center gap-1.5 shadow-lg shadow-purple-600/30 text-xs">
+
                         <i data-lucide="file-text" class="w-3.5 h-3.5"></i> 1º Ano (1000p)
+
                     </a>
+
                     <a href="DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center gap-1.5 shadow-lg shadow-emerald-600/30 text-xs">
+
                         <i data-lucide="file-check" class="w-3.5 h-3.5"></i> 2º Ano (1160p)
+
                     </a>
+
                     <a href="DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
                         class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition flex items-center gap-1.5 shadow-lg shadow-blue-600/30 text-xs">
+
                         <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i> 3º Ano (1000p)
+
                     </a>
+
+                    <a href="DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank"
+
+                        class="px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition flex items-center gap-1.5 shadow-lg shadow-indigo-600/30 text-xs">
+
+                        <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i> 4º Ano A e B (1720p)
+
+                    </a>
+
                     <button onclick="goToSlide(6)"
+
                         class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition text-xs flex items-center gap-1">
+
                         Ver Hub <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+
                     </button>
+
                     <a href="dashboard.html"
+
                         class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-700 transition text-xs flex items-center gap-1">
+
                         <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> SPA
+
                     </a>
+
                 </div>
+
             </div>
+
+
 
             <!-- Palco D3.js: Coorte Interativa de Estudantes -->
+
             <div class="lg:col-span-7">
+
                 <div class="anim-stage glass-card" id="stage-hero">
+
                     <div class="stage-controls">
+
                         <button class="stage-btn active" id="btn-speed-1" onclick="setHeroSpeed(1)">1x</button>
+
                         <button class="stage-btn" id="btn-speed-2" onclick="setHeroSpeed(2)">2x</button>
+
                         <button class="stage-btn" onclick="window.__replayHero()"><i data-lucide="rotate-ccw"
+
                                 class="w-3 h-3"></i> Reiniciar</button>
+
                     </div>
+
                     <div class="d3-tooltip" id="tooltip-hero"></div>
+
                 </div>
+
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Passe o cursor sobre os 172 estudantes
+
                     orbitando a Escola Airam Veras para inspecionar seus dados psicométricos.</p>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 2: DIAGNÓSTICO DAS METAS A E B COM SIMULADOR WHAT-IF        -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-metas">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-7 order-2 lg:order-1">
+
                 <div class="anim-stage glass-card" id="stage-metas">
+
                     <div class="stage-controls">
+
                         <button class="stage-btn active" id="btn-comp-lp" onclick="setMetasComp('lp')">Língua
+
                             Portuguesa</button>
+
                         <button class="stage-btn" id="btn-comp-mat" onclick="setMetasComp('mat')">Matemática</button>
+
                         <button class="stage-btn" onclick="window.__replayMetas()"><i data-lucide="rotate-ccw"
+
                                 class="w-3 h-3"></i> Reiniciar</button>
+
                     </div>
+
                 </div>
+
                 <!-- Controle Deslizante Interativo What-If -->
+
                 <div
+
                     class="mt-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-4">
+
                     <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+
                         <span>🎚️ Simulação What-If (Ganho Pedagógico):</span>
+
                         <span id="slider-val-label" class="font-mono text-emerald-400 font-bold">+0 acertos</span>
+
                     </div>
+
                     <input type="range" id="whatif-slider" min="0" max="5" step="1" value="0"
+
                         oninput="onWhatIfSlide(this.value)" class="w-48 accent-emerald-500 cursor-pointer">
+
                 </div>
+
             </div>
 
+
+
             <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
+
                 <div class="flex items-center gap-3">
+
                     <div class="icon-hero">
+
                         <i data-lucide="target" class="w-6 h-6"></i>
+
                     </div>
+
                     <div>
+
                         <span class="text-xs uppercase font-mono font-bold text-blue-400">Dimensão Executiva</span>
+
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Metas A e B Desmistificadas</h2>
+
                     </div>
+
                 </div>
+
+
 
                 <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+
                     <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+
                         <span class="font-bold text-blue-400 block mb-1">🎯 Meta A (Adequação Geral):</span>
+
                         80% dos alunos da turma posicionados nos níveis <strong>Adequado</strong> ou
+
                         <strong>Avançado</strong>. O 5º ano de Língua Portuguesa já superou a meta com
+
                         <strong>84.9%</strong>.
+
                     </div>
+
                     <div class="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800">
+
                         <span class="font-bold text-emerald-400 block mb-1">⭐ Meta B (Alta Performance):</span>
+
                         Acerto de pelo menos 18 das 22 questões aplicadas (≥ 80% do instrumento). O 3º ano de Leitura
+
                         atinge <strong>75.0%</strong> de cumprimento.
+
                     </div>
+
                 </div>
+
+
 
                 <div class="grid grid-cols-2 gap-3 pt-2">
+
                     <div class="p-3 rounded-xl glass-card text-center">
+
                         <div class="text-2xl font-black text-blue-400 font-mono" id="stat-adequacao">56.4%</div>
+
                         <div class="text-[11px] text-slate-400">Adequação Média Escola</div>
+
                     </div>
+
                     <div class="p-3 rounded-xl glass-card text-center">
+
                         <div class="text-2xl font-black text-emerald-400 font-mono" id="stat-metab">41.8%</div>
+
                         <div class="text-[11px] text-slate-400">Taxa Geral da Meta B</div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 3: O GRAFO CURRICULAR BIPARTIDO (CAEd ➔ BNCC)              -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-grafo">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-5 space-y-5">
+
                 <div class="flex items-center gap-3">
+
                     <div class="icon-hero"
+
                         style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #34d399;">
+
                         <i data-lucide="git-fork" class="w-6 h-6"></i>
+
                     </div>
+
                     <div>
+
                         <span class="text-xs uppercase font-mono font-bold text-emerald-400">Inteligência
+
                             Curricular</span>
+
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Grafo Bipartido de Propagação</h2>
+
                     </div>
+
                 </div>
+
+
 
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+
                     O alinhamento entre as matrizes de avaliação do CAEd/CNCA e as habilidades da BNCC é modelado
+
                     matematicamente como uma <strong>matriz de adjacência bipartida</strong>:
+
                 </p>
+
                 <div
+
                     class="p-3 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs text-emerald-300 text-center">
+
                     A<sub>curr</sub> = B · B<sup>T</sup> (Pesos normalizados por grau)
+
                 </div>
+
                 <p class="text-xs text-slate-400 leading-relaxed">
+
                     Clique em qualquer nó do CAEd no palco para ver as conexões com as habilidades da BNCC se acenderem
+
                     com feixe luminoso.
+
                 </p>
+
                 <div class="flex gap-2">
+
                     <span class="attribute-pill">1.460 Descritores CAEd</span>
+
                     <span class="attribute-pill">574 Habilidades BNCC</span>
+
                 </div>
+
             </div>
+
+
 
             <div class="lg:col-span-7">
+
                 <div class="anim-stage glass-card" id="stage-grafo">
+
                     <div class="stage-controls">
+
                         <button class="stage-btn" onclick="window.__replayGrafo()"><i data-lucide="rotate-ccw"
+
                                 class="w-3 h-3"></i> Reiniciar</button>
+
                     </div>
+
                     <!-- Painel HUD de Detalhes Curriculares -->
+
                     <div id="grafo-hud"
+
                         class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-900/90 border border-emerald-500/30 text-xs font-mono hidden">
+
                         <div class="flex justify-between text-emerald-400 font-bold mb-1">
+
                             <span id="hud-caed">Descritor: 3EF06_M</span>
+
                             <span id="hud-bncc">BNCC: EF03MA05</span>
+
                         </div>
+
                         <div id="hud-desc" class="text-slate-300 text-[11px]">Adição e subtração com reagrupamento no
+
                             sistema de numeração decimal.</div>
+
                     </div>
+
                 </div>
+
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique nos nós de avaliação para
+
                     inspecionar os vínculos pedagógicos.</p>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 4: MATRIZ DE MANEJOS CLÍNICOS POR CID (INCLUSÃO AEE)        -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-tod">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-7 order-2 lg:order-1">
+
                 <div class="anim-stage glass-card" id="stage-tod">
+
                     <!-- Botões de Seletor dos CIDs no Palco D3 -->
+
                     <div class="stage-controls">
+
                         <button class="stage-btn active" id="btn-cid-tod" onclick="selectCidMode('tod')">TOD
+
                             (F91.3)</button>
+
                         <button class="stage-btn" id="btn-cid-tdah" onclick="selectCidMode('tdah')">TDAH
+
                             (F90.0)</button>
+
                         <button class="stage-btn" id="btn-cid-tea" onclick="selectCidMode('tea')">TEA (F84.0)</button>
+
                         <button class="stage-btn" id="btn-cid-dislexia" onclick="selectCidMode('dislexia')">Dislexia
+
                             (R48)</button>
+
                         <button class="stage-btn" id="btn-cid-pc" onclick="selectCidMode('pc')">PC / CAA (G80)</button>
+
                         <button class="stage-btn" id="btn-cid-ahsd" onclick="selectCidMode('ahsd')">🌟 AH/SD
+
                             (Z73.8)</button>
+
                     </div>
+
                 </div>
+
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2" id="cid-stage-caption">Metáfora da
+
                     Escolha Controlada: Apresentação de alternativas válidas pré-aprovadas.</p>
+
             </div>
+
+
 
             <div class="lg:col-span-5 order-1 lg:order-2 space-y-5">
+
                 <div class="flex items-center gap-3">
+
                     <div class="icon-hero"
+
                         style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.35); color: #c084fc;">
+
                         <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+
                     </div>
+
                     <div>
+
                         <span class="text-xs uppercase font-mono font-bold text-purple-400">Educação Especial Inclusiva (LBI 13.146, Berenice Piana 12.764, Lei 14.254, Res. CNE 04/2009 & Nota Técnica 02/2025/MEC)</span>
+
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Matriz de Manejos, PEI & PAEE por CID</h2>
+
                     </div>
+
                 </div>
 
+
+
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+
                     Protocolos clínicos e psiconeuropedagógicos baseados no <strong>Desenho Universal para a Aprendizagem (DUA)</strong>, Funções Executivas e Suporte Comportamental Positivo (PBS). Contempla <strong>96 PEIs bimestrais</strong> e <strong>24 Planos de AEE (SRM)</strong> registrados de forma auditável e sem ilhas no banco relacional de 57 tabelas:
+
                 </p>
+
+
 
                 <div class="space-y-2 text-xs">
+
                     <div class="p-2.5 rounded-lg bg-purple-950/40 border border-purple-500/30 flex items-start gap-2.5">
+
                         <span class="text-purple-300 font-bold font-mono">TOD</span>
+
                         <div><strong>F91.3 / 6C90 (PBS):</strong> Escolha controlada (2 opções pré-validadas),
+
                             desescalada privada sem confronto público e proporção 4:1 de reforço positivo.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-amber-950/40 border border-amber-500/30 flex items-start gap-2.5">
+
                         <span class="text-amber-300 font-bold font-mono">TDAH</span>
+
                         <div><strong>F90.0 / 6A05 (Lei 14.254):</strong> Pausas ativas a cada 20 min, avaliação
+
                             fracionada em blocos, primeira carteira e máscara de foco visual.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-sky-950/40 border border-sky-500/30 flex items-start gap-2.5">
+
                         <span class="text-sky-300 font-bold font-mono">TEA</span>
+
                         <div><strong>F84.0 / 6A02 (Lei 12.764):</strong> Rotina visual estruturada (TEACCH), fones para
+
                             redução sensorial, tempo estendido (+50%) e mediador de apoio.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-blue-950/40 border border-blue-500/30 flex items-start gap-2.5">
+
                         <span class="text-blue-300 font-bold font-mono">DISL</span>
+
                         <div><strong>R48 / 6A03 (Dislexia):</strong> Ledor e transcritor oficial, fonte OpenDyslexic
+
                             (14pt+), não penalização ortográfica e material concreto.</div>
+
                     </div>
+
                     <div
+
                         class="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 flex items-start gap-2.5">
+
                         <span class="text-emerald-300 font-bold font-mono">PC/NEU</span>
+
                         <div><strong>G80 / G40 (LBI Art. 74):</strong> Tecnologia Assistiva (TA), pranchas CAA de
+
                             comunicação alternativa e reagendamento seguro pós-crise.</div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 5: LONGITUDINAL MULTI-CICLOS & CADEIA DE MARKOV             -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-markov">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-5 space-y-5">
+
                 <div class="flex items-center gap-3">
+
                     <div class="icon-hero"
+
                         style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;">
+
                         <i data-lucide="trending-up" class="w-6 h-6"></i>
+
                     </div>
+
                     <div>
+
                         <span class="text-xs uppercase font-mono font-bold text-amber-400">Engenharia
+
                             Longitudinal</span>
+
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Transição de Markov (Ciclos I, II e
+
                             III)</h2>
+
                     </div>
+
                 </div>
 
+
+
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+
                     Acompanhamento da trajetória evolutiva individualizada através dos 3 ciclos de avaliação contínua
+
                     anual.
+
                 </p>
+
+
 
                 <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs space-y-2">
+
                     <div class="text-slate-400">Matriz de Probabilidade (Ciclo I ➔ Ciclo II):</div>
+
                     <div class="flex justify-between text-emerald-400"><span>Abaixo Básico ➔ Básico:</span>
+
                         <strong>68.2%</strong></div>
+
                     <div class="flex justify-between text-blue-400"><span>Básico ➔ Adequado (Meta A):</span>
+
                         <strong>54.5%</strong></div>
+
                     <div class="flex justify-between text-purple-400"><span>Adequado ➔ Avançado:</span>
+
                         <strong>38.9%</strong></div>
+
                     <div class="flex justify-between text-emerald-400"><span>Retenção no Avançado:</span>
+
                         <strong>100.0%</strong></div>
+
                 </div>
+
+
 
                 <div class="flex gap-2">
+
                     <span class="attribute-pill">1.280 Projeções Multi-Ciclos</span>
+
                     <span class="attribute-pill">115 Células de Markov</span>
+
                 </div>
+
             </div>
+
+
 
             <div class="lg:col-span-7">
+
                 <div class="anim-stage glass-card" id="stage-markov">
+
                     <div class="stage-controls">
+
                         <button class="stage-btn active" id="btn-run-sim" onclick="runMonteCarloSim()"><i
+
                                 data-lucide="play" class="w-3 h-3"></i> Lançar Simulação (50 Alunos)</button>
+
                         <button class="stage-btn" onclick="window.__replayMarkov()"><i data-lucide="rotate-ccw"
+
                                 class="w-3 h-3"></i> Reiniciar</button>
+
                     </div>
+
                 </div>
+
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique em 'Lançar Simulação' para
+
                     observar a migração estocástica real dos estudantes entre os níveis de aprendizagem.</p>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 6: RAIO-X NEUROCOGNITIVO & INFERÊNCIA BIOESTATÍSTICA        -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-raiox">
+
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
             <div class="lg:col-span-5 space-y-5">
+
                 <div class="flex items-center gap-3">
+
                     <div class="icon-hero"
+
                         style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); color: #34d399;">
+
                         <i data-lucide="activity" class="w-6 h-6"></i>
+
                     </div>
+
                     <div>
+
                         <span class="text-xs uppercase font-mono font-bold text-emerald-400">Modelo CHC &
+
                             Bioestatística</span>
+
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Raio-X Cognitivo & Inferência</h2>
+
                     </div>
+
                 </div>
+
+
 
                 <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+
                     Mapeamento de 7 domínios neuropsicológicos correlacionados a 1.460 descritores CAEd e validado por
+
                     testes de significância (ANOVA, Fisher, t-Pareado e Cohen's d).
+
                 </p>
 
+
+
                 <!-- Tabela de Inferência Bioestatística -->
+
                 <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 font-mono text-[11px] space-y-1.5">
+
                     <div class="text-slate-400 font-bold border-b border-slate-800 pb-1 flex justify-between">
+
                         <span>TESTE BIOESTATÍSTICO</span><span>RESULTADO</span>
+
                     </div>
+
                     <div class="flex justify-between text-cyan-400">
+
                         <span>ANOVA Séries (F):</span> <strong>F = 18.17 (p = 3.8e-14, η² = 0.103)</strong>
+
                     </div>
+
                     <div class="flex justify-between text-purple-400">
+
                         <span>Teste Exato Fisher (AEE):</span> <strong>OR = 1.161 (IC 95%: 0.74 - 1.83)</strong>
+
                     </div>
+
                     <div class="flex justify-between text-emerald-400">
+
                         <span>Ganho Longitudinal (t-Pareado):</span> <strong>t = 48.64 (d = 1.923, p &lt;
+
                             0.001)</strong>
+
                     </div>
+
                     <div class="flex justify-between text-amber-400">
+
                         <span>Correlação Vergnaud (Pearson r):</span> <strong>r = +0.979 (p = 9.0e-120)</strong>
+
                     </div>
+
                     <div class="flex justify-between text-yellow-400">
+
                         <span>Rastreio AH/SD (Renzulli):</span> <strong>12 Alunos (1 com 2e - F91.3)</strong>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Seletor de Perfil do Radar D3 -->
+
                 <div class="flex flex-wrap gap-2 pt-1">
+
                     <button class="stage-btn active text-xs" id="btn-perfil-media"
+
                         onclick="setPerfilRadar('media')">Média Geral Escola</button>
+
                     <button class="stage-btn text-xs" id="btn-perfil-rti3" onclick="setPerfilRadar('rti3')">RTI Camada 3
+
                         (AEE)</button>
+
                     <button class="stage-btn text-xs" id="btn-perfil-avancado" onclick="setPerfilRadar('avancado')">🌟
+
                         AH/SD & Potencial Superior</button>
+
                 </div>
+
                 <div>
+
                     <a href="relatorio_bioestatistica_anova_fisher.html" target="_blank"
+
                         class="inline-flex items-center gap-1.5 text-xs text-blue-400 hover:underline font-mono">
+
                         Abrir Dossiê Bioestatístico Completo <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+
                     </a>
+
                 </div>
+
             </div>
+
+
 
             <!-- Palco D3.js: Gráfico Radar dos 7 Domínios Neurocognitivos -->
+
             <div class="lg:col-span-7">
+
                 <div class="anim-stage glass-card" id="stage-radar">
+
                     <div class="stage-controls">
+
                         <span class="text-[11px] font-mono text-emerald-400 font-bold" id="radar-profile-label">Perfil:
+
                             Média da Escola (74.2% Eficiência)</span>
+
                         <button class="stage-btn" onclick="window.__replayRadar()"><i data-lucide="rotate-ccw"
+
                                 class="w-3 h-3"></i> Reiniciar</button>
+
                     </div>
+
                 </div>
+
                 <p class="text-[11px] font-mono text-slate-500 text-center mt-2">Clique nos botões à esquerda para
+
                     transmutar em tempo real a geometria do radar dos 7 domínios neurocognitivos.</p>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- ================================================================= -->
+
     <!-- SLIDE 7: HUB CENTRAL DO ECOSSISTEMA                               -->
+
     <!-- ================================================================= -->
+
     <section class="mira-slide" id="slide-hub">
+
         <div class="max-w-6xl mx-auto w-full text-center space-y-8">
+
             <span class="attribute-pill font-mono">Entrega Canônica Completa</span>
+
             <h2 class="text-3xl sm:text-5xl font-black text-white">Central de Acesso ao Ecossistema</h2>
+
             <p class="text-sm sm:text-base text-slate-400 max-w-3xl mx-auto">
+
                 Todos os artefatos estão integrados, auditados e disponíveis para pedagogos, psicólogos, auditores
+
                 jurídicos e desenvolvedores. Modelo canônico unificado para todas as turmas (1º ao 5º Ano).
+
             </p>
+
+
 
             <!-- Destaque: Dossiês Pedagógicos Mestres 1º e 2º Anos (Empilhados Verticalmente) -->
 
+
+
             <!-- BLOCO MESTRE: TOPOLOGIA DA REDE INTERDISCIPLINAR & GRAFO DE APRENDIZAGEM (MAPA 2D) -->
+
             <div class="p-6 rounded-2xl glass-card border border-blue-500/40 bg-gradient-to-b from-slate-900/90 via-blue-950/30 to-slate-900/90 text-left shadow-2xl relative overflow-hidden">
+
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-700/60">
+
                     <div>
+
                         <div class="flex flex-wrap items-center gap-2 mb-2">
+
                             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40">PADRÃO UNIVERSAL 1º, 2º E 3º ANO</span>
+
                             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">JORNADA INTEGRAL 35H SME CRATEÚS</span>
+
                             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">MATRIZ BNCC 9 COMPONENTES</span>
+
                         </div>
+
                         <h3 class="text-xl md:text-2xl font-black text-white flex items-center gap-2.5">
+
                             <i data-lucide="git-merge" class="w-6 h-6 text-blue-400"></i>
+
                             TOPOLOGIA DA REDE INTERDISCIPLINAR &amp; GRAFO DE APRENDIZAGEM
+
                         </h3>
+
                         <p class="text-xs md:text-sm font-semibold text-blue-300 mt-1">
+
                             Grafo Direcionado Ponderado: Conexões sinérgicas entre os 9 componentes curriculares do 3º Ano.
+
                         </p>
+
                     </div>
+
                     <div class="px-3 py-1.5 rounded-xl bg-blue-900/40 border border-blue-500/30 shrink-0 text-right">
+
                         <div class="text-[10px] text-slate-400 font-mono">POTENCIALIZAÇÃO COGNITIVA</div>
+
                         <div class="text-base font-extrabold text-blue-300 font-mono">+82% Sinergia</div>
+
                     </div>
+
                 </div>
+
+
 
                 <div class="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30 mb-4">
+
                     <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
+
                         <strong>O grafo demonstra que o fortalecimento da rota lexical em Língua Portuguesa potencializa em 82% a capacidade de leitura cartográfica em Geografia e interpretação de tabelas em Ciências e Matemática, otimizando o tempo pedagógico nas 35 horas semanais.</strong>
+
                     </p>
+
                 </div>
 
+
+
                 <!-- FLUXOGRAMA 2D / SVG VETORIAL COM OS 9 COMPONENTES -->
+
                 <div class="p-2 sm:p-4 rounded-xl bg-white shadow-inner overflow-x-auto my-3">
+
                     
+
     <svg viewBox="0 0 760 380" style="width:100%; height:auto; max-height:120mm; display:block; margin:0 auto; background:#ffffff; border-radius:6px; border:1px solid #cbd5e1;">
+
         <defs>
+
             <!-- Gradientes para os nós curriculares -->
+
             <linearGradient id="gradLP" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#1e3a8a"/>
+
                 <stop offset="100%" stop-color="#2563eb"/>
+
             </linearGradient>
+
             <linearGradient id="gradMAT" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#065f46"/>
+
                 <stop offset="100%" stop-color="#059669"/>
+
             </linearGradient>
+
             <linearGradient id="gradGEO" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#c2410c"/>
+
                 <stop offset="100%" stop-color="#ea580c"/>
+
             </linearGradient>
+
             <linearGradient id="gradCIE" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#0f766e"/>
+
                 <stop offset="100%" stop-color="#0d9488"/>
+
             </linearGradient>
+
             <linearGradient id="gradHIS" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#6b21a8"/>
+
                 <stop offset="100%" stop-color="#9333ea"/>
+
             </linearGradient>
+
             <linearGradient id="gradCOMP" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#3730a3"/>
+
                 <stop offset="100%" stop-color="#4f46e5"/>
+
             </linearGradient>
+
             <linearGradient id="gradARTE" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#9d174d"/>
+
                 <stop offset="100%" stop-color="#db2777"/>
+
             </linearGradient>
+
             <linearGradient id="gradEDF" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#15803d"/>
+
                 <stop offset="100%" stop-color="#22c55e"/>
+
             </linearGradient>
+
             <linearGradient id="gradER" x1="0%" y1="0%" x2="100%" y2="100%">
+
                 <stop offset="0%" stop-color="#334155"/>
+
                 <stop offset="100%" stop-color="#64748b"/>
+
             </linearGradient>
+
+
 
             <!-- Marcadores de Seta -->
+
             <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+
                 <path d="M 0 1 L 9 5 L 0 9 z" fill="#2563eb" />
+
             </marker>
+
             <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+
                 <path d="M 0 1 L 9 5 L 0 9 z" fill="#059669" />
+
             </marker>
+
             <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+
                 <path d="M 0 1 L 9 5 L 0 9 z" fill="#ea580c" />
+
             </marker>
+
+
 
             <!-- Filtros de sombra suave -->
+
             <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+
                 <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+
             </filter>
+
         </defs>
 
+
+
         <!-- Grade de fundo sutil -->
+
         <g stroke="#f8fafc" stroke-width="1">
+
             <line x1="40" y1="0" x2="40" y2="380" />
+
             <line x1="140" y1="0" x2="140" y2="380" />
+
             <line x1="240" y1="0" x2="240" y2="380" />
+
             <line x1="340" y1="0" x2="340" y2="380" />
+
             <line x1="440" y1="0" x2="440" y2="380" />
+
             <line x1="540" y1="0" x2="540" y2="380" />
+
             <line x1="640" y1="0" x2="640" y2="380" />
+
             <line x1="740" y1="0" x2="740" y2="380" />
+
         </g>
+
+
 
         <!-- ================= ARESTAS PONDERADAS DIRECIONADAS ================= -->
 
+
+
         <!-- LP ➔ GEO (PESO +82% - Destaque de Leitura Cartográfica) -->
+
         <path d="M 235 155 C 330 155, 410 130, 480 120" fill="none" stroke="#2563eb" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+
         <rect x="315" y="125" width="108" height="19" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="369" y="138" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="bold" fill="#1e40af" text-anchor="middle">
+
             +82% Leitura Cartográfica
+
         </text>
+
+
 
         <!-- LP ➔ MAT (PESO +78% - Interpretação de Enunciados) -->
+
         <path d="M 145 190 C 145 230, 145 240, 145 265" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+
         <rect x="95" y="218" width="100" height="18" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="145" y="230" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#1e40af" text-anchor="middle">
+
             +78% Interpretação Enunciados
+
         </text>
+
+
 
         <!-- LP ➔ CIÊ (PESO +79% - Interpretação de Tabelas e Vocabulário) -->
+
         <path d="M 235 135 C 330 115, 390 70, 480 55" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+
         <rect x="315" y="70" width="112" height="18" rx="4" fill="#ffffff" stroke="#0f766e" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="371" y="82" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#0f766e" text-anchor="middle">
+
             +79% Tabelas e Esquemas
+
         </text>
+
+
 
         <!-- LP ➔ HIS (PESO +85% - Compreensão Narrativa e Temporalidade) -->
+
         <path d="M 235 165 C 330 175, 400 185, 480 185" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+
         <rect x="320" y="165" width="105" height="18" rx="4" fill="#ffffff" stroke="#6b21a8" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="372" y="177" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#6b21a8" text-anchor="middle">
+
             +85% Narrativas Históricas
+
         </text>
+
+
 
         <!-- MAT ➔ COMP (PESO +88% - Lógica Algorítmica e Decomposição) -->
+
         <path d="M 235 300 C 330 300, 400 255, 480 250" fill="none" stroke="#059669" stroke-width="3.5" marker-end="url(#arrow-green)" />
+
         <rect x="320" y="260" width="105" height="18" rx="4" fill="#ffffff" stroke="#059669" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="372" y="272" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#065f46" text-anchor="middle">
+
             +88% Lógica Computacional
+
         </text>
+
+
 
         <!-- MAT ➔ CIÊ (PESO +76% - Medições e Dados Experimentais) -->
+
         <path d="M 235 285 C 350 260, 430 120, 480 65" fill="none" stroke="#059669" stroke-width="2.2" stroke-dasharray="4,3" marker-end="url(#arrow-green)" />
 
+
+
         <!-- MAT ➔ GEO (PESO +72% - Escala, Proporção e Noções Espaciais) -->
+
         <path d="M 235 290 C 340 270, 420 180, 480 130" fill="none" stroke="#059669" stroke-width="2.2" stroke-dasharray="4,3" marker-end="url(#arrow-green)" />
 
+
+
         <!-- LP ➔ ARTE (PESO +74% - Comunicação Simbólica) -->
+
         <path d="M 220 180 C 310 230, 400 305, 480 315" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+
         <rect x="320" y="295" width="100" height="18" rx="4" fill="#ffffff" stroke="#9d174d" stroke-width="1.2" filter="url(#shadow)"/>
+
         <text x="370" y="307" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#9d174d" text-anchor="middle">
+
             +74% Semiótica e Arte
+
         </text>
+
+
 
         <!-- ED. FÍS. ➔ LP (PESO +68% - Coordenação Fina e Esquema Corporal) -->
+
         <path d="M 145 48 C 145 75, 145 85, 145 110" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#arrow-green)" />
+
         <rect x="85" y="65" width="120" height="17" rx="3" fill="#ffffff" stroke="#15803d" stroke-width="1" filter="url(#shadow)"/>
+
         <text x="145" y="77" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="bold" fill="#15803d" text-anchor="middle">
+
             +68% Práxis Caligráfica & DUA
+
         </text>
 
+
+
         <!-- ENSINO RELIGIOSO ➔ AMBIENTE PBS (+81% Clima Escolar e Autorregulação) -->
+
         <path d="M 330 35 C 380 35, 420 35, 475 35" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="3,3" />
+
+
 
         <!-- ================= NÓS DO FLUXOGRAMA 2D (9 COMPONENTES) ================= -->
 
+
+
         <!-- NÓ 1: LÍNGUA PORTUGUESA (HUB MOTOR PRIMÁRIO) -->
+
         <g filter="url(#shadow)">
+
             <rect x="55" y="115" width="180" height="75" rx="8" fill="url(#gradLP)" stroke="#1e3a8a" stroke-width="2"/>
+
             <rect x="63" y="122" width="48" height="16" rx="4" fill="#ffffff" opacity="0.2"/>
+
             <text x="87" y="133" font-family="-apple-system, sans-serif" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">HUB MOTOR</text>
+
             <text x="145" y="148" font-family="-apple-system, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">LÍNGUA PORTUGUESA</text>
+
             <text x="145" y="162" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#93c5fd" text-anchor="middle">Rota Lexical • Consciência Fonêmica</text>
+
             <text x="145" y="176" font-family="-apple-system, sans-serif" font-size="7" fill="#e0e7ff" text-anchor="middle">Decodificação Fluente • VWFA Ventral</text>
+
         </g>
+
+
 
         <!-- NÓ 2: MATEMÁTICA (CO-MOTOR QUANTITATIVO) -->
+
         <g filter="url(#shadow)">
+
             <rect x="55" y="270" width="180" height="70" rx="8" fill="url(#gradMAT)" stroke="#065f46" stroke-width="2"/>
+
             <rect x="63" y="276" width="56" height="15" rx="4" fill="#ffffff" opacity="0.2"/>
+
             <text x="91" y="287" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="900" fill="#ffffff" text-anchor="middle">CO-MOTOR</text>
+
             <text x="145" y="302" font-family="-apple-system, sans-serif" font-size="11.5" font-weight="900" fill="#ffffff" text-anchor="middle">MATEMÁTICA</text>
+
             <text x="145" y="316" font-family="-apple-system, sans-serif" font-size="8" font-weight="bold" fill="#a7f3d0" text-anchor="middle">Kumon Aritmética • Fatos Básicos</text>
+
             <text x="145" y="328" font-family="-apple-system, sans-serif" font-size="7" fill="#d1fae5" text-anchor="middle">Senso Numérico • Reagrupamento</text>
+
         </g>
+
+
 
         <!-- NÓ 3: CIÊNCIAS DA NATUREZA -->
+
         <g filter="url(#shadow)">
+
             <rect x="490" y="30" width="235" height="48" rx="6" fill="url(#gradCIE)" stroke="#0f766e" stroke-width="1.5"/>
+
             <text x="607" y="48" font-family="-apple-system, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">CIÊNCIAS DA NATUREZA</text>
+
             <text x="607" y="61" font-family="-apple-system, sans-serif" font-size="7.5" fill="#ccfbf1" text-anchor="middle">Termos Biológicos • Luz, Som e Investigação</text>
+
             <text x="607" y="71" font-family="-apple-system, sans-serif" font-size="6.8" fill="#99f6e4" text-anchor="middle">Tabelas e Esquemas Experimentais (BNCC)</text>
+
         </g>
+
+
 
         <!-- NÓ 4: GEOGRAFIA (ALVO PRIORITÁRIO: +82%) -->
+
         <g filter="url(#shadow)">
+
             <rect x="490" y="95" width="235" height="52" rx="6" fill="url(#gradGEO)" stroke="#c2410c" stroke-width="2"/>
+
             <rect x="498" y="100" width="55" height="13" rx="3" fill="#ffffff" opacity="0.25"/>
+
             <text x="525" y="110" font-family="-apple-system, sans-serif" font-size="6.8" font-weight="900" fill="#ffffff" text-anchor="middle">SINERGIA 82%</text>
+
             <text x="607" y="116" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="900" fill="#ffffff" text-anchor="middle">GEOGRAFIA</text>
+
             <text x="607" y="129" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="bold" fill="#ffedd5" text-anchor="middle">Leitura Cartográfica • Paisagens e Espaço</text>
+
             <text x="607" y="140" font-family="-apple-system, sans-serif" font-size="6.8" fill="#fed7aa" text-anchor="middle">Croquis, Legendas e Território de Crateús</text>
+
         </g>
+
+
 
         <!-- NÓ 5: HISTÓRIA -->
+
         <g filter="url(#shadow)">
+
             <rect x="490" y="160" width="235" height="48" rx="6" fill="url(#gradHIS)" stroke="#6b21a8" stroke-width="1.5"/>
+
             <text x="607" y="178" font-family="-apple-system, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">HISTÓRIA</text>
+
             <text x="607" y="191" font-family="-apple-system, sans-serif" font-size="7.5" fill="#f3e8ff" text-anchor="middle">Identidade, Marcos de Memória e Família</text>
+
             <text x="607" y="201" font-family="-apple-system, sans-serif" font-size="6.8" fill="#e9d5ff" text-anchor="middle">Fontes Orais e Narrativas Históricas (BNCC)</text>
+
         </g>
+
+
 
         <!-- NÓ 6: BNCC COMPUTAÇÃO -->
+
         <g filter="url(#shadow)">
+
             <rect x="490" y="222" width="235" height="50" rx="6" fill="url(#gradCOMP)" stroke="#3730a3" stroke-width="1.8"/>
+
             <text x="607" y="240" font-family="-apple-system, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">BNCC COMPUTAÇÃO</text>
+
             <text x="607" y="253" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="bold" fill="#e0e7ff" text-anchor="middle">Algoritmos Desplugados • Loops e Padrões</text>
+
             <text x="607" y="264" font-family="-apple-system, sans-serif" font-size="6.8" fill="#c7d2fe" text-anchor="middle">Decomposição e Raciocínio Lógico Estruturado</text>
+
         </g>
+
+
 
         <!-- NÓ 7: ARTE -->
+
         <g filter="url(#shadow)">
+
             <rect x="490" y="287" width="235" height="46" rx="6" fill="url(#gradARTE)" stroke="#9d174d" stroke-width="1.5"/>
+
             <text x="607" y="304" font-family="-apple-system, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">ARTE</text>
+
             <text x="607" y="316" font-family="-apple-system, sans-serif" font-size="7.5" fill="#fce7f3" text-anchor="middle">Artes Visuais, Música e Expressão Corporal</text>
+
             <text x="607" y="326" font-family="-apple-system, sans-serif" font-size="6.8" fill="#fbcfe8" text-anchor="middle">Simbolismo Cultural e Percepção Sensorial</text>
+
         </g>
+
+
 
         <!-- NÓ 8: EDUCAÇÃO FÍSICA -->
+
         <g filter="url(#shadow)">
+
             <rect x="55" y="15" width="180" height="36" rx="6" fill="url(#gradEDF)" stroke="#15803d" stroke-width="1.5"/>
+
             <text x="145" y="30" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">EDUCAÇÃO FÍSICA</text>
+
             <text x="145" y="42" font-family="-apple-system, sans-serif" font-size="6.8" fill="#dcfce7" text-anchor="middle">Coordenação Motora Fina • Regulação DUA</text>
+
         </g>
+
+
 
         <!-- NÓ 9: ENSINO RELIGIOSO -->
+
         <g filter="url(#shadow)">
+
             <rect x="250" y="15" width="215" height="36" rx="6" fill="url(#gradER)" stroke="#334155" stroke-width="1.5"/>
+
             <text x="357" y="30" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">ENSINO RELIGIOSO</text>
+
             <text x="357" y="42" font-family="-apple-system, sans-serif" font-size="6.8" fill="#f1f5f9" text-anchor="middle">Alteridade, Empatia e Convivência Ética (PBS)</text>
+
         </g>
 
+
+
         <!-- Legenda Inferior do Mapa 2D -->
+
         <rect x="55" y="352" width="670" height="22" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
         <text x="65" y="366" font-family="-apple-system, sans-serif" font-size="7" font-weight="bold" fill="#1e3a8a">
+
             LEGENDA:
+
         </text>
+
         <circle cx="118" cy="363" r="4" fill="#2563eb" />
+
         <text x="127" y="366" font-family="-apple-system, sans-serif" font-size="6.5" fill="#334155">Fluxo de Leitura (LP)</text>
+
         
+
         <circle cx="218" cy="363" r="4" fill="#059669" />
+
         <text x="227" y="366" font-family="-apple-system, sans-serif" font-size="6.5" fill="#334155">Fluxo Quantitativo (MAT)</text>
+
         
+
         <circle cx="338" cy="363" r="4" fill="#ea580c" />
+
         <text x="347" y="366" font-family="-apple-system, sans-serif" font-size="6.5" fill="#334155">Alavanca Cartográfica (+82%)</text>
+
         
+
         <circle cx="488" cy="363" r="4" fill="#15803d" />
+
         <text x="497" y="366" font-family="-apple-system, sans-serif" font-size="6.5" fill="#334155">Psicomotricidade DUA</text>
+
         
+
         <text x="635" y="366" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="bold" fill="#64748b" text-anchor="end">
+
             Coorte: 3º Ano • Jornada 35H
+
         </text>
+
     </svg>
+
     
+
                 </div>
+
+
 
                 <!-- TABELA SINTÉTICA DE ALAVANCA NAS 35 HORAS -->
+
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-2.5 mt-3 text-xs">
+
                     <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700">
+
                         <div class="font-bold text-blue-300 mb-0.5">LP ➔ Geografia (+82%)</div>
+
                         <div class="text-[11px] text-slate-300">Decodificação de croquis e leitura cartográfica em Crateús.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700">
+
                         <div class="font-bold text-teal-300 mb-0.5">LP ➔ Ciências (+79%)</div>
+
                         <div class="text-[11px] text-slate-300">Interpretação de esquemas de som/luz e tabelas experimentais.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700">
+
                         <div class="font-bold text-emerald-300 mb-0.5">LP ➔ Matemática (+78%)</div>
+
                         <div class="text-[11px] text-slate-300">Compreensão semântica da pergunta em situações-problema.</div>
+
                     </div>
+
                     <div class="p-2.5 rounded-lg bg-slate-800/80 border border-slate-700">
+
                         <div class="font-bold text-indigo-300 mb-0.5">MAT ➔ Computação (+88%)</div>
+
                         <div class="text-[11px] text-slate-300">Fatos básicos habilitam raciocínio algorítmico e loops.</div>
+
                     </div>
+
                 </div>
+
             </div>
+
+
 
             <div class="space-y-4">
+
                 <!-- Card 1º Ano: 1.000 Laudas -->
+
                 <div class="p-6 rounded-2xl glass-card border border-purple-500/40 bg-gradient-to-r from-purple-950/40 via-slate-900/80 to-blue-950/40 text-left shadow-2xl relative overflow-hidden">
+
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
                         <div class="space-y-2">
+
                             <div class="flex flex-wrap items-center gap-2">
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">1º ANO • COORTE 24 ESTUDANTES</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40">1.000 LAUDAS VETORIAIS A4</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">LEDGER SHA-256 (BLOCO 23)</span>
+
                             </div>
+
                             <h3 class="text-lg md:text-xl font-black text-white flex items-center gap-2">
+
                                 <i data-lucide="file-text" class="w-5 h-5 text-purple-400"></i>
+
                                 Dossiê Pedagógico Mestre 1º Ano — BNCC, PEI/PAEE & Práticas Diárias Ampliadas
+
                             </h3>
+
                             <p class="text-xs text-slate-300 max-w-4xl leading-relaxed">
+
                                 Total de exatamente <strong>1.000 laudas vetoriais A4</strong>: 40 laudas de Front Matter Master (Matriz Oficial <strong>INTEGRAL 35H SME Crateús</strong> com 7 aulas diárias de 50 min, 14 DOIs auditáveis, DUA, PBS, Censo 172 e bioestatística com guia leigo) + 24 cadernos individualizados de 40 laudas cada (Alfabetização Fônica, Aritmética Kumon 7A/6A, Ciências, Arte, História, Geografia, <strong>BNCC Computação</strong>, Ed. Física, Ensino Religioso, Monitoramento Semanal e Termo de Homologação Forense).
+
                             </p>
+
                         </div>
+
                         <div class="flex flex-row md:flex-col gap-2 shrink-0">
+
                             <a href="DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2 transition">
+
                                 <i data-lucide="external-link" class="w-4 h-4"></i> Abrir Dossiê (PDF)
+
                             </a>
+
                             <a href="DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" download class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition">
+
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Baixar (7.05 MB)
+
                             </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Card 2º Ano: 1.160 Laudas (POSICIONADO ABAIXO DO 1º ANO) -->
+
                 <div class="p-6 rounded-2xl glass-card border border-emerald-500/40 bg-gradient-to-r from-emerald-950/40 via-slate-900/80 to-blue-950/40 text-left shadow-2xl relative overflow-hidden">
+
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
                         <div class="space-y-2">
+
                             <div class="flex flex-wrap items-center gap-2">
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">2º ANO • COORTE 28 ESTUDANTES</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40">1.160 LAUDAS VETORIAIS A4</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">LEDGER SHA-256 (BLOCO 22)</span>
+
                             </div>
+
                             <h3 class="text-lg md:text-xl font-black text-white flex items-center gap-2">
+
                                 <i data-lucide="file-check" class="w-5 h-5 text-emerald-400"></i>
+
                                 Dossiê Pedagógico Mestre 2º Ano — BNCC, PEI/PAEE & Práticas Diárias Ampliadas
+
                             </h3>
+
                             <p class="text-xs text-slate-300 max-w-4xl leading-relaxed">
+
                                 Total de exatamente <strong>1.160 laudas vetoriais A4</strong>: 40 laudas de Front Matter Master (Matriz Oficial <strong>INTEGRAL 35H SME Crateús</strong> com 7 aulas diárias de 50 min, bioestatística com guia leigo, Cadeia de Markov e 14 DOIs) + 28 cadernos individualizados de 40 laudas cada (Alfabetização Consolidada, Kumon 4A a 2A/A, 9 Componentes Curriculares da BNCC, <strong>BNCC Computação</strong> desplugada, PEI/PAEE DUA/PBS, Ficha de Monitoramento Semanas 1-8 e Termo de Homologação Forense).
+
                             </p>
+
                         </div>
+
                         <div class="flex flex-row md:flex-col gap-2 shrink-0">
+
                             <a href="DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition">
+
                                 <i data-lucide="external-link" class="w-4 h-4"></i> Abrir Dossiê (PDF)
+
                             </a>
+
                             <a href="DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" download class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition">
+
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Baixar (6.00 MB)
+
                             </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
 
                 <!-- Card 3º Ano: 1.000 Laudas (POSICIONADO ABAIXO DO 2º ANO) -->
+
                 <div class="p-6 rounded-2xl glass-card border border-blue-500/40 bg-gradient-to-r from-blue-950/40 via-slate-900/80 to-indigo-950/40 text-left shadow-2xl relative overflow-hidden">
+
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
                         <div class="space-y-2">
+
                             <div class="flex flex-wrap items-center gap-2">
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/40">3º ANO • COORTE 24 ESTUDANTES</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">1.000 LAUDAS VETORIAIS A4</span>
+
                                 <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">LEDGER SHA-256 (BLOCO 21)</span>
+
                             </div>
+
                             <h3 class="text-lg md:text-xl font-black text-white flex items-center gap-2">
+
                                 <i data-lucide="file-spreadsheet" class="w-5 h-5 text-blue-400"></i>
+
                                 Dossiê Pedagógico Mestre 3º Ano — BNCC, PEI/PAEE & Práticas Diárias Ampliadas
+
                             </h3>
+
                             <p class="text-xs text-slate-300 max-w-4xl leading-relaxed">
+
                                 Total de exatamente <strong>1.000 laudas vetoriais A4</strong>: 40 laudas de Front Matter Master (Matriz Oficial <strong>INTEGRAL 35H SME Crateús</strong> com 7 aulas diárias de 50 min, bioestatística com guia leigo, Cadeia de Markov e 14 DOIs) + 24 cadernos individualizados de 40 laudas cada (Alfabetização Consolidada, Kumon Aritmética 3A a A/B, 9 Componentes Curriculares da BNCC, <strong>BNCC Computação</strong> desplugada, PEI/PAEE DUA/PBS, Ficha de Monitoramento Semanas 1-8 e Termo de Homologação Forense).
+
                             </p>
+
                         </div>
+
                         <div class="flex flex-row md:flex-col gap-2 shrink-0">
+
                             <a href="DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 transition">
+
                                 <i data-lucide="external-link" class="w-4 h-4"></i> Abrir Dossiê (PDF)
+
                             </a>
+
                             <a href="DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" download class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition">
+
                                 <i data-lucide="download" class="w-3.5 h-3.5"></i> Baixar (5.90 MB)
+
                             </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
+
+
+                <!-- Card 4º Ano A e B: 1.720 Laudas (POSICIONADO ABAIXO DO 3º ANO) -->
+
+                <div class="p-6 rounded-2xl glass-card border border-indigo-500/40 bg-gradient-to-r from-indigo-950/40 via-slate-900/80 to-purple-950/40 text-left shadow-2xl relative overflow-hidden">
+
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+
+                        <div class="space-y-2">
+
+                            <div class="flex flex-wrap items-center gap-2">
+
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">4º ANO A e B • COORTE 42 ESTUDANTES</span>
+
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-purple-500/20 text-purple-300 border border-purple-500/40">1.720 LAUDAS VETORIAIS A4</span>
+
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">LEDGER SHA-256 (BLOCO 24)</span>
+
+                            </div>
+
+                            <h3 class="text-lg md:text-xl font-black text-white flex items-center gap-2">
+
+                                <i data-lucide="file-spreadsheet" class="w-5 h-5 text-indigo-400"></i>
+
+                                Dossiê Pedagógico Mestre 4º Ano (Turmas A e B) — BNCC, PEI/PAEE & Práticas Diárias Ampliadas
+
+                            </h3>
+
+                            <p class="text-xs text-slate-300 max-w-4xl leading-relaxed">
+
+                                Total de exatamente <strong>1.720 laudas vetoriais A4</strong>: 40 laudas de Front Matter Master (Matriz Oficial <strong>INTEGRAL 35H SME Crateús</strong> com 7 aulas diárias de 50 min, bioestatística com guia leigo, modelagem de Markov, EWS, trilha Kumon Níveis B e C de multiplicação/divisão e índice remissivo nominal com início de página exato por turma) + <strong>42 Cadernos Individuais de 40 laudas cada</strong> (22 alunos da Turma 4º Ano A + 20 alunos da Turma 4º Ano B), integrando 26 laudas de Língua Portuguesa/Fônico do Volume 4, 4 laudas de Matemática Kumon (operações verticais de múltiplos dígitos, frações e problemas SPAECE D01-D28) e 6 laudas multidisciplinares (Ciências, Geografia, História, Arte, Educação Física, BNCC Computação e Termo Forense com fé pública).
+
+                            </p>
+
+                        </div>
+
+                        <div class="flex flex-row md:flex-col gap-2 shrink-0">
+
+                            <a href="DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 transition">
+
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Abrir Dossiê (PDF)
+
+                            </a>
+
+                            <a href="DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf" download class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition">
+
+                                <i data-lucide="download" class="w-3.5 h-3.5"></i> Baixar (7.58 MB)
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
+
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-left">
+
                 <a href="dashboard.html" class="p-4 rounded-xl glass-card hover:border-blue-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Dashboard SPA</h3>
+
                     <p class="text-[11px] text-slate-400">5 abas dinâmicas, metas e CIDs.</p>
+
                 </a>
+
+
 
                 <a href="relatorio_bioestatistica_anova_fisher.html"
+
                     class="p-4 rounded-xl glass-card hover:border-emerald-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Bioestatística & ANOVA</h3>
+
                     <p class="text-[11px] text-slate-400">Fisher, t-pareado e Cohen's d.</p>
+
                 </a>
+
+
 
                 <a href="raiox_universal_cognitivo.html"
+
                     class="p-4 rounded-xl glass-card hover:border-cyan-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="brain" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Raio-X Cognitivo</h3>
+
                     <p class="text-[11px] text-slate-400">7 domínios neuropsicológicos.</p>
+
                 </a>
+
+
 
                 <a href="prontuario_aee_tod_impresso.html" target="_blank"
+
                     class="p-4 rounded-xl glass-card hover:border-purple-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="file-check" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Dossiês PEI & PAEE</h3>
+
                     <p class="text-[11px] text-slate-400">A4 oficiais com contraprova.</p>
+
                 </a>
+
+
 
                 <a href="fichas_intervencao_pip.html" target="_blank"
+
                     class="p-4 rounded-xl glass-card hover:border-teal-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="printer" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Fichas PIP Sala</h3>
+
                     <p class="text-[11px] text-slate-400">Roteiro semanal em 4 passos.</p>
+
                 </a>
+
+
 
                 <div class="p-4 rounded-xl glass-card">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-2">
+
                         <i data-lucide="terminal" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">CLI airam.py</h3>
+
                     <p class="text-[11px] text-slate-400 font-mono">airam.py --bioestatistica</p>
+
                 </div>
 
+
+
                 <a href="https://github.com/MarceloClaro/AiramVeras" target="_blank"
+
                     class="p-4 rounded-xl glass-card hover:border-emerald-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="database" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Banco 3FN (57 Tabelas)</h3>
+
                     <p class="text-[11px] text-slate-400">100% sem ilhas, 16 blocos no Ledger e 96 PEIs.</p>
+
                 </a>
+
+
 
                 <a href="resultados-caed-ciclo-i-2026/manifesto_coleta.json" target="_blank"
+
                     class="p-4 rounded-xl glass-card hover:border-indigo-500 transition group">
+
                     <div
+
                         class="w-9 h-9 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-2 group-hover:scale-110 transition">
+
                         <i data-lucide="database" class="w-4 h-4"></i>
+
                     </div>
+
                     <h3 class="text-xs font-bold text-white mb-1">Ciclos I, II e III</h3>
+
                     <p class="text-[11px] text-slate-400">Manifestos canônicos brutos.</p>
+
                 </a>
+
             </div>
+
+
 
             <div class="pt-6 font-mono text-xs text-slate-500 flex flex-wrap justify-center items-center gap-3">
+
                 <span>Navegação: <kbd class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">←
+
                         / →</kbd></span>
+
                 <span>Tela Cheia: <kbd
+
                         class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">F</kbd></span>
+
                 <span>Áudio: <kbd
+
                         class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">M</kbd></span>
+
                 <button onclick="goToSlide(0)" class="text-blue-400 hover:underline ml-2">Reiniciar Apresentação
+
                     ↺</button>
+
             </div>
+
         </div>
+
     </section>
 
+
+
     <!-- Floating Next Button -->
+
     <button id="mira-next" title="Próximo Slide" onclick="advanceSlide()">
+
         <i data-lucide="chevron-down" id="mira-next-icon" class="w-6 h-6"></i>
+
     </button>
 
+
+
     <!-- ================================================================= -->
+
     <!-- D3.JS ANIMATION SCRIPTS (MIRA PHILOSOPHY: LOOPS INTERNOS VIVOS)   -->
+
     <!-- ================================================================= -->
+
     <script>
+
         lucide.createIcons();
 
+
+
         // -------------------------------------------------------------
+
         // WEB AUDIO FX MINIMALISTA E SUTIL (SEM DEPENDÊNCIAS EXTERNAS)
+
         // -------------------------------------------------------------
+
         const AudioFX = {
+
             ctx: null,
+
             enabled: false,
+
             init() {
+
                 if (!this.ctx && typeof AudioContext !== 'undefined') {
+
                     this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+
                 }
+
             },
+
             playTone(freq, type = 'sine', duration = 0.12, gainVal = 0.04) {
+
                 if (!this.enabled) return;
+
                 this.init();
+
                 if (!this.ctx) return;
+
                 try {
+
                     const osc = this.ctx.createOscillator();
+
                     const gain = this.ctx.createGain();
+
                     osc.type = type;
+
                     osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+
                     gain.gain.setValueAtTime(gainVal, this.ctx.currentTime);
+
                     gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+
                     osc.connect(gain);
+
                     gain.connect(this.ctx.destination);
+
                     osc.start();
+
                     osc.stop(this.ctx.currentTime + duration);
+
                 } catch (e) { }
+
             },
+
             slide() { this.playTone(587.33, 'sine', 0.15, 0.03); },
+
             click() { this.playTone(880, 'sine', 0.07, 0.02); },
+
             celebrate() {
+
                 [523.25, 659.25, 783.99, 1046.50].forEach((f, i) => {
+
                     setTimeout(() => this.playTone(f, 'triangle', 0.22, 0.04), i * 90);
+
                 });
+
             }
+
         };
+
+
 
         function toggleAudio() {
+
             AudioFX.enabled = !AudioFX.enabled;
+
             const btn = document.getElementById('audio-toggle');
+
             const icon = document.getElementById('audio-icon');
+
             if (AudioFX.enabled) {
+
                 AudioFX.init();
+
                 btn.innerHTML = `<i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-400"></i> Som: ON`;
+
                 btn.classList.add('border-emerald-500/50', 'text-emerald-300');
+
                 AudioFX.click();
+
             } else {
+
                 btn.innerHTML = `<i data-lucide="volume-x" class="w-3.5 h-3.5 text-slate-400"></i> Som: OFF`;
+
                 btn.classList.remove('border-emerald-500/50', 'text-emerald-300');
+
             }
+
             lucide.createIcons();
+
         }
 
+
+
         // -------------------------------------------------------------
+
         // CANVAS DE FUNDO: CONSTELAÇÃO CÓSMICA DE PARTÍCULAS
+
         // -------------------------------------------------------------
+
         (function initBgCanvas() {
+
             const canvas = document.getElementById('bg-canvas');
+
             const ctx = canvas.getContext('2d');
+
             let w, h;
+
             function resize() {
+
                 w = canvas.width = window.innerWidth;
+
                 h = canvas.height = window.innerHeight;
+
             }
+
             resize();
+
             window.addEventListener('resize', resize);
 
+
+
             const numDots = Math.min(50, Math.floor(window.innerWidth / 30));
+
             const dots = d3.range(numDots).map(() => ({
+
                 x: Math.random() * w,
+
                 y: Math.random() * h,
+
                 vx: (Math.random() - 0.5) * 0.4,
+
                 vy: (Math.random() - 0.5) * 0.4,
+
                 r: Math.random() * 1.5 + 0.8
+
             }));
 
+
+
             let mouseX = -1000, mouseY = -1000;
+
             window.addEventListener('mousemove', e => {
+
                 mouseX = e.clientX;
+
                 mouseY = e.clientY;
+
             });
+
+
 
             function renderBg() {
+
                 ctx.clearRect(0, 0, w, h);
+
                 dots.forEach(d => {
+
                     d.x += d.vx;
+
                     d.y += d.vy;
+
                     if (d.x < 0 || d.x > w) d.vx *= -1;
+
                     if (d.y < 0 || d.y > h) d.vy *= -1;
 
+
+
                     // Atração do mouse suave
+
                     const dx = mouseX - d.x;
+
                     const dy = mouseY - d.y;
+
                     const dist = Math.sqrt(dx * dx + dy * dy);
+
                     if (dist < 140) {
+
                         d.x += (dx / dist) * 0.3;
+
                         d.y += (dy / dist) * 0.3;
+
                     }
+
+
 
                     ctx.beginPath();
+
                     ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+
                     ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
+
                     ctx.fill();
+
                 });
+
+
 
                 // Linhas entre nós próximos
+
                 for (let i = 0; i < dots.length; i++) {
+
                     for (let j = i + 1; j < dots.length; j++) {
+
                         const dist = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
+
                         if (dist < 110) {
+
                             ctx.beginPath();
+
                             ctx.moveTo(dots[i].x, dots[i].y);
+
                             ctx.lineTo(dots[j].x, dots[j].y);
+
                             ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 110)})`;
+
                             ctx.stroke();
+
                         }
+
                     }
+
                 }
+
                 requestAnimationFrame(renderBg);
+
             }
+
             renderBg();
+
         })();
+
+
 
         // Cores da Identidade Visual Mira
+
         const PRIMARY = "#3b82f6";
+
         const ACCENT_EMERALD = "#10b981";
+
         const ACCENT_PURPLE = "#8b5cf6";
+
         const ACCENT_AMBER = "#f59e0b";
+
         const W = 960, H = 540;
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 1: HERO / COORTE DE ESTUDANTES EM ÓRBITA & GRAVIDADE
+
         // -------------------------------------------------------------
+
         let heroSpeedMultiplier = 1;
+
         function setHeroSpeed(val) {
+
             heroSpeedMultiplier = val;
+
             document.getElementById('btn-speed-1').classList.toggle('active', val === 1);
+
             document.getElementById('btn-speed-2').classList.toggle('active', val === 2);
+
             AudioFX.click();
+
         }
 
+
+
         (function () {
+
             const svg = d3.select("#stage-hero").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
             const cx = W / 2, cy = H / 2;
+
             const tooltip = d3.select("#tooltip-hero");
 
+
+
             // Anéis orbitais
+
             [110, 170, 230].forEach((r, i) => {
+
                 svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", r)
+
                     .attr("fill", "none").attr("stroke", "rgba(255,255,255,0.06)").attr("stroke-dasharray", "4,6");
+
             });
+
+
 
             // Centro: Escola Airam Veras
+
             const centerG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+
             centerG.append("circle").attr("r", 40).attr("fill", "rgba(59, 130, 246, 0.15)")
+
                 .attr("stroke", PRIMARY).attr("stroke-width", 2.5)
+
                 .style("filter", `drop-shadow(0 0 16px ${PRIMARY})`);
+
             centerG.append("text").text("AIRAM").attr("text-anchor", "middle").attr("dy", -3)
+
                 .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 900).attr("letter-spacing", 1.5);
+
             centerG.append("text").text("VERAS").attr("text-anchor", "middle").attr("dy", 12)
+
                 .attr("fill", "#60a5fa").attr("font-size", 10).attr("font-weight", 700);
 
+
+
             // Estudantes orbitando (32 partículas representando os 172 da coorte)
+
             const numParticles = 32;
+
             const particlesData = d3.range(numParticles).map(i => {
+
                 const isAEE = i % 7 === 0;
+
                 return {
+
                     id: i,
+
                     hashId: `aluno_${(i * 13 + 7).toString(16).padStart(4, '0')}...`,
+
                     turma: `${(i % 5) + 1}º Ano`,
+
                     proficiencia: (160 + (i * 7.5) % 180).toFixed(1),
+
                     radius: 110 + (i % 3) * 60,
+
                     baseSpeed: 0.0006 + (i % 4) * 0.0003,
+
                     angle: (i / numParticles) * 2 * Math.PI,
+
                     size: isAEE ? 6 : (4 + (i % 3) * 1.5),
+
                     color: isAEE ? ACCENT_PURPLE : (i % 2 === 0 ? PRIMARY : ACCENT_EMERALD),
+
                     isAEE: isAEE
+
                 };
+
             });
+
+
 
             const particles = svg.selectAll(".hero-particle")
+
                 .data(particlesData).enter().append("circle")
+
                 .attr("class", "hero-particle")
+
                 .attr("r", d => d.size)
+
                 .attr("fill", d => d.color)
+
                 .style("cursor", "pointer")
+
                 .style("filter", d => `drop-shadow(0 0 6px ${d.color})`)
+
                 .on("mouseenter", function (event, d) {
+
                     d3.select(this).transition().duration(150).attr("r", d.size * 1.8);
+
                     tooltip.style("opacity", 1)
+
                         .html(`<strong>Estudante ID:</strong> ${d.hashId}<br><strong>Turma:</strong> ${d.turma}<br><strong>SPAECE:</strong> ${d.proficiencia} pts<br><strong>Status:</strong> ${d.isAEE ? 'AEE (PDI Ativo)' : 'Regular'}`);
+
                     AudioFX.click();
+
                 })
+
                 .on("mousemove", function (event) {
+
                     const rect = document.getElementById('stage-hero').getBoundingClientRect();
+
                     tooltip.style("left", (event.clientX - rect.left + 15) + "px")
+
                         .style("top", (event.clientY - rect.top - 20) + "px");
+
                 })
+
                 .on("mouseleave", function (event, d) {
+
                     d3.select(this).transition().duration(200).attr("r", d.size);
+
                     tooltip.style("opacity", 0);
+
                 });
+
+
 
             let elapsedAcc = 0;
+
             let lastT = 0;
+
             d3.timer(t => {
+
                 const dt = t - lastT;
+
                 lastT = t;
+
                 elapsedAcc += dt * heroSpeedMultiplier;
+
                 particles.each(function (d) {
+
                     const currentAngle = d.angle + elapsedAcc * d.baseSpeed;
+
                     const x = cx + Math.cos(currentAngle) * d.radius;
+
                     const y = cy + Math.sin(currentAngle) * d.radius;
+
                     d3.select(this).attr("cx", x).attr("cy", y);
+
                 });
+
             });
 
+
+
             window.__replayHero = () => {
+
                 elapsedAcc = 0;
+
                 AudioFX.click();
+
             };
+
         })();
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 2: METAS A E B + SIMULADOR WHAT-IF
+
         // -------------------------------------------------------------
+
         let currentMetasComp = 'lp';
+
         let whatIfGain = 0;
 
+
+
         const baseMetas = {
+
             lp: [
+
                 { ano: "1º Ano", val: 41.7 },
+
                 { ano: "2º Ano", val: 52.3 },
+
                 { ano: "3º Ano", val: 56.2 },
+
                 { ano: "4º Ano", val: 47.6 },
+
                 { ano: "5º Ano", val: 84.9 }
+
             ],
+
             mat: [
+
                 { ano: "1º Ano", val: 45.8 },
+
                 { ano: "2º Ano", val: 50.0 },
+
                 { ano: "3º Ano", val: 53.1 },
+
                 { ano: "4º Ano", val: 38.1 },
+
                 { ano: "5º Ano", val: 79.2 }
+
             ]
+
         };
+
+
 
         let updateMetasVisual = () => { };
 
+
+
         (function () {
+
             const svg = d3.select("#stage-metas").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
             const margin = { top: 70, right: 60, bottom: 80, left: 80 };
+
             const innerW = W - margin.left - margin.right;
+
             const innerH = H - margin.top - margin.bottom;
 
+
+
             const g = svg.append("g").attr("transform", `translate(${margin.left}, ${margin.top})`);
+
             const x = d3.scaleBand().domain(["1º Ano", "2º Ano", "3º Ano", "4º Ano", "5º Ano"]).range([0, innerW]).padding(0.4);
+
             const y = d3.scaleLinear().domain([0, 100]).range([innerH, 0]);
 
+
+
             // Linha de corte da Meta A (80%)
+
             g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", y(80)).attr("y2", y(80))
+
                 .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2.5).attr("stroke-dasharray", "6,6");
+
             g.append("text").attr("x", innerW - 10).attr("y", y(80) - 8).attr("text-anchor", "end")
+
                 .attr("fill", ACCENT_EMERALD).attr("font-size", 12).attr("font-weight", 800)
+
                 .text("LINHA DE CORTE META A (80%)");
 
+
+
             // Eixo X
+
             g.append("g").attr("transform", `translate(0, ${innerH})`)
+
                 .call(d3.axisBottom(x).tickSize(0))
+
                 .selectAll("text").attr("fill", "#94a3b8").attr("font-size", 13).attr("dy", 15);
+
             g.selectAll(".domain").attr("stroke", "rgba(255,255,255,0.1)");
 
+
+
             updateMetasVisual = function () {
+
                 const data = baseMetas[currentMetasComp].map(d => ({
+
                     ano: d.ano,
+
                     val: Math.min(100, d.val + whatIfGain * 7.5)
+
                 }));
 
+
+
                 const bars = g.selectAll(".meta-bar").data(data, d => d.ano);
+
                 const labels = g.selectAll(".meta-label").data(data, d => d.ano);
 
+
+
                 bars.enter().append("rect")
+
                     .attr("class", "meta-bar")
+
                     .attr("x", d => x(d.ano))
+
                     .attr("y", innerH)
+
                     .attr("width", x.bandwidth())
+
                     .attr("height", 0)
+
                     .attr("rx", 6)
+
                     .merge(bars)
+
                     .transition().duration(600).ease(d3.easeCubicOut)
+
                     .attr("y", d => y(d.val))
+
                     .attr("height", d => innerH - y(d.val))
+
                     .attr("fill", d => d.val >= 80 ? ACCENT_EMERALD : (currentMetasComp === 'lp' ? PRIMARY : ACCENT_AMBER));
 
+
+
                 labels.enter().append("text")
+
                     .attr("class", "meta-label")
+
                     .attr("text-anchor", "middle")
+
                     .attr("font-weight", 800)
+
                     .attr("font-size", 12)
+
                     .merge(labels)
+
                     .transition().duration(600)
+
                     .attr("x", d => x(d.ano) + x.bandwidth() / 2)
+
                     .attr("y", d => y(d.val) - 8)
+
                     .attr("fill", d => d.val >= 80 ? ACCENT_EMERALD : "#f8fafc")
+
                     .text(d => `${d.val.toFixed(1)}%`);
 
+
+
                 // Recalcula média geral
+
                 const avg = d3.mean(data, d => d.val);
+
                 document.getElementById('stat-adequacao').innerText = `${avg.toFixed(1)}%`;
+
                 if (whatIfGain > 0 && data.filter(d => d.val >= 80).length >= 4) {
+
                     AudioFX.celebrate();
+
                 }
+
             };
+
             updateMetasVisual();
+
             window.__replayMetas = () => {
+
                 whatIfGain = 0;
+
                 document.getElementById('whatif-slider').value = 0;
+
                 document.getElementById('slider-val-label').innerText = "+0 acertos";
+
                 updateMetasVisual();
+
                 AudioFX.click();
+
             };
+
         })();
 
+
+
         function setMetasComp(comp) {
+
             currentMetasComp = comp;
+
             document.getElementById('btn-comp-lp').classList.toggle('active', comp === 'lp');
+
             document.getElementById('btn-comp-mat').classList.toggle('active', comp === 'mat');
+
             updateMetasVisual();
+
             AudioFX.click();
+
         }
+
+
 
         function onWhatIfSlide(val) {
+
             whatIfGain = parseInt(val);
+
             document.getElementById('slider-val-label').innerText = `+${val} acertos`;
+
             updateMetasVisual();
+
         }
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 3: GRAFO CURRICULAR BIPARTIDO CAEd ➔ BNCC
+
         // -------------------------------------------------------------
+
         (function () {
+
             const svg = d3.select("#stage-grafo").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
 
+
+
             const nodesCAEd = [
+
                 { id: "3EF01_P", label: "3EF01 (Letras e Grafemas)", desc: "Reconhecimento e escrita correta de grafemas complexos.", bncc: "EF03LP01", y: 120 },
+
                 { id: "3EF06_M", label: "3EF06 (Adição e Reserva)", desc: "Operações no campo aditivo com reagrupamento no QVL.", bncc: "EF03MA05", y: 220 },
+
                 { id: "3EF09_M", label: "3EF09 (Multiplicação)", desc: "Cálculo mental e algoritmos da multiplicação por 2 e 3.", bncc: "EF03MA05", y: 320 },
+
                 { id: "4EF07_M", label: "4EF07 (Frações Unitárias)", desc: "Compreensão de partes de um todo e reta numérica.", bncc: "EF04MA02", y: 420 }
+
             ];
+
+
 
             const nodesBNCC = [
+
                 { id: "EF03LP01", label: "BNCC EF03LP01 (Ortografia)", y: 150 },
+
                 { id: "EF03MA05", label: "BNCC EF03MA05 (Cálculo Aditivo)", y: 270 },
+
                 { id: "EF04MA02", label: "BNCC EF04MA02 (Frações)", y: 390 }
+
             ];
 
+
+
             const links = [
+
                 { source: nodesCAEd[0], target: nodesBNCC[0] },
+
                 { source: nodesCAEd[1], target: nodesBNCC[1] },
+
                 { source: nodesCAEd[2], target: nodesBNCC[1] },
+
                 { source: nodesCAEd[3], target: nodesBNCC[2] }
+
             ];
+
+
 
             const xCAEd = 220, xBNCC = 740;
 
+
+
             // Linhas
+
             const linkElements = links.map(l => {
+
                 return svg.append("line").attr("x1", xCAEd).attr("y1", l.source.y).attr("x2", xBNCC).attr("y2", l.target.y)
+
                     .attr("stroke", "rgba(255,255,255,0.12)").attr("stroke-width", 2);
+
             });
+
+
 
             // Partículas viajando ao longo das arestas (Loop contínuo)
+
             links.forEach((l, idx) => {
+
                 const p = svg.append("circle").attr("r", 5).attr("fill", ACCENT_EMERALD)
+
                     .style("filter", `drop-shadow(0 0 6px ${ACCENT_EMERALD})`);
 
+
+
                 function travelEdge() {
+
                     p.attr("cx", xCAEd).attr("cy", l.source.y).attr("opacity", 1)
+
                         .transition().duration(2400 + idx * 400).ease(d3.easeCubicInOut)
+
                         .attr("cx", xBNCC).attr("cy", l.target.y)
+
                         .transition().duration(200).attr("opacity", 0)
+
                         .on("end", travelEdge);
+
                 }
+
                 travelEdge();
+
             });
+
+
 
             // Nós CAEd interativos
+
             nodesCAEd.forEach(n => {
+
                 const g = svg.append("g").attr("transform", `translate(${xCAEd}, ${n.y})`).style("cursor", "pointer");
+
                 const circle = g.append("circle").attr("r", 25).attr("fill", "#0f172a").attr("stroke", PRIMARY).attr("stroke-width", 2.5);
+
                 g.append("text").text("CAEd").attr("text-anchor", "middle").attr("dy", 4)
+
                     .attr("fill", PRIMARY).attr("font-size", 10).attr("font-weight", 800);
+
                 g.append("text").text(n.label).attr("text-anchor", "end").attr("dx", -35).attr("dy", 4)
+
                     .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+
+
 
                 g.on("click", () => {
+
                     circle.transition().duration(150).attr("r", 30).transition().duration(200).attr("r", 25);
+
                     const hud = document.getElementById('grafo-hud');
+
                     hud.classList.remove('hidden');
+
                     document.getElementById('hud-caed').innerText = `Descritor CAEd: ${n.id}`;
+
                     document.getElementById('hud-bncc').innerText = `Habilidade Vinculada: ${n.bncc}`;
+
                     document.getElementById('hud-desc').innerText = n.desc;
+
                     AudioFX.click();
+
                 });
+
             });
+
+
 
             // Nós BNCC
+
             nodesBNCC.forEach(n => {
+
                 const g = svg.append("g").attr("transform", `translate(${xBNCC}, ${n.y})`);
+
                 g.append("circle").attr("r", 26).attr("fill", "#0f172a").attr("stroke", ACCENT_EMERALD).attr("stroke-width", 2.5);
+
                 g.append("text").text("BNCC").attr("text-anchor", "middle").attr("dy", 4)
+
                     .attr("fill", ACCENT_EMERALD).attr("font-size", 10).attr("font-weight", 800);
+
                 g.append("text").text(n.label).attr("text-anchor", "start").attr("dx", 35).attr("dy", 4)
+
                     .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
+
             });
+
+
 
             window.__replayGrafo = () => {
+
                 document.getElementById('grafo-hud').classList.add('hidden');
+
                 AudioFX.click();
+
             };
+
         })();
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 4: MATRIZ DE MANEJOS CLÍNICOS POR CID
+
         // -------------------------------------------------------------
+
         let currentCidMode = 'tod';
+
         let renderCidAnimation = () => { };
 
+
+
         function selectCidMode(mode) {
+
             currentCidMode = mode;
+
             ['tod', 'tdah', 'tea', 'dislexia', 'pc', 'ahsd'].forEach(m => {
+
                 const btn = document.getElementById(`btn-cid-${m}`);
+
                 if (btn) btn.classList.toggle('active', m === mode);
+
             });
+
             renderCidAnimation();
+
             AudioFX.click();
+
         }
 
+
+
         (function () {
+
             const svg = d3.select("#stage-tod").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
             const cx = W / 2, cy = H / 2;
 
+
+
             renderCidAnimation = function () {
+
                 svg.selectAll("*").remove();
 
+
+
                 if (currentCidMode === 'tod') {
+
                     // Metáfora: Escolha Controlada e Desescalada
+
                     document.getElementById('cid-stage-caption').innerText = "TOD (F91.3): Metáfora da Escolha Controlada. Duas alternativas legítimas sem confronto público.";
 
+
+
                     const alunoG = svg.append("g").attr("transform", `translate(${cx - 180}, ${cy})`);
+
                     alunoG.append("circle").attr("r", 40).attr("fill", "rgba(139, 92, 246, 0.2)")
+
                         .attr("stroke", ACCENT_PURPLE).attr("stroke-width", 3)
+
                         .style("filter", `drop-shadow(0 0 16px ${ACCENT_PURPLE})`);
+
                     alunoG.append("text").text("ALUNO").attr("text-anchor", "middle").attr("dy", -2)
+
                         .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 800);
+
                     alunoG.append("text").text("TOD / F91.3").attr("text-anchor", "middle").attr("dy", 14)
+
                         .attr("fill", "#c084fc").attr("font-size", 9).attr("font-weight", 700);
 
+
+
                     const opcoes = [
+
                         { title: "Opção 1: Iniciar por Leitura", y: cy - 90, color: PRIMARY },
+
                         { title: "Opção 2: Iniciar por Geometria", y: cy + 90, color: ACCENT_EMERALD }
+
                     ];
+
+
 
                     opcoes.forEach(op => {
+
                         const g = svg.append("g").attr("transform", `translate(${cx + 160}, ${op.y})`);
+
                         g.append("rect").attr("x", -130).attr("y", -28).attr("width", 260).attr("height", 56)
+
                             .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", op.color).attr("stroke-width", 2);
+
                         g.append("text").text(op.title).attr("text-anchor", "middle").attr("dy", 5)
+
                             .attr("fill", "#ffffff").attr("font-size", 12).attr("font-weight", 600);
 
+
+
                         svg.append("path")
+
                             .attr("d", `M ${cx - 140} ${cy} C ${cx} ${cy}, ${cx + 30} ${op.y}, ${cx + 30} ${op.y}`)
+
                             .attr("fill", "none").attr("stroke", op.color).attr("stroke-width", 2).attr("stroke-dasharray", "4,4");
+
                     });
+
+
 
                     const p = svg.append("circle").attr("r", 7).attr("fill", "#ffffff")
+
                         .style("filter", "drop-shadow(0 0 10px #ffffff)");
 
+
+
                     function loopEscolha() {
+
                         p.attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+
                             .transition().duration(1600).ease(d3.easeCubicOut)
+
                             .attr("cx", cx + 30).attr("cy", opcoes[0].y)
+
                             .transition().duration(500).attr("opacity", 0)
+
                             .transition().duration(100)
+
                             .attr("cx", cx - 140).attr("cy", cy).attr("opacity", 1)
+
                             .transition().duration(1600).ease(d3.easeCubicOut)
+
                             .attr("cx", cx + 30).attr("cy", opcoes[1].y)
+
                             .transition().duration(500).attr("opacity", 0)
+
                             .on("end", loopEscolha);
+
                     }
+
                     loopEscolha();
 
+
+
                 } else if (currentCidMode === 'tdah') {
+
                     // Metáfora: Cronômetro de Foco 20m + Pausa Ativa (Lei 14.254)
+
                     document.getElementById('cid-stage-caption').innerText = "TDAH (F90.0): Cronômetro Neuroexecutivo. Ciclos de foco de 20 min com pausas ativas e provas fracionadas.";
 
+
+
                     const clockG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+
                     clockG.append("circle").attr("r", 90).attr("fill", "rgba(245, 158, 11, 0.1)")
+
                         .attr("stroke", ACCENT_AMBER).attr("stroke-width", 3).attr("stroke-dasharray", "8,8");
 
+
+
                     clockG.append("text").text("FOCO: 20 MIN").attr("text-anchor", "middle").attr("dy", -10)
+
                         .attr("fill", "#ffffff").attr("font-size", 14).attr("font-weight", 800);
+
                     clockG.append("text").text("PAUSA ATIVA MANDATÓRIA").attr("text-anchor", "middle").attr("dy", 15)
+
                         .attr("fill", ACCENT_AMBER).attr("font-size", 10).attr("font-weight", 700);
 
+
+
                     // Ponteiro giratório
+
                     const hand = clockG.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", -70)
+
                         .attr("stroke", "#ffffff").attr("stroke-width", 3).attr("stroke-linecap", "round");
 
+
+
                     function rotateHand() {
+
                         hand.transition().duration(3000).ease(d3.easeLinear)
+
                             .attrTween("transform", () => d3.interpolateString("rotate(0)", "rotate(360)"))
+
                             .on("end", rotateHand);
+
                     }
+
                     rotateHand();
 
+
+
                 } else if (currentCidMode === 'tea') {
+
                     // Metáfora: Previsibilidade Visual TEACCH + Escudo Sensorial (Lei 12.764)
+
                     document.getElementById('cid-stage-caption').innerText = "TEA (F84.0): Rotina Visual Estruturada TEACCH, tempo estendido (+50%) e sala de baixo ruído.";
 
+
+
                     const steps = ["1. Acolhimento", "2. Bloco A (+50% Tempo)", "3. Pausa Sensorial", "4. Conclusão"];
+
                     steps.forEach((st, i) => {
+
                         const xPos = 140 + i * 190;
+
                         const g = svg.append("g").attr("transform", `translate(${xPos}, ${cy})`);
+
                         g.append("rect").attr("x", -80).attr("y", -35).attr("width", 160).attr("height", 70)
+
                             .attr("rx", 10).attr("fill", "rgba(15, 23, 42, 0.9)").attr("stroke", "#38bdf8").attr("stroke-width", 2);
+
                         g.append("text").text(st).attr("text-anchor", "middle").attr("dy", 5)
+
                             .attr("fill", "#ffffff").attr("font-size", 11).attr("font-weight", 700);
+
                     });
+
+
 
                 } else if (currentCidMode === 'dislexia') {
+
                     // Metáfora: Ledor e Transcritor Oficial + Tipografia OpenDyslexic (Lei 14.254)
+
                     document.getElementById('cid-stage-caption').innerText = "Dislexia (R48): Ledor e transcritor oficial com tipografia ampliada e calculadora liberada.";
 
+
+
                     const g = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+
                     g.append("rect").attr("x", -240).attr("y", -60).attr("width", 480).attr("height", 120)
+
                         .attr("rx", 12).attr("fill", "rgba(15, 23, 42, 0.95)").attr("stroke", PRIMARY).attr("stroke-width", 2);
+
                     g.append("text").text("LEITURA MEDIADA POR LEDOR OFICIAL").attr("text-anchor", "middle").attr("dy", -15)
+
                         .attr("fill", PRIMARY).attr("font-size", 13).attr("font-weight", 800);
+
                     g.append("text").text("Sem penalização ortográfica | Material Concreto Liberado").attr("text-anchor", "middle").attr("dy", 15)
+
                         .attr("fill", "#94a3b8").attr("font-size", 11);
 
+
+
                 } else if (currentCidMode === 'pc') {
+
                     // Metáfora: Tecnologia Assistiva e Prancha CAA (LBI Art. 74)
+
                     document.getElementById('cid-stage-caption').innerText = "Paralisia Cerebral (G80): Prancha de Comunicação Alternativa (CAA) e apontamento mediado.";
 
+
+
                     const g = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+
                     g.append("circle").attr("r", 70).attr("fill", "rgba(16, 185, 129, 0.15)")
+
                         .attr("stroke", ACCENT_EMERALD).attr("stroke-width", 3);
+
                     g.append("text").text("PRANCHA CAA").attr("text-anchor", "middle").attr("dy", -5)
+
                         .attr("fill", "#ffffff").attr("font-size", 13).attr("font-weight", 800);
+
                     g.append("text").text("TECNOLOGIA ASSISTIVA").attr("text-anchor", "middle").attr("dy", 15)
+
                         .attr("fill", ACCENT_EMERALD).attr("font-size", 9).attr("font-weight", 700);
 
+
+
                 } else if (currentCidMode === 'ahsd') {
+
                     // Metáfora: Modelo dos Três Anéis de Renzulli (Capacidade Superior + Criatividade + Comprometimento)
+
                     document.getElementById('cid-stage-caption').innerText = "AH/SD (Z73.8): Modelo dos Três Anéis de Renzulli. Enriquecimento Triádico Tipo I, II e III, compactação curricular e suporte a 2e.";
 
+
+
                     const rings = [
+
                         { label: "Capacidade Superior", x: cx - 65, y: cy - 35, color: "#eab308" },
+
                         { label: "Criatividade", x: cx + 65, y: cy - 35, color: "#f97316" },
+
                         { label: "Comprometimento", x: cx, y: cy + 45, color: "#38bdf8" }
+
                     ];
 
+
+
                     rings.forEach(r => {
+
                         svg.append("circle").attr("cx", r.x).attr("cy", r.y).attr("r", 75)
+
                             .attr("fill", "rgba(15, 23, 42, 0.45)")
+
                             .attr("stroke", r.color).attr("stroke-width", 2.5)
+
                             .style("filter", `drop-shadow(0 0 10px ${r.color})`);
+
                         svg.append("text").attr("x", r.x).attr("y", r.y).text(r.label)
+
                             .attr("text-anchor", "middle").attr("dy", 4)
+
                             .attr("fill", r.color).attr("font-size", 10).attr("font-weight", 800);
+
                     });
+
+
 
                     const centerG = svg.append("g").attr("transform", `translate(${cx}, ${cy})`);
+
                     centerG.append("circle").attr("r", 25).attr("fill", "#fbbf24").style("filter", "drop-shadow(0 0 14px #fbbf24)");
+
                     centerG.append("text").text("AH/SD").attr("text-anchor", "middle").attr("dy", 4)
+
                         .attr("fill", "#0f172a").attr("font-size", 10).attr("font-weight", 900);
+
                 }
+
             };
+
+
 
             renderCidAnimation();
+
             window.__replayTod = () => renderCidAnimation();
+
         })();
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 5: CADEIA DE MARKOV & SIMULADOR MONTE CARLO
+
         // -------------------------------------------------------------
+
         (function () {
+
             const svg = d3.select("#stage-markov").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
 
+
+
             const estados = [
+
                 { id: "AB", label: "Abaixo Básico", x: 140, y: H / 2, color: "#ef4444" },
+
                 { id: "B", label: "Básico", x: 380, y: H / 2, color: "#f59e0b" },
+
                 { id: "AD", label: "Adequado", x: 620, y: H / 2, color: "#3b82f6" },
+
                 { id: "AV", label: "Avançado", x: 840, y: H / 2, color: "#10b981" }
+
             ];
 
+
+
             // Linhas de transição
+
             for (let i = 0; i < estados.length - 1; i++) {
+
                 svg.append("line").attr("x1", estados[i].x).attr("y1", H / 2).attr("x2", estados[i + 1].x).attr("y2", H / 2)
+
                     .attr("stroke", "rgba(255,255,255,0.15)").attr("stroke-width", 2.5);
+
             }
+
+
 
             // Nós dos estados
+
             estados.forEach(e => {
+
                 const g = svg.append("g").attr("transform", `translate(${e.x}, ${e.y})`);
+
                 g.append("circle").attr("r", 38).attr("fill", "#0f172a").attr("stroke", e.color).attr("stroke-width", 3)
+
                     .style("filter", `drop-shadow(0 0 12px ${e.color})`);
+
                 g.append("text").text(e.id).attr("text-anchor", "middle").attr("dy", -3)
+
                     .attr("fill", e.color).attr("font-size", 14).attr("font-weight", 900);
+
                 g.append("text").text(e.label).attr("text-anchor", "middle").attr("dy", 15)
+
                     .attr("fill", "#ffffff").attr("font-size", 9).attr("font-weight", 600);
+
             });
 
+
+
             // Simulação Monte Carlo Interativa
+
             window.runMonteCarloSim = function () {
+
                 AudioFX.click();
+
                 const numAlunos = 40;
+
                 for (let i = 0; i < numAlunos; i++) {
+
                     const p = svg.append("circle").attr("r", 4.5).attr("fill", "#ffffff")
+
                         .style("filter", "drop-shadow(0 0 8px #60a5fa)");
 
+
+
                     const targetIdx = Math.random() < 0.25 ? 1 : (Math.random() < 0.65 ? 2 : 3);
+
                     const destX = estados[targetIdx].x;
 
+
+
                     p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 1)
+
                         .transition().delay(i * 60).duration(1800 + Math.random() * 800).ease(d3.easeCubicInOut)
+
                         .attr("cx", destX)
+
                         .transition().duration(400).attr("opacity", 0)
+
                         .remove();
+
                 }
+
             };
 
+
+
             // Loop de fundo
+
             function backgroundFlow() {
+
                 for (let k = 0; k < 8; k++) {
+
                     const p = svg.append("circle").attr("r", 4).attr("fill", "#60a5fa").attr("opacity", 0.7);
+
                     function flow() {
+
                         p.attr("cx", estados[0].x).attr("cy", H / 2).attr("opacity", 0.8)
+
                             .transition().duration(3200 + Math.random() * 600).ease(d3.easeCubicInOut)
+
                             .attr("cx", estados[3].x)
+
                             .transition().duration(200).attr("opacity", 0)
+
                             .on("end", flow);
+
                     }
+
                     setTimeout(flow, k * 400);
+
                 }
+
             }
+
             backgroundFlow();
+
         })();
 
+
+
         // -------------------------------------------------------------
+
         // ANIMAÇÃO 6: GRÁFICO RADAR NEUROCOGNITIVO (7 DOMÍNIOS CHC)
+
         // -------------------------------------------------------------
+
         let currentPerfilRadar = 'media';
+
         (function () {
+
                 const svg = d3.select("#stage-radar").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+
                 const cx = W / 2, cy = H / 2;
+
                 const radius = Math.min(W, H) * 0.38;
 
+
+
                 const dominios = [
+
                     "1. Memória & Atenção",
+
                     "2. Consciência Fonológica",
+
                     "3. Compreensão Inferencial",
+
                     "4. Senso Numérico",
+
                     "5. Resolução Problemas",
+
                     "6. Raciocínio Espacial",
+
                     "7. Funções Executivas"
+
                 ];
+
                 const numEixos = dominios.length;
+
                 const angleSlice = (Math.PI * 2) / numEixos;
 
+
+
                 // Perfis de dados (0 a 100%)
+
                 const perfisData = {
+
                     media: { label: "Perfil: Média da Escola (74.2% Eficiência)", vals: [74.5, 77.8, 80.2, 76.9, 78.5, 74.0, 70.8], color: "#10b981" },
+
                     rti3: { label: "Perfil: Aluno RTI Camada 3 / AEE (34.3% Crítico)", vals: [32.0, 28.5, 42.0, 35.0, 30.5, 48.0, 25.0], color: "#f43f5e" },
+
                     avancado: { label: "Perfil: Estudante Avançado (93.9% Destaque)", vals: [92.0, 95.0, 96.5, 94.0, 95.2, 90.0, 88.5], color: "#38bdf8" }
+
                 };
 
+
+
                 // Grade concêntrica (20%, 40%, 60%, 80%, 100%)
+
                 const levels = [0.2, 0.4, 0.6, 0.8, 1.0];
+
                 levels.forEach(lvl => {
+
                     const r = radius * lvl;
+
                     svg.append("circle").attr("cx", cx).attr("cy", cy).attr("r", r)
+
                         .attr("fill", "none").attr("stroke", "rgba(255,255,255,0.07)").attr("stroke-dasharray", "3,3");
+
                     svg.append("text").attr("x", cx + 4).attr("y", cy - r - 2)
+
                         .attr("fill", "rgba(255,255,255,0.25)").attr("font-size", 9).attr("font-family", "monospace")
+
                         .text(`${Math.round(lvl * 100)}%`);
+
                 });
+
+
 
                 // Eixos radiais e rótulos
+
                 dominios.forEach((d, i) => {
+
                     const angle = i * angleSlice - Math.PI / 2;
+
                     const x2 = cx + radius * Math.cos(angle);
+
                     const y2 = cy + radius * Math.sin(angle);
 
+
+
                     svg.append("line").attr("x1", cx).attr("y1", cy).attr("x2", x2).attr("y2", y2)
+
                         .attr("stroke", "rgba(255,255,255,0.12)").attr("stroke-width", 1.2);
 
+
+
                     const labelR = radius + 22;
+
                     const lx = cx + labelR * Math.cos(angle);
+
                     const ly = cy + labelR * Math.sin(angle);
+
                     const anchor = Math.abs(Math.cos(angle)) < 0.2 ? "middle" : (Math.cos(angle) > 0 ? "start" : "end");
 
+
+
                     svg.append("text").attr("x", lx).attr("y", ly + 4).attr("text-anchor", anchor)
+
                         .attr("fill", "#cbd5e1").attr("font-size", 10.5).attr("font-weight", 600)
+
                         .text(d);
+
                 });
 
+
+
                 // Polígono do radar
+
                 const radarPath = svg.append("path").attr("stroke-width", 2.5);
+
                 const dotsGroup = svg.append("g");
 
+
+
                 function updateRadar(perfilKey, duration = 800) {
+
                     const data = perfisData[perfilKey];
+
                     document.getElementById('radar-profile-label').innerText = data.label;
+
                     document.getElementById('radar-profile-label').style.color = data.color;
 
+
+
                     const coords = data.vals.map((v, i) => {
+
                         const angle = i * angleSlice - Math.PI / 2;
+
                         const r = radius * (v / 100.0);
+
                         return [cx + r * Math.cos(angle), cy + r * Math.sin(angle)];
+
                     });
 
+
+
                     const lineGen = d3.line().curve(d3.curveLinearClosed);
+
                     const pathStr = lineGen(coords);
 
+
+
                     radarPath.transition().duration(duration).ease(d3.easeCubicOut)
+
                         .attr("d", pathStr)
+
                         .attr("fill", data.color)
+
                         .attr("fill-opacity", 0.25)
+
                         .attr("stroke", data.color)
+
                         .style("filter", `drop-shadow(0 0 10px ${data.color})`);
 
+
+
                     // Atualizar pontos nos vértices
+
                     const dots = dotsGroup.selectAll("circle").data(coords);
+
                     dots.enter().append("circle").attr("r", 5)
+
                         .merge(dots)
+
                         .transition().duration(duration).ease(d3.easeCubicOut)
+
                         .attr("cx", d => d[0]).attr("cy", d => d[1])
+
                         .attr("fill", "#ffffff")
+
                         .attr("stroke", data.color).attr("stroke-width", 2);
+
                     dots.exit().remove();
+
                 }
+
+
 
                 updateRadar('media', 0);
 
+
+
                 window.setPerfilRadar = function (tipo) {
+
                     currentPerfilRadar = tipo;
+
                     document.querySelectorAll('#slide-raiox .stage-btn').forEach(btn => btn.classList.remove('active'));
+
                     if (document.getElementById(`btn-perfil-${tipo}`)) {
+
                         document.getElementById(`btn-perfil-${tipo}`).classList.add('active');
+
                     }
+
                     updateRadar(tipo, 750);
+
                     AudioFX.click();
+
                 };
+
+
 
                 window.__replayRadar = () => {
+
                     setPerfilRadar('media');
+
                 };
+
             })();
 
+
+
             // -------------------------------------------------------------
+
             // NAVEGAÇÃO ENTRE SLIDES, PROGRESSO E ATALHOS DE TECLADO
+
             // -------------------------------------------------------------
+
             const slides = Array.from(document.querySelectorAll('section.mira-slide'));
+
             const dots = Array.from(document.querySelectorAll('.mira-dot'));
+
             const progressBar = document.getElementById('mira-progress');
+
             const nextBtn = document.getElementById('mira-next');
+
             let currentSlideIdx = 0;
 
+
+
             function updateProgress() {
+
                 const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
                 const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
                 const progress = (scrollTop / docHeight) * 100;
+
                 progressBar.style.width = `${progress}%`;
 
+
+
                 // Detecta slide ativo para scroll-spy
+
                 slides.forEach((sl, idx) => {
+
                     const rect = sl.getBoundingClientRect();
+
                     if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= window.innerHeight * 0.45) {
+
                         currentSlideIdx = idx;
+
                         dots.forEach((d, di) => d.classList.toggle('active', di === idx));
+
                     }
+
                 });
 
+
+
                 if (currentSlideIdx < slides.length - 1) {
+
                     nextBtn.classList.add('visible');
+
                 } else {
+
                     nextBtn.classList.remove('visible');
+
                 }
+
             }
+
+
 
             window.addEventListener('scroll', updateProgress);
 
+
+
             function goToSlide(idx) {
+
                 if (idx >= 0 && idx < slides.length) {
+
                     slides[idx].scrollIntoView({ behavior: 'smooth' });
+
                     AudioFX.slide();
+
                 }
+
             }
+
+
 
             function advanceSlide() {
+
                 if (currentSlideIdx < slides.length - 1) {
+
                     goToSlide(currentSlideIdx + 1);
+
                 }
+
             }
 
+
+
             // Atalhos de Teclado
+
             window.addEventListener('keydown', e => {
+
                 if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+
                     e.preventDefault();
+
                     advanceSlide();
+
                 } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+
                     e.preventDefault();
+
                     if (currentSlideIdx > 0) goToSlide(currentSlideIdx - 1);
+
                 } else if (e.key.toLowerCase() === 'f') {
+
                     if (!document.fullscreenElement) {
+
                         document.documentElement.requestFullscreen().catch(() => { });
+
                     } else {
+
                         document.exitFullscreen().catch(() => { });
+
                     }
+
                 } else if (e.key.toLowerCase() === 'm') {
+
                     toggleAudio();
+
                 } else if (e.key >= '1' && e.key <= '6') {
+
                     goToSlide(parseInt(e.key) - 1);
+
                 }
+
             });
+
     </script>
+
 </body>
+
+
 
 </html>

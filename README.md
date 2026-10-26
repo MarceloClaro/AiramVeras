@@ -1955,9 +1955,10 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
 | **Dossiê Mestre 1º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `606dd747a2407dd10ab145a29ac99e56f26dac6cd6c896b1469d978a1ab4cef7` | **Bloco 23** |
 | **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `680b0f4056ef6e44a79a2acde54f848e1f4d48f3ec9966032c4179f55fd519e9` | **Bloco 22** |
 | **Dossiê Mestre 3º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 3º Ano, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `a42ece16390ea288257fd60cae2ddf3ed3e8be7114a6fd019772208f6f548d6c` | **Bloco 21** |
+| **Dossiê Mestre 4º Ano (A e B)** | 42 estudantes (22 no 4º A + 20 no 4º B) | **1.720 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 4º Ano, Grafo 2D, DOIs, Diagnóstico A vs B) | 42 cadernos $\times$ 40 laudas (4 custom + 26 LP Vol. 4 + 4 MAT Kumon + 6 custom) | `b4ef92b9744ce5f9314371f18e3ef2e6a362035ee38b369bb8c1908d68ae6811` | **Bloco 24** |
 
 #### 🗺️ Padrão Universal: Topologia da Rede Interdisciplinar & Grafo de Aprendizagem (Lauda 27)
-Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as turmas (1º, 2º e 3º Anos) como **Mapa 2D (Fluxograma Vetorial SVG de Alta Resolução)**:
+Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as turmas (1º, 2º, 3º e 4º Anos) como **Mapa 2D (Fluxograma Vetorial SVG de Alta Resolução)**:
 - **Título Padrão**: `TOPOLOGIA DA REDE INTERDISCIPLINAR & GRAFO DE APRENDIZAGEM`
 - **Subtítulo Padrão**: `Grafo Direcionado Ponderado: Conexões sinérgicas entre os 9 componentes curriculares do [X]º Ano.`
 - **Tese Central Homologada**:
