@@ -1,14 +1,9 @@
 {
-  "versao_manifesto": "1.0",
-  "avaliacao_codigo": "AV22026",
   "ciclo": "II",
-  "ano_letivo": 2026,
-  "escola_inep": "23084995",
-  "escola_nome": "AIRAM VERAS ESC CID",
-  "municipio": "Crateús",
-  "uf": "CE",
-  "data_coleta_prevista": "2026-06-30",
-  "status_coleta": "AGUARDANDO_ARQUIVOS_PORTAL",
-  "instrucoes": "Deposite os ZIPs baixados do portal CAEd na pasta originais/ e execute 'python -m datamining.src.ingestao_multiciclos --ciclo II'",
-  "arquivos_coletados": []
+  "avaliacao_id": "AV22026",
+  "escola": "AIRAM VERAS ESC CID",
+  "codigo_escola": "23084995",
+  "timestamp_processamento": "2026-10-27T22:58:38.534546+00:00",
+  "total_zips": 0,
+  "exportacoes": []
 }
