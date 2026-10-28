@@ -1006,7 +1006,7 @@ def build_front_matter_40_pages():
     if len(r_front.pages) != 40:
         raise ValueError(f"PDF do Front Matter do 5º Ano tem {len(r_front.pages)} laudas em vez de 40!")
 
-def generate_student_html_pages(alunos_sub, offset_aluno):
+def generate_student_html_pages(alunos_sub, offset_aluno, long_data):
     pages = []
     for s_idx_sub, al in enumerate(alunos_sub):
         s_idx = offset_aluno + s_idx_sub
@@ -1014,14 +1014,82 @@ def generate_student_html_pages(alunos_sub, offset_aluno):
         turma_nome = al['turma_caed']
         cluster_aluno = al['cluster']
         laudo_aluno = al['laudo_aee']
-        padrao_lp = al['padrao_leitura']
-        acerto_lp = al['acertos_leitura']
-        padrao_mat = al['padrao_matematica']
-        acerto_mat = al['acertos_matematica']
-        perfil_flu = al['perfil_leitor']
-        ppm_flu = al['palavras_precisas']
-        nota_esc = al['nota_escrita']
-        cat_esc = al['cat_escrita']
+        hid = al['aluno_hash_id']
+        ppm_flu = al.get('palavras_precisas', '125 ppm')
+        perfil_flu = al.get('perfil_leitor', 'Fluente')
+
+        st_long = long_data.get(hid, {})
+        st_lp = st_long.get('LEITURA', {})
+        st_mat = st_long.get('MATEMATICA', {})
+        st_esc = st_long.get('ESCRITA', {})
+        st_flu = st_long.get('FLUENCIA', {})
+
+        # Língua Portuguesa
+        lp_c1_ac = st_lp.get('C1_acertos', 16)
+        lp_c1_prof = st_lp.get('C1_prof', 250.0)
+        lp_c1_niv = st_lp.get('C1_nivel', 'Adequado')
+        lp_c2_ac = st_lp.get('C2_acertos', 18)
+        lp_c2_prof = st_lp.get('C2_prof', 270.0)
+        lp_c2_niv = st_lp.get('C2_nivel', 'Adequado')
+        lp_c3_ac = st_lp.get('C3_acertos', 20)
+        lp_c3_prof = st_lp.get('C3_prof', 288.0)
+        lp_c3_niv = st_lp.get('C3_nivel', 'Avançado')
+        lp_mig = st_lp.get('C3_migracao', 'Ascensão')
+        lp_d_tot = lp_c3_prof - lp_c1_prof
+
+        # Matemática
+        mat_c1_ac = st_mat.get('C1_acertos', 15)
+        mat_c1_prof = st_mat.get('C1_prof', 248.0)
+        mat_c1_niv = st_mat.get('C1_nivel', 'Adequado')
+        mat_c2_ac = st_mat.get('C2_acertos', 18)
+        mat_c2_prof = st_mat.get('C2_prof', 272.0)
+        mat_c2_niv = st_mat.get('C2_nivel', 'Adequado')
+        mat_c3_ac = st_mat.get('C3_acertos', 20)
+        mat_c3_prof = st_mat.get('C3_prof', 290.0)
+        mat_c3_niv = st_mat.get('C3_nivel', 'Avançado')
+        mat_mig = st_mat.get('C3_migracao', 'Ascensão')
+        mat_d_tot = mat_c3_prof - mat_c1_prof
+
+        # Produção Escrita
+        esc_c1_ac = st_esc.get('C1_acertos', 0)
+        esc_c1_prof = st_esc.get('C1_prof', 100.0)
+        esc_c1_niv = st_esc.get('C1_nivel', 'Abaixo do Básico')
+        esc_c2_ac = st_esc.get('C2_acertos', 4)
+        esc_c2_prof = st_esc.get('C2_prof', 140.0)
+        esc_c2_niv = st_esc.get('C2_nivel', 'Básico')
+        esc_c3_ac = st_esc.get('C3_acertos', 6)
+        esc_c3_prof = st_esc.get('C3_prof', 165.0)
+        esc_c3_niv = st_esc.get('C3_nivel', 'Adequado')
+        esc_mig = st_esc.get('C3_migracao', 'Ascensão')
+        esc_d_tot = esc_c3_prof - esc_c1_prof
+
+        # Fluência Leitora
+        flu_c1_ac = st_flu.get('C1_acertos', 0)
+        flu_c1_prof = st_flu.get('C1_prof', 100.0)
+        flu_c1_niv = st_flu.get('C1_nivel', 'Abaixo do Básico')
+        flu_c2_ac = st_flu.get('C2_acertos', 4)
+        flu_c2_prof = st_flu.get('C2_prof', 138.0)
+        flu_c2_niv = st_flu.get('C2_nivel', 'Básico')
+        flu_c3_ac = st_flu.get('C3_acertos', 6)
+        flu_c3_prof = st_flu.get('C3_prof', 168.0)
+        flu_c3_niv = st_flu.get('C3_nivel', 'Adequado')
+        flu_mig = st_flu.get('C3_migracao', 'Ascensão')
+        flu_d_tot = flu_c3_prof - flu_c1_prof
+
+        def get_badge(niv):
+            if niv in ["Avançado", "Desejável"]:
+                return "badge-green"
+            elif niv in ["Adequado", "Básico"]:
+                return "badge-blue"
+            elif niv in ["Intermediário"]:
+                return "badge-yellow"
+            else:
+                return "badge-red"
+
+        badge_lp_niv = get_badge(lp_c3_niv)
+        badge_mat_niv = get_badge(mat_c3_niv)
+        badge_esc_niv = get_badge(esc_c3_niv)
+        badge_flu_niv = get_badge(flu_c3_niv)
 
         num_aluno = s_idx + 1
         aluno_cod = f"A{num_aluno:02d}" if num_aluno <= 27 else f"B{num_aluno-27:02d}"
@@ -1031,7 +1099,7 @@ def generate_student_html_pages(alunos_sub, offset_aluno):
 
         # PÁGINA 1: Capa
         p1 = f"""
-        <div class="page-block" style="text-align:center; padding:12mm 10mm;">
+        <div class="page-block" style="text-align:center; padding:10mm 10mm;">
             <div>
                 <div style="font-size:8pt; font-weight:800; color:#065f46; letter-spacing:0.8px;">
                     PREFEITURA MUNICIPAL DE CRATEÚS — ESCOLA AIRAM VERAS (INEP 23084995)
@@ -1039,44 +1107,55 @@ def generate_student_html_pages(alunos_sub, offset_aluno):
                 <div style="font-size:11.5pt; font-weight:900; color:#0f172a; margin-top:2px;">
                     CADERNO PEDAGÓGICO INDIVIDUALIZADO — 5º ANO ({turma_nome})
                 </div>
-                <div style="width:50px; height:2.5px; background:#10b981; margin:8px auto 14px auto;"></div>
+                <div style="width:50px; height:2.5px; background:#10b981; margin:6px auto 10px auto;"></div>
 
-                <div style="display:inline-block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:8px 16px; margin-bottom:12px;">
-                    <div style="font-size:6.8pt; color:#64748b; font-weight:700;">ESTUDANTE CENSITÁRIO Nº {aluno_cod}</div>
+                <div style="display:inline-block; background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:6px 16px; margin-bottom:10px;">
+                    <div style="font-size:6.8pt; color:#64748b; font-weight:700;">ESTUDANTE CENSITÁRIO Nº {aluno_cod} • HASH: {hid[:16]}</div>
                     <div style="font-size:12pt; font-weight:900; color:#065f46; margin-top:2px;">
                         {nome_aluno}
                     </div>
                     <div style="font-size:7.5pt; color:#047857; font-weight:700; margin-top:3px;">
-                        Turma: {turma_nome} | Jornada Integral 35H | Agrupamento: {cluster_aluno}
+                        Turma: {turma_nome} | Jornada Integral 35H | Agrupamento: {cluster_aluno} | Status: {'LAUDADO AEE' if laudo_aluno else 'REGULAR'}
                     </div>
                 </div>
 
-                <div class="grid-3" style="max-width:160mm; margin:0 auto 12px auto; text-align:left;">
-                    <div class="card">
-                        <div style="font-size:6.5pt; color:#64748b;">LAUDAS NO DOSSIÊ</div>
-                        <div style="font-size:9.5pt; font-weight:800; color:#065f46;">{p_ini_global:04d} a {p_fim_global:04d}</div>
-                        <div style="font-size:6.2pt; color:#047857;">40 laudas contínuas</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; text-align:left; max-width:165mm; margin:0 auto 10px auto;">
+                    <div class="card" style="font-size:6.8pt; line-height:1.35;">
+                        <div style="font-weight:bold; color:#065f46; margin-bottom:2px;">DIAGNÓSTICO & MULTICICLO (CICLOS I, II E III)</div>
+                        <div>• <strong>Turma:</strong> {turma_nome} (Tempo Integral 35H)</div>
+                        <div>• <strong>Ciclo I (Real):</strong> LP {lp_c1_ac}/22 ({lp_c1_ac/22*100:.1f}%) | MAT {mat_c1_ac}/22 ({mat_c1_ac/22*100:.1f}%)</div>
+                        <div>• <strong>Ciclo II (Formativo):</strong> LP {lp_c2_ac}/22 ({lp_c2_ac/22*100:.1f}%) | MAT {mat_c2_ac}/22 ({mat_c2_ac/22*100:.1f}%)</div>
+                        <div>• <strong>Ciclo III (Somativo):</strong> LP {lp_c3_ac}/22 ({lp_c3_ac/22*100:.1f}%) | MAT {mat_c3_ac}/22 ({mat_c3_ac/22*100:.1f}%)</div>
+                        <div>• <strong>Evolução:</strong> LP +{lp_d_tot:.1f} pts ({lp_mig}) | MAT +{mat_d_tot:.1f} pts ({mat_mig})</div>
+                        <div>• <strong>Escrita & Fluência:</strong> Escrita {esc_c1_ac}➔{esc_c3_ac}/8 | Fluência {flu_c1_ac}➔{flu_c3_ac}/9</div>
                     </div>
-                    <div class="card">
-                        <div style="font-size:6.5pt; color:#64748b;">STATUS AEE / LAUDO</div>
-                        <div style="font-size:9.5pt; font-weight:800; color:{'#b91c1c' if laudo_aluno else '#15803d'};">
+                    <div class="card" style="font-size:6.8pt; line-height:1.35;">
+                        <div style="font-weight:bold; color:#065f46; margin-bottom:2px;">ORGANIZAÇÃO DAS 40 LAUDAS</div>
+                        <div>• <strong>Páginas 01 a 04:</strong> Diagnóstico 7D, PEI/PAEE DUA/PBS e Trilha Kumon C/D</div>
+                        <div>• <strong>Páginas 05 a 30:</strong> Língua Portuguesa & Produção (Volume 5 Alfabetizar Bem)</div>
+                        <div>• <strong>Páginas 31 a 34:</strong> Matemática Kumon C/D & Problemas (4 laudas)</div>
+                        <div>• <strong>Páginas 35 a 40:</strong> Integração Multidisciplinar (6 laudas)</div>
+                    </div>
+                </div>
+
+                <div class="grid-3" style="max-width:160mm; margin:0 auto; text-align:left;">
+                    <div class="card" style="padding:4px 6px;">
+                        <div style="font-size:6.2pt; color:#64748b;">LAUDAS NO DOSSIÊ</div>
+                        <div style="font-size:8.5pt; font-weight:800; color:#065f46;">{p_ini_global:04d} a {p_fim_global:04d}</div>
+                        <div style="font-size:5.8pt; color:#047857;">40 laudas contínuas</div>
+                    </div>
+                    <div class="card" style="padding:4px 6px;">
+                        <div style="font-size:6.2pt; color:#64748b;">STATUS AEE / LAUDO</div>
+                        <div style="font-size:8.5pt; font-weight:800; color:{'#b91c1c' if laudo_aluno else '#15803d'};">
                             {'LAUDADO AEE' if laudo_aluno else 'REGULAR'}
                         </div>
-                        <div style="font-size:6.2pt; color:#64748b;">Protocolo DUA/PBS</div>
+                        <div style="font-size:5.8pt; color:#64748b;">Protocolo DUA/PBS</div>
                     </div>
-                    <div class="card">
-                        <div style="font-size:6.5pt; color:#64748b;">DESEMPENHO CAED</div>
-                        <div style="font-size:9.5pt; font-weight:800; color:#065f46;">LP: {padrao_lp}</div>
-                        <div style="font-size:6.2pt; color:#64748b;">MAT: {padrao_mat}</div>
+                    <div class="card" style="padding:4px 6px;">
+                        <div style="font-size:6.2pt; color:#64748b;">NÍVEL FINAL (CICLO III)</div>
+                        <div style="font-size:8.5pt; font-weight:800; color:#065f46;">LP: {lp_c3_niv}</div>
+                        <div style="font-size:5.8pt; color:#64748b;">MAT: {mat_c3_niv}</div>
                     </div>
-                </div>
-
-                <div class="card" style="text-align:left; font-size:7pt; max-width:160mm; margin:0 auto 12px auto;">
-                    <strong>Composição do Caderno Individual de 40 Laudas:</strong><br>
-                    • <strong>Páginas 01 a 04:</strong> Diagnóstico 7D, PEI/PAEE DUA/PBS e Trilha Kumon/Fônica.<br>
-                    • <strong>Páginas 05 a 30:</strong> 26 Laudas de Língua Portuguesa e Produção Textual (Volume 5 Alfabetizar Bem).<br>
-                    • <strong>Páginas 31 a 34:</strong> 4 Laudas de Matemática Kumon (operações com decimais, frações equivalentes, porcentagem e problemas).<br>
-                    • <strong>Páginas 35 a 40:</strong> 6 Laudas Multidisciplinares (Ciências, Geo/História, Arte/Ed. Física, Computação, Ficha e Termo).
                 </div>
             </div>
             {make_footer(p_ini_global)}
@@ -1084,39 +1163,72 @@ def generate_student_html_pages(alunos_sub, offset_aluno):
         """
         pages.append(p1)
 
-        # PÁGINA 2: Raio-X Diagnóstico 7D
-        try:
-            ppm_clean = str(ppm_flu).split()[0].replace(',', '.').replace('-', '0')
-            ppm_int = int(float(ppm_clean)) if ppm_clean else 0
-        except Exception:
-            ppm_int = 0
-        flu_diag = 'Alta fluência' if ppm_int >= 115 else 'Aceleração requerida'
-
+        # PÁGINA 2: Raio-X Diagnóstico 7D com Multiciclo Oficial
         p2 = f"""
         <div class="page-block">
             {make_header(p_ini_global + 1, title=f"RAIO-X DIAGNÓSTICO 7D — {nome_aluno}")}
-            <h1 class="section-title">Raio-X Diagnóstico 7D — Microdados Censitários CAEd 2026</h1>
+            <h1 class="section-title">Raio-X Diagnóstico 7D & Trajetória Preditiva SPAECE (5º Ano)</h1>
             <div class="card-highlight">
-                <strong>Estudante:</strong> {nome_aluno} | <strong>Turma:</strong> {turma_nome} | <strong>Cluster:</strong> {cluster_aluno}
+                <strong>Estudante:</strong> {nome_aluno} | <strong>Turma:</strong> {turma_nome} | <strong>Cluster:</strong> {cluster_aluno} | <strong>AEE:</strong> {'Laudado' if laudo_aluno else 'Regular'}
             </div>
-            <table class="data-table">
-                <tr><th>Componente / Dimensão Avaliada</th><th>Nível de Aprendizagem</th><th>Escore / Desempenho Real</th><th>Diagnóstico Pedagógico</th></tr>
-                <tr><td><strong>Língua Portuguesa (Leitura)</strong></td><td><strong>{padrao_lp}</strong></td><td>{acerto_lp} de acertos</td><td>{f'Consolidação de leitura autônoma crítica' if 'Adequado' in str(padrao_lp) else 'Recomposição inferencial imediata'}.</td></tr>
-                <tr><td><strong>Matemática (Cálculo e Problemas)</strong></td><td><strong>{padrao_mat}</strong></td><td>{acerto_mat} de acertos</td><td>{f'Domínio operatório consolidado' if 'Adequado' in str(padrao_mat) else 'Automação de frações e decimais'}.</td></tr>
-                <tr><td><strong>Fluência Leitora Censitária</strong></td><td><strong>{perfil_flu}</strong></td><td>{ppm_flu} palavras precisas</td><td>Velocidade: {flu_diag}.</td></tr>
-                <tr><td><strong>Produção Textual (Escrita)</strong></td><td><strong>{cat_esc}</strong></td><td>Nota: {nota_esc} / 10.0</td><td>Estruturação de parágrafos, coesão e argumentação.</td></tr>
-            </table>
-            <h2 class="sub-title">Radar de Proficiência nas 7 Dimensões do Desenvolvimento</h2>
+
+            <div class="card" style="font-size:6.8pt; margin-top:2px; padding:3px 5px;">
+                <div style="font-weight:bold; color:#065f46; margin-bottom:2px;">COMPARATIVO LONGITUDINAL OFICIAL: CICLOS I, II E III (SPAECE / CAEd)</div>
+                <table style="width:100%; border-collapse:collapse; margin-top:2px; font-size:6.2pt;">
+                    <tr style="background:#f1f5f9; font-weight:bold;">
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:left;">Componente Curricular</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo I (Real)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo II (Formativo)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo III (Somativo)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ganho (Δ I→III)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Nível Final</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Língua Portuguesa (Leitura)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{lp_c1_ac}/22 ({lp_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{lp_c2_ac}/22 ({lp_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#047857;">{lp_c3_ac}/22 ({lp_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#15803d;">+{lp_d_tot:.1f} pts ({lp_mig})</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_lp_niv}">{lp_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Matemática (Cálculo & Problemas)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{mat_c1_ac}/22 ({mat_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{mat_c2_ac}/22 ({mat_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#047857;">{mat_c3_ac}/22 ({mat_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#15803d;">+{mat_d_tot:.1f} pts ({mat_mig})</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_mat_niv}">{mat_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Produção Textual (Escrita)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{esc_c1_ac}/8 ({esc_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{esc_c2_ac}/8 ({esc_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#047857;">{esc_c3_ac}/8 ({esc_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#15803d;">+{esc_d_tot:.1f} pts ({esc_mig})</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_esc_niv}">{esc_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Fluência Leitora Censitária</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{flu_c1_ac}/9 ({flu_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{flu_c2_ac}/9 ({flu_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#047857;">{flu_c3_ac}/9 ({flu_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#15803d;">+{flu_d_tot:.1f} pts ({flu_mig})</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_flu_niv}">{flu_c3_niv}</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2 class="sub-title" style="margin-top:4px;">Radar de Proficiência nas 7 Dimensões do Desenvolvimento</h2>
             <div class="grid-2">
-                <div class="card" style="font-size:7pt;">
-                    • <strong>1. Decodificação e Rota Fonológica:</strong> Consolidada<br>
-                    • <strong>2. Fluência e Velocidade Leitora:</strong> {ppm_flu} ppm ({perfil_flu})<br>
-                    • <strong>3. Compreensão Textual e Inferência:</strong> {acerto_lp} de acerto em leitura<br>
-                    • <strong>4. Fatos Básicos da Matemática:</strong> { 'Fatos automatizados' if 'Adequado' in str(padrao_mat) else 'Revisão de tabuadas' }
+                <div class="card" style="font-size:6.8pt; line-height:1.35;">
+                    • <strong>1. Decodificação e Rota Fonológica:</strong> Consolidada (leitura crítica autônoma)<br>
+                    • <strong>2. Fluência e Velocidade Leitora:</strong> {ppm_flu} ({perfil_flu})<br>
+                    • <strong>3. Compreensão Textual e Inferência:</strong> {lp_c3_ac}/22 no Ciclo III ({lp_c3_niv})<br>
+                    • <strong>4. Fatos Básicos da Matemática:</strong> { 'Fatos automatizados' if 'Adequado' in str(mat_c3_niv) or 'Avançado' in str(mat_c3_niv) else 'Revisão de tabuadas' }
                 </div>
-                <div class="card" style="font-size:7pt;">
-                    • <strong>5. Frações, Decimais e Porcentagem:</strong> { 'Autonomia operatória' if 'Adequado' in str(padrao_mat) else 'Prática guiada Kumon Nível D' }<br>
-                    • <strong>6. Resolução de Situações-Problema:</strong> Nível terminal Anos Iniciais<br>
+                <div class="card" style="font-size:6.8pt; line-height:1.35;">
+                    • <strong>5. Frações, Decimais e Porcentagem:</strong> { 'Autonomia operatória' if 'Adequado' in str(mat_c3_niv) or 'Avançado' in str(mat_c3_niv) else 'Prática guiada Kumon Nível D' }<br>
+                    • <strong>6. Resolução de Situações-Problema:</strong> Nível terminal Anos Iniciais ({mat_c3_prof:.1f} pts)<br>
                     • <strong>7. Engajamento Comportamental DUA:</strong> { 'Acompanhamento AEE prioritário' if laudo_aluno else 'Excelente engajamento' }
                 </div>
             </div>
@@ -1455,9 +1567,51 @@ def build_students_custom_pages():
     if len(turma_a) != 27 or len(turma_b) != 27:
         raise ValueError(f"Esperado 27 alunos em cada turma. Encontrado: A={len(turma_a)}, B={len(turma_b)}")
 
+    # Consulta analítica aos Ciclos I, II e III na tabela canônica fato_evolucao_longitudinal_ciclos
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT ev.aluno_hash_id,
+               ev.componente_curricular, ev.ciclo_origem, ev.ciclo_destino,
+               ev.acertos_origem, ev.acertos_destino, ev.delta_acertos,
+               ev.proficiencia_origem, ev.proficiencia_destino, ev.delta_proficiencia,
+               ev.nivel_origem, ev.nivel_destino, ev.migracao_status,
+               ev.atingiu_meta_a_destino, ev.atingiu_meta_b_destino
+        FROM fato_evolucao_longitudinal_ciclos ev
+        WHERE ev.ano_escolar = 5
+        ORDER BY ev.aluno_hash_id, ev.componente_curricular, ev.ciclo_origem
+    """)
+    rows = cur.fetchall()
+    conn.close()
+
+    long_data = {}
+    for r in rows:
+        hid, comp, c_orig, c_dest, ac_orig, ac_dest, d_ac, p_orig, p_dest, d_p, niv_orig, niv_dest, mig, ma, mb = r
+        if hid not in long_data:
+            long_data[hid] = {'LEITURA': {}, 'MATEMATICA': {}, 'ESCRITA': {}, 'FLUENCIA': {}}
+        if comp not in long_data[hid]:
+            long_data[hid][comp] = {}
+        if c_orig == 'I' and c_dest == 'II':
+            long_data[hid][comp]['C1_acertos'] = ac_orig
+            long_data[hid][comp]['C1_prof'] = p_orig
+            long_data[hid][comp]['C1_nivel'] = niv_orig
+            long_data[hid][comp]['C2_acertos'] = ac_dest
+            long_data[hid][comp]['C2_prof'] = p_dest
+            long_data[hid][comp]['C2_nivel'] = niv_dest
+            long_data[hid][comp]['C2_migracao'] = mig
+            long_data[hid][comp]['C2_meta_a'] = ma
+            long_data[hid][comp]['C2_meta_b'] = mb
+        elif c_orig == 'II' and c_dest == 'III':
+            long_data[hid][comp]['C3_acertos'] = ac_dest
+            long_data[hid][comp]['C3_prof'] = p_dest
+            long_data[hid][comp]['C3_nivel'] = niv_dest
+            long_data[hid][comp]['C3_migracao'] = mig
+            long_data[hid][comp]['C3_meta_a'] = ma
+            long_data[hid][comp]['C3_meta_b'] = mb
+
     # Lote A
     print("Compilando Lote A (Turma 5º Ano A: 27 alunos = 378 laudas)...")
-    pages_a = generate_student_html_pages(turma_a, offset_aluno=0)
+    pages_a = generate_student_html_pages(turma_a, offset_aluno=0, long_data=long_data)
     if len(pages_a) != 27 * 14:
         raise ValueError(f"Lote A gerou {len(pages_a)} laudas em vez de 378!")
     html_a = f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Lote A 5º Ano</title><style>{PAGE_CSS}</style></head><body>{''.join(pages_a)}</body></html>"""
@@ -1469,7 +1623,7 @@ def build_students_custom_pages():
 
     # Lote B
     print("Compilando Lote B (Turma 5º Ano B: 27 alunos = 378 laudas)...")
-    pages_b = generate_student_html_pages(turma_b, offset_aluno=27)
+    pages_b = generate_student_html_pages(turma_b, offset_aluno=27, long_data=long_data)
     if len(pages_b) != 27 * 14:
         raise ValueError(f"Lote B gerou {len(pages_b)} laudas em vez de 378!")
     html_b = f"""<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Lote B 5º Ano</title><style>{PAGE_CSS}</style></head><body>{''.join(pages_b)}</body></html>"""

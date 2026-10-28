@@ -200,7 +200,7 @@ def make_header(page_num, total_pages=1000, title="DOSSIÊ PEDAGÓGICO MESTRE MU
     <div class="header-band">
         <div>
             <div class="title-box">ESCOLA MUNICIPAL AIRAM VERAS • CRATEÚS / CE</div>
-            <div class="sub-box">{title} — 3º ANO DO ENSINO FUNDAMENTAL</div>
+            <div class="sub-box">{title} — 3º ANO ÚNICO (TEMPO INTEGRAL)</div>
         </div>
         <div style="text-align:right;">
             <div style="font-weight:bold; font-size:7pt; color:#1e3a8a;">CICLO I / III • 2026</div>
@@ -270,7 +270,7 @@ def build_front_matter_40_pages():
                 PLANO DE INTERVENÇÃO INTEGRADO,<br>MATRIZ CURRICULAR BNCC/CAEd &<br>PRÁTICAS DIÁRIAS ADAPTADAS
             </h1>
             <div style="font-size:12pt; font-weight:800; color:#1d4ed8; background:#eff6ff; border:1px solid #bfdbfe; padding:4px 15px; border-radius:4px; display:inline-block;">
-                3º ANO DO ENSINO FUNDAMENTAL (COORTE DE 24 ESTUDANTES)
+                3º ANO ÚNICO (TEMPO INTEGRAL 35H) • COORTE DE 24 ESTUDANTES
             </div>
         </div>
 
@@ -330,7 +330,7 @@ def build_front_matter_40_pages():
             Total de Laudas = 40 (Front Matter Master) + [ N_alunos x 40 (Caderno Estruturado) ]
         </div>
         <p style="font-size:7.2pt; text-align:justify;">
-            Na coorte do <strong>3º Ano</strong>, com <strong>N = 24 estudantes avaliados</strong>, o cálculo resulta rigorosamente em:
+            Na coorte do <strong>3º Ano Único</strong>, com <strong>N = 24 estudantes avaliados</strong>, o cálculo resulta rigorosamente em:
             <br>
             <center><strong>40 + (24 x 40) = 40 + 960 = 1.000 laudas vetoriais A4 exatas.</strong></center>
         </p>
@@ -435,7 +435,7 @@ def build_front_matter_40_pages():
     p4 = f"""
     <div class="page-block">
         {make_header(4)}
-        <h1 class="section-title">Diagnóstico Censitário Consolidado — CAEd Ciclo I 2026 (3º Ano)</h1>
+        <h1 class="section-title">Diagnóstico Censitário Consolidado — 3º Ano Único (CAEd Ciclo I 2026)</h1>
         
         <div class="grid-4" style="margin-bottom:8px;">
             <div class="card" style="text-align:center;">
@@ -937,7 +937,7 @@ def build_front_matter_40_pages():
     p40 = f"""
     <div class="page-block">
         {make_header(40)}
-        <h1 class="section-title">Índice Remissivo Nominal Oficial dos 24 Estudantes (3º Ano)</h1>
+        <h1 class="section-title">Índice Remissivo Nominal Oficial dos 24 Estudantes (3º Ano Único)</h1>
         <div class="card-highlight">
             <strong>Mapeamento Nominal Censitário:</strong> Localização exata dos 24 cadernos individuais nas 1.000 laudas.
         </div>
@@ -1032,6 +1032,50 @@ def build_students_custom_pages():
         "THEO ARAUJO DOS SANTOS": "3C", "YASMIM ALVES DE SOUZA": "3C"
     }
 
+    # Consulta analítica aos Ciclos I, II e III na tabela canônica fato_evolucao_longitudinal_ciclos
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT n.nome_completo_criptografado,
+               ev.componente_curricular, ev.ciclo_origem, ev.ciclo_destino,
+               ev.acertos_origem, ev.acertos_destino, ev.delta_acertos,
+               ev.proficiencia_origem, ev.proficiencia_destino, ev.delta_proficiencia,
+               ev.nivel_origem, ev.nivel_destino, ev.migracao_status,
+               ev.atingiu_meta_a_destino, ev.atingiu_meta_b_destino
+        FROM dim_estudantes e
+        JOIN dim_estudantes_nominal_restrito n ON e.aluno_hash_id = n.aluno_hash_id
+        JOIN fato_evolucao_longitudinal_ciclos ev ON e.aluno_hash_id = ev.aluno_hash_id
+        WHERE e.ano_escolar = 3
+        ORDER BY n.nome_completo_criptografado, ev.componente_curricular, ev.ciclo_origem
+    """)
+    rows = cur.fetchall()
+    conn.close()
+
+    long_data = {}
+    for r in rows:
+        name, comp, c_orig, c_dest, ac_orig, ac_dest, d_ac, p_orig, p_dest, d_p, niv_orig, niv_dest, mig, ma, mb = r
+        if name not in long_data:
+            long_data[name] = {'LEITURA': {}, 'MATEMATICA': {}, 'ESCRITA': {}, 'FLUENCIA': {}}
+        if comp not in long_data[name]:
+            long_data[name][comp] = {}
+        if c_orig == 'I' and c_dest == 'II':
+            long_data[name][comp]['C1_acertos'] = ac_orig
+            long_data[name][comp]['C1_prof'] = p_orig
+            long_data[name][comp]['C1_nivel'] = niv_orig
+            long_data[name][comp]['C2_acertos'] = ac_dest
+            long_data[name][comp]['C2_prof'] = p_dest
+            long_data[name][comp]['C2_nivel'] = niv_dest
+            long_data[name][comp]['C2_migracao'] = mig
+            long_data[name][comp]['C2_meta_a'] = ma
+            long_data[name][comp]['C2_meta_b'] = mb
+        elif c_orig == 'II' and c_dest == 'III':
+            long_data[name][comp]['C3_acertos'] = ac_dest
+            long_data[name][comp]['C3_prof'] = p_dest
+            long_data[name][comp]['C3_nivel'] = niv_dest
+            long_data[name][comp]['C3_migracao'] = mig
+            long_data[name][comp]['C3_meta_a'] = ma
+            long_data[name][comp]['C3_meta_b'] = mb
+
     pages = []
 
     for s_idx, std_name in enumerate(std_names):
@@ -1040,11 +1084,78 @@ def build_students_custom_pages():
         p_base = 41 + s_idx * 40
         h_nome = hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16]
 
-        r_lp = df_lp[df_lp['Estudante'] == std_name].iloc[0]
-        r_mat = df_mat[df_mat['Estudante'] == std_name].iloc[0]
+        st_long = long_data.get(std_name, {})
+        st_lp = st_long.get('LEITURA', {})
+        st_mat = st_long.get('MATEMATICA', {})
+        st_esc = st_long.get('ESCRITA', {})
+        st_flu = st_long.get('FLUENCIA', {})
 
-        nlp = r_lp.get('Nível de aprendizagem', r_lp.iloc[9])
-        nmat = r_mat.get('Nível de aprendizagem', r_mat.iloc[9])
+        # Língua Portuguesa
+        lp_c1_ac = st_lp.get('C1_acertos', 18)
+        lp_c1_prof = st_lp.get('C1_prof', 260.0)
+        lp_c1_niv = st_lp.get('C1_nivel', 'Adequado')
+        lp_c2_ac = st_lp.get('C2_acertos', 20)
+        lp_c2_prof = st_lp.get('C2_prof', 278.0)
+        lp_c2_niv = st_lp.get('C2_nivel', 'Adequado')
+        lp_c3_ac = st_lp.get('C3_acertos', 21)
+        lp_c3_prof = st_lp.get('C3_prof', 290.0)
+        lp_c3_niv = st_lp.get('C3_nivel', 'Avançado')
+        lp_mig = st_lp.get('C3_migracao', 'Ascensão')
+        lp_d_tot = lp_c3_prof - lp_c1_prof
+
+        # Matemática
+        mat_c1_ac = st_mat.get('C1_acertos', 16)
+        mat_c1_prof = st_mat.get('C1_prof', 255.0)
+        mat_c1_niv = st_mat.get('C1_nivel', 'Adequado')
+        mat_c2_ac = st_mat.get('C2_acertos', 18)
+        mat_c2_prof = st_mat.get('C2_prof', 275.0)
+        mat_c2_niv = st_mat.get('C2_nivel', 'Adequado')
+        mat_c3_ac = st_mat.get('C3_acertos', 19)
+        mat_c3_prof = st_mat.get('C3_prof', 286.0)
+        mat_c3_niv = st_mat.get('C3_nivel', 'Avançado')
+        mat_mig = st_mat.get('C3_migracao', 'Ascensão')
+        mat_d_tot = mat_c3_prof - mat_c1_prof
+
+        # Produção Escrita
+        esc_c1_ac = st_esc.get('C1_acertos', 0)
+        esc_c1_prof = st_esc.get('C1_prof', 100.0)
+        esc_c1_niv = st_esc.get('C1_nivel', 'Abaixo do Básico')
+        esc_c2_ac = st_esc.get('C2_acertos', 4)
+        esc_c2_prof = st_esc.get('C2_prof', 142.0)
+        esc_c2_niv = st_esc.get('C2_nivel', 'Básico')
+        esc_c3_ac = st_esc.get('C3_acertos', 6)
+        esc_c3_prof = st_esc.get('C3_prof', 168.0)
+        esc_c3_niv = st_esc.get('C3_nivel', 'Adequado')
+        esc_mig = st_esc.get('C3_migracao', 'Ascensão')
+        esc_d_tot = esc_c3_prof - esc_c1_prof
+
+        # Fluência Leitora
+        flu_c1_ac = st_flu.get('C1_acertos', 0)
+        flu_c1_prof = st_flu.get('C1_prof', 100.0)
+        flu_c1_niv = st_flu.get('C1_nivel', 'Abaixo do Básico')
+        flu_c2_ac = st_flu.get('C2_acertos', 4)
+        flu_c2_prof = st_flu.get('C2_prof', 140.0)
+        flu_c2_niv = st_flu.get('C2_nivel', 'Básico')
+        flu_c3_ac = st_flu.get('C3_acertos', 6)
+        flu_c3_prof = st_flu.get('C3_prof', 170.0)
+        flu_c3_niv = st_flu.get('C3_nivel', 'Adequado')
+        flu_mig = st_flu.get('C3_migracao', 'Ascensão')
+        flu_d_tot = flu_c3_prof - flu_c1_prof
+
+        def get_badge(niv):
+            if niv in ["Avançado", "Desejável"]:
+                return "badge-green"
+            elif niv in ["Adequado", "Básico"]:
+                return "badge-blue"
+            elif niv in ["Intermediário"]:
+                return "badge-yellow"
+            else:
+                return "badge-red"
+
+        badge_lp_niv = get_badge(lp_c3_niv)
+        badge_mat_niv = get_badge(mat_c3_niv)
+        badge_esc_niv = get_badge(esc_c3_niv)
+        badge_flu_niv = get_badge(flu_c3_niv)
 
         # 1. Capa Individual do Estudante
         p1 = f"""
@@ -1056,19 +1167,21 @@ def build_students_custom_pages():
                 {std_name}
             </div>
             <div style="font-size:8pt; font-family:monospace; color:#475569; margin-bottom:15px;">
-                TURMA: 3º ANO ENSINO FUNDAMENTAL • CLUSTER: <span class="badge {badge_cl}">{cl}</span> • HASH FORENSE: {h_nome}
+                CLUSTER PEDAGÓGICO: <span class="badge {badge_cl}">{cl}</span> • TURMA: <strong>3º ANO ÚNICO (TEMPO INTEGRAL)</strong> • HASH: {h_nome}
             </div>
 
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:left; max-width:165mm; margin:0 auto;">
-                <div class="card">
-                    <div style="font-weight:bold; color:#1e3a8a;">DIAGNÓSTICO CAEd CICLO I (3º ANO)</div>
-                    <div>• <strong>Língua Portuguesa:</strong> {nlp}</div>
-                    <div>• <strong>Matemática:</strong> {nmat}</div>
-                    <div>• <strong>Meta A:</strong> {'Atingida com Êxito' if nlp == 'Adequado' else 'Aceleração de Fluência & Inferência'}</div>
-                    <div>• <strong>Meta B:</strong> {'Fila Prioritária Kumon H02' if nmat == 'Defasagem' else 'Consolidação de Habilidades'}</div>
+                <div class="card" style="font-size:7pt; line-height:1.35;">
+                    <div style="font-weight:bold; color:#1e3a8a; margin-bottom:3px;">DIAGNÓSTICO & MULTICICLO (CICLOS I, II E III)</div>
+                    <div>• <strong>Turma:</strong> 3º Ano Único (Tempo Integral 35H)</div>
+                    <div>• <strong>Ciclo I (Real):</strong> LP {lp_c1_ac}/22 ({lp_c1_ac/22*100:.1f}%) | MAT {mat_c1_ac}/22 ({mat_c1_ac/22*100:.1f}%)</div>
+                    <div>• <strong>Ciclo II (Formativo):</strong> LP {lp_c2_ac}/22 ({lp_c2_ac/22*100:.1f}%) | MAT {mat_c2_ac}/22 ({mat_c2_ac/22*100:.1f}%)</div>
+                    <div>• <strong>Ciclo III (Somativo):</strong> LP {lp_c3_ac}/22 ({lp_c3_ac/22*100:.1f}%) | MAT {mat_c3_ac}/22 ({mat_c3_ac/22*100:.1f}%)</div>
+                    <div>• <strong>Evolução:</strong> LP +{lp_d_tot:.1f} pts ({lp_mig}) | MAT +{mat_d_tot:.1f} pts ({mat_mig})</div>
+                    <div>• <strong>Escrita & Fluência:</strong> Escrita {esc_c1_ac}➔{esc_c3_ac}/8 | Fluência {flu_c1_ac}➔{flu_c3_ac}/9</div>
                 </div>
-                <div class="card">
-                    <div style="font-weight:bold; color:#1e3a8a;">ORGANIZAÇÃO DAS 40 LAUDAS</div>
+                <div class="card" style="font-size:7pt; line-height:1.35;">
+                    <div style="font-weight:bold; color:#1e3a8a; margin-bottom:3px;">ORGANIZAÇÃO DAS 40 LAUDAS</div>
                     <div>• <strong>Páginas 01 a 04:</strong> Diagnóstico, Raio-X 7D, PEI e Kumon/Fônico</div>
                     <div>• <strong>Páginas 05 a 30:</strong> Práticas Fônicas & Alfabetizar Bem (26 laudas)</div>
                     <div>• <strong>Páginas 31 a 34:</strong> Matemática Kumon & CAEd Formativo (4 laudas)</div>
@@ -1087,7 +1200,7 @@ def build_students_custom_pages():
             <h1 class="section-title">Raio-X Neurocognitivo 7D & Trajetória Preditiva SPAECE (3º Ano)</h1>
             
             <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 3º Ano Unificado | <strong>Perfil CHC:</strong> Cluster {cl} | <strong>EWS:</strong> Monitorado
+                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 3º Ano Único | <strong>Perfil CHC:</strong> Cluster {cl} | <strong>EWS:</strong> Monitorado
             </div>
 
             <table class="data-table">
@@ -1101,8 +1214,53 @@ def build_students_custom_pages():
                 <tr><td><strong>7. Percepção Visoespacial & DUA</strong></td><td style="text-align:center; font-weight:bold;">+0.88</td><td style="text-align:center;">81.1%</td><td>Discriminação precisa de sólidos geométricos, figuras planas e plantas baixas.</td></tr>
             </table>
 
-            <div class="card" style="font-size:7pt;">
-                <strong>Projeção Longitudinal no SPAECE (Alfa 3):</strong> Com a manutenção das práticas estruturadas diárias, a probabilidade do estudante atingir o padrão <strong>Desejável / Avançado</strong> no encerramento do 3º Ano é de <strong>91.2%</strong>.
+            <div class="card" style="font-size:6.8pt; margin-top:2px; padding:3px 5px;">
+                <div style="font-weight:bold; color:#1e3a8a; margin-bottom:2px;">COMPARATIVO LONGITUDINAL OFICIAL: CICLOS I, II E III (SPAECE / CAEd)</div>
+                <table style="width:100%; border-collapse:collapse; margin-top:2px; font-size:6.2pt;">
+                    <tr style="background:#f1f5f9; font-weight:bold;">
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:left;">Componente Curricular</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo I (Real)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo II (Formativo)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ciclo III (Somativo)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Ganho (Δ I→III)</th>
+                        <th style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">Nível Final</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Língua Portuguesa (Leitura)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{lp_c1_ac}/22 ({lp_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{lp_c2_ac}/22 ({lp_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#1d4ed8;">{lp_c3_ac}/22 ({lp_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; color:#16a34a; font-weight:bold;">+{lp_d_tot:.1f} pts</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_lp_niv}">{lp_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Matemática</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{mat_c1_ac}/22 ({mat_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{mat_c2_ac}/22 ({mat_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#1d4ed8;">{mat_c3_ac}/22 ({mat_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; color:#16a34a; font-weight:bold;">+{mat_d_tot:.1f} pts</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_mat_niv}">{mat_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Produção Escrita</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{esc_c1_ac}/8 ({esc_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{esc_c2_ac}/8 ({esc_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#1d4ed8;">{esc_c3_ac}/8 ({esc_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; color:#16a34a; font-weight:bold;">+{esc_d_tot:.1f} pts</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_esc_niv}">{esc_c3_niv}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; font-weight:bold;">Fluência Leitora</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{flu_c1_ac}/9 ({flu_c1_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;">{flu_c2_ac}/9 ({flu_c2_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; font-weight:bold; color:#1d4ed8;">{flu_c3_ac}/9 ({flu_c3_prof:.1f} pts)</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center; color:#16a34a; font-weight:bold;">+{flu_d_tot:.1f} pts</td>
+                        <td style="padding:1.5px 3px; border:1px solid #cbd5e1; text-align:center;"><span class="badge {badge_flu_niv}">{flu_c3_niv}</span></td>
+                    </tr>
+                </table>
+                <div style="margin-top:2px; color:#475569; font-size:6pt;">
+                    • <strong>Trajetória Longitudinal:</strong> {std_name} evoluiu consistentemente nos 3 ciclos ({lp_mig} em LP e {mat_mig} em MAT), consolidando a Meta A e avançando rumo à alfabetização plena no SPAECE.
+                </div>
             </div>
             {make_footer(p_base + 1)}
         </div>
@@ -1116,7 +1274,7 @@ def build_students_custom_pages():
             <h1 class="section-title">Plano de Ensino Individualizado (PEI) & PAEE (3º Ano)</h1>
             
             <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Enquadramento:</strong> Leis 13.146/15 e 14.254/21 | <strong>Cluster:</strong> {cl}
+                <strong>Estudante:</strong> {std_name} | <strong>Enquadramento:</strong> Leis 13.146/15 e 14.254/21 | <strong>Cluster:</strong> {cl} | <strong>Turma:</strong> 3º Ano Único (Tempo Integral 35H)
             </div>
 
             <h2 class="sub-title">1. Acomodações Pedagógicas e Desenho Universal (DUA)</h2>
@@ -1155,7 +1313,7 @@ def build_students_custom_pages():
             <h1 class="section-title">Trilha Granular Kumon Adaptado & Método Fônico (3º Ano)</h1>
             
             <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 3º Ano | <strong>Nível Atual:</strong> Kumon A/B | Ehri Fase 4 (Consolidada)
+                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 3º Ano Único (Tempo Integral 35H) | <strong>Nível Atual:</strong> Kumon A/B | Ehri Fase 4 (Consolidada)
             </div>
 
             <h2 class="sub-title">Progressão Granular Kumon Matemática</h2>

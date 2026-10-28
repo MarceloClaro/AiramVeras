@@ -1057,7 +1057,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">2º Ano</td>
-                <td>2º Ano A / 2º Ano B</td>
+                <td>2º Ano Único</td>
                 <td>Língua Portuguesa</td>
                 <td style="text-align:center;">28</td>
                 <td style="text-align:center;">69.00%</td>
@@ -1066,7 +1066,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">2º Ano</td>
-                <td>2º Ano A / 2º Ano B</td>
+                <td>2º Ano Único</td>
                 <td>Matemática</td>
                 <td style="text-align:center;">28</td>
                 <td style="text-align:center;">69.32%</td>
@@ -1075,7 +1075,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">3º Ano</td>
-                <td>3º Ano A / 3º Ano B</td>
+                <td>3º Ano Único</td>
                 <td>Língua Portuguesa</td>
                 <td style="text-align:center;">24</td>
                 <td style="text-align:center;">85.42%</td>
@@ -1084,7 +1084,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">3º Ano</td>
-                <td>3º Ano A / 3º Ano B</td>
+                <td>3º Ano Único</td>
                 <td>Matemática</td>
                 <td style="text-align:center;">24</td>
                 <td style="text-align:center;">75.97%</td>
@@ -1111,7 +1111,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">5º Ano</td>
-                <td>5º Ano A / B / C</td>
+                <td>5º Ano A / 5º Ano B</td>
                 <td>Língua Portuguesa</td>
                 <td style="text-align:center;">54</td>
                 <td style="text-align:center;">75.00%</td>
@@ -1120,7 +1120,7 @@ def build_front_matter_40_pages():
             </tr>
             <tr>
                 <td style="text-align:center;">5º Ano</td>
-                <td>5º Ano A / B / C</td>
+                <td>5º Ano A / 5º Ano B</td>
                 <td>Matemática</td>
                 <td style="text-align:center;">54</td>
                 <td style="text-align:center;">65.33%</td>

@@ -102,15 +102,24 @@ graph TD
 
 ---
 
-## 📘 Dossiê Pedagógico Mestre e Matriz Canônica das Turmas (1.000 Laudas Vetoriais A4)
+## 📘 Dossiês Pedagógicos Mestres Multidisciplinares (1º ao 5º Ano — 7.080 Laudas Vetoriais A4)
 
-> **Documento Oficial de Referência e Base de Todos os Dossiês das Turmas (1º ao 5º Ano)**  
-> **Arquivo Homologado**: [`DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf)  
-> **Hash SHA-256 Forense**: `03fa284ce1bede1ca2de4e7a73fabe28fba3a4641afb77b076dbcff171e4734b` (7,46 MB)  
-> **Total de Páginas**: **1.000 laudas vetoriais A4** (40 laudas de Front Matter Master Universal + 960 laudas de cadernos individualizados: $24 \text{ estudantes} \times 40 \text{ laudas cada}$)  
-> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 27: hash `6b73ffaaa2f0e310bd1f28799ffb19456214389c5e341180e9cd0d2bbab767e8`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
+> **Coorte Censitária Oficial da Escola de Cidadania Airam Veras**: 172 estudantes em 7 turmas oficiais (1º, 2º e 3º Anos Únicos; 4º e 5º Anos Turmas A e B).  
+> **Acompanhamento Multiciclo Integral**: Todos os dossiês integram o comparativo longitudinal censitário dos **Ciclos I (Diagnóstica), II (Formativa) e III (Somativa)** para Leitura, Matemática, Escrita e Fluência Leitora com cálculo de deltas ($\Delta$), níveis SPAECE/CAEd e migração de agrupamento a partir da tabela `fato_evolucao_longitudinal_ciclos`.  
+> **Engenharia de Paginação Estrita Universal (Strict Page Budgeting)**: Zero quebras, zero páginas em branco e exatidão matemática $40 + (N \times 40)$ laudas.
 
-Este documento estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal.
+### 📌 Matriz Canônica dos Dossiês Homologados e Chancelas no Ledger SHA-256
+
+| Ano Escolar | Turma Oficial | População ($N$) | Engenharia de Laudas | Arquivo PDF Homologado | Hash SHA-256 Forense | Bloco Ledger |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **1º Ano** | `1º Ano Único (Tempo Integral 35H)` | 24 | $40 + (24 \times 40) = \mathbf{1.000\text{ pág.}}$ | [`DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `03fa284ce1bede1ca2de4e7a73fabe28fba3a4641afb77b076dbcff171e4734b` | **Bloco 27** |
+| **2º Ano** | `2º Ano Único (Tempo Integral 35H)` | 28 | $40 + (28 \times 40) = \mathbf{1.160\text{ pág.}}$ | [`DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_2ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `dd7a2d1d1fb4724fb53a7129396517f9b304ffe9564f906cf3d7a50032f17cdb` | **Bloco 28** |
+| **3º Ano** | `3º Ano Único (Tempo Integral 35H)` | 24 | $40 + (24 \times 40) = \mathbf{1.000\text{ pág.}}$ | [`DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `7a7104d298c22f1760b0830e1b5af01ccad4b0f27769528cebd9db8896204c68` | **Bloco 29** |
+| **4º Ano** | `4º Ano A (22) + 4º Ano B (20)` | 42 | $40 + (42 \times 40) = \mathbf{1.720\text{ pág.}}$ | [`DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `a10ed764982fec67ccfe33b37a95299d4e57e72be0af04c65af9ed5d6d0d1752` | **Bloco 30** |
+| **5º Ano** | `5º Ano A (27) + 5º Ano B (27)` | 54 | $40 + (54 \times 40) = \mathbf{2.200\text{ pág.}}$ | [`DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `b5838300b239c24e0b33865af363c8f5b3e3577d9517456489530c3c60fffa5d` | **Bloco 31** |
+| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 31** |
+
+Este ecossistema documental estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal dos Ciclos I, II e III.
 
 ```mermaid
 graph TD
@@ -411,14 +420,14 @@ O ecossistema analítico consolidou as matrizes oficiais de proficiência do CAE
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
 | **1º Ano** | 1º Ano Único | **Leitura (Alfabetização)** | 24 | **75.95%** | **100.0%** | 37.5% | Alfabetização inicial sólida; intervenção fônica para acelerar a precisão e velocidade decodificatória. |
 | **1º Ano** | 1º Ano Único | **Matemática** | 24 | **90.18%** | **100.0%** | **100.0%** | Desempenho exemplar; senso numérico, contagem e noções de grandeza plenamente consolidados. |
-| **2º Ano** | 2º Ano A / 2º Ano B | **Leitura** | 28 | **69.00%** | 75.0% | 50.0% | Transição decodificação ➔ compreensão; foco em localização de informações explícitas (D01). |
-| **2º Ano** | 2º Ano A / 2º Ano B | **Matemática** | 28 | **69.32%** | 78.6% | 53.6% | Estruturas aditivas de composição e transformação consolidadas; introdução ao raciocínio multiplicativo. |
-| **3º Ano** | 3º Ano A / 3º Ano B | **Leitura** | 24 | **85.42%** | **100.0%** | 75.0% | Alta proficiência em leitura autônoma; excelente domínio textual de narrativas e informativos. |
-| **3º Ano** | 3º Ano A / 3º Ano B | **Matemática** | 24 | **75.97%** | 83.3% | 70.8% | Domínio do sistema de numeração decimal até ordens de milhar e resolução de problemas combinatórios. |
+| **2º Ano** | 2º Ano Único | **Leitura** | 28 | **69.00%** | 75.0% | 50.0% | Transição decodificação ➔ compreensão; foco em localização de informações explícitas (D01). |
+| **2º Ano** | 2º Ano Único | **Matemática** | 28 | **69.32%** | 78.6% | 53.6% | Estruturas aditivas de composição e transformação consolidadas; introdução ao raciocínio multiplicativo. |
+| **3º Ano** | 3º Ano Único | **Leitura** | 24 | **85.42%** | **100.0%** | 75.0% | Alta proficiência em leitura autônoma; excelente domínio textual de narrativas e informativos. |
+| **3º Ano** | 3º Ano Único | **Matemática** | 24 | **75.97%** | 83.3% | 70.8% | Domínio do sistema de numeração decimal até ordens de milhar e resolução de problemas combinatórios. |
 | **4º Ano** | 4º Ano A / 4º Ano B | **Leitura** | 42 | **68.51%** | 73.8% | 45.2% | **Ponto focal de intervenção**: inferência de sentido global (D03) e distinção entre fato e opinião (D11). |
 | **4º Ano** | 4º Ano A / 4º Ano B | **Matemática** | 42 | **62.77%** | 64.3% | 33.3% | **Ponto focal de intervenção**: frações, medidas de área e resolução de problemas de proporcionalidade. |
-| **5º Ano** | 5º Ano A / B / C | **Leitura** | 54 | **75.00%** | 88.9% | 46.3% | Boa proficiência geral; aprofundamento em intertextualidade (D15) e efeitos de ironia e humor (D13). |
-| **5º Ano** | 5º Ano A / B / C | **Matemática** | 54 | **65.33%** | 64.8% | 29.6% | Necessidade de reforço em geometria espacial (D02/D03), números decimais e interpretação de gráficos. |
+| **5º Ano** | 5º Ano A / 5º Ano B | **Leitura** | 54 | **75.00%** | 88.9% | 46.3% | Boa proficiência geral; aprofundamento em intertextualidade (D15) e efeitos de ironia e humor (D13). |
+| **5º Ano** | 5º Ano A / 5º Ano B | **Matemática** | 54 | **65.33%** | 64.8% | 29.6% | Necessidade de reforço em geometria espacial (D02/D03), números decimais e interpretação de gráficos. |
 | **Média Geral** | **1º ao 5º Ano** | **Consolidado** | **172** | **70.75%** | **83.1%** | **49.4%** | **83.1% dos estudantes atingiram a Meta A (Adequado)**; PIP atua nos 50.6% que demandam apoio para a Meta B. |
 
 #### 📈 Representação Visual de Rendimento por Ano Escolar
