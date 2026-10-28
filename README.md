@@ -106,9 +106,9 @@ graph TD
 
 > **Documento Oficial de Referência e Base de Todos os Dossiês das Turmas (1º ao 5º Ano)**  
 > **Arquivo Homologado**: [`DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/DOSSIE_MESTRE_1ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf)  
-> **Hash SHA-256 Forense**: `205ea6c6f3734a67f17f41f6cbb29be04ebe257995a895e877884216d9e44180` (7,40 MB)  
+> **Hash SHA-256 Forense**: `03fa284ce1bede1ca2de4e7a73fabe28fba3a4641afb77b076dbcff171e4734b` (7,46 MB)  
 > **Total de Páginas**: **1.000 laudas vetoriais A4** (40 laudas de Front Matter Master Universal + 960 laudas de cadernos individualizados: $24 \text{ estudantes} \times 40 \text{ laudas cada}$)  
-> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 26: hash `16b46aee068120585133ead87a34c571d2e3307f0764282caa1a6bbe59687ec5`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
+> **Chancela de Auditoria**: Encadeamento no Ledger Imutável SHA-256 (Bloco 27: hash `6b73ffaaa2f0e310bd1f28799ffb19456214389c5e341180e9cd0d2bbab767e8`) e integridade relacional sem ilhas no SQLite (`airam_veras_ecossistema.sqlite`).
 
 Este documento estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal.
 
@@ -409,8 +409,8 @@ O ecossistema analítico consolidou as matrizes oficiais de proficiência do CAE
 
 | Ano Escolar | Turmas Avaliadas | Componente Curricular | População ($N$) | Rendimento Médio (%) | Meta A (Adequado $\ge 70\%$) | Meta B ($\ge 80\%$ de Acertos) | Diagnóstico Pedagógico e Ação Prioritária |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
-| **1º Ano** | 1º Ano A / 1º Ano B | **Leitura (Alfabetização)** | 24 | **75.95%** | **100.0%** | 37.5% | Alfabetização inicial sólida; intervenção fônica para acelerar a precisão e velocidade decodificatória. |
-| **1º Ano** | 1º Ano A / 1º Ano B | **Matemática** | 24 | **90.18%** | **100.0%** | **100.0%** | Desempenho exemplar; senso numérico, contagem e noções de grandeza plenamente consolidados. |
+| **1º Ano** | 1º Ano Único | **Leitura (Alfabetização)** | 24 | **75.95%** | **100.0%** | 37.5% | Alfabetização inicial sólida; intervenção fônica para acelerar a precisão e velocidade decodificatória. |
+| **1º Ano** | 1º Ano Único | **Matemática** | 24 | **90.18%** | **100.0%** | **100.0%** | Desempenho exemplar; senso numérico, contagem e noções de grandeza plenamente consolidados. |
 | **2º Ano** | 2º Ano A / 2º Ano B | **Leitura** | 28 | **69.00%** | 75.0% | 50.0% | Transição decodificação ➔ compreensão; foco em localização de informações explícitas (D01). |
 | **2º Ano** | 2º Ano A / 2º Ano B | **Matemática** | 28 | **69.32%** | 78.6% | 53.6% | Estruturas aditivas de composição e transformação consolidadas; introdução ao raciocínio multiplicativo. |
 | **3º Ano** | 3º Ano A / 3º Ano B | **Leitura** | 24 | **85.42%** | **100.0%** | 75.0% | Alta proficiência em leitura autônoma; excelente domínio textual de narrativas e informativos. |
@@ -1952,7 +1952,7 @@ Implementando a **Engenharia de Paginação Estrita Universal** ($40\text{ FM} +
 
 | Dossiê Mestre | Coorte | Meta de Paginação Estrita | Front Matter Master | Cadernos Individuais Customizados | Hash SHA-256 do Documento | Bloco Ledger SHA-256 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Dossiê Mestre 1º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `205ea6c6f3734a67f17f41f6cbb29be04ebe257995a895e877884216d9e44180` | **Bloco 26** |
+| **Dossiê Mestre 1º Ano (Turma Única)** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs, Multiciclos I-III) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `03fa284ce1bede1ca2de4e7a73fabe28fba3a4641afb77b076dbcff171e4734b` | **Bloco 27** |
 | **Dossiê Mestre 2º Ano** | 28 estudantes | **1.160 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC, Grafo 2D, DOIs) | 28 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `680b0f4056ef6e44a79a2acde54f848e1f4d48f3ec9966032c4179f55fd519e9` | **Bloco 22** |
 | **Dossiê Mestre 3º Ano** | 24 estudantes | **1.000 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 3º Ano, Grafo 2D, DOIs) | 24 cadernos $\times$ 40 laudas (4 custom + 26 LP + 4 MAT + 6 custom) | `a42ece16390ea288257fd60cae2ddf3ed3e8be7114a6fd019772208f6f548d6c` | **Bloco 21** |
 | **Dossiê Mestre 4º Ano (A e B)** | 42 estudantes (22 no 4º A + 20 no 4º B) | **1.720 laudas** | 40 laudas (INTEGRAL 35H, Matriz BNCC 4º Ano, Grafo 2D, DOIs, Diagnóstico A vs B) | 42 cadernos $\times$ 40 laudas (4 custom + 26 LP Vol. 4 + 4 MAT Kumon + 6 custom) | `b4ef92b9744ce5f9314371f18e3ef2e6a362035ee38b369bb8c1908d68ae6811` | **Bloco 24** |
@@ -2058,7 +2058,7 @@ Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as tur
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**58 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 26).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**59 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 27).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
 
