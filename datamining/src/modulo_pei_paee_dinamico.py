@@ -100,6 +100,46 @@ def carregar_mapa_pei_paee(db_path):
             'hash_pei': r[12]
         }
 
+    # 4. Carregar Estudos de Caso e Relatórios Descritivos Oficiais
+    cur.execute("""
+        SELECT aluno_hash_id, professor_avaliador_aee, periodo_avaliado, diagnostico_cid10,
+               diagnostico_cid11, apresentacao_caso, esclarecimento_problema, natureza_problema,
+               resolucao_problema, potencialidades_estudante, necessidades_apoio,
+               recursos_acessibilidade, materiais_pedagogicos, objetivo_geral, objetivos_especificos,
+               cronograma_atendimento, parcerias_necessarias, avaliacao_plano, fundamentacao_legal,
+               relatorio_inicial_status, data_nascimento, nome_mae
+        FROM fato_aee_estudo_caso_e_relatorios;
+    """)
+    for r in cur.fetchall():
+        hid_e = r[0]
+        est_d = {
+            'avaliador': r[1],
+            'periodo': r[2],
+            'cid10': r[3],
+            'cid11': r[4],
+            'apresentacao': r[5],
+            'esclarecimento': r[6],
+            'natureza': r[7],
+            'resolucao': r[8],
+            'potencialidades': r[9],
+            'necessidades': r[10],
+            'recursos': r[11],
+            'materiais': r[12],
+            'obj_geral': r[13],
+            'obj_espec': r[14],
+            'cronograma': r[15],
+            'parcerias': r[16],
+            'avaliacao': r[17],
+            'fundamentacao': r[18],
+            'status_inicial': r[19],
+            'nascimento': r[20],
+            'mae': r[21]
+        }
+        if hid_e in paee_map:
+            paee_map[hid_e]['estudo'] = est_d
+        if hid_e in aee_map_hash:
+            aee_map_hash[hid_e]['estudo'] = est_d
+
     conn.close()
     return aee_map_hash, aee_map_nome, paee_map, pei_map
 
@@ -161,22 +201,42 @@ def gerar_html_lauda_3_pei(aluno_hash_id, nome_aluno, ano_escolar, turma_nome, c
     pbs_geral = b1.get('pbs', 'Reforço diferencial positivo (4:1), rotina visual TEACCH e previsibilidade de transições.')
     hash_pei_display = b4.get('hash_pei', b1.get('hash_pei', 'SHA256-PENDING'))
 
+    estudo = paee_info.get('estudo', {}) or (aee_info.get('estudo', {}) if aee_info else {})
+    avaliador_txt = ""
+    detalhes_estudo_html = ""
+    if estudo:
+        prof_av = estudo.get('avaliador', 'LUIZA BONFIM TEIXEIRA LIRA')
+        crono_av = estudo.get('cronograma', 'Atendimento Semanal na SRM')
+        avaliador_txt = f"<div style='margin-top:1px;'><strong>Avaliador(a) AEE:</strong> {prof_av} | <strong>Cronograma SRM:</strong> {crono_av}</div>"
+        obj_esp = estudo.get('obj_espec', '')
+        mat_esp = estudo.get('materiais', '')
+        if obj_esp or mat_esp:
+            detalhes_estudo_html = f"""
+            <div style="margin-top:2px; font-size:5.3pt; line-height:1.15; color:#1e293b; background:#f8fafc; border:1px solid #cbd5e1; border-radius:3px; padding:2px 5px;">
+                <strong>Plano de Atendimento Especializado (PAEE / Estudo de Caso):</strong> {obj_esp[:180]}...<br>
+                <strong>Tecnologias Assistivas & Materiais Adaptados:</strong> {mat_esp[:160]}
+            </div>
+            """
+
     html = f"""
     <div class="page-block">
         {make_header(p_num, total_pages, f"PLANO PEI / PAEE • {nome_aluno}")}
         <h1 class="section-title">Plano Educacional Individualizado (PEI) & Diretrizes PAEE</h1>
         
-        <div class="card-highlight" style="font-size:6.4pt; padding:3px 7px; margin-bottom:3px; line-height:1.25;">
+        <div class="card-highlight" style="font-size:6.3pt; padding:3px 7px; margin-bottom:2px; line-height:1.25;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div><strong>Estudante:</strong> {nome_aluno} | <strong>Turma:</strong> {turma_nome}</div>
                 <div><span class="badge {badge_cls}">{rotulo_status}</span></div>
             </div>
             <div style="margin-top:2px;">{cuidador_txt}</div>
             <div style="margin-top:1px;"><strong>Modalidade PAEE:</strong> {modalidade_paee} | <strong>Recursos:</strong> {tec_assist_paee}</div>
+            {avaliador_txt}
         </div>
 
+        {detalhes_estudo_html}
+
         <h2 class="sub-title" style="margin-top:2px; margin-bottom:2px;">1. Metas Bimestrais Estruturadas de Aprendizagem & Adaptações DUA (1º ao 4º Bimestre)</h2>
-        <table class="data-table" style="font-size:5.5pt; line-height:1.15; margin-bottom:3px;">
+        <table class="data-table" style="font-size:5.4pt; line-height:1.15; margin-bottom:2px;">
             <tr>
                 <th style="width:12%;">Bimestre</th>
                 <th style="width:28%;">Meta Fônica e Linguística</th>
@@ -185,28 +245,28 @@ def gerar_html_lauda_3_pei(aluno_hash_id, nome_aluno, ano_escolar, turma_nome, c
                 <th style="width:14%; text-align:center;">Indicador de Sucesso</th>
             </tr>
             <tr>
-                <td><strong>1º Bimestre</strong><br><span style="font-size:4.8pt; color:#64748b;">Diagnóstico & Acolhimento</span></td>
+                <td><strong>1º Bimestre</strong><br><span style="font-size:4.7pt; color:#64748b;">Diagnóstico & Acolhimento</span></td>
                 <td>{b1.get('meta_fonica', 'Reconhecimento de sons das vogais e consoantes contínuas com apoio visual.')}</td>
                 <td>{b1.get('meta_mat', 'Contagem concreta e associação número-quantidade (Kumon 7A).')}</td>
                 <td>{b1.get('materiais', 'Provas ampliadas e pausas ativas.')}</td>
                 <td style="text-align:center; font-weight:bold; color:#1e40af;">{b1.get('evolucao', 'Tolerância e engajamento')}</td>
             </tr>
             <tr>
-                <td><strong>2º Bimestre</strong><br><span style="font-size:4.8pt; color:#64748b;">Decodificação & Automação</span></td>
+                <td><strong>2º Bimestre</strong><br><span style="font-size:4.7pt; color:#64748b;">Decodificação & Automação</span></td>
                 <td>{b2.get('meta_fonica', 'Leitura de sílabas canônicas e vocabulário funcional de alta frequência.')}</td>
                 <td>{b2.get('meta_mat', 'Adições concretas até 10/20 e reconhecimento de padrões espaciais.')}</td>
                 <td>{b2.get('materiais', 'Cartelas de apoio e rotina estruturada.')}</td>
                 <td style="text-align:center; font-weight:bold; color:#1e40af;">{b2.get('evolucao', 'Autonomia crescente')}</td>
             </tr>
             <tr>
-                <td><strong>3º Bimestre</strong><br><span style="font-size:4.8pt; color:#64748b;">Fluência & Resolução</span></td>
+                <td><strong>3º Bimestre</strong><br><span style="font-size:4.7pt; color:#64748b;">Fluência & Resolução</span></td>
                 <td>{b3.get('meta_fonica', 'Leitura guiada de frases e identificação de informações explícitas.')}</td>
                 <td>{b3.get('meta_mat', 'Resolução de problemas cotidianos aditivos com suporte manipulável.')}</td>
                 <td>{b3.get('materiais', 'Ledor credenciado e sala silenciosa.')}</td>
                 <td style="text-align:center; font-weight:bold; color:#16a34a;">{b3.get('evolucao', 'Evolução leitora')}</td>
             </tr>
             <tr>
-                <td><strong>4º Bimestre</strong><br><span style="font-size:4.8pt; color:#64748b;">Consolidação & SPAECE</span></td>
+                <td><strong>4º Bimestre</strong><br><span style="font-size:4.7pt; color:#64748b;">Consolidação & SPAECE</span></td>
                 <td>{b4.get('meta_fonica', 'Autonomia na leitura de pequenos textos e alcance da meta de fluência.')}</td>
                 <td>{b4.get('meta_mat', 'Operações fundamentais consolidadas no nível Kumon correspondente.')}</td>
                 <td>{b4.get('materiais', 'Auditoria pericial de metas atingidas.')}</td>
@@ -215,15 +275,15 @@ def gerar_html_lauda_3_pei(aluno_hash_id, nome_aluno, ano_escolar, turma_nome, c
         </table>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:2px;">
-            <div class="card" style="font-size:5.7pt; line-height:1.2; padding:3px 6px;">
+            <div class="card" style="font-size:5.6pt; line-height:1.2; padding:3px 6px;">
                 <div style="font-weight:bold; color:#1e3a8a; margin-bottom:1px;">PROTOCOLO DE CONDUTA & APOIO COMPORTAMENTAL POSITIVO (PBS):</div>
                 {pbs_geral}
             </div>
-            <div class="card-highlight" style="font-size:5.7pt; line-height:1.2; padding:3px 6px;">
+            <div class="card-highlight" style="font-size:5.6pt; line-height:1.2; padding:3px 6px;">
                 <div style="font-weight:bold; color:#065f46; margin-bottom:1px;">DIRETRIZ AVALIATIVA SPAECE / CAEd & AUDITORIA FORENSE:</div>
                 Tempo estendido oficial (+50%), não penalização de trocas fonéticas, presença de profissional de apoio escolar credenciado e guarda ética documental.
                 <div style="margin-top:2px; font-family:monospace; font-size:4.8pt; color:#475569;">
-                    Assinatura Criptográfica PEI: <code>{hash_pei_display[:32]}...</code> (Bloco 34 no Ledger)
+                    Assinatura Criptográfica PEI: <code>{hash_pei_display[:32]}...</code> (Bloco 35 no Ledger)
                 </div>
             </div>
         </div>

@@ -117,7 +117,7 @@ graph TD
 | **3º Ano** | `3º Ano Único (Tempo Integral 35H)` | 24 | $40 + (24 \times 40) = \mathbf{1.000\text{ pág.}}$ | [`DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `7a7104d298c22f1760b0830e1b5af01ccad4b0f27769528cebd9db8896204c68` | **Bloco 29** |
 | **4º Ano** | `4º Ano A (22) + 4º Ano B (20)` | 42 | $40 + (42 \times 40) = \mathbf{1.720\text{ pág.}}$ | [`DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `a10ed764982fec67ccfe33b37a95299d4e57e72be0af04c65af9ed5d6d0d1752` | **Bloco 30** |
 | **5º Ano** | `5º Ano A (27) + 5º Ano B (27)` | 54 | $40 + (54 \times 40) = \mathbf{2.200\text{ pág.}}$ | [`DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `b5838300b239c24e0b33865af363c8f5b3e3577d9517456489530c3c60fffa5d` | **Bloco 31** |
-| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 34** |
+| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 35** |
 
 > **Bloco 32 do Ledger Imutável (Hash Forense `d6cd514dd9a6a53b44ccb35c9e79fa56631ab97599f43ef0e15d2bf5885de444`)**:  
 > **Homologação das Práticas Diárias de Leitura e Fluência — Abordagem Fônica Estruturada nos 4 Bimestres & Plano de Recomposição SPAECE/SAEB**: Estruturação canônica individualizada na tabela `fato_praticas_diarias_leitura_fluencia` para 100% da coorte censitária ($N=172$), com divisão granular em **1º Bimestre, 2º Bimestre, 3º Bimestre e 4º Bimestre**, metas de fluência cronometrada (PPM/WCPM), descritores prioritários do SPAECE (D01 a D18), clusterização adaptativa por grupos (G1 a G4) e protocolos específicos de acessibilidade DUA/PBS para estudantes **PAEE** e com **PEI** oficial.
@@ -127,6 +127,9 @@ graph TD
 
 > **Bloco 34 do Ledger Imutável (Hash Forense `8d4b522d93efb5608fc9465d5d86a163661a68d5e4f3c01a1acde5647d0bd6c1`)**:  
 > **Censo Oficial AEE Cuidadores 2026, Rastreamento Pericial de Padrões e Universalização do PEI & PAEE (100% dos 172 Alunos)**: Ingestão censitária da `dim_aee_cuidadores_relacao_oficial_2026` a partir do documento oficial de 27/10/2026 (52 neurodivergentes laudados, 6 em triagem diagnóstica ativa e 114 regulares). Povoamento canônico de **172 planos de atendimento no PAEE** (`fato_paee_plano_atendimento`) e **688 planos bimestrais individualizados no PEI** (`fato_pei_estudante_adaptacoes`, 172 alunos $\times$ 4 bimestres), assegurando Desenho Universal para a Aprendizagem (DUA) e Suporte Positivo (PBS) em 100% da escola.
+
+> **Bloco 35 do Ledger Imutável (Hash Forense `57e1057c09c424fa0905b8e7bf2c23843fec00e25c56b6447626be0b72994d19`)**:  
+> **Ingestão Profunda de Estudos de Caso, Relatórios Descritivos e Especificação PAEE/SRM (Profª Luiza Bonfim Teixeira Lira)**: Estruturação canônica da tabela `fato_aee_estudo_caso_e_relatorios` contendo os estudos de caso clínicos e pedagógicos individualizados, com destaque para **Icaro Soares Leite de Sousa** (TEA + TDAH — CID-10: F84.0 + F90 / CID-11: 6A05.0; superação da barreira motora da escrita para nota Médio/Alto, pauta ampliada colorida, tangram, figuras geométricas EF02MA15 e atendimento às quintas-feiras 08:00h–08:30h) e **Alice Coelho dos Santos Gemeo** (Deficiência Física / CID-10: G40 + F84 / CID-11: 8A60 + 6A02; atendimento em SRM e apoio da cuidadora Francisca Manuela), além da identificação unívoca de CIDs e cuidadores para todos os 59 educandos neurodivergentes da escola.
 
 Este ecossistema documental estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal dos Ciclos I, II e III.
 
@@ -2098,6 +2101,16 @@ A partir do documento oficial de designação da Secretaria Municipal de Educaç
 - **Tabela `fato_pei_estudante_adaptacoes` ($N = 688$)**: 4 planos bimestrais por estudante (172 alunos $\times$ 4 bimestres = 688 registros) contendo metas fônicas explícitas, metas de aritmética Kumon, acomodações espaciais, recursos temporais (+50%), instrumentos de resposta alternativos e planos de suporte positivo PBS.
 - **Módulo Dinâmico [`modulo_pei_paee_dinamico.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/modulo_pei_paee_dinamico.py)**: Renderiza dinamicamente a **Lauda 3** de cada caderno de estudante em todos os 5 geradores de dossiê (1º ao 5º Ano), assegurando compliance absoluto com o *Strict Page Budgeting Universal* ($40 + N \times 40$ laudas).
 
+### 5. Estudos de Caso Clínico-Pedagógicos e Relatórios SRM (`fato_aee_estudo_caso_e_relatorios`)
+- **Icaro Soares Leite de Sousa (2º Ano — TEA + TDAH / CIDs F84.0 + F90 / CID-11: 6A05.0)**:
+  * *Diagnóstico e Desempenho*: Leitor Iniciante pleno (60 de 60 palavras lidas), com desproporção motora na escrita (nota 3.9 - Baixa).
+  * *Barreira e Natureza*: Neurobiológica, coordenação motora fina, planejamento executivo para transição da letra de imprensa para cursiva e organização espacial no caderno.
+  * *Estratégia e Metas*: Aproveitamento do talento de observação em geometria (EF02MA15 / 2EF12_M) para organização visuoespacial; uso de tangram, pauta ampliada colorida, lápis triangular ergonômico, réguas de alinhamento e espaçadores físicos; superação das crises comportamentais com apoio da cuidadora escolar Gabriela Alves Costa e acompanhamento psicológico; cantinho da calma; atendimento individualizado na SRM às quintas-feiras (08:00h às 08:30h) com a Profª Luiza Bonfim Teixeira Lira; meta de elevar a nota de escrita para patamar Médio/Alto na Matriz 2026.
+- **Alice Coelho dos Santos Gemeo (3º Ano — Deficiência Física / CIDs G40 + F84 / CID-11: 8A60 + 6A02)**:
+  * *Diagnóstico e Suporte*: Aluna do Ensino Especial / AEE - A - Manhã; mãe: Marina Coelho dos Santos; avaliadora: Profª Luiza Bonfim Teixeira Lira; acompanhamento contínuo da cuidadora Francisca Manuela Nascimento da Silva (manhã e tarde).
+  * *Acomodações*: Acessibilidade arquitetônica, estabilização postural com mobiliário adaptado, engrossadores de lápis, protocolo de vigilância para prevenção de crises convulsivas (G40) e tempo estendido oficial (+50%).
+- **Coorte Completa ($N = 59$ Estudantes)**: Estudos de caso individualizados cadastrados no banco para 100% dos educandos laudados e em triagem da escola.
+
 ---
 
 ## 🛠️ Tecnologias e Dependências
@@ -2107,7 +2120,7 @@ A partir do documento oficial de designação da Secretaria Municipal de Educaç
 - **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`, `docx` (python-docx)
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**62 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 34).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**63 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 35).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
 
