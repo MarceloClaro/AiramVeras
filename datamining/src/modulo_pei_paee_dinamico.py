@@ -8,6 +8,7 @@ Atende integralmente a alunos neurodivergentes (AEE/Cuidadores) e não-divergent
 import sqlite3
 import unicodedata
 import re
+import hashlib
 
 def norm(text):
     if not text:
@@ -143,12 +144,52 @@ def carregar_mapa_pei_paee(db_path):
     conn.close()
     return aee_map_hash, aee_map_nome, paee_map, pei_map
 
-def gerar_html_lauda_3_pei(aluno_hash_id, nome_aluno, ano_escolar, turma_nome, cluster_cod,
-                           p_num, total_pages, make_header, make_footer,
-                           aee_map_hash, aee_map_nome, paee_map, pei_map):
+def gerar_html_lauda_3_pei(aluno_hash_id=None, nome_aluno=None, ano_escolar=None, turma_nome=None, cluster_cod=None,
+                           p_num=None, total_pages=None, make_header=None, make_footer=None,
+                           aee_map_hash=None, aee_map_nome=None, paee_map=None, pei_map=None, **kwargs):
     """
     Gera exatamente 1 lauda A4 vetorial contendo o PEI e PAEE parametrizado.
+    Suporta chamadas de todos os anos (1º ao 5º Ano) de forma polimórfica e auditável.
     """
+    # Mapear kwargs alternativos utilizados nos diferentes anos
+    if nome_aluno is None:
+        nome_aluno = kwargs.get('std_name', '')
+    if aluno_hash_id is None:
+        aluno_hash_id = kwargs.get('aluno_hash', hashlib.sha256(nome_aluno.encode('utf-8')).hexdigest() if nome_aluno else '')
+    if ano_escolar is None:
+        ano_escolar = kwargs.get('ano_num', 1)
+    if cluster_cod is None:
+        cluster_cod = kwargs.get('cluster_code', '1A')
+    if p_num is None:
+        p_num = kwargs.get('p_curr', 1)
+    if total_pages is None:
+        total_pages = kwargs.get('tot_pages', 1000)
+    if turma_nome is None:
+        turma_nome = f"{ano_escolar}º Ano (Tempo Integral 35H)"
+    if aee_map_hash is None:
+        aee_map_hash = kwargs.get('aee_map_h', {})
+    if aee_map_nome is None:
+        aee_map_nome = kwargs.get('aee_map_n', {})
+    if paee_map is None:
+        paee_map = kwargs.get('paee_map', {})
+    if pei_map is None:
+        pei_map = kwargs.get('pei_map', {})
+
+    if make_header is None:
+        make_header = lambda p, tot, tit: f"""
+        <div class="header-band">
+            <div class="title-box">{tit}</div>
+            <div class="page-box">LAUDA {p} DE {tot}</div>
+        </div>
+        """
+    if make_footer is None:
+        make_footer = lambda p: f"""
+        <div class="footer-band">
+            <div>ESCOLA DE CIDADANIA AIRAM VERAS • CRATEÚS - CE</div>
+            <div>SME CRATEÚS • ANO LETIVO 2026 • LAUDA {p}</div>
+        </div>
+        """
+
     norm_n = norm(nome_aluno)
     aee_info = aee_map_hash.get(aluno_hash_id, aee_map_nome.get(norm_n, None))
     
