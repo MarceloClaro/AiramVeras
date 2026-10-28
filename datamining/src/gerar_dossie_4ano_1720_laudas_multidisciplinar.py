@@ -28,6 +28,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 sys.path.append(os.path.dirname(__file__))
 from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+from modulo_pei_paee_dinamico import carregar_mapa_pei_paee, gerar_html_lauda_3_pei
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -291,29 +292,36 @@ def build_front_matter_40_pages():
     p2 = f"""
     <div class="page-block">
         {make_header(2)}
-        <h1 class="section-title">Apresentação Institucional & Modelo Universal Paramétrico</h1>
+        <h1 class="section-title">Apresentação Institucional & Arquitetura Universal Paramétrica</h1>
+        
         <div class="card-highlight">
-            <strong>Marco Regulatório:</strong> Resoluções SME Crateús 2026, Diretrizes Curriculares Nacionais, BNCC (EF04) e Política Nacional de Alfabetização Consolidada.
+            <strong>Arquitetura Paramétrica de Paginação Estrita (Strict Page Budgeting Dinâmico Universal):</strong><br>
+            A extensão deste dossiê segue a equação paramétrica de integridade física e contratual:<br>
+            <div style="text-align:center; font-family:monospace; font-size:8.5pt; font-weight:bold; color:#1e40af; margin:3px 0;">
+                Laudas Totais = 40 [Front Matter Master] + (N_estudantes x 40 [Caderno Individual])
+            </div>
+            Para a coorte unificada de <strong>4º Ano (Turmas A e B)</strong> com <strong>N = 42 estudantes</strong>: <strong>40 + (42 x 40) = 1.720 laudas exatas</strong>.
         </div>
-        <h2 class="sub-title">1. Propósito e Arquitetura do Dossiê Mestre do 4º Ano</h2>
-        <div class="card" style="font-size:7.2pt; line-height:1.45;">
-            O presente documento consolida a intervenção pedagógica censitária para as turmas de 4º Ano A e 4º Ano B da EMEB Airam Veras. Embasado na Teoria de Resposta ao Item (TRI) e nas evidências do CAEd Ciclo I 2026, este instrumento fornece trilhas individualizadas de 40 laudas para cada um dos 42 estudantes censitários, garantindo a consolidação da alfabetização, automação de operações de múltiplos dígitos e expansão de competências científicas e humanas.
-        </div>
-        <h2 class="sub-title">2. Equação Paramétrica de Paginação Estrita (Strict Page Budgeting)</h2>
-        <div class="card" style="background:#f1f5f9; border-left:3px solid #1e3a8a; font-size:7.2pt;">
-            <div style="font-weight:800; color:#1e3a8a; margin-bottom:3px;">FÓRMULA CANÔNICA DE PAGINAÇÃO VETORIAL:</div>
-            <code>Total de Laudas = 40 (Front Matter Mestre) + (N × 40 [Caderno Individual do Estudante])</code><br>
-            Para a coorte unificada de 4º Ano da Escola Airam Veras:<br>
-            <strong>N = 42 estudantes</strong> (Turma 4º Ano A: 22 alunos | Turma 4º Ano B: 20 alunos)<br>
-            <code>Total Consolidado = 40 + (42 × 40) = 40 + 1.680 = 1.720 laudas vetoriais exatas.</code>
-        </div>
-        <h2 class="sub-title">3. Governança Pedagógica e Metodologias com Evidências Empíricas</h2>
-        <table class="data-table">
-            <tr><th style="width:25%;">Eixo Metodológico</th><th style="width:40%;">Fundamentação Científica</th><th style="width:35%;">Impacto Esperado no 4º Ano</th></tr>
-            <tr><td><strong>Método Fônico & Fluência</strong></td><td>Dehaene (2012) & Snow (2016) — Decodificação e rota fonológica</td><td>Precisão leitora > 115 ppm e compreensão inferencial crítica (D04/D06).</td></tr>
-            <tr><td><strong>Automação Kumon B/C</strong></td><td>Fuchs et al. (2021) — Recuperação de fatos numéricos e cálculo vertical</td><td>Domínio de tabuada e operações com múltiplos dígitos e reagrupamento.</td></tr>
-            <tr><td><strong>Inclusão DUA & PBS</strong></td><td>CAST (2018) & Horner et al. (2015) — Desenho Universal e Suporte Positivo</td><td>Acessibilidade irrestrita aos 6 estudantes laudados AEE das Turmas A e B.</td></tr>
+
+        <h2 class="sub-title">1. Fundamentação Legal, Diretrizes Normativas & Governança SNE</h2>
+        <table class="data-table" style="font-size:6pt; line-height:1.15;">
+            <tr><th style="width:28%;">Marco Legal / Resolução</th><th style="width:72%;">Aplicação Pedagógica e Vinculação Institucional</th></tr>
+            <tr><td><strong>CF/1988 & LC nº 220/2025 (SNE)</strong></td><td>Princípio da Gestão Democrática (Art. 206, VI) e articulação com o Fórum Municipal de Educação (FME) de Crateús (Arts. 16-21) para deliberações com base em dados do SPAECE.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.005/2014 (PNE)</strong></td><td>Monitoramento das Metas 2, 4, 5, 6, 7 e 19 do Plano Municipal de Educação de Crateús com auditoria participativa e devolutivas públicas.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.146/2015 (LBI)</strong></td><td>Obrigatoriedade de AEE, Plano Educacional Individualizado (PEI), Desenho Universal (DUA) e cuidadores dedicados da rede municipal.</td></tr>
+            <tr><td><strong>Lei Federal nº 14.254/2021</strong></td><td>Garantia de acompanhamento precoce para dislexia, TDAH e neurodiversidade com tempo adicional (+50%) e ledor especializado.</td></tr>
+            <tr><td><strong>Resoluções CNE/CP 01/22 & 04/09</strong></td><td>Diretrizes curriculares da BNCC Computação e diretrizes para Sala de Recursos Multifuncionais (SRM) no contraturno inclusivo.</td></tr>
+            <tr><td><strong>Diretriz Municipal SME Crateús</strong></td><td>Jornada de Tempo Integral (INTEGRAL 35H) com matriz de 9 componentes integrados e 7 períodos de 50 minutos diários.</td></tr>
         </table>
+
+        <h2 class="sub-title">2. Princípios de Rigor Científico, Auditabilidade e Zero Ilhas</h2>
+        <p style="font-size:6.8pt; margin-bottom:3px; line-height:1.3;">
+            Este dossiê integra 100% dos dados censitários ao banco canônico <code>airam_veras_ecossistema.sqlite</code> em 3FN (62 tabelas, 0 ilhas). Cada escore possui rastreabilidade no Ledger SHA-256 (Bloco 34: Censo AEE Cuidadores e PEI/PAEE Universal 100%).
+        </p>
+
+        <div class="card" style="font-size:6.4pt; padding:3px 6px;">
+            <strong>Compromisso Ético e Inclusivo:</strong> Atendimento individualizado a 100% dos educandos do 4º Ano: recomposição fônica intensiva (G1), automação de fatos Kumon (G2/G3), enriquecimento de altas habilidades (G4) e Suporte Positivo (PBS) com apoiadores dedicados para os neurodivergentes.
+        </div>
         {make_footer(2)}
     </div>
     """
@@ -1080,6 +1088,8 @@ def build_students_custom_pages():
         prat_map[pr[0]] = item
         prat_map[pr[1]] = item
 
+    aee_map_h, aee_map_n, paee_map, pei_map = carregar_mapa_pei_paee(DB_PATH)
+
     pages = []
 
     for s_idx, al in enumerate(todos_alunos):
@@ -1311,32 +1321,19 @@ def build_students_custom_pages():
         """
         pages.append(p2)
 
-        # PÁGINA 3 DO ALUNO: PEI / PAEE DUA e PBS
-        p3 = f"""
-        <div class="page-block">
-            {make_header(p_ini_global + 2, title=f"PEI / PAEE DUA & PBS — {nome_aluno}")}
-            <h1 class="section-title">Plano Educacional Individualizado (PEI/PAEE) & Suporte Positivo</h1>
-            <div class="card-highlight">
-                <strong>Enquadramento:</strong> { 'Atendimento Educacional Especializado (AEE) Obrigatório' if laudo_aluno else 'Desenho Universal para a Aprendizagem (DUA) Regular' } | Agrupamento: {cluster_aluno}
-            </div>
-            <h2 class="sub-title">1. Adaptações Curriculares e Metodológicas Individualizadas</h2>
-            <div class="card" style="font-size:7.2pt; line-height:1.4;">
-                {
-                    f'<strong>Plano Especial AEE:</strong> Estudante com necessidade de apoio em múltiplos formatos. Instrução em passos curtos, material visual estruturado, reforço positivo imediato e pausas ativas a cada 20 minutos de foco. Adaptação de enunciados com linguagem direta e suporte de material concreto nas operações numéricas.'
-                    if laudo_aluno else
-                    f'<strong>Plano Geral DUA:</strong> Participação ativa no currículo comum com flexibilização de ritmo. Apoio em duplas produtivas, acesso a pistas visuais conceituais e desafios de aprofundamento para ampliação da autonomia leitora e lógica.'
-                }
-            </div>
-            <h2 class="sub-title">2. Metas de Curto Prazo (Bimestre Atual)</h2>
-            <table class="data-table">
-                <tr><th>Área</th><th>Meta Específica do Estudante</th><th>Estratégia de Mediação</th></tr>
-                <tr><td><strong>Língua Portuguesa</strong></td><td>Elevar fluência para ≥ 115 ppm com 95% de precisão</td><td>Leitura compartilhada diária e treino com parlendas/poemas.</td></tr>
-                <tr><td><strong>Matemática</strong></td><td>Dominar algoritmos de multiplicação por 2 dígitos</td><td>Treino vertical Kumon Nível C e uso de malha quadriculada.</td></tr>
-                <tr><td><strong>Comportamental</strong></td><td>Concluir 100% das tarefas propostas sem evadir do foco</td><td>Rotina visual, combinados claros e suporte comportamental positivo.</td></tr>
-            </table>
-            {make_footer(p_ini_global + 2)}
-        </div>
-        """
+        # PÁGINA 3 DO ALUNO: PEI / PAEE DUA e PBS Dinâmico (Universal DUA/PBS + AEE Oficial)
+        p3 = gerar_html_lauda_3_pei(
+            std_name=nome_aluno,
+            ano_num=4,
+            cluster_code=cluster_aluno,
+            p_curr=p_ini_global + 2,
+            tot_pages=1720,
+            aluno_hash=hid,
+            aee_map_h=aee_map_h,
+            aee_map_n=aee_map_n,
+            paee_map=paee_map,
+            pei_map=pei_map
+        )
         pages.append(p3)
 
         # PÁGINA 4 DO ALUNO: PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA

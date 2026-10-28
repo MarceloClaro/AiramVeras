@@ -27,6 +27,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 sys.path.append(os.path.dirname(__file__))
 from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+from modulo_pei_paee_dinamico import carregar_mapa_pei_paee, gerar_html_lauda_3_pei
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -310,24 +311,24 @@ def build_front_matter_40_pages():
             Para o <strong>2º Ano Único</strong> (coorte de 28 estudantes matriculados): <strong>40 + (28 x 40) = 1.160 laudas exatas</strong>.
         </div>
 
-        <h2 class="sub-title">1. Fundamentação Legal e Diretrizes Normativas</h2>
-        <table class="data-table">
-            <tr><th style="width:30%;">Marco Legal / Resolução</th><th style="width:70%;">Aplicação Pedagógica e Vinculação Institucional</th></tr>
-            <tr><td><strong>Lei Federal nº 9.394/1996 (LDB)</strong></td><td>Garante o direito à educação de qualidade social e à progressão contínua no ciclo de alfabetização e letramento pleno.</td></tr>
-            <tr><td><strong>Lei Federal nº 13.146/2015 (LBI)</strong></td><td>Obrigatoriedade de Atendimento Educacional Especializado (AEE), Plano de Ensino Individualizado (PEI) e Desenho Universal (DUA).</td></tr>
-            <tr><td><strong>Lei Federal nº 14.254/2021</strong></td><td>Acompanhamento integral para educandos com dislexia, TDAH e outros transtornos de aprendizagem em sala de aula regular.</td></tr>
-            <tr><td><strong>Resolução CNE/CP nº 01/2022</strong></td><td>Normas complementares para a BNCC Computação (pensamento computacional, mundo digital e cultura digital desplugada).</td></tr>
-            <tr><td><strong>Resolução CNE/CEB nº 04/2009</strong></td><td>Diretrizes operacionais para a Sala de Recursos Multifuncionais (SRM) e contraturno escolar inclusivo.</td></tr>
+        <h2 class="sub-title">1. Fundamentação Legal, Diretrizes Normativas & Governança SNE</h2>
+        <table class="data-table" style="font-size:6pt; line-height:1.15;">
+            <tr><th style="width:28%;">Marco Legal / Resolução</th><th style="width:72%;">Aplicação Pedagógica e Vinculação Institucional</th></tr>
+            <tr><td><strong>CF/1988 & LC nº 220/2025 (SNE)</strong></td><td>Princípio da Gestão Democrática (Art. 206, VI) e atuação do Fórum Municipal de Educação (FME) de Crateús (Arts. 16-21) com decisões baseadas em evidências Inep/SPAECE.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.005/2014 (PNE)</strong></td><td>Monitoramento contínuo das Metas 2, 4, 5, 6, 7 e 19 do Plano Municipal de Educação (PME) de Crateús com participação social da Plenária Municipal.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.146/2015 (LBI)</strong></td><td>Obrigatoriedade de AEE, Plano Educacional Individualizado (PEI), Suporte Positivo (PBS) e cuidador dedicado (Relação AEE Crateús 2026).</td></tr>
+            <tr><td><strong>Lei Federal nº 14.254/2021</strong></td><td>Acompanhamento integral para educandos com dislexia, TDAH e transtornos de aprendizagem em sala regular com ledor e tempo estendido (+50%).</td></tr>
+            <tr><td><strong>Resoluções CNE/CP 01/22 & 04/09</strong></td><td>Diretrizes da BNCC Computação e normas operacionais para a Sala de Recursos Multifuncionais (SRM) no contraturno escolar inclusivo.</td></tr>
             <tr><td><strong>Diretriz Municipal SME Crateús</strong></td><td>Jornada de Tempo Integral (INTEGRAL 35H) com matriz curricular expandida e 7 aulas diárias de 50 minutos.</td></tr>
         </table>
 
         <h2 class="sub-title">2. Princípios de Rigor Científico, Auditabilidade e Zero Ilhas</h2>
-        <p style="font-size:7.2pt; margin-bottom:4px;">
-            Este dossiê integra 100% dos dados censitários ao banco relacional canônico <code>airam_veras_ecossistema.sqlite</code> em Terceira Forma Normal (3FN), contendo 58 tabelas relacionais, 10 views analíticas e 0 ilhas de informação. Cada escore e predição psicométrica possui rastreabilidade forense no Ledger SHA-256 da instituição.
+        <p style="font-size:6.8pt; margin-bottom:3px; line-height:1.3;">
+            Este dossiê integra 100% dos dados censitários ao banco canônico <code>airam_veras_ecossistema.sqlite</code> em 3FN (62 tabelas, 0 ilhas). Cada escore possui rastreabilidade no Ledger SHA-256 (Bloco 34: Censo AEE Cuidadores e PEI/PAEE Universal 100%).
         </p>
 
-        <div class="card" style="font-size:6.8pt;">
-            <strong>Compromisso Ético e Inclusivo:</strong> O projeto adota a premissa inegociável de que nenhuma criança é deixada para trás. Alunos em defasagem recebem aceleração fônica 1:1 e micro-passos Kumon; estudantes consolidados e com Altas Habilidades (AH/SD) recebem enriquecimento curricular triádico Tipo III.
+        <div class="card" style="font-size:6.4pt; padding:3px 6px;">
+            <strong>Compromisso Ético e Inclusivo:</strong> O projeto adota a premissa de que nenhuma criança é deixada para trás. Alunos em defasagem recebem aceleração fônica 1:1 e micro-passos Kumon; alunos AEE recebem apoio de cuidadores dedicados; estudantes com Altas Habilidades (AH/SD) recebem enriquecimento curricular Tipo III.
         </div>
         {make_footer(2)}
     </div>
@@ -1219,13 +1220,21 @@ def build_students_custom_pages():
             'desc_spaece': pr[13]
         }
 
+    aee_map_h, aee_map_n, paee_map, pei_map = carregar_mapa_pei_paee(DB_PATH)
+
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT aluno_hash_id, nome_estudante FROM fato_praticas_diarias_leitura_fluencia WHERE ano_escolar = 2;")
+    hash_by_name = {r[1]: r[0] for r in cur.fetchall()}
+    conn.close()
+
     pages = []
 
     for s_idx, std_name in enumerate(std_names):
         cl = clusters_map.get(std_name, "2C")
         badge_cl = "badge-red" if cl == "2A" else ("badge-yellow" if cl == "2B" else ("badge-blue" if cl == "2C" else "badge-green"))
         p_base = 41 + s_idx * 40
-        h_nome = hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16]
+        h_nome = hash_by_name.get(std_name, hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16])
 
         st_long = long_data.get(std_name, {})
         st_lp = st_long.get('LEITURA', {})
@@ -1410,43 +1419,22 @@ def build_students_custom_pages():
         """
         pages.append(p2)
 
-        # 3. Plano PEI & PAEE Individualizado
-        p3 = f"""
-        <div class="page-block">
-            {make_header(p_base + 2, 1160, f"PLANO PEI / PAEE • {std_name}")}
-            <h1 class="section-title">Plano de Ensino Individualizado (PEI) & PAEE (2º Ano)</h1>
-            
-            <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Enquadramento:</strong> Leis 13.146/15 e 14.254/21 | <strong>Cluster:</strong> {cl} | <strong>Turma:</strong> 2º Ano Único (Tempo Integral 35H)
-            </div>
-
-            <h2 class="sub-title">1. Acomodações Pedagógicas e Desenho Universal (DUA)</h2>
-            <table class="data-table">
-                <tr><th style="width:30%;">Dimensão DUA</th><th style="width:70%;">Acomodação Específica em Sala de Aula</th></tr>
-                <tr><td><strong>Engajamento e Motivação</strong></td><td>Contrato de contingências contingente (PBS), reforço positivo discreto e tarefas fracionadas em blocos de 15 minutos.</td></tr>
-                <tr><td><strong>Apresentação e Representação</strong></td><td>Instrução explícita direta, pistas visuais em cores contrastantes, uso de letras em caixa-alta e fontes legíveis.</td></tr>
-                <tr><td><strong>Ação e Expressão</strong></td><td>Flexibilização do formato de resposta (aceitação de resposta oral, apontamento e uso de tecnologia assistiva).</td></tr>
-                <tr><td><strong>Avaliação Formativa</strong></td><td>Tempo estendido (+50%), leitura prévia de enunciados pelo professor regente e ambiente de aplicação tranquilo.</td></tr>
-            </table>
-
-            <h2 class="sub-title">2. Metas de Aprendizagem Curriculares Prioritárias (Ciclo III)</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                <div class="card" style="font-size:6.8pt;">
-                    <strong>Eixo Língua Portuguesa:</strong><br>
-                    • Superação de trocas surdo-sonoras e fixação de dígrafos regulares.<br>
-                    • Fluência mínima de 50 a 65 WCPM com precisão superior a 90%.<br>
-                    • Produção de frases com pontuação correta (ponto final, interrogação).
-                </div>
-                <div class="card" style="font-size:6.8pt;">
-                    <strong>Eixo Matemática & Lógica:</strong><br>
-                    • Automatização dos fatos básicos da adição e subtração até 20.<br>
-                    • Reconhecimento de figuras planas e manuseio de cédulas e moedas.<br>
-                    • Resolução de algoritmos lógicos e labirintos da BNCC Computacional.
-                </div>
-            </div>
-            {make_footer(p_base + 2)}
-        </div>
-        """
+        # 3. Plano PEI & PAEE Individualizado Dinâmico
+        p3 = gerar_html_lauda_3_pei(
+            aluno_hash_id=hash_by_name.get(std_name, h_nome),
+            nome_aluno=std_name,
+            ano_escolar=2,
+            turma_nome="2º Ano Único (Tempo Integral 35H)",
+            cluster_cod=cl,
+            p_num=p_base + 2,
+            total_pages=1160,
+            make_header=make_header,
+            make_footer=make_footer,
+            aee_map_hash=aee_map_h,
+            aee_map_nome=aee_map_n,
+            paee_map=paee_map,
+            pei_map=pei_map
+        )
         pages.append(p3)
 
         # 4. PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA

@@ -27,6 +27,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 sys.path.append(os.path.dirname(__file__))
 from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+from modulo_pei_paee_dinamico import carregar_mapa_pei_paee, gerar_html_lauda_3_pei
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -319,53 +320,32 @@ def build_front_matter_40_pages():
         <h1 class="section-title">Apresentação Institucional & Arquitetura Universal Paramétrica</h1>
         
         <div class="card-highlight">
-            <strong>Marco Normativo:</strong> Este Dossiê Mestre do 3º Ano materializa a consolidação da alfabetização plena e a transição para o letramento científico e matemático avançado, integrando a Matriz Diagnóstica CAEd Ciclo I 2026, a BNCC, as diretrizes do SPAECE e a jornada de <strong>Tempo Integral (35 Horas Semanais)</strong> da Secretaria Municipal de Educação de Crateús.
+            <strong>Arquitetura Paramétrica de Paginação Estrita (Strict Page Budgeting Dinâmico Universal):</strong><br>
+            A extensão de cada dossiê segue a equação paramétrica de integridade física e contratual:<br>
+            <div style="text-align:center; font-family:monospace; font-size:8.5pt; font-weight:bold; color:#1e40af; margin:3px 0;">
+                Laudas Totais(Turma) = 40 [Front Matter Master] + (N_estudantes x 40 [Caderno Individual])
+            </div>
+            Para o <strong>3º Ano Único</strong> (coorte de 24 estudantes matriculados): <strong>40 + (24 x 40) = 1.000 laudas exatas</strong>.
         </div>
 
-        <h2 class="sub-title">1. A Regra de Ouro da Paginação Estrita Universal: 40 FM + N x 40 Caderno</h2>
-        <p style="font-size:7.2pt; text-align:justify;">
-            Para assegurar uniformidade editorial e rigor forense em todas as turmas (1º ao 5º Ano), a Escola Airam Veras instituiu o algoritmo paramétrico invariante de paginação:
-        </p>
-        <div class="card" style="text-align:center; font-family:monospace; font-size:9pt; background:#f1f5f9; padding:8px;">
-            Total de Laudas = 40 (Front Matter Master) + [ N_alunos x 40 (Caderno Estruturado) ]
-        </div>
-        <p style="font-size:7.2pt; text-align:justify;">
-            Na coorte do <strong>3º Ano Único</strong>, com <strong>N = 24 estudantes avaliados</strong>, o cálculo resulta rigorosamente em:
-            <br>
-            <center><strong>40 + (24 x 40) = 40 + 960 = 1.000 laudas vetoriais A4 exatas.</strong></center>
-        </p>
-
-        <h2 class="sub-title">2. Distribuição Modular de Cada Caderno Individual (40 Laudas por Aluno)</h2>
-        <table class="data-table">
-            <tr>
-                <th style="width:25%;">Módulo do Caderno</th>
-                <th style="width:15%; text-align:center;">Páginas Físicas</th>
-                <th style="width:60%;">Conteúdo Pedagógico Estruturado</th>
-            </tr>
-            <tr>
-                <td><strong>Módulo 1: Identidade & Perfil</strong></td>
-                <td style="text-align:center; font-weight:bold;">4 laudas</td>
-                <td>Capa individual, Raio-X Neurocognitivo 7D, Plano PEI/PAEE (DUA/PBS) e Trilha Kumon/Fônico.</td>
-            </tr>
-            <tr>
-                <td><strong>Módulo 2: Língua Portuguesa</strong></td>
-                <td style="text-align:center; font-weight:bold;">26 laudas</td>
-                <td>Práticas diárias fônicas, decodificação silábica complexa, caligrafia cursiva e fluência de leitura.</td>
-            </tr>
-            <tr>
-                <td><strong>Módulo 3: Matemática Granular</strong></td>
-                <td style="text-align:center; font-weight:bold;">4 laudas</td>
-                <td>Kumon Adaptado (Níveis 3A a A/B), fatos de adição/subtração com reagrupamento e geometria.</td>
-            </tr>
-            <tr>
-                <td><strong>Módulo 4: Multidisciplinar</strong></td>
-                <td style="text-align:center; font-weight:bold;">6 laudas</td>
-                <td>Ciências, História/Geografia, Arte/Ed. Física, BNCC Computação, Ficha Semanal e Homologação.</td>
-            </tr>
+        <h2 class="sub-title">1. Fundamentação Legal, Diretrizes Normativas & Governança SNE</h2>
+        <table class="data-table" style="font-size:6pt; line-height:1.15;">
+            <tr><th style="width:28%;">Marco Legal / Resolução</th><th style="width:72%;">Aplicação Pedagógica e Vinculação Institucional</th></tr>
+            <tr><td><strong>CF/1988 & LC nº 220/2025 (SNE)</strong></td><td>Princípio da Gestão Democrática (Art. 206, VI) e atuação do Fórum Municipal de Educação (FME) de Crateús (Arts. 16-21) com decisões baseadas em evidências Inep/SPAECE.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.005/2014 (PNE)</strong></td><td>Monitoramento contínuo das Metas 2, 4, 5, 6, 7 e 19 do Plano Municipal de Educação (PME) de Crateús com participação social da Plenária Municipal.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.146/2015 (LBI)</strong></td><td>Obrigatoriedade de AEE, Plano Educacional Individualizado (PEI), Suporte Positivo (PBS) e cuidador dedicado (Relação AEE Crateús 2026).</td></tr>
+            <tr><td><strong>Lei Federal nº 14.254/2021</strong></td><td>Acompanhamento integral para educandos com dislexia, TDAH e transtornos de aprendizagem em sala regular com ledor e tempo estendido (+50%).</td></tr>
+            <tr><td><strong>Resoluções CNE/CP 01/22 & 04/09</strong></td><td>Diretrizes da BNCC Computação e normas operacionais para a Sala de Recursos Multifuncionais (SRM) no contraturno escolar inclusivo.</td></tr>
+            <tr><td><strong>Diretriz Municipal SME Crateús</strong></td><td>Jornada de Tempo Integral (INTEGRAL 35H) com matriz curricular expandida e 7 aulas diárias de 50 minutos.</td></tr>
         </table>
 
-        <div class="card" style="font-size:7pt; border-left:3px solid #10b981;">
-            <strong>Garantia de Qualidade Censitária:</strong> 100% dos 24 alunos matriculados no 3º Ano possuem seus cadernos gerados com dados personalizados, sem perdas amostrais e com chancela criptográfica no Bloco 20 do Ledger.
+        <h2 class="sub-title">2. Princípios de Rigor Científico, Auditabilidade e Zero Ilhas</h2>
+        <p style="font-size:6.8pt; margin-bottom:3px; line-height:1.3;">
+            Este dossiê integra 100% dos dados censitários ao banco canônico <code>airam_veras_ecossistema.sqlite</code> em 3FN (62 tabelas, 0 ilhas). Cada escore possui rastreabilidade no Ledger SHA-256 (Bloco 34: Censo AEE Cuidadores e PEI/PAEE Universal 100%).
+        </p>
+
+        <div class="card" style="font-size:6.4pt; padding:3px 6px;">
+            <strong>Compromisso Ético e Inclusivo:</strong> O projeto adota a premissa de que nenhuma criança é deixada para trás. Alunos em defasagem recebem aceleração fônica 1:1 e micro-passos Kumon; alunos AEE recebem apoio de cuidadores dedicados; estudantes com Altas Habilidades (AH/SD) recebem enriquecimento curricular Tipo III.
         </div>
         {make_footer(2)}
     </div>
@@ -1108,13 +1088,21 @@ def build_students_custom_pages():
             'desc_spaece': pr[13]
         }
 
+    aee_map_h, aee_map_n, paee_map, pei_map = carregar_mapa_pei_paee(DB_PATH)
+
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT aluno_hash_id, nome_estudante FROM fato_praticas_diarias_leitura_fluencia WHERE ano_escolar = 3;")
+    hash_by_name = {r[1]: r[0] for r in cur.fetchall()}
+    conn.close()
+
     pages = []
 
     for s_idx, std_name in enumerate(std_names):
         cl = clusters_map.get(std_name, "3C")
         badge_cl = "badge-red" if cl == "3A" else ("badge-yellow" if cl == "3B" else ("badge-blue" if cl == "3C" else "badge-green"))
         p_base = 41 + s_idx * 40
-        h_nome = hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16]
+        h_nome = hash_by_name.get(std_name, hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16])
 
         st_long = long_data.get(std_name, {})
         st_lp = st_long.get('LEITURA', {})
@@ -1299,43 +1287,19 @@ def build_students_custom_pages():
         """
         pages.append(p2)
 
-        # 3. Plano PEI & PAEE Individualizado
-        p3 = f"""
-        <div class="page-block">
-            {make_header(p_base + 2, 1000, f"PLANO PEI / PAEE • {std_name}")}
-            <h1 class="section-title">Plano de Ensino Individualizado (PEI) & PAEE (3º Ano)</h1>
-            
-            <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Enquadramento:</strong> Leis 13.146/15 e 14.254/21 | <strong>Cluster:</strong> {cl} | <strong>Turma:</strong> 3º Ano Único (Tempo Integral 35H)
-            </div>
-
-            <h2 class="sub-title">1. Acomodações Pedagógicas e Desenho Universal (DUA)</h2>
-            <table class="data-table">
-                <tr><th style="width:30%;">Dimensão DUA</th><th style="width:70%;">Acomodação Específica em Sala de Aula</th></tr>
-                <tr><td><strong>Engajamento e Motivação</strong></td><td>Contrato de contingências contingente (PBS), reforço positivo discreto e tarefas fracionadas.</td></tr>
-                <tr><td><strong>Apresentação e Representação</strong></td><td>Instrução explícita direta, pistas visuais em cores contrastantes, uso de caligrafia cursiva guiada.</td></tr>
-                <tr><td><strong>Ação e Expressão</strong></td><td>Flexibilização do formato de resposta (aceitação de resposta oral, esquemas visuais e cálculo assistido).</td></tr>
-                <tr><td><strong>Avaliação Formativa</strong></td><td>Tempo estendido (+50%), leitura prévia de enunciados pelo professor regente e ambiente acolhedor.</td></tr>
-            </table>
-
-            <h2 class="sub-title">2. Metas de Aprendizagem Curriculares Prioritárias (Ciclo III)</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                <div class="card" style="font-size:6.8pt;">
-                    <strong>Eixo Língua Portuguesa:</strong><br>
-                    • Fluência leitora expressiva ≥ 75 WCPM com precisão > 92%.<br>
-                    • Localização de informação explícita (H01) e inferência implícita (H05).<br>
-                    • Produção textual orientada com pontuação correta (parágrafo e travessão).
-                </div>
-                <div class="card" style="font-size:6.8pt;">
-                    <strong>Eixo Matemática & Lógica:</strong><br>
-                    • Superação da defasagem em H02 (Adição e Subtração com Reagrupamento).<br>
-                    • Raciocínio dedutivo e decomposição em unidades, dezenas e centenas.<br>
-                    • Algoritmos desplugados e resolução de labirintos lógicos da BNCC Computação.
-                </div>
-            </div>
-            {make_footer(p_base + 2)}
-        </div>
-        """
+        # 3. Plano PEI & PAEE Individualizado Dinâmico (Universal DUA/PBS + AEE Oficial)
+        p3 = gerar_html_lauda_3_pei(
+            std_name=std_name,
+            ano_num=3,
+            cluster_code=cl,
+            p_curr=p_base + 2,
+            tot_pages=1000,
+            aluno_hash=h_nome,
+            aee_map_h=aee_map_h,
+            aee_map_n=aee_map_n,
+            paee_map=paee_map,
+            pei_map=pei_map
+        )
         pages.append(p3)
 
         # 4. PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA

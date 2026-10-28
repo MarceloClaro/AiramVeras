@@ -27,6 +27,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 sys.path.append(os.path.dirname(__file__))
 from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+from modulo_pei_paee_dinamico import carregar_mapa_pei_paee, gerar_html_lauda_3_pei
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -252,12 +253,12 @@ def build_front_matter_40_pages():
             </p>
         </div>
 
-        <div style="border:1px solid #cbd5e1; background:#ffffff; border-radius:6px; padding:10px; font-size:7pt; text-align:left; line-height:1.35;">
-            <div style="font-weight:800; color:#1e3a8a; font-size:8pt; margin-bottom:4px; border-bottom:1px solid #e2e8f0; padding-bottom:2px;">CHANCELA FORENSE & CONFORMIDADE JURÍDICO-INSTITUCIONAL</div>
-            <div>• <strong>Legislação Aplicada:</strong> LBI (Lei 13.146/2015), Lei Berenice Piana (Lei 12.764/2012), Lei 14.254/2021, Res. CNE 04/2009, Dec. 7.611/2011, Parecer CNE/CP 50/2023 e Nota Técnica 02/2025/MEC.</div>
+        <div style="border:1px solid #cbd5e1; background:#ffffff; border-radius:6px; padding:8px 10px; font-size:6.7pt; text-align:left; line-height:1.3;">
+            <div style="font-weight:800; color:#1e3a8a; font-size:7.5pt; margin-bottom:3px; border-bottom:1px solid #e2e8f0; padding-bottom:2px;">CHANCELA FORENSE & CONFORMIDADE JURÍDICO-INSTITUCIONAL</div>
+            <div>• <strong>Governança Democrática & SNE:</strong> CF/88 (Art. 206, VI), PNE (Lei 13.005/2014, Art. 5º) e SNE (Lei Complementar nº 220/2025, Arts. 16-21) — articulação permanente com o Fórum Municipal de Educação (FME), Conselho Municipal de Educação (CME), Comissão Gestora do PME e SME Crateús para monitoramento de evidências oficiais do Inep/SPAECE.</div>
+            <div>• <strong>Legislação Inclusiva:</strong> LBI (Lei 13.146/2015), Lei TEA (12.764/2012), Lei 14.254/2021, Res. CNE 04/2009, Dec. 7.611/2011, Parecer CNE/CP 50/2023 e Nota Técnica 02/2025/MEC.</div>
             <div>• <strong>Matriz Curricular:</strong> 9 Componentes da BNCC (Língua Portuguesa, Matemática, Ciências, História, Geografia, Arte, Educação Física, Ensino Religioso e BNCC Computacional - Res. CNE/CP 1/2022).</div>
-            <div>• <strong>Trilha Criptográfica:</strong> Bloco 27 do Ledger Imutável SHA-256 no banco relacional canônico <code>airam_veras_ecossistema.sqlite</code> (59 tabelas relacionais em 3FN, 0 ilhas).</div>
-            <div>• <strong>Proteção de Dados:</strong> Em estrita observância à LGPD (Lei 13.709/2018), com anonimização pericial de prontuários sensíveis e guarda de segredo profissional docente.</div>
+            <div>• <strong>Trilha Criptográfica & Proteção:</strong> Bloco 33 do Ledger Imutável SHA-256 no banco relacional canônico <code>airam_veras_ecossistema.sqlite</code> (59 tabelas relacionais em 3FN, 0 ilhas) e estrita observância à LGPD (Lei 13.709/2018).</div>
         </div>
         {make_footer(1)}
     </div>
@@ -487,32 +488,44 @@ def build_front_matter_40_pages():
     """
     pages.append(p4)
 
-    # Lauda 5: Marco Legal da Educação Especial Inclusiva
+    # Lauda 5: Marco Legal da Educação Inclusiva & Governança Democrática (SNE)
     p5 = f"""
     <div class="page-block">
         {make_header(5)}
-        <h1 class="section-title">Marco Legal da Educação Especial Inclusiva Parametrizado</h1>
+        <h1 class="section-title">Marco Legal da Educação Inclusiva & Governança Democrática (SNE)</h1>
         
-        <p style="font-size:7pt;">O Dossiê Mestre e os registros individuais do banco de dados cumprem rigorosamente a legislação brasileira de acessibilidade pedagógica e educação especial:</p>
+        <p style="font-size:6.7pt; margin-bottom:3px;">O Dossiê Mestre e os registros do banco de dados cumprem a legislação federal, o Sistema Nacional de Educação (SNE) e as diretrizes do Fórum Municipal de Educação:</p>
 
-        <table class="data-table">
+        <table class="data-table" style="font-size:5.7pt; line-height:1.12; margin-bottom:3px;">
             <tr>
-                <th style="width:20%;">Norma Jurídica</th>
+                <th style="width:22%;">Norma Jurídica</th>
                 <th style="width:16%;">Artigos Centrais</th>
-                <th style="width:32%;">Determinação Operacional na Escola Airam Veras</th>
-                <th style="width:32%;">Diretriz Avaliativa CAEd / SPAECE</th>
+                <th style="width:31%;">Determinação na Escola Airam Veras</th>
+                <th style="width:31%;">Diretriz CAEd / SPAECE / Inep</th>
+            </tr>
+            <tr>
+                <td><strong>CF/1988 & LC nº 220/2025 (SNE)</strong></td>
+                <td>Art. 206 (VI) / Arts. 16 a 21</td>
+                <td>Gestão democrática e decisões colegiadas baseadas em evidências oficiais do FME/CME Crateús.</td>
+                <td>Uso obrigatório de microdados Inep e Painel PNE para combate a disparidades educacionais.</td>
+            </tr>
+            <tr>
+                <td><strong>Lei Federal nº 13.005/2014 (PNE)</strong></td>
+                <td>Art. 5º, § 1º (Metas PME)</td>
+                <td>Alinhamento contínuo às Metas 2, 4, 5, 6, 7 e 19 do Plano Municipal de Educação de Crateús.</td>
+                <td>Acompanhamento contínuo da taxa de alfabetização e proficiência longitudinal da coorte.</td>
             </tr>
             <tr>
                 <td><strong>Lei nº 13.146/2015 (LBI)</strong></td>
                 <td>Arts. 27, 28 (I a XVII) e 30</td>
-                <td>Oferta compulsória de adaptações razoáveis, mediação pedagógica continuada e proibição de recusa de matrícula.</td>
-                <td>Tempo adicional estendido (+50%), formatos acessíveis e redução de distratores.</td>
+                <td>Oferta compulsória de adaptações razoáveis, mediação continuada e vedação de recusa de matrícula.</td>
+                <td>Tempo adicional estendido (+50%), formatos acessíveis e redução de distratores sensoriais.</td>
             </tr>
             <tr>
                 <td><strong>Lei nº 12.764/2012 (TEA)</strong></td>
                 <td>Arts. 2º (III) e 3º (IV)</td>
-                <td>Atendimento a pessoas com TEA como PCD, direito a profissional de apoio escolar e rotinas visuais estáveis.</td>
-                <td>Sala de aplicação silenciosa, suporte pictográfico e permissão de objetos regulatórios.</td>
+                <td>Pessoas com TEA como PCD, direito a profissional de apoio escolar e rotinas visuais estáveis TEACCH.</td>
+                <td>Sala silenciosa de aplicação, suporte pictográfico e permissão de objetos regulatórios.</td>
             </tr>
             <tr>
                 <td><strong>Lei nº 14.254/2021</strong></td>
@@ -523,8 +536,8 @@ def build_front_matter_40_pages():
             <tr>
                 <td><strong>Res. CNE/CEB nº 04/2009</strong></td>
                 <td>Arts. 1º ao 13</td>
-                <td>Atendimento Educacional Especializado (AEE) na Sala de Recursos Multifuncionais (SRM) no contraturno.</td>
-                <td>Planejamento articulado quinzenal entre professor da SRM e professor da sala regular.</td>
+                <td>Atendimento Educacional Especializado (AEE) na SRM no contraturno articulado com a sala regular.</td>
+                <td>Planejamento quinzenal conjunto entre professor regente e docente do AEE.</td>
             </tr>
             <tr>
                 <td><strong>Decreto nº 7.611/2011</strong></td>
@@ -535,7 +548,7 @@ def build_front_matter_40_pages():
             <tr>
                 <td><strong>Parecer CNE/CP nº 50/2023</strong></td>
                 <td>Seções 4, 5 e 6</td>
-                <td>Plano Educacional Individualizado (PEI) como instrumento obrigatório e Suporte Comportamental Positivo (PBS).</td>
+                <td>Plano Educacional Individualizado (PEI) compulsório e Suporte Comportamental Positivo (PBS).</td>
                 <td>Proibição de tarefas avulsas desconectadas; metas funcionais adaptadas e mensuráveis.</td>
             </tr>
             <tr>
@@ -546,8 +559,18 @@ def build_front_matter_40_pages():
             </tr>
         </table>
 
-        <div class="card-highlight" style="font-size:7pt;">
-            <strong>Garantia de Não-Discriminação em Avaliações Externas:</strong> A aplicação de instrumentos diagnósticos oficiais (CAEd, SPAECE e SAAP) a estudantes da Educação Especial não tem caráter classificatório excludente, mas sim função de diagnóstico de barreiras para redirecionamento das tecnologias assistivas e do plano de AEE.
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:2px;">
+            <div class="card" style="font-size:5.8pt; line-height:1.2; padding:3px 6px;">
+                <div style="font-weight:bold; color:#1e3a8a; margin-bottom:1px;">MATRIZ DE COMPETÊNCIAS INSTITUCIONAIS (CRATEÚS):</div>
+                • <strong>FME:</strong> Articuladora e Propositiva (Conferências, PME, controle social).<br>
+                • <strong>CME:</strong> Normativa, Consultiva, Deliberativa e Fiscalizadora.<br>
+                • <strong>Comissão PME:</strong> Técnica e Focada (Elaboração, monitoramento e revisão).<br>
+                • <strong>SME Crateús:</strong> Executiva e Administrativa (Suporte e gestão da rede).
+            </div>
+            <div class="card-highlight" style="font-size:5.8pt; line-height:1.2; padding:3px 6px;">
+                <div style="font-weight:bold; color:#065f46; margin-bottom:1px;">NÃO-DISCRIMINAÇÃO EM AVALIAÇÕES EXTERNAS:</div>
+                A aplicação de instrumentos diagnósticos oficiais (CAEd, SPAECE e SAAP) a estudantes da Educação Especial não tem caráter classificatório excludente, mas sim função de diagnóstico de barreiras para redirecionamento das tecnologias assistivas e do plano de AEE.
+            </div>
         </div>
         {make_footer(5)}
     </div>
@@ -1593,13 +1616,21 @@ def build_students_custom_pages():
             'desc_spaece': pr[13]
         }
 
+    aee_map_h, aee_map_n, paee_map, pei_map = carregar_mapa_pei_paee(DB_PATH)
+
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT aluno_hash_id, nome_estudante FROM fato_praticas_diarias_leitura_fluencia WHERE ano_escolar = 1;")
+    hash_by_name = {r[1]: r[0] for r in cur.fetchall()}
+    conn.close()
+
     pages = []
 
     for s_idx, std_name in enumerate(std_names):
         cl = clusters_map.get(std_name, "1C")
         badge_cl = "badge-red" if cl == "1A" else ("badge-yellow" if cl == "1B" else ("badge-blue" if cl == "1C" else "badge-green"))
         p_base = 41 + s_idx * 40
-        h_nome = hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16]
+        h_nome = hash_by_name.get(std_name, hashlib.sha256(std_name.encode('utf-8')).hexdigest()[:16])
 
         st_lp = long_data.get(std_name, {}).get('LP', {})
         st_mat = long_data.get(std_name, {}).get('MAT', {})
@@ -1723,50 +1754,22 @@ def build_students_custom_pages():
         """
         pages.append(p2)
 
-        # 3. PEI Bimestral Personalizado
-        p3 = f"""
-        <div class="page-block">
-            {make_header(p_base + 2, 1000, f"PLANO PEI BIMESTRAL • {std_name}")}
-            <h1 class="section-title">Plano Educacional Individualizado (PEI) Bimestral</h1>
-            
-            <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Amparo Legal:</strong> LBI Lei 13.146/2015, Parecer CNE 50/2023 & Nota Técnica 02/2025/MEC
-            </div>
-
-            <table class="data-table">
-                <tr><th style="width:20%;">Bimestre Letivo</th><th style="width:30%;">Objetivos Funcionais & Metas Adaptadas</th><th style="width:30%;">Acomodações DUA & Tecnologias Assistivas</th><th style="width:20%;">Critério de Sucesso</th></tr>
-                <tr>
-                    <td><strong>Bimestre I</strong></td>
-                    <td>Consolidar correspondência som-letra de P, M, V, F; contagem até 20 sem lacunas.</td>
-                    <td>Letras de lixa táteis, material dourado e mesa posicionada na primeira fila.</td>
-                    <td>80% de precisão na identificação dos sons em 10 tentativas.</td>
-                </tr>
-                <tr>
-                    <td><strong>Bimestre II</strong></td>
-                    <td>Decodificar sílabas simples e palavras dissílabas; adições até 10 com apoio concreto.</td>
-                    <td>Cartelas silábicas coloridas, dominós com agrupamentos e pausas ativas motoras.</td>
-                    <td>Leitura de 15 palavras por minuto com precisão mínima de 75%.</td>
-                </tr>
-                <tr>
-                    <td><strong>Bimestre III</strong></td>
-                    <td>Leitura expressiva de cantigas e frases; identificação de figuras geométricas planas/espaciais.</td>
-                    <td>Máscara de leitura visual, sólidos geométricos em madeira e apoio de ledor.</td>
-                    <td>Compreensão literal de 3 informações explícitas no texto.</td>
-                </tr>
-                <tr>
-                    <td><strong>Bimestre IV</strong></td>
-                    <td>Produção de legendas curtas e resolução de problemas aditivos com autonomia.</td>
-                    <td>Uso de pranchas de apoio lexical e tempo estendido (+50%) nas avaliações.</td>
-                    <td>Atingimento da Meta B (≥ 80% de acertos globais no CAEd).</td>
-                </tr>
-            </table>
-
-            <div class="card" style="font-size:7pt;">
-                <strong>Protocolo de Apoio Comportamental Positivo (PBS):</strong> Reforço diferencial de comportamentos alternativos com proporção mínima de 4 elogios específicos para cada 1 redirecionamento; transições de tarefas com aviso prévio de 5 minutos.
-            </div>
-            {make_footer(p_base + 2)}
-        </div>
-        """
+        # 3. PEI Bimestral Personalizado & Diretrizes PAEE Dinâmicas
+        p3 = gerar_html_lauda_3_pei(
+            aluno_hash_id=h_nome,
+            nome_aluno=std_name,
+            ano_escolar=1,
+            turma_nome="1º Ano Único (Tempo Integral 35H)",
+            cluster_cod=cl,
+            p_num=p_base + 2,
+            total_pages=1000,
+            make_header=make_header,
+            make_footer=make_footer,
+            aee_map_hash=aee_map_h,
+            aee_map_nome=aee_map_n,
+            paee_map=paee_map,
+            pei_map=pei_map
+        )
         pages.append(p3)
 
         # 4. PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA

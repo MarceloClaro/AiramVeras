@@ -117,10 +117,16 @@ graph TD
 | **3º Ano** | `3º Ano Único (Tempo Integral 35H)` | 24 | $40 + (24 \times 40) = \mathbf{1.000\text{ pág.}}$ | [`DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `7a7104d298c22f1760b0830e1b5af01ccad4b0f27769528cebd9db8896204c68` | **Bloco 29** |
 | **4º Ano** | `4º Ano A (22) + 4º Ano B (20)` | 42 | $40 + (42 \times 40) = \mathbf{1.720\text{ pág.}}$ | [`DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `a10ed764982fec67ccfe33b37a95299d4e57e72be0af04c65af9ed5d6d0d1752` | **Bloco 30** |
 | **5º Ano** | `5º Ano A (27) + 5º Ano B (27)` | 54 | $40 + (54 \times 40) = \mathbf{2.200\text{ pág.}}$ | [`DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `b5838300b239c24e0b33865af363c8f5b3e3577d9517456489530c3c60fffa5d` | **Bloco 31** |
-| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 32** |
+| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 34** |
 
 > **Bloco 32 do Ledger Imutável (Hash Forense `d6cd514dd9a6a53b44ccb35c9e79fa56631ab97599f43ef0e15d2bf5885de444`)**:  
-> **Homologação das Práticas Diárias de Leitura e Fluência — Abordagem Fônica Estruturada nos 4 Bimestres & Plano de Recomposição SPAECE/SAEB**: Estruturação canônica individualizada na tabela `fato_praticas_diarias_leitura_fluencia` para 100% da coorte censitária ($N=172$), com divisão granular em **1º Bimestre, 2º Bimestre, 3º Bimestre e 4º Bimestre**, metas de fluência cronometrada (PPM/WCPM), descritores prioritários do SPAECE (D01 a D18), clusterização adaptativa por grupos (G1 a G4) e protocolos específicos de acessibilidade DUA/PBS para estudantes **PAEE** ($N=45$) e com **PEI** oficial.
+> **Homologação das Práticas Diárias de Leitura e Fluência — Abordagem Fônica Estruturada nos 4 Bimestres & Plano de Recomposição SPAECE/SAEB**: Estruturação canônica individualizada na tabela `fato_praticas_diarias_leitura_fluencia` para 100% da coorte censitária ($N=172$), com divisão granular em **1º Bimestre, 2º Bimestre, 3º Bimestre e 4º Bimestre**, metas de fluência cronometrada (PPM/WCPM), descritores prioritários do SPAECE (D01 a D18), clusterização adaptativa por grupos (G1 a G4) e protocolos específicos de acessibilidade DUA/PBS para estudantes **PAEE** e com **PEI** oficial.
+
+> **Bloco 33 do Ledger Imutável (Hash Forense `88cf7381534b86eb3bca0a3a41e9754f76269df7f0c1e8783e44ce10e1eb3ce6`)**:  
+> **Governança Democrática e Alinhamento Legal com o Fórum Municipal de Educação (FME) de Crateús**: Incorporação das diretrizes da Lei Complementar nº 220/2025 (Sistema Nacional de Educação - SNE, Arts. 16 a 21), Plano Municipal de Educação (Lei 13.005/2014, Metas 2, 4, 5, 6, 7 e 19), Lei Brasileira de Inclusão (Lei 13.146/2015) e Lei nº 14.254/2021 em 100% dos dossiês mestres e no ecossistema de dados.
+
+> **Bloco 34 do Ledger Imutável (Hash Forense `8d4b522d93efb5608fc9465d5d86a163661a68d5e4f3c01a1acde5647d0bd6c1`)**:  
+> **Censo Oficial AEE Cuidadores 2026, Rastreamento Pericial de Padrões e Universalização do PEI & PAEE (100% dos 172 Alunos)**: Ingestão censitária da `dim_aee_cuidadores_relacao_oficial_2026` a partir do documento oficial de 27/10/2026 (52 neurodivergentes laudados, 6 em triagem diagnóstica ativa e 114 regulares). Povoamento canônico de **172 planos de atendimento no PAEE** (`fato_paee_plano_atendimento`) e **688 planos bimestrais individualizados no PEI** (`fato_pei_estudante_adaptacoes`, 172 alunos $\times$ 4 bimestres), assegurando Desenho Universal para a Aprendizagem (DUA) e Suporte Positivo (PBS) em 100% da escola.
 
 Este ecossistema documental estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal dos Ciclos I, II e III.
 
@@ -2063,14 +2069,45 @@ Incorporado canonicamente na **Lauda 27** do Front Matter Master de todas as tur
 
 ---
 
+## 🧩 Censo Oficial AEE Cuidadores 2026, Rastreamento Pericial e Universalização do PEI/PAEE
+
+A partir do documento oficial de designação da Secretaria Municipal de Educação de Crateús (atualizado em 27/10/2026), o ecossistema integrou a relação completa de educandos da Educação Especial, diagnosticados e em triagem, com seus respectivos cuidadores/apoiadores escolares, diagnósticos CID-10/11 e protocolos de mediação.
+
+### 1. Panorama Censitário e Distribuição por Tipologia ($N = 172$ estudantes)
+
+| Categoria Clínica / Acompanhamento | População ($N$) | Percentual (%) | Enquadramento Normativo e Suporte |
+|:---|:---:|:---:|:---|
+| **Neurodivergentes Laudados (AEE)** | **52** | **30,2%** | LBI (Lei 13.146/15), Lei 14.254/21, SRM contraturno e cuidador dedicado (82,7%). |
+| **Estudantes em Triagem Diagnóstica Ativa** | **6** | **3,5%** | Relação AEE 27/10/2026: Guilherme Matias (2º), Jose Breno (2º), Antonia Evellyn (4º), Francisco Arthur (4º), Hyago Caetano (5º) e João de Deus (5º). |
+| **Não-Divergentes (Desenvolvimento Regular)** | **114** | **66,3%** | Desenho Universal para a Aprendizagem (DUA) e modelo de Resposta à Intervenção (RTI). |
+| **Total Censitário da Escola** | **172** | **100,0%** | **100% dos estudantes com PEI quadrimestral e PAEE ativo no banco canônico.** |
+
+### 2. Rastreamento Pericial de Padrões Clínicos e de Apoio dos Neurodivergentes
+- **Prevalência Diagnóstica**: O Transtorno do Espectro Autista (TEA - CID F84.0 / CID-11 6A02), isolado ou associado a TDAH (F90.0) e Transtorno Opositor Desafiador (TOD - F91.3), representa **61,5%** da coorte neurodivergente. Deficiência Intelectual (F70-F79) responde por 15,4%, Transtornos Específicos de Aprendizagem (F81) por 9,6%, Síndrome de Down (Q90) por 5,8% e outras condições neurológicas (microcefalia, paralisia cerebral, deficiência física) por 7,7%.
+- **Infraestrutura de Apoiadores/Cuidadores**: 82,7% dos neurodivergentes laudados possuem cuidador dedicado (integral ou compartilhado 1:2); 13,5% contam com suporte na SRM e autonomia supervisionada em sala comum.
+- **Caso Prioritário PBS**: *Gustavo Sales Machado* (1º Ano - TDAH + TOD) com protocolo imediato de desescalada comportamental, contrato de contingências, pausas sensoriais ativas a cada 15 min e rota de acolhimento.
+
+### 3. Investigação Analítica dos Estudantes Não-Divergentes ($N = 114$)
+- **Cluster G4 (Avançado / Altas Habilidades em Potencial)**: **63 alunos (55,3%)** — fluência leitora > 115 ppm, domínio de fatos numéricos e aptidão para enriquecimento curricular Tipo III (Renzulli) e projetos desplugados da BNCC Computação.
+- **Cluster G3 (Proficiência Adequada / Básico Consolidado)**: **36 alunos (31,6%)** — consolidação da rota lexical e resolução de situações-problema padrão CAEd/SPAECE.
+- **Cluster G2 (Atenção / Transição)**: **9 alunos (7,9%)** — micro-passos Kumon e reforço de prosódia leitora.
+- **Cluster G1 (Recomposição Crítica RTI Camada 2)**: **Apenas 6 alunos (5,3%)** dos não-divergentes encontram-se em defasagem severa: *Deborah Louise, Henso Ryan, Maria Safyra, Pedro Gabriel* (4º Ano), *Davi Santiago e Guilherme Vieira* (5º Ano). Protocolo imediato: aceleração fônica 1:1, recomposição de valor posicional e monitoramento quinzenal.
+
+### 4. Arquitetura Universal do PEI (688 Planos) e PAEE (172 Planos)
+- **Tabela `fato_paee_plano_atendimento` ($N = 172$)**: Plano de Atendimento Educacional Especializado universal para cada aluno da escola, registrando frequência SRM, recursos de tecnologia assistiva, adaptações ambientais e critérios quadrimestrais de revisão.
+- **Tabela `fato_pei_estudante_adaptacoes` ($N = 688$)**: 4 planos bimestrais por estudante (172 alunos $\times$ 4 bimestres = 688 registros) contendo metas fônicas explícitas, metas de aritmética Kumon, acomodações espaciais, recursos temporais (+50%), instrumentos de resposta alternativos e planos de suporte positivo PBS.
+- **Módulo Dinâmico [`modulo_pei_paee_dinamico.py`](file:///c:/Users/marce/Downloads/Airam%20veras/datamining/src/modulo_pei_paee_dinamico.py)**: Renderiza dinamicamente a **Lauda 3** de cada caderno de estudante em todos os 5 geradores de dossiê (1º ao 5º Ano), assegurando compliance absoluto com o *Strict Page Budgeting Universal* ($40 + N \times 40$ laudas).
+
+---
+
 ## 🛠️ Tecnologias e Dependências
 
 - **Runtime de Dados**: Python 3.12 (64-bit)
 - **Cálculo Científico**: `numpy >= 2.0`, `scipy >= 1.14`, `pandas >= 2.2`, `scikit-learn >= 1.5`
-- **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`
+- **Extração e Documentos**: `pypdf`, `pdfplumber`, `openpyxl`, `docx` (python-docx)
 - **Builder XLSX Canônico**: Node.js v20+, `@oai/artifact-tool`, Walnut WebAssembly
 - **Auditoria de Qualidade**: `pytest >= 8.0` (**372+ cenários TDD automatizados com 100% de aprovação**)
-- **Banco de Dados Analítico**: SQLite 3 canônico (**59 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 27).
+- **Banco de Dados Analítico**: SQLite 3 canônico (**62 tabelas canônicas e 10 views em 3FN com Modo WAL, 0 ilhas e 0 violações de chave estrangeira**), com rastreamento criptográfico contínuo no Ledger SHA-256 (Blocos 1 a 34).
 - **Showcase e Animações Vetoriais**: **D3.js v7**, **Mira Animator Architecture** ([`mira-animator`](https://github.com/MarceloClaro/mira-animator)), Tailwind CSS, Lucide Icons
 - **Automação Contínua**: GitHub Actions (CI/CD)
 

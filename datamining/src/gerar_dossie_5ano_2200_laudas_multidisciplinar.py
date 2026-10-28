@@ -28,6 +28,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 sys.path.append(os.path.dirname(__file__))
 from modulo_grafo_2d_topologia import gerar_html_lauda_27_topologia
+from modulo_pei_paee_dinamico import carregar_mapa_pei_paee, gerar_html_lauda_3_pei
 
 WORKSPACE_DIR = r"c:\Users\marce\Downloads\Airam veras"
 DATA_DIR = os.path.join(WORKSPACE_DIR, "resultados-caed-ciclo-i-2026", "csv_originais")
@@ -295,29 +296,36 @@ def build_front_matter_40_pages():
     p2 = f"""
     <div class="page-block">
         {make_header(2)}
-        <h1 class="section-title">Apresentação Institucional & Modelo Universal Paramétrico</h1>
+        <h1 class="section-title">Apresentação Institucional & Arquitetura Universal Paramétrica</h1>
+        
         <div class="card-highlight">
-            <strong>Marco Regulatório:</strong> Diretrizes Curriculares Nacionais, BNCC (EF05), Matriz SPAECE/SAEB 5º Ano e Resoluções da Secretaria Municipal de Educação de Crateús 2026.
+            <strong>Arquitetura Paramétrica de Paginação Estrita (Strict Page Budgeting Dinâmico Universal):</strong><br>
+            A extensão deste dossiê de terminalidade dos Anos Iniciais segue a equação paramétrica invariante:<br>
+            <div style="text-align:center; font-family:monospace; font-size:8.5pt; font-weight:bold; color:#065f46; margin:3px 0;">
+                Laudas Totais = 40 [Front Matter Master] + (N_estudantes x 40 [Caderno Individual])
+            </div>
+            Para a coorte unificada de <strong>5º Ano (Turmas A e B)</strong> com <strong>N = 54 estudantes</strong>: <strong>40 + (54 x 40) = 2.200 laudas exatas</strong>.
         </div>
-        <h2 class="sub-title">1. Propósito e Arquitetura do Dossiê Mestre do 5º Ano</h2>
-        <div class="card" style="font-size:7.2pt; line-height:1.45;">
-            O 5º Ano do Ensino Fundamental representa a terminalidade dos Anos Iniciais e a transição decisiva para os Anos Finais. Este Dossiê Mestre consolida a intervenção pedagógica censitária para as turmas de 5º Ano A e 5º Ano B da EMEB Airam Veras. Fundamentado na Teoria de Resposta ao Item (TRI) e nos dados censitários do CAEd Ciclo I 2026, fornece cadernos individualizados de 40 laudas para cada um dos 54 estudantes censitários, assegurando excelência leitora, proficiência matemática avançada e inclusão plena com DUA e PBS.
-        </div>
-        <h2 class="sub-title">2. Equação Paramétrica de Paginação Estrita (Strict Page Budgeting)</h2>
-        <div class="card" style="background:#f1f5f9; border-left:3px solid #065f46; font-size:7.2pt;">
-            <div style="font-weight:800; color:#065f46; margin-bottom:3px;">FÓRMULA CANÔNICA DE PAGINAÇÃO VETORIAL:</div>
-            <code>Total de Laudas = 40 (Front Matter Mestre) + (N × 40 [Caderno Individual do Estudante])</code><br>
-            Para a coorte unificada de 5º Ano da Escola Airam Veras:<br>
-            <strong>N = 54 estudantes</strong> (Turma 5º Ano A: 27 alunos | Turma 5º Ano B: 27 alunos)<br>
-            <code>Total Consolidado = 40 + (54 × 40) = 40 + 2.160 = 2.200 laudas vetoriais exatas.</code>
-        </div>
-        <h2 class="sub-title">3. Governança Pedagógica e Metodologias com Evidências Empíricas</h2>
-        <table class="data-table">
-            <tr><th style="width:25%;">Eixo Metodológico</th><th style="width:40%;">Fundamentação Científica</th><th style="width:35%;">Impacto Esperado no 5º Ano</th></tr>
-            <tr><td><strong>Fluência Crítica e Redação</strong></td><td>Snow & Matthews (2016) — Compreensão profunda e escrita argumentativa</td><td>Leitura > 130 ppm com inferência e redação no padrão SPAECE/SAEB.</td></tr>
-            <tr><td><strong>Automação Kumon C/D</strong></td><td>Fuchs et al. (2021) — Frações, decimais e raciocínio proporcional</td><td>Domínio de frações equivalentes, números decimais e cálculo com porcentagem.</td></tr>
-            <tr><td><strong>Inclusão DUA & PBS</strong></td><td>CAST (2018) & Horner et al. (2015) — Universalidade e Suporte Positivo</td><td>Acessibilidade irrestrita aos 8 estudantes laudados AEE das Turmas A e B.</td></tr>
+
+        <h2 class="sub-title">1. Fundamentação Legal, Diretrizes Normativas & Governança SNE</h2>
+        <table class="data-table" style="font-size:6pt; line-height:1.15;">
+            <tr><th style="width:28%;">Marco Legal / Resolução</th><th style="width:72%;">Aplicação Pedagógica e Vinculação Institucional</th></tr>
+            <tr><td><strong>CF/1988 & LC nº 220/2025 (SNE)</strong></td><td>Princípio da Gestão Democrática (Art. 206, VI) e alinhamento com o Fórum Municipal de Educação (FME) de Crateús (Arts. 16-21) para monitoramento das metas de proficiência SPAECE/SAEB.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.005/2014 (PNE)</strong></td><td>Monitoramento das Metas 2, 4, 5, 6, 7 e 19 do Plano Municipal de Educação (PME) de Crateús, assegurando fluxo escolar e equidade de aprendizagem.</td></tr>
+            <tr><td><strong>Lei Federal nº 13.146/2015 (LBI)</strong></td><td>Atendimento Educacional Especializado (AEE), Plano de Ensino Individualizado (PEI), Desenho Universal (DUA) e cuidadores dedicados para os educandos neurodivergentes.</td></tr>
+            <tr><td><strong>Lei Federal nº 14.254/2021</strong></td><td>Intervenção imediata e acompanhamento de dislexia, TDAH e transtornos neurocomportamentais com apoio de ledor e dilação temporal (+50%).</td></tr>
+            <tr><td><strong>Resoluções CNE/CP 01/22 & 04/09</strong></td><td>Diretrizes da BNCC Computação e diretrizes para Sala de Recursos Multifuncionais (SRM) no contraturno inclusivo.</td></tr>
+            <tr><td><strong>Diretriz Municipal SME Crateús</strong></td><td>Jornada de Tempo Integral (INTEGRAL 35H) com matriz de 9 componentes integrados e 7 períodos de 50 minutos diários.</td></tr>
         </table>
+
+        <h2 class="sub-title">2. Princípios de Rigor Científico, Auditabilidade e Zero Ilhas</h2>
+        <p style="font-size:6.8pt; margin-bottom:3px; line-height:1.3;">
+            Este dossiê integra 100% dos dados censitários ao banco canônico <code>airam_veras_ecossistema.sqlite</code> em 3FN (62 tabelas, 0 ilhas). Cada escore possui rastreabilidade no Ledger SHA-256 (Bloco 34: Censo AEE Cuidadores e PEI/PAEE Universal 100%).
+        </p>
+
+        <div class="card" style="font-size:6.4pt; padding:3px 6px;">
+            <strong>Compromisso Ético e Inclusivo:</strong> Atendimento individualizado a 100% dos educandos do 5º Ano: recomposição fônica e lexical acelerada (G1), automação de cálculo Kumon C/D (G2/G3), enriquecimento de altas habilidades (G4) e Suporte Positivo (PBS) com apoiadores dedicados para os neurodivergentes.
+        </div>
         {make_footer(2)}
     </div>
     """
@@ -1043,6 +1051,8 @@ def generate_student_html_pages(alunos_sub, offset_aluno, long_data):
         prat_map[pr[0]] = item
         prat_map[pr[1]] = item
 
+    aee_map_h, aee_map_n, paee_map, pei_map = carregar_mapa_pei_paee(DB_PATH)
+
     pages = []
     for s_idx_sub, al in enumerate(alunos_sub):
         s_idx = offset_aluno + s_idx_sub
@@ -1273,32 +1283,19 @@ def generate_student_html_pages(alunos_sub, offset_aluno, long_data):
         """
         pages.append(p2)
 
-        # PÁGINA 3: PEI/PAEE DUA e PBS
-        p3 = f"""
-        <div class="page-block">
-            {make_header(p_ini_global + 2, title=f"PEI / PAEE DUA & PBS — {nome_aluno}")}
-            <h1 class="section-title">Plano Educacional Individualizado (PEI/PAEE) & Suporte Positivo</h1>
-            <div class="card-highlight">
-                <strong>Enquadramento:</strong> { 'Atendimento Educacional Especializado (AEE) Obrigatório' if laudo_aluno else 'Desenho Universal para a Aprendizagem (DUA) Regular' } | Agrupamento: {cluster_aluno}
-            </div>
-            <h2 class="sub-title">1. Adaptações Curriculares e Metodológicas Individualizadas</h2>
-            <div class="card" style="font-size:7.2pt; line-height:1.4;">
-                {
-                    f'<strong>Plano Especial AEE:</strong> Estudante com necessidade de suporte pedagógico diferenciado. Instrução segmentada em blocos curtos, pistas visuais ampliadas, reforço positivo contingente e pausas ativas mediadas a cada 15 a 20 minutos de foco. Adaptação de enunciados complexos com linguagem direta e suporte de material concreto nas operações com frações e decimais.'
-                    if laudo_aluno else
-                    f'<strong>Plano Geral DUA:</strong> Participação ativa no currículo comum com flexibilização de ritmo. Apoio em duplas produtivas, acesso a pistas visuais conceituais e desafios de aprofundamento para ampliação da autonomia leitora e lógica no padrão SAEB/SPAECE.'
-                }
-            </div>
-            <h2 class="sub-title">2. Metas de Curto Prazo (Bimestre de Terminalidade)</h2>
-            <table class="data-table">
-                <tr><th>Área</th><th>Meta Específica do Estudante</th><th>Estratégia de Mediação</th></tr>
-                <tr><td><strong>Língua Portuguesa</strong></td><td>Elevar fluência para ≥ 130 ppm com 96% de precisão</td><td>Leitura compartilhada diária e análise de crônicas/notícias.</td></tr>
-                <tr><td><strong>Matemática</strong></td><td>Dominar operações com decimais e frações equivalentes</td><td>Treino vertical Kumon Nível D e uso de círculos de frações.</td></tr>
-                <tr><td><strong>Comportamental</strong></td><td>Concluir 100% das tarefas propostas com foco e persistência</td><td>Rotina visual, combinados claros e suporte comportamental positivo.</td></tr>
-            </table>
-            {make_footer(p_ini_global + 2)}
-        </div>
-        """
+        # PÁGINA 3: PEI/PAEE DUA e PBS Dinâmico (Universal DUA/PBS + AEE Oficial)
+        p3 = gerar_html_lauda_3_pei(
+            std_name=nome_aluno,
+            ano_num=5,
+            cluster_code=cluster_aluno,
+            p_curr=p_ini_global + 2,
+            tot_pages=2200,
+            aluno_hash=hid,
+            aee_map_h=aee_map_h,
+            aee_map_n=aee_map_n,
+            paee_map=paee_map,
+            pei_map=pei_map
+        )
         pages.append(p3)
 
         # PÁGINA 4: PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA
