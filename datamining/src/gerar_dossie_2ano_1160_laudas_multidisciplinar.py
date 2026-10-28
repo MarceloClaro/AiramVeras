@@ -1187,6 +1187,38 @@ def build_students_custom_pages():
             long_data[name][comp]['C3_meta_a'] = ma
             long_data[name][comp]['C3_meta_b'] = mb
 
+    # Carregar práticas diárias de leitura e fluência fônica por estudante da tabela canônica fato_praticas_diarias_leitura_fluencia
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT nome_estudante, cluster_codigo, cluster_nome, is_paee, possui_pei, laudo_cid,
+               pratica_1_bimestre, pratica_2_bimestre, pratica_3_bimestre, pratica_4_bimestre,
+               plano_recomposicao_espaece, estrategia_cluster_paee_pei, meta_fluencia_ppm,
+               descritores_prioritarios_espaece
+        FROM fato_praticas_diarias_leitura_fluencia
+        WHERE ano_escolar = 2
+    """)
+    prat_rows = cur.fetchall()
+    conn.close()
+    
+    prat_map = {}
+    for pr in prat_rows:
+        prat_map[pr[0]] = {
+            'cluster_codigo': pr[1],
+            'cluster_nome': pr[2],
+            'is_paee': pr[3],
+            'possui_pei': pr[4],
+            'laudo_cid': pr[5],
+            'p1': pr[6],
+            'p2': pr[7],
+            'p3': pr[8],
+            'p4': pr[9],
+            'recomp': pr[10],
+            'estrat': pr[11],
+            'meta_ppm': pr[12],
+            'desc_spaece': pr[13]
+        }
+
     pages = []
 
     for s_idx, std_name in enumerate(std_names):
@@ -1417,32 +1449,70 @@ def build_students_custom_pages():
         """
         pages.append(p3)
 
-        # 4. Trilha Granular Kumon & Fônico
+        # 4. PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA
+        p_info = prat_map.get(std_name, {})
+        c_code_p = p_info.get('cluster_codigo', cl)
+        c_name_p = p_info.get('cluster_nome', f'Cluster {cl}')
+        is_paee_p = p_info.get('is_paee', 1 if cl in ["2A", "PAEE"] else 0)
+        cid_p = p_info.get('laudo_cid', 'DESENVOLVIMENTO TÍPICO')
+        prat_b1 = p_info.get('p1', '1º BIM: Recomposição Fônica de Base — Resgate da rota fonológica com dígrafos e sílabas complexas (CVC e CCV).')
+        prat_b2 = p_info.get('p2', '2º BIM: Decodificação e Precisão em Pseudopalavras — Treino com palavras decodificáveis (15 min/dia).')
+        prat_b3 = p_info.get('p3', '3º BIM: Leitura de Frases Estruturadas — Prática assistida e pontuação expressiva com redução de hesitações.')
+        prat_b4 = p_info.get('p4', '4º BIM: Fluência e Localização Textual Simples — Textos de 6 linhas; localização explícita (D13); meta: 65-85 PPM.')
+        recomp_spaece = p_info.get('recomp', 'Plano SPAECE 2º Ano: Garantia da transição para Nível Adequado/Desejável no SPAECE Alfa (D04 e D06).')
+        estrat_paee_pei = p_info.get('estrat', 'Protocolo DUA/PBS: Tempo estendido (+50%), ledor humano, fontes contrastantes e mediação individualizada.')
+        meta_ppm_val = p_info.get('meta_ppm', 85)
+        desc_spaece_val = p_info.get('desc_spaece', 'D01_LP, D03_LP, D04_LP, D06_LP, D13_LP')
+
+        badge_inclusao = "badge-blue" if is_paee_p else "badge-green"
+        rotulo_inclusao = f"PAEE / PEI ({cid_p})" if is_paee_p else "Desenvolvimento Regular"
+
         p4 = f"""
         <div class="page-block">
-            {make_header(p_base + 3, 1160, f"TRILHA KUMON & FÔNICO • {std_name}")}
-            <h1 class="section-title">Trilha Granular Kumon Adaptado & Método Fônico (2º Ano)</h1>
+            {make_header(p_base + 3, 1160, f"PRÁTICAS DIÁRIAS DE LEITURA & FLUÊNCIA • {std_name}")}
+            <h1 class="section-title">Práticas Diárias de Leitura e Fluência — Abordagem Fônica e Estruturada</h1>
             
-            <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 2º Ano Único (Tempo Integral 35H) | <strong>Nível Atual:</strong> Kumon 2A / Ehri Fase 3
+            <div class="card-highlight" style="font-size:6.8pt; padding:4px 8px; margin-bottom:4px;">
+                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 2º Ano Único (Tempo Integral 35H) | <strong>Cluster:</strong> {c_code_p} | <strong>Enquadramento:</strong> <span class="badge {badge_inclusao}">{rotulo_inclusao}</span>
             </div>
 
-            <h2 class="sub-title">Progressão Granular Kumon Matemática</h2>
-            <table class="data-table">
-                <tr><th style="width:20%;">Nível Kumon</th><th style="width:40%;">Conteúdo e Micro-Passo Operacional</th><th style="width:20%; text-align:center;">Tempo Padrão (SCT)</th><th style="width:20%; text-align:center;">Status do Aluno</th></tr>
-                <tr><td><strong>KUMON MAT 4A</strong></td><td>Leitura e traçado de numerais de 1 a 50 com contagem concreta.</td><td style="text-align:center;">3 min / folha</td><td style="text-align:center;"><span class="badge badge-green">Consolidado</span></td></tr>
-                <tr><td><strong>KUMON MAT 3A</strong></td><td>Leitura de números até 100 e reta numérica comparativa.</td><td style="text-align:center;">4 min / folha</td><td style="text-align:center;"><span class="badge badge-green">Consolidado</span></td></tr>
-                <tr><td><strong>KUMON MAT 2A</strong></td><td>Adição horizontal de +1 até +5 através de sequenciamento mental.</td><td style="text-align:center;">5 min / folha</td><td style="text-align:center;"><span class="badge badge-blue">Em Curso Ativo</span></td></tr>
-                <tr><td><strong>KUMON MAT A</strong></td><td>Adição horizontal e vertical com somas até 20 e introdução à subtração.</td><td style="text-align:center;">7 min / folha</td><td style="text-align:center;"><span class="badge badge-yellow">Próxima Meta</span></td></tr>
+            <h2 class="sub-title" style="margin-top:2px;">1. Progressão Curricular Fônica e Fluência nos 4 Bimestres</h2>
+            <table class="data-table" style="font-size:6.3pt; line-height:1.25;">
+                <tr><th style="width:14%;">Bimestre</th><th style="width:62%;">Prática Diária Fônica Estruturada (Consciência, Decodificação e Rota Fonológica)</th><th style="width:24%; text-align:center;">Meta de Fluência & Critério</th></tr>
+                <tr>
+                    <td><strong>1º Bimestre</strong></td>
+                    <td>{prat_b1}</td>
+                    <td style="text-align:center;">Decodificação Complexa<br><span class="badge badge-blue">Precisão ≥ 88%</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2º Bimestre</strong></td>
+                    <td>{prat_b2}</td>
+                    <td style="text-align:center;">Fluência em Fábulas<br><span class="badge badge-blue">Prosódia Modelada</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3º Bimestre</strong></td>
+                    <td>{prat_b3}</td>
+                    <td style="text-align:center;">Compreensão e Frases<br><span class="badge badge-green">Taxa: {max(45, meta_ppm_val - 15)} PPM</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4º Bimestre</strong></td>
+                    <td>{prat_b4}</td>
+                    <td style="text-align:center;">Alfabetização Plena<br><span class="badge badge-green">Meta: ≥ {meta_ppm_val} PPM</span></td>
+                </tr>
             </table>
 
-            <h2 class="sub-title">Estágios do Método Fônico Sistemático (Ehri & Dehaene)</h2>
-            <table class="data-table">
-                <tr><th style="width:20%;">Fase Fônica</th><th style="width:50%;">Mecanismo Cognitivo e Circuito Neural</th><th style="width:30%; text-align:center;">Status de Domínio</th></tr>
-                <tr><td><strong>Fase Alfabética Inicial</strong></td><td>Correspondência grafema-fonema explícita em sílabas simples (C+V).</td><td style="text-align:center;"><span class="badge badge-green">100% Dominado</span></td></tr>
-                <tr><td><strong>Fase Alfabética Plena</strong></td><td>Decodificação serial completa de palavras complexas e pseudopalavras.</td><td style="text-align:center;"><span class="badge badge-blue">88.5% Em Consolidação</span></td></tr>
-                <tr><td><strong>Fase Alfabética Consolidada</strong></td><td>Ativação da Área da Forma Visual das Palavras (VWFA) e leitura fluente.</td><td style="text-align:center;"><span class="badge badge-yellow">Meta Ciclo III</span></td></tr>
-            </table>
+            <h2 class="sub-title" style="margin-top:3px;">2. Plano de Recomposição para Avaliação do ESPAECE (Individualizado)</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; background:#f0fdf4; border-left:3px solid #16a34a; padding:4px 6px;">
+                <div style="font-weight:bold; color:#166534; margin-bottom:2px;">DIAGNÓSTICO E INTERVENÇÃO INTENSIVA ESPAECE / CAEd (SPAECE ALFA)</div>
+                <div>• <strong>Ação de Recomposição:</strong> {recomp_spaece}</div>
+                <div>• <strong>Descritores Críticos SPAECE:</strong> <code>{desc_spaece_val}</code>.</div>
+            </div>
+
+            <h2 class="sub-title" style="margin-top:3px;">3. Diferenciação Pedagógica por Cluster e Acessibilidade PAEE / PEI</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; padding:4px 6px;">
+                <div style="font-weight:bold; color:#1e3a8a; margin-bottom:2px;">ESTRATÉGIAS DUA / PBS & RECURSOS PEDAGÓGICOS CHAVE</div>
+                <div>{estrat_paee_pei}</div>
+            </div>
             {make_footer(p_base + 3)}
         </div>
         """

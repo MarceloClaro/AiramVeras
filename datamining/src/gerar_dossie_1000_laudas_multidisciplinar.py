@@ -237,7 +237,7 @@ def build_front_matter_40_pages():
             <div style="font-size:12pt; font-weight:900; color:#1e3a8a; letter-spacing:1px; margin-bottom:4px;">ESTADO DO CEARÁ • PREFEITURA MUNICIPAL DE CRATEÚS</div>
             <div style="font-size:10pt; font-weight:800; color:#3b82f6;">SECRETARIA MUNICIPAL DE EDUCAÇÃO</div>
             <div style="font-size:14pt; font-weight:900; color:#0f172a; margin-top:12px; border-top:2px solid #1e3a8a; border-bottom:2px solid #1e3a8a; padding:6px 0;">ESCOLA DE CIDADANIA AIRAM VERAS</div>
-            <div style="font-size:8pt; font-family:monospace; color:#475569; margin-top:4px;">CÓDIGO INEP: 23084995 • DISTRITO DE IPU MAZAGÃO • CRATEÚS - CE</div>
+            <div style="font-size:8pt; font-family:monospace; color:#475569; margin-top:4px;">CÓDIGO INEP: 23084995 • SEDE MUNICIPAL • CRATEÚS - CE</div>
         </div>
 
         <div style="margin: 20px 0;">
@@ -273,7 +273,7 @@ def build_front_matter_40_pages():
         <div class="card" style="font-size:7pt;">
             <div style="font-weight:bold; color:#1e3a8a; margin-bottom:3px;">FICHA DE IDENTIFICAÇÃO INSTITUCIONAL</div>
             <div><strong>Unidade Escolar:</strong> Escola Municipal de Cidadania Airam Veras | INEP: 23084995</div>
-            <div><strong>Endereço:</strong> Distrito de Ipu Mazagão, Zona Rural, Crateús - Ceará | CEP: 63700-000</div>
+            <div><strong>Endereço:</strong> Rua José Sabóia Livre, Bairro São Vicente / São José, Crateús - Ceará | CEP: 63700-000</div>
             <div><strong>Equipe Gestora:</strong> Direção Escolar, Coordenação Pedagógica, Docência do 1º Ano e AEE/SRM</div>
             <div><strong>População Coberta:</strong> 24 Estudantes Laudados e Regulares do 1º Ano do Ensino Fundamental</div>
         </div>
@@ -1561,7 +1561,37 @@ def build_students_custom_pages():
             long_data[name][k]['C3_nivel'] = niv_dest
             long_data[name][k]['C3_migracao'] = mig
             long_data[name][k]['C3_meta_a'] = ma
-            long_data[name][k]['C3_meta_b'] = mb
+    # Carregar práticas diárias de leitura e fluência fônica por estudante da tabela canônica fato_praticas_diarias_leitura_fluencia
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT nome_estudante, cluster_codigo, cluster_nome, is_paee, possui_pei, laudo_cid,
+               pratica_1_bimestre, pratica_2_bimestre, pratica_3_bimestre, pratica_4_bimestre,
+               plano_recomposicao_espaece, estrategia_cluster_paee_pei, meta_fluencia_ppm,
+               descritores_prioritarios_espaece
+        FROM fato_praticas_diarias_leitura_fluencia
+        WHERE ano_escolar = 1
+    """)
+    prat_rows = cur.fetchall()
+    conn.close()
+    
+    prat_map = {}
+    for pr in prat_rows:
+        prat_map[pr[0]] = {
+            'cluster_codigo': pr[1],
+            'cluster_nome': pr[2],
+            'is_paee': pr[3],
+            'possui_pei': pr[4],
+            'laudo_cid': pr[5],
+            'p1': pr[6],
+            'p2': pr[7],
+            'p3': pr[8],
+            'p4': pr[9],
+            'recomp': pr[10],
+            'estrat': pr[11],
+            'meta_ppm': pr[12],
+            'desc_spaece': pr[13]
+        }
 
     pages = []
 
@@ -1739,24 +1769,70 @@ def build_students_custom_pages():
         """
         pages.append(p3)
 
-        # 4. PAEE (Atendimento na SRM)
+        # 4. PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA
+        p_info = prat_map.get(std_name, {})
+        c_code_p = p_info.get('cluster_codigo', cl)
+        c_name_p = p_info.get('cluster_nome', f'Cluster {cl}')
+        is_paee_p = p_info.get('is_paee', 1)
+        cid_p = p_info.get('laudo_cid', 'DESENVOLVIMENTO TÍPICO')
+        prat_b1 = p_info.get('p1', '1º BIM: Consciência Fonológica e Fonêmica — Sons das vogais /a, e, i, o, u/ e rimas.')
+        prat_b2 = p_info.get('p2', '2º BIM: Correspondência Grafema-Fonema Regular — Consoantes contínuas e sílabas canônicas (CV).')
+        prat_b3 = p_info.get('p3', '3º BIM: Síntese Fonêmica e Decodificação de Palavras — Blending serial e leitura de pseudopalavras.')
+        prat_b4 = p_info.get('p4', '4º BIM: Automação e Fluência Inicial — Leitura guiada de parlendas e frases; meta: 40-60 PPM.')
+        recomp_spaece = p_info.get('recomp', 'Plano SPAECE: Recuperação dos descritores críticos D01 e D02 com fichas diárias.')
+        estrat_paee_pei = p_info.get('estrat', 'Protocolo DUA/PBS: Tempo estendido (+50%), ledor oficial e material manipulável.')
+        meta_ppm_val = p_info.get('meta_ppm', 60)
+        desc_spaece_val = p_info.get('desc_spaece', 'D01_LP, D02_LP, D03_LP')
+
+        badge_inclusao = "badge-blue" if is_paee_p else "badge-green"
+        rotulo_inclusao = f"PAEE / PEI ({cid_p})" if is_paee_p else "Desenvolvimento Regular"
+
         p4 = f"""
         <div class="page-block">
-            {make_header(p_base + 3, 1000, f"PLANO PAEE SRM • {std_name}")}
-            <h1 class="section-title">Plano de Atendimento Educacional Especializado (PAEE)</h1>
+            {make_header(p_base + 3, 1000, f"PRÁTICAS DIÁRIAS DE LEITURA & FLUÊNCIA • {std_name}")}
+            <h1 class="section-title">Práticas Diárias de Leitura e Fluência — Abordagem Fônica e Estruturada</h1>
             
-            <div class="card-highlight">
-                <strong>Estudante:</strong> {std_name} | <strong>Amparo Legal:</strong> Resolução CNE/CEB nº 04/2009 & Decreto nº 7.611/2011 | <strong>Local:</strong> Sala de Recursos Multifuncionais (SRM)
+            <div class="card-highlight" style="font-size:6.8pt; padding:4px 8px; margin-bottom:4px;">
+                <strong>Estudante:</strong> {std_name} | <strong>Turma:</strong> 1º Ano Único (Tempo Integral 35H) | <strong>Cluster:</strong> {c_code_p} | <strong>Enquadramento:</strong> <span class="badge {badge_inclusao}">{rotulo_inclusao}</span>
             </div>
 
-            <table class="data-table">
-                <tr><th style="width:25%;">Eixo do Atendimento</th><th style="width:75%;">Detalhamento Técnico das Sessões na SRM</th></tr>
-                <tr><td><strong>Frequência e Carga Horária</strong></td><td>2 sessões semanais de 50 minutos no contraturno escolar, coordenadas pelo professor especialista de AEE.</td></tr>
-                <tr><td><strong>Estimulação Neurocognitiva</strong></td><td>Treino de memória de trabalho operacional com jogos de seriação lógica, jogos de rimas e quebra-cabeças visoespaciais.</td></tr>
-                <tr><td><strong>Tecnologias Assistivas</strong></td><td>Engrossadores de lápis anatômicos, plano inclinado de leitura, pranchas de comunicação alternativa (CAA) e softwares educativos acessíveis.</td></tr>
-                <tr><td><strong>Articulação com a Sala Regular</strong></td><td>Reunião quinzenal com o professor regente do 1º Ano para alinhamento dos descritores críticos do CAEd e adaptação das fichas diárias.</td></tr>
-                <tr><td><strong>Parceria Familiar</strong></td><td>Orientação mensal aos pais sobre suporte nas atividades de leitura em casa e rotina de sono/descanso saudável.</td></tr>
+            <h2 class="sub-title" style="margin-top:2px;">1. Progressão Curricular Fônica e Fluência nos 4 Bimestres</h2>
+            <table class="data-table" style="font-size:6.3pt; line-height:1.25;">
+                <tr><th style="width:14%;">Bimestre</th><th style="width:62%;">Prática Diária Fônica Estruturada (Consciência, Decodificação e Rota Fonológica)</th><th style="width:24%; text-align:center;">Meta de Fluência & Critério</th></tr>
+                <tr>
+                    <td><strong>1º Bimestre</strong></td>
+                    <td>{prat_b1}</td>
+                    <td style="text-align:center;">Discriminação Auditiva<br><span class="badge badge-blue">Precisão ≥ 85%</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2º Bimestre</strong></td>
+                    <td>{prat_b2}</td>
+                    <td style="text-align:center;">Decodificação de Sílabas<br><span class="badge badge-blue">Palavras Canônicas</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3º Bimestre</strong></td>
+                    <td>{prat_b3}</td>
+                    <td style="text-align:center;">Síntese e Prosódia<br><span class="badge badge-green">Taxa: {max(25, meta_ppm_val - 15)} PPM</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4º Bimestre</strong></td>
+                    <td>{prat_b4}</td>
+                    <td style="text-align:center;">Autonomia Leitora<br><span class="badge badge-green">Meta: ≥ {meta_ppm_val} PPM</span></td>
+                </tr>
             </table>
+
+            <h2 class="sub-title" style="margin-top:3px;">2. Plano de Recomposição para Avaliação do ESPAECE (Individualizado)</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; background:#f0fdf4; border-left:3px solid #16a34a; padding:4px 6px;">
+                <div style="font-weight:bold; color:#166534; margin-bottom:2px;">DIAGNÓSTICO E INTERVENÇÃO INTENSIVA ESPAECE / CAEd</div>
+                <div>• <strong>Ação de Recomposição:</strong> {recomp_spaece}</div>
+                <div>• <strong>Descritores Críticos SPAECE:</strong> <code>{desc_spaece_val}</code>.</div>
+            </div>
+
+            <h2 class="sub-title" style="margin-top:3px;">3. Diferenciação Pedagógica por Cluster e Acessibilidade PAEE / PEI</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; padding:4px 6px;">
+                <div style="font-weight:bold; color:#1e3a8a; margin-bottom:2px;">ESTRATÉGIAS DUA / PBS & RECURSOS PEDAGÓGICOS CHAVE</div>
+                <div>{estrat_paee_pei}</div>
+            </div>
             {make_footer(p_base + 3)}
         </div>
         """

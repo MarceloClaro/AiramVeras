@@ -117,7 +117,10 @@ graph TD
 | **3º Ano** | `3º Ano Único (Tempo Integral 35H)` | 24 | $40 + (24 \times 40) = \mathbf{1.000\text{ pág.}}$ | [`DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_3ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `7a7104d298c22f1760b0830e1b5af01ccad4b0f27769528cebd9db8896204c68` | **Bloco 29** |
 | **4º Ano** | `4º Ano A (22) + 4º Ano B (20)` | 42 | $40 + (42 \times 40) = \mathbf{1.720\text{ pág.}}$ | [`DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_4ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `a10ed764982fec67ccfe33b37a95299d4e57e72be0af04c65af9ed5d6d0d1752` | **Bloco 30** |
 | **5º Ano** | `5º Ano A (27) + 5º Ano B (27)` | 54 | $40 + (54 \times 40) = \mathbf{2.200\text{ pág.}}$ | [`DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf`](file:///c:/Users/marce/Downloads/Airam%20veras/docs/DOSSIE_MESTRE_5ANO_BNCC_E_PRATICAS_DIARIAS_AMPLIADAS.pdf) | `b5838300b239c24e0b33865af363c8f5b3e3577d9517456489530c3c60fffa5d` | **Bloco 31** |
-| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 31** |
+| **Total** | **7 Turmas Oficiais** | **172** | **7.080 Laudas Vetoriais A4** | **Suíte Completa Homologada** | **Cadeia Criptográfica Imutável** | **Blocos 27 a 32** |
+
+> **Bloco 32 do Ledger Imutável (Hash Forense `d6cd514dd9a6a53b44ccb35c9e79fa56631ab97599f43ef0e15d2bf5885de444`)**:  
+> **Homologação das Práticas Diárias de Leitura e Fluência — Abordagem Fônica Estruturada nos 4 Bimestres & Plano de Recomposição SPAECE/SAEB**: Estruturação canônica individualizada na tabela `fato_praticas_diarias_leitura_fluencia` para 100% da coorte censitária ($N=172$), com divisão granular em **1º Bimestre, 2º Bimestre, 3º Bimestre e 4º Bimestre**, metas de fluência cronometrada (PPM/WCPM), descritores prioritários do SPAECE (D01 a D18), clusterização adaptativa por grupos (G1 a G4) e protocolos específicos de acessibilidade DUA/PBS para estudantes **PAEE** ($N=45$) e com **PEI** oficial.
 
 Este ecossistema documental estabelece o **modelo canônico universal** adotado para todos os dossiês e intervenções da Escola de Cidadania Airam Veras, integrando o diagnóstico censitário do CAEd/SPAECE à neurociência cognitiva, legalidade inclusiva, guias didáticos para leigos (EWS, Markov, Correlações e Bioestatística) e acompanhamento longitudinal dos Ciclos I, II e III.
 
@@ -133,7 +136,7 @@ graph TD
 
     subgraph DOSSIE ["📘 Arquitetura Canônica Universal dos Dossiês (1º ao 5º Ano)"]
         S1["1. Front Matter Universal: Marco Legal, 14 DOIs & Guias Leigos (40 laudas)"]:::capBox
-        S2["2. Identificação Individual, Raio-X Cognitivo 7D, PEI & PAEE (4 laudas/aluno = 96 laudas)"]:::indBox
+        S2["2. Identificação Individual, Raio-X Cognitivo 7D, PEI & Práticas Fônicas 4 Bimestres + SPAECE (4 laudas/aluno = 96 laudas)"]:::indBox
         S3["3. Língua Portuguesa: Alfabetização Fônica Sistemática (26 laudas/aluno = 624 laudas)"]:::pratBox
         S4["4. Matemática: Aritmética Kumon Granular & CAEd (4 laudas/aluno = 96 laudas)"]:::sciBox
         S5["5. Multidisciplinar: Ciências, História, Geografia, Arte & Ed. Física (3 laudas/aluno = 72 laudas)"]:::multiBox

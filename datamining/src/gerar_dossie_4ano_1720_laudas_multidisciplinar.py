@@ -1044,6 +1044,42 @@ def build_students_custom_pages():
             long_data[hid][comp]['C3_meta_a'] = ma
             long_data[hid][comp]['C3_meta_b'] = mb
 
+    # Carregar práticas diárias de leitura e fluência fônica por estudante da tabela canônica fato_praticas_diarias_leitura_fluencia
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT aluno_hash_id, nome_estudante, cluster_codigo, cluster_nome, is_paee, possui_pei, laudo_cid,
+               pratica_1_bimestre, pratica_2_bimestre, pratica_3_bimestre, pratica_4_bimestre,
+               plano_recomposicao_espaece, estrategia_cluster_paee_pei, meta_fluencia_ppm,
+               descritores_prioritarios_espaece
+        FROM fato_praticas_diarias_leitura_fluencia
+        WHERE ano_escolar = 4
+    """)
+    prat_rows = cur.fetchall()
+    conn.close()
+    
+    prat_map = {}
+    for pr in prat_rows:
+        item = {
+            'aluno_hash_id': pr[0],
+            'nome_estudante': pr[1],
+            'cluster_codigo': pr[2],
+            'cluster_nome': pr[3],
+            'is_paee': pr[4],
+            'possui_pei': pr[5],
+            'laudo_cid': pr[6],
+            'p1': pr[7],
+            'p2': pr[8],
+            'p3': pr[9],
+            'p4': pr[10],
+            'recomp': pr[11],
+            'estrat': pr[12],
+            'meta_ppm': pr[13],
+            'desc_spaece': pr[14]
+        }
+        prat_map[pr[0]] = item
+        prat_map[pr[1]] = item
+
     pages = []
 
     for s_idx, al in enumerate(todos_alunos):
@@ -1303,34 +1339,69 @@ def build_students_custom_pages():
         """
         pages.append(p3)
 
-        # PÁGINA 4 DO ALUNO: Trilha Kumon e Fônica
+        # PÁGINA 4 DO ALUNO: PRÁTICAS DIÁRIAS DE LEITURA E FLUÊNCIA — ABORDAGEM FÔNICA E ESTRUTURADA
+        p_info = prat_map.get(hid, prat_map.get(nome_aluno, {}))
+        c_code_p = p_info.get('cluster_codigo', cluster_aluno)
+        c_name_p = p_info.get('cluster_nome', f'Cluster {cluster_aluno}')
+        is_paee_p = p_info.get('is_paee', 1 if laudo_aluno else 0)
+        cid_p = p_info.get('laudo_cid', 'DESENVOLVIMENTO TÍPICO')
+        prat_b1 = p_info.get('p1', '1º BIM: Recomposição de Fluência e Prosódia — Leitura oral repetida de contos e acentuação paroxítona.')
+        prat_b2 = p_info.get('p2', '2º BIM: Localização de Evidências em Textos Longos — Marcação de parágrafos-chave no SPAECE (D13).')
+        prat_b3 = p_info.get('p3', '3º BIM: Inferência de Causa e Consequência — Análise de conflito gerador e desfecho em enredos narrativos.')
+        prat_b4 = p_info.get('p4', '4º BIM: Compreensão Global e Síntese — Assunto principal e propósito comunicativo; meta: 100-125 PPM.')
+        recomp_spaece = p_info.get('recomp', 'Plano SPAECE 4º Ano: Elevação para nível Intermediário/Adequado com foco em D13 e D14.')
+        estrat_paee_pei = p_info.get('estrat', 'Protocolo DUA/PBS: Tempo estendido (+50%), ledor oficial, mediação visual e pausas a cada 20 min.')
+        meta_ppm_val = p_info.get('meta_ppm', 125)
+        desc_spaece_val = p_info.get('desc_spaece', 'D01_LP, D03_LP, D04_LP, D06_LP, D13_LP, D14_LP, D15_LP, D17_LP')
+
+        badge_inclusao = "badge-blue" if is_paee_p else "badge-green"
+        rotulo_inclusao = f"PAEE / PEI ({cid_p})" if is_paee_p else "Desenvolvimento Regular"
+
         p4 = f"""
         <div class="page-block">
-            {make_header(p_ini_global + 3, title=f"TRILHA KUMON & FÔNICA — {nome_aluno}")}
-            <h1 class="section-title">Trilha Pedagógica Kumon (B/C) & Automação Fônica</h1>
-            <div class="card-highlight">
-                <strong>Plano de Treino Diário:</strong> 15 minutos de Kumon Matemático + 15 minutos de Leitura Guiada na rotina de tempo integral.
+            {make_header(p_ini_global + 3, title=f"PRÁTICAS DIÁRIAS DE LEITURA & FLUÊNCIA — {nome_aluno}")}
+            <h1 class="section-title">Práticas Diárias de Leitura e Fluência — Abordagem Fônica e Estruturada</h1>
+            
+            <div class="card-highlight" style="font-size:6.8pt; padding:4px 8px; margin-bottom:4px;">
+                <strong>Estudante:</strong> {nome_aluno} | <strong>Turma:</strong> {turma_nome} | <strong>Cluster:</strong> {c_code_p} | <strong>Enquadramento:</strong> <span class="badge {badge_inclusao}">{rotulo_inclusao}</span>
             </div>
-            <div class="grid-2">
-                <div class="card">
-                    <div style="font-weight:800; color:#1e3a8a;">TRILHA KUMON MATEMÁTICA (NÍVEIS B e C)</div>
-                    <div style="font-size:7pt; margin-top:3px; line-height:1.4;">
-                        • <strong>Nível B (Laudas 31-32):</strong> Adição e subtração verticais com empréstimo na centena e milhar.<br>
-                        • <strong>Nível C (Laudas 33-34):</strong> Multiplicação formal (2 algarismos) e introdução à divisão euclidiana.<br>
-                        • <strong>Meta SCT (Tempo Padrão):</strong> 15 a 20 operações em ≤ 12 minutos com ≥ 90% de acertos.
-                    </div>
-                </div>
-                <div class="card">
-                    <div style="font-weight:800; color:#1e3a8a;">TRILHA DE FLUÊNCIA E MORFOSSINTAXE</div>
-                    <div style="font-size:7pt; margin-top:3px; line-height:1.4;">
-                        • <strong>Decodificação Rápida:</strong> Leitura em voz alta de textos narrativos e informativos do Volume 4.<br>
-                        • <strong>Expressividade Prosódica:</strong> Entonação em diálogos, exclamações e pontuações de suspense.<br>
-                        • <strong>Análise Linguística:</strong> Identificação de verbos de ação, concordância verbal e nominal.
-                    </div>
-                </div>
+
+            <h2 class="sub-title" style="margin-top:2px;">1. Progressão Curricular Fônica e Fluência nos 4 Bimestres</h2>
+            <table class="data-table" style="font-size:6.3pt; line-height:1.25;">
+                <tr><th style="width:14%;">Bimestre</th><th style="width:62%;">Prática Diária Fônica Estruturada (Consciência, Decodificação e Rota Fonológica)</th><th style="width:24%; text-align:center;">Meta de Fluência & Critério</th></tr>
+                <tr>
+                    <td><strong>1º Bimestre</strong></td>
+                    <td>{prat_b1}</td>
+                    <td style="text-align:center;">Fluência & Prosódia<br><span class="badge badge-blue">Acurácia ≥ 92%</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2º Bimestre</strong></td>
+                    <td>{prat_b2}</td>
+                    <td style="text-align:center;">Localização Textual (D13)<br><span class="badge badge-blue">Evidência Factual</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3º Bimestre</strong></td>
+                    <td>{prat_b3}</td>
+                    <td style="text-align:center;">Causa & Efeito (D14)<br><span class="badge badge-green">Taxa: {max(85, meta_ppm_val - 20)} PPM</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4º Bimestre</strong></td>
+                    <td>{prat_b4}</td>
+                    <td style="text-align:center;">Síntese & Inferência<br><span class="badge badge-green">Meta: ≥ {meta_ppm_val} PPM</span></td>
+                </tr>
+            </table>
+
+            <h2 class="sub-title" style="margin-top:3px;">2. Plano de Recomposição para Avaliação do ESPAECE (Individualizado)</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; background:#f0fdf4; border-left:3px solid #16a34a; padding:4px 6px;">
+                <div style="font-weight:bold; color:#166534; margin-bottom:2px;">DIAGNÓSTICO E INTERVENÇÃO INTENSIVA ESPAECE / CAEd (4º ANO)</div>
+                <div>• <strong>Ação de Recomposição:</strong> {recomp_spaece}</div>
+                <div>• <strong>Descritores Críticos SPAECE:</strong> <code>{desc_spaece_val}</code>.</div>
             </div>
-            <div class="card" style="font-size:7pt; margin-top:4px;">
-                <strong>Instrução para a Família:</strong> Reservar diariamente 15 minutos em casa para ouvir a leitura do estudante e assinar a ficha semanal de monitoramento ao término de cada semana letiva.
+
+            <h2 class="sub-title" style="margin-top:3px;">3. Diferenciação Pedagógica por Cluster e Acessibilidade PAEE / PEI</h2>
+            <div class="card" style="font-size:6.6pt; line-height:1.3; padding:4px 6px;">
+                <div style="font-weight:bold; color:#1e3a8a; margin-bottom:2px;">ESTRATÉGIAS DUA / PBS & RECURSOS PEDAGÓGICOS CHAVE</div>
+                <div>{estrat_paee_pei}</div>
             </div>
             {make_footer(p_ini_global + 3)}
         </div>
